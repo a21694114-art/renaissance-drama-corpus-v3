@@ -1,0 +1,670 @@
+{
+  "provenance": {
+    "retrieved_utc": "2026-09-07T02:16:06.368380+00:00",
+    "official_download_page": "https://deepplaybooks.org/download/",
+    "official_export_url": "https://deepplaybooks.org/assets/data/item_data.json",
+    "official_export_bytes": 9575553,
+    "official_export_sha256": "10005117a7616e0cf1e372fcf5bd703abc71bd04c83be6afcdd088ab6e2d55fb",
+    "license": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "attribution": "Data underlying this work was provided by DEEP: Database of Early English Playbooks. Ed. Alan B. Farmer and Zachary Lesser. Created 2007. Revised edition 2024. Accessed from https://deepplaybooks.org/."
+  },
+  "scope": "Proposed edition-level metadata reconnection only; not an inclusion decision, not proof of transcription completeness, and not a reassignment of gap-only divisions.",
+  "source_tcp": "A04632",
+  "source_tcp_sha256": "89e919d1d63db5097d168e5749be7da7b3268e27f05c0c1ca53ffc0921fac5bc",
+  "collection": {
+    "tcp_alias": "A04632",
+    "deep_id": "5075",
+    "edition_id": "1478",
+    "year": "1616",
+    "stc": "14752",
+    "already_present_in_local_deep_min": true,
+    "related_collection_records": [
+      "5074",
+      "5074.5",
+      "5075"
+    ],
+    "note": "5074 / 5074.5 / 5075 describe variants of the same edition, edition_id 1478. Local collection metadata is already 1616; its 27 play rows incorrectly describe the 1640 edition family 5076."
+  },
+  "corrections": [
+    {
+      "old_tcp_alias": "A04632.1",
+      "current_source_unit_ids": [
+        "A04632.1"
+      ],
+      "title": "Every Man in His Humor",
+      "work_id": "176",
+      "old_deep_id": "5076.01",
+      "old_edition_id": "406",
+      "old_year": "1640",
+      "new_edition_id": "405",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.01",
+      "possible_record_deep_ids": [
+        "5074.01"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "176b",
+      "source_record_url": "https://deepplaybooks.org/5074.01/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.2",
+      "current_source_unit_ids": [
+        "A04632.2"
+      ],
+      "title": "Every Man Out of His Humor",
+      "work_id": "163",
+      "old_deep_id": "5076.02",
+      "old_edition_id": "369",
+      "old_year": "1640",
+      "new_edition_id": "368",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.02",
+      "possible_record_deep_ids": [
+        "5074.02",
+        "5074.03",
+        "5074.04",
+        "5074.05"
+      ],
+      "exact_record_state_status": "not_required_for_edition_id; inspect divisional title page before selecting among record states",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "163d(*)",
+      "source_record_url": "https://deepplaybooks.org/5074.02/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.3",
+      "current_source_unit_ids": [
+        "A04632.3"
+      ],
+      "title": "Cynthia's Revels, or The Fountain of Self-Love",
+      "work_id": "181",
+      "old_deep_id": "5076.03",
+      "old_edition_id": "414",
+      "old_year": "1640",
+      "new_edition_id": "413",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.06",
+      "possible_record_deep_ids": [
+        "5074.06",
+        "5074.07"
+      ],
+      "exact_record_state_status": "not_required_for_edition_id; inspect divisional title page before selecting among record states",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "181b(*)",
+      "source_record_url": "https://deepplaybooks.org/5074.06/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.4",
+      "current_source_unit_ids": [
+        "A04632.4"
+      ],
+      "title": "Poetaster, or The Arraignment",
+      "work_id": "186",
+      "old_deep_id": "5076.04",
+      "old_edition_id": "424",
+      "old_year": "1640",
+      "new_edition_id": "423",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.08",
+      "possible_record_deep_ids": [
+        "5074.08",
+        "5074.09",
+        "5074.10"
+      ],
+      "exact_record_state_status": "not_required_for_edition_id; inspect divisional title page before selecting among record states",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "186b(*)",
+      "source_record_url": "https://deepplaybooks.org/5074.08/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.5",
+      "current_source_unit_ids": [
+        "A04632.5"
+      ],
+      "title": "Sejanus His Fall",
+      "work_id": "216",
+      "old_deep_id": "5076.05",
+      "old_edition_id": "513",
+      "old_year": "1640",
+      "new_edition_id": "512",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.11",
+      "possible_record_deep_ids": [
+        "5074.11"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "216b",
+      "source_record_url": "https://deepplaybooks.org/5074.11/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.6",
+      "current_source_unit_ids": [
+        "A04632.6"
+      ],
+      "title": "Volpone, or The Fox",
+      "work_id": "259",
+      "old_deep_id": "5076.06",
+      "old_edition_id": "607",
+      "old_year": "1640",
+      "new_edition_id": "606",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.12",
+      "possible_record_deep_ids": [
+        "5074.12"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "259b",
+      "source_record_url": "https://deepplaybooks.org/5074.12/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.7",
+      "current_source_unit_ids": [
+        "A04632.7"
+      ],
+      "title": "Epicene, or The Silent Woman",
+      "work_id": "304",
+      "old_deep_id": "5076.07",
+      "old_edition_id": "706",
+      "old_year": "1640",
+      "new_edition_id": "704",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.13",
+      "possible_record_deep_ids": [
+        "5074.13",
+        "5074.14"
+      ],
+      "exact_record_state_status": "not_required_for_edition_id; inspect divisional title page before selecting among record states",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "304b(*)",
+      "source_record_url": "https://deepplaybooks.org/5074.13/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.8",
+      "current_source_unit_ids": [
+        "A04632.8"
+      ],
+      "title": "The Alchemist",
+      "work_id": "303",
+      "old_deep_id": "5076.08",
+      "old_edition_id": "703",
+      "old_year": "1640",
+      "new_edition_id": "702",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.15",
+      "possible_record_deep_ids": [
+        "5074.15"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "303b",
+      "source_record_url": "https://deepplaybooks.org/5074.15/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.9",
+      "current_source_unit_ids": [
+        "A04632.9"
+      ],
+      "title": "Catiline His Conspiracy",
+      "work_id": "296",
+      "old_deep_id": "5076.09",
+      "old_edition_id": "694",
+      "old_year": "1640",
+      "new_edition_id": "691",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.16",
+      "possible_record_deep_ids": [
+        "5074.16"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "296b",
+      "source_record_url": "https://deepplaybooks.org/5074.16/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.10",
+      "current_source_unit_ids": [],
+      "title": "The Coronation Triumph (The Royal Entry of King James I into London)",
+      "work_id": "200",
+      "old_deep_id": "5076.1",
+      "old_edition_id": "461",
+      "old_year": "1640",
+      "new_edition_id": "460",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.17",
+      "possible_record_deep_ids": [
+        "5074.17"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "200b",
+      "source_record_url": "https://deepplaybooks.org/5074.17/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.11",
+      "current_source_unit_ids": [
+        "A04632.13"
+      ],
+      "title": "The Royal Entertainment of the Queen and Prince at Althorp (The Satyr)",
+      "work_id": "201",
+      "old_deep_id": "5076.11",
+      "old_edition_id": "464",
+      "old_year": "1640",
+      "new_edition_id": "463",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.18",
+      "possible_record_deep_ids": [
+        "5074.18"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "201b",
+      "source_record_url": "https://deepplaybooks.org/5074.18/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.12",
+      "current_source_unit_ids": [],
+      "title": "The Royal Entertainment at Highgate (The Penates)",
+      "work_id": "339",
+      "old_deep_id": "5076.12",
+      "old_edition_id": "768",
+      "old_year": "1640",
+      "new_edition_id": "767",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.19",
+      "possible_record_deep_ids": [
+        "5074.19"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "339a",
+      "source_record_url": "https://deepplaybooks.org/5074.19/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.13",
+      "current_source_unit_ids": [],
+      "title": "The Royal Entertainment of the Two Kings of Great Britain and Denmark (The Entertainment at Theobalds, 1606) (The Hours)",
+      "work_id": "340",
+      "old_deep_id": "5076.13",
+      "old_edition_id": "770",
+      "old_year": "1640",
+      "new_edition_id": "769",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.20",
+      "possible_record_deep_ids": [
+        "5074.20"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "340a",
+      "source_record_url": "https://deepplaybooks.org/5074.20/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.14",
+      "current_source_unit_ids": [],
+      "title": "The Royal Entertainment at Theobalds, 1607 (The Genius)",
+      "work_id": "341",
+      "old_deep_id": "5076.14",
+      "old_edition_id": "772",
+      "old_year": "1640",
+      "new_edition_id": "771",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.21",
+      "possible_record_deep_ids": [
+        "5074.21"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "341a",
+      "source_record_url": "https://deepplaybooks.org/5074.21/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.15",
+      "current_source_unit_ids": [
+        "A04632.14.1"
+      ],
+      "title": "The Masque of Blackness (The Twelfth Night's Revels)",
+      "work_id": "269",
+      "old_deep_id": "5076.15",
+      "old_edition_id": "633",
+      "old_year": "1640",
+      "new_edition_id": "632",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.22",
+      "possible_record_deep_ids": [
+        "5074.22"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "269b",
+      "source_record_url": "https://deepplaybooks.org/5074.22/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.16",
+      "current_source_unit_ids": [
+        "A04632.14.2"
+      ],
+      "title": "The Masque of Beauty",
+      "work_id": "270",
+      "old_deep_id": "5076.16",
+      "old_edition_id": "636",
+      "old_year": "1640",
+      "new_edition_id": "635",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.23",
+      "possible_record_deep_ids": [
+        "5074.23"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "270b",
+      "source_record_url": "https://deepplaybooks.org/5074.23/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.17",
+      "current_source_unit_ids": [
+        "A04632.14.3"
+      ],
+      "title": "Hymenaei, or the Solemnities of Masque and Barriers at a Marriage (Truth versus Opinion)",
+      "work_id": "237",
+      "old_deep_id": "5076.17",
+      "old_edition_id": "560",
+      "old_year": "1640",
+      "new_edition_id": "559",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.24",
+      "possible_record_deep_ids": [
+        "5074.24"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "237b",
+      "source_record_url": "https://deepplaybooks.org/5074.24/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.18",
+      "current_source_unit_ids": [
+        "A04632.14.4"
+      ],
+      "title": "The Masque at Lord Haddington's Marriage (The Hue and Cry after the Fugitive Cupid)",
+      "work_id": "271",
+      "old_deep_id": "5076.18",
+      "old_edition_id": "639",
+      "old_year": "1640",
+      "new_edition_id": "638",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.25",
+      "possible_record_deep_ids": [
+        "5074.25"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": false,
+      "greg_full_reference": "271b",
+      "source_record_url": "https://deepplaybooks.org/5074.25/",
+      "notes": "5075 collection_contains omits this link; 5074 contains it, and TCP A04632.14.4 explicitly names the Haddington marriage. Do not treat the omitted collection link as absence from this XML."
+    },
+    {
+      "old_tcp_alias": "A04632.19",
+      "current_source_unit_ids": [
+        "A04632.14.5"
+      ],
+      "title": "The Masque of Queens",
+      "work_id": "280",
+      "old_deep_id": "5076.19",
+      "old_edition_id": "662",
+      "old_year": "1640",
+      "new_edition_id": "661",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.26",
+      "possible_record_deep_ids": [
+        "5074.26"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "280b",
+      "source_record_url": "https://deepplaybooks.org/5074.26/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.20",
+      "current_source_unit_ids": [
+        "A04632.14.6"
+      ],
+      "title": "Prince Henry's Barriers  (The Lady of the Lake) (Merlin and Meliadus)",
+      "work_id": "342",
+      "old_deep_id": "5076.2",
+      "old_edition_id": "774",
+      "old_year": "1640",
+      "new_edition_id": "773",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.27",
+      "possible_record_deep_ids": [
+        "5074.27"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "342a",
+      "source_record_url": "https://deepplaybooks.org/5074.27/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.21",
+      "current_source_unit_ids": [],
+      "title": "Oberon, the Faery Prince",
+      "work_id": "343",
+      "old_deep_id": "5076.21",
+      "old_edition_id": "776",
+      "old_year": "1640",
+      "new_edition_id": "775",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.28",
+      "possible_record_deep_ids": [
+        "5074.28"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "343a",
+      "source_record_url": "https://deepplaybooks.org/5074.28/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.22",
+      "current_source_unit_ids": [],
+      "title": "Love Freed from Ignorance and Folly",
+      "work_id": "344",
+      "old_deep_id": "5076.22",
+      "old_edition_id": "778",
+      "old_year": "1640",
+      "new_edition_id": "777",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.29",
+      "possible_record_deep_ids": [
+        "5074.29"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "344a",
+      "source_record_url": "https://deepplaybooks.org/5074.29/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.23",
+      "current_source_unit_ids": [],
+      "title": "Love Restored",
+      "work_id": "345",
+      "old_deep_id": "5076.23",
+      "old_edition_id": "780",
+      "old_year": "1640",
+      "new_edition_id": "779",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.30",
+      "possible_record_deep_ids": [
+        "5074.30"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "345a",
+      "source_record_url": "https://deepplaybooks.org/5074.30/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.24",
+      "current_source_unit_ids": [],
+      "title": "The Challenge at Tilt (Eros and Anteros)",
+      "work_id": "346",
+      "old_deep_id": "5076.24",
+      "old_edition_id": "782",
+      "old_year": "1640",
+      "new_edition_id": "781",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.31",
+      "possible_record_deep_ids": [
+        "5074.31"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "346a",
+      "source_record_url": "https://deepplaybooks.org/5074.31/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.25",
+      "current_source_unit_ids": [],
+      "title": "The Irish Masque",
+      "work_id": "347",
+      "old_deep_id": "5076.25",
+      "old_edition_id": "784",
+      "old_year": "1640",
+      "new_edition_id": "783",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.32",
+      "possible_record_deep_ids": [
+        "5074.32"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "347a",
+      "source_record_url": "https://deepplaybooks.org/5074.32/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.26",
+      "current_source_unit_ids": [
+        "A04632.14.10.0"
+      ],
+      "title": "Mercury Vindicated from the Alchemists at Court",
+      "work_id": "348",
+      "old_deep_id": "5076.26",
+      "old_edition_id": "786",
+      "old_year": "1640",
+      "new_edition_id": "785",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.33",
+      "possible_record_deep_ids": [
+        "5074.33"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "348a",
+      "source_record_url": "https://deepplaybooks.org/5074.33/",
+      "notes": ""
+    },
+    {
+      "old_tcp_alias": "A04632.27",
+      "current_source_unit_ids": [
+        "A04632.14.10.1"
+      ],
+      "title": "The Golden Age Restored",
+      "work_id": "349",
+      "old_deep_id": "5076.27",
+      "old_edition_id": "788",
+      "old_year": "1640",
+      "new_edition_id": "787",
+      "new_year": "1616",
+      "edition_reference_deep_id": "5074.34",
+      "possible_record_deep_ids": [
+        "5074.34"
+      ],
+      "exact_record_state_status": "single exported record for this work in 1616 family",
+      "official_in_collection_id": 1444,
+      "official_in_collection_link": "<a target=\"_blank\" href=\"../5074\">The Works (1616)</a>",
+      "linked_from_5075_collection": true,
+      "greg_full_reference": "349a",
+      "source_record_url": "https://deepplaybooks.org/5074.34/",
+      "notes": ""
+    }
+  ],
+  "delivery_revision": "2026-09-07.fixed-work-id-strings",
+  "delivery_note": "Work IDs are plain decimal strings, never scientific notation. This corrects the delivery serialization only; official export provenance and all edition mappings remain unchanged."
+}

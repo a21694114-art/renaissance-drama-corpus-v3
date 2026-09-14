@@ -1,0 +1,17 @@
+{
+ "version": "reg-view-2026-09-14.4",
+ "built_at": "2026-09-14 13:15:10",
+ "corpus_build": "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/topic modeling/sep6/new_pipeline/out_corpus/corpus-v3-2026-09-08",
+ "kept_nodes_sha256": "3660121b98110673a2e8b28f8af49d4314130b56ed6216433349dd6547a25f14",
+ "corpus_manifest_sha256": "40902241e225c8807987695f07b0338285b08a8f280636d0df09db979bf5c528",
+ "ep_dir": "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/earlyprint_download/data/xml",
+ "ep_manifest": "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/earlyprint_download/data/download_manifest.csv",
+ "rules": "to a `reg` value (documented for the paper):\n  1. reject garbage: no letters, mixed inner case (tIED), or equal to the token's POS tag;\n  2. proper nouns (pos nn*/np*): accept reg only if it keeps the initial capital (Moore->Moor yes, Iago->jago no);\n  3. join=\"right\"/\"left\" sub-tokens are glued (Wee+le -> we'll);\n  4. everything else: reg accepted as given.  No contextual review (then/than etc. accepted as EarlyPrint has them).",
+ "fuzzy_min": 0.85,
+ "lookahead": 60,
+ "span_min_cover": 0.75,
+ "views": [
+  "texts_analysis_en",
+  "texts_no_prologue_epilogue"
+ ]
+}

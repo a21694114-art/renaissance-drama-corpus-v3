@@ -1,0 +1,14 @@
+{
+ "checked_at": "2026-09-08T00:54:40",
+ "rule_version": "extract-2026-09-08.13",
+ "inputs": {
+  "lines.csv": "ca5ee5652564fc65ef5a20f86cb1020cb74fc06aa6565a8ed5a138981e0da4e0",
+  "frontback_lines.csv": "309b86ab7310a974db3df06a7a55887a5002463ad1893973ecf35f0dd260322f"
+ },
+ "source_files": 469,
+ "candidate_nodes_in_xml": 1055990,
+ "missing": 0,
+ "duplicated": 0,
+ "table_keys_total": 1055990,
+ "table_keys_distinct": 1055990
+}

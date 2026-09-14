@@ -1,0 +1,15 @@
+{
+ "builder_version": "build_corpus-2026-09-08.v8",
+ "builder_sha256": "bfd6c9a3286c2ba202850bb603cf40ca6797028e3d43edf2b8145262e762fa00",
+ "args": {
+  "version": "corpus-v3-2026-09-08",
+  "line_rule": "structural",
+  "frames": "on",
+  "dry_run": false
+ },
+ "built_at": "2026-09-08T02:37:57",
+ "rule_versions": [
+  "extract-2026-09-08.13"
+ ],
+ "map_version": "unit_map-2026-09-08.v16"
+}

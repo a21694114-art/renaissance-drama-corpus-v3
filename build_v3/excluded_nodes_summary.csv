@@ -1,0 +1,57 @@
+reason,n_nodes
+unit not included (excluded_proposed),56602
+unit not included (alternate_witness_same_edition),13384
+front/back: frame paratext (single work),7268
+unit not included (deferred_extension),5632
+front/back: frame paratext (collection-level (2 works) - volume para),1326
+node decision exclude (separate_literary_appendix),968
+unit not included (excluded_from_main),606
+front/back: frame paratext (no mapped work under this <text>),567
+container audit exclude (performance_description),540
+container audit exclude (authorial_description),379
+node decision exclude (performance_description),307
+front/back: frame paratext (collection-level (3 works) - volume para),307
+container audit exclude (non-performance text),293
+front/back: frame paratext (collection-level (22 works) - volume par),288
+node decision exclude (dedicatory_or_commendatory_verse),252
+line rule structural dropped (argument),238
+front/back: frame paratext (collection-level (36 works) - volume par),140
+node decision exclude (authorial_description),104
+front/back: frame decision exclude,104
+container audit exclude (narrative),81
+container audit exclude (description),75
+node decision exclude (meditative_poem_editorial),54
+front/back: frame attributed to a work not built (A04633.4),39
+node decision exclude (narrative),32
+front/back: frame attributed to a work not built (A04633.3),32
+node decision exclude (descriptive_or_bibliographic_appendage),30
+node decision exclude (displayed_epigram_editorial),24
+front/back: frame attributed to a work not built (A04633.1),24
+node decision exclude (inscription),23
+node decision exclude (argument),22
+node decision exclude (heading_or_speaker_cue),20
+container audit exclude (heading_or_speaker_cue),18
+container audit exclude (inscription),16
+line rule structural dropped (title_page),16
+front/back: frame paratext (collection-level (6 works) - volume para),14
+node decision exclude (character_list),12
+node decision exclude (descriptive_catalogue),11
+line rule structural dropped (dramatis_personae),8
+line rule structural dropped (to_the_reader),8
+node decision exclude (lyric_appendix_editorial),8
+node decision exclude (quotation_in_commentary),7
+line rule structural dropped (inscription),6
+node decision exclude (authorial_history_description_or_credit),5
+front/back: frame paratext (collection-level (10 works) - volume par),5
+front/back: frame paratext (collection-level (4 works) - volume para),4
+node decision exclude (source_text_unavailable),3
+line rule structural dropped (imprimatur),3
+node decision exclude (descriptive_summary),3
+node decision exclude (production_credit),2
+node decision exclude (authorial_performance_description),2
+node decision exclude (stage_direction),2
+line rule structural dropped (dedication),2
+container audit exclude (authorial_note),1
+line rule structural dropped (descriptions),1
+node decision exclude (displayed_inscription),1
+container audit exclude (production_credit),1

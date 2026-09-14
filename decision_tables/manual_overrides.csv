@@ -1,0 +1,102 @@
+unit_id,deep_TCP,claims_primary_identity,identity_status,relation,inclusion_status,evidence
+A04632.14.1,A04632.15,yes,confirmed_manual,primary,proposed,"head: 'THE QVEENES MASQVES. The first, OF BLACKNESSE' = Masque of Blackness (auto tie-break had picked Masque of Queens)"
+A04632.14.2,A04632.16,yes,confirmed_manual,primary,proposed,"head empty ('Their Persons were.'); text: 'bring newes of them from the Sea, I induc'd Boreas' = Masque of Beauty; folio order Blackness>Beauty; DEEP order .15>.16"
+A04632.14.4,A04632.18,yes,confirmed_manual,primary,proposed,head: 'THE DESCRIPTION OF THE MASQVE. With the Nuptiall songs. At the Lord Vicount HADINGTONS marriage' = Haddington masque
+A04632.14.5,A04632.19,yes,confirmed_manual,primary,proposed,head: 'THE MASQVE OF QVEENES'
+A04632.14.6,A04632.20,yes,confirmed_manual,primary,proposed,head: 'THE SPEECHES AT PRINCE HENRIES BARRIERS' (TCP typo type='maque'); 9 pages missing in TCP copy
+A04632.14.7,,no,confirmed_manual,placeholder,excluded_proposed,div holds only <gap reason=missing> (9 pages): source pages not transcribed; covers part of Oberon / Love Freed / Love Restored / Challenge at Tilt / Irish Masque (DEEP .21-.25)
+A04632.14.8,,no,confirmed_manual,placeholder,excluded_proposed,div holds only <gap reason=missing> (5 pages): source pages not transcribed (see .14.7)
+A04632.14.9,,no,confirmed_manual,placeholder,excluded_proposed,div holds only <gap reason=missing> (11 pages): source pages not transcribed (see .14.7)
+A04632.14.10.1,A04632.27,yes,confirmed_manual,primary,proposed,head: 'THE GOLDEN AGE RESTOR'D' nested inside the Mercury Vindicated div; split off
+A04632.14.10.0,A04632.26,yes,confirmed_manual,primary,proposed,residual of the Mercury Vindicated div after the nested Golden Age was split off = Mercury Vindicated itself (head 'MERCVRIE VINDICATED FROM THE ALCHEMISTS')
+A21246.1.0,A21246.3,yes,confirmed_manual,primary,proposed,residual of A21246.1: speech of the old soldier 'her Maiesty went from Oxforde to Ricort' = The Royal Entertainment at Rycote
+A69188.2,A69188,no,confirmed_manual,appendix,excluded_proposed,'DAVIDS DESIRE to goe to Church' = sermon bound with The Isle of Gulls; not dramatic text
+A69188.3,A69188,no,confirmed_manual,appendix,excluded_proposed,"second sermon, same as A69188.2"
+A13125.2,A13125,no,confirmed_manual,alternative_version,excluded_from_main,"Aglaura: second <text> starts at ACTUS V = the alternative (tragicomic) fifth act; keep as variant, do not concatenate to A13125.1"
+A03224.1.0,A03224.1,no,confirmed_manual,paratext_in_body,excluded_proposed,203 chars: volume title head 'THE FIRST AND SECOND partes of King Edward the fourth' left outside the two part divs
+A10411.1.0,,no,confirmed_manual,appendix,excluded_proposed,"residual of A10411.1 = Randolph's poems/eclogues/odes/epigrams (divs answer;apology;eclogue;elegy;epigram;epitaph;ode;poem;song) - non-dramatic matter of the volume, 136,920 chars"
+A04632.11,A04632.10,yes,confirmed_manual,primary,proposed,"head 'At Fen-Church' = the Fenchurch arch of the Coronation Triumph (Royal Entry of James I, 1604)"
+A04632.13.1,A04632.12,yes,confirmed_manual,primary,proposed,"section head 'A PRIVATE ENTERTAINMENT of the KING and QVEENE, on May-day' = Highgate 1604 (The Penates)"
+A04632.13.2,A04632.13,yes,confirmed_manual,primary,proposed,section head 'The entertainment of the tvvo Kings of Great BRITAINE and DENMARKE' = Theobalds 1606
+A04632.13.3,A04632.14,yes,confirmed_manual,primary,proposed,"section head 'An Entertainment of King IAMES and Queene ANNE, at THEOBALDS' = Theobalds 1607 (The Genius)"
+A04632.13.0,A04632.11,yes,confirmed_manual,primary,proposed,residual of the 'A SATYRE' text after the three sections are split off = the Althorp entertainment (The Satyr) itself
+A10411.1.1,,no,confirmed_manual,appendix,excluded_proposed,"'A Dialogue. Thirsis. Lalage.' - 1,468-char dialogue poem inside Randolph's Poems section; not a DEEP work"
+A10411.1.2,,no,confirmed_manual,appendix,excluded_proposed,'A Dialogue betwixt a Nymph and a Shepheard' - 769-char dialogue poem inside the Poems section; not a DEEP work
+A01513.1,A01513.1,yes,confirmed_manual,primary,proposed,head 'SVPPOSES: A Comedie written in the Italian tongue by Ariosto' = Supposes 1573 (DEEP 5006.01)
+A01513.2,A01513.2,yes,confirmed_manual,primary,proposed,head 'IOCASTA: A Tragedie vvritten in Greke by Euripides' = Jocasta 1573 (DEEP 5006.02)
+A01514.4,A01514.3,yes,confirmed_manual,primary,proposed,"Posies 1575: group text 'The first Acte' with 5 acts, 475 sp, trailer 'Finis Epilogi' = Jocasta (DEEP 5007.03); Supposes is A01514.3"
+A01514.2,,no,confirmed_manual,non_dramatic,excluded_proposed,"Posies 1575 'Peroratio' section = poems (Dulce bellum inexpertis etc.), no dramatic text"
+A01514.5,,no,confirmed_manual,non_dramatic,excluded_proposed,"Posies 1575 'The fruite of Fetters' + Adventures of Master F.I. = poems/prose fiction, not drama"
+A01851.2,A01851.1,yes,confirmed_manual,primary,proposed,"Gomersall 1633: group text with 'The Prologue', Actus primi, 268 sp = the tragedy Lodovick Sforza (DEEP 5100.01)"
+A01851.1,A01851.1,no,confirmed_manual,appendix,excluded_proposed,"'An Elegy upon the death of Mris. Anne King' - poem bound with the play, not drama"
+A01851.3,A01851.1,no,confirmed_manual,appendix,excluded_proposed,"'The Levites Revenge' - narrative poem bound with the play (0 sp), not drama"
+A02226.4,A02226.1,yes,confirmed_manual,primary,proposed,"Greville 1633: first play, argument head 'She mistaking, kills Caines childe' = Alaham (Caine is Alaham's character); Mustapha is A02226.5"
+A03022.2,A03022.1,yes,confirmed_manual,primary,proposed,"Daniel 1610: 'The discription of the first Scene' + Tethys, Tritons, speeches = Tethys' Festival (DEEP 5071.01); speeches not wrapped in <sp>"
+A03022.1,A03022.1,no,confirmed_manual,appendix,excluded_proposed,"'The Names of such Noblemen...' + narrative of the creation of Prince Henry - ceremonial account, not the masque text"
+A04632.3,A04632.3,yes,confirmed_manual,primary,proposed,1616 folio head 'CYNTHIAS REVELS' = Cynthia's Revels
+A04632.5,A04632.5,yes,confirmed_manual,primary,proposed,1616 folio head 'SEIANVS. Act. I.' = Sejanus
+A04632.9,A04632.9,yes,confirmed_manual,primary,proposed,1616 folio head 'CATILINE. Act I.' = Catiline
+A04632.10,,no,confirmed_manual,non_dramatic,excluded_proposed,1616 folio 'EPIGRAMMES' - poems
+A04632.12,,no,confirmed_manual,non_dramatic,excluded_proposed,1616 folio 'A PANEGYRE' - poem
+A04633.1,A04633.1,yes,confirmed_manual,primary,proposed,"1631 volume: 'THE INDVCTION. ON THE STAGE' = Bartholomew Fair (DEEP 5097.01/.02, edition 971)"
+A04633.2,A04633.3,yes,confirmed_manual,primary,proposed,"1631 volume head 'THE DIVELL IS AN ASSE' = The Devil Is an Ass (DEEP 5097.03, edition 973)"
+A04633.3,A04633.4,yes,confirmed_manual,primary,proposed,"1631 volume 'The first Intermeane after the first Act' = The Staple of News (DEEP 5097.04, edition 972)"
+A04637.1,A04637.1,yes,confirmed_manual,primary,proposed,1604 quarto 'The Pegme at Fen-church' = Jonson's part of the Royal Entry (DEEP 5059.01)
+A04637.2,,no,confirmed_manual,non_dramatic,excluded_proposed,1604 quarto 'A PANEGYRE' - poem
+A04637.3,A04637.2,yes,confirmed_manual,primary,proposed,"1604 quarto: 'The Inuention was, to haue a Satyre lodged in a little Spinet' + songs = Entertainment at Althorp (DEEP 5059.02)"
+A04643.1,A04643.1,yes,confirmed_manual,primary,proposed,"1608 quarto head 'THE QVEENES MASQVES. The first, of Blacknesse' = Masque of Blackness"
+A04643.2,A04643.2,yes,confirmed_manual,primary,proposed,1608 quarto head 'THE SECOND MASQVE. Which was of Beauty' = Masque of Beauty
+A07004.1,A07004.1,yes,confirmed_manual,primary,proposed,"1590 Tamburlaine: first play, prologue 'From iygging vaines of riming mother wits' = PART 1 (DEEP 5017.01); the automatic order assignment had swapped the parts"
+A07004.3,A07004.2,yes,confirmed_manual,primary,proposed,1590 Tamburlaine: head 'THE SECOND PART OF The bloody Conquests of mighty Tamburlaine' = PART 2 (DEEP 5017.02)
+A07502.1,A07502.1,yes,confirmed_manual,primary,proposed,"Middleton Honourable Entertainments 1621: 'On Monday and Tuesday in Easter weeke, 1620. the first Entertainment, at the house of Sr. William Cokaine' = DEEP 5078.01"
+A07502.2.0,A07502.2,yes,confirmed_manual,primary,proposed,"residual of 'The second Entertainment': the speech 'Why this is nobly done, to come to grace a Sport' = the Bunhill shooting-day entertainment (DEEP 5078.02); the later entertainments are the part divs"
+A07502.2.1,A07502.3,yes,confirmed_manual,primary,proposed,head 'Vpon the renewing of that worthy and laudable Custome of Visiting the Conduit heads' = Conduit Head (DEEP 5078.03)
+A07502.2.2,A07502.4,yes,confirmed_manual,primary,proposed,head 'A Speech intended for the General Training' = General Training (DEEP 5078.04)
+A07502.2.3,A07502.6,yes,confirmed_manual,primary,proposed,"'The First Entertainement, at his first Great Feast praeparde to giue Welcome to his Owne Noble Fraternitie, the Company of Haberdashers' with Comus = Sir Francis Jones's Welcome (DEEP 5078.06)"
+A10402.1,A10402.1,yes,confirmed_manual,primary,proposed,Randolph 1630: 'THE PRAELVDIVM' opens Aristippus (DEEP 5093.01)
+A10402.2,A10402.2,yes,confirmed_manual,primary,proposed,"head 'THE PEDLER, AS IT WAS PRESENTED IN A STRANGE SHOVV' = The Conceited Pedlar"
+A10411.3,A10411.2,yes,confirmed_manual,primary,proposed,"Randolph 1638 head 'AMYNTAS.' = Amyntas, or The Impossible Dowry"
+A10440.1.1,A10440.1,yes,confirmed_manual,primary,proposed,"Rastell: first part div, trailer 'Finis prime partis' = 1 Gentleness and Nobility (DEEP 5001.01); split by the Latin part rule extract-2026-09-07.12"
+A10440.1.2,A10440.2,yes,confirmed_manual,primary,proposed,head 'Secunda pars' = 2 Gentleness and Nobility (DEEP 5001.02)
+A10440.1.3,A10440.2,no,confirmed_manual,component,proposed,'The Philosopher' - the concluding speech of the interlude following Part 2 (with Rastell's colophon) - component of Part 2
+A11909.1,A11909.1,yes,confirmed_manual,primary,proposed,Seneca 1581: first tragedy 'The Argument of this Tragedy' = Hercules Furens (DEEP 5015.01); the other nine are matched by title
+A11954.21,A11954.21,yes,confirmed_manual,primary,proposed,"Folio head 'The second Part of Henry the Sixt, with the death of the Good Duke HVMFREY' = 2 Henry VI"
+A11954.22,A11954.22,yes,confirmed_manual,primary,proposed,"Folio head 'The third Part of Henry the Sixt, with the death of the Duke of YORKE' = 3 Henry VI"
+A11954.25,A11954.25,yes,confirmed_manual,primary,proposed,Folio: play opening with 'The Prologue' placed between Henry VIII and Coriolanus = Troilus and Cressida
+A11954.36,A11954.36,yes,confirmed_manual,primary,proposed,Folio head 'THE TRAGEDIE OF CYMBELINE'
+A13393.2,A13393.1,yes,confirmed_manual,primary,proposed,Tatham 1640 head 'Love crownes the end' (182 sp) = Love Crowns the End (DEEP 5130.01)
+A13393.1,A13393.1,no,confirmed_manual,appendix,excluded_proposed,"Tatham 'Fancies Theater' poems incl. 'A Dialogue betweene Momus, Tyme, and the Author' - poems, not the play"
+A17879.1,A17879.1,yes,confirmed_manual,primary,proposed,Campion 1613 head 'A RELATION OF THE LATE ROYALL ENTERTAINMENT GIVEN BY the Right Honorable the Lord Knowles at Cawsome-House' = Caversham
+A17879.2,A17879.2,yes,confirmed_manual,primary,proposed,"head 'THE DESCRIPTION, SPEECHES, AND SONGS, OF THE LORDS MASKE' = The Lord's Masque"
+A17961.2,A17961.1,yes,confirmed_manual,primary,proposed,Carew 1640: group text 'THE DESCRIPTION OF THE SCAENE' + 37 sp = Coelum Britannicum (DEEP 5126.01; 5126.02 is a duplicate row of the same edition 1023)
+A17961.1,A17961.1,no,confirmed_manual,appendix,excluded_proposed,"Carew's Poems ('The first of Iealousie. Dialogue' etc.) - lyric poems, not the masque"
+A19816.3,A19816.1,yes,confirmed_manual,primary,proposed,Daniel 1594: group text 'THE ARGVMENT' with 64 sp = The Tragedy of Cleopatra (DEEP 5027.01)
+A19816.1,A19816.1,no,confirmed_manual,appendix,excluded_proposed,'TO DELIA' sonnets - not drama
+A19816.2,A19816.1,no,confirmed_manual,appendix,excluded_proposed,'THE COMPLAINT OF ROSAMOND' - narrative poem
+A19834.4,A19834.1,yes,confirmed_manual,primary,proposed,Daniel 1599 head 'THE TRAGEDIE OF CLEOPATRA' (72 sp) = Cleopatra (DEEP 5047.01)
+A19834.1,A19834.1,no,confirmed_manual,appendix,excluded_proposed,"'THE ARGVMENT OF THE FIRST BOOKE' - The Civil Wars (epic), not drama"
+A19834.2,A19834.1,no,confirmed_manual,appendix,excluded_proposed,"'MVSOPHILVS' - poem (dialogue in verse, not a play)"
+A19834.3,A19834.1,no,confirmed_manual,appendix,excluded_proposed,'A Letter sent from Octauia' - verse epistle
+A19834.5,A19834.1,no,confirmed_manual,appendix,excluded_proposed,'THE COMPLAINT OF ROSAMOND' - narrative poem
+A21246.1.1,A21246.1,yes,confirmed_manual,primary,proposed,Speeches delivered to Her Majesty 1592: first pageant div (no head) = Bisham (order Bisham > Sudeley > Rycote in the print; Rycote is the residual A21246.1.0 already overridden)
+A21246.1.2,A21246.2,yes,confirmed_manual,primary,proposed,second pageant div 'The Song' = Sudeley
+A72473.1.3,A72473.3,yes,confirmed_manual,primary,proposed,"1640 vol. 2 (1631 sheets) head 'THE DIVELL IS AN ASSE' = The Devil Is an Ass (DEEP 5124.003, edition 973 - same edition as A04633.2, see witness selection)"
+A72473.2.1.1,A72473.5,yes,confirmed_manual,primary,proposed,"head 'CHRISTMAS, HIS MASQUE; AS IT VVAS PRESENTED AT COVRT. 1616' = Christmas His Masque"
+A72473.2.1.2,A72473.6,yes,confirmed_manual,primary,proposed,"'THE FRONT BEFORE THE SCENE, was an Arch-Triumphall' = the opening of Lovers Made Men (Lord Hay's masque 1617), DEEP 5124.02"
+A72473.2.1.7,A72473.11,yes,confirmed_manual,primary,proposed,head 'THE PROLOGUE AT WINDSOR' = The Gypsies Metamorphosed (DEEP 5124.07)
+A72473.2.1.12,A72473.16,yes,confirmed_manual,primary,proposed,head 'THE MASQUE OF OWLES AT KENELWORTH' = The Masque of Owls
+A72473.2.2,,no,confirmed_manual,non_dramatic,excluded_proposed,1640 vol. 2 'Complement.' etc. = The Underwood (poems)
+A72473.4.1,,no,confirmed_manual,non_dramatic,excluded_proposed,"'HORATIUS DE ARTE POETICA' - translation of Horace, not drama (Latin)"
+A72473.4.2,,no,confirmed_manual,non_dramatic,excluded_proposed,'The English Grammar' - prose treatise
+A72473.4.3,,no,confirmed_manual,non_dramatic,excluded_proposed,"'EXPLORATA: OR, DISCOVERIES' - prose"
+A72573.1,,no,pending,outside_deep_scope,supplementary,"Lyndsay 'Ane Pleasant Satyre of the thrie Estaitis' (1602, Scots): no DEEP record for this TCP id (DEEP covers English playbooks) and the text is Scots - DEFERRED to Grace (frame question: DEEP scope + language), not in v1 | SUPPLEMENTARY per policy_decisions.csv #3 (2026-09-08): Scots text outside the DEEP sampling frame, kept with source unit id, language sco (unit_language.csv override), no DEEP id invented."
+A01227.1,A01227.1,yes,confirmed_manual,component,proposed,Fraunce 1591 'Amyntas Pastorall. The first part of the Countesse of Pembrokes Yuychurch' - first part of the one DEEP work (5024.01) - component
+A01227.2,A01227.1,no,confirmed_manual,component,proposed,"'Phillis Funerall. The second part of the Countesse of Pembrokes Yuychurch' (pastoral, no <sp>) - second part of the same DEEP work - component; outside-<sp> text is function-audited"
+A07502.2.4.1,A07502.8,yes,confirmed_manual,primary,proposed,"Split (extract-2026-09-08.13, children 1-8 of /*/*[2]/*[2]/*[2]/*[9]): head 'The Inuention' + 'At the House of Sir Francis Ihones, L. Maior. For the solemne feast of Easter' - the Four Seasons songs and Flora's speech = Sir Francis Jones's at Easter (DEEP 5078.08, work 376, edition 835). Was A07502.2.4 (mixed three works) in corpus v1. Source: ChatGPT corpus_v1 review source_split_plan.json + Claude source read."
+A07502.2.4.2,A07502.9,yes,confirmed_manual,primary,proposed,"Split (children 9-13): 'Here followes the worthy and Noble Entertainments of the Lords of his Maiesties most Honourable Priuy Councell ... The first Entertainment vpon Thursday in Easter weeke ... 1621' at Sheriff Allen's = Lords of the Council by Sheriff Allen / Flora's Welcome (DEEP 5078.09, work 377, edition 836)."
+A07502.2.4.3,A07502.10,yes,confirmed_manual,primary,proposed,"Split (children 14-30): 'The last Entertainment full as Noble and worthy as the former, vpon the Saturday ensuing, being the 21. of the same month' - Flora, Hyacinth, Adonis dialogue (12 <sp>) = Lords of the Council by Sheriff Ducie / Flora's Servants (DEEP 5078.10, work 378, edition 837)."
+A01514.1.1,A01514.1,yes,confirmed_manual,primary,proposed,"Split (children 35-38 of the 'Flowers' poems div): head 'A deuise of a Maske for the right honorable Viscount Mountacute, written vpon this occasion, when the sayde L. had prepared to solemnize twoo marriages' + the Actor's spoken continuation (36 'the Actor tooke maister Tho. Bro. by the hand ... with these words', 37 'saying thus', 38 'the Actor did make an ende thus') = Montague Masque (DEEP 5007.01, work 62, edition 110, [1575]). ChatGPT located div 35 (346 nodes); Claude added divs 36-38 (30 spoken lines) by function."
+A01514.1.0,,no,confirmed_manual,non_dramatic,excluded_proposed,"Residual of Posies 1575 'Flowers' after the Montague Masque was split off: 43 lyric/occasional poems (Anatomy of a Lover, Lullaby, Deprofundis, Memories, Epitaph on Bourcher, Dan Bartholmew of Bathe, The Reporter...) - heads read 2026-09-08; no spoken/performed text; not a DEEP work."
+A16527.1,A16527.5,yes,confirmed_manual,primary,proposed,"Head 'THE TRAGEDIE of Croesus' = Croesus (DEEP 5060.01, work 209, edition 491, 1604); the 1607 volume A16527 is DEEP 5061 = the 1604 edition 1466 reissued with a cancel title leaf, and 5061 collection_contains links 5060.01/5060.02 (DEEP official export item_data.json sha256 10005117..., accessed 2026-09-07 by ChatGPT: official_reconnections.json). Local deep_min row A16527.1 (a duplicate of the Alexandraean Tragedy) was corrupt; corrected row added as A16527.5 in deep_additions.csv. No 5061.xx child id invented."
+A16527.2,A16527.6,yes,confirmed_manual,primary,proposed,"Head 'THE TRAGEDY OF DARIVS' = Darius (DEEP 5060.02, work 196, edition 446, 1604; TCP sourceDesc: 'The tragedie of Darius retains its original 1604 title page'). Same official-export evidence as A16527.1; corrected row added as A16527.6 in deep_additions.csv."
+A03241.23,,no,confirmed_manual,performance_frames_unattributed,supplementary,"Heywood, Pleasant Dialogues 1637, 'Sundry Fancies': 620 body candidates = prologues (230), epilogues (170) and presenter speeches (220) written for court, private-house and playhouse performances (Somerset House, Whitehall, Hampton Court, Earl of Dover's, Red Bull Richard III, Cockpit Queen Elizabeth, Cupid and Psyche). Performance language, but printed apart from the plays and NOT attributable to a DEEP edition text by work+witness; the seven frames_attribution rows for A03241 cover only front/back paratext, so the v1 claim 'frames handled by frames_attribution' was FALSE and is withdrawn (ChatGPT heywood_frame_omission.json). Not 'verified non-dramatic'. Proposed policy for Grace: keep as documented supplementary material outside the main corpus; never appended to other editions on a title match. | SUPPLEMENTARY per policy_decisions.csv #1 (2026-09-08): separately documented performance-frame material outside the main corpus."
