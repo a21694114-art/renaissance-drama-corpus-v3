@@ -1,128 +1,233 @@
 # Renaissance Drama Corpus v3
 
-An audited corpus of early modern English drama (1520–1641) built from the raw EEBO-TCP
-XML for neural topic modelling, with a spelling-regularized view derived from EarlyPrint.
-582 editions of 518 works; 580 English analysis documents.
+A corpus of early modern English drama (1520–1641) prepared for computational analysis,
+built from the EEBO-TCP XML with DEEP metadata and a spelling-regularized view derived from
+EarlyPrint. 582 editions of 518 works; 580 English analysis documents (46.5 M characters).
 
-This repository replaces the corpus stages of
-[renaissance-drama-topic-modeling](https://github.com/a21694114-art/renaissance-drama-topic-modeling)
-(archived), the pipeline behind Dain Lee & Sujin Kang, "Modelling Genre as Thematic
-Distribution: A Neural Topic Modeling Analysis of Early Modern Plays" (World Shakespeare
-Congress 2026, Seminar 14). The corpus used for that paper was rebuilt from source with a
-provenance-tagged, fully audited procedure: every text node in the output can be traced to a
-source file (SHA-256), an XPath and a text hash, and every inclusion or exclusion decision is
-recorded in a table that the builder re-verifies on each run. Modelling on the rebuilt corpus
-will be added here in later stages.
+Each line in the frozen original-spelling output is linked in `kept_nodes.csv` to a source
+file (SHA-256), an XPath and a text hash. The regularized view retains the same document
+names and line order, so each line can be linked back to that source node. Selection rules
+and contextual decisions are recorded in code and tables; the builder checks their
+applicable provenance and consistency constraints on each run. The current release is **v3** (frozen 2026-09-08); the regularized view is
+**r3** (2026-09-14).
 
-## Why the corpus was rebuilt
+## Pipeline
 
-The original build had three defects, found in September 2026:
+```
+EEBO-TCP XML (469 files) + DEEP metadata
+   │
+   ▼  1. unit extraction — split collections into plays, tag every <l>/<p> with provenance
+   ▼  2. work mapping — attach each unit to a DEEP work / edition; choose witnesses
+   ▼  3. performance-text selection — keep spoken, sung and recited text; record every decision
+   ▼  4. verification — coverage, regression tests, freeze gate, read-back
+   ▼  5. spelling regularization — align to EarlyPrint, apply its `reg` (separate view)
+   ▼
+texts_analysis_en/  ·  texts_analysis_en_reg/  ·  supplementary/  ·  manifests
+```
 
-1. a substring blacklist meant to remove front matter also deleted dialogue containing the
-   strings `tei` and `oxford` (bias by printer and period);
-2. the First Folio front matter was attached to all 36 Folio plays;
-3. several plays existed as hand-made duplicate files to match DEEP rows that have no separate
-   TCP text.
+### 1. Sources
 
-In addition, the extractor of both the old and the new build drops `<gap>` elements (TCP's
-marker for illegible letters), so words with a missing letter appear truncated (`oged` for
-*toged*). The regularized view (below) repairs most of these through EarlyPrint.
+- **EEBO-TCP**: 469 XML files (Phase I and II), identified by TCP id (`A00456` …). The files
+  themselves are not redistributed. All 469 source ids and SHA-256 values are recorded in
+  `build_v3/inputs_units_manifest.csv`; `build_v3/corpus_manifest.csv` identifies the sources
+  used by the selected editions.
+- **DEEP** (Database of Early English Playbooks, Farmer & Lesser): work, edition, date, genre
+  and playing-company metadata; the extract used is `decision_tables/deep_min.csv`.
+- **EarlyPrint** (Northwestern / Washington University in St. Louis): linguistically annotated
+  EEBO-TCP, used for the regularized view only. The local download contains 466 files;
+  the English views use 461 distinct source files, whose Bitbucket commits and SHA-256
+  values are recorded in `build_v3_reg/reg_manifest.csv`.
 
-## What is here
+### 2. Units and work mapping (`extract_units.py`, `build_unit_map.py`)
+
+A TCP file may hold one play, a collection of plays, or a play bound with other material.
+`extract_units.py` splits each file into units — one per inner `<text>` of a `<group>`, one
+per top-level division of a collection, with further splits where a division contains several
+work-type divisions (masque, entertainment, pageant, play, tragedy, comedy, interlude,
+dialogue). Residual content outside the identified divisions is retained as candidate
+material, and front/back matter is recorded separately. The candidate universe comprises
+outermost `<l>`/`<p>` nodes under the text, excluding nodes inside containers such as
+`<speaker>`, `<stage>`, `<note>`, `<head>`, `<gap>`, `<figure>` and `<fw>`. Each candidate
+carries its source/node location, structural context and source SHA-256 (1,055,990 nodes).
+Per-node text hashes are recorded in the relevant decision and retained-node tables.
+
+`build_unit_map.py` attaches units to DEEP works and editions (one-to-one TCP ids, title
+matching, collection order), with recorded overrides and corrections in `decision_tables/`.
+`edition_witness_selection.csv` selects a representative where multiple source transcriptions
+are assigned to the same effective edition; `date_resolutions.csv` records date decisions;
+`deep_additions.csv` supplies verified DEEP records missing or incorrectly represented in the
+local extract; edition-correction files and `manual_overrides.csv` record other mappings.
+
+An XML unit, an edition document and a work are different levels. Components belonging to
+one selected edition can form one output document. Separate editions of the same work may
+remain separate documents; the work count groups documents by DEEP `work_id`. Duplicate
+metadata rows do not create duplicate copies of the same source text.
+
+### 3. Performance-text selection (`node_language.py`, `frames_attribution.py`, `build_corpus.py`)
+
+The corpus targets language presented as spoken, sung or recited in performance. Selection
+combines structural XML rules with recorded contextual judgments developed with Claude and
+ChatGPT. Research-scope and policy choices were set by the researcher; the scripts apply
+those decisions and verify provenance and consistency.
+
+Reviewed chorus, narrator and single-speaker passages outside `<sp>` can be retained
+(Seneca translations, early plays, masques). Publishing and editorial matter, including
+book-level dedications and plot summaries, is excluded under the recorded rules and
+decisions. Borderline material is assessed in context. The principal decision records are:
+
+- `container_audits.csv` (606 audit records), `body_node_decisions.csv` (5,802 individual nodes,
+  each with its text hash), `frames_rules.csv` / `frames_decisions.csv` (prologues, epilogues,
+  inductions, choruses and songs printed in front or back matter, attributed to their edition);
+- `policy_decisions.csv`: the eight corpus-wide policy choices (e.g. printed English
+  translations of Latin speeches are included with `relation = translation`; a prologue shared
+  by two plays is included once);
+- `unit_language.csv` / `node_language.py`: language per node (`en`, `la`, `sco`, `fr`, `es`),
+  overriding TCP's `xml:lang` where it is wrong.
+
+Material that belongs to the printed book but not to the analysis boundary — unattributed
+prologues, a Scots play outside DEEP's scope, Latin civic poems — is written to
+`supplementary/` with full provenance rather than dropped. Of the 1,055,990 candidate nodes,
+959,342 are kept, 89,920 excluded with a reason, 6,728 supplementary; none pending.
+
+### 4. Verification (`coverage_check.py`, `test_build_corpus.py`)
+
+- Extraction coverage: candidates independently enumerated from the source XML are
+  reconciled against the extraction tables (0 missing, 0 duplicated). The builder also
+  assigns each candidate exactly one fate.
+- Regression suite: 51 tests on `build_corpus.py` contracts. These are separate from the
+  checks of the EarlyPrint regularization step.
+- Freeze gate: the dry-run reports validation failures and unresolved decisions without
+  releasing a corpus. A formal build is blocked by the implemented integrity checks,
+  including stale node-decision hashes, unresolved required decisions, duplicate node
+  claims and failed reconciliation.
+- Read-back: all 1,749 emitted text files, including supplementary texts, were checked
+  against their planned node sequences (0 mismatches). A separate reproduction run
+  regenerated the frozen outputs and verified matching file hashes.
+
+### 5. Spelling regularization (`build_reg_view.py`, view r3)
+
+Original spelling is kept in `texts_analysis_en/`. A second view applies EarlyPrint's
+regularized spelling (`reg`) token by token:
+
+1. each kept node is aligned to a candidate EarlyPrint `<l>`/`<p>` using exact anchors,
+   monotone fuzzy pairing and subsequence matching for lacunae or merged blocks. EarlyPrint
+   can supply corrected transcriptions and restored letters or words where available;
+   pairing alone does not establish that every source gap has been restored;
+2. within that block the node's own words are aligned to EarlyPrint tokens; tokens EarlyPrint
+   links with `join` (contractions: *I+le*, *'T+is*) are one unit, so a span never cuts a
+   contraction, and a node whose first or last word cannot be located is not taken from
+   EarlyPrint;
+3. `reg` is applied as EarlyPrint gives it, with three mechanical guards: garbage values (no
+   letters, mixed inner case, a POS tag leaked into `reg`) are ignored, proper nouns whose
+   `reg` is lower-cased keep their form (*Iago*, not *jago*), and split sub-tokens are glued
+   back. EarlyPrint's contextual choices (*then → than*, 11,918 times) are accepted unreviewed.
+
+Nodes without an acceptable block or word-span match keep their v3 text with only long *s*
+and word-initial *VV* normalized. Result: 99.53 % of nodes paired (a coverage figure, not a
+verified accuracy); accepted `reg` values used for 1,653,784 of 8,685,320 token positions
+(19.0 %); 82,909 distinct
+surface → reg pairs (`build_v3_reg/reg_pairs_texts_analysis_en.csv`). The EarlyPrint copies
+of A04632 and A04637 omit certain ending masques/entertainments and the Althorp text,
+respectively, so the affected documents use the fallback text. Whether regularization improves embeddings is to
+be tested against the original-spelling view with an identical, node-based chunk map.
+
+## Files
 
 | Path | Content |
 |---|---|
-| `code/` | the pipeline, in run order: `extract_units.py` → `coverage_check.py` → `node_language.py` → `frames_attribution.py` → `build_unit_map.py` → `test_build_corpus.py` → `build_corpus.py`; `build_reg_view.py` derives the regularized view; `audit_*.py`, `add_overrides.py`, `apply_v1_review_fixes.py`, `apply_v3_decisions.py` are the tools that wrote the decision tables |
-| `decision_tables/` | every table the builder reads: `policy_decisions.csv` (8 policy items), `manual_overrides.csv`, `edition_witness_selection.csv`, `date_resolutions.csv`, `deep_additions.csv`, `deep_min.csv` (DEEP extract), `container_audits.csv`, `body_node_decisions.csv` (5,802 node-level decisions, each bound to a text hash), `frames_decisions.csv` / `frames_rules.csv` (prologues, epilogues, inductions), `unit_language.csv`, `scope_decisions.csv`, and the review worksheets |
-| `build_v3/` | outputs of the frozen build `corpus-v3-2026-09-08`: `corpus_manifest.csv` (one row per edition, with DEEP ids, witness role, node/role/language counts and the SHA-256 of each view), `supplementary_manifest.csv` / `supplementary_nodes.csv`, `excluded_nodes_summary.csv`, `FREEZE_REPORT.md`, `release_checklist.md`, `inputs_unit_map.csv`, `inputs_units_manifest.csv` |
-| `texts_analysis_en/` | **the analysis corpus**: 580 English documents, one line per kept `<l>`/`<p>` node, original spelling (file name = `<edition_id>__<TCP id>.txt`) |
-| `texts_analysis_en_reg/` | the same 580 documents, line for line, with spelling regularized from EarlyPrint (see below) |
-| `supplementary/` | 7 documents kept outside the analysis boundary with provenance (Heywood's unattributed prologues, Lyndsay's *Satyre*, Norwich 1578 Latin poems, etc.) |
-| `build_v3_reg/` | `reg_manifest.csv` (per-document alignment and replacement counts, EarlyPrint commit and SHA-256), `reg_pairs_*.csv` (every surface → regularized pair with counts), `unaligned_nodes.jsonl`, `summary.json` |
-| `reports/` | the build reports and decision lists for v1, v2, v3 and the regularized view (in Chinese) |
+| `texts_analysis_en/` | **analysis corpus, original spelling**: 580 English documents, one line per kept node; file name `<edition_id>__<TCP id>.txt` |
+| `texts_analysis_en_reg/` | the same 580 documents, line for line, EarlyPrint-regularized |
+| `supplementary/` | 7 documents outside the analysis boundary, with provenance |
+| `build_v3/corpus_manifest.csv` | one row per edition: DEEP work/edition ids, title, author, year, genre, company type, TCP id and source SHA-256, witness role, node counts by role/language, SHA-256 of each view |
+| `build_v3/` | `supplementary_manifest.csv`, `supplementary_nodes.csv`, `excluded_nodes_summary.csv`, `inputs_unit_map.csv`, `inputs_units_manifest.csv`, `FREEZE_REPORT.md`, `release_checklist.md` |
+| `build_v3_reg/` | `reg_manifest.csv` (per-document alignment and replacement counts, EarlyPrint commit + SHA-256), `reg_pairs_*.csv`, `unaligned_nodes.jsonl`, `summary.json` |
+| `decision_tables/` | curated metadata and decision tables; generated extraction tables are created during rebuilding (see §2–3) |
+| `code/` | the pipeline scripts, in run order (see §2–5) |
+| `reports/` | build reports for each version and for the regularized view (in Chinese) — the internal record of how the tables were arrived at |
 
-Not included because of size: `kept_nodes.csv` (678 MB, one row per kept node and view) and
-`node_fates.csv`; both are regenerated by `build_corpus.py`. The 469 source TCP files and the
-466 EarlyPrint files are not redistributed here; they are identified by TCP id and by
-commit + SHA-256 in the manifests.
+The repository directly distributes the two English views listed above. The frozen build
+also produces an all-language view (`texts/`) and an English view without prologues and
+epilogues (`texts_no_prologue_epilogue/`); regularization also produces
+`texts_no_prologue_epilogue_reg/`. These additional views are not currently included here.
 
-## The corpus in numbers (v3, frozen 2026-09-08)
+Also omitted because of size are `kept_nodes.csv` (one row per kept node and view, 678 MB)
+and `node_fates.csv`. They are generated by `build_corpus.py` and provide the detailed
+source-to-output audit trail. A full rebuild requires the source XML matching the recorded
+hashes; the published TXT files can be used without rebuilding.
 
-- 582 editions of 518 works, 1520–1641; 469 TCP source files.
-- 1,055,990 candidate nodes: 959,342 kept, 89,920 excluded (each with a reason), 6,728
-  supplementary; 0 pending.
-- Kept nodes by language: en 955,792, la 2,183, sco 1,364, fr 2, es 1. The English analysis
-  view has 580 documents (46.5 M characters); *Philotus* (Scots) and *Pedantius* (Latin) are
-  only in the all-language view.
-- Kept nodes by role: dramatic body 933,421; chorus 5,939; song 5,547; speech 4,794; prologue
-  4,685; poem 2,166; epilogue 2,121; induction 669.
-- Regression tests 51/51; coverage check 1,055,990 nodes, 0 missing, 0 duplicated; read-back of
-  all 1,749 output files against the manifest, 0 mismatches.
+## Corpus at a glance (v3)
 
-## Principles
-
-- **Function, not tag.** Whether a passage is performance language is judged by what it does
-  (spoken, sung, recited) rather than by whether TCP put it in `<sp>`; Seneca translations,
-  early plays and masques keep their chorus and narrator lines.
-- **One text = one unit.** DEEP rows that share a TCP text map many-to-one; no duplicate files.
-- **Flag, don't delete.** Editorial choices (which witness of a work, commercial vs.
-  non-commercial, whether prologues count) are recorded as switches in the tables, and the
-  builder refuses to run if any decision is stale (hash mismatch) or missing.
-- **Supplementary ≠ non-dramatic.** Material we could not attribute to an edition, or that
-  lies outside DEEP's scope, is written out separately with its provenance rather than
-  silently dropped.
-
-## Regularized spelling view (`texts_analysis_en_reg/`)
-
-Built by `build_reg_view.py` (version `reg-view-2026-09-14.4`) from the EarlyPrint
-annotations of the same TCP texts (Mueller, Basu et al.; Bitbucket `eads004/*`, pinned
-commits and SHA-256 per file in `reg_manifest.csv`).
-
-Each kept v3 node is aligned to the corresponding EarlyPrint `<l>`/`<p>` (exact anchors, then
-monotone fuzzy pairing, then a gap-fill pattern), and then, at word level, to the EarlyPrint
-tokens of its own words. Only that span is emitted, with the `reg` attribute applied; tokens
-that EarlyPrint links with `join` (contractions such as *I+le*, *'T+is*) are treated as one
-unit. A node whose first or last word cannot be located, or whose match is too weak, keeps
-its v3 text (only long s and word-initial VV are normalized). `reg` is accepted as EarlyPrint
-gives it, with three mechanical guards: garbage values (no letters, mixed inner case, a POS tag
-leaked into `reg`), proper nouns whose `reg` is lower-cased (*Iago → jago*), and split
-sub-tokens are glued back. No contextual review was done: EarlyPrint's contextual choices
-(*then → than*, 11,918 times in this view) are taken as they are.
-
-Result (English analysis view): 955,792 nodes, of which 907,779 aligned exactly, 42,659 by
-fuzzy pairing, 813 by gap fill and 17 through merged lines; 1,788 fell back at the word-span
-step and 2,736 had no EarlyPrint counterpart (pairing coverage 99.53 % of nodes, 99.51 % of
-characters — a coverage figure, not a verified accuracy). 1,653,784 of 8,685,320 tokens
-(19.0 %) were rewritten; 82,909 distinct surface → reg pairs. EarlyPrint does not include
-the masques at the end of Jonson's 1616 *Works* nor the Althorp entertainment, so those
-documents keep their original spelling. Whether the regularized view improves embeddings is
-not established here; it is to be tested against `texts_analysis_en/` with an identical,
-node-based chunk map.
+| | |
+|---|---|
+| Editions / works | 582 / 518 |
+| Years | 1520–1641 |
+| Source files | 469 EEBO-TCP XML |
+| Kept nodes | 959,342 (en 955,792 · la 2,183 · sco 1,364 · fr 2 · es 1) |
+| Kept nodes by role | dramatic body 933,421 · chorus 5,939 · song 5,547 · speech 4,794 · prologue 4,685 · poem 2,166 · epilogue 2,121 · induction 669 |
+| English analysis view | 580 documents, 46,498,315 characters |
+| Regularized view | 580 documents, 45,835,479 characters, accepted `reg` values used at 19.0 % of token positions |
 
 ## Reproducing
 
-```
+The scripts use Python 3.10 and `lxml`; other imports are from the standard library.
+Before running, obtain the 469 TCP XML files listed in
+`build_v3/inputs_units_manifest.csv`, verify their hashes and place them in
+`tcp_drama/` at the repository root. Obtain the pinned EarlyPrint XML files and their
+download manifest for the regularized view.
+
+The current scripts read decision tables from their own directory. Copy the published
+tables into `code/` before running. From the repository root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install lxml
+
+cp decision_tables/*.csv code/
+cp decision_tables/*.json code/
 cd code
-python3 extract_units.py            # needs ../tcp_drama/<TCP id>.xml (469 files)
-python3 coverage_check.py
-python3 node_language.py
-python3 frames_attribution.py
-python3 build_unit_map.py
-python3 test_build_corpus.py        # 51 tests
-python3 build_corpus.py --dry-run
-python3 build_corpus.py --version corpus-v3-2026-09-08
-python3 build_reg_view.py --ep-dir <EarlyPrint xml dir> --out out_corpus/corpus-v3-reg-... 
+
+python extract_units.py
+python coverage_check.py
+python node_language.py
+python build_unit_map.py
+python frames_attribution.py
+python test_build_corpus.py
+python build_corpus.py --version corpus-v3-2026-09-08 --dry-run
+# Continue only after resolving any failures or pending decisions reported above.
+python build_corpus.py --version corpus-v3-2026-09-08
+python build_reg_view.py \
+  --ep-dir "/absolute/path/to/earlyprint/xml" \
+  --ep-manifest "/absolute/path/to/download_manifest.csv" \
+  --out out_corpus/corpus-v3-reg-2026-09-14-r3
 ```
 
-The scripts expect the decision tables next to them and `tcp_drama/` one level up; the
-directory layout is documented at the top of each script. Every run re-verifies each decision
-against the source text hash and refuses to build if anything drifted.
+Replace the two absolute paths with the actual EarlyPrint locations. The outputs are
+created under `code/out/` and `code/out_corpus/`; they are not written into the published
+TXT directories at the repository root. A formal corpus build refuses to overwrite an
+existing release directory. The 51-test suite uses schemas from the generated `out/`
+tables, which is why it follows extraction and mapping in this sequence.
+
+
+## Versions
+
+| Version | Date | Content |
+|---|---|---|
+| corpus v1 | 2026-09-07 | first audited build (577 editions) |
+| corpus v2 | 2026-09-08 | collection splits and DEEP reconnections (582 editions) |
+| **corpus v3** | 2026-09-08 | eight policy decisions applied; supplementary material separated — **current** |
+| reg r3 | 2026-09-14 | EarlyPrint-regularized view of v3 (join-group token spans) — **current** |
+
+Details of each version are in `reports/`.
 
 ## Sources and licences
 
 - EEBO-TCP texts: Text Creation Partnership, Phase I (public domain) and Phase II (freely
-  available since 2021). Identified by TCP id (`A00456` …).
-- DEEP: Database of Early English Playbooks (Farmer & Lesser), for edition, work, date and
-  genre metadata (`decision_tables/deep_min.csv`).
-- EarlyPrint (Northwestern / Washington University in St. Louis), linguistically annotated
-  EEBO-TCP, CC BY-NC 4.0 — used only for the regularized view.
+  available since 2021).
+- DEEP: Database of Early English Playbooks, ed. Alan B. Farmer and Zachary Lesser.
+- EarlyPrint: Martin Mueller, Anupam Basu et al.; the project specifies
+  [CC BY-NC 3.0 Unported for its texts](https://earlyprint.org/about/#licenses).
+  EarlyPrint is used for the regularized view.
+
+These notices describe the upstream materials. A separate licence for this project's
+code and decision tables has not yet been specified.
