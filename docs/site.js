@@ -1,0 +1,3 @@
+document.querySelectorAll('table.sortable').forEach(t=>{const ths=t.querySelectorAll('th');ths.forEach((th,i)=>th.addEventListener('click',()=>{const tb=t.tBodies[0];const rows=[...tb.rows];const dir=th.dataset.dir==='asc'?'desc':'asc';ths.forEach(x=>x.dataset.dir='');th.dataset.dir=dir;
+const val=r=>{const c=r.cells[i];const v=c.dataset.v!==undefined?c.dataset.v:c.textContent.trim();const n=parseFloat(v);return isNaN(n)?v.toLowerCase():n};
+rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1:-1)});rows.forEach(r=>tb.appendChild(r));}));});

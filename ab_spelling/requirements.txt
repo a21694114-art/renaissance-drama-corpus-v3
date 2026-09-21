@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+torch
+transformers>=4.51
+sentence-transformers>=3.0
+bertopic>=0.16
+umap-learn
+hdbscan
+openpyxl
+matplotlib
+scipy
+plotly
