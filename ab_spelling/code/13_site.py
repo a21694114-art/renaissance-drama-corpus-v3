@@ -210,7 +210,7 @@ mark{background:#fff3a8;padding:0 2px;border-radius:2px}
 .footer{margin-top:3em;padding-top:1em;border-top:1px solid var(--rule);font-size:.8rem;color:var(--faint)}
 details summary{cursor:pointer;color:var(--accent)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:800px){.grid2{grid-template-columns:1fr}}
-img.heat{max-width:100%;border:1px solid var(--rule);border-radius:8px}
+img.heat{max-width:100%;border:1px solid var(--rule);border-radius:8px;cursor:zoom-in}
 #note{font-size:.8rem;color:var(--muted);margin:0 0 .4em}#filters{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:0 0 .6em;font-size:.8rem;color:var(--muted)}
 #filters select{max-width:220px;font-size:.8rem}#filters button{font-size:.8rem}#count{color:var(--accent-ink);font-weight:600}#map{height:calc(100vh - 190px);min-height:560px}
 input.filterbox{width:100%;max-width:520px;font:inherit;font-size:.95rem;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;margin:.2em 0 1em;background:var(--card)}
@@ -379,7 +379,7 @@ inp.addEventListener('input',run);});"""
         for f, cap in (('genre_stacked_top20_works_renorm.png', 'Top 20 selected topics per genre, rescaled to the words those topics cover (coverage above each bar)'),
                        ('genre_panels_top20_works.png', 'The same topics per genre as bars; values are the mean share of a work\'s words')):
             if (agg / f).exists():
-                shutil.copy(agg / f, out / f); gfig += f'<h2>{E(cap)}</h2><img class="heat" src="{f}" alt="{E(cap)}">'
+                shutil.copy(agg / f, out / f); gfig += f'<h2>{E(cap)}</h2><a href="{f}"><img class="heat" src="{f}" alt="{E(cap)}"></a>'
         per_genre = [p_ for p_ in sorted(agg.glob('genre_*_top20_works.png')) if not p_.name.startswith(('genre_stacked', 'genre_panels'))]
         if per_genre:
             for p_ in per_genre: shutil.copy(p_, out / p_.name)
@@ -391,11 +391,12 @@ inp.addEventListener('input',run);});"""
         kwt = '<table class="sortable"><thead><tr><th>topic</th><th>highest genre (mean; works with topic)</th><th>one-work</th><th>second</th><th class="num">ratio</th><th class="num">p</th><th class="num">q</th></tr></thead><tbody>' + ''.join(
             f'<tr><td><a href="{tpage(int(r["topic"]))}">T{r["topic"]} {E(r["label"][:44])}</a></td><td>{E(r["highest"])} ({100 * float(r["mean " + r["highest"]]):.2f} %; {r["highest_works_with_topic"]})</td><td>{r["single_work_driven"]}</td>'
             f'<td>{E(r["second"])} ({100 * float(r["mean " + r["second"]]):.2f} %)</td><td class="num">{r["ratio_high_second"]}</td><td class="num">{r["kruskal_p"]}</td><td class="num">{r.get("bh_q", "")}</td></tr>' for r in sorted(kw, key=qk)) + '</tbody></table>'
-        page = (head('Genre') + mast('', 'genre.html') + crumbs('<a href="index.html">Home</a>', 'Genre')
+        page = (head('Genre') + mast('', 'genre.html').replace('<div class="wrap">', '<div class="wrap wide">') + crumbs('<a href="index.html">Home</a>', 'Genre')
                 + '<h1>Topics across genres</h1><p class="lede">Shares are of a work\'s words: chunks are aggregated to editions, editions of one work are averaged, and works enter their genre with equal weight. Every chunk stays in the denominator, so the selected topics never describe a whole genre — the rest of each genre\'s words is shown alongside.</p>'
                 + '<h2>Coverage</h2>' + covt + gfig
-                + '<h2>Mean share of a work\'s words (square-root colour scale)</h2><img class="heat" src="heatmap_selected_topics.png" alt="heatmap">'
-                + '<h2>Share of works in which the topic occurs</h2><img class="heat" src="heatmap_prevalence.png" alt="prevalence heatmap">'
+                + '<h2>Mean share of a work\'s words (square-root colour scale)</h2><a href="heatmap_selected_topics.png"><img class="heat" src="heatmap_selected_topics.png" alt="heatmap"></a>'
+                + '<h2>Share of works in which the topic occurs</h2><a href="heatmap_prevalence.png"><img class="heat" src="heatmap_prevalence.png" alt="prevalence heatmap"></a>'
+                + '<p class="lede" style="font-size:.85rem">Click any figure to open it at full size.</p>'
                 + '<h2>Kruskal–Wallis across genres (Benjamini–Hochberg q)</h2><p class="lede" style="font-size:.9rem">"one-work" = a single work holds ≥50 % of the highest genre\'s total share, so that mean is one play, not the genre. Descriptive only.</p>' + kwt + foot())
         (out / 'genre.html').write_text(page, encoding='utf-8')
 

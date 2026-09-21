@@ -193,22 +193,22 @@ def main():
         M = M[order]; P = P[order]; ylab = [f'T{selected[i]}  {name_of[selected[i]][:42]}' for i in order]
         def heat(mat, fname, title, cblabel, fmt, norm=None):
             fig_h = max(4, 0.32 * len(selected) + 1.5)
-            fig, ax = plt.subplots(figsize=(1.3 * len(tested) + 6, fig_h))
+            fig, ax = plt.subplots(figsize=(1.05 * len(tested) + 5.5, fig_h))
             im = ax.imshow(mat, cmap='Blues', aspect='auto', norm=norm) if norm is not None else ax.imshow(mat, cmap='Blues', aspect='auto', vmin=0, vmax=max(mat.max(), 0.01))
-            ax.set_xticks(range(len(tested))); ax.set_xticklabels([f'{g}\n(n={len(groups[g])})' for g in tested], fontsize=9)
-            ax.set_yticks(range(len(selected))); ax.set_yticklabels(ylab, fontsize=8)
+            ax.set_xticks(range(len(tested))); ax.set_xticklabels([f'{g}\n(n={len(groups[g])})' for g in tested], fontsize=11)
+            ax.set_yticks(range(len(selected))); ax.set_yticklabels(ylab, fontsize=10)
             thresh = norm.inverse(0.6) if norm is not None else 0.6 * mat.max()
             for i in range(mat.shape[0]):
                 for j in range(mat.shape[1]):
                     if mat[i, j] >= 0.05:
-                        ax.text(j, i, fmt(mat[i, j]), ha='center', va='center', fontsize=7, color='#1a1a1a' if mat[i, j] < thresh else 'white')
+                        ax.text(j, i, fmt(mat[i, j]), ha='center', va='center', fontsize=8.5, color='#1a1a1a' if mat[i, j] < thresh else 'white')
             for sp in ('top', 'right', 'left', 'bottom'): ax.spines[sp].set_visible(False)
             ax.tick_params(length=0)
-            cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02); cb.set_label(cblabel, fontsize=8); cb.outline.set_visible(False)
-            ax.set_title(title, fontsize=9, loc='left')
+            cb = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.02); cb.set_label(cblabel, fontsize=9.5); cb.ax.tick_params(labelsize=8.5); cb.outline.set_visible(False)
+            ax.set_title(title, fontsize=11, loc='left')
             fig.tight_layout(); fig.savefig(out / fname, dpi=160); plt.close(fig)
         heat(M, 'heatmap_selected_topics.png',
-             f'Selected topics by genre — mean share of a work\'s words, % (seed {a.seed}; works equal-weighted; editions averaged; all chunks in the denominator; square-root colour scale)',
+             f'Selected topics by genre — mean share of a work\'s words, %\n(seed {a.seed}; works equal-weighted, editions averaged, all chunks in the denominator; square-root colour scale)',
              'mean share of a work\'s words (%)', lambda v: f'{v:.1f}', norm=PowerNorm(gamma=0.5, vmin=0, vmax=max(M.max(), 0.01)))
         heat(P, 'heatmap_prevalence.png',
              f'Selected topics by genre — share of works in which the topic occurs at all, % (seed {a.seed})',
