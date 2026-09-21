@@ -5,3 +5,17 @@ document.querySelectorAll('input.filterbox').forEach(inp=>{const items=[...docum
 const run=()=>{const q=inp.value.trim().toLowerCase().split(/\s+/).filter(Boolean);let n=0;items.forEach(el=>{const t=(el.dataset.search||el.textContent).toLowerCase();const ok=q.every(w=>t.includes(w));el.style.display=ok?'':'none';if(ok)n++;});
 document.querySelectorAll('h2[data-group]').forEach(h=>{const any=items.some(el=>el.dataset.group===h.dataset.group&&el.style.display!=='none');h.style.display=any?'':'none';});if(out)out.textContent=q.length?n+' shown':'';};
 inp.addEventListener('input',run);});
+/* lightbox for figures: click = fit to screen; +/- or click the image = zoom; 1:1 = full size; Esc closes */
+(()=>{const figs=[...document.querySelectorAll('a>img.heat')];if(!figs.length)return;
+const lb=document.createElement('div');lb.id='lb';lb.innerHTML='<div class="bar"><span class="ttl"></span><span class="sp"></span><button data-z="-">&minus;</button><span class="pct"></span><button data-z="+">+</button><button data-z="fit">Fit to screen</button><button data-z="1">1:1</button><a class="open" target="_blank" rel="noopener">Open file</a><button data-z="x">Close &times;</button></div><div class="stage"><img alt=""></div>';
+document.body.appendChild(lb);const img=lb.querySelector('img'),pct=lb.querySelector('.pct'),ttl=lb.querySelector('.ttl'),open=lb.querySelector('.open');let sc=1;
+const fitScale=()=>Math.min((window.innerWidth-40)/img.naturalWidth,(window.innerHeight-84)/img.naturalHeight,1);
+const apply=()=>{img.style.width=Math.round(img.naturalWidth*sc)+'px';pct.textContent=Math.round(sc*100)+' %';lb.classList.toggle('big',sc>fitScale()+1e-6);};
+const show=(a)=>{ttl.textContent=a.querySelector('img').alt||'';open.href=a.href;img.onload=()=>{sc=fitScale();apply();lb.scrollTo(0,0);};img.src=a.href;lb.classList.add('on');document.body.style.overflow='hidden';};
+const hide=()=>{lb.classList.remove('on');document.body.style.overflow='';img.removeAttribute('src');};
+figs.forEach(im=>im.parentElement.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.button)return;e.preventDefault();show(im.parentElement);}));
+lb.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const z=b.dataset.z;if(z==='x')return hide();if(z==='fit')sc=fitScale();else if(z==='1')sc=1;else if(z==='+')sc=Math.min(sc*1.25,4);else sc=Math.max(sc/1.25,0.05);apply();}));
+img.addEventListener('click',()=>{sc=(sc>fitScale()+1e-6)?fitScale():1;apply();});
+lb.querySelector('.stage').addEventListener('click',e=>{if(e.target===e.currentTarget)hide();});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')hide();else if(e.key==='+'||e.key==='=')lb.querySelector('[data-z="+"]').click();else if(e.key==='-')lb.querySelector('[data-z="-"]').click();});
+window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classList.contains('big')){sc=fitScale();apply();}});})();

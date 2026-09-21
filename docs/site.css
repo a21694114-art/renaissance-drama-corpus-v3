@@ -32,7 +32,11 @@ mark{background:#fff3a8;padding:0 2px;border-radius:2px}
 .footer{margin-top:3em;padding-top:1em;border-top:1px solid var(--rule);font-size:.8rem;color:var(--faint)}
 details summary{cursor:pointer;color:var(--accent)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:800px){.grid2{grid-template-columns:1fr}}
-img.heat{max-width:100%;border:1px solid var(--rule);border-radius:8px;cursor:zoom-in}
+img.heat{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;margin:0 auto;border:1px solid var(--rule);border-radius:8px;cursor:zoom-in;background:#fff}
+.fig{margin:0 0 .6em}.fig .fighint{text-align:center;font-size:.78rem;color:var(--faint);margin:.35em 0 0}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(20,20,26,.93);display:none;overflow:auto}#lb.on{display:block}#lb .stage{min-height:100%;display:flex;padding:52px 16px 24px}
+#lb img{display:block;max-width:none;margin:auto;cursor:zoom-in;background:#fff;border-radius:4px}#lb.big img{cursor:grab}#lb .bar{position:fixed;top:0;left:0;right:0;height:44px;display:flex;align-items:center;gap:8px;padding:0 14px;background:rgba(0,0,0,.55);color:#eee;font-size:.85rem;z-index:51}
+#lb .bar button,#lb .bar a{font:inherit;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:4px 10px;cursor:pointer;text-decoration:none}#lb .bar button:hover,#lb .bar a:hover{background:rgba(255,255,255,.26)}#lb .bar .sp{flex:1}#lb .bar .pct{min-width:4em;text-align:center;font-variant-numeric:tabular-nums}
 #note{font-size:.8rem;color:var(--muted);margin:0 0 .4em}#filters{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:0 0 .6em;font-size:.8rem;color:var(--muted)}
 #filters select{max-width:220px;font-size:.8rem}#filters button{font-size:.8rem}#count{color:var(--accent-ink);font-weight:600}#map{height:calc(100vh - 190px);min-height:560px}
 input.filterbox{width:100%;max-width:520px;font:inherit;font-size:.95rem;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;margin:.2em 0 1em;background:var(--card)}
