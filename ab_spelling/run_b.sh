@@ -4,8 +4,10 @@
 #   bash ab_spelling/run_b.sh smoke     # 20 documents, 1 seed — checks the environment and the model (~10 min)
 #   bash ab_spelling/run_b.sh full      # 580 documents: chunk map -> reading sample -> embed -> seeds 42 43 44 -> diagnostics
 #   bash ab_spelling/run_b.sh sheet     # naming workbook for the main seed (42): topics_B_s42/topic_sheet.xlsx (+ AI drafts if ab_spelling/drafts/ has them)
+#   bash ab_spelling/run_b.sh review    # after editing topic_sheet.xlsx: carry Label / use_in_genre_analysis / Notes into topic_sheet.csv and drafts/
 #   bash ab_spelling/run_b.sh pack 9    # critical-reading pack for topic 9: topics_B_s42/reading_pack_T9.md
-#   bash ab_spelling/run_b.sh aggregate # chunk -> edition -> work -> genre tables + heatmap: topics_B_s42/aggregate/ (B_USE=included,candidate)
+#   bash ab_spelling/run_b.sh aggregate # chunk -> edition -> work -> genre tables + heatmaps + per-genre topic figures: topics_B_s42/aggregate/ (B_USE=included,candidate)
+#   bash ab_spelling/run_b.sh genrefig  # only the per-genre figures (14_genre_figures.py); B_WEIGHT=works|chunks B_USE=all B_GENRES=comedy,tragedy,history B_TOP=20 B_RENORM=1
 #   bash ab_spelling/run_b.sh figures   # interactive HTML (topic map, genre x topic, works, table): topics_B_s42/topics_interactive_s42.html
 #   bash ab_spelling/run_b.sh map       # chunk-level map (one point per chunk, hover + dropdown highlights): topics_B_s42/chunk_map_s42.html
 #                                       # B_DEEP=<DEEP_data.csv> adds company / theater / first-performance (default: the professor's Dropbox copy if present)
@@ -46,13 +48,24 @@ if [ "$MODE" = "sheet" ]; then
   python "$CODE/08_topic_sheet.py" --chunks "$CH" --runs "$RUNS" --seed "$SEED" --model "$MODEL"
   echo "== sheet: $RUNS/topics_B_s$SEED/topic_sheet.xlsx"; exit 0
 fi
+if [ "$MODE" = "review" ]; then   # after editing topic_sheet.xlsx: copy Label / use_in_genre_analysis / Notes into topic_sheet.csv + drafts/
+  RUNS="$OUT_ROOT/runs_$SLUG"
+  python "$CODE/08b_apply_review.py" --runs "$RUNS" --seed "$SEED"; exit 0
+fi
 if [ "$MODE" = "pack" ]; then
   CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG"
   python "$CODE/10_reading_pack.py" --chunks "$CH" --runs "$RUNS" --seed "$SEED" --topic "${2:?topic id}" --n-works "${B_NWORKS:-5}"; exit 0
 fi
 if [ "$MODE" = "aggregate" ]; then
   CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG"
-  python "$CODE/09_aggregate.py" --chunks "$CH" --runs "$RUNS" --seed "$SEED" --use "${B_USE:-included,candidate}" --min-works "${B_MINWORKS:-10}"; exit 0
+  python "$CODE/09_aggregate.py" --chunks "$CH" --runs "$RUNS" --seed "$SEED" --use "${B_USE:-included,candidate}" --min-works "${B_MINWORKS:-10}"
+  python "$CODE/14_genre_figures.py" --chunks "$CH" --runs "$RUNS" --seed "$SEED" --use "${B_USE:-included,candidate}" --min-works "${B_MINWORKS:-10}" --top "${B_TOP:-20}"
+  python "$CODE/14_genre_figures.py" --chunks "$CH" --runs "$RUNS" --seed "$SEED" --use "${B_USE:-included,candidate}" --min-works "${B_MINWORKS:-10}" --top "${B_TOP:-20}" --renorm; exit 0
+fi
+if [ "$MODE" = "genrefig" ]; then   # e.g. B_WEIGHT=chunks B_USE=all B_GENRES=comedy,tragedy,history  (the old project's figures)
+  CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG"
+  python "$CODE/14_genre_figures.py" --chunks "$CH" --runs "$RUNS" --seed "$SEED" --weight "${B_WEIGHT:-works}" --use "${B_USE:-included,candidate}" \
+      --genres "${B_GENRES:-}" --min-works "${B_MINWORKS:-10}" --top "${B_TOP:-20}" ${B_RENORM:+--renorm}; exit 0
 fi
 if [ "$MODE" = "figures" ]; then
   CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG"

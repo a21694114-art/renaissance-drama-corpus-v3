@@ -191,7 +191,7 @@ def main():
                      'play_type_mix': '; '.join(f'{g[:30]} {n / len(m):.0%}' for g, n in ptypes.most_common(2)),
                      'ctfidf_top10': ', '.join(mark(w) for w in cw[:10]), 'keybert_top10': kb, 'mmr_top10': mm, 'names_in_top30': ', '.join(names),
                      'representative_chunks': rep_txt,
-                     **{k: dr.get(k, '') for k in DRAFT_COLS}, 'Label': '', 'Notes': ''})
+                     **{k: dr.get(k, '') for k in DRAFT_COLS}, 'Label': dr.get('Label', ''), 'Notes': dr.get('Notes', '')})   # Label/Notes survive a re-run once 08b wrote them into the drafts file
         if dr and not rows[-1]['review_status']: rows[-1]['review_status'] = 'draft_ai'
 
     # coverage by use-category (all chunks accounted for)

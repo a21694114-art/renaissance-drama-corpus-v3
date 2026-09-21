@@ -336,6 +336,15 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
         cov = list(csv.DictReader(open(agg / 'genre_coverage.csv', encoding='utf-8')))
         for f in ('heatmap_selected_topics.png', 'heatmap_prevalence.png'):
             if (agg / f).exists(): shutil.copy(agg / f, out / f)
+        gfig = ''
+        for f, cap in (('genre_stacked_top20_works_renorm.png', 'Top 20 selected topics per genre, rescaled to the words those topics cover (coverage above each bar)'),
+                       ('genre_panels_top20_works.png', 'The same topics per genre as bars; values are the mean share of a work\'s words')):
+            if (agg / f).exists():
+                shutil.copy(agg / f, out / f); gfig += f'<h2>{E(cap)}</h2><img class="heat" src="{f}" alt="{E(cap)}">'
+        per_genre = [p_ for p_ in sorted(agg.glob('genre_*_top20_works.png')) if not p_.name.startswith(('genre_stacked', 'genre_panels'))]
+        if per_genre:
+            for p_ in per_genre: shutil.copy(p_, out / p_.name)
+            gfig += '<p class="lede" style="font-size:.85rem">Per-genre bar charts: ' + ' · '.join(f'<a href="{p_.name}">{E(p_.name.split("_")[1])}</a>' for p_ in per_genre) + '</p>'
         covt = '<table><thead><tr><th>genre</th><th class="num">works</th><th class="num">selected topics</th><th class="num">single work / story</th><th class="num">pending</th><th class="num">unassigned</th></tr></thead><tbody>' + ''.join(
             f'<tr><td>{E(r["genre_main"])}</td><td class="num">{r["n_works"]}</td><td class="num">{100 * float(r["selected topics mean share of words"]):.0f} %</td><td class="num">{100 * float(r["contextual_only mean share of words"]):.0f} %</td><td class="num">{100 * float(r["pending mean share of words"]):.0f} %</td><td class="num">{100 * float(r["outlier_hdbscan mean share of words"]):.0f} %</td></tr>' for r in cov) + '</tbody></table>'
         def qk(r):
@@ -345,7 +354,7 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
             f'<td>{E(r["second"])} ({100 * float(r["mean " + r["second"]]):.2f} %)</td><td class="num">{r["ratio_high_second"]}</td><td class="num">{r["kruskal_p"]}</td><td class="num">{r.get("bh_q", "")}</td></tr>' for r in sorted(kw, key=qk)) + '</tbody></table>'
         page = (head('Genre') + mast('', 'genre.html') + crumbs('<a href="index.html">Home</a>', 'Genre')
                 + '<h1>Topics across genres</h1><p class="lede">Shares are of a work\'s words: chunks are aggregated to editions, editions of one work are averaged, and works enter their genre with equal weight. Every chunk stays in the denominator, so the selected topics never describe a whole genre — the rest of each genre\'s words is shown alongside.</p>'
-                + '<h2>Coverage</h2>' + covt
+                + '<h2>Coverage</h2>' + covt + gfig
                 + '<h2>Mean share of a work\'s words (square-root colour scale)</h2><img class="heat" src="heatmap_selected_topics.png" alt="heatmap">'
                 + '<h2>Share of works in which the topic occurs</h2><img class="heat" src="heatmap_prevalence.png" alt="prevalence heatmap">'
                 + '<h2>Kruskal–Wallis across genres (Benjamini–Hochberg q)</h2><p class="lede" style="font-size:.9rem">"one-work" = a single work holds ≥50 % of the highest genre\'s total share, so that mean is one play, not the genre. Descriptive only.</p>' + kwt + foot())
