@@ -69,6 +69,18 @@ def clean(v):
     v = (v or '').strip(); return '' if v.lower() in ('none', 'n/a', 'nan', 'not in britdrama') else v
 
 
+def authors(v):
+    """Display form of the manifest's author field, whose names are run together ('AnonymousFletcher, JohnMassinger, Philip')."""
+    return ' / '.join(facets(v, 'author')) or (v or '')
+
+
+def highlight(text, keywords):
+    """The whole text with the topic's words marked (same matching rule as excerpts)."""
+    if not keywords: return E(text)
+    pat = re.compile(r"\b(" + "|".join(re.escape(k) for k in keywords) + r")\w{0,2}\b", re.I)
+    return E(pat.sub(lambda m: '\x00' + m.group(0) + '\x01', text)).replace('\x00', '<mark>').replace('\x01', '</mark>')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--chunks', required=True); ap.add_argument('--runs', required=True)
@@ -154,7 +166,7 @@ def main():
         return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
                 f'<title>{E(title)} · {E(a.title)}</title><link rel="stylesheet" href="{root}site.css"><script defer src="{root}site.js"></script></head><body>')
     def mast(root='', active=''):
-        items = [('index.html', 'Home'), ('map.html', 'Map'), ('topics.html', 'Topics'), ('genre.html', 'Genre'), ('methods.html', 'Methods')]
+        items = [('index.html', 'Home'), ('map.html', 'Map'), ('topics.html', 'Topics'), ('plays.html', 'Plays'), ('genre.html', 'Genre'), ('methods.html', 'Methods')]
         nav = ''.join(f'<a href="{root}{h}"{" class=active" if active == h else ""}>{n}</a>' for h, n in items if h != 'genre.html' or agg.exists())
         if a.repo_url: nav += f'<a href="{E(a.repo_url)}">GitHub</a>'
         return f'<div class="masthead"><div class="in"><a class="brand" href="{root}index.html">{E(a.title)} <span>· seed {a.seed}</span></a><nav>{nav}</nav></div></div><div class="wrap">'
@@ -199,17 +211,26 @@ mark{background:#fff3a8;padding:0 2px;border-radius:2px}
 details summary{cursor:pointer;color:var(--accent)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:800px){.grid2{grid-template-columns:1fr}}
 img.heat{max-width:100%;border:1px solid var(--rule);border-radius:8px}
+#note{font-size:.8rem;color:var(--muted);margin:0 0 .4em}#filters{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:0 0 .6em;font-size:.8rem;color:var(--muted)}
+#filters select{max-width:220px;font-size:.8rem}#filters button{font-size:.8rem}#count{color:var(--accent-ink);font-weight:600}#map{height:calc(100vh - 190px);min-height:560px}
+input.filterbox{width:100%;max-width:520px;font:inherit;font-size:.95rem;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;margin:.2em 0 1em;background:var(--card)}
+.metaline{color:var(--muted);font-size:.95rem;margin:0 0 1.2em;max-width:none}.metaline b{color:var(--ink);font-weight:600}
 """
     JS = """document.querySelectorAll('table.sortable').forEach(t=>{const ths=t.querySelectorAll('th');ths.forEach((th,i)=>th.addEventListener('click',()=>{const tb=t.tBodies[0];const rows=[...tb.rows];const dir=th.dataset.dir==='asc'?'desc':'asc';ths.forEach(x=>x.dataset.dir='');th.dataset.dir=dir;
 const val=r=>{const c=r.cells[i];const v=c.dataset.v!==undefined?c.dataset.v:c.textContent.trim();const n=parseFloat(v);return isNaN(n)?v.toLowerCase():n};
-rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1:-1)});rows.forEach(r=>tb.appendChild(r));}));});"""
+rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1:-1)});rows.forEach(r=>tb.appendChild(r));}));});
+document.querySelectorAll('input.filterbox').forEach(inp=>{const items=[...document.querySelectorAll(inp.dataset.target)];const out=document.getElementById(inp.dataset.count);
+const run=()=>{const q=inp.value.trim().toLowerCase().split(/\s+/).filter(Boolean);let n=0;items.forEach(el=>{const t=(el.dataset.search||el.textContent).toLowerCase();const ok=q.every(w=>t.includes(w));el.style.display=ok?'':'none';if(ok)n++;});
+document.querySelectorAll('h2[data-group]').forEach(h=>{const any=items.some(el=>el.dataset.group===h.dataset.group&&el.style.display!=='none');h.style.display=any?'':'none';});if(out)out.textContent=q.length?n+' shown':'';};
+inp.addEventListener('input',run);});"""
     (out / 'site.css').write_text(CSS, encoding='utf-8'); (out / 'site.js').write_text(JS, encoding='utf-8')
     (out / '.nojekyll').write_text('', encoding='utf-8')   # GitHub Pages: serve files as they are (no Jekyll pass over 18k pages)
 
     # ---------------- chunk pages ----------------
     def deep_fields(e):
         r = deep.get(e, {})
-        return {'first performed': clean(r.get('date_first_performance', '')), 'company (BritDrama)': clean(r.get('company_first_performance_brit_display', '')),
+        return {'first performance / composition (Annals)': clean(r.get('date_first_performance', '')), 'first performance (BritDrama)': clean(r.get('date_first_performance_brit_display', '')),
+                'company (BritDrama)': clean(r.get('company_first_performance_brit_display', '')),
                 'company (Annals)': clean(r.get('company_first_performance_annals_display', '')), 'theater': clean(r.get('theater', '')), 'theater type': clean(r.get('theater_type', '')),
                 'title-page company': clean(r.get('title_page_company_display', '')), 'printer': clean(r.get('printer', '')), 'publisher': clean(r.get('publisher', '')),
                 'format': clean(r.get('format', '')), 'STC': clean(r.get('stc', '')), 'Greg': clean(r.get('greg_full', '')), 'genre (Annals)': clean(r.get('genre_annals_display', '')),
@@ -225,25 +246,28 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
         kws = kw30.get(t, [])[:15] if t != -1 else kw30.get(nearest[c][0], [])[:15]
         ex = excerpts(texts[c], kws, n=2)
         df = deep_fields(e)
-        rows = [('Play', f'<a href="../plays/{e}.html">{E(m["title"])}</a>'), ('Author', E(m['author'])), ('Year (edition)', E(m['year']))]
-        for kk in ('first performed', 'company (BritDrama)', 'theater'):
+        rows = [('Play', f'<a href="../plays/{e}.html">{E(m["title"])}</a>'), ('Author', E(authors(m['author']))), ('Publication year (edition)', E(m['year']))]
+        for kk in ('first performance / composition (Annals)', 'first performance (BritDrama)', 'company (BritDrama)', 'theater'):
             if df[kk]: rows.append((kk[0].upper() + kk[1:], E(df[kk])))
         rows += [('Genre (DEEP)', E(m['genre_deep'])), ('Play type', E(m['play_type_deep'])), ('Edition / TCP / DEEP', f'edition {e} · TCP {E(m["tcp"])} · DEEP {E(m["deep_id"])}'),
-                 ('Position', f'nodes {cm["node_start"]}–{cm["node_end"]}' + (f' (piece {cm["piece_start"]}–{cm["piece_end"]} of a split node)' if cm['n_pieces_end'] != '1' or cm['piece_start'] != '0' else '') + f' · chunk {k + 1} of {len(seq)} in this edition'),
+                 ('Position', f'nodes {cm["node_start"]}–{cm["node_end"]} (positions in the processed text, not lines of the printed book)' + (f' · piece {cm["piece_start"]}–{cm["piece_end"]} of a split node' if cm['n_pieces_end'] != '1' or cm['piece_start'] != '0' else '') + f' · chunk {k + 1} of {len(seq)} in this edition'),
                  ('Length', f'{cm["len_B_words"]} words · {cm["len_B_tokens"]} tokens' + (f' · flags: {E(cm["flags"])}' if cm['flags'] else '')),
                  ('Topic (seed %d)' % a.seed, (f'<a href="../{tpage(t)}">T{t} — {E(label_of(t))}</a> {badge(cat_of(t))} · typicality {typ[c]:.3f} (cosine to the topic centroid)' if t != -1
                                                else f'unassigned by HDBSCAN · nearest topic <a href="../{tpage(nearest[c][0])}">T{nearest[c][0]} — {E(label_of(nearest[c][0]))}</a> at {nearest[c][1]:.3f}'))]
-        for s, lab in sorted(other.items()):
-            rows.append((f'Topic (seed {s})', f'T{lab[c]}' if lab[c] != -1 else 'unassigned'))
+        if other:
+            rows.append(('Other seeds', ' · '.join(f'seed {s_}: ' + (f'T{lab[c]}' if lab[c] != -1 else 'unassigned') for s_, lab in sorted(other.items())) + ' — topic numbers are assigned independently in each run; equal or different numbers say nothing by themselves'))
         meta_html = '<table>' + ''.join(f'<tr><th>{k}</th><td>{v}</td></tr>' for k, v in rows) + '</table>'
-        ex_html = ''.join(f'<div class="excerpt">{x}</div>' for x in ex) if ex else '<p class="lede">No keyword-matching excerpt (the topic\'s distinguishing words do not occur in this chunk).</p>'
-        orig_html = f'<h2>Original spelling (EEBO-TCP)</h2><details><summary>show the unregularized text</summary><div class="text">{E(orig[c])}</div></details>' if c in orig else ''
+        orig_html = f'<details><summary>Original spelling (EEBO-TCP, unregularized)</summary><div class="text">{E(orig[c])}</div></details>' if c in orig else ''
         pn = (f'<div class="pn"><span>{"<a href=%s.html>← previous chunk</a>" % prev_c if prev_c else ""}</span><span><a href="../plays/{e}.html">all chunks of this edition</a></span><span>{"<a href=%s.html>next chunk →</a>" % next_c if next_c else ""}</span></div>')
+        line2 = ' · '.join(v for v in (E(m['genre_deep']), E(df['company (BritDrama)']), E(df['theater'].split(';')[0].strip()) if df['theater'] else '') if v)
+        dates = f'published {E(m["year"])}' + (f' · first performed or written {E(df["first performance / composition (Annals)"])} (Annals)' if df['first performance / composition (Annals)'] else '')
+        topic_txt = (f'{chip(t, "../")} typicality {typ[c]:.2f}' if t != -1 else f'<span class="chip chip-out">unassigned</span> nearest {chip(nearest[c][0], "../")}')
+        kw_note = (f'<p class="lede" style="font-size:.85rem">Marked words are the most distinguishing words of {"T%d" % t if t != -1 else "the nearest topic T%d" % nearest[c][0]}: <em>{E(", ".join(kws[:10]))}</em>.</p>' if kws else '')
         page = (head(f'Chunk {c}', '../') + mast('../') + crumbs('<a href="../index.html">Home</a>', f'<a href="../plays/{e}.html">{E(m["title"][:50])}</a>', f'chunk {c}')
-                + f'<h1>{E(m["title"])} <span style="color:var(--faint);font-weight:500">· chunk {c}</span></h1><p class="lede">{E(m["author"])}, {E(m["year"])} · {E(m["genre_deep"])} · {chip(t, "../")}</p>'
-                + '<h2>Metadata</h2>' + meta_html
-                + f'<h2>Excerpts with the topic\'s words</h2><p class="lede" style="font-size:.9rem">Passages containing the most distinguishing words of {"T%d" % t if t != -1 else "the nearest topic T%d" % nearest[c][0]} (<em>{E(", ".join(kws[:8]))}…</em>).</p>' + ex_html
-                + f'<h2>Text (EarlyPrint-regularized spelling)</h2><div class="text">{E(texts[c])}</div>' + orig_html + pn + foot())
+                + f'<h1>{E(m["title"])} <span style="color:var(--faint);font-weight:500">· chunk {k + 1} of {len(seq)}</span></h1>'
+                + f'<p class="metaline"><b>{E(authors(m["author"]))}</b> · {dates}<br>{line2}<br>{topic_txt} · {cm["len_B_words"]} words</p>'
+                + pn + kw_note + f'<div class="text">{highlight(texts[c], kws)}</div>' + pn
+                + '<h2>Details</h2><details><summary>Metadata, position in the edition, topic in the other seeds</summary>' + meta_html + '</details>' + orig_html + foot())
         (out / 'chunks' / f'{c}.html').write_text(page, encoding='utf-8'); n_pages += 1
         if n_pages % 2000 == 0: print(f'  {n_pages} chunk pages', flush=True)
 
@@ -256,7 +280,7 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
         comp = sorted(by_t.items(), key=lambda kv: -kv[1])
         bars = ''.join(f'<div class="lab">{chip(t, "../")}</div><div><div class="bar" style="width:{100 * w / words:.1f}%"></div></div><div class="num">{100 * w / words:.1f} %</div>' for t, w in comp[:14])
         df = deep_fields(e)
-        info = [('Title', E(mm['title'])), ('Author', E(mm['author'])), ('Edition year', E(mm['year'])), ('Genre (DEEP)', E(mm['genre_deep'])), ('Play type', E(mm['play_type_deep'])),
+        info = [('Title', E(mm['title'])), ('Author', E(authors(mm['author']))), ('Publication year (edition)', E(mm['year'])), ('Genre (DEEP)', E(mm['genre_deep'])), ('Play type', E(mm['play_type_deep'])),
                 ('Work / edition / TCP / DEEP', f'work {E(mm["work_id"])} · edition {e} · TCP {E(mm["tcp"])} · DEEP {E(mm["deep_id"])}')]
         info += [(k[0].upper() + k[1:], E(v)) for k, v in df.items() if v]
         if m: info.append(('Corpus build', f'{E(m.get("corpus_version", ""))} · nodes {E(m.get("n_nodes[texts_analysis_en]", ""))} · witness {E(m.get("witness_role", "") or "single")}'))
@@ -264,13 +288,25 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
         oe = (' · other editions of this work: ' + ', '.join(f'<a href="{x}.html">{x} ({E(meta[ed_chunks[x][0]]["year"])})</a>' for x in other_eds)) if other_eds else ''
         rows = ''.join(f'<tr><td class="num">{i + 1}</td><td class="num">{cmap[c]["node_start"]}–{cmap[c]["node_end"]}</td><td class="num">{cmap[c]["len_B_words"]}</td><td class="t">{chip(labels[c], "../")}</td>'
                        f'<td class="num">{"" if labels[c] == -1 else f"{typ[c]:.2f}"}</td><td><a href="../chunks/{c}.html">{E(texts[c][:110])}…</a></td></tr>' for i, c in enumerate(seq))
-        page = (head(mm['title'], '../') + mast('../') + crumbs('<a href="../index.html">Home</a>', 'plays', E(mm['title'][:60]))
-                + f'<h1>{E(mm["title"])}</h1><p class="lede">{E(mm["author"])}, {E(mm["year"])} · {E(mm["genre_deep"])} · {E(mm["play_type_deep"])}{oe}</p>'
+        page = (head(mm['title'], '../') + mast('../') + crumbs('<a href="../index.html">Home</a>', '<a href="../plays.html">Plays</a>', E(mm['title'][:60]))
+                + f'<h1>{E(mm["title"])}</h1><p class="lede">{E(authors(mm["author"]))}, published {E(mm["year"])} · {E(mm["genre_deep"])} · {E(mm["play_type_deep"])}{oe}</p>'
                 + f'<div class="facts"><div class="f"><b>{len(seq)}</b><i>chunks</i></div><div class="f"><b>{words:,}</b><i>words</i></div><div class="f"><b>{len([t for t in by_t if t != -1])}</b><i>topics</i></div><div class="f"><b>{100 * by_t[-1] / words:.0f} %</b><i>unassigned</i></div></div>'
                 + '<h2>Metadata</h2><table>' + ''.join(f'<tr><th>{k}</th><td>{v}</td></tr>' for k, v in info) + '</table>'
                 + '<h2>Topic composition (share of words)</h2><div class="bars">' + bars + '</div>'
                 + '<h2>Chunks in order</h2><table class="sortable seq"><thead><tr><th class="num">#</th><th class="num">nodes</th><th class="num">words</th><th>topic</th><th class="num">typ.</th><th>opening</th></tr></thead><tbody>' + rows + '</tbody></table>' + foot())
         (out / 'plays' / f'{e}.html').write_text(page, encoding='utf-8')
+
+    # ---------------- plays index ----------------
+    prow = ''
+    for e, seq in sorted(ed_chunks.items(), key=lambda kv: (meta[kv[1][0]]['title'].lower(), meta[kv[1][0]]['year'])):
+        mm = meta[seq[0]]; df = deep_fields(e); w = sum(int(cmap[c]['len_B_words']) for c in seq)
+        prow += (f'<tr data-search="{E(mm["title"] + " " + authors(mm["author"]) + " " + mm["year"] + " " + mm["genre_deep"] + " " + df["company (BritDrama)"])}"><td><a href="plays/{e}.html">{E(mm["title"][:70])}</a></td><td>{E(authors(mm["author"])[:40])}</td>'
+                 f'<td class="num">{E(mm["year"])}</td><td>{E(df["first performance / composition (Annals)"])}</td><td>{E(mm["genre_deep"][:24])}</td><td>{E(df["company (BritDrama)"][:32])}</td><td class="num">{len(seq)}</td><td class="num">{100 * sum(int(cmap[c]["len_B_words"]) for c in seq if labels[c] == -1) / w:.0f} %</td></tr>')
+    page = (head('Plays') + mast('', 'plays.html') + crumbs('<a href="index.html">Home</a>', 'Plays')
+            + f'<h1>All editions</h1><p class="lede">{len(ed_chunks)} editions of {n_works} works. Each page lists the edition\'s chunks in order with their topics; dates are publication years, the Annals date is the first performance or composition.</p>'
+            + '<input class="filterbox" type="search" placeholder="Find a play — title, author, year, genre, company…" data-target="table.plays tbody tr" data-count="pcount"> <span id="pcount" style="font-size:.85rem;color:var(--muted)"></span>'
+            + '<table class="sortable plays"><thead><tr><th>title</th><th>author</th><th class="num">published</th><th>first performed / written (Annals)</th><th>genre (DEEP)</th><th>company (BritDrama)</th><th class="num">chunks</th><th class="num">unassigned</th></tr></thead><tbody>' + prow + '</tbody></table>' + foot())
+    (out / 'plays.html').write_text(page, encoding='utf-8')
 
     # ---------------- topic pages ----------------
     kw_lists = {}
@@ -285,12 +321,12 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
         best_per_work = {w: max((c for c in mem if meta[c]['work_id'] == w), key=lambda c: typ[c]) for w in works}
         land = [best_per_work[w] for w, _ in works.most_common(8)]
         cards = ''.join(f'<div class="card"><div class="who"><a href="chunks/{c}.html">{E(meta[c]["title"][:48])}</a> <span class="badge">typ. {typ[c]:.2f}</span></div>'
-                        f'<div class="whence">{E(meta[c]["author"][:40])}, {E(meta[c]["year"])} · {E(meta[c]["genre_deep"])} · {works[meta[c]["work_id"]]} chunks of this work here</div>'
+                        f'<div class="whence">{E(authors(meta[c]["author"])[:44])}, {E(meta[c]["year"])} · {E(meta[c]["genre_deep"])} · {works[meta[c]["work_id"]]} chunks of this work here</div>'
                         f'<div class="snip">{E(texts[c][:180])}…</div></div>' for c in land)
         gb = ''.join(f'<div class="lab">{E(g)}</div><div><div class="bar" style="width:{100 * n / len(mem):.1f}%"></div></div><div class="num">{n} ({100 * n / len(mem):.0f} %)</div>' for g, n in genres.most_common(8))
         wl = ', '.join(f'<a href="#w{w}">{E(title_of[w][0][:40])}</a> ({n})' for w, n in works.most_common(15))
         roster = sorted(mem, key=lambda c: (int(meta[c]['year']) if meta[c]['year'].isdigit() else 9999, -typ[c]))
-        rows = ''.join(f'<tr id="{"w" + meta[c]["work_id"] if best_per_work.get(meta[c]["work_id"]) == c else ""}"><td><a href="chunks/{c}.html">{c}</a></td><td>{E(meta[c]["title"][:55])}</td><td>{E(meta[c]["author"][:30])}</td>'
+        rows = ''.join(f'<tr id="{"w" + meta[c]["work_id"] if best_per_work.get(meta[c]["work_id"]) == c else ""}"><td><a href="chunks/{c}.html">{c}</a></td><td>{E(meta[c]["title"][:55])}</td><td>{E(authors(meta[c]["author"])[:34])}</td>'
                        f'<td class="num">{E(meta[c]["year"])}</td><td>{E(meta[c]["genre_deep"][:22])}</td><td class="num">{cmap[c]["len_B_words"]}</td><td class="num">{typ[c]:.3f}</td></tr>' for c in roster)
         ex_html = ''
         for c in sorted(mem, key=lambda c: -typ[c])[:12]:
@@ -307,7 +343,7 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
                 + '<h2>Genre mix (chunks of this topic)</h2><div class="bars">' + gb + '</div><p class="lede" style="font-size:.85rem">This is the direction topic → genre; the share of each genre\'s text that falls in this topic is on the <a href="genre.html">Genre</a> page.</p>'
                 + f'<h2>Works</h2><p>{wl}{" …" if len(works) > 15 else ""}</p>'
                 + '<h2>Excerpts</h2>' + ex_html
-                + f'<h2>All {len(mem)} chunks (chronological; click a header to sort)</h2><table class="sortable"><thead><tr><th>chunk</th><th>play</th><th>author</th><th class="num">year</th><th>genre</th><th class="num">words</th><th class="num">typicality</th></tr></thead><tbody>' + rows + '</tbody></table>' + foot())
+                + f'<h2>All {len(mem)} chunks (chronological; click a header to sort)</h2><table class="sortable"><thead><tr><th>chunk</th><th>play</th><th>author</th><th class="num">published</th><th>genre</th><th class="num">words</th><th class="num">typicality</th></tr></thead><tbody>' + rows + '</tbody></table>' + foot())
         (out / tpage(t)).write_text(page, encoding='utf-8')
 
     # ---------------- topics index ----------------
@@ -316,17 +352,20 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
     sec = ''
     for cat in CAT_ORDER:
         if not groups[cat]: continue
-        sec += f'<h2>{E(CAT_LABEL[cat])} <span style="font-weight:400;color:var(--faint)">· {len(groups[cat])} topics</span></h2>'
+        sec += f'<h2 data-group="{cat}">{E(CAT_LABEL[cat])} <span style="font-weight:400;color:var(--faint)">· {len(groups[cat])} topics</span></h2>'
         for t in sorted(groups[cat], key=lambda t: -len(members[t])):
             r = sheet[t]; mem = members[t]
-            best = sorted({meta[c]['work_id']: c for c in sorted(mem, key=lambda c: -typ[c])}.values(), key=lambda c: -typ[c])[:3]
-            protos = ' · '.join(f'<a href="chunks/{c}.html">{E(meta[c]["title"][:34])}</a> ({E(meta[c]["year"])})' for c in best)
-            sec += (f'<div class="card"><h3><a href="{tpage(t)}">Topic {t} — {E(label_of(t))}</a></h3><div class="whence">{protos}</div>'
+            wk = Counter(meta[c]['work_id'] for c in mem)
+            best = [max((c for c in mem if meta[c]['work_id'] == w), key=lambda c: typ[c]) for w, _ in wk.most_common(3)]   # each leading work's most typical chunk
+            protos = ' · '.join(f'<a href="chunks/{c}.html">{E(meta[c]["title"][:34])}</a> ({E(meta[c]["year"])}, typ. {typ[c]:.2f})' for c in best)
+            srch = E(f'T{t} {label_of(t)} {r["ctfidf_top10"]} {r["dominant_work"]} {r["genre_mix_of_topic"]}')
+            sec += (f'<div class="card" data-group="{cat}" data-search="{srch}"><h3><a href="{tpage(t)}">Topic {t} — {E(label_of(t))}</a></h3><div class="whence">{protos}</div>'
                     f'<div class="whence" style="margin-top:4px">{len(mem)} chunks · {r["n_works"]} works · dominant {E(r["dominant_work"][:36])} {100 * float(r["dominant_work_share"]):.0f} % · {E(r["genre_mix_of_topic"][:60])}</div>'
                     f'<div class="snip"><i>{E(r["ctfidf_top10"].replace("*", ""))}</i></div></div>')
     page = (head('Topics') + mast('', 'topics.html') + crumbs('<a href="index.html">Home</a>', 'Topics')
             + f'<h1>All topics</h1><p class="lede">{len(topics)} HDBSCAN clusters over {len(ids):,} chunks from {len(ed_chunks)} editions ({n_works} works); {sum(1 for c in ids if labels[c] == -1):,} chunks ({100 * sum(1 for c in ids if labels[c] == -1) / len(ids):.0f} %) are unassigned. '
-              'Topics are grouped by how they are used: cross-work themes enter the genre comparison; single-work or single-story clusters are kept for context; pending ones await reading. Each entry names the most typical chunk of its three leading works.</p>'
+              'Topics are grouped by how they are used: cross-work themes enter the genre comparison; single-work or single-story clusters are kept for context; pending ones await reading. Each entry links the most typical chunk of each of its three leading works (by chunk count).</p>'
+            + '<input class="filterbox" type="search" placeholder="Find a topic — by number, label, keyword or dominant work…" data-target="div.card[data-group]" data-count="tcount"> <span id="tcount" style="font-size:.85rem;color:var(--muted)"></span>'
             + sec + foot())
     (out / 'topics.html').write_text(page, encoding='utf-8')
 
@@ -363,7 +402,8 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
     # ---------------- methods ----------------
     def kv(dct, keys): return ''.join(f'<tr><th>{E(k)}</th><td>{E(str(dct.get(k, "")))}</td></tr>' for k in keys if k in dct)
     page = (head('Methods') + mast('', 'methods.html') + crumbs('<a href="index.html">Home</a>', 'Methods') + '<h1>Methods</h1>'
-            + '<h2>Corpus</h2><p>Play texts from EEBO-TCP, aligned to DEEP and Wiggins &amp; Richardson; the analysis view keeps the English dramatic body of each edition (speeches and stage directions; front and back matter excluded). Spelling is regularized token-by-token with the EarlyPrint annotations (<code>reg</code>), which also restore letters lost to <code>&lt;gap&gt;</code> in the TCP transcription; the original spelling is kept alongside.</p>'
+            + '<h2>Corpus</h2><p>The English performance-language view of corpus v3 (EEBO-TCP texts, DEEP metadata, 580 edition documents): the language presented as spoken, sung or recited in performance — speeches, choruses, songs, and reviewed prologues, epilogues and inductions attributed to their edition, whether encoded in the body, front or back matter. Selection combines structural XML rules with recorded contextual decisions (the corpus repository\'s decision tables). Speaker labels, encoded stage directions, notes, headings and running titles are removed at extraction; book-level dedications and plot summaries are excluded. '
+              'Spelling: a second view applies EarlyPrint\'s <code>reg</code> token by token where a node could be aligned to EarlyPrint (99.5 % of nodes paired; accepted <code>reg</code> values at 19 % of token positions); unaligned nodes keep the extracted text with only long <i>s</i> and word-initial <i>VV</i> normalized. EarlyPrint can supply corrected readings where its transcription has them, but the pairing does not establish that every <code>&lt;gap&gt;</code> was restored. The unregularized text is shown on each chunk page for comparison.</p>'
             + '<h2>Chunking</h2><table>' + kv(chunk_info, ['docs', 'chunks', 'rule', 'words_median', 'words_p10', 'words_p90', 'long_nodes_split', 'long_nodes_unsplit', 'short_docs', 'tokenizer', 'tokens_median', 'tokens_max']) + '</table>'
             + '<h2>Embedding</h2><table>' + kv(emb_info, ['model', 'revision', 'max_seq_length', 'batch_size', 'n_chunks', 'dim', 'device']) + '</table>'
             + '<h2>Clustering</h2><p>UMAP to 5 dimensions (n_neighbors 15, min_dist 0.05, cosine) → HDBSCAN (min_cluster_size 30, Euclidean, EOM). Three seeds were run; this site shows seed %d and reports each chunk\'s topic in the other seeds on its page.</p><table>' % a.seed + kv(run_info, ['n_chunks', 'n_topics', 'outlier_share', 'hdbscan_clusters', 'seed']) + '</table>'
@@ -388,14 +428,15 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
     n_cross = sum(len(groups[c]) for c in ('included', 'candidate'))
     page = (head('Home') + mast('', 'index.html')
             + f'<h1>{E(a.title)}</h1><p class="lede">A topic map of early modern English drama, built from ~500-word chunks of every play in the corpus: what each stretch of a play is about, which of those concerns recur across works, and how they are distributed across genres. Every number on the site leads back to the chunks it was computed from.</p>'
-            + f'<div class="facts"><div class="f"><b>{len(ids):,}</b><i>chunks</i></div><div class="f"><b>{len(ed_chunks)}</b><i>editions</i></div><div class="f"><b>{n_works}</b><i>works</i></div><div class="f"><b>{len(topics)}</b><i>topics</i></div><div class="f"><b>{n_cross}</b><i>cross-work themes</i></div><div class="f"><b>{min(years)}–{max(years)}</b><i>years</i></div></div>'
+            + f'<div class="facts"><div class="f"><b>{len(ids):,}</b><i>chunks</i></div><div class="f"><b>{len(ed_chunks)}</b><i>editions</i></div><div class="f"><b>{n_works}</b><i>works</i></div><div class="f"><b>{len(topics)}</b><i>topics</i></div><div class="f"><b>{n_cross}</b><i>cross-work themes</i></div><div class="f"><b>{min(years)}–{max(years)}</b><i>publication years</i></div></div>'
             + '<div class="cards">'
-            + ('<div class="card"><h3><a href="map.html">Interactive map</a></h3><div class="whence">Every chunk as a point, coloured by topic; highlight by genre, decade, author, title, play type, company or theater; click a point for its page.</div></div>' if not a.no_map else '')
+            + ('<div class="card"><h3><a href="map.html">Interactive map</a></h3><div class="whence">Every chunk as a point, coloured by topic; filter by genre, publication decade, author, title, play type, company or theater (filters combine); click a point for its page.</div></div>' if not a.no_map else '')
+            + '<div class="card"><h3><a href="plays.html">Plays</a></h3><div class="whence">Every edition with its chunks in order, topic composition, DEEP metadata and other editions of the same work; searchable.</div></div>'
             + '<div class="card"><h3><a href="topics.html">Topics</a></h3><div class="whence">All clusters with keywords, works, typical chunks and full rosters — grouped into cross-work themes, single-work clusters and pending ones.</div></div>'
             + ('<div class="card"><h3><a href="genre.html">Genre</a></h3><div class="whence">How the cross-work themes are distributed across comedy, tragedy, history, tragicomedy, moral, romance, pastoral and masque.</div></div>' if (out / 'genre.html').exists() else '')
             + '<div class="card"><h3><a href="methods.html">Methods</a></h3><div class="whence">Corpus, chunking, embedding model, clustering, keywords, typicality and aggregation — with the parameters actually used.</div></div></div>'
             + '<h2>What a topic page shows</h2><p>The three keyword lists, the size of the cluster and how far it is concentrated in one work, its genre mix, the most typical chunk of each leading work, keyword-highlighted excerpts, and a sortable roster of every member chunk with its typicality.</p>'
-            + '<h2>What a chunk page shows</h2><p>The play and its DEEP metadata (first performance, company, theater), where the chunk sits in the edition, its topic and typicality in this seed and its topic in the other seeds, excerpts with the topic\'s words highlighted, the full regularized text and the original spelling, and links to the previous and next chunk.</p>'
+            + '<h2>What a chunk page shows</h2><p>The play, author, publication year and Annals performance date, company and theater where DEEP records them, the topic with its typicality, then the full regularized text with the topic\'s distinguishing words marked and links to the previous and next chunk; the metadata table (edition, TCP and DEEP ids, node positions, topic in the other seeds) and the original spelling are folded below it.</p>'
             + f'<h2>How to read the numbers</h2><p>{n_out:,} chunks ({100 * n_out / len(ids):.0f} %) are unassigned by HDBSCAN; they are counted in every denominator and never deleted. Roughly two thirds of the clusters gather the chunks of a single play or a single story; they are shown but kept out of the genre comparison, which uses only themes that recur across works.</p>' + foot())
     (out / 'index.html').write_text(page, encoding='utf-8')
     total = sum(f.stat().st_size for f in out.rglob('*') if f.is_file())

@@ -33,3 +33,7 @@ mark{background:#fff3a8;padding:0 2px;border-radius:2px}
 details summary{cursor:pointer;color:var(--accent)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:800px){.grid2{grid-template-columns:1fr}}
 img.heat{max-width:100%;border:1px solid var(--rule);border-radius:8px}
+#note{font-size:.8rem;color:var(--muted);margin:0 0 .4em}#filters{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:0 0 .6em;font-size:.8rem;color:var(--muted)}
+#filters select{max-width:220px;font-size:.8rem}#filters button{font-size:.8rem}#count{color:var(--accent-ink);font-weight:600}#map{height:calc(100vh - 190px);min-height:560px}
+input.filterbox{width:100%;max-width:520px;font:inherit;font-size:.95rem;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;margin:.2em 0 1em;background:var(--card)}
+.metaline{color:var(--muted);font-size:.95rem;margin:0 0 1.2em;max-width:none}.metaline b{color:var(--ink);font-weight:600}

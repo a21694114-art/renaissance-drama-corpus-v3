@@ -1,3 +1,7 @@
 document.querySelectorAll('table.sortable').forEach(t=>{const ths=t.querySelectorAll('th');ths.forEach((th,i)=>th.addEventListener('click',()=>{const tb=t.tBodies[0];const rows=[...tb.rows];const dir=th.dataset.dir==='asc'?'desc':'asc';ths.forEach(x=>x.dataset.dir='');th.dataset.dir=dir;
 const val=r=>{const c=r.cells[i];const v=c.dataset.v!==undefined?c.dataset.v:c.textContent.trim();const n=parseFloat(v);return isNaN(n)?v.toLowerCase():n};
 rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1:-1)});rows.forEach(r=>tb.appendChild(r));}));});
+document.querySelectorAll('input.filterbox').forEach(inp=>{const items=[...document.querySelectorAll(inp.dataset.target)];const out=document.getElementById(inp.dataset.count);
+const run=()=>{const q=inp.value.trim().toLowerCase().split(/\s+/).filter(Boolean);let n=0;items.forEach(el=>{const t=(el.dataset.search||el.textContent).toLowerCase();const ok=q.every(w=>t.includes(w));el.style.display=ok?'':'none';if(ok)n++;});
+document.querySelectorAll('h2[data-group]').forEach(h=>{const any=items.some(el=>el.dataset.group===h.dataset.group&&el.style.display!=='none');h.style.display=any?'':'none';});if(out)out.textContent=q.length?n+' shown':'';};
+inp.addEventListener('input',run);});
