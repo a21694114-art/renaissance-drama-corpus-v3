@@ -21,7 +21,7 @@ Writes <out>/:
 Everything is derived from files the pipeline already wrote; nothing is recomputed except the
 cosine typicality and (once, cached) the 2-D UMAP for the map.
 """
-import argparse, csv, html, json, re, shutil, subprocess, sys
+import argparse, hashlib, csv, html, json, re, shutil, subprocess, sys
 from collections import Counter, defaultdict
 from pathlib import Path
 import numpy as np
@@ -89,15 +89,24 @@ def main():
     ap.add_argument('--out', default='docs'); ap.add_argument('--repo-url', default='')
     ap.add_argument('--title', default='Renaissance Drama — Topics'); ap.add_argument('--credit', default='')
     ap.add_argument('--no-map', action='store_true'); ap.add_argument('--limit-chunk-pages', type=int, default=0)
+    ap.add_argument('--use', default='', help='categories in the genre comparison; default: aggregate/config.json if present, else included,candidate')
     a = ap.parse_args()
     runs = Path(a.runs); ch = Path(a.chunks); d = runs / f'topics_{a.variant}_s{a.seed}'; agg = d / 'aggregate'
+    agg_cfg = json.load(open(agg / 'config.json')) if (agg / 'config.json').exists() else {}
+    gassign = {r['work_id']: r for r in csv.DictReader(open(agg / 'genre_assignment.csv', encoding='utf-8'))} if (agg / 'genre_assignment.csv').exists() else {}
+    use_cats = [u.strip() for u in a.use.split(',') if u.strip()] if a.use else (agg_cfg.get('use') or ['included', 'candidate'])
+    in_cmp = lambda cat: cat in use_cats
+    CAT_LABEL.update({'included': 'cross-work theme (confirmed' + (', in the genre comparison)' if 'included' in use_cats else ')'),
+                      'candidate': 'cross-work theme (candidate' + (', in the genre comparison)' if 'candidate' in use_cats else ' — not yet in the comparison)')})
     out = Path(a.out); (out / 'chunks').mkdir(parents=True, exist_ok=True); (out / 'plays').mkdir(exist_ok=True)
     code_dir = Path(__file__).resolve().parent
 
     # ---------------- data ----------------
     ids = [r['chunk_id'] for r in csv.DictReader(open(runs / f'embedding_ids_{a.variant}.csv', encoding='utf-8'))]
     row_of = {c: i for i, c in enumerate(ids)}
-    labels = {r['chunk_id']: int(r['topic']) for r in csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8'))}
+    _dt = list(csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8')))
+    labels = {r['chunk_id']: int(r['topic']) for r in _dt}
+    in_fit = {r['chunk_id']: r.get('in_fit', '1') == '1' for r in _dt}; n_fit = sum(in_fit.values()); n_placed = len(in_fit) - n_fit
     other = {}
     for p in sorted(runs.glob(f'topics_{a.variant}_s*')):
         s = int(p.name.split('_s')[1])
@@ -132,6 +141,11 @@ def main():
     for c, t in labels.items():
         if t != -1: members[t].append(c)
     topics = sorted(members)
+    # a rebuild on another run (e.g. 95 → 63 topics) must not leave the old run's topic pages and figures behind
+    stale = [p for p in out.glob('topic_*.html') if not re.fullmatch(r'topic_(\d+)\.html', p.name) or int(re.fullmatch(r'topic_(\d+)\.html', p.name).group(1)) not in members]
+    stale += [p for p in out.glob('*.png')]   # genre figures are copied again below from the current aggregate dir
+    for p in stale: p.unlink()
+    if stale: print(f'removed {len(stale)} stale files from {out}')
     cent = {t: emb[[row_of[c] for c in members[t]]].mean(axis=0) for t in topics}
     for t in topics: cent[t] /= np.linalg.norm(cent[t]) + 1e-9
     C = np.stack([cent[t] for t in topics])
@@ -164,7 +178,7 @@ def main():
     # ---------------- shell ----------------
     def head(title, root=''):
         return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
-                f'<title>{E(title)} · {E(a.title)}</title><link rel="stylesheet" href="{root}site.css"><script defer src="{root}site.js"></script></head><body>')
+                f'<title>{E(title)} · {E(a.title)}</title><link rel="stylesheet" href="{root}site.css?v={ASSET_V}"><script defer src="{root}site.js?v={ASSET_V}"></script></head><body>')
     def mast(root='', active=''):
         items = [('index.html', 'Home'), ('map.html', 'Map'), ('topics.html', 'Topics'), ('plays.html', 'Plays'), ('genre.html', 'Genre'), ('methods.html', 'Methods')]
         nav = ''.join(f'<a href="{root}{h}"{" class=active" if active == h else ""}>{n}</a>' for h, n in items if h != 'genre.html' or agg.exists())
@@ -210,7 +224,11 @@ mark{background:#fff3a8;padding:0 2px;border-radius:2px}
 .footer{margin-top:3em;padding-top:1em;border-top:1px solid var(--rule);font-size:.8rem;color:var(--faint)}
 details summary{cursor:pointer;color:var(--accent)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:800px){.grid2{grid-template-columns:1fr}}
-img.heat{max-width:100%;border:1px solid var(--rule);border-radius:8px;cursor:zoom-in}
+img.heat{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;margin:0 auto;border:1px solid var(--rule);border-radius:8px;cursor:zoom-in;background:#fff}
+.fig{margin:0 0 .6em}.fig .fighint{text-align:center;font-size:.78rem;color:var(--faint);margin:.35em 0 0}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(20,20,26,.93);display:none;overflow:auto}#lb.on{display:block}#lb .stage{min-height:100%;display:flex;padding:52px 16px 24px}
+#lb img{display:block;max-width:none;margin:auto;cursor:zoom-in;background:#fff;border-radius:4px}#lb.big img{cursor:grab}#lb .bar{position:fixed;top:0;left:0;right:0;height:44px;display:flex;align-items:center;gap:8px;padding:0 14px;background:rgba(0,0,0,.55);color:#eee;font-size:.85rem;z-index:51}
+#lb .bar button,#lb .bar a{font:inherit;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:4px 10px;cursor:pointer;text-decoration:none}#lb .bar button:hover,#lb .bar a:hover{background:rgba(255,255,255,.26)}#lb .bar .sp{flex:1}#lb .bar .pct{min-width:4em;text-align:center;font-variant-numeric:tabular-nums}
 #note{font-size:.8rem;color:var(--muted);margin:0 0 .4em}#filters{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:0 0 .6em;font-size:.8rem;color:var(--muted)}
 #filters select{max-width:220px;font-size:.8rem}#filters button{font-size:.8rem}#count{color:var(--accent-ink);font-weight:600}#map{height:calc(100vh - 190px);min-height:560px}
 input.filterbox{width:100%;max-width:520px;font:inherit;font-size:.95rem;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;margin:.2em 0 1em;background:var(--card)}
@@ -222,8 +240,23 @@ rows.sort((a,b)=>{const x=val(a),y=val(b);return (x>y?1:x<y?-1:0)*(dir==='asc'?1
 document.querySelectorAll('input.filterbox').forEach(inp=>{const items=[...document.querySelectorAll(inp.dataset.target)];const out=document.getElementById(inp.dataset.count);
 const run=()=>{const q=inp.value.trim().toLowerCase().split(/\s+/).filter(Boolean);let n=0;items.forEach(el=>{const t=(el.dataset.search||el.textContent).toLowerCase();const ok=q.every(w=>t.includes(w));el.style.display=ok?'':'none';if(ok)n++;});
 document.querySelectorAll('h2[data-group]').forEach(h=>{const any=items.some(el=>el.dataset.group===h.dataset.group&&el.style.display!=='none');h.style.display=any?'':'none';});if(out)out.textContent=q.length?n+' shown':'';};
-inp.addEventListener('input',run);});"""
+inp.addEventListener('input',run);});
+/* lightbox for figures: click = fit to screen; +/- or click the image = zoom; 1:1 = full size; Esc closes */
+(()=>{const figs=[...document.querySelectorAll('a>img.heat')];if(!figs.length)return;
+const lb=document.createElement('div');lb.id='lb';lb.innerHTML='<div class="bar"><span class="ttl"></span><span class="sp"></span><button data-z="-">&minus;</button><span class="pct"></span><button data-z="+">+</button><button data-z="fit">Fit to screen</button><button data-z="1">1:1</button><a class="open" target="_blank" rel="noopener">Open file</a><button data-z="x">Close &times;</button></div><div class="stage"><img alt=""></div>';
+document.body.appendChild(lb);const img=lb.querySelector('img'),pct=lb.querySelector('.pct'),ttl=lb.querySelector('.ttl'),open=lb.querySelector('.open');let sc=1;
+const fitScale=()=>Math.min((window.innerWidth-40)/img.naturalWidth,(window.innerHeight-84)/img.naturalHeight,1);
+const apply=()=>{img.style.width=Math.round(img.naturalWidth*sc)+'px';pct.textContent=Math.round(sc*100)+' %';lb.classList.toggle('big',sc>fitScale()+1e-6);};
+const show=(a)=>{ttl.textContent=a.querySelector('img').alt||'';open.href=a.href;img.onload=()=>{sc=fitScale();apply();lb.scrollTo(0,0);};img.src=a.href;lb.classList.add('on');document.body.style.overflow='hidden';};
+const hide=()=>{lb.classList.remove('on');document.body.style.overflow='';img.removeAttribute('src');};
+figs.forEach(im=>im.parentElement.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.button)return;e.preventDefault();show(im.parentElement);}));
+lb.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{const z=b.dataset.z;if(z==='x')return hide();if(z==='fit')sc=fitScale();else if(z==='1')sc=1;else if(z==='+')sc=Math.min(sc*1.25,4);else sc=Math.max(sc/1.25,0.05);apply();}));
+img.addEventListener('click',()=>{sc=(sc>fitScale()+1e-6)?fitScale():1;apply();});
+lb.querySelector('.stage').addEventListener('click',e=>{if(e.target===e.currentTarget)hide();});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')hide();else if(e.key==='+'||e.key==='=')lb.querySelector('[data-z="+"]').click();else if(e.key==='-')lb.querySelector('[data-z="-"]').click();});
+window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classList.contains('big')){sc=fitScale();apply();}});})();"""
     (out / 'site.css').write_text(CSS, encoding='utf-8'); (out / 'site.js').write_text(JS, encoding='utf-8')
+    ASSET_V = hashlib.md5((CSS + JS).encode('utf-8')).hexdigest()[:8]   # cache-buster: browsers reload site.css / site.js whenever they change
     (out / '.nojekyll').write_text('', encoding='utf-8')   # GitHub Pages: serve files as they are (no Jekyll pass over 18k pages)
 
     # ---------------- chunk pages ----------------
@@ -249,7 +282,7 @@ inp.addEventListener('input',run);});"""
         rows = [('Play', f'<a href="../plays/{e}.html">{E(m["title"])}</a>'), ('Author', E(authors(m['author']))), ('Publication year (edition)', E(m['year']))]
         for kk in ('first performance / composition (Annals)', 'first performance (BritDrama)', 'company (BritDrama)', 'theater'):
             if df[kk]: rows.append((kk[0].upper() + kk[1:], E(df[kk])))
-        rows += [('Genre (DEEP)', E(m['genre_deep'])), ('Play type', E(m['play_type_deep'])), ('Edition / TCP / DEEP', f'edition {e} · TCP {E(m["tcp"])} · DEEP {E(m["deep_id"])}'),
+        rows += [('Genre (British Drama)', E(m['genre_deep'])), ('Play type', E(m['play_type_deep'])), ('Edition / TCP / DEEP', f'edition {e} · TCP {E(m["tcp"])} · DEEP {E(m["deep_id"])}'),
                  ('Position', f'nodes {cm["node_start"]}–{cm["node_end"]} (positions in the processed text, not lines of the printed book)' + (f' · piece {cm["piece_start"]}–{cm["piece_end"]} of a split node' if cm['n_pieces_end'] != '1' or cm['piece_start'] != '0' else '') + f' · chunk {k + 1} of {len(seq)} in this edition'),
                  ('Length', f'{cm["len_B_words"]} words · {cm["len_B_tokens"]} tokens' + (f' · flags: {E(cm["flags"])}' if cm['flags'] else '')),
                  ('Topic (seed %d)' % a.seed, (f'<a href="../{tpage(t)}">T{t} — {E(label_of(t))}</a> {badge(cat_of(t))} · typicality {typ[c]:.3f} (cosine to the topic centroid)' if t != -1
@@ -280,8 +313,12 @@ inp.addEventListener('input',run);});"""
         comp = sorted(by_t.items(), key=lambda kv: -kv[1])
         bars = ''.join(f'<div class="lab">{chip(t, "../")}</div><div><div class="bar" style="width:{100 * w / words:.1f}%"></div></div><div class="num">{100 * w / words:.1f} %</div>' for t, w in comp[:14])
         df = deep_fields(e)
-        info = [('Title', E(mm['title'])), ('Author', E(authors(mm['author']))), ('Publication year (edition)', E(mm['year'])), ('Genre (DEEP)', E(mm['genre_deep'])), ('Play type', E(mm['play_type_deep'])),
+        info = [('Title', E(mm['title'])), ('Author', E(authors(mm['author']))), ('Publication year (edition)', E(mm['year'])), ('Genre (British Drama)', E(mm['genre_deep'])), ('Play type', E(mm['play_type_deep'])),
                 ('Work / edition / TCP / DEEP', f'work {E(mm["work_id"])} · edition {e} · TCP {E(mm["tcp"])} · DEEP {E(mm["deep_id"])}')]
+        ga = gassign.get(mm['work_id'])
+        if ga:
+            src = {'britdrama': 'from the British Drama label', 'annals': 'British Drama label compound or missing → Annals label used', 'none': 'no single main genre in British Drama or Annals → outside the single-genre comparison'}[ga['genre_source']]
+            info.insert(4, ('Genre group (comparison)', f'{E(ga["genre_main"])} — {src}' + (f' · Annals: {E(ga["genre_annals"])}' if ga['genre_annals'] else '')))
         info += [(k[0].upper() + k[1:], E(v)) for k, v in df.items() if v]
         if m: info.append(('Corpus build', f'{E(m.get("corpus_version", ""))} · nodes {E(m.get("n_nodes[texts_analysis_en]", ""))} · witness {E(m.get("witness_role", "") or "single")}'))
         other_eds = sorted(x for x in ed_chunks if x != e and meta[ed_chunks[x][0]]['work_id'] == mm['work_id'])
@@ -305,7 +342,7 @@ inp.addEventListener('input',run);});"""
     page = (head('Plays') + mast('', 'plays.html') + crumbs('<a href="index.html">Home</a>', 'Plays')
             + f'<h1>All editions</h1><p class="lede">{len(ed_chunks)} editions of {n_works} works. Each page lists the edition\'s chunks in order with their topics; dates are publication years, the Annals date is the first performance or composition.</p>'
             + '<input class="filterbox" type="search" placeholder="Find a play — title, author, year, genre, company…" data-target="table.plays tbody tr" data-count="pcount"> <span id="pcount" style="font-size:.85rem;color:var(--muted)"></span>'
-            + '<table class="sortable plays"><thead><tr><th>title</th><th>author</th><th class="num">published</th><th>first performed / written (Annals)</th><th>genre (DEEP)</th><th>company (BritDrama)</th><th class="num">chunks</th><th class="num">unassigned</th></tr></thead><tbody>' + prow + '</tbody></table>' + foot())
+            + '<table class="sortable plays"><thead><tr><th>title</th><th>author</th><th class="num">published</th><th>first performed / written (Annals)</th><th>genre (British Drama)</th><th>company (BritDrama)</th><th class="num">chunks</th><th class="num">unassigned</th></tr></thead><tbody>' + prow + '</tbody></table>' + foot())
     (out / 'plays.html').write_text(page, encoding='utf-8')
 
     # ---------------- topic pages ----------------
@@ -379,24 +416,44 @@ inp.addEventListener('input',run);});"""
         for f, cap in (('genre_stacked_top20_works_renorm.png', 'Top 20 selected topics per genre, rescaled to the words those topics cover (coverage above each bar)'),
                        ('genre_panels_top20_works.png', 'The same topics per genre as bars; values are the mean share of a work\'s words')):
             if (agg / f).exists():
-                shutil.copy(agg / f, out / f); gfig += f'<h2>{E(cap)}</h2><a href="{f}"><img class="heat" src="{f}" alt="{E(cap)}"></a>'
+                shutil.copy(agg / f, out / f); gfig += f'<h2>{E(cap)}</h2><div class="fig"><a href="{f}"><img class="heat" src="{f}" alt="{E(cap)}"></a><p class="fighint">Shown fitted to the screen — click to enlarge and zoom.</p></div>'
         per_genre = [p_ for p_ in sorted(agg.glob('genre_*_top20_works.png')) if not p_.name.startswith(('genre_stacked', 'genre_panels'))]
         if per_genre:
             for p_ in per_genre: shutil.copy(p_, out / p_.name)
             gfig += '<p class="lede" style="font-size:.85rem">Per-genre bar charts: ' + ' · '.join(f'<a href="{p_.name}">{E(p_.name.split("_")[1])}</a>' for p_ in per_genre) + '</p>'
-        covt = '<table><thead><tr><th>genre</th><th class="num">works</th><th class="num">selected topics</th><th class="num">single work / story</th><th class="num">pending</th><th class="num">unassigned</th></tr></thead><tbody>' + ''.join(
-            f'<tr><td>{E(r["genre_main"])}</td><td class="num">{r["n_works"]}</td><td class="num">{100 * float(r["selected topics mean share of words"]):.0f} %</td><td class="num">{100 * float(r["contextual_only mean share of words"]):.0f} %</td><td class="num">{100 * float(r["pending mean share of words"]):.0f} %</td><td class="num">{100 * float(r["outlier_hdbscan mean share of words"]):.0f} %</td></tr>' for r in cov) + '</tbody></table>'
+        rest_cats = [c for c in ('included', 'candidate', 'contextual_only', 'pending', 'unclassified') if c not in use_cats and any(float(r.get(f'{c} mean share of words', 0) or 0) > 0 for r in cov)]
+        cat_head = {'included': 'confirmed themes (not in comparison)', 'candidate': 'candidates (not in comparison)', 'contextual_only': 'single work / story', 'pending': 'pending', 'unclassified': 'unclassified'}
+        covt = ('<table><thead><tr><th>genre</th><th class="num">works</th><th class="num">in the comparison</th>' + ''.join(f'<th class="num">{E(cat_head[c])}</th>' for c in rest_cats) + '<th class="num">unassigned</th></tr></thead><tbody>'
+                + ''.join(f'<tr><td>{E(r["genre_main"])}</td><td class="num">{r["n_works"]}</td><td class="num">{100 * float(r["selected topics mean share of words"]):.0f} %</td>'
+                          + ''.join(f'<td class="num">{100 * float(r[f"{c} mean share of words"]):.0f} %</td>' for c in rest_cats)
+                          + f'<td class="num">{100 * float(r["outlier_hdbscan mean share of words"]):.0f} %</td></tr>' for r in cov) + '</tbody></table>'
+                + f'<p class="lede" style="font-size:.85rem">"In the comparison" = the {agg_cfg.get("n_selected", "selected")} topics of the categories {E(", ".join(use_cats))}; every row sums to 100 % of the genre\'s words (works equal-weighted).</p>')
+        if gassign:
+            nsrc = Counter(r['genre_source'] for r in gassign.values())
+            ann_rows = sorted((r for r in gassign.values() if r['genre_source'] == 'annals'), key=lambda r: (r['genre_main'], r['title']))
+            covt += (f'<h3>How works were placed in a genre</h3><p class="lede" style="font-size:.9rem">Rule: the British Drama label (Wiggins &amp; Richardson, via DEEP) is used when it is a single main genre ({nsrc.get("britdrama", 0)} works); '
+                     f'when it is compound or missing, the Annals of English Drama label (Harbage, Schoenbaum &amp; Wagonheim, via DEEP) is used when <i>it</i> is a single main genre ({nsrc.get("annals", 0)} works; "Morality" read as moral); '
+                     f'otherwise the work stays outside the single-genre comparison ({nsrc.get("none", 0)} works). Both raw labels and the source used are kept for every work (<code>genre_assignment.csv</code>) and shown on its play page.</p>')
+            if ann_rows:
+                covt += (f'<details><summary>Works placed by the Annals label ({len(ann_rows)})</summary><table><thead><tr><th>work</th><th class="num">year</th><th>British Drama</th><th>Annals</th><th>placed in</th></tr></thead><tbody>'
+                         + ''.join(f'<tr><td>{E(r["title"][:64])}</td><td class="num">{E(r["year_first"])}</td><td>{E(r["genre_britdrama"])}</td><td>{E(r["genre_annals"])}</td><td>{E(r["genre_main"])}</td></tr>' for r in ann_rows) + '</tbody></table></details>')
+        if (agg / 'other_multi_works.csv').exists():
+            om = list(csv.DictReader(open(agg / 'other_multi_works.csv', encoding='utf-8')))
+            n_om = sum(int(r['n_works']) for r in om); has_ann = 'annals' in (om[0] if om else {})
+            covt += (f'<h3>Works outside the single-genre comparison ({n_om} works)</h3><p class="lede" style="font-size:.9rem">Kept in the corpus and on every other page, but not placed in one genre: neither British Drama nor Annals gives them a single main genre. Described here, not tested.</p>'
+                     '<table><thead><tr><th>British Drama label</th><th class="num">works</th><th class="num">editions</th>' + ('<th>Annals label(s)</th>' if has_ann else '') + '<th>examples</th></tr></thead><tbody>'
+                     + ''.join(f'<tr><td>{E(r["genre_deep"])}</td><td class="num">{r["n_works"]}</td><td class="num">{r["n_editions"]}</td>' + (f'<td>{E(r["annals"])}</td>' if has_ann else '') + f'<td style="font-size:.85rem;color:var(--muted)">{E(r["examples"])}</td></tr>' for r in om) + '</tbody></table>')
         def qk(r):
             q = r.get('bh_q', ''); return -1 if q == '<1e-5' else (float(q) if q else 1)
         kwt = '<table class="sortable"><thead><tr><th>topic</th><th>highest genre (mean; works with topic)</th><th>one-work</th><th>second</th><th class="num">ratio</th><th class="num">p</th><th class="num">q</th></tr></thead><tbody>' + ''.join(
             f'<tr><td><a href="{tpage(int(r["topic"]))}">T{r["topic"]} {E(r["label"][:44])}</a></td><td>{E(r["highest"])} ({100 * float(r["mean " + r["highest"]]):.2f} %; {r["highest_works_with_topic"]})</td><td>{r["single_work_driven"]}</td>'
             f'<td>{E(r["second"])} ({100 * float(r["mean " + r["second"]]):.2f} %)</td><td class="num">{r["ratio_high_second"]}</td><td class="num">{r["kruskal_p"]}</td><td class="num">{r.get("bh_q", "")}</td></tr>' for r in sorted(kw, key=qk)) + '</tbody></table>'
         page = (head('Genre') + mast('', 'genre.html').replace('<div class="wrap">', '<div class="wrap wide">') + crumbs('<a href="index.html">Home</a>', 'Genre')
-                + '<h1>Topics across genres</h1><p class="lede">Shares are of a work\'s words: chunks are aggregated to editions, editions of one work are averaged, and works enter their genre with equal weight. Every chunk stays in the denominator, so the selected topics never describe a whole genre — the rest of each genre\'s words is shown alongside.</p>'
+                + f'<h1>Topics across genres</h1><p class="lede">Shares are of a work\'s words: chunks are aggregated to editions, editions of one work are averaged, and works enter their genre with equal weight. Every chunk stays in the denominator, so the selected topics never describe a whole genre — the rest of each genre\'s words is shown alongside. The comparison uses the topics classified as <b>{E(", ".join(use_cats))}</b>; the stacked figure below rescales those topics to 100 % of the words they cover (the coverage is printed above each bar), so its percentages are shares of the covered text, not of the genre.</p>'
                 + '<h2>Coverage</h2>' + covt + gfig
-                + '<h2>Mean share of a work\'s words (square-root colour scale)</h2><a href="heatmap_selected_topics.png"><img class="heat" src="heatmap_selected_topics.png" alt="heatmap"></a>'
-                + '<h2>Share of works in which the topic occurs</h2><a href="heatmap_prevalence.png"><img class="heat" src="heatmap_prevalence.png" alt="prevalence heatmap"></a>'
-                + '<p class="lede" style="font-size:.85rem">Click any figure to open it at full size.</p>'
+                + '<h2>Mean share of a work\'s words (square-root colour scale)</h2><div class="fig"><a href="heatmap_selected_topics.png"><img class="heat" src="heatmap_selected_topics.png" alt="Mean share of a work\'s words, selected topics by genre"></a></div>'
+                + '<h2>Share of works in which the topic occurs</h2><div class="fig"><a href="heatmap_prevalence.png"><img class="heat" src="heatmap_prevalence.png" alt="Share of works in which each topic occurs, by genre"></a></div>'
+                + '<p class="lede" style="font-size:.85rem">Every figure is shown fitted to the screen; click one to enlarge it, then use + / − / 1:1, or click the image to switch between fit and full size (Esc closes).</p>'
                 + '<h2>Kruskal–Wallis across genres (Benjamini–Hochberg q)</h2><p class="lede" style="font-size:.9rem">"one-work" = a single work holds ≥50 % of the highest genre\'s total share, so that mean is one play, not the genre. Descriptive only.</p>' + kwt + foot())
         (out / 'genre.html').write_text(page, encoding='utf-8')
 
@@ -411,6 +468,7 @@ inp.addEventListener('input',run);});"""
             + '<h2>Keywords and labels</h2><p>Class-TF-IDF (BERTopic\'s <code>ClassTfidfTransformer</code>, default settings) on one document per topic with a uniform vectorizer (min_df 1, max_df 1.0, alphabetic tokens, a stop-list including early-modern function-word spellings); KeyBERT-style words rank the same candidates by cosine to the topic centroid with the embedding model; MMR diversifies them (λ 0.5). Words capitalised in ≥80 % of their occurrences are marked as probable names. Labels are written by the researcher from the keywords and the chunks; AI drafts are marked as such until confirmed.</p>'
             + '<h2>Typicality</h2><p>Cosine similarity between a chunk\'s embedding and the mean embedding of its topic. Unassigned chunks show their nearest topic instead.</p>'
             + '<h2>Genre comparison</h2><p>Chunk → edition → work → genre, word-weighted, editions of a work averaged, works equal-weighted; only topics classified as cross-work themes enter the comparison, and the share of each genre\'s words that falls outside them is reported. Kruskal–Wallis across genres with ≥10 works, Benjamini–Hochberg over the selected topics; descriptive.</p>'
+            + ('<p>Genre of a work: the British Drama label (Wiggins &amp; Richardson, via DEEP) when it is a single main genre; when it is compound or missing, the Annals of English Drama label (Harbage, Schoenbaum &amp; Wagonheim, via DEEP) when that is a single main genre; otherwise the work is described but not placed in a genre. Both labels and the source used are recorded for every work (see the Genre page and each play page).</p>' if agg_cfg.get('n_by_genre_source', {}).get('annals') else '')
             + '<h2>Map</h2><p>The chunk map is a separate 2-D UMAP of the embeddings (same neighbourhood settings) for viewing only; colours are the seed-%d topics.</p>' % a.seed + foot())
     (out / 'methods.html').write_text(page, encoding='utf-8')
 
@@ -426,10 +484,10 @@ inp.addEventListener('input',run);});"""
 
     # ---------------- landing ----------------
     n_out = sum(1 for c in ids if labels[c] == -1)
-    n_cross = sum(len(groups[c]) for c in ('included', 'candidate'))
+    n_cmp = sum(len(groups[c]) for c in use_cats); n_inc = len(groups['included']); n_cand = len(groups['candidate'])
     page = (head('Home') + mast('', 'index.html')
             + f'<h1>{E(a.title)}</h1><p class="lede">A topic map of early modern English drama, built from ~500-word chunks of every play in the corpus: what each stretch of a play is about, which of those concerns recur across works, and how they are distributed across genres. Every number on the site leads back to the chunks it was computed from.</p>'
-            + f'<div class="facts"><div class="f"><b>{len(ids):,}</b><i>chunks</i></div><div class="f"><b>{len(ed_chunks)}</b><i>editions</i></div><div class="f"><b>{n_works}</b><i>works</i></div><div class="f"><b>{len(topics)}</b><i>topics</i></div><div class="f"><b>{n_cross}</b><i>cross-work themes</i></div><div class="f"><b>{min(years)}–{max(years)}</b><i>publication years</i></div></div>'
+            + f'<div class="facts"><div class="f"><b>{len(ids):,}</b><i>chunks</i></div>' + (f'<div class="f"><b>{n_fit:,}</b><i>in the model (one edition per work); {n_placed:,} placed from other editions</i></div>' if n_placed else '') + f'<div class="f"><b>{len(ed_chunks)}</b><i>editions</i></div><div class="f"><b>{n_works}</b><i>works</i></div><div class="f"><b>{len(topics)}</b><i>topics</i></div><div class="f"><b>{n_cmp}</b><i>in the genre comparison ({E(", ".join(use_cats))})</i></div><div class="f"><b>{n_inc} / {n_cand}</b><i>confirmed / candidate themes</i></div><div class="f"><b>{min(years)}–{max(years)}</b><i>publication years</i></div></div>'
             + '<div class="cards">'
             + ('<div class="card"><h3><a href="map.html">Interactive map</a></h3><div class="whence">Every chunk as a point, coloured by topic; filter by genre, publication decade, author, title, play type, company or theater (filters combine); click a point for its page.</div></div>' if not a.no_map else '')
             + '<div class="card"><h3><a href="plays.html">Plays</a></h3><div class="whence">Every edition with its chunks in order, topic composition, DEEP metadata and other editions of the same work; searchable.</div></div>'

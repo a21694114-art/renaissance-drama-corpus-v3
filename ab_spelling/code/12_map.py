@@ -22,7 +22,7 @@ from pathlib import Path
 import numpy as np
 
 AXES = [('genre', 'Genre'), ('decade', 'Publication decade'), ('author', 'Author'), ('title', 'Title'), ('play_type', 'Play type'),
-        ('company', 'Company'), ('theater', 'Theater'), ('cat', 'Topic category')]
+        ('company', 'Company'), ('theater', 'Theater'), ('cat', 'Topic category'), ('fit', 'Edition role')]
 PALETTE = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf',
            '#8dd3c7', '#ffffb3', '#bebada', '#fb8072', '#80b1d3', '#fdb462', '#b3de69', '#fccde5', '#d9d9d9', '#bc80bd', '#ccebc5', '#ffed6f',
            '#2E91E5', '#E15F99', '#1CA71C', '#FB0D0D', '#DA16FF', '#222A2A', '#B68100', '#750D86', '#EB663B', '#511CFB', '#00A08B', '#FB00D1',
@@ -57,10 +57,16 @@ def main():
     out = Path(a.out) if a.out else d / f'chunk_map_s{a.seed}.html'
 
     ids = [r['chunk_id'] for r in csv.DictReader(open(runs / f'embedding_ids_{a.variant}.csv', encoding='utf-8'))]
-    labels = {r['chunk_id']: int(r['topic']) for r in csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8'))}
+    _dt = list(csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8')))
+    labels = {r['chunk_id']: int(r['topic']) for r in _dt}
+    in_fit = {r['chunk_id']: r.get('in_fit', '1') == '1' for r in _dt}
     meta = {r['chunk_id']: r for r in csv.DictReader(open(ch / 'chunk_meta.csv', encoding='utf-8'))}
     cmap = {r['chunk_id']: r for r in csv.DictReader(open(ch / 'chunk_map.csv', encoding='utf-8'))}
-    sheet = {int(r['topic']): r for r in csv.DictReader(open(d / 'topic_sheet.csv', encoding='utf-8'))}
+    sheet = {int(r['topic']): r for r in csv.DictReader(open(d / 'topic_sheet.csv', encoding='utf-8'))} if (d / 'topic_sheet.csv').exists() else {}
+    kw3 = {}   # fallback names before any labelling: the first three uniform keywords (16_compare_schemes.py writes top_words_uniform10.csv)
+    if (d / 'top_words_uniform10.csv').exists():
+        for r in csv.DictReader(open(d / 'top_words_uniform10.csv', encoding='utf-8')):
+            if int(r['rank']) <= 3: kw3.setdefault(int(r['topic']), []).append(r['word'])
     snippets = {}
     with open(ch / f'chunks_{a.variant}.csv', encoding='utf-8') as f:
         for r in csv.DictReader(f):
@@ -88,18 +94,19 @@ def main():
 
     def tlabel(t):
         if t == -1: return '-1: unassigned'
-        r = sheet.get(t, {}); return f'{t}: {r.get("Label") or r.get("draft_label") or "topic"}'
+        r = sheet.get(t, {}); return f'{t}: {r.get("Label") or r.get("draft_label") or (", ".join(kw3[t]) if t in kw3 else "topic")}'
     def clean(v):
         v = (v or '').strip(); return '' if v.lower() in ('none', 'n/a', 'nan') else v
     rows = []
     for i, c in enumerate(ids):
         m = meta[c]; t = labels[c]; r = sheet.get(t, {}); dp = deep.get(m['edition_id'], {})
         year = m['year']; decade = f'{int(year) // 10 * 10}s' if year.isdigit() else 'unknown'
-        rows.append({'i': i, 'id': c, 'topic': t, 'tl': tlabel(t), 'cat': (r.get('use_in_genre_analysis') or ('unassigned' if t == -1 else 'unclassified')),
+        rows.append({'i': i, 'id': c, 'topic': t, 'tl': tlabel(t), 'cat': (r.get('use_in_genre_analysis') or ('unassigned (HDBSCAN outlier)' if t == -1 else 'in a cluster, not yet classified')),
+                     'fit': 'representative edition (fitted)' if in_fit.get(c, True) else 'other edition (placed after the fit)',
                      'title': m['title'], 'author': m['author'], 'year': year, 'decade': decade, 'genre': m['genre_deep'], 'play_type': m['play_type_deep'],
                      'company': clean(dp.get('company', '')), 'theater': clean(dp.get('theater', '')), 'theater_type': clean(dp.get('theater_type', '')),
                      'perf': clean(dp.get('perf', '')), 'tcp': m['tcp'], 'edition': m['edition_id'], 'work': m['work_id'], 'nodes': f'{cmap[c]["node_start"]}–{cmap[c]["node_end"]}',
-                     'words': cmap[c]['len_B_words'], 'kw': (r.get('ctfidf_top10') or '').replace('*', ''), 'snip': snippets.get(c, '')})
+                     'words': cmap[c]['len_B_words'], 'kw': (r.get('ctfidf_top10') or ', '.join(kw3.get(t, []))).replace('*', ''), 'snip': snippets.get(c, '')})
     def hover(x):
         """Reading-oriented hover: title / author / genre · company · theater / dates (publication vs first
         performance kept apart, DEEP ranges preserved) / topic / passage preview.  Tracing details (chunk id,
@@ -133,7 +140,7 @@ def main():
     for col, label in AXES:
         fac = defaultdict(list)
         for x in rows:
-            for fv in (facets(x[col], 'author' if col == 'author' else None) if col not in ('decade', 'cat') else [x[col]]):
+            for fv in (facets(x[col], 'author' if col == 'author' else None) if col not in ('decade', 'cat', 'fit') else [x[col]]):
                 fac[fv].append(x['i'])
         if not fac: continue
         keys = sorted(fac, key=(lambda v: (v == 'unknown', v)) if col == 'decade' else (lambda v: v.lower()))

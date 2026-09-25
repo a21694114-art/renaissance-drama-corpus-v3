@@ -14,10 +14,14 @@ Rules (agreed 2026-09-21):
     only) is written to a separate file and labelled as such;
   * editions of one work_id are averaged with equal weight; works enter their genre with equal
     weight (multi-edition works are not double counted);
-  * genre labels: the raw genre_deep string is kept; genre_main is set only when the raw string is
-    exactly one of MAIN_GENRES, otherwise 'other/multi'; conflicting genre_deep values inside one
-    work_id are listed in genre_conflicts.csv and the work is put in 'other/multi'; play_type_deep
-    is aggregated separately (play_type_main = first ';'-separated token);
+  * genre labels (Grace's rule, 2026-09-22): British Drama (genre_deep, Wiggins & Richardson) is used
+    when it is exactly one of MAIN_GENRES; when it is missing or compound (or differs between the
+    editions of a work), the Annals of English Drama label (DEEP genre_annals_filter, via --deep)
+    is used when IT is a single main genre ('morality' read as 'moral'); otherwise the work
+    stays 'other/multi' with its raw labels — never forced. Both raw labels and the source actually
+    used are kept per work (genre_assignment.csv: genre_britdrama, genre_annals, genre_main,
+    genre_source). Without --deep the Annals step is skipped. play_type_deep is aggregated
+    separately (play_type_main = first ';'-separated token);
   * direction: these tables answer "what share of a genre's text falls in topic t" — the opposite
     of topic_sheet's genre_mix_of_topic;
   * statistics: for each selected topic, Kruskal–Wallis across genre_main groups with >= --min-works
@@ -33,6 +37,7 @@ from pathlib import Path
 import numpy as np
 
 MAIN_GENRES = ['comedy', 'tragedy', 'history', 'tragicomedy', 'moral', 'romance', 'pastoral', 'masque', 'interlude']
+ANNALS_MAP = {'morality': 'moral'}   # vocabulary alignment only: Annals 'Morality' = British Drama 'moral'
 CATS = ['included', 'candidate', 'contextual_only', 'pending', 'unclassified', 'outlier_hdbscan']
 
 
@@ -49,6 +54,9 @@ def main():
     ap.add_argument('--seed', type=int, default=42); ap.add_argument('--variant', default='B')
     ap.add_argument('--use', default='included,candidate', help='use_in_genre_analysis categories that form the main comparison')
     ap.add_argument('--min-works', type=int, default=10, help='genre groups with fewer works are shown but not tested')
+    ap.add_argument('--manifest', default='', help='accepted for symmetry with 13_site.py; not needed (chunk_meta edition_id = DEEP edition_id)')
+    ap.add_argument('--deep', default='', help='DEEP_data.csv: enables the Annals fallback (genre_annals_filter by edition_id)')
+    ap.add_argument('--all-editions', action='store_true', help='include the chunks of non-representative editions (placed after the fit) in the main tables; default: representative editions only when in_fit exists')
     ap.add_argument('--out', default='')
     a = ap.parse_args()
     runs = Path(a.runs); ch = Path(a.chunks); d = runs / f'topics_{a.variant}_s{a.seed}'
@@ -57,12 +65,20 @@ def main():
 
     meta = {r['chunk_id']: r for r in csv.DictReader(open(ch / 'chunk_meta.csv', encoding='utf-8'))}
     wlen = {r['chunk_id']: int(r['len_B_words']) for r in csv.DictReader(open(ch / 'chunk_map.csv', encoding='utf-8'))}
-    labels = {r['chunk_id']: int(r['topic']) for r in csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8'))}
+    _dt = list(csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8')))
+    labels_all = {r['chunk_id']: int(r['topic']) for r in _dt}
+    labels = {r['chunk_id']: int(r['topic']) for r in _dt if r.get('in_fit', '1') == '1'} if not a.all_editions else dict(labels_all)
+    representative_only = len(labels) < len(labels_all)   # 03 --dedup-editions: main results on the representative editions only
     sheet = {int(r['topic']): r for r in csv.DictReader(open(d / 'topic_sheet.csv', encoding='utf-8'))}
     use_of = {t: (r['use_in_genre_analysis'] or 'unclassified') for t, r in sheet.items()}
     name_of = {t: (r['Label'] or r['draft_label'] or f'topic {t}') for t, r in sheet.items()}
     selected = sorted(t for t in sheet if use_of[t] in use_cats)
     cat_of = lambda t: 'outlier_hdbscan' if t == -1 else use_of.get(t, 'unclassified')
+    # Annals label per edition (only when manifest + DEEP are given)
+    annals_of = {}   # chunk_meta's edition_id is the manifest's edition_id_effective = DEEP's edition_id
+    if a.deep and Path(a.deep).exists():
+        dg = {r['edition_id']: (r.get('genre_annals_filter') or '').strip().lower() for r in csv.DictReader(open(a.deep, encoding='utf-8-sig'))}
+        annals_of = {e: ('' if v in ('', 'n/a') or v.startswith('not in') or v.isdigit() else v) for e, v in dg.items()}
 
     # edition level
     ed_words = Counter(); ed_topic = defaultdict(Counter); ed_cat = defaultdict(Counter); ed_info = {}
@@ -92,9 +108,12 @@ def main():
         if len(genres) > 1:
             conflicts.append({'work_id': wid, 'title': eds[0]['title'], 'editions': '; '.join(x['edition_id'] for x in eds), 'genre_deep values': ' | '.join(genres)})
         graw = genres[0] if len(genres) == 1 else 'CONFLICT: ' + ' | '.join(genres)
-        gmain = graw if graw in MAIN_GENRES else 'other/multi'
+        ann = sorted({annals_of.get(x['edition_id'], '') for x in eds} - {''}); ann_raw = ' | '.join(ann)
+        if graw in MAIN_GENRES: gmain, gsrc = graw, 'britdrama'
+        elif len(ann) == 1 and ANNALS_MAP.get(ann[0], ann[0]) in MAIN_GENRES: gmain, gsrc = ANNALS_MAP.get(ann[0], ann[0]), 'annals'
+        else: gmain, gsrc = 'other/multi', 'none'
         r = {'work_id': wid, 'title': eds[0]['title'], 'author': eds[0]['author'], 'n_editions': len(eds), 'editions': '; '.join(x['edition_id'] for x in eds),
-             'year_first': min(x['year'] for x in eds), 'genre_deep': graw, 'genre_main': gmain,
+             'year_first': min(x['year'] for x in eds), 'genre_deep': graw, 'genre_annals': ann_raw, 'genre_main': gmain, 'genre_source': gsrc,
              'play_type_deep': ptypes[0] if len(ptypes) == 1 else ' | '.join(ptypes), 'play_type_main': ptypes[0].split(';')[0].strip() if ptypes else '',
              'words_mean': round(sum(x['words'] for x in eds) / len(eds))}
         for k in share_cols: r[k] = round(sum(x[k] for x in eds) / len(eds), 5)
@@ -104,6 +123,24 @@ def main():
         w = csv.DictWriter(f, fieldnames=list(work_rows[0])); w.writeheader(); w.writerows(work_rows)
     with open(out / 'genre_conflicts.csv', 'w', newline='', encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=['work_id', 'title', 'editions', 'genre_deep values']); w.writeheader(); w.writerows(conflicts)
+    # what 'other/multi' is made of (works outside the single-genre comparison), by their DEEP genre string
+    om = defaultdict(list)
+    for r in work_rows:
+        if r['genre_main'] == 'other/multi': om[r['genre_deep'] or '(blank)'].append(r)
+    om_rows = [{'genre_deep': g, 'n_works': len(rs), 'n_editions': sum(r['n_editions'] for r in rs),
+                'reason': ('not in BritDrama (no genre)' if g.lower() == 'not in britdrama' else 'conflicting genres across editions' if g.startswith('CONFLICT') else 'compound or non-main genre label'),
+                'annals': '; '.join(f'{k or "(none)"} ×{n}' for k, n in Counter(r['genre_annals'] for r in rs).most_common(3)),
+                'examples': '; '.join(f'{r["title"][:60]} ({r["year_first"]})' for r in sorted(rs, key=lambda r: r['year_first'])[:3])}
+               for g, rs in sorted(om.items(), key=lambda kv: -len(kv[1]))]
+    with open(out / 'other_multi_works.csv', 'w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=['genre_deep', 'n_works', 'n_editions', 'reason', 'annals', 'examples']); w.writeheader(); w.writerows(om_rows)
+    # every work with both raw labels and the label actually used
+    with open(out / 'genre_assignment.csv', 'w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=['work_id', 'title', 'author', 'year_first', 'n_editions', 'genre_britdrama', 'genre_annals', 'genre_main', 'genre_source']); w.writeheader()
+        for r in work_rows: w.writerow({'work_id': r['work_id'], 'title': r['title'], 'author': r['author'], 'year_first': r['year_first'], 'n_editions': r['n_editions'],
+                                        'genre_britdrama': r['genre_deep'], 'genre_annals': r['genre_annals'], 'genre_main': r['genre_main'], 'genre_source': r['genre_source']})
+    src_counts = Counter(r['genre_source'] for r in work_rows)
+    genre_rule = ('British Drama single label → else Annals single label → else other/multi' if annals_of else 'British Drama single label → else other/multi (no DEEP given: Annals step skipped)')
 
     # genre level: works equal weight
     groups = defaultdict(list)
@@ -214,14 +251,31 @@ def main():
              f'Selected topics by genre — share of works in which the topic occurs at all, % (seed {a.seed})',
              '% of the genre\'s works with the topic', lambda v: f'{v:.0f}')
 
+    json.dump({'seed': a.seed, 'use': use_cats, 'selected_topics': selected, 'n_selected': len(selected), 'min_works': a.min_works, 'genres_tested': tested,
+               'n_works': len(work_rows), 'n_other_multi': len(groups.get('other/multi', [])),
+               'genre_rule': genre_rule, 'n_by_genre_source': dict(src_counts), 'annals_map': ANNALS_MAP,
+               'representative_only': representative_only, 'n_chunks_used': len(labels), 'n_chunks_placed_excluded': len(labels_all) - len(labels),
+               'n_editions_used': len(ed_words)}, open(out / 'config.json', 'w'), indent=1)
     # summary
+    n_om = len(groups.get('other/multi', []))
     md = [f'# Aggregation summary — seed {a.seed}', '',
           f'Selected categories: {", ".join(use_cats)} → {len(selected)} topics. Works: {len(work_rows)} ({sum(r["n_editions"] for r in work_rows)} editions). '
-          f'Genre conflicts inside a work: {len(conflicts)} (listed in genre_conflicts.csv, placed in other/multi).', '',
-          '| genre_main | works | editions | selected-topic share of words | contextual_only | pending | unclassified | outlier |', '|---|---:|---:|---:|---:|---:|---:|---:|']
+          f'Genre conflicts inside a work: {len(conflicts)} (listed in genre_conflicts.csv).' + (f' Representative editions only: {len(labels):,} chunks of {len(ed_words)} editions; the {len(labels_all) - len(labels):,} chunks of the other editions were placed after the fit and are excluded from these tables.' if representative_only else ''), '',
+          f'Genre assignment rule: {genre_rule}. Works by source: ' + ', '.join(f'{k} {v}' for k, v in src_counts.most_common()) + '. Both raw labels and the source used are in genre_assignment.csv.', '']
+    ann_rows = [r for r in work_rows if r['genre_source'] == 'annals']
+    if ann_rows:
+        md += [f'Works placed by Annals ({len(ann_rows)}; British Drama label compound or missing):', '', '| work | year | British Drama | Annals | placed in |', '|---|---:|---|---|---|']
+        md += [f'| {r["title"][:60]} | {r["year_first"]} | {r["genre_deep"]} | {r["genre_annals"]} | {r["genre_main"]} |' for r in sorted(ann_rows, key=lambda r: (r['genre_main'], r['title']))]
+    md += ['',
+          f'Coverage (mean share of a work\'s words). "selected" = the {len(selected)} topics of the categories above; the other columns are the categories NOT in the comparison, so every row sums to 100 %.', '',
+          '| genre_main | works | editions | selected | ' + ' | '.join(c for c in CATS if c not in use_cats) + ' |', '|---|---:|---:|---:|' + '---:|' * len([c for c in CATS if c not in use_cats])]
     for g, cr in zip(genre_order, cov_rows):
         md.append(f'| {g} | {cr["n_works"]} | {sum(r["n_editions"] for r in groups[g])} | {cr["selected topics mean share of words"]:.1%} | '
-                  f'{cr["contextual_only mean share of words"]:.1%} | {cr["pending mean share of words"]:.1%} | {cr["unclassified mean share of words"]:.1%} | {cr["outlier_hdbscan mean share of words"]:.1%} |')
+                  + ' | '.join(f'{cr[f"{c} mean share of words"]:.1%}' for c in CATS if c not in use_cats) + ' |')
+    if om_rows:
+        md += ['', f'other/multi = {n_om} works ({100 * n_om / len(work_rows):.1f} % of {len(work_rows)}) kept out of the single-genre comparison; described, not tested:', '',
+               '| genre_deep | works | editions | reason |', '|---|---:|---:|---|'] + [f'| {r["genre_deep"]} | {r["n_works"]} | {r["n_editions"]} | {r["reason"]} |' for r in om_rows[:12]]
+        if len(om_rows) > 12: md += ['', f'({len(om_rows) - 12} smaller groups omitted here; the full list with example titles is other_multi_works.csv)']
     md += ['', f'Genres tested (>= {a.min_works} works): {", ".join(tested)}. Kruskal–Wallis + BH over {len(selected)} topics; descriptive. '
                '"works" = works of the highest genre in which the topic occurs at all; "one-work" = YES when a single work holds >= 50 % of that genre\'s total share (the mean is then that work, not the genre).', '',
            '| topic | label | highest genre (mean; works) | one-work | second (mean) | ratio | p | q |', '|---|---|---|---|---|---:|---:|---:|']

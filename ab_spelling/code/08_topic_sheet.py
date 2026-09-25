@@ -110,13 +110,18 @@ def main():
     meta = {r['chunk_id']: r for r in csv.DictReader(open(ch / 'chunk_meta.csv', encoding='utf-8'))}
     wlen = {r['chunk_id']: int(r['len_B_words']) for r in csv.DictReader(open(ch / 'chunk_map.csv', encoding='utf-8'))}
     texts = {r['chunk_id']: r['text'] for r in csv.DictReader(open(ch / f'chunks_{a.variant}.csv', encoding='utf-8'))}
-    labels = {r['chunk_id']: int(r['topic']) for r in csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8'))}
+    _dt = list(csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8')))
+    labels_all = {r['chunk_id']: int(r['topic']) for r in _dt}
+    # main statistics on the representative editions only (in_fit = 1, 03_topics --dedup-editions); chunks of the other
+    # editions were placed afterwards and are counted separately (size_all_editions)
+    labels = {r['chunk_id']: int(r['topic']) for r in _dt if r.get('in_fit', '1') == '1'}
+    n_placed = len(labels_all) - len(labels)
     raw = {r['chunk_id']: int(r['hdbscan_label']) for r in csv.DictReader(open(d / 'hdbscan_labels.csv', encoding='utf-8'))} if (d / 'hdbscan_labels.csv').exists() else {}
     ids = [r['chunk_id'] for r in csv.DictReader(open(runs / f'embedding_ids_{a.variant}.csv', encoding='utf-8'))]
     emb = np.load(runs / f'embeddings_{a.variant}.npy').astype(np.float32)
     emb /= np.linalg.norm(emb, axis=1, keepdims=True) + 1e-9
     row_of = {c: i for i, c in enumerate(ids)}
-    assert set(labels) == set(ids), 'doc_topics.csv and embedding ids differ'
+    assert set(labels_all) == set(ids), 'doc_topics.csv and embedding ids differ'
 
     # id map final topic -> raw hdbscan label (must be one-to-one)
     id_map = defaultdict(Counter)
@@ -182,7 +187,7 @@ def main():
         reps = [m[i] for i in np.argsort(-sims)[:a.n_rep]]
         rep_txt = '\n\n'.join(f'[{c} — {meta[c]["title"]} ({meta[c]["author"]}, {meta[c]["year"]}); {meta[c]["genre_deep"]}] {texts[c][:350]}…' for c in reps)
         dr = drafts.get(t, {})
-        rows.append({'topic': t, 'hdbscan_label': id_map.get(t, ''), 'size': len(m), 'words': sum(wlen[c] for c in m),
+        rows.append({'topic': t, 'hdbscan_label': id_map.get(t, ''), 'size': len(m), 'size_all_editions': sum(1 for c, x in labels_all.items() if x == t), 'words': sum(wlen[c] for c in m),
                      'n_works': len(works), 'n_works_ge3': sum(1 for n in works.values() if n >= 3),
                      'dominant_work': title_of[dom_work], 'dominant_work_share': round(dom_n / len(m), 3), 'top3_work_share': round(top3 / len(m), 3),
                      'top_works': '; '.join(f'{title_of[w][:40]} ({n})' for w, n in works.most_common(5)),
@@ -210,8 +215,11 @@ def main():
         gc = Counter(meta[c]['genre_deep'] for c in cs)
         for g in main_genres: r[f'{g} chunks'] = gc[g]; r[f'{g} share of genre'] = round(gc[g] / genres_all[g], 3)
         cov_rows.append(r)
-    tot_row = {'use_category': 'ALL', 'topics': len(rows), 'chunks': len(labels), 'chunk_share': 1.0, 'words': sum(wlen.values()), 'works': len({m['work_id'] for m in meta.values()})}
+    # ALL = the same chunk set as the category rows (in_fit chunks = representative editions); v1 summed
+    # wlen over every chunk, so the placed other-edition chunks inflated the total (8,621,418 vs 7,603,880)
+    tot_row = {'use_category': 'ALL', 'topics': len(rows), 'chunks': len(labels), 'chunk_share': 1.0, 'words': sum(wlen[c] for c in labels), 'works': len({meta[c]['work_id'] for c in labels})}
     for g in main_genres: tot_row[f'{g} chunks'] = genres_all[g]; tot_row[f'{g} share of genre'] = 1.0
+    assert sum(r['chunks'] for r in cov_rows) == tot_row['chunks'] and sum(r['words'] for r in cov_rows) == tot_row['words'], 'coverage rows do not add up to ALL'
     cov_rows.append(tot_row)
 
     # seed matching by shared chunks
@@ -258,7 +266,7 @@ def main():
     wb = Workbook(); ws = wb.active; ws.title = 'topics'
     cols = list(rows[0]); ws.append(cols)
     for r in rows: ws.append([r[c] for c in cols])
-    widths = {'topic': 7, 'hdbscan_label': 8, 'size': 7, 'words': 8, 'n_works': 7, 'n_works_ge3': 8, 'dominant_work': 26, 'dominant_work_share': 9, 'top3_work_share': 9,
+    widths = {'topic': 7, 'hdbscan_label': 8, 'size': 7, 'size_all_editions': 9, 'words': 8, 'n_works': 7, 'n_works_ge3': 8, 'dominant_work': 26, 'dominant_work_share': 9, 'top3_work_share': 9,
               'top_works': 40, 'top_author_raw': 20, 'top_author_share': 9, 'genre_mix_of_topic': 28, 'play_type_mix': 28, 'ctfidf_top10': 38, 'keybert_top10': 38,
               'mmr_top10': 38, 'names_in_top30': 28, 'representative_chunks': 80, 'draft_label': 34, 'pattern_basis': 20, 'use_in_genre_analysis': 14,
               'basis': 40, 'review_status': 12, 'chunks_read': 16, 'Label': 24, 'Notes': 30}

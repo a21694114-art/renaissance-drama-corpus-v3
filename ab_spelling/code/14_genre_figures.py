@@ -55,7 +55,8 @@ def main():
     ap.add_argument('--top', type=int, default=20)
     ap.add_argument('--genres', default='', help="comma list, 'all' (adds other/multi), or empty = main genres with >= --min-works works")
     ap.add_argument('--min-works', type=int, default=10)
-    ap.add_argument('--legend-cols', type=int, default=1, help='columns of the topic list beside the stacked bars (1 = larger type on the web, 2 = compact for print)')
+    ap.add_argument('--legend-cols', type=int, default=2, help='columns of the topic list beside the stacked bars (2 = wide figure that fits a screen; 1 = tall, larger type when printed)')
+    ap.add_argument('--panel-cols', type=int, default=0, help='columns of the small-multiples panel (0 = automatic: 4 for 7+ genres, 3 for 4-6)')
     ap.add_argument('--renorm', action='store_true', help='works mode: rescale so the selected topics sum to 100 %% (like the old chunk figures); coverage is printed instead')
     ap.add_argument('--out', default='')
     a = ap.parse_args()
@@ -89,13 +90,17 @@ def main():
                 tot = sum(share[g][t] for t in topics_all if use is None or sheet[t].get('use_in_genre_analysis', '') in use) or 1
                 rest[g]['coverage'] = tot
                 share[g] = {t: share[g][t] / tot for t in topics_all}
-            measure = '% of the words in the selected topics'
+            measure = f'% of the words in the {len(selected)} selected topics (all of them, not only the top {a.top})'
     else:
         meta = {r['chunk_id']: r for r in csv.DictReader(open(ch / 'chunk_meta.csv', encoding='utf-8'))}
+        gwork = {}   # the aggregate's genre assignment per work (British Drama → Annals rule), when 09 has run
+        if (d / 'aggregate' / 'genre_assignment.csv').exists():
+            gwork = {r['work_id']: r['genre_main'] for r in csv.DictReader(open(d / 'aggregate' / 'genre_assignment.csv', encoding='utf-8'))}
         cnt = collections.defaultdict(collections.Counter); tot_all = collections.Counter(); eds = collections.defaultdict(set)
         for r in csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8')):
+            if r.get('in_fit', '1') != '1': continue   # representative editions only
             m = meta[r['chunk_id']]; graw = m['genre_deep'].strip().lower()
-            g = graw if graw in MAIN_GENRES else 'other/multi'
+            g = gwork.get(m['work_id']) or (graw if graw in MAIN_GENRES else 'other/multi')
             t = int(r['topic']); tot_all[g] += 1; eds[g].add(m['edition_id'])
             if t != -1: cnt[g][t] += 1
         share, rest = {}, {}
@@ -140,7 +145,7 @@ def main():
     for g in genres:
         for t in top[g]:
             if t not in used: used.append(t)
-    LC = max(1, a.legend_cols); maxlab = max([len(label[t][:48]) for t in used] + [20]); fig_w = 0.9 * len(genres) + 1.6 + LC * 0.095 * maxlab
+    LC = max(1, a.legend_cols); maxlab = max([len(label[t][:48]) for t in used] + [20]); fig_w = 0.9 * len(genres) + 1.9 + LC * 0.105 * maxlab   # 10.5 pt DejaVu ≈ 0.1 in per character
     fig = plt.figure(figsize=(fig_w, max(7, 0.3 * math.ceil((len(used) + 3) / LC) + 2.2)))
     axw = (0.9 * len(genres)) / fig_w; ax = fig.add_axes([0.07, 0.1, axw, 0.84])
     for i, g in enumerate(genres):
@@ -189,7 +194,7 @@ def main():
         fig.tight_layout(); fig.savefig(out / f'genre_{g.replace("/", "_")}_{sfx}.png'); plt.close(fig)
 
     # ---- (3) small multiples of (2) ----
-    ncol = 2 if len(genres) > 1 else 1; nrow = math.ceil(len(genres) / ncol)
+    ncol = a.panel_cols or (4 if len(genres) >= 7 else 3 if len(genres) >= 4 else len(genres)); nrow = math.ceil(len(genres) / ncol)   # landscape: fits a screen
     fig, axes = plt.subplots(nrow, ncol, figsize=(6.6 * ncol, (0.3 * a.top + 1.3) * nrow), dpi=200, squeeze=False)
     for k, g in enumerate(genres):
         ax = axes[k // ncol][k % ncol]; ts = list(reversed(top[g])); vals = [100 * share[g][t] for t in ts]

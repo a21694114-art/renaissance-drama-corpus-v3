@@ -47,35 +47,68 @@ def main():
     ap.add_argument('--batch-size', type=int, default=8)
     ap.add_argument('--normalize', action='store_true', help='L2-normalize embeddings (UMAP uses cosine anyway)')
     ap.add_argument('--limit', type=int, default=0, help='first N chunks only (smoke test)')
+    ap.add_argument('--text-file', default='', help='read the texts from this csv (chunk_id,text) instead of chunks_<variant>.csv — e.g. chunks_B_masked.csv from 01c_mask_names.py; the output files keep the variant name')
+    ap.add_argument('--reuse-from', default='', help='runs dir with an earlier embeddings_<variant>.npy of the same chunk ids: vectors of chunks whose text is unchanged are copied, only changed chunks are re-encoded (changed = per-chunk text hashes differ, or the ids listed in --changed)')
+    ap.add_argument('--changed', default='', help='csv (chunk_id) listing the chunks whose text changed since --reuse-from (01c writes name_mask_changed_chunks.csv); used when the earlier run has no per-chunk hashes')
     a = ap.parse_args()
     from sentence_transformers import SentenceTransformer
 
-    rows = list(csv.DictReader(open(Path(a.chunks) / f'chunks_{a.variant}.csv', encoding='utf-8')))
+    csv.field_size_limit(10 ** 8)
+    text_path = Path(a.text_file) if a.text_file else Path(a.chunks) / f'chunks_{a.variant}.csv'
+    rows = list(csv.DictReader(open(text_path, encoding='utf-8')))
     if a.limit:
         rows = rows[:a.limit]
     ids = [r['chunk_id'] for r in rows]
     texts = [r['text'] for r in rows]
     if any(not t.strip() for t in texts):
         sys.exit('empty chunk text found — chunk map is inconsistent')
+    import hashlib as _hl
+    hashes = [_hl.sha1(t.encode('utf-8')).hexdigest() for t in texts]
+    reuse = None
+    if a.reuse_from:
+        rd = Path(a.reuse_from); old = np.load(rd / f'embeddings_{a.variant}.npy')
+        old_ids = [r['chunk_id'] for r in csv.DictReader(open(rd / f'embedding_ids_{a.variant}.csv', encoding='utf-8'))]
+        if old_ids != ids: sys.exit('--reuse-from: chunk ids differ from the current text file — cannot reuse')
+        hp = rd / f'embedding_text_hashes_{a.variant}.csv'
+        if hp.exists():
+            oldh = {r['chunk_id']: r['sha1'] for r in csv.DictReader(open(hp, encoding='utf-8'))}
+            todo = [i for i, c in enumerate(ids) if oldh.get(c) != hashes[i]]
+        elif a.changed and Path(a.changed).exists():
+            ch_ids = {r['chunk_id'] for r in csv.DictReader(open(a.changed, encoding='utf-8'))}
+            todo = [i for i, c in enumerate(ids) if c in ch_ids]
+        else:
+            sys.exit('--reuse-from: the earlier run has no embedding_text_hashes file and no --changed list was given')
+        reuse = (old, todo)
+        print(f'reuse: {len(ids) - len(todo)} vectors copied from {rd}, {len(todo)} chunks re-encoded', flush=True)
     device = pick_device()
-    print(f'variant {a.variant}: {len(texts)} chunks, model {a.model}, device {device}', flush=True)
+    print(f'variant {a.variant}: {len(texts)} chunks from {text_path.name}, model {a.model}, device {device}', flush=True)
     kw = {'device': device, 'trust_remote_code': a.model in REMOTE_CODE}
     if a.revision:
         kw['revision'] = a.revision
     model = SentenceTransformer(a.model, **kw)
     model.max_seq_length = a.max_seq_length
     # longest-first ordering makes batches homogeneous in length (faster, steadier memory); order restored after
-    order = sorted(range(len(texts)), key=lambda i: -len(texts[i]))
+    todo_idx = reuse[1] if reuse else list(range(len(texts)))
+    order = sorted(todo_idx, key=lambda i: -len(texts[i]))
     t0 = time.time()
-    emb_sorted = model.encode([texts[i] for i in order], batch_size=a.batch_size, show_progress_bar=True,
-                              normalize_embeddings=a.normalize, convert_to_numpy=True).astype(np.float32)
-    emb = np.empty_like(emb_sorted)
-    emb[order] = emb_sorted
+    if order:
+        emb_new = model.encode([texts[i] for i in order], batch_size=a.batch_size, show_progress_bar=True,
+                               normalize_embeddings=a.normalize, convert_to_numpy=True).astype(np.float32)
+    if reuse:
+        emb = reuse[0].astype(np.float32).copy()
+        if order: emb[order] = emb_new
+    else:
+        emb = np.empty_like(emb_new); emb[order] = emb_new
     elapsed = time.time() - t0
     if not np.isfinite(emb).all():
         sys.exit('non-finite values in embeddings — try a smaller --max-seq-length / --batch-size or CPU')
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
+    if reuse and (out / f'embeddings_{a.variant}.npy').exists():   # keep the previous vectors and record next to the new ones
+        (out / f'embeddings_{a.variant}.npy').replace(out / f'embeddings_{a.variant}.prev.npy')
+        if (out / f'embedding_{a.variant}.json').exists(): (out / f'embedding_{a.variant}.json').replace(out / f'embedding_{a.variant}.prev.json')
     np.save(out / f'embeddings_{a.variant}.npy', emb)
+    with open(out / f'embedding_text_hashes_{a.variant}.csv', 'w', encoding='utf-8', newline='') as f:
+        w = csv.writer(f); w.writerow(['chunk_id', 'sha1']); w.writerows(zip(ids, hashes))
     with open(out / f'embedding_ids_{a.variant}.csv', 'w', encoding='utf-8', newline='') as f:
         w = csv.writer(f); w.writerow(['row', 'chunk_id'])
         for i, cid in enumerate(ids):
@@ -88,7 +121,9 @@ def main():
     info = {'variant': a.variant, 'model': a.model, 'revision': a.revision or rev, 'device': device, 'batch_size': a.batch_size,
             'max_seq_length': a.max_seq_length, 'normalized': a.normalize,
             'n_chunks': len(ids), 'dim': int(emb.shape[1]), 'elapsed_seconds': round(elapsed, 1),
-            'ids_sha256': hashlib.sha256('\n'.join(ids).encode()).hexdigest(), 'limit': a.limit}
+            'ids_sha256': hashlib.sha256('\n'.join(ids).encode()).hexdigest(), 'limit': a.limit, 'text_file': text_path.name,
+            'text_sha256': hashlib.sha256(open(text_path, 'rb').read()).hexdigest(),
+            'reused_from': a.reuse_from or None, 'n_recomputed': len(todo_idx)}
     (out / f'embedding_{a.variant}.json').write_text(json.dumps(info, indent=1))
     print(json.dumps(info, indent=1))
 
