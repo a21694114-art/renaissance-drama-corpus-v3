@@ -167,6 +167,13 @@ hashes; the published TXT files can be used without rebuilding.
 | English analysis view | 580 documents, 46,498,315 characters |
 | Regularized view | 580 documents, 45,835,479 characters, accepted `reg` values used at 19.0 % of token positions |
 
+## Topic model and evidence site
+
+The chunk-level topic model built on this corpus, its review workbook and the aggregation by
+genre live in `ab_spelling/` (see its README). The static evidence site generated from it —
+interactive map, one page per topic, play and chunk, genre comparison, methods — is in `docs/`
+and published at https://a21694114-art.github.io/renaissance-drama-corpus-v3/.
+
 ## Reproducing
 
 The scripts use Python 3.10 and `lxml`; other imports are from the standard library.

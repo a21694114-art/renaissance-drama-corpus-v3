@@ -5,8 +5,8 @@
 | Frozen corpus | **v3**, `corpus-v3-2026-09-08` (builder `build_corpus-2026-09-08.v8`, extraction rule `extract-2026-09-08.13`, unit map v16) |
 | Regularized view | **r3**, `build_reg_view.py` version `reg-view-2026-09-14.4` (2026-09-14) |
 | Independent review | r3 texts, manifests and the three contraction / eight boundary / four restoration regression cases re-checked 2026-09-14 (see `reports/`) |
-| Modelling | not yet run |
-| Next step | A/B experiment: embeddings on `texts_analysis_en_reg/` vs `texts_analysis_en/` with one chunk map defined on v3 node indices, same model and random seed |
+| Modelling | done (2026-09-25): chunk map v3 (17,422 chunks), Qwen3-Embedding-0.6B, name-masked text, one representative edition per work, HDBSCAN min_samples 10 seed 42 → 63 clusters; all 63 reviewed by hand (53 in the genre comparison, 6 pending, 4 context only) — see `ab_spelling/README.md` |
+| Next step | limited K-means 50 comparison on 3–5 core themes; methods / results write-up; evidence site in `docs/` (published) |
 
 Known limitations of r3: EarlyPrint's contextual regularizations (e.g. *then → than*) are accepted
 unreviewed; a few contractions that EarlyPrint splits without `join` are emitted with a space
@@ -16,4 +16,5 @@ entertainment) remain in original spelling.
 Not yet in the repository: `texts/` (all-language view), `texts_no_prologue_epilogue/` and its
 regularized twin, `kept_nodes.csv` (678 MB) and `node_fates.csv`; a clean-directory rerun of the
 reproduction commands; schema fixtures for `test_build_corpus.py`; a regression test for
-`build_reg_view.py`.
+`build_reg_view.py`. Also not in the repository: `ab_spelling/cast_names_kim.csv` (cast lists derived from
+Kim's `corpus_master.xlsx`).

@@ -454,7 +454,23 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
                 + '<h2>Mean share of a work\'s words (square-root colour scale)</h2><div class="fig"><a href="heatmap_selected_topics.png"><img class="heat" src="heatmap_selected_topics.png" alt="Mean share of a work\'s words, selected topics by genre"></a></div>'
                 + '<h2>Share of works in which the topic occurs</h2><div class="fig"><a href="heatmap_prevalence.png"><img class="heat" src="heatmap_prevalence.png" alt="Share of works in which each topic occurs, by genre"></a></div>'
                 + '<p class="lede" style="font-size:.85rem">Every figure is shown fitted to the screen; click one to enlarge it, then use + / − / 1:1, or click the image to switch between fit and full size (Esc closes).</p>'
-                + '<h2>Kruskal–Wallis across genres (Benjamini–Hochberg q)</h2><p class="lede" style="font-size:.9rem">"one-work" = a single work holds ≥50 % of the highest genre\'s total share, so that mean is one play, not the genre. Descriptive only.</p>' + kwt + foot())
+                + '<h2>Kruskal–Wallis across genres (Benjamini–Hochberg q)</h2><p class="lede" style="font-size:.9rem">"one-work" = a single work holds ≥50 % of the highest genre\'s total share, so that mean is one play, not the genre. Descriptive only.</p>' + kwt)
+        if (agg / 'sensitivity_dominant_work.csv').exists():
+            sens = list(csv.DictReader(open(agg / 'sensitivity_dominant_work.csv', encoding='utf-8')))
+            if sens:
+                thr = float(agg_cfg.get('sens_threshold', 0.33)); pc = lambda v: f'{100 * float(v):.2f} %'
+                def srow(r):
+                    top = f'<td><a href="{tpage(int(r["topic"]))}">T{r["topic"]} {E(r["label"][:40])}</a></td><td>{E(r["dominant_work"][:48])} ({E(r["dominant_work_genre"])}; {100 * float(r["dominant_share_of_topic_words"]):.0f} %)</td>'
+                    if not r['highest_without']:
+                        return f'<tr>{top}<td>—</td><td>{E(r["highest_with"])} — not applicable: the dominant work is outside the tested genres, so omitting it changes nothing here</td><td>—</td><td class="num">—</td></tr>'
+                    return (f'<tr>{top}<td>{pc(r["its_genre_mean_with"])} → {pc(r["its_genre_mean_without"])} ({r["its_genre_works_with_topic_with"]}/{r["its_genre_n_works_with"]} → {r["its_genre_works_with_topic_without"]}/{r["its_genre_n_works_without"]})</td>'
+                            f'<td>{E(r["highest_with"])} → {E(r["highest_without"])}</td><td>{pc(r["mean_highest_with"])} → {pc(r["mean_original_highest_without"])}</td><td class="num">{r["p_with"]} → {r["p_without"]}</td></tr>')
+                page += (f'<h2>Dominant-work check</h2><p class="lede" style="font-size:.9rem">Topics in the comparison in which one work holds ≥ {100 * thr:.0f} % of the topic\'s words, aggregated again without that work. '
+                         'This records whether the highest-mean genre changes when the dominant work is omitted from the aggregation. An unchanged ranking does not imply a small effect: compare the absolute means, their change and the works still supporting the topic. '
+                         'The clustering itself is held fixed; the threshold is an operational rule, not a statistical criterion, and it does not cover several works of one author or one story that together dominate a topic. p = Kruskal–Wallis across all tested genres, exploratory — not a test of first against second.</p>'
+                         '<table class="sortable"><thead><tr><th>topic</th><th>dominant work (genre; share of topic)</th><th>its genre: mean with → without (works with topic / works)</th><th>highest genre: with → without</th><th>original highest genre\'s mean: with → without</th><th class="num">p: with → without</th></tr></thead><tbody>'
+                         + ''.join(srow(r) for r in sens) + '</tbody></table>')
+        page += foot()
         (out / 'genre.html').write_text(page, encoding='utf-8')
 
     # ---------------- methods ----------------

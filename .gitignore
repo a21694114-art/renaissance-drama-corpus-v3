@@ -2,3 +2,4 @@
 __pycache__/
 .venv-ab/
 ab_spelling/cast_names_kim.csv
+*.bak

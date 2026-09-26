@@ -14,7 +14,7 @@
 #                                       # B_DEEP=<DEEP_data.csv> adds company / theater / first-performance (default: the professor's Dropbox copy if present)
 #   bash ab_spelling/run_b.sh site      # the whole static site (map, topics, genre, plays, chunks, methods) -> $REPO/docs/ for GitHub Pages
 #   bash ab_spelling/run_b.sh mask      # name-masked copy of the chunk texts + the list of masked/kept names to REVIEW (01c_mask_names.py)
-#                                       # optional ab_spelling/name_mask_overrides.csv (token,decision) corrects single decisions; re-run mask after editing it
+#                                       # optional ab_spelling/name_mask_overrides.csv (scope,token,decision) corrects single decisions; cast_map_overrides.csv fixes cast-list matches; re-run mask after editing
 #   bash ab_spelling/run_b.sh masked    # second run on the masked texts: embed (~55 min) -> seeds 42 43 44 with one edition per work -> diagnostics
 #                                       # -> crosswalk against the main run; output runs_<model>_masked/ (B_DEDUP=0 keeps all editions in the fit)
 #   bash ab_spelling/run_b.sh dedup     # re-cluster the EXISTING embeddings with one edition per work (minutes): runs_<model>_dedup/ + crosswalk

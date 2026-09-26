@@ -29,6 +29,8 @@ Rules (agreed 2026-09-21):
 Outputs (in --out, default <runs>/topics_B_s<seed>/aggregate/): edition_topic_share.csv,
 work_topic_share.csv, genre_topic_mean.csv, genre_topic_conditional.csv, genre_coverage.csv,
 genre_conflicts.csv, kruskal_by_topic.csv (means, medians, works-with-topic, single-work flag),
+sensitivity_dominant_work.csv (selected topics in which one work holds >= --sens-threshold of the
+topic's words, recomputed without that work: highest genre / ratio / p with and without, verdict),
 heatmap_selected_topics.png (sqrt colour scale), heatmap_prevalence.png, aggregate_summary.md.
 """
 import argparse, csv, json, math
@@ -57,6 +59,7 @@ def main():
     ap.add_argument('--manifest', default='', help='accepted for symmetry with 13_site.py; not needed (chunk_meta edition_id = DEEP edition_id)')
     ap.add_argument('--deep', default='', help='DEEP_data.csv: enables the Annals fallback (genre_annals_filter by edition_id)')
     ap.add_argument('--all-editions', action='store_true', help='include the chunks of non-representative editions (placed after the fit) in the main tables; default: representative editions only when in_fit exists')
+    ap.add_argument('--sens-threshold', type=float, default=0.33, help='dominant-work sensitivity check for selected topics in which one work holds at least this share of the topic\'s words')
     ap.add_argument('--out', default='')
     a = ap.parse_args()
     runs = Path(a.runs); ch = Path(a.chunks); d = runs / f'topics_{a.variant}_s{a.seed}'
@@ -215,6 +218,53 @@ def main():
         cols = (list(kw_rows[0]) + (['bh_q'] if valid and 'bh_q' not in kw_rows[0] else [])) if kw_rows else ['topic']
         w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(kw_rows)
 
+    # sensitivity to the dominant work: for every selected topic in which one work holds >= --sens-threshold of
+    # the topic's words, redo the genre aggregation WITHOUT that work (clusters fixed; only the work-level
+    # averaging changes). It records whether the highest-mean genre changes and by how much the means move; an
+    # unchanged ranking is not a small effect, so the absolute means, their change and the supporting works are
+    # written alongside. The threshold is an operational rule, not a statistical criterion, and it does not cover
+    # several works of one author or one story that together dominate a topic.
+    sens_rows = []
+    for t in selected:
+        contrib = {r['work_id']: r[f't{t}'] * r['words_mean'] for r in work_rows}
+        tot = sum(contrib.values())
+        if tot <= 0: continue
+        dom_w = max(contrib, key=contrib.get); dom_share = contrib[dom_w] / tot
+        if dom_share < a.sens_threshold: continue
+        dr = next(r for r in work_rows if r['work_id'] == dom_w); g_dom = dr['genre_main']
+        before = next(r for r in kw_rows if r['topic'] == t); hi1 = before['highest']
+        pct = lambda v: f'{100 * v:.2f} %'
+        row = {'topic': t, 'label': name_of[t], 'dominant_work': dr['title'], 'dominant_work_genre': g_dom, 'dominant_share_of_topic_words': round(dom_share, 3),
+               'highest_with': hi1, 'mean_highest_with': before['mean ' + hi1], 'second_with': before['second'], 'mean_second_with': before['mean ' + before['second']], 'p_with': before['kruskal_p']}
+        if g_dom not in tested:
+            row.update({'highest_without': '', 'mean_original_highest_without': '', 'second_without': '', 'mean_second_without': '', 'p_without': '',
+                        'its_genre_mean_with': '', 'its_genre_mean_without': '', 'its_genre_works_with_topic_with': '', 'its_genre_works_with_topic_without': '', 'its_genre_n_works_with': '', 'its_genre_n_works_without': '',
+                        'verdict': f'not applicable — the dominant work is in {g_dom}, outside the tested genres, so omitting it changes nothing here'})
+        else:
+            samples1 = {g: [r[f't{t}'] for r in groups[g]] for g in tested}
+            samples2 = {g: [r[f't{t}'] for r in groups[g] if r['work_id'] != dom_w] for g in tested}
+            means2 = {g: (float(np.mean(s)) if s else 0.0) for g, s in samples2.items()}
+            ranked2 = sorted(tested, key=lambda g: -means2[g]); hi2 = ranked2[0]; se2 = ranked2[1] if len(ranked2) > 1 else hi2
+            p2 = float('nan')
+            if kruskal is not None and any(any(v > 0 for v in s) for s in samples2.values()):
+                try: p2 = float(kruskal(*samples2.values()).pvalue)
+                except ValueError: pass
+            m1_hi = float(before['mean ' + hi1]); m2_hi1 = means2[hi1]
+            drop = (m2_hi1 - m1_hi) / m1_hi if m1_hi > 0 else 0.0
+            if hi2 == hi1:
+                verdict = f'highest genre unchanged ({hi1}: {pct(m1_hi)} → {pct(m2_hi1)}, {100 * drop:+.0f} %)'
+            else:
+                verdict = f'highest genre changes: {hi1} → {hi2} ({hi1}: {pct(m1_hi)} → {pct(m2_hi1)}; {hi2}: {pct(means2[hi2])})'
+            row.update({'highest_without': hi2, 'mean_original_highest_without': round(m2_hi1, 5), 'second_without': se2, 'mean_second_without': round(means2[se2], 5),
+                        'p_without': ('<1e-5' if p2 < 1e-5 else round(p2, 5)) if not math.isnan(p2) else '',
+                        'its_genre_mean_with': round(float(np.mean(samples1[g_dom])), 5), 'its_genre_mean_without': round(means2[g_dom], 5),
+                        'its_genre_works_with_topic_with': sum(1 for v in samples1[g_dom] if v > 0), 'its_genre_works_with_topic_without': sum(1 for v in samples2[g_dom] if v > 0),
+                        'its_genre_n_works_with': len(samples1[g_dom]), 'its_genre_n_works_without': len(samples2[g_dom]), 'verdict': verdict})
+        sens_rows.append(row)
+    with open(out / 'sensitivity_dominant_work.csv', 'w', newline='', encoding='utf-8') as f:
+        cols = list(sens_rows[0]) if sens_rows else ['topic']
+        w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(sens_rows)
+
     # heatmap: selected topics × tested genres, mean share of words (one hue, light → dark)
     try:
         import matplotlib; matplotlib.use('Agg')
@@ -255,7 +305,7 @@ def main():
                'n_works': len(work_rows), 'n_other_multi': len(groups.get('other/multi', [])),
                'genre_rule': genre_rule, 'n_by_genre_source': dict(src_counts), 'annals_map': ANNALS_MAP,
                'representative_only': representative_only, 'n_chunks_used': len(labels), 'n_chunks_placed_excluded': len(labels_all) - len(labels),
-               'n_editions_used': len(ed_words)}, open(out / 'config.json', 'w'), indent=1)
+               'n_editions_used': len(ed_words), 'sens_threshold': a.sens_threshold, 'sensitivity_topics': [r['topic'] for r in sens_rows]}, open(out / 'config.json', 'w'), indent=1)
     # summary
     n_om = len(groups.get('other/multi', []))
     md = [f'# Aggregation summary — seed {a.seed}', '',
@@ -286,6 +336,18 @@ def main():
         hi_m = r['mean ' + r['highest']]; se_m = r['mean ' + r['second']]
         md.append(f'| T{r["topic"]} | {r["label"][:45]} | {r["highest"]} ({hi_m:.2%}; {r["highest_works_with_topic"]}) | {r["single_work_driven"]} | '
                   f'{r["second"]} ({se_m:.2%}) | {r["ratio_high_second"]} | {r["kruskal_p"]} | {r.get("bh_q", "")} |')
+    if sens_rows:
+        md += ['', f'Dominant-work check: selected topics in which one work holds >= {a.sens_threshold:.0%} of the topic\'s words, aggregated again without that work (sensitivity_dominant_work.csv; clusters unchanged). '
+                   'It records whether the highest-mean genre changes and how far the means move; an unchanged ranking does not mean a small effect. '
+                   'The threshold is an operational rule, not a statistical criterion, and it does not cover several works of one author or one story that together dominate a topic. p = Kruskal–Wallis across all tested genres, exploratory.', '',
+               '| topic | dominant work (genre; share of topic) | its genre: mean with → without (works with topic / works) | highest genre: with → without | original highest genre\'s mean: with → without | p: with → without |', '|---|---|---|---|---|---:|']
+        for r in sens_rows:
+            if r['highest_without'] == '':
+                md.append(f'| T{r["topic"]} {r["label"][:36]} | {r["dominant_work"][:38]} ({r["dominant_work_genre"]}; {r["dominant_share_of_topic_words"]:.0%}) | — | {r["highest_with"]} (not applicable: the dominant work is outside the tested genres) | — | — |')
+            else:
+                md.append(f'| T{r["topic"]} {r["label"][:36]} | {r["dominant_work"][:38]} ({r["dominant_work_genre"]}; {r["dominant_share_of_topic_words"]:.0%}) | '
+                          f'{r["its_genre_mean_with"]:.2%} → {r["its_genre_mean_without"]:.2%} ({r["its_genre_works_with_topic_with"]}/{r["its_genre_n_works_with"]} → {r["its_genre_works_with_topic_without"]}/{r["its_genre_n_works_without"]}) | '
+                          f'{r["highest_with"]} → {r["highest_without"]} | {float(r["mean_highest_with"]):.2%} → {r["mean_original_highest_without"]:.2%} | {r["p_with"]} → {r["p_without"]} |')
     md += ['', 'Reading: shares are of a work\'s words, averaged over its editions and then over the works of a genre; the remaining words of every work sit in the '
                 'contextual_only / pending / unclassified / outlier columns, so the selected topics never describe the whole genre.']
     (out / 'aggregate_summary.md').write_text('\n'.join(md), encoding='utf-8')
