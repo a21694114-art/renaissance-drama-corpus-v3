@@ -158,7 +158,7 @@ def main():
     except Exception:
         script = '<script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.35.2/plotly.min.js"></script>'
     note = (f'Each point is one ~500-word chunk; position = 2-D UMAP of its embedding (for viewing only — the clustering used the 5-D UMAP). Colour = topic (seed {a.seed}); grey = unassigned by HDBSCAN. '
-            'The filters combine (e.g. comedy AND 1620s); the legend hides (click) or isolates (double-click) a topic. '
+            'The filters combine (e.g. comedy AND 1620s); topics with no matching chunk turn grey in the legend and their points are hidden until the filter is cleared; the legend hides (click) or isolates (double-click) a topic. '
             'Company / theater / first-performance dates are from DEEP where recorded; the decade is the edition\'s publication decade.' + (' <b>Click a point to open the chunk\'s page.</b>' if a.chunk_url else ''))
     controls = ''.join(
         f'<label>{html.escape(f["label"])} <select data-col="{f["col"]}"><option value="">All</option>' + ''.join(f'<option value="{html.escape(v, quote=True)}">{html.escape(v[:60])} ({len(ix)})</option>' for v, ix in f['options']) + '</select></label>'
@@ -172,9 +172,13 @@ Plotly.newPlot('map',T,L,{{responsive:true,displaylogo:false}});
 document.getElementById('map').on('plotly_click',e=>{{const id=e.points[0].customdata;if(window.CHUNK_URL)window.open(window.CHUNK_URL.replace('{{id}}',id),'_self');}});
 const sels=[...document.querySelectorAll('#filters select')];const cnt=document.getElementById('count');
 function apply(){{let act=null;for(const s of sels){{if(!s.value)continue;const set=new Set(F[s.dataset.col][s.value]);act=act===null?set:new Set([...act].filter(i=>set.has(i)));}}
- if(act===null){{Plotly.restyle('map',{{selectedpoints:[null]}},[...Array(NTR).keys()]);cnt.textContent='all '+NPT.toLocaleString()+' chunks';return;}}
+ const all=[...Array(NTR).keys()];
+ if(act===null){{Plotly.restyle('map',{{selectedpoints:[null],visible:true}},all);cnt.textContent='all '+NPT.toLocaleString()+' chunks';return;}}
  const per=Array.from({{length:NTR}},()=>[]);const works=new Set();for(const i of act){{per[PT[i][0]].push(PT[i][1]);works.add(WK[i]);}}
- Plotly.restyle('map',{{selectedpoints:per}},[...Array(NTR).keys()]);cnt.textContent=act.size.toLocaleString()+' chunks · '+works.size+' works match';}}
+ // topics with no matching chunk drop to "legend only": their points disappear and their legend entry turns grey,
+ // so the legend shows which topics the selection contains; the other topics keep their non-matching points dimmed
+ const vis=per.map(v=>v.length?true:'legendonly');const ntop=per.filter((v,k)=>v.length&&!T[k].name.startsWith('-1:')).length;
+ Plotly.restyle('map',{{selectedpoints:per,visible:vis}},all);cnt.textContent=act.size.toLocaleString()+' chunks · '+works.size+' works · '+ntop+' topics match';}}
 sels.forEach(s=>s.addEventListener('change',apply));document.getElementById('clearall').addEventListener('click',()=>{{sels.forEach(s=>s.value='');apply();}});apply();</script>'''
     if a.embed:
         page = script + body

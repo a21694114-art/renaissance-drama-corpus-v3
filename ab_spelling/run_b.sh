@@ -22,6 +22,11 @@
 #                                       # runs_<model>_masked_<scheme>/ each with seeds 42 43 44, then one table: runs_<model>_masked/compare_schemes.md
 #   bash ab_spelling/run_b.sh compare   # only recompute that table from the existing scheme dirs (16_compare_schemes.py)
 #   B_RUNS_SUFFIX=masked_km50 bash ab_spelling/run_b.sh sample [5]   # reading sample: centre + edge chunks of N random clusters (17_sample_clusters.py)
+#   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh shakespeare   # Shakespeare vs the rest within genre (18) + single plays against the genre profiles (19) → aggregate/shakespeare/
+#                                       # B_FOCUS="Othello, the Moor of Venice" picks the play shown in full in othello_panel.png
+#                                       # B_USE picks the compared topics (default: aggregate/config.json); B_BOOT / B_PERM set the resampling counts
+#   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh company   # coverage of the DEEP company / theatre / date fields for the run's works (20) → aggregate/company/
+#                                       # tables only (no comparison, no merging of company names); needs the DEEP export (B_DEEP or the Dropbox default)
 #   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh freeze   # copy the small result files that let a reader trace the published analysis
 #                                       # (doc_topics, run.json, topic_sheet.csv, aggregate tables, chunk map/meta, environment) into ab_spelling/results_<suffix>/
 #   B_RUNS_SUFFIX=masked bash ab_spelling/run_b.sh sheet|review|pack|aggregate|genrefig|figures|map|site   # run any later step on that second run
@@ -59,6 +64,22 @@ else
   CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG$RUNS_SUFFIX"; SEEDS="42 43 44"; LIMIT=""; MINDF=""
 fi
 SEED="${B_SEED:-42}"
+if [ "$MODE" = "shakespeare" ]; then
+  RUNS="$OUT_ROOT/runs_$SLUG$RUNS_SUFFIX"; D="$RUNS/topics_B_s$SEED"
+  [ -f "$D/aggregate/work_topic_share.csv" ] || { echo "run aggregate first ($D/aggregate/work_topic_share.csv missing)"; exit 1; }
+  python "$CODE/18_shakespeare.py" --agg "$D/aggregate" --sheet "$D/topic_sheet.csv" ${B_USE:+--use "$B_USE"} --boot "${B_BOOT:-1000}" --perm "${B_PERM:-1000}" --seed "$SEED"
+  python "$CODE/19_play_distances.py" --agg "$D/aggregate" --sheet "$D/topic_sheet.csv" ${B_USE:+--use "$B_USE"} ${B_FOCUS:+--focus "$B_FOCUS"}
+  echo "== done: $D/aggregate/shakespeare/shakespeare_summary.md and play_distances_summary.md"; exit 0
+fi
+if [ "$MODE" = "company" ]; then
+  D="$RUNS/topics_B_s$SEED"
+  [ -f "$D/aggregate/work_topic_share.csv" ] || { echo "run aggregate first ($D/aggregate/work_topic_share.csv missing)"; exit 1; }
+  DEEP="${B_DEEP:-$HOME/Library/CloudStorage/Dropbox/Clustering Character Archetypes/early-modern-drama-character-clustering/data/DEEP_data.csv}"
+  [ -f "$DEEP" ] || { echo "DEEP export not found ($DEEP); set B_DEEP=<path to DEEP_data.csv>"; exit 1; }
+  python "$CODE/20_company_coverage.py" --agg "$D/aggregate" --chunk-meta "$CH/chunk_meta.csv" --deep "$DEEP"
+  echo "== done: $D/aggregate/company/company_coverage_summary.md"; exit 0
+fi
+
 if [ "$MODE" = "freeze" ]; then
   CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG$RUNS_SUFFIX"; D="$RUNS/topics_B_s$SEED"; RES="$REPO/ab_spelling/results$RUNS_SUFFIX"
   mkdir -p "$RES/topics_B_s$SEED/aggregate" "$RES/chunks_w500"
