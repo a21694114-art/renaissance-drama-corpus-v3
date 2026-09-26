@@ -1,0 +1,11 @@
+genre_main,n_works,included mean share of words,candidate mean share of words,contextual_only mean share of words,pending mean share of words,unclassified mean share of words,outlier_hdbscan mean share of words,selected topics mean share of words
+comedy,151,0.3426,0.0,0.0159,0.0278,0.0,0.6137,0.3426
+tragedy,111,0.4184,0.0,0.0027,0.0133,0.0,0.5656,0.4184
+history,34,0.3751,0.0,0.0245,0.0163,0.0,0.5841,0.3751
+tragicomedy,29,0.3515,0.0,0.0,0.0131,0.0,0.6354,0.3515
+moral,28,0.4348,0.0,0.0,0.0441,0.0,0.5211,0.4348
+romance,18,0.2452,0.0,0.0051,0.0398,0.0,0.71,0.2452
+pastoral,15,0.471,0.0,0.0,0.006,0.0,0.523,0.471
+masque,38,0.4026,0.0,0.0,0.0292,0.0,0.5682,0.4026
+interlude,1,0.653,0.0,0.0,0.0,0.0,0.347,0.653
+other/multi,91,0.2127,0.0,0.0007,0.1079,0.0,0.6787,0.2127

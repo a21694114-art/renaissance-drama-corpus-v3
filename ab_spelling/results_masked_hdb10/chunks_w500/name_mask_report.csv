@@ -1,0 +1,581 @@
+edition_id,work_id,title,matched,kim_tcp,n_cast_tokens,n_variant_tokens,n_override_tokens,tokens_masked,words,top_masked
+9,4,The Summoning of Everyman,exact,A00471,24,0,0,2,6781,strength 2
+11,6,The Nature of the Four Elements (Natura Naturata),exact,A10439,25,0,0,5,9589,taverner 2; humanyte 1; sensual 1; yngnorans 1
+13,8,1 Gentleness and Nobility,base,A10440.1; A10440.2,5,0,0,0,3581,
+14,9,2 Gentleness and Nobility,base,A10440.1; A10440.2,5,0,0,0,5278,
+15,10,The Beauty and Good Properties of Women (Calisto and Melebea,exact,A10438,7,0,0,52,8868,sempronio 26; calisto 10; melebea 8; celestina 4; parmeno 4
+19,14,"The Pardoner and the Friar, the Curate, and Neighbor Pratte",exact,A03175,6,0,0,25,5222,frere 12; pardoner 7; prat 6
+22,15,The Play of the Weather,exact,A03181,21,0,0,18,10516,iupyter 12; merry 3; launder 1; dick 1; ranger 1
+25,16,A Play of Love,exact,A03179,11,0,0,5,12958,loving 4; loved 1
+27,17,1 Nature,base,A07395.1; A07395.2,26,0,0,8,10209,worldly 4; shamefastness 4
+28,18,2 Nature,base,A07395.1; A07395.2,26,0,0,5,8260,sensua 2; bodily 2; worldly 1
+32,20,The Interlude of Youth,exact,A04054,12,0,0,16,5013,riot 12; humility 3; lechery 1
+33,21,The Four P's,exact,A03177,4,0,0,8,9015,pardoner 8
+37,22,The Chief Promises of God unto Man (God's Promises),exact,A02906,24,0,0,46,8460,adam 14; abraham 10; moses 7; noah 6; david 5; baptist 2
+39,23,"The Temptation of Our Lord and Saviour, Jesus Christ, by Sat",exact,A02658,8,0,0,8,4027,satan 8
+40,24,"The Three Laws of Nature, Moses, and Christ, Corrupted by th",exact,A02738,49,1,0,35,14896,moses 16; christian 4; sodom 4; law 3; idolatry 3; deus 2
+41,24,"The Three Laws of Nature, Moses, and Christ, Corrupted by th",exact,A02749,49,2,0,39,14700,christian 13; moses 11; sodom 4; infidelitatem 3; deus 2; doctrine 2
+45,27,Wealth and Health,exact,A04052,19,0,0,12,7689,remedi 4; helth 2; hauce 2; hance 1; liberti 1; remedy 1
+49,28,Troas (Seneca's Sixth Tragedy),exact,A11909.6,11,2,0,77,13829,ulysses 22; pyrrhus 20; calchas 10; hecuba 6; helen 5; andromacha 5
+50,29,Thyestes (Seneca's Second Tragedy),exact,A11914,10,0,0,24,12314,tantalus 10; atreus 10; thyestes 4
+51,29,Thyestes (Seneca's Second Tragedy),exact,A11909.2,10,0,0,27,12264,atreus 11; tantalus 10; thyestes 5; megaera 1
+53,30,Impatient Poverty,exact,A04055,18,0,0,5,7121,misrule 5
+54,31,Nice Wanton,exact,A14713,25,1,0,26,4695,dalila 15; ishmael 6; xantippe 3; barnabas 2
+57,32,Robin Hood (Robin Hood and the Friar) (Robin Hood and the Po,base,A03571.1,11,0,0,18,1456,potter 7; robin 6; iohn 3; tuck 1; little 1
+59,34,Hercules Furens (Mad Hercules) (Seneca's First Tragedy),exact,A11911,5,0,0,23,14038,lycus 10; theseus 9; megara 4
+60,34,Hercules Furens (Mad Hercules) (Seneca's First Tragedy),exact,A11909.1,5,0,0,21,14015,lycus 9; theseus 8; megara 4
+65,36,Oedipus (Seneca's Fifth Tragedy),exact,A11909.5,7,0,0,17,12814,creon 6; oedipus 6; manto 3; tiresias 1; phorbas 1
+66,37,Thersites,exact,A13664,5,0,0,24,7164,mulciber 11; telemachus 7; thersites 6
+67,38,Albion Knight,exact,A15979,8,0,0,10,2982,albion 7; injury 3
+68,39,Ferrex and Porrex (Gorboduc),exact,A08360,33,0,0,45,14404,porrex 20; ferrex 14; eubulus 5; philander 2; tyndar 1; gorboduc 1
+69,39,Ferrex and Porrex (Gorboduc),exact,A08361,33,0,0,45,14378,porrex 20; ferrex 15; eubulus 5; philander 2; tyndar 1; gorboduc 1
+74,41,Lusty Juventus,exact,A14846,32,0,0,5,9181,juventus 3; abominable 2
+76,42,Agamemnon (Seneca's Eighth Tragedy),exact,A11910,17,0,0,31,13764,agamemnon 10; thyestes 6; aegisthus 6; cassandra 4; electra 2; eurybates 1
+77,42,Agamemnon (Seneca's Eighth Tragedy),exact,A11909.8,17,0,0,30,13719,agamemnon 10; thyestes 5; aegist 4; cassandra 4; aegisthus 3; electra 2
+79,44,Medea (Seneca's Seventh Tragedy),exact,A11912,4,1,0,68,15338,iason 28; medea 20; creon 20
+80,44,Medea (Seneca's Seventh Tragedy),exact,A11909.7,4,1,0,69,15210,iason 28; medea 20; creon 20; jason 1
+81,45,Octavia (Seneca's Ninth Tragedy),exact,A11917,13,0,0,27,11505,nero 20; octavia 7
+82,45,Octavia (Seneca's Ninth Tragedy),exact,A11909.9,13,2,0,30,11481,nero 20; octavia 4; senec 3; octauias 3
+83,46,Ralph Roister Doister,exact,A14193,42,2,0,282,19321,custance 78; roister 32; doister 28; merrygreek 25; goodluck 18; annot 17
+84,47,The Life and Repentance of Mary Magdalene,exact,A14625,46,0,0,114,18675,mary 42; infidelity 22; simon 13; iesus 8; cupidity 6; marie 5
+85,48,The Interlude of Vice (Orestes),exact,A09651,46,1,0,81,11956,horestes 46; idumeus 7; aegisthus 5; revenge 5; menelaus 5; rusticus 4
+86,49,The Trial of Treasure,exact,A13962,21,1,0,82,9359,treasure 26; inclination 18; sapience 12; greedy 9; elation 6; trust 4
+89,50,Like Will to Like (Quoth the Devil to the Collier),exact,A01353,41,0,0,205,11525,nichol 31; tom 24; haunce 21; newfangle 17; roister 14; tosspot 12
+91,51,Jacob and Esau,exact,A04206,14,1,0,405,16859,iacob 140; esau 112; isaac 50; mido 33; rebecca 20; ragau 20
+94,54,The Disobedient Child,exact,A04027,20,0,0,2,12053,rich 1; wyfe 1
+95,55,The Marriage of Wit and Science,exact,A07052,22,0,0,25,11017,tediousness 8; instruction 7; study 4; diligence 2; shame 2; experience 1
+96,56,"Cambises, King of Persia",exact,A10041,42,3,0,108,13023,sisamnes 12; ambidexter 10; hob 10; meretrix 8; murder 7; commons 6
+99,57,Enough Is as Good as a Feast,exact,A14627,42,0,0,68,14401,covetous 26; precipitation 9; temerity 8; heavenly 6; inconsideration 6; contentation 4
+100,58,Damon and Pithias,exact,A21159,40,0,0,337,18209,damon 102; pythias 59; dionysius 48; stephano 28; carisophus 26; aristippus 20
+103,60,Supposes,exact,A01513.1,44,4,0,264,17906,erostrato 64; dulipo 50; pasiphilo 47; philogano 30; damon 21; polynesta 15
+104,60,Supposes,exact,A01514.3,44,5,0,268,17914,erostrato 63; dulipo 50; pasiphilo 47; philogano 35; damon 21; polinesta 13
+106,61,Jocasta,exact,A01513.2,48,3,0,129,21836,eteocles 32; oedipus 23; polynice 18; creon 15; polynices 11; antigone 9
+107,61,Jocasta,base,A01514.2; A01514.3,48,2,0,147,33875,polynices 48; eteocles 31; oedipus 23; creon 15; iocasta 9; antigone 9
+110,62,The Masque for Lord Montacute (The Montague Masque) (Wedding,base,A01514.2; A01514.3,43,0,0,0,3970,
+114,65,Appius and Virginia,exact,A00456,20,0,0,72,7513,haphazard 17; virginius 15; apius 13; virginia 11; claudius 8; mansipula 3
+117,67,Gammer Gurton's Needle,exact,A12969,12,0,0,206,14326,diccon 63; hodge 48; chat 27; rat 21; tib 17; cock 16
+121,70,The Tide Tarrieth No Man,exact,A14715,45,1,0,81,14858,christianity 17; help 13; greediness 11; faithful 6; profit 5; profite 5
+122,71,Abraham's Sacrifice,exact,A10192,12,0,0,34,7982,isaac 15; abraham 12; sara 6; satan 1
+123,72,All for Money,exact,A06480,56,1,0,76,15700,damnation 21; croote 10; laurence 8; learning 7; iudas 6; theology 4
+124,73,1 Promos and Cassandra,base,A15045.1; A15045.2,65,0,0,142,10453,promos 27; andrugio 27; cassandra 20; lamia 15; phallax 13; grimball 10
+125,74,2 Promos and Cassandra,base,A15045.1; A15045.2,65,0,0,128,9654,promos 44; cassandra 21; andrugio 16; phallax 12; polina 8; vlrico 8
+126,75,The Entertainment at Norwich (Royal Entry of Queen Elizabeth,exact,A01506,4,0,0,0,7416,
+128,76,The Entertainment in Suffolk and Norfolk (Royal Entry of Que,exact,A18729,13,0,0,19,6450,riot 6; dezart 5; manhood 4; wantonness 2; desert 1; favour 1
+129,76.5,The Most Virtuous and Godly Susanna,exact,A01509,28,1,0,103,14578,report 30; ill 24; susanna 10; sensualitas 8; voluptas 8; true 6
+130,77,The Entertainment of the French Ambassadors (The Fortress of,none,,0,0,0,0,5184,
+131,78,The Conflict of Conscience,exact,A68918,31,0,0,66,20551,philologus 41; suggestion 15; sathan 4; theologus 2; hypocrisie 1; eusebius 1
+132,79,Thebais (Seneca's Third Tragedy),exact,A11909.3,10,0,0,12,11526,polynices 6; oedipus 5; poly 1
+133,80,Hippolytus (Seneca's Fourth Tragedy),exact,A11909.4,3,0,0,37,15091,hippolytus 18; theseus 15; phaedra 4
+134,81,Hercules Oetaeus (Hercules on Mount Oeta) (Seneca's Tenth Tr,exact,A11909.10,4,1,0,12,21940,deianire 5; alcmena 5; deianira 1; philoctetes 1
+135,82,Sappho and Phao,exact,A06625,35,1,0,192,13430,phao 77; sapho 42; mileta 18; sibylla 10; pandion 7; canope 6
+139,83,The Arraignment of Paris,exact,A09220,32,2,0,32,10397,dian 7; oenone 5; diane 4; thestilis 4; pomona 3; rhanis 2
+140,84,"Campaspe (Alexander, Campaspe, and Diogenes)",exact,A06583,60,2,0,322,13140,alexander 80; apelles 47; diogenes 40; campaspe 36; manes 28; hephestion 27
+146,85,The Three Ladies of London,exact,A15519,34,1,0,193,18406,lucar 56; dissimulation 36; simplicity 23; hospitality 19; sincerity 12; mercadorus 10
+147,86,Fedele and Fortunia (Two Italian Gentlemen),exact,A09134,17,0,0,222,14983,victoria 57; fedele 49; fortunio 42; virginia 20; pedante 17; attilia 14
+148,87,The Pageant before Woolstone Dixie,exact,A09223,10,0,0,7,926,country 4; thames 2; loyalty 1
+149,88,The Queen's Entertainment at Woodstock,exact,A21238,18,0,0,15,8332,contarenus 5; niphe 5; gaudina 4; conta 1
+150,89,The Misfortunes of Arthur (Certain Devices and Shows Present,exact,A03804,38,0,0,151,17380,arthur 62; mordred 54; gorlois 12; cador 7; picts 6; gilla 4
+153,91,Andria (The Woman from Andros),exact,A13611,18,2,0,181,15412,pamphilus 46; davus 39; chremes 33; glycerie 19; mysis 10; crito 9
+155,93,The Three Lords and Three Ladies of London,exact,A15517,40,0,0,121,20145,nemo 19; pomp 17; diligence 13; policy 11; dissimulation 11; simplicity 8
+156,94,1 Tamburlaine the Great,exact,A07004.1,52,2,0,226,17205,tamburlaine 69; zenocrate 29; bajazeth 24; techelles 21; meander 12; theridamas 12
+160,95,2 Tamburlaine the Great,base,A07004.1; A07004.2,86,1,0,179,17539,tamburlaine 73; zenocrate 13; techelles 12; sigismond 11; almeda 11; callapine 9
+164,96,The Pageant for John Allot,none,,0,0,0,0,1082,
+165,97,Phillis and Amyntas (Ivychurch) (Amyntas' Pastoral),exact,A01227.1,17,2,0,542,15312,amyntas 229; phillis 213; daphne 29; thyrsis 26; fulvia 9; phil 8
+167,99,"Endymion, the Man in the Moon",exact,A06589,36,0,0,380,18669,endymion 135; tellus 52; eumenides 40; dipsas 29; semele 28; corsites 25
+169,100,Descensus Astraeae (The Descent of Astraea),exact,A09222,14,0,0,5,1063,astraea 4; malcontent 1
+170,101,1 The Troublesome Reign of King John,exact,A68278.1,64,1,0,260,13392,philip 61; arthur 41; iohn 31; fauconbridge 19; hubert 17; robert 11
+171,101,1 The Troublesome Reign of King John,exact,A04520.1,64,1,0,260,14057,philip 60; arthur 42; iohn 40; fauconbridge 19; hubert 17; robert 10
+174,102,2 The Troublesome Reign of King John,base,A04520.1; A04520.2,72,0,0,183,9549,iohn 56; philip 26; lewes 17; lewis 12; salisbury 10; arthur 9
+177,103,The Royal Entertainment at Cowdray,exact,A17029,2,1,0,3,2096,anglers 3
+178,104,Tancred and Gismund (Gismond of Salerne),exact,A15498,15,1,0,22,14319,gismund 8; iulio 6; renuchio 4; tancred 2; guiszard 1; julio 1
+179,105,Gallathea,exact,A06619,43,1,0,109,13291,phillida 20; galathea 18; telusa 11; hebe 11; tityrus 9; melebeus 7
+181,106,Midas,exact,A06621,48,1,0,233,15332,midas 100; motto 29; martius 15; sophronia 13; mellacrites 10; licio 10
+183,107,Master Arden of Faversham in Kent,exact,A20951,33,1,0,439,19605,arden 108; mosbie 71; alice 50; michael 46; franklin 41; susan 26
+187,108,Antonius (Antony),exact,A01502,23,0,0,46,14366,caesar 29; cleopatra 13; eras 1; diomed 1; agrippa 1; euphron 1
+188,109,Soliman and Perseda (Zulziman),exact,A12578,57,2,0,397,17534,erastus 101; perseda 86; soliman 67; brusor 39; lucina 26; basilisco 12
+190,110,The Spanish Tragedy (Hieronimo is Mad Again),exact,A04942,35,1,0,376,20706,hieronimo 98; horatio 75; balthazar 59; lorenzo 36; andrea 23; pedringano 23
+200,111.1,The Royal Entertainment at Bisham Abbey,base,A21246.1; A21246.2,4,0,0,0,2705,
+201,111.2,The Royal Entertainment at Sudeley Castle,base,A21246.1; A21246.2,4,0,0,0,1184,
+202,111.3,The Royal Entertainment at Rycote,base,A21246.1; A21246.2,4,0,0,0,1567,
+203,112,Edward the First,exact,A09224,84,5,0,458,21310,edward 76; lluellen 47; elinor 44; david 33; joan 31; mortimor 30
+205,113,"Fair Em, the Miller's Daughter of Manchester",exact,A21328,41,1,0,226,11558,william 28; mariana 27; manville 26; trotter 18; valingford 18; robert 17
+207,114,Jack Straw,exact,A13062,29,0,0,84,7868,straw 12; jack 11; ball 10; maior 10; morton 7; newton 7
+209,115,A Knack to Know a Knave,exact,A04888,48,2,0,231,16373,ethenwald 44; dunston 38; honesty 38; alfrida 26; edgar 20; perin 15
+210,116,Cornelia (Pompey the Great His Fair Cornelia's Tragedy),exact,A01500,22,1,0,89,14983,caesar 47; brutus 13; cornelia 12; anthony 5; crassus 4; corn 4
+211,117,Titus Andronicus,exact,A12017,59,2,0,371,19218,andronicus 45; lucius 42; titus 39; lavinia 38; marcus 35; goths 27
+214,117,Titus Andronicus,exact,A11954.27,59,2,0,381,19840,andronicus 44; lucius 42; titus 40; marcus 40; lavinia 39; goths 27
+216,118,A Looking Glass for London and England,exact,A06185,59,3,0,171,19147,rasni 36; aluida 31; radagon 21; remilia 15; ionas 15; adam 10
+222,119,2 Henry the Sixth (The First Part of the Contention betwixt ,exact,A68931,115,3,0,347,16082,york 61; suffolk 45; humphrey 25; cade 24; somerset 22; warwick 21
+224,119,2 Henry the Sixth (The First Part of the Contention betwixt ,exact,A11954.21,115,3,0,424,24509,york 65; suffolk 61; humphrey 33; warwick 30; cade 27; somerset 26
+226,120,The Taming of a Shrew,exact,A13358,33,1,0,171,12237,kate 51; ferando 27; polidor 20; aurelius 17; alfonso 14; valeria 13
+228,120,The Taming of a Shrew,exact,A13360,33,2,0,172,12259,kate 51; ferando 26; polidor 22; aurelius 18; valeria 13; alfonso 12
+229,120.5,The Taming of the Shrew,exact,A11954.11,54,4,0,386,20473,kate 62; bianca 37; lucentio 36; petruchio 35; tranio 33; baptista 30
+230,120.5,The Taming of the Shrew,exact,A12016,54,3,0,380,20492,kate 61; bianca 37; lucentio 36; petruchio 34; tranio 33; baptista 30
+232,121,Friar Bacon and Friar Bongay,exact,A02127,80,0,0,378,15796,bacon 72; lacie 52; margaret 40; edward 37; henry 24; ralph 19
+233,121,Friar Bacon and Friar Bongay,exact,A02128,80,2,0,396,16253,bacon 77; lacy 47; marg'ret 43; edward 37; bungay 23; henry 21
+235,122,"The Wounds of Civil War, or Marius and Scilla",exact,A06184,91,0,0,541,19291,sulla 178; marius 161; cinna 25; pompey 24; lucretius 20; anthony 19
+236,123,Orlando Furioso,exact,A02125,43,2,0,282,10705,angelica 95; orlando 49; medor 37; marsillus 28; sacrepant 23; orgalio 20
+238,124,The Cobbler's Prophecy,exact,A15515,47,0,0,120,11911,raph 31; contempt 20; sateros 17; emnius 13; mercurie 11; charon 7
+239,125,Mother Bombie,exact,A06622,40,1,0,254,16503,stellio 33; memphio 32; silena 30; accius 24; dromio 22; livia 20
+242,126,The True Tragedy of Richard the Third,exact,A10730,70,5,0,378,19457,richard 35; buckingham 30; richmond 30; stanley 25; george 21; shore 19
+243,127,The Battle of Alcazar,exact,A09221,45,3,0,215,10856,sebastian 37; stukeley 23; abdelmelec 22; moores 22; moore 20; mahamet 18
+244,128,"Dido, Queen of Carthage",exact,A07023,15,1,0,361,13552,aeneas 141; dido 95; iarbas 36; achates 28; ascanius 23; anna 22
+245,129,Edward the Second,exact,A07018,72,7,0,528,20420,gaveston 114; mortimer 103; edward 62; spencer 37; lancaster 32; isabell 24
+250,131,"The Wars of Cyrus, King of Persia",exact,A19738,20,3,0,307,12900,cyrus 82; panthea 61; araspas 31; abradates 26; gobrias 24; antiochus 17
+251,132,Cleopatra,base,A19816.1,18,1,0,101,13020,caesar 60; cleopatra 22; rodon 6; caesario 5; dolabella 3; seleucus 2
+254,132,Cleopatra,base,A19834.1,18,1,0,102,13150,caesar 60; cleopatra 22; rodon 7; caesario 5; dolabella 3; seleucus 2
+260,133,The Massacre at Paris,exact,A07003,52,0,0,157,9613,guise 73; admiral 15; epernoune 14; henry 12; ramus 7; dumaine 5
+261,134,The Pedlar's Prophecy,exact,A15516,13,1,0,17,13571,artificers 5; artificer 4; landlord 4; interpreter 4
+263,136,"Locrine, the Eldest Son of King Brutus",exact,A11262,48,5,0,282,15350,locrine 76; humber 30; albanact 24; guendoline 21; estrild 20; brutus 16
+264,137,The Old Wives Tale,exact,A09232,61,0,0,125,7590,delia 34; iack 31; corebus 8; sacrapant 7; jack 6; clunch 5
+265,138,3 Henry the Sixth (The True Tragedy of Richard Duke of York ,exact,A10726,69,3,0,534,16578,warwick 93; henry 66; york 64; edward 62; clifford 42; clarence 34
+268,138,3 Henry the Sixth (The True Tragedy of Richard Duke of York ,exact,A11954.22,69,1,0,664,23367,warwick 127; edward 93; henry 84; york 59; clifford 47; clarence 40
+270,139,A Knack to Know an Honest Man,exact,A04889,40,4,0,318,12820,lelio 80; sempronio 35; fortunio 27; seruio 26; brishio 26; lucida 25
+271,140,The Reign of King Edward the Third,exact,A21144,32,3,0,171,19433,edward 41; philip 16; iohn 16; audley 15; warwick 9; salisbury 8
+273,141,Richard the Second,exact,A11994,57,4,0,215,20560,richard 33; bullingbrooke 29; york 20; gaunt 18; aumerle 18; mowbray 15
+278,141,Richard the Second,exact,A11954.16,57,3,0,223,21453,bullingbrooke 41; richard 39; york 20; gaunt 18; aumerle 18; mowbray 14
+281,142,Richard the Third,exact,A12001,72,3,0,395,26793,edward 58; clarence 42; richard 39; buckingham 36; hastings 32; richmond 32
+287,142,Richard the Third,exact,A11954.23,72,2,0,444,28197,edward 64; clarence 43; richard 42; buckingham 38; hastings 33; richmond 31
+291,143,Romeo and Juliet,exact,A12010,46,9,0,266,17405,romeo 96; iuliet 44; tybalt 28; mercutio 14; montague 13; romeos 9
+294,143,Romeo and Juliet,exact,A11954.28,46,8,0,324,23870,romeo 124; iuliet 39; tybalt 37; montague 21; mercutio 17; capulet 12
+298,144,The Woman in the Moon,exact,A06629,28,1,0,389,12324,pandora 137; stesias 76; iphicles 44; gunophilus 43; learchus 43; melos 43
+300,145,1 Henry the Fourth,exact,A11966,55,5,0,279,24127,percy 42; iohn 36; mortimer 27; frances 21; falstalffe 18; glendower 16
+306,145,1 Henry the Fourth,exact,A11954.17,55,3,0,283,23985,percy 41; iohn 36; mortimer 27; dowglas 25; francis 22; falstaff 19
+310,146,The Blind Beggar of Alexandria (Irus),exact,A18402,38,2,0,134,13032,irus 34; leon 31; antistenes 9; doricles 7; pego 5; elimine 5
+314,149,The Scottish History of James the Fourth,exact,A02168,59,2,0,193,19845,ida 39; nano 19; ateukin 18; iaques 14; andrew 13; bartram 9
+315,150,Love's Labor's Lost,exact,A68726,64,2,0,112,18280,berowne 22; costard 15; boyet 10; longavill 8; iaquenetta 7; dull 7
+316,150,Love's Labor's Lost,exact,A11954.7,64,2,0,119,21037,berowne 23; costard 16; boyet 12; iaquenetta 9; longavill 8; rosaline 8
+319,151,Mucedorus (and Amadine),exact,A07859,15,0,0,133,10767,amadine 38; segasto 31; bremo 29; mucedorus 13; tremelio 11; comedy 5
+345,153,1 Edward the Fourth,base,A03224.1; A03224.2,105,3,0,297,22463,shore 55; falconbridge 40; maior 37; edward 35; spicing 18; iane 17
+351,154,2 Edward the Fourth,base,A03224.1; A03224.2,105,5,0,344,24033,shore 68; edward 59; iane 31; richard 29; blage 17; lewis 16
+357,156,"Alphonsus, King of Aragon",exact,A02091,36,0,0,302,10930,alphonsus 83; amurack 58; belinus 34; fausta 19; iphigina 19; albinius 15
+359,158,"George a Green, the Pinner of Wakefield",exact,A02070,54,0,0,239,7960,george 63; edward 17; robin 17; iames 16; kendal 15; cuddie 14
+361,160,The Love of King David and Fair Bathsheba,exact,A09228,66,6,0,494,14799,david 145; absalon 59; urias 42; ioab 40; ammon 39; cusay 32
+363,161,1 The Two Angry Women of Abingdon,exact,A09857,25,3,0,281,25443,philip 53; goursey 51; frank 47; raph 20; barnes 18; coomes 18
+364,162,Old Fortunatus,exact,A20076,57,2,0,159,23722,shadow 47; fortunatus 25; ampedo 16; andelocia 16; longavile 12; orleans 10
+365,163,Every Man Out of His Humor,exact,A04648,80,1,0,290,36777,carlo 42; macilente 33; puntarvolo 26; sogliardo 24; fastidius 21; deliro 20
+368,163,Every Man Out of His Humor,exact,A04632.2,80,2,0,283,36336,carlo 42; macilente 33; briske 28; puntarvolo 25; sogliardo 23; fastidius 20
+370,164,The Maid's Metamorphosis,exact,A06742,19,1,0,113,13809,eurymine 42; ascanio 17; ioculo 15; phylander 9; orestes 6; gemulo 6
+371,165,Henry the Fifth,exact,A11975,92,2,0,132,12244,kate 22; pistol 20; dolphin 18; gower 12; nim 7; exeter 7
+374,165,Henry the Fifth,exact,A11954.19,92,6,0,216,25642,kate 31; harry 21; dolphin 20; exeter 14; pistol 12; fluellen 12
+376,166,1 Sir John Oldcastle,exact,A08469,90,2,0,354,20962,iohn 47; cobham 40; harpoole 24; oldcastle 21; herbert 19; rochester 19
+378,167,2 Henry the Fourth,exact,A11974,103,6,0,418,23587,iohn 82; shallow 35; bardolfe 33; harry 31; falstaff 20; pistol 20
+379,167,2 Henry the Fourth,exact,A11954.18,103,9,0,425,25429,iohn 83; shallow 36; bardolfe 23; falstaff 22; harry 21; pistol 19
+381,168,Much Ado About Nothing,exact,A11991,68,2,0,301,20871,hero 59; claudio 57; benedick 51; beatrice 43; leonato 23; margaret 16
+382,168,Much Ado About Nothing,exact,A11954.6,68,3,0,304,20754,hero 59; claudio 56; benedick 51; beatrice 43; leonato 24; margaret 17
+385,170,A Midsummer Night's Dream,exact,A11989,57,2,0,267,16178,demetrius 39; lysander 37; hermia 36; moon 28; helena 23; theseus 9
+387,170,A Midsummer Night's Dream,exact,A11954.8,57,3,0,277,16127,lysander 39; demetrius 39; hermia 37; moon 29; helena 23; theseus 9
+391,172,The Merchant of Venice (The Jew of Venice),exact,A68727,61,5,0,285,19290,anthonio 37; iewe 29; bassanio 28; launcelet 27; iew 26; lorenzo 23
+392,172,The Merchant of Venice (The Jew of Venice),exact,A11981,61,2,0,249,20943,anthonio 43; bassanio 34; lorenzo 23; lancelet 21; jessica 21; portia 16
+393,172,The Merchant of Venice (The Jew of Venice),exact,A11954.9,61,4,0,296,20777,iew 52; anthonio 46; bassanio 33; lorenzo 24; iessica 21; portia 16
+396,173,Summer's Last Will and Testament,exact,A08009,17,0,0,100,16516,summer 23; winter 13; autumn 12; harvest 10; vertumnus 8; ver 8
+397,174,Look About You,exact,A06333,30,4,0,421,24745,richard 89; skinke 74; iohn 70; henry 47; redcap 27; block 23
+398,175,"The Shoemaker's Holiday, or The Gentle Craft",exact,A20083,54,0,0,525,18775,firk 59; eyre 50; hodge 47; rose 46; hans 38; rafe 37
+404,176,Every Man in His Humor,exact,A04647,49,3,0,272,25431,cob 39; prospero 32; musco 29; lorenzo 28; piso 18; giulliano 18
+405,176,Every Man in His Humor,exact,A04632.1,49,2,0,212,26227,cob 49; brainworm 24; stephen 22; kitely 17; downright 17; kno'well 14
+407,177,Jack Drum's Entertainment (Katherine and Pasquil),exact,A20867,35,4,0,267,15962,katherine 35; brabant 28; iohn 26; mammon 23; planet 19; pasquil 19
+409,178,Love's Metamorphosis,exact,A06620,19,1,0,137,10138,erisychthon 28; protea 25; niobe 16; nisa 15; montanus 10; petulius 10
+411,180,"The Death of Robert, Earl of Huntingdon (2 Robin Hood)",exact,A07897,41,4,0,376,21772,iohn 46; robin 38; hubert 33; bruise 33; fitzwater 25; oxford 22
+413,181,"Cynthia's Revels, or The Fountain of Self-Love",exact,A04632.3,31,0,0,239,33688,amorphus 39; hedon 33; anaides 24; arete 24; philautia 20; asotus 19
+415,182,Two Lamentable Tragedies,exact,A15814,53,2,0,159,18157,pertillo 32; beech 30; fallerio 24; alenso 14; merry 13; rachel 11
+416,183,"Il Pastor Fido, or The Faithful Shepherd",exact,A02284,27,4,0,355,35521,silvio 57; mirtillo 57; amarillis 49; corisca 44; dorinda 26; linco 25
+418,184,Antonio and Mellida,exact,A07063,40,2,0,201,14188,antonio 49; mellida 33; andrugio 22; balurdo 22; rossaline 14; feliche 14
+420,185,Antonio's Revenge (2 Antonio and Mellida),exact,A07064,27,4,0,205,14609,antonio 43; piero 35; mellida 28; andrugio 21; strotzo 15; maria 9
+422,186,"Poetaster, or The Arraignment",exact,B14290,86,2,0,426,24759,caesar 76; horace 64; minos 38; crispinus 25; tibullus 20; virgil 20
+423,186,"Poetaster, or The Arraignment",exact,A04632.4,86,0,0,440,28214,caesar 81; horace 68; minos 38; crispinus 27; virgil 21; tibullus 20
+425,187,The Merry Wives of Windsor,exact,A11983,38,1,0,191,11247,iohn 56; ford 48; slender 25; falstaff 16; anne 10; shallow 8
+427,187,The Merry Wives of Windsor,exact,A11954.3,38,2,0,333,21209,ford 62; iohn 58; anne 42; slender 28; falstaff 23; fenton 17
+428,187,The Merry Wives of Windsor,exact,A11988,38,3,0,326,21160,ford 61; anne 44; john 39; slender 27; falstaff 23; iohn 18
+430,188,"Blurt, Master Constable, or The Spaniard's Night Walk",exact,A07492,39,2,0,177,16764,blurt 32; frisco 20; camillo 14; simperina 14; fontinell 13; imperia 13
+431,189,Thomas Lord Cromwell,exact,A11265,35,1,0,233,13099,cromwell 85; banister 28; bagot 24; hodge 20; bedford 16; friskiball 13
+432,189,Thomas Lord Cromwell,exact,A11267,35,1,0,249,13836,cromwell 95; banister 28; bagot 23; hodge 19; bedford 18; friskiball 14
+433,190,The Contention between Liberality and Prodigality,exact,A19182,29,0,0,115,9777,prodigality 39; tenacity 23; vanity 20; liberality 8; dick 8; equity 5
+434,191,How a Man May Choose a Good Wife from a Bad,exact,A19183,20,0,0,170,21221,arthur 72; pipkin 18; mary 17; lusam 16; aminadab 12; anselm 10
+441,192,"A Larum for London, or The Siege of Antwerp",exact,A06270,37,3,0,141,12245,spaniards 23; spaniard 19; alva 17; danila 14; burghers 10; egmont 10
+444,195,"Satiromastix, or The Untrussing of the Humorous Poet",exact,A20081,41,3,0,292,21809,horace 78; vaughan 38; tucca 32; adam 29; peter 25; crispinus 15
+446,196,Darius,exact,A16527.2,20,1,0,54,17179,darius 19; alexander 16; bessus 5; narbazanes 4; parmenio 3; artabazus 3
+448,196,Darius,exact,A16564.2,20,1,0,52,17507,darius 18; alexander 16; bessus 5; artabazus 4; parmenio 3; narbazanes 3
+449,197,"Hamlet, Prince of Denmark",exact,A11959,62,2,0,187,16104,hamlet 63; horatio 35; leartes 23; ofelia 19; gertred 9; fortenbrasse 6
+453,197,"Hamlet, Prince of Denmark",exact,A11954.32,62,4,0,233,27886,hamlet 77; horatio 29; laertes 29; ophelia 19; play 18; gertrude 12
+456,198,Patient Grissel,exact,A20077,26,5,0,469,19597,grissel 130; owen 81; gwenthyan 48; furio 41; mario 29; gwenthian 22
+459,200,The Coronation Triumph (The Royal Entry of King James I into,exact,A04637.1,10,0,0,1,2085,electra 1
+460,200,The Coronation Triumph (The Royal Entry of King James I into,exact,A04632.11,10,0,0,1,1079,genivs 1
+462,201,The Royal Entertainment of the Queen and Prince at Althorp (,base,A04637.1; A04637.2,352,1,0,13,1988,faeries 3; satyre 3; mab 2; foole 2; discouered 1; cap 1
+463,201,The Royal Entertainment of the Queen and Prince at Althorp (,base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,352,0,0,7,1597,satire 2; elves 2; mab 2; graces 1
+465,202,The Magnificent Entertainment Given to King James (The Royal,exact,A20069,11,0,0,4,2729,george 1; andrew 1; fama 1; sylvanus 1
+468,203,The Malcontent,exact,A07071,72,4,0,125,14249,ferneze 24; mendozo 20; celso 13; maria 11; malevole 10; maquerelle 9
+470,203,The Malcontent,exact,A07074,72,3,0,138,19203,mendoza 25; ferneze 25; malevole 19; celso 13; maquerelle 12; maria 12
+471,204,1 The Honest Whore (1 The Converted Courtesan) (The Patient ,exact,A20062,46,3,0,162,23345,george 36; hipolito 19; roger 16; fluello 13; mathaeo 12; matheo 11
+476,205,Doctor Faustus,exact,A07009,26,0,0,200,11248,faustus 136; lucifer 31; rafe 9; valdes 7; wagner 5; cornelius 5
+486,207,The Vision of the Twelve Goddesses (The Masque at Hampton Co,none,,0,0,0,0,1462,
+487,207,The Vision of the Twelve Goddesses (The Masque at Hampton Co,exact,A19838,0,0,0,0,1463,
+489,208,Arches of Triumph (The Royal Entry of King James I into Lond,exact,A02732,8,0,0,4,3346,zeal 2; graces 2
+491,209,Croesus,exact,A16527.1,21,0,0,60,22684,croesus 19; cyrus 14; atis 13; solon 5; adrastus 4; caelia 2
+493,209,Croesus,exact,A16564.1,21,0,0,57,23048,croesus 19; atis 14; cyrus 12; solon 6; adrastus 3; aesop 1
+494,210,The Trial of Chivalry (This Gallant Cavaliero Dick Bowyer),exact,A68191,33,3,0,453,18929,pembroke 90; ferdinand 78; bourbon 60; philip 44; bellamira 39; bowyer 27
+495,211,The Fair Maid of Bristol,exact,A16900,19,3,0,161,9095,vallenger 59; sentloe 20; blunt 17; challener 13; sentlove 13; frog 11
+496,212,When You See Me You Know Me (Henry the Eighth),exact,A11146,82,8,0,262,23726,william 54; cranmer 25; brandon 24; bonner 16; compton 16; mary 13
+500,213,The True Chronicle of King Leir (King Lear and his Three Dau,exact,A05206,21,1,0,101,21030,cornwall 23; cordella 23; cambria 16; leir 16; perillus 8; scaliger 6
+501,214,The Dutch Courtesan (Cockle de Moye),exact,A07065,52,4,0,104,17768,cocledemoy 23; beatrice 12; mary 11; mulligrub 9; fough 7; mullegrub 7
+503,215,"1 If You Know Not Me You Know Nobody, or The Troubles of Que",exact,A03208,55,1,0,70,11191,gage 13; winchester 9; howard 9; elizabeth 7; sussex 6; clarentia 6
+512,216,Sejanus His Fall,exact,A04632.5,41,1,0,562,25870,caesar 126; sejanus 97; drusus 37; silius 35; macro 29; tiberius 20
+514,217,Eastward Ho,exact,A18407,80,1,0,187,23661,security 25; bramble 23; touchstone 21; wolf 19; coach 17; petronel 16
+517,218,The Triumphs of Reunited Britannia,exact,A07907,33,0,0,36,2388,britannia 9; brute 9; locrine 4; albania 3; albanact 2; humber 2
+518,219,All Fools,exact,A18400,34,2,0,173,18936,cornelio 30; valerio 26; rinaldo 23; fortunio 18; dariotto 10; pock 10
+520,221,"1 Jeronimo, with the Wars of Portugal",exact,A04941,32,4,0,182,8910,andrea 48; horatio 27; lorenzo 23; bellimperia 15; ieronimo 13; alcario 10
+521,222,The London Prodigal,exact,A12023,44,2,0,254,15828,flowerdale 50; lancelot 33; oliver 28; weathercock 22; arthur 21; delia 20
+527,224,2 If You Know Not Me You Know Nobody (The Second Part of Que,exact,A03217,58,1,0,294,21563,iohn 81; gresham 62; hobson 47; factor 18; tawnycoat 15; nowell 11
+533,226,The Gentleman Usher (Vincentio and Margaret),exact,A18413,31,2,0,101,20599,medice 28; vincentio 19; strozza 14; pogio 8; bassiolo 6; lassos 4
+534,227,The Queen's Arcadia (Arcadia Reformed),exact,A19835,22,2,0,308,20203,cloris 61; techne 41; silvia 37; amyntas 29; colax 22; palaemon 22
+538,228,Sir Giles Goosecap,exact,A01911,30,1,0,132,20350,clarence 19; giles 18; eugenia 12; foulweather 12; goosecap 12; tales 9
+540,229,Nobody and Somebody,exact,A08262,51,1,0,164,15527,somebody 30; elidure 26; archigallo 25; cornwell 22; martianus 12; morgan 8
+542,230,"Parasitaster, or The Fawn",exact,A07077,30,2,0,93,22268,herod 16; tiberio 15; granuffo 11; dulcimel 8; nymphadoro 7; zuccone 7
+544,231,"The Wonder of Women, or Sophonisba",exact,A07083,25,4,0,298,12637,syphax 54; massinissa 52; scipio 44; sophonisba 40; zanthia 29; asdrubal 20
+548,234,Wily Beguiled,exact,A15549,35,0,0,415,19744,lelia 111; sophos 76; churms 57; peg 32; ploddall 31; peter 31
+555,235,The Isle of Gulls,exact,A19976,40,2,0,209,20931,dorus 52; dametas 47; mopsa 28; manasses 27; demetrius 18; hippolita 14
+556,235,The Isle of Gulls,base,A69188,40,2,0,230,21644,dorus 52; dametas 51; mopsa 35; manasses 31; hippolita 19; demetrius 16
+558,237,"Hymenaei, or the Solemnities of Masque and Barriers at a Mar",exact,A04654,349,1,0,14,4045,bride 6; golden 2; face 2; opinion 2; gall 1; trvth 1
+559,237,"Hymenaei, or the Solemnities of Masque and Barriers at a Mar",base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,5,2032,cvpid 3; golden 1; venvs 1
+561,238,The Masque at Lord Hay's Marriage (Apollo's Knights),exact,A17871,11,1,0,14,2463,hesperus 7; siluans 4; siluan 3
+562,239,"Lingua, or The Combat of the Tongue and the Five Senses for ",exact,A13804,35,2,0,310,25542,tactus 40; lingua 38; visus 31; gustus 29; appetitus 27; auditus 23
+569,241,The Whore of Babylon,exact,A20092,56,1,0,53,21055,campeius 12; camp 7; florimell 6; titania 4; plain 4; fideli 4
+570,242,The Fair Maid of the Exchange,exact,A03197,52,1,0,353,20649,phillis 56; cripple 42; fiddle 41; ferdinand 28; anthony 27; berry 26
+573,243,The Phoenix,exact,A07507,56,0,0,50,19618,latronello 13; fidelio 11; tangle 5; phoenix 4; castiza 4; falso 4
+575,244,Michaelmas Term,exact,A07505,59,4,0,179,19308,quomodo 69; lethe 22; shortyard 16; rerage 12; easy 10; term 9
+577,245,The Woman Hater (The Hungry Courtier),exact,A06458,38,1,0,70,22439,gondarino 20; lazarello 18; lucio 11; arrigo 9; lazarillo 4; oriana 3
+579,246,Bussy D'Ambois,exact,A18403,40,0,0,52,19611,guise 19; barrisor 10; pero 7; l'anou 4; maffe 3; brisac 2
+581,247,Cupid's Whirligig,exact,A12074,24,1,0,119,22660,wages 57; correction 13; newcome 9; peg 9; slack 8; nan 7
+586,249,The Miseries of Enforced Marriage,exact,A15352,36,1,0,103,23543,scarborrow 34; clare 17; iohn 13; harcop 11; william 6; gripe 6
+590,250,Northward Ho,exact,A20098,53,2,0,144,20776,fetherstone 27; greenshield 19; doll 15; bellamont 14; hornet 14; kate 14
+591,251,"The Puritan, or The Widow of Watling Street (The Puritan Wid",exact,A11264,60,2,0,142,18285,corporal 23; godfrey 17; edmond 16; nicholas 15; moll 10; frailty 9
+592,252,What You Will,exact,A07081,52,5,0,190,16871,albano 34; celia 30; francisco 16; iacomo 11; quadratus 11; laverdure 10
+594,253,The Revenger's Tragedy,exact,A13843,35,1,0,28,19650,hippolito 9; nobles 7; antonio 3; spurio 2; vindice 2; gratiana 1
+595,254,"The Devil's Charter, or Pope Alexander the Sixth",exact,A04539,75,7,0,306,22133,caesar 86; charles 22; bernardo 20; candy 19; alexander 17; gismond 14
+596,255,The Fleer,exact,A12078,27,1,0,90,15801,fleire 25; fleir 25; spark 11; piso 8; petoune 6; mittimus 5
+600,256,The Famous History of Sir Thomas Wyatt,exact,A20096,56,4,0,182,10759,wyatt 34; iane 33; guilford 20; norfolk 15; arundel 14; mary 10
+602,257,Westward Ho,exact,A20100,57,6,0,166,22323,monopoly 23; tenterhook 17; wafer 16; moll 12; luce 9; ambush 8
+603,258,A Woman Killed with Kindness,exact,A03256,47,0,0,207,16186,frankford 32; charles 28; acton 24; wendol 20; francis 17; nick 14
+606,259,"Volpone, or The Fox",exact,A04632.6,27,0,0,139,26290,mosca 67; corvino 20; volpone 14; corbaccio 13; voltore 9; celia 8
+608,260,The Alexandraean Tragedy,exact,A16527.3,34,0,0,113,26609,alexander 26; perdiccas 18; cassander 16; eumenes 15; antigonus 13; olimpias 11
+610,260,The Alexandraean Tragedy,exact,A16564.3,34,0,0,122,26977,alexander 28; perdiccas 18; cassander 16; eumenes 15; olympias 14; antigonus 13
+611,261,Julius Caesar,exact,A16527.4,19,0,0,148,24498,caesar 102; brutus 23; cassius 12; cicero 4; decius 3; calphurnia 2
+613,261,Julius Caesar,exact,A16564.4,19,1,0,153,24751,caesar 101; brutus 23; cassius 12; cicero 4; anthony 3; decius 3
+614,262,A Trick to Catch the Old One,exact,A07511,51,2,0,111,18113,hoord 41; dampit 32; lancelot 7; gulf 6; audry 5; sam 3
+616,263,The Family of Love,exact,A07495,28,3,0,219,19709,purge 57; club 34; gerardine 30; maria 26; glister 26; lipsalve 24
+617,264,The Merry Devil of Edmonton,exact,A21136,36,3,0,180,11646,raymond 20; clare 18; smug 17; fabell 16; arthur 13; frank 13
+623,265,King Lear,exact,A11978,42,1,0,142,24388,edmund 28; kent 21; cordelia 19; regan 17; lear 16; edgar 12
+625,265,King Lear,exact,A11954.33,42,2,0,146,23200,edmund 20; cordelia 19; regan 18; kent 16; lear 13; cornwall 11
+628,266,Your Five Gallants (The Five Witty Gallants),exact,A68468,47,3,0,126,19827,goldstone 35; gallant 20; taylbee 13; primero 12; arthur 8; fitsgrave 8
+629,267,Law Tricks,exact,A19977,16,2,0,79,15308,horatio 18; iulio 15; adam 15; polymetes 9; emilia 9; lurdo 5
+630,268,Humor Out of Breath,exact,A19975,21,1,0,75,13785,aspero 23; hortensio 21; anthonio 8; octavio 6; florimell 5; hippolito 3
+631,269,The Masque of Blackness (The Twelfth Night's Revels),exact,A04643.1,349,0,0,10,1487,niger 3; lake 3; face 2; poets 1; aethiopia 1
+632,269,The Masque of Blackness (The Twelfth Night's Revels),base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,6,917,lake 2; poets 1; oceanvs 1; aethiopia 1; niger 1
+634,270,The Masque of Beauty,exact,A04643.2,349,0,0,3,1509,vulturnus 1; aethiopia 1; poets 1
+635,270,The Masque of Beauty,base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,2,1491,aethiopia 1; poets 1
+638,271,The Masque at Lord Haddington's Marriage (The Hue and Cry af,base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,14,1798,venvs 8; cvpid 3; graces 2; elfe 1
+640,272,A Yorkshire Tragedy,exact,A12030,14,0,0,12,5647,sam 8; raph 2; oliver 1; ralph 1
+642,273,The Rape of Lucrece,exact,A03244,54,1,0,503,19623,tarquin 76; lucrece 59; brutus 58; sextus 56; collatine 36; valerius 35
+647,274,The Conspiracy of Charles Duke of Byron,exact,A18404.1,37,1,0,28,16384,savoy 13; laffin 12; fin 1; nemours 1; henry 1
+649,275,The Tragedy of Charles Duke of Byron,exact,A18404.2,42,0,0,49,18397,byron 21; fin 10; chancellor 7; d'auvergne 5; vidame 3; ianin 2
+651,276,"A Mad World, My Masters",exact,A07504,54,3,0,92,17794,bounteous 39; harebrain 12; gumwater 8; court 7; penitent 5; brothel 4
+653,277,The Dumb Knight,exact,A06975,24,0,0,58,18188,philocles 31; mariana 6; prat 6; epire 4; florio 3; lollia 3
+656,278,Mustapha,base,A02226.1; A02226.2,42,2,0,193,20742,mustapha 60; rossa 31; solyman 24; achmat 21; camena 10; rosten 9
+657,279,Troilus and Cressida,exact,A12021,61,8,0,629,25057,hector 120; achilles 76; troilus 74; ajax 52; cressida 26; agamemnon 25
+658,279,Troilus and Cressida,exact,A11954.25,61,4,0,647,25613,hector 122; troilus 85; achilles 77; aiax 53; cressida 45; helen 30
+661,280,The Masque of Queens,base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,2,1939,poets 1; aethiopia 1
+663,281,The Case Is Altered,exact,A04638,51,6,0,322,17672,rachel 64; onion 49; iaques 25; ferneze 24; chamount 21; angelo 20
+665,283,Every Woman in Her Humor,exact,A15676,50,4,0,187,17186,tully 43; terentia 22; lentulus 19; graccus 15; accutus 13; bos 13
+666,284,"Pericles, Prince of Tyre",exact,A12024,56,5,0,162,17739,pericles 28; marina 24; antiochus 12; knights 10; thaisa 10; antioch 8
+672,285,The Two Maids of More-Clacke,exact,A21411,50,0,0,94,16191,filbon 15; iohn 15; humil 11; iames 10; mary 8; touch 7
+673,286,The Turk (Muleasses the Turk),exact,A07217,33,3,0,240,17104,iulia 55; borgias 39; timoclea 28; amada 22; ferrara 19; mulleasses 19
+675,287,The Faithful Shepherdess,exact,A00962,37,1,0,134,19921,amoret 37; perigot 31; cloe 19; satire 15; clorin 12; alexis 10
+679,288,Chester's Triumph (St George's Day Entertainment),exact,A18589,8,0,0,4,3362,chester 3; britaine 1
+680,289,London's Love to Prince Henry (Water Pageant of Corinea and ,none,,0,0,0,0,434,
+681,290,"Histriomastix, or The Player Whipped",exact,A03405,121,1,0,84,12570,philarchus 9; mavortius 6; music 5; chrisoganus 5; horror 5; ruin 5
+682,291,"Tethys' Festival, or The Queen's Wake (Tethyos Epinicia)",none,,0,0,0,0,1074,
+683,292,"Ram Alley, or Merry Tricks",exact,A04881,28,1,0,125,20754,somerfield 25; throat 25; dash 15; beard 15; oliver 12; adriana 8
+686,293,"The Atheist's Tragedy, or The Honest Man's Revenge",exact,A13840,54,0,0,180,20199,charlemont 53; castabella 20; sebastian 16; borachio 13; fresco 11; snuff 11
+687,294,"The Golden Age, or The Lives of Jupiter and Saturn",exact,A03205,49,5,0,183,17783,danae 36; lycaon 21; calisto 17; acrisius 15; argos 13; melliseus 11
+688,295,Chruso-Thriambos: The Triumphs of Gold,exact,A07895,5,1,0,12,2806,faringdon 7; leofstane 5
+690,296,Catiline His Conspiracy,exact,A04640,42,2,0,403,28464,catiline 50; lentulus 40; cethegus 35; caesar 26; curius 25; cato 23
+691,296,Catiline His Conspiracy,exact,A04632.9,42,3,0,245,18733,catiline 32; lentulus 22; caesar 22; cethegus 19; cato 15; curius 14
+695,297,May Day,exact,A18415,39,1,0,218,22739,angelo 60; lodovico 21; lorenzo 19; aurelio 19; temperance 16; leonoro 13
+696,298,"The Roaring Girl, or Moll Cutpurse",exact,A07524,59,4,0,260,23489,moll 81; jack 19; dapper 18; goshawk 16; laxton 16; trapdore 10
+697,299,A Woman Is a Weathercock,exact,A00725,32,0,0,148,16018,abraham 29; scudmore 17; strange 16; kate 14; nevill 10; bellafront 9
+698,300,A Christian Turned Turk (The Two Famous Pirates),exact,A19757,49,0,0,109,18675,rabshake 23; dansiker 16; ward 13; voada 13; francisco 12; benwash 8
+699,301,The Widow's Tears,exact,A18426,32,0,0,72,21096,lycus 21; lysander 17; arsace 9; argus 6; tharsalio 5; laodice 4
+700,302,Troia Nova Triumphans (London Triumphing),exact,A20090,1,0,0,0,2305,
+701,303,The Alchemist,exact,A04636,13,1,0,153,26278,dol 40; face 23; subtle 19; mammon 17; ananias 15; drugger 12
+702,303,The Alchemist,exact,A04632.8,13,0,0,115,19886,dol 36; face 19; subtle 13; ananias 13; drugger 10; mammon 9
+704,304,"Epicene, or The Silent Woman",exact,A04632.7,24,4,0,295,28415,dauphine 62; daw 50; cutberd 31; otter 27; morose 23; clerimont 18
+705,304,"Epicene, or The Silent Woman",exact,A04645,24,2,0,253,25637,dauphine 58; daw 40; cutberd 30; otter 25; morose 20; clerimont 16
+707,305,"If It Be Not Good, the Devil Is in It (If This Be Not a Good",exact,A20066,72,1,0,111,21620,rush 24; prior 17; bartervile 15; charon 10; clement 6; puritan 5
+708,306,The White Devil (Vittoria Corombona),exact,A14875,37,1,0,109,24162,vittoria 21; brachiano 18; flamineo 16; marcello 10; camillo 9; moore 8
+710,307,The Revenge of Bussy D'Ambois,exact,A18421,32,0,0,104,19482,guise 36; clermont 34; bussy 12; baligny 12; renel 5; maillard 3
+712,309,The Masque of the Inner Temple and Gray's Inn (Wedding Masqu,exact,A06150,2,0,0,0,1284,
+717,311,The Triumphs of Truth,exact,A07518,11,0,0,6,3852,perfect 3; zeal 2; words 1
+719,313,The Brazen Age (The Age of Brass),exact,A03189,81,3,0,281,20036,iason 37; telamon 21; omphale 20; atlanta 17; laomedon 16; meleager 15
+720,314,"Cynthia's Revenge, or Maenander's Ecstasy",exact,A12954,31,4,0,198,33486,pheudippe 38; lucilla 30; gracchus 29; amilcar 22; menander 14; maenander 13
+721,315,The Insatiate Countess,exact,A07067,47,0,0,106,19949,rogero 24; isabella 21; guiaca 11; anna 9; claridiana 7; thais 5
+724,316,The Knight of the Burning Pestle,exact,A06252,42,2,0,383,20823,george 87; rafe 80; raph 75; iasper 30; michael 24; merrithought 24
+727,318,The Royal Entertainment at Caversham,exact,A17879.1,8,0,0,0,1976,
+728,319,The Lord's Masque (Wedding Masque of Stars and Statues Made ,exact,A17879.2,10,0,0,13,2154,entheus 8; mania 4; eutheus 1
+730,321,The Hog Hath Lost His Pearl,exact,A13345,13,0,0,154,16518,carracus 37; albert 37; maria 27; peter 22; hog 15; haddit 8
+731,322,Himatia-Poleos: The Triumphs of Old Drapery,none,,0,0,0,0,1364,
+732,323,"Greene's Tu Quoque, or The City Gallant",exact,A19260,63,1,0,127,22986,bubble 29; geraldine 15; rash 11; spendall 10; scattergood 8; lyonell 7
+736,325,Hymen's Triumph,exact,A19829,17,2,0,138,15293,thirsis 50; palaemon 23; phillis 17; clarindo 12; montanus 10; charinus 9
+738,326,"A Merry Dialogue between Band, Cuff, and Ruff",exact,A03424,5,0,0,40,1599,band 19; ruff 15; cuff 6
+739,326,"A Merry Dialogue between Band, Cuff, and Ruff",exact,A03438,5,0,0,41,1606,band 19; ruff 14; cuffe 6; cuff 2
+740,327,The Valiant Welshman (Caradoc the Great),exact,A05801,64,3,0,209,15819,caradoc 41; cesar 34; gloster 18; morgan 15; cornwall 14; codigune 13
+741,328,Cupid's Revenge,exact,A06177,50,1,0,92,20435,ismenus 26; timantus 17; leucippus 8; telamon 8; bacha 6; urania 5
+744,329,"The Hector of Germany, or The Palsgrave, Prime Elector",exact,A12548,70,4,0,171,15264,palsgrave 40; bastard 17; saxon 16; fitzwaters 14; savoy 10; floramell 8
+745,330,Albumazar,exact,A13802,22,0,0,563,21326,antonio 125; trincalo 95; flavia 68; albumazar 48; cricca 46; pandolfo 43
+749,331,"Work for Cutlers (Sword, Rapier, and Dagger)",exact,A15707,5,1,0,76,1851,sword 33; rapier 27; dagger 12; rapiers 4
+750,332,Metropolis Coronata: The Triumphs of Ancient Drapery,exact,A07904,4,0,0,15,1766,robin 7; hood 6; tuck 2
+751,333,The Four Prentices of London,exact,A03202,28,1,0,189,21559,eustace 33; charles 26; robert 26; godfrey 24; guy 22; tancred 20
+753,334,The Scornful Lady,exact,A06389,13,6,0,80,22778,savill 16; roger 16; welford 13; lovelesse 11; moorecraft 10; savil 5
+761,335,"Chrysanaleia: The Golden Fishing, or Honor of Fishmongers",none,,0,0,0,0,1413,
+762,336,"Englishmen for My Money, or A Woman Will Have Her Will",exact,A02800,54,0,0,303,21519,pisaro 63; frisco 28; vandal 26; heigham 23; alvaro 22; anthony 21
+765,337,The Honest Lawyer,exact,A68683,29,0,0,137,20659,gripe 21; vaster 20; thirsty 18; nice 17; sager 17; benjamin 13
+766,338,Civitatis Amor (Water Pageant for Prince Charles: London and,exact,A07494,0,0,0,0,626,
+767,339,The Royal Entertainment at Highgate (The Penates),base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,3,2077,maia 2; form 1
+769,340,The Royal Entertainment of the Two Kings of Great Britain an,base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,0,63,
+771,341,"The Royal Entertainment at Theobalds, 1607 (The Genius)",base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,1,475,maia 1
+773,342,Prince Henry's Barriers  (The Lady of the Lake) (Merlin and ,base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,0,275,
+785,348,Mercury Vindicated from the Alchemists at Court,base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,2,2863,patrick 1; dennise 1
+787,349,The Golden Age Restored,base,A04632.1; A04632.10; A04632.11; A04632.12; A04632.14; A04632.15; A04632.16; A04632.17; A04632.18; A04632.2; A04632.20; A04632.25; A04632.26; A04632.27; A04632.3; A04632.4; A04632.5; A04632.6; A04632.7; A04632.8; A04632.9,349,0,0,3,1353,astraea 3
+789,350,Lovers Made Men (The Masque at Lord Hay's),exact,B14287,316,0,0,8,854,lethe 5; fates 2; fate 1
+790,350,Lovers Made Men (The Masque at Lord Hay's),base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,8,847,lethe 5; fates 2; fate 1
+791,351,The Triumphs of Honor and Industry,exact,A07513,2,0,0,2,698,reward 2
+794,353,"Technogamia, or The Marriages of the Arts",exact,A03496,59,0,0,621,31303,astronomia 91; poeta 59; polites 41; geographus 36; melancholico 36; musica 31
+796,354,Hans Beer-Pot (See Me and See Me Not),exact,A07637,14,2,0,55,12908,pasquill 16; hans 14; garland 8; flutterkin 6; flutterkins 5; goodfellow 3
+797,355,"Siderothriambos, or Steel and Iron Triumphing",exact,A07906,2,0,0,2,709,mate 2
+798,356,Amends for Ladies,exact,A00723,46,1,0,56,17612,bold 20; seldom 6; ingen 5; proudly 4; subtle 4; fee 4
+800,357,The Maid's Tragedy,exact,A06289,30,3,0,194,20956,amintor 62; melantius 34; euadne 32; aspasia 18; diphilus 7; strato 6
+806,358,"The Inner-Temple Masque, or The Masque of Heroes",exact,A07503,11,0,0,18,2307,fasting 7; new 4; plumporridge 2; year 2; almanac 1; dog 1
+807,359,The Triumphs of Love and Antiquity,none,,0,0,0,0,1787,
+808,360,A King and No King,exact,A06207,18,3,0,168,24015,bessus 35; mardonius 30; tigranes 26; gobrius 19; panthaea 12; bacurius 11
+813,361,Two Wise Men and All the Rest Fools,exact,A18423,57,0,0,137,34097,proberio 16; simplo 16; noverindo 12; parvagracio 12; hortano 11; rustico 8
+815,363,"Philaster, or Love Lies a-Bleeding",exact,A06343,27,1,0,99,19570,phylaster 53; pharamont 15; bellario 13; galatea 4; arethusa 4; country 3
+822,364,"The Two Merry Milkmaids, or The Best Words Wear the Garland",exact,A17460,47,0,0,119,26567,dorilus 26; smirke 19; iulia 16; bernard 9; raymond 9; smirk 6
+823,365,The World Tossed at Tennis,exact,A07525,31,0,0,35,7995,richmond 8; simplicity 7; deceit 5; starch 5; yellow 5; house 3
+824,366,"Tes Irenes Trophaea, or The Triumphs of Peace",none,,0,0,0,0,1193,
+825,367,The Sun in Aries,exact,A07510,0,0,0,0,1457,
+826,368,Thierry and Theodoret,exact,A00968,42,2,0,88,19110,martell 20; protaldy 15; ordella 15; theodoret 12; thierry 7; lecure 4
+828,369,The Entertainment at Sir William Cokayne's in Easter Week (T,base,A07502.6; A07502.8,13,0,0,0,642,
+829,370,The Entertainment at Bunhill on the Shooting Day (The Archer,base,A07502.6; A07502.8,13,0,0,0,465,
+830,371,The Entertainment at the Conduit Head (The Water Nymph),base,A07502.6; A07502.8,13,0,0,1,415,spring 1
+831,372,The Entertainment for the General Training (Pallas),base,A07502.6; A07502.8,13,0,0,0,748,
+833,374,The Entertainment at Sir Francis Jones's Welcome (Comus the ,base,A07502.6; A07502.8,13,0,0,5,1250,severity 2; levity 1; temperance 1; temp 1
+835,376,The Entertainment at Sir Francis Jones's at Easter (The Four,base,A07502.6; A07502.8,13,0,0,9,1111,spring 3; summer 2; hyacinth 2; winter 1; adonis 1
+836,377,The Entertainment of the Lords of the Council by Sheriff All,base,A07502.6; A07502.8,13,0,0,0,429,
+837,378,The Entertainment of the Lords of the Council by Sheriff Duc,base,A07502.6; A07502.8,13,0,0,1,530,spring 1
+838,379,"Othello, the Moor of Venice",exact,A11992,36,1,0,305,24532,cassio 121; iago 56; desdemona 37; othello 30; roderigo 27; emillia 11
+839,379,"Othello, the Moor of Venice",exact,A11954.34,36,2,0,328,25828,cassio 121; iago 60; desdemona 41; othello 33; rodorigo 27; aemilia 11
+843,380,The Virgin Martyr,exact,A07249,52,2,0,133,21078,dorothea 24; antoninus 14; macrinus 13; sapritius 12; theophilus 11; angelo 11
+847,381,The Masque of Augurs,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,2,0,34,3131,bears 11; ick 5; earth 3; notch 2; linus 2; idmon 2
+848,382,Herod and Antipater,exact,A06982,37,5,0,213,21732,herod 38; antipater 37; marriam 27; augustus 17; ioseph 14; salumith 14
+849,383,The Triumphs of Honor and Virtue,none,,0,0,0,0,1223,
+850,384,The Heir,exact,A07326,33,2,0,168,16315,philocles 27; francisco 16; virro 15; euphues 13; roscio 12; eugenio 12
+852,385,Time Vindicated to Himself and to His Honors,exact,B00230,321,0,0,9,3111,sport 3; hippolytus 2; fencer 1; chronomastix 1; printer 1; paul 1
+853,385,Time Vindicated to Himself and to His Honors,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,321,0,0,9,3093,sport 3; hippolytus 2; fencer 1; chronomastix 1; printer 1; paul 1
+854,386,The Duke of Milan,exact,A07237,46,0,0,130,20724,sforza 30; francisco 29; marcelia 26; graccho 16; pescara 9; eugenia 9
+856,387,The Triumphs of Integrity,none,,0,0,0,0,1207,
+857,388,The Devil's Law Case (When Women Go to Law the Devil Is Full,exact,A14869,40,1,0,134,22488,contarino 46; romelio 29; ercole 26; iolenta 12; crispiano 5; leonora 4
+858,389,The Duchess of Malfi,exact,A14872,32,1,0,98,23295,antonio 39; bosola 16; ferdinand 13; cariola 9; delio 9; silvio 3
+860,390,The Tempest,exact,A11954.1,25,2,0,102,16128,trinculo 17; stephano 15; prospero 11; ariell 11; caliban 9; ariel 6
+862,391,The Two Gentlemen of Verona,exact,A11954.2,19,3,0,197,16953,valentine 57; silvia 53; iulia 24; thurio 24; lucetta 10; eglamoure 10
+864,392,Measure for Measure,exact,A11954.4,21,2,0,266,21354,angelo 75; claudio 45; pompey 26; provost 24; isabella 22; barnardine 14
+866,393,The Comedy of Errors,exact,A11954.5,30,2,0,90,14434,dromio 38; antipholus 14; abbey 9; ephesus 8; aegeon 3; adriana 3
+868,394,As You Like It,exact,A11954.10,24,5,0,148,21375,rosalind 34; orlando 26; rosalinde 20; charles 11; iaques 8; adam 7
+870,395,All's Well That Ends Well,exact,A11954.12,26,2,0,48,22573,helen 16; parrolles 7; bertram 6; parolles 5; lafeu 4; dumain 4
+872,396,"Twelfth Night, or What You Will",exact,A11954.13,18,2,0,142,19475,toby 35; maluolio 31; andrew 15; olivia 13; orsino 13; sebastian 8
+874,397,The Winter's Tale,exact,A11954.14,32,1,0,137,24654,camillo 43; paulina 17; hermione 16; polixenes 15; leontes 9; perdita 8
+876,398,King John,exact,A11954.15,38,1,0,176,20489,arthur 36; hubert 34; iohn 24; robert 19; philip 13; blanch 9
+878,399,1 Henry the Sixth,exact,A11954.20,72,5,0,309,20543,talbot 73; york 27; charles 24; somerset 21; winchester 16; salisbury 15
+880,400,Henry the Eighth (All Is True),exact,A11954.24,56,3,0,125,23568,cromwell 17; buckingham 15; griffith 10; lovel 8; katherine 7; cranmer 7
+882,401,Coriolanus,exact,A11954.26,52,9,0,390,26593,martius 80; noble 54; people 36; coriolanus 31; auffidius 26; cominius 19
+884,402,Timon of Athens,exact,A11954.29,45,3,0,195,17635,timon 99; apemantus 18; alcibiades 14; servilius 8; lucullus 7; lucius 6
+886,403,Julius Caesar,exact,A11954.30,59,3,0,742,19181,caesar 219; brutus 145; cassius 75; antony 65; caska 26; titinius 19
+888,404,Macbeth,exact,A11954.31,33,5,0,117,16512,macbeth 42; banquo 26; duncan 10; macduffe 10; malcolme 6; macduff 6
+890,405,Antony and Cleopatra,exact,A11954.35,69,2,0,535,23806,caesar 156; anthony 134; pompey 30; cleopatra 29; eros 27; charmian 24
+892,406,"Cymbeline, King of Britain",exact,A11954.36,28,1,0,141,26870,posthumus 31; pisanio 25; imogen 23; cloten 16; lucius 13; cymbeline 10
+894,407,Neptune's Triumph for the Return of Albion,exact,A04656,318,0,0,9,2140,spring 2; portunus 2; offering 1; ambler 1; paul 1; compass 1
+895,407,Neptune's Triumph for the Return of Albion,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,318,0,0,12,2792,spring 2; saron 2; portunus 2; christmas 1; expectation 1; offering 1
+896,408,The Bondman (The Noble Bondman),exact,A07234,52,0,0,94,19781,cleora 29; leosthenes 24; timoleon 9; timandra 5; timagoras 4; cleon 4
+898,409,Monuments of Honor,exact,A14871,5,0,0,2,1065,kings 2
+899,410,Nero (Piso's Conspiracy),exact,A08065,53,6,0,172,17404,nero 57; piso 25; poppea 10; tigellinus 10; nimphidius 9; seneca 8
+901,411,The Fortunate Isles and Their Union,exact,A04652,318,0,0,25,3008,scogan 6; skelton 4; fates 2; saron 2; portunus 2; iohphiel 1
+902,411,The Fortunate Isles and Their Union,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,318,0,0,26,3031,skogan 6; skelton 4; new 2; fates 2; saron 2; portunus 2
+904,412,A Game at Chess,exact,A07498,16,4,0,60,17369,pawn 16; white 15; black 7; knights 6; whit 5; kings 4
+906,413,The Triumphs of Health and Prosperity,none,,0,0,0,0,773,
+907,414,Apollo Shroving,exact,A02827,49,1,0,194,22934,siren 25; amphibius 19; ludio 19; philoponus 16; musaeus 14; lauriger 12
+910,417,Aminta,exact,A13384,10,0,0,104,16228,aminta 40; silvia 34; daphne 15; thirsis 11; nerina 4
+911,418,"Lodovic Sforza, Duke of Milan",exact,A01853,33,2,0,134,15769,sforza 53; isabella 9; galeazzo 9; vitellio 9; malatesta 8; sanseverin 8
+912,418,"Lodovic Sforza, Duke of Milan",base,A01851.1,33,5,0,136,16192,sforza 53; galeazzo 11; vitellio 9; isabel 8; malatesta 8; cajazzo 8
+913,419,Britannia's Honor,none,,0,0,0,0,1569,
+914,420,The Lover's Melancholy,exact,A01055,38,1,0,180,18169,rhetias 22; menaphon 21; parthenophill 20; eroclea 18; kala 16; meleander 12
+915,421,"London's Tempe, or The Field of Happiness",exact,B01146,0,0,0,0,1524,
+916,422,"Albovine, King of the Lombards",exact,A19881,41,1,0,175,19115,hermegild 38; valdaura 38; paradine 36; rhodolinda 18; grimold 11; thesina 8
+917,423,The Deserving Favorite,exact,A17968,24,1,0,322,25795,lysander 157; clarinda 93; iacomo 25; mariana 15; utrante 14; gerard 10
+920,425,The Wedding,exact,A12155,22,0,0,239,17898,gratiana 59; beauford 49; marwood 31; rawbone 24; lodam 16; milisent 15
+923,426,"Wine, Beer, and Ale Together by the Ears (Wine, Beer, Ale, a",exact,A01424,13,0,0,206,4774,beer 50; ale 45; wine 40; sugar 25; water 16; tost 15
+924,426,"Wine, Beer, and Ale Together by the Ears (Wine, Beer, Ale, a",exact,A01425,13,0,0,215,6068,beer 48; ale 46; wine 41; sugar 26; tobacco 17; water 15
+926,427,The Cruel Brother,exact,A19876,24,1,0,112,17327,foreste 37; lucio 19; castruchio 12; corsa 11; lothario 11; borachio 10
+927,428,The Just Italian,exact,A19877,34,0,0,143,15340,sciolto 28; altamont 22; charintha 15; scoperta 15; alteza 13; mervolle 12
+928,429,The Grateful Servant (The Faithful Servant),exact,A12138,43,2,0,86,18853,cleona 31; grimundo 15; piero 9; dulcino 8; lodowick 5; foscari 4
+930,430,"The Renegado, or The Gentleman of Venice",exact,A07246,37,0,0,76,19458,donusa 15; paulina 10; grimaldi 8; manto 7; mustapha 6; vitelli 5
+934,431,"Aristippus, or The Jovial Philosopher",exact,A10402.1,13,0,0,66,8602,aristippus 49; wild 7; medico 6; simplicius 4
+941,432,The Conceited Pedlar (The University Pedlar),base,A10402.1,13,0,0,0,3737,
+945,433,A Chaste Maid in Cheapside,exact,A07493,34,5,0,111,16728,davy 28; tim 27; walter 10; tuchwood 6; yellowhammer 4; promoters 4
+947,435,2 The Honest Whore (2 The Converted Courtesan),exact,A20065,51,4,0,133,23151,bots 34; matheo 25; hipollito 12; orlando 11; candido 9; lodovico 6
+949,437,Love's Triumph Through Callipolis,exact,A04655,316,0,0,2,833,new 1; earth 1
+950,437,Love's Triumph Through Callipolis,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,2,825,new 1; earth 1
+951,438,"Hoffman, or A Revenge for a Father",exact,A18596,27,3,0,297,19478,lorrique 44; otho 38; stilt 31; lodowick 29; ferdinand 26; hoffman 21
+952,439,The Spanish Bawd (Calisto and Meliboea) (Celestina),exact,A18331,39,0,0,607,97727,calisto 113; melibea 101; sempronio 101; parmeno 88; celestina 79; lucrecia 31
+953,440,Match Me in London,exact,A20088,26,0,0,91,17672,gazetto 19; tormiella 16; bilbo 14; iohn 11; iago 6; alphonso 6
+954,441,The School of Compliment (Love Tricks),exact,A12152,30,3,0,315,21577,selina 78; rufaldo 48; antonio 41; ienkin 29; gorgon 19; gasparo 19
+956,442,"The New Inn, or The Light Heart",exact,A04658,21,7,0,192,21596,fly 57; lovel 18; trundle 17; beaufort 9; huffle 9; ferret 8
+957,443,Sicelides (The Sicilians),exact,A00979,28,0,0,268,20722,olinda 42; perindus 41; cosma 40; glaucilla 31; cancrone 30; atyches 16
+958,444,Caesar and Pompey (The Wars of Caesar and Pompey),exact,A18425,49,1,0,216,16619,caesar 70; pompey 62; cato 20; brutus 13; statilius 10; vibius 7
+961,447,"The Raging Turk, or Bajazet the Second",exact,A01839,88,2,0,420,25630,bajazet 87; selimus 57; achmetes 51; zemes 38; achomates 38; isaac 33
+963,448,London's Ius Honorarium (London's Law of Honor),none,,0,0,0,0,1556,
+964,449,Rhodon and Iris,exact,A04896,15,1,0,172,13261,rhodon 46; poneria 26; martagon 23; eglantine 18; agnostus 14; cynosbatus 12
+965,450,"Antigone, the Theban Princess",exact,A07329,27,2,0,152,11517,antigone 38; creon 26; aemon 22; theseus 19; dircus 13; argia 8
+966,451,The Duchess of Suffolk,exact,A20866,82,4,0,246,16259,fox 40; bonner 27; cranwell 27; sands 22; bertie 20; clunie 20
+967,452,Chloridia: Rites to Chloris and Her Nymphs,exact,A04644,319,0,0,23,1187,spring 9; earth 8; postilion 1; poesy 1; history 1; architecture 1
+968,452,Chloridia: Rites to Chloris and Her Nymphs,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,319,0,0,23,1193,spring 9; earth 8; postilion 1; poesy 1; history 1; architecture 1
+969,453,Albion's Triumph,exact,A13846,12,0,0,7,1970,publius 4; mercvry 1; platonicus 1; charge 1
+970,454,Tempe Restored  (Tempe Restauratum),exact,A13848,5,0,0,3,965,spheres 2; circe 1
+971,455,Bartholomew Fair,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,6,0,508,35498,win 123; overdoo 47; iohn 35; whit 26; ursula 23; leander 23
+972,456,The Staple of News,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,5,0,317,24843,pecunia 39; picklock 22; canter 21; lickfinger 21; band 20; statute 19
+973,457,The Devil Is an Ass,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,4,0,128,26735,ass 13; engine 12; wittipol 11; fitz 10; ambler 10; manly 9
+975,458,"The Courageous Turk, or Amurath the First",exact,A01836,52,0,0,67,14491,amurath 23; schahin 13; eurenoses 5; cobelitz 5; scahin 3; eumorphe 3
+977,459,The Emperor of the East,exact,A07238,64,0,0,57,19605,paulinus 17; philanax 10; pulcheria 9; athenais 4; chrysapius 4; cleon 4
+978,460,"A New Wonder, A Woman Never Vexed",exact,A11153,36,0,0,78,22054,foster 22; lambskin 12; george 10; iane 9; speedwell 8; richard 4
+979,461,Holland's Leaguer,exact,A07025,48,2,0,79,20190,trimalchio 18; ardelio 13; ieffry 10; capritio 7; autolicus 5; quartilla 5
+980,462,"Changes, or Love in a Maze",exact,A12129,19,1,0,94,19267,aurelia 21; yongrave 13; gerard 13; eugenia 11; caperwit 9; simple 7
+981,463,The Northern Lass,exact,A16924,26,3,0,147,26917,constance 24; tridewell 18; trainwell 15; luckless 13; nonsense 12; bulfinch 11
+982,464,The Fatal Dowry,exact,A07251,44,3,0,92,20613,romont 25; novall 19; beaumelle 10; rochfort 5; baumont 5; bellapert 4
+983,465,The Rival Friends,exact,A72254,69,2,0,420,31032,lucius 54; neander 41; anteros 39; stipes 35; pandora 30; merda 30
+984,466,"Londini Artium et Scientiarum Scaturigo, or London's Fountai",none,,0,0,0,0,1694,
+987,469,The Jealous Lovers,exact,A10407,40,0,0,266,23299,evadne 49; pamphilus 39; tyndarus 37; asotus 32; ballio 31; techmessa 26
+992,470,The Maid of Honor,exact,A07240,63,0,0,97,18551,bertoldo 22; camiola 14; adorni 12; fulgentio 10; sylli 9; gonzaga 7
+993,471,All's Lost by Lust,exact,A11155,31,5,0,113,16019,iacinta 18; antonio 18; iulianus 10; moores 8; moore 6; margaretta 6
+995,473,The Contention for Honor and Riches,exact,A12131,5,1,0,29,5599,clod 16; ingenuity 5; gettings 4; court 3; rich 1
+997,474,A New Way to Pay Old Debts,exact,A07241,41,0,0,126,19754,welborne 29; alworth 21; marrall 20; overreach 15; greedy 10; margaret 8
+998,475,The Jew of Malta,exact,A06991,44,4,0,301,18314,barabas 84; abigal 39; ithimore 32; mathias 29; lodowick 28; calymath 24
+999,476,A Match at Midnight,exact,A11151,46,4,0,255,18450,randalls 49; sim 44; moll 21; iaruis 20; iarvis 17; mary 15
+1000,477,The Witty Fair One,exact,A12157,28,3,0,111,16662,aymwell 17; fowler 16; brains 16; nicholas 13; sensible 11; clare 8
+1001,478,Love's Sacrifice,exact,A01056,19,4,0,199,20340,fernando 44; biancha 33; giacopo 22; d'avolos 19; ferentes 18; maurucio 15
+1002,479,The Bird in a Cage (The Beauties),exact,A12128,33,0,0,90,18406,eugenia 19; court 18; perenotto 13; rolliardo 9; morello 8; fulvio 6
+1003,480,The Broken Heart,exact,A01046,43,3,0,241,18776,penthea 41; ithocles 37; orgilus 33; prophilus 24; calantha 16; bassanes 14
+1004,481,A Fine Companion,exact,A07024,32,1,0,100,22579,crochet 24; lackwit 11; careless 10; valeria 9; dotario 9; crotchet 9
+1005,482,Fuimus Troes (The True Trojans),exact,A00760,43,1,0,100,16636,caesar 22; nennius 15; androgeus 7; cassibelane 7; comius 6; brennus 5
+1006,483,Londini Emporia (London's Markets),none,,0,0,0,0,1639,
+1007,484,The English Traveller,exact,A03195,23,2,0,89,20768,reignald 34; geraldine 22; dalavill 12; lionell 5; pru 3; bess 3
+1008,485,Orestes,exact,A01840,36,1,0,175,18615,orestes 34; aegisthus 31; agamemnon 25; pylades 16; electra 16; clytaemnestra 12
+1011,487,The Royal Entry of King Charles I into Edinburgh (The Entert,none,,0,0,0,0,3010,
+1012,488,The Triumph of Peace,exact,B07101,21,0,0,35,2695,opinion 7; confidence 6; irene 6; eunomia 5; novelty 4; admiration 4
+1015,489,Alaham,base,A02226.1; A02226.2,42,2,0,178,21551,caine 49; alaham 31; mahomet 28; hala 26; celica 11; malice 8
+1016,490,"The Noble Spanish Soldier (The Noble Soldier, or A Contract ",exact,A11145,28,1,0,78,13660,onaelia 16; baltazar 16; medina 16; sebastian 8; malateste 7; cornego 5
+1018,492,The Two Noble Kinsmen,exact,A00969,38,3,0,185,23397,palamon 68; arcite 54; theseus 15; emilia 8; emily 7; knights 7
+1019,493,A Maidenhead Well Lost,exact,A03240,28,0,0,93,13288,stroza 34; iulia 22; parma 15; lauretta 13; julia 6; milleine 2
+1020,494,The Late Lancashire Witches,exact,A03258,50,2,0,131,21468,robin 17; whetstone 16; parnell 16; lawrence 15; generous 11; mal 11
+1021,495,The Triumphs of Fame and Honor,none,,0,0,0,0,1864,
+1022,496,Coelum Britannicum (The British Heaven),exact,A73704,24,0,0,11,7571,plutus 4; momus 3; eternity 2; hedone 2
+1023,496,Coelum Britannicum (The British Heaven),base,A17961.1,24,0,0,10,7651,plutus 4; momus 3; eternity 2; hedone 1
+1027,498,The Traitor,exact,A12154,19,2,0,269,18916,amidea 49; lorenzo 46; sciarrha 45; pisano 29; oriana 24; florio 23
+1028,499,The Shepherds' Holiday,exact,A11205,16,2,0,222,18989,nerina 36; daphnis 36; hylas 33; mirtillus 18; thyrsis 16; dorinda 16
+1030,501,"Adrasta, or The Woman's Spleen and Love's Conquest",exact,A04604,55,1,0,172,23123,althaea 41; antonio 27; lucilio 26; damasippus 19; abigail 12; frailware 9
+1031,502,The Triumphs of the Prince d'Amour,exact,A19882,2,0,0,0,1072,
+1036,505,The Great Duke of Florence,exact,A07239,50,0,0,101,18313,lidia 25; sanazarro 20; giovanni 12; contarino 12; calandrino 7; carolo 7
+1039,508,The Wonder of A Kingdom,exact,A20093,58,2,0,93,15083,angelo 25; vanni 9; fiametta 7; baptista 6; tibaldo 5; alphonsina 5
+1040,509,A Challenge for Beauty,exact,A03190,43,2,0,81,17772,bonavida 13; ferrers 12; valladaura 11; sea 11; pineda 6; bonavide 5
+1041,510,"The Vow Breaker, or The Fair Maid of Clifton",exact,A11435,29,3,0,127,17677,bateman 27; ursula 21; clifton 16; boot 8; doysells 8; grey 7
+1042,511,The Presentment of Bushell's Rock (Royal Entertainment at En,none,,0,0,0,0,1161,
+1044,513,Hannibal and Scipio,exact,A07974,37,0,0,178,15415,hannibal 49; scipio 45; sophonisba 33; syphax 32; lelius 4; lucius 4
+1045,514,Microcosmus,exact,A07975,44,0,0,64,10302,physander 15; choler 8; phlegm 8; bellanima 6; blood 5; melancholy 5
+1046,515,The Elder Brother,exact,A00960,22,1,0,160,19160,andrew 40; charles 39; eustace 33; lily 19; angellina 11; brisac 8
+1049,516,The Royal King and the Loyal Subject,exact,A03248,35,2,0,56,19495,chester 19; bonvile 9; match 6; crown 4; corporal 4; cock 4
+1050,517,Hyde Park,exact,A12140,16,1,0,36,15985,tryer 11; venture 10; lacy 7; fairfield 5; bonvile 1; rider 1
+1051,518,The Lady of Pleasure,exact,A12142,20,2,0,73,20250,aretina 13; celestina 12; frederick 11; sentlove 10; littleworth 8; decoy 6
+1052,519,The Young Admiral,exact,A12158,21,2,0,224,17561,vittori 63; cassandra 51; alphonso 22; iulio 21; rosinda 16; vittory 10
+1053,520,The Valiant Scot,exact,A14599,50,5,0,290,15804,wallace 95; bruce 37; selby 30; grimsby 23; clifford 18; percy 12
+1054,521,The Example,exact,A12136,13,0,0,73,17755,bellamia 12; confident 9; fitzavarice 9; dormant 8; oldrat 8; jacintha 8
+1055,522,"Londini Speculum, or London's Mirror",none,,0,0,0,0,1393,
+1056,523,The Gamester,exact,A12137,16,0,0,113,19524,violante 21; leonora 20; beaumont 17; hazard 14; barnacle 10; wilding 10
+1057,524,Comus (The Masque at Ludlow Castle),exact,A07555,5,0,0,5,7503,sabrina 3; comus 2
+1059,525,1 The Cid (The Valiant Cid),exact,A19346,10,0,0,142,13418,roderigo 62; cimena 45; sancho 12; diego 9; elvira 8; leonora 4
+1061,526,Britannia Triumphans (Britain Triumphing),exact,A04599,10,0,0,11,3334,imposture 3; merlin 3; giant 2; damsel 2; bellerophon 1
+1062,527,"Luminalia, or The Festival of Light",none,,0,0,0,0,1317,
+1063,528,Jupiter and Io,base,A03241.1; A03241.2; A03241.3,35,0,0,32,5176,argus 16; inachus 9; daphne 4; peneus 2; apidanus 1
+1064,529,Apollo and Daphne,base,A03241.1; A03241.2; A03241.3,35,0,0,25,3385,daphne 8; summer 4; autumn 4; hours 4; winter 3; daph 1
+1065,530,"Amphrisa, or The Forsaken Shepherdess (Polopaea and Alope)",base,A03241.1; A03241.2; A03241.3,35,0,0,6,2311,amphrisa 5; alope 1
+1066,531,A Shoemaker a Gentleman,exact,A11152,41,4,0,208,20103,hugh 37; albon 19; dioclesian 17; barnaby 17; crispianus 16; maximinus 13
+1067,532,The Fancies Chaste and Noble,exact,A01049,27,0,0,161,17912,livio 33; romanello 23; spadone 20; troylo 16; castamela 12; secco 12
+1070,534,The Lost Lady,exact,A08731,13,0,0,174,21000,lysicles 42; eugenio 28; hermione 26; milesia 19; ergasto 18; irene 13
+1071,535,The Wise Woman of Hogsdon,exact,A03255,42,0,0,229,17543,luce 73; boniface 32; chartly 21; chartley 18; taber 18; harry 18
+1073,537,The Conspiracy (Pallantus and Eudora),exact,A04824,50,0,0,90,31295,aratus 21; comastes 14; timeus 12; pallantus 8; phronimus 6; polyander 4
+1075,538,The Royal Master,exact,A12150,31,0,0,181,17699,montalto 57; domitilla 41; court 24; theodosia 23; octavio 11; andrugio 5
+1076,539,Love's Riddle,exact,A19479,18,0,0,199,20536,hylace 34; bellula 27; palaemon 26; alupis 22; aphron 15; callidora 13
+1077,540,Tottenham Court,exact,A07978,35,1,0,93,16488,changelove 18; worthgood 13; george 12; cicely 11; bellamie 8; frank 8
+1078,541,Aglaura,base,A13125,23,1,0,93,14868,aglaura 19; ziriff 15; court 14; thersames 14; semanthe 7; iolas 6
+1082,542,Covent Garden,exact,A07971,43,0,0,131,17292,warrant 19; dobson 17; spruce 16; ralph 14; tongall 12; dorothy 10
+1085,545,The Seven Champions of Christendom,exact,A04874,48,5,0,270,21261,george 51; brandron 25; tarpax 24; calib 22; suckabus 22; ormandine 15
+1086,546,"Porta Pietatis, or The Port or Harbor of Piety",none,,0,0,0,0,1568,
+1087,547,The Muses' Looking Glass,override,A10411.1,77,1,0,117,18977,colax 13; plus 8; alazon 7; comedy 6; dyscolus 6; aphobus 6
+1091,548,"Amyntas, or The Impossible Dowry",base,A10411.1; A10411.2,111,3,0,557,20664,damon 94; amyntas 76; alexis 51; urania 47; laurinda 46; thestylis 41
+1095,549,The Ball,exact,A18427,17,2,0,75,17395,marmaduke 12; ambrose 11; scutilla 11; bostocke 11; freshwater 8; lucina 6
+1096,550,"Chabot, Admiral of France",exact,B12027,13,1,0,54,18664,chabot 30; allegre 10; chabots 6; secretary 3; proctor 3; treasurer 1
+1099,553,"Cleopatra, Queen of Egypt",exact,A07330,33,1,0,399,14421,caesar 131; antonius 85; cleopatra 61; canidius 21; thyreus 17; mardio 10
+1101,555,The Lady's Trial,exact,A01052,28,0,0,185,16924,auria 34; spinella 26; aurelio 21; castanna 19; malfato 17; adurni 15
+1102,556,"The Sophister (Fallacy, or The Troubles of Great Hermenia)",exact,A15873,61,2,0,194,15663,fallacy 35; discourse 22; demonstration 17; topicus 16; ambiguity 14; distinction 14
+1104,558,Monsieur Thomas (Father's Own Son),exact,B13574,26,2,0,165,20675,thomas 28; tom 24; doll 22; cellide 12; alice 11; valentine 11
+1105,559,The Unnatural Combat,exact,A07248,38,0,0,42,18447,theocrine 10; malefort 8; montrevile 7; belgarde 7; beaufort 5; chamont 2
+1106,560,Imperiale,exact,A01253,30,3,0,76,14124,doria 15; imperial 13; spinola 11; molosso 9; sango 9; angelica 7
+1110,561,A New Trick to Cheat the Devil,exact,A19888,14,0,0,99,19995,slightall 23; iohn 20; nan 17; geoffrey 13; bernard 8; anne 7
+1111,562,The Maid's Revenge,exact,A12145,28,2,0,369,17418,berinthia 82; antonio 77; sebastiano 41; valasco 39; catalina 27; ansilva 26
+1113,564,Albertus Wallenstein,exact,A01777,42,0,0,67,10669,isabella 12; lesle 8; gordon 8; emilia 7; newman 5; wallenstein 4
+1114,565,"The Bloody Brother (Rollo, Duke of Normandy)",exact,A00958,55,1,0,104,19124,latorche 24; rollo 14; otto 14; aubrey 13; edith 11; gisbert 6
+1115,565,"The Bloody Brother (Rollo, Duke of Normandy)",exact,A00959,55,0,0,103,19140,latorch 25; rollo 16; aubrey 15; otto 14; edith 11; gisbert 6
+1116,566,"Londini Status Pacatus, or London's Peaceable Estate",exact,A03233,2,0,0,1,1913,nilus 1
+1117,567,The Bloody Banquet,exact,A19755,17,1,0,119,14110,mazeres 30; tymethes 26; roxano 13; lapirus 12; zenarchus 11; lapyrus 10
+1118,568,The City Match,exact,A07367,41,1,0,114,20126,seathrift 16; baneswright 16; plotwell 13; roseclap 13; salewit 11; timothy 10
+1120,569,The Phoenix in Her Flames,exact,A06402,47,2,0,139,22827,amandus 30; lucinda 26; rapinus 16; phoenicia 14; praedarius 12; allecto 11
+1121,570,The Royal Slave,exact,A18083,36,0,0,109,13821,cratander 30; arsamnes 19; molops 11; philotas 9; stratocles 8; atossa 7
+1124,571,Salmacida Spolia,exact,A19880,0,0,0,0,1272,
+1125,572,The Coronation,exact,A12133,19,2,0,186,16329,arcadius 49; lysimachus 37; polidora 28; seleucus 20; macarius 11; cassander 10
+1126,573,Love's Cruelty,exact,A12143,12,3,0,156,16433,eubella 38; hippolito 33; court 25; clariana 23; bellament 18; sebastian 10
+1127,574,"The Night Walker, or The Little Thief",exact,A00966,16,1,0,108,19567,maria 43; frank 17; toby 12; hartlove 10; tom 9; wildbrain 7
+1128,575,The Opportunity,exact,A12148,16,0,0,118,18028,cornelia 31; ursini 24; ferrara 15; mercutio 13; aurelio 11; pimponio 11
+1129,576,The Bride,exact,A07970,25,0,0,68,15303,bride 19; raven 11; ferret 8; theophilus 8; blade 7; kickshaw 4
+1130,577,The Humorous Courtier (The Duke),exact,A12141,17,2,0,160,15822,giotto 42; laura 24; carintha 18; contarini 17; volterre 15; comachio 15
+1131,578,"Messalina, the Roman Empress",exact,A68655,32,2,0,96,15678,silius 31; saufellus 8; proculus 7; stitch 7; valens 7; menester 7
+1133,580,"The Knave in Grain, New Vamped",exact,A19750,57,3,0,243,22639,franciscus 24; iulio 20; fub 19; monkey 17; arbaces 17; lodwick 16
+1134,581,The Unfortunate Mother,exact,A07979,23,0,0,125,12806,fidelio 23; melissa 20; amanda 20; cardente 15; corvino 13; spurio 11
+1135,582,The Rebellion,exact,A10495,28,2,0,160,15833,antonio 48; evadne 29; machvile 24; philippa 14; virmine 13; raimond 8
+1136,583,The Arcadia,exact,A12149,23,3,0,207,17542,philoclea 45; pamela 30; mopsa 22; basilius 19; philonax 18; gynoecia 18
+1137,584,The Strange Discovery,exact,A01989,43,2,0,244,21963,cariclea 38; cnemon 33; thisbe 20; calasiris 19; theagines 19; caricles 17
+1139,585,The Gypsies Metamorphosed,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,1,0,75,8872,gipsies 22; christian 7; jack 4; meg 4; goose 3; george 3
+1140,586,The Antipodes,exact,A16923,29,1,0,42,22099,blaze 18; letoy 12; truelocke 4; peregrine 2; true 2; joyless 1
+1144,590,The Ladies' Privilege (The Lady's Privilege),exact,A01775,23,0,0,106,15431,vitelli 27; chrisea 25; doria 11; bonivet 9; adorni 8; eurione 8
+1145,591,Wit in a Constable,exact,A01779,33,1,0,141,15617,timothy 28; holdfast 21; clare 16; valentine 16; thorowgood 12; busy 9
+1146,592,The Constant Maid (Love Will Find Out the Way),exact,A12130,32,1,0,89,15765,hartwell 27; close 16; hornet 12; startup 11; bellamy 5; frances 5
+1147,593,1 Saint Patrick for Ireland,exact,A12151,26,2,0,163,16744,emeria 40; patrick 28; archimagus 24; bard 15; conallus 13; dichu 8
+1148,594,The Hollander (Love's Trial),exact,A01773,36,3,0,222,19839,urinal 47; sconce 41; fortress 24; mixum 20; pirke 15; martine 13
+1150,596,2 The Cid,exact,A19347,12,1,0,155,11640,roderigo 44; cimena 43; sancho 19; infanta 9; seriffa 9; celimant 7
+1152,598,Rule a Wife and Have a Wife,exact,A00967,26,1,0,39,18556,medina 6; margarita 5; iuan 4; alonzo 4; sanchio 4; cacafogo 4
+1153,599,"Sicily and Naples, or The Fatal Union",exact,A02629,39,1,0,173,18949,ferrando 28; ursini 26; valenzo 21; felicia 21; calantha 20; charintha 17
+1154,600,Love Crowns the End,base,A13393.1,23,0,0,55,4548,lysander 20; gloriana 10; cliton 5; florida 5; francisco 5; cloe 4
+1162,606,Christmas His Masque (Christmas His Show),base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,26,1940,christmas 13; robin 4; new 3; john 1; carol 1; gambol 1
+1163,607,The Vision of Delight,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,15,1688,spring 5; delight 2; wonder 2; sport 1; thomas 1; cock 1
+1164,608,Pleasure Reconciled to Virtue,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,3,2182,engine 1; rest 1; earth 1
+1165,609,For the Honor of Wales,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,16,3292,evan 10; jenkin 2; howell 1; rheese 1; alice 1; chair 1
+1166,610,News from the New World Discovered in the Moon,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,1,0,14,2834,printer 3; doppers 3; print 2; new 1; factor 1; paul 1
+1167,611,"Pan's Anniversary, or The Shepherds' Holiday",base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,1,2049,fashioner 1
+1168,612,The Masque of Owls,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,5,1009,cox 3; cock 1; madge 1
+1171,615,Mortimer His Fall,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,10,556,mortimer 5; isabel 2; wax 1; fate 1; priests 1
+1172,616,"The Magnetic Lady, or Humors Reconciled",base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,4,0,275,22388,compass 52; needle 25; bias 23; practice 20; polish 18; ironside 16
+1173,617,A Tale of a Tub,base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,5,0,497,21662,clay 75; tub 63; audrey 63; iohn 53; turf 50; puppy 40
+1174,618,"The Sad Shepherd, or A Tale of Robin Hood",base,A72473.1; A72473.10; A72473.11; A72473.12; A72473.13; A72473.14; A72473.15; A72473.16; A72473.17; A72473.18; A72473.19; A72473.2; A72473.20; A72473.21; A72473.22; A72473.23; A72473.24; A72473.3; A72473.4; A72473.5; A72473.6; A72473.7; A72473.8; A72473.9,316,0,0,145,9258,marian 21; robin 20; karol 17; maudlin 12; amie 11; scathlock 8

@@ -8,9 +8,11 @@ because the long-s glyph alone splits the embedding space (that experiment, `run
 
 Current state (2026-09-25): main analysis = HDBSCAN with `min_samples 10`, seed 42, on
 name-masked text with one representative edition per work — 63 clusters, 59.5 % of the
-representative editions' chunks unassigned. All 63 clusters have been reviewed by hand:
-53 enter the genre comparison (`included`, 36.9 % of the representative editions' words),
-6 are `pending`, 4 are kept for context only. K-means 50 on the same embeddings is kept as a
+representative editions' chunks unassigned. All 63 clusters received researcher decisions
+informed by the keywords, the work concentration and documented AI-assisted readings of sampled
+passages (a review of cluster interpretations, not an exhaustive validation of every assigned
+chunk): 53 enter the genre comparison (`included`, 36.9 % of the representative editions'
+words), 6 are `pending` (reviewed, undecided), 4 are kept for context only. K-means 50 on the same embeddings is kept as a
 limited comparison. The evidence site built from this run is in `../docs/`.
 
 ## Pipeline
@@ -76,6 +78,7 @@ bash ab_spelling/run_b.sh sheet                 # topic_sheet.xlsx with the AI d
 bash ab_spelling/run_b.sh review                # after editing the workbook
 B_USE=included bash ab_spelling/run_b.sh aggregate   # confirmed topics only (default: included,candidate)
 bash ab_spelling/run_b.sh site                  # rebuild ../docs/ — then commit and push
+bash ab_spelling/run_b.sh freeze                # copy the small result files of the run into results_masked_hdb10/ (see below)
 bash ab_spelling/run_b.sh sample 5              # reading sample of 5 random clusters (or B_TOPICS=6,7,9)
 bash ab_spelling/run_b.sh pack 9                # critical-reading pack for one topic
 ```
@@ -92,8 +95,9 @@ mixed_or_unclear), `use_in_genre_analysis`, `basis` (content note, concentration
 for cross-work comparison), `chunks_read`. The reviewer edits three columns:
 
 - `use_in_genre_analysis` — `included` (enters the genre comparison), `candidate` (proposed,
-  not yet confirmed), `contextual_only` (one work or one story; kept for context), `pending`.
-  The AI never writes `included`.
+  not yet confirmed), `contextual_only` (context only — excluded from the comparison: typically
+  one work, one story or a mixed cluster; a shared story is not excluded as such), `pending`
+  (reviewed, undecided). The AI never writes `included`.
 - `Label` — final name; empty means the draft label stands.
 - `Notes` — reasons, doubts, what to check; the review of this run cites the chunks read.
 
@@ -127,6 +131,7 @@ aggregation reports what happens to a concentrated topic's genre result without 
 | `cast_map_overrides.csv` | editions whose cast list must be taken from another TCP id |
 | `cast_names_kim.csv` | cast lists (from Kim's `corpus_master.xlsx`; not in the public repository) |
 | `drafts/`, `drafts_masked_hdb10/` | AI drafts per run (`topic_drafts_B_s42.csv`; `.pre_review.csv` = the drafts before the review); the review writes the decisions back here |
+| `results_masked_hdb10/` | frozen result files of the published run (`run_b.sh freeze`): `doc_topics.csv` with `in_fit`, `run.json`, `topic_sheet.csv` with the decisions, the aggregate tables (`config.json`, `genre_assignment.csv`, `genre_coverage.csv`, `genre_topic_mean.csv`, `kruskal_by_topic.csv`, `sensitivity_dominant_work.csv`, …), chunk map and metadata, masking summary, `environment.txt` — enough to trace every published number without the embeddings |
 | `requirements.txt` | Python dependencies |
 
 Outputs are written outside the repository, under `../sep6/ab_spelling_out/`:
@@ -147,4 +152,8 @@ with `doc_topics.csv`, `run.json`, keyword tables, `topic_sheet.*`, `aggregate/`
   author or one story that together dominate a topic. Its p values are exploratory.
 - The two clustering schemes share one embedding, so their agreement says nothing about the
   embedding's own biases.
-- DEEP fields on the site come from a full DEEP export that is not in the repository.
+- DEEP fields on the site, and the Annals fallback of the genre rule, come from a full DEEP
+  export that is not in the repository; without it `aggregate` warns and keeps the 35
+  Annals-placed works in "other / multi", so its genre groups differ from the published ones.
+  `cast_names_kim.csv` is not in the repository either. The published analysis is therefore
+  traceable from `results_masked_hdb10/`, but not yet reproducible from a fresh clone alone.

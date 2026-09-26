@@ -1,0 +1,6 @@
+use_category,topics,chunks,chunk_share,words,works,comedy chunks,comedy share of genre,tragedy chunks,tragedy share of genre,history chunks,history share of genre,tragicomedy chunks,tragicomedy share of genre,not in BritDrama chunks,not in BritDrama share of genre,moral chunks,moral share of genre,romance chunks,romance share of genre,pastoral chunks,pastoral share of genre,tragicomedy; literary play chunks,tragicomedy; literary play share of genre,masque chunks,masque share of genre,tragedy; history chunks,tragedy; history share of genre,classical legend or myth chunks,classical legend or myth share of genre
+candidate,43,5055,0.3289,2500299,471,1822,0.327,1259,0.323,319,0.305,327,0.359,264,0.343,268,0.421,144,0.237,160,0.4,58,0.283,57,0.289,31,0.226,41,0.436
+contextual_only,4,181,0.0118,89463,39,102,0.018,11,0.003,13,0.012,0,0.0,5,0.007,42,0.066,2,0.003,0,0.0,0,0.0,2,0.01,1,0.007,0,0.0
+pending,16,981,0.0638,487267,231,230,0.041,418,0.107,117,0.112,21,0.023,29,0.038,10,0.016,28,0.046,17,0.043,2,0.01,12,0.061,11,0.08,21,0.223
+outlier_hdbscan,,9153,0.5955,4526851,505,3415,0.613,2205,0.566,598,0.571,564,0.618,471,0.612,317,0.498,433,0.713,223,0.557,145,0.707,126,0.64,94,0.686,32,0.34
+ALL,63,15370,1.0,7603880,516,5569,1.0,3893,1.0,1047,1.0,912,1.0,769,1.0,637,1.0,607,1.0,400,1.0,205,1.0,197,1.0,137,1.0,94,1.0

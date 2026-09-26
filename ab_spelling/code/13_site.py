@@ -26,8 +26,10 @@ from collections import Counter, defaultdict
 from pathlib import Path
 import numpy as np
 
-CAT_LABEL = {'included': 'cross-work theme (confirmed)', 'candidate': 'cross-work theme (candidate)', 'contextual_only': 'single work / story',
-             'pending': 'pending review', 'unclassified': 'unclassified', 'unassigned': 'unassigned'}
+CAT_LABEL = {'included': 'cross-work theme (confirmed)', 'candidate': 'cross-work theme (candidate)', 'contextual_only': 'context only — excluded from the genre comparison',
+             'pending': 'reviewed — decision pending', 'unclassified': 'unclassified', 'unassigned': 'unassigned'}
+ST_LABEL = {'user_confirmed': 'confirmed by the researcher', 'user_pending': 'left pending by the researcher', 'user_labelled': 'relabelled by the researcher, category unchanged', 'draft_ai': 'AI draft, not yet reviewed', 'checked_ai': 'AI-checked, not yet reviewed'}
+ROLE = {True: 'Representative edition — used in the analysis', False: 'Other edition — placed after the fit, excluded from the main statistics'}
 CAT_ORDER = ['included', 'candidate', 'pending', 'contextual_only', 'unclassified']
 E = html.escape
 
@@ -107,6 +109,7 @@ def main():
     _dt = list(csv.DictReader(open(d / 'doc_topics.csv', encoding='utf-8')))
     labels = {r['chunk_id']: int(r['topic']) for r in _dt}
     in_fit = {r['chunk_id']: r.get('in_fit', '1') == '1' for r in _dt}; n_fit = sum(in_fit.values()); n_placed = len(in_fit) - n_fit
+    n_out_fit = sum(1 for r in _dt if r.get('in_fit', '1') == '1' and int(r['topic']) == -1)
     other = {}
     for p in sorted(runs.glob(f'topics_{a.variant}_s*')):
         s = int(p.name.split('_s')[1])
@@ -142,12 +145,16 @@ def main():
     # typicality
     emb = np.load(runs / f'embeddings_{a.variant}.npy').astype(np.float32)
     emb /= np.linalg.norm(emb, axis=1, keepdims=True) + 1e-9
-    members = defaultdict(list)
+    # members = the representative editions (in_fit), on which every statistic, centroid and typical chunk is based;
+    # members_all adds the chunks of the other editions, placed after the fit — shown for browsing, never mixed in
+    members = defaultdict(list); members_all = defaultdict(list)
     for c, t in labels.items():
-        if t != -1: members[t].append(c)
-    topics = sorted(members)
+        if t != -1:
+            members_all[t].append(c)
+            if in_fit[c]: members[t].append(c)
+    topics = sorted(t for t in members_all if members[t])
     # a rebuild on another run (e.g. 95 → 63 topics) must not leave the old run's topic pages and figures behind
-    stale = [p for p in out.glob('topic_*.html') if not re.fullmatch(r'topic_(\d+)\.html', p.name) or int(re.fullmatch(r'topic_(\d+)\.html', p.name).group(1)) not in members]
+    stale = [p for p in out.glob('topic_*.html') if not re.fullmatch(r'topic_(\d+)\.html', p.name) or int(re.fullmatch(r'topic_(\d+)\.html', p.name).group(1)) not in topics]
     stale += [p for p in out.glob('*.png')]   # genre figures are copied again below from the current aggregate dir
     for p in stale: p.unlink()
     if stale: print(f'removed {len(stale)} stale files from {out}')
@@ -288,9 +295,10 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
         for kk in ('first performance / composition (Annals)', 'first performance (BritDrama)', 'company (BritDrama)', 'theater'):
             if df[kk]: rows.append((kk[0].upper() + kk[1:], E(df[kk])))
         rows += [('Genre (British Drama)', E(m['genre_deep'])), ('Play type', E(m['play_type_deep'])), ('Edition / TCP / DEEP', f'edition {e} · TCP {E(m["tcp"])} · DEEP {E(m["deep_id"])}'),
+                 ('Edition role', ROLE[in_fit[c]]),
                  ('Position', f'nodes {cm["node_start"]}–{cm["node_end"]} (positions in the processed text, not lines of the printed book)' + (f' · piece {cm["piece_start"]}–{cm["piece_end"]} of a split node' if cm['n_pieces_end'] != '1' or cm['piece_start'] != '0' else '') + f' · chunk {k + 1} of {len(seq)} in this edition'),
                  ('Length', f'{cm["len_B_words"]} words · {cm["len_B_tokens"]} tokens' + (f' · flags: {E(cm["flags"])}' if cm['flags'] else '')),
-                 ('Topic (seed %d)' % a.seed, (f'<a href="../{tpage(t)}">T{t} — {E(label_of(t))}</a> {badge(cat_of(t))} · typicality {typ[c]:.3f} (cosine to the topic centroid)' if t != -1
+                 ('Topic (seed %d)' % a.seed, (f'<a href="../{tpage(t)}">T{t} — {E(label_of(t))}</a> {badge(cat_of(t))} · typicality {typ[c]:.3f} (cosine to the topic centroid)' + ('' if in_fit[c] else ' · placed after the fit (approximate_predict), not counted in the topic statistics') if t != -1
                                                else f'unassigned by HDBSCAN · nearest topic <a href="../{tpage(nearest[c][0])}">T{nearest[c][0]} — {E(label_of(nearest[c][0]))}</a> at {nearest[c][1]:.3f}'))]
         if other:
             rows.append(('Other seeds', ' · '.join(f'seed {s_}: ' + (f'T{lab[c]}' if lab[c] != -1 else 'unassigned') for s_, lab in sorted(other.items())) + ' — topic numbers are assigned independently in each run; equal or different numbers say nothing by themselves'))
@@ -303,7 +311,7 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
         kw_note = (f'<p class="lede" style="font-size:.85rem">Marked words are the most distinguishing words of {"T%d" % t if t != -1 else "the nearest topic T%d" % nearest[c][0]}: <em>{E(", ".join(kws[:10]))}</em>.</p>' if kws else '')
         page = (head(f'Chunk {c}', '../') + mast('../') + crumbs('<a href="../index.html">Home</a>', f'<a href="../plays/{e}.html">{E(m["title"][:50])}</a>', f'chunk {c}')
                 + f'<h1>{E(m["title"])} <span style="color:var(--faint);font-weight:500">· chunk {k + 1} of {len(seq)}</span></h1>'
-                + f'<p class="metaline"><b>{E(authors(m["author"]))}</b> · {dates}<br>{line2}<br>{topic_txt} · {cm["len_B_words"]} words</p>'
+                + f'<p class="metaline"><b>{E(authors(m["author"]))}</b> · {dates}<br>{line2}<br>{topic_txt} · {cm["len_B_words"]} words' + ('' if in_fit[c] else ' · <span class="badge b-pending">other edition — not in the analysis</span>') + '</p>'
                 + pn + kw_note + f'<div class="text">{highlight(texts[c], kws)}</div>' + pn
                 + '<h2>Details</h2><details><summary>Metadata, position in the edition, topic in the other seeds</summary>' + meta_html + '</details>' + orig_html + foot())
         (out / 'chunks' / f'{c}.html').write_text(page, encoding='utf-8'); n_pages += 1
@@ -318,8 +326,9 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
         comp = sorted(by_t.items(), key=lambda kv: -kv[1])
         bars = ''.join(f'<div class="lab">{chip(t, "../")}</div><div><div class="bar" style="width:{100 * w / words:.1f}%"></div></div><div class="num">{100 * w / words:.1f} %</div>' for t, w in comp[:14])
         df = deep_fields(e)
+        fit_e = in_fit[seq[0]]
         info = [('Title', E(mm['title'])), ('Author', E(authors(mm['author']))), ('Publication year (edition)', E(mm['year'])), ('Genre (British Drama)', E(mm['genre_deep'])), ('Play type', E(mm['play_type_deep'])),
-                ('Work / edition / TCP / DEEP', f'work {E(mm["work_id"])} · edition {e} · TCP {E(mm["tcp"])} · DEEP {E(mm["deep_id"])}')]
+                ('Work / edition / TCP / DEEP', f'work {E(mm["work_id"])} · edition {e} · TCP {E(mm["tcp"])} · DEEP {E(mm["deep_id"])}'), ('Edition role', ROLE[fit_e] + ('' if fit_e else '; its chunks carry the topic they were placed in, for browsing'))]
         ga = gassign.get(mm['work_id'])
         if ga:
             src = {'britdrama': 'from the British Drama label', 'annals': 'British Drama label compound or missing → Annals label used', 'none': 'no single main genre in British Drama or Annals → outside the single-genre comparison'}[ga['genre_source']]
@@ -331,7 +340,7 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
         rows = ''.join(f'<tr><td class="num">{i + 1}</td><td class="num">{cmap[c]["node_start"]}–{cmap[c]["node_end"]}</td><td class="num">{cmap[c]["len_B_words"]}</td><td class="t">{chip(labels[c], "../")}</td>'
                        f'<td class="num">{"" if labels[c] == -1 else f"{typ[c]:.2f}"}</td><td><a href="../chunks/{c}.html">{E(texts[c][:110])}…</a></td></tr>' for i, c in enumerate(seq))
         page = (head(mm['title'], '../') + mast('../') + crumbs('<a href="../index.html">Home</a>', '<a href="../plays.html">Plays</a>', E(mm['title'][:60]))
-                + f'<h1>{E(mm["title"])}</h1><p class="lede">{E(authors(mm["author"]))}, published {E(mm["year"])} · {E(mm["genre_deep"])} · {E(mm["play_type_deep"])}{oe}</p>'
+                + f'<h1>{E(mm["title"])}</h1><p class="lede">{E(authors(mm["author"]))}, published {E(mm["year"])} · {E(mm["genre_deep"])} · {E(mm["play_type_deep"])}{oe}' + ('' if fit_e else ' · <span class="badge b-pending">other edition — not in the analysis</span>') + '</p>'
                 + f'<div class="facts"><div class="f"><b>{len(seq)}</b><i>chunks</i></div><div class="f"><b>{words:,}</b><i>words</i></div><div class="f"><b>{len([t for t in by_t if t != -1])}</b><i>topics</i></div><div class="f"><b>{100 * by_t[-1] / words:.0f} %</b><i>unassigned</i></div></div>'
                 + '<h2>Metadata</h2><table>' + ''.join(f'<tr><th>{k}</th><td>{v}</td></tr>' for k, v in info) + '</table>'
                 + '<h2>Topic composition (share of words)</h2><div class="bars">' + bars + '</div>'
@@ -343,11 +352,11 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
     for e, seq in sorted(ed_chunks.items(), key=lambda kv: (meta[kv[1][0]]['title'].lower(), meta[kv[1][0]]['year'])):
         mm = meta[seq[0]]; df = deep_fields(e); w = sum(int(cmap[c]['len_B_words']) for c in seq)
         prow += (f'<tr data-search="{E(mm["title"] + " " + authors(mm["author"]) + " " + mm["year"] + " " + mm["genre_deep"] + " " + df["company (BritDrama)"])}"><td><a href="plays/{e}.html">{E(mm["title"][:70])}</a></td><td>{E(authors(mm["author"])[:40])}</td>'
-                 f'<td class="num">{E(mm["year"])}</td><td>{E(df["first performance / composition (Annals)"])}</td><td>{E(mm["genre_deep"][:24])}</td><td>{E(df["company (BritDrama)"][:32])}</td><td class="num">{len(seq)}</td><td class="num">{100 * sum(int(cmap[c]["len_B_words"]) for c in seq if labels[c] == -1) / w:.0f} %</td></tr>')
+                 f'<td class="num">{E(mm["year"])}</td><td>{E(df["first performance / composition (Annals)"])}</td><td>{E(mm["genre_deep"][:24])}</td><td>{E(df["company (BritDrama)"][:32])}</td><td>{"representative" if in_fit[seq[0]] else "other edition"}</td><td class="num">{len(seq)}</td><td class="num">{100 * sum(int(cmap[c]["len_B_words"]) for c in seq if labels[c] == -1) / w:.0f} %</td></tr>')
     page = (head('Plays') + mast('', 'plays.html') + crumbs('<a href="index.html">Home</a>', 'Plays')
-            + f'<h1>All editions</h1><p class="lede">{len(ed_chunks)} editions of {n_works} works. Each page lists the edition\'s chunks in order with their topics; dates are publication years, the Annals date is the first performance or composition.</p>'
+            + f'<h1>All editions</h1><p class="lede">{len(ed_chunks)} editions of {n_works} works; {sum(1 for e_, s_ in ed_chunks.items() if in_fit[s_[0]])} representative editions (one per work) carry the analysis, the others were placed after the fit and can be browsed. Each page lists the edition\'s chunks in order with their topics; dates are publication years, the Annals date is the first performance or composition.</p>'
             + '<input class="filterbox" type="search" placeholder="Find a play — title, author, year, genre, company…" data-target="table.plays tbody tr" data-count="pcount"> <span id="pcount" style="font-size:.85rem;color:var(--muted)"></span>'
-            + '<table class="sortable plays"><thead><tr><th>title</th><th>author</th><th class="num">published</th><th>first performed / written (Annals)</th><th>genre (British Drama)</th><th>company (BritDrama)</th><th class="num">chunks</th><th class="num">unassigned</th></tr></thead><tbody>' + prow + '</tbody></table>' + foot())
+            + '<table class="sortable plays"><thead><tr><th>title</th><th>author</th><th class="num">published</th><th>first performed / written (Annals)</th><th>genre (British Drama)</th><th>company (BritDrama)</th><th>role</th><th class="num">chunks</th><th class="num">unassigned</th></tr></thead><tbody>' + prow + '</tbody></table>' + foot())
     (out / 'plays.html').write_text(page, encoding='utf-8')
 
     # ---------------- topic pages ----------------
@@ -355,7 +364,8 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
     for t in topics:
         r = sheet[t]
         def kwspan(s): return ''.join(f'<span class="{"nm" if w.startswith("*") else ""}">{E(w.lstrip("*"))}</span>' for w in s.split(', ') if w)
-        mem = members[t]; works = Counter(meta[c]['work_id'] for c in mem)
+        mem = members[t]; works = Counter(meta[c]['work_id'] for c in mem)                       # representative editions only
+        mem_other = [c for c in members_all[t] if not in_fit[c]]                                # placed chunks of other editions, browsing only
         title_of = {}
         for c in mem: title_of.setdefault(meta[c]['work_id'], (meta[c]['title'], meta[c]['author'], meta[c]['year']))
         genres = Counter(meta[c]['genre_deep'] for c in mem)
@@ -367,9 +377,11 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
                         f'<div class="snip">{E(texts[c][:180])}…</div></div>' for c in land)
         gb = ''.join(f'<div class="lab">{E(g)}</div><div><div class="bar" style="width:{100 * n / len(mem):.1f}%"></div></div><div class="num">{n} ({100 * n / len(mem):.0f} %)</div>' for g, n in genres.most_common(8))
         wl = ', '.join(f'<a href="#w{w}">{E(title_of[w][0][:40])}</a> ({n})' for w, n in works.most_common(15))
-        roster = sorted(mem, key=lambda c: (int(meta[c]['year']) if meta[c]['year'].isdigit() else 9999, -typ[c]))
-        rows = ''.join(f'<tr id="{"w" + meta[c]["work_id"] if best_per_work.get(meta[c]["work_id"]) == c else ""}"><td><a href="chunks/{c}.html">{c}</a></td><td>{E(meta[c]["title"][:55])}</td><td>{E(authors(meta[c]["author"])[:34])}</td>'
-                       f'<td class="num">{E(meta[c]["year"])}</td><td>{E(meta[c]["genre_deep"][:22])}</td><td class="num">{cmap[c]["len_B_words"]}</td><td class="num">{typ[c]:.3f}</td></tr>' for c in roster)
+        def roster_rows(cs):
+            return ''.join(f'<tr id="{"w" + meta[c]["work_id"] if best_per_work.get(meta[c]["work_id"]) == c else ""}"><td><a href="chunks/{c}.html">{c}</a></td><td>{E(meta[c]["title"][:55])}</td><td>{E(authors(meta[c]["author"])[:34])}</td>'
+                           f'<td class="num">{E(meta[c]["year"])}</td><td>{E(meta[c]["genre_deep"][:22])}</td><td class="num">{cmap[c]["len_B_words"]}</td><td class="num">{typ[c]:.3f}</td></tr>' for c in cs)
+        chrono = lambda cs: sorted(cs, key=lambda c: (int(meta[c]['year']) if meta[c]['year'].isdigit() else 9999, -typ[c]))
+        rows = roster_rows(chrono(mem))
         ex_html = ''
         for c in sorted(mem, key=lambda c: -typ[c])[:12]:
             ex = excerpts(texts[c], kw30.get(t, [])[:15], n=1)
@@ -377,15 +389,33 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
         st = r.get('review_status') or 'draft_ai'
         facts = (f'<div class="facts"><div class="f"><b>{len(mem)}</b><i>chunks</i></div><div class="f"><b>{int(r["words"]):,}</b><i>words</i></div><div class="f"><b>{len(works)}</b><i>works</i></div>'
                  f'<div class="f"><b>{r["n_works_ge3"]}</b><i>works with ≥3 chunks</i></div><div class="f"><b>{100 * float(r["dominant_work_share"]):.0f} %</b><i>dominant work</i></div><div class="f"><b>{100 * float(r["top3_work_share"]):.0f} %</b><i>top-3 works</i></div></div>')
-        note = f'<div class="excerpt" style="border-color:#b9c9da;background:#f3f7fb"><b>Classification</b> {badge(cat_of(t))} · basis: {E(r.get("pattern_basis") or "—")} · status: {E(st)}' + (f'<br>{E(r.get("basis", ""))}' if r.get('basis') else '') + (f'<br>Notes: {E(r["Notes"])}' if r.get('Notes') else '') + '</div>'
+        other_note = ''
+        if mem_other:
+            w_other = sum(int(cmap[c]['len_B_words']) for c in mem_other); works_all = len({meta[c]['work_id'] for c in members_all[t]})
+            other_note = (f'<p class="lede" style="font-size:.9rem">All statistics on this page are on the representative editions (one per work). Including the other editions, placed after the fit: '
+                          f'{len(members_all[t])} chunks · {works_all} works · {int(r["words"]) + w_other:,} words — those {len(mem_other)} chunks are listed at the end of the page and are not part of any figure above.</p>')
+        # classification: the researcher's decision first; the AI draft folded, never presented as confirmed
+        draft = (f'<details><summary>Original AI draft — before researcher review</summary><div class="text" style="font-size:.9rem">draft label: <i>{E(r.get("draft_label") or "—")}</i> · pattern basis: {E(r.get("pattern_basis") or "—")}'
+                 + (f'<br>{E(r["basis"])}' if r.get('basis') else '') + (f'<br>chunks read for the draft: {E(r["chunks_read"])}' if r.get('chunks_read') else '') + '</div></details>')
+        if st.startswith('user_'):
+            note = (f'<div class="excerpt" style="border-color:#b9c9da;background:#f3f7fb"><b>Classification</b> {badge(cat_of(t))} · {E(ST_LABEL.get(st, st))}'
+                    + (f'<br><b>Label (researcher):</b> {E(r["Label"])}' if r.get('Label') else '') + (f'<br><b>Notes (researcher):</b> {E(r["Notes"])}' if r.get('Notes') else '') + draft + '</div>')
+        else:
+            note = (f'<div class="excerpt" style="border-color:#e0d3a8;background:#fbf7ea"><b>Classification</b> {badge(cat_of(t))} · {E(ST_LABEL.get(st, st))} — the text below is the AI draft, not a researcher decision'
+                    + f'<br>pattern basis: {E(r.get("pattern_basis") or "—")}' + (f'<br>{E(r["basis"])}' if r.get('basis') else '') + (f'<br>Notes: {E(r["Notes"])}' if r.get('Notes') else '') + '</div>')
+        other_table = ''
+        if mem_other:
+            other_table = (f'<h2>Chunks from other editions ({len(mem_other)}; placed after the fit, not in the statistics)</h2><table class="sortable"><thead><tr><th>chunk</th><th>play</th><th>author</th><th class="num">published</th><th>genre</th><th class="num">words</th><th class="num">typicality</th></tr></thead><tbody>'
+                           + roster_rows(chrono(mem_other)) + '</tbody></table>')
         page = (head(f'T{t} {label_of(t)}') + mast('', 'topics.html') + crumbs('<a href="index.html">Home</a>', '<a href="topics.html">Topics</a>', f'T{t}')
-                + f'<h1>Topic {t} — {E(label_of(t))}</h1><p class="lede">Dominant work: <b>{E(r["dominant_work"])}</b> · genre mix of this topic: {E(r["genre_mix_of_topic"])}</p>' + facts + note
-                + f'<h2>Keywords</h2><h3>Class-TF-IDF (uniform rule)</h3><div class="kw">{kwspan(r["ctfidf_top10"])}</div><h3>KeyBERT-style (cosine of word to topic centroid)</h3><div class="kw">{kwspan(r["keybert_top10"])}</div><h3>MMR (diversified)</h3><div class="kw">{kwspan(r["mmr_top10"])}</div><p class="lede" style="font-size:.85rem;margin-top:.6em">Amber = capitalised in ≥80 % of occurrences (probable name).</p>'
+                + f'<h1>Topic {t} — {E(label_of(t))}</h1><p class="lede">Dominant work: <b>{E(r["dominant_work"])}</b> · genre mix of this topic (British Drama labels): {E(r["genre_mix_of_topic"])}</p>' + facts + other_note + note
+                + f'<h2>Keywords</h2><h3>Class-TF-IDF (uniform rule)</h3><div class="kw">{kwspan(r["ctfidf_top10"])}</div><h3>KeyBERT-style (cosine of word to topic centroid)</h3><div class="kw">{kwspan(r["keybert_top10"])}</div><h3>MMR (diversified)</h3><div class="kw">{kwspan(r["mmr_top10"])}</div><p class="lede" style="font-size:.85rem;margin-top:.6em">Amber = capitalised in ≥80 % of occurrences (probable name). Keywords are computed on the unmasked text.</p>'
                 + '<h2>Most typical chunk of each of the leading works</h2><div class="cards">' + cards + '</div>'
-                + '<h2>Genre mix (chunks of this topic)</h2><div class="bars">' + gb + '</div><p class="lede" style="font-size:.85rem">This is the direction topic → genre; the share of each genre\'s text that falls in this topic is on the <a href="genre.html">Genre</a> page.</p>'
+                + '<h2>Genre mix (chunks of this topic, British Drama labels)</h2><div class="bars">' + gb + '</div><p class="lede" style="font-size:.85rem">This is the direction topic → genre, on the raw British Drama labels; the share of each genre group\'s text that falls in this topic is on the <a href="genre.html">Genre</a> page.</p>'
                 + f'<h2>Works</h2><p>{wl}{" …" if len(works) > 15 else ""}</p>'
                 + '<h2>Excerpts</h2>' + ex_html
-                + f'<h2>All {len(mem)} chunks (chronological; click a header to sort)</h2><table class="sortable"><thead><tr><th>chunk</th><th>play</th><th>author</th><th class="num">published</th><th>genre</th><th class="num">words</th><th class="num">typicality</th></tr></thead><tbody>' + rows + '</tbody></table>' + foot())
+                + f'<h2>All {len(mem)} chunks of the representative editions (chronological; click a header to sort)</h2><table class="sortable"><thead><tr><th>chunk</th><th>play</th><th>author</th><th class="num">published</th><th>genre</th><th class="num">words</th><th class="num">typicality</th></tr></thead><tbody>' + rows + '</tbody></table>'
+                + other_table + foot())
         (out / tpage(t)).write_text(page, encoding='utf-8')
 
     # ---------------- topics index ----------------
@@ -402,11 +432,12 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
             protos = ' · '.join(f'<a href="chunks/{c}.html">{E(meta[c]["title"][:34])}</a> ({E(meta[c]["year"])}, typ. {typ[c]:.2f})' for c in best)
             srch = E(f'T{t} {label_of(t)} {r["ctfidf_top10"]} {r["dominant_work"]} {r["genre_mix_of_topic"]}')
             sec += (f'<div class="card" data-group="{cat}" data-search="{srch}"><h3><a href="{tpage(t)}">Topic {t} — {E(label_of(t))}</a></h3><div class="whence">{protos}</div>'
-                    f'<div class="whence" style="margin-top:4px">{len(mem)} chunks · {r["n_works"]} works · dominant {E(r["dominant_work"][:36])} {100 * float(r["dominant_work_share"]):.0f} % · {E(r["genre_mix_of_topic"][:60])}</div>'
+                    f'<div class="whence" style="margin-top:4px">{len(mem)} chunks · {r["n_works"]} works · dominant {E(r["dominant_work"][:36])} {100 * float(r["dominant_work_share"]):.0f} % · {E(r["genre_mix_of_topic"][:60])}' + (f' · +{len(members_all[t]) - len(mem)} chunks of other editions (browsing)' if len(members_all[t]) > len(mem) else '') + '</div>'
                     f'<div class="snip"><i>{E(r["ctfidf_top10"].replace("*", ""))}</i></div></div>')
     page = (head('Topics') + mast('', 'topics.html') + crumbs('<a href="index.html">Home</a>', 'Topics')
-            + f'<h1>All topics</h1><p class="lede">{len(topics)} HDBSCAN clusters over {len(ids):,} chunks from {len(ed_chunks)} editions ({n_works} works); {sum(1 for c in ids if labels[c] == -1):,} chunks ({100 * sum(1 for c in ids if labels[c] == -1) / len(ids):.0f} %) are unassigned. '
-              'Topics are grouped by how they are used: cross-work themes enter the genre comparison; single-work or single-story clusters are kept for context; pending ones await reading. Each entry links the most typical chunk of each of its three leading works (by chunk count).</p>'
+            + f'<h1>All topics</h1><p class="lede">{len(topics)} HDBSCAN clusters fitted on the representative editions ({n_fit:,} chunks, one edition per work, {n_works} works); {n_out_fit:,} of those chunks ({100 * n_out_fit / n_fit:.1f} %) are unassigned and stay in every denominator. '
+              f'The chunks of the other {len(ed_chunks) - sum(1 for e_, s_ in ed_chunks.items() if in_fit[s_[0]])} editions ({n_placed:,}) were placed after the fit and can be browsed on each topic page but are not counted. '
+              'Topics are grouped by the researcher\'s decision: cross-work themes enter the genre comparison; context-only clusters are excluded from it; pending ones were reviewed but left undecided. Each entry links the most typical chunk of each of its three leading works (by chunk count).</p>'
             + '<input class="filterbox" type="search" placeholder="Find a topic — by number, label, keyword or dominant work…" data-target="div.card[data-group]" data-count="tcount"> <span id="tcount" style="font-size:.85rem;color:var(--muted)"></span>'
             + sec + foot())
     (out / 'topics.html').write_text(page, encoding='utf-8')
@@ -418,7 +449,7 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
         for f in ('heatmap_selected_topics.png', 'heatmap_prevalence.png'):
             if (agg / f).exists(): shutil.copy(agg / f, out / f)
         gfig = ''
-        for f, cap in (('genre_stacked_top20_works_renorm.png', 'Top 20 selected topics per genre, rescaled to the words those topics cover (coverage above each bar)'),
+        for f, cap in (('genre_stacked_top20_works_renorm.png', 'Top 20 selected topics per genre; shares rescaled so that all selected topics together are 100 % of the words they cover (coverage above each bar; topics outside the top 20 pooled as "other selected topics")'),
                        ('genre_panels_top20_works.png', 'The same topics per genre as bars; values are the mean share of a work\'s words')):
             if (agg / f).exists():
                 shutil.copy(agg / f, out / f); gfig += f'<h2>{E(cap)}</h2><div class="fig"><a href="{f}"><img class="heat" src="{f}" alt="{E(cap)}"></a><p class="fighint">Shown fitted to the screen — click to enlarge and zoom.</p></div>'
@@ -427,7 +458,7 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
             for p_ in per_genre: shutil.copy(p_, out / p_.name)
             gfig += '<p class="lede" style="font-size:.85rem">Per-genre bar charts: ' + ' · '.join(f'<a href="{p_.name}">{E(p_.name.split("_")[1])}</a>' for p_ in per_genre) + '</p>'
         rest_cats = [c for c in ('included', 'candidate', 'contextual_only', 'pending', 'unclassified') if c not in use_cats and any(float(r.get(f'{c} mean share of words', 0) or 0) > 0 for r in cov)]
-        cat_head = {'included': 'confirmed themes (not in comparison)', 'candidate': 'candidates (not in comparison)', 'contextual_only': 'single work / story', 'pending': 'pending', 'unclassified': 'unclassified'}
+        cat_head = {'included': 'confirmed themes (not in comparison)', 'candidate': 'candidates (not in comparison)', 'contextual_only': 'context only', 'pending': 'pending (reviewed, undecided)', 'unclassified': 'unclassified'}
         covt = ('<table><thead><tr><th>genre</th><th class="num">works</th><th class="num">in the comparison</th>' + ''.join(f'<th class="num">{E(cat_head[c])}</th>' for c in rest_cats) + '<th class="num">unassigned</th></tr></thead><tbody>'
                 + ''.join(f'<tr><td>{E(r["genre_main"])}</td><td class="num">{r["n_works"]}</td><td class="num">{100 * float(r["selected topics mean share of words"]):.0f} %</td>'
                           + ''.join(f'<td class="num">{100 * float(r[f"{c} mean share of words"]):.0f} %</td>' for c in rest_cats)
@@ -516,7 +547,7 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
                    'Each draft proposes a content-first label without genre words, a pattern basis (thematic discourse / shared narrative / recurring role or name / mixed), a use category and a short basis (content note, concentration, suitability for cross-work comparison). Drafts never propose <i>included</i>; concentration in one work is recorded as a flag, not used as an exclusion rule.</p>'
                    '<p><b>Workbook.</b> The drafts, statistics, three keyword lists and three representative chunks per cluster go into a review workbook (<code>topic_sheet.xlsx</code>). The reviewer edits three columns: the use category — <i>included</i> (enters the genre comparison), <i>pending</i> (read but undecided), <i>contextual only</i> (one work or one story, kept for context) — the label, and notes. '
                    'A round-trip script validates ids, cluster sizes and values before writing the decisions back, keeps the drafts as they were before the review, and derives a review status from what changed.</p>'
-                   '<p><b>Decisions.</b> All %d clusters were read and classified: %s. Review status: %s. %d clusters carry reviewer notes (which cite the excerpts read, mostly three passages from different works plus full-chunk follow-ups on boundary cases); %d labels were revised from the draft. '
+                   '<p><b>Decisions.</b> All %d clusters received researcher decisions informed by the keywords, the work concentration and documented AI-assisted readings of sampled passages: %s. Review status: %s. %d clusters carry reviewer notes (which cite the excerpts read, mostly three passages from different works plus full-chunk follow-ups on boundary cases); %d labels were revised from the draft. This was a review of cluster interpretations, not an exhaustive validation of every assigned chunk. '
                    'Two policies were fixed during the review: a shared story (Troy, Hercules, Thebes, Antony and Cleopatra, the Fairy Queen) counts as a subject for comparison in the same way as a subject area (Rome, English chronicle matter, the gods) does — the pattern basis keeps the distinction visible; and a cluster dominated by one work is not excluded for that reason but re-checked without that work (see Genre comparison). '
                    'Each topic page shows the classification, its basis, the review status and the notes; the drafts before and after the review are kept in the repository (<code>ab_spelling/drafts_masked_hdb10/</code>).</p>'
                    % (n_read, len(topics), ', '.join(f'{n} {E(CAT_LABEL.get(c, c))}' for c, n in sorted(use_counts.items(), key=lambda kv: -kv[1])),
@@ -552,18 +583,21 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
     # ---------------- landing ----------------
     n_out = sum(1 for c in ids if labels[c] == -1)
     n_cmp = sum(len(groups[c]) for c in use_cats); n_inc = len(groups['included']); n_cand = len(groups['candidate'])
+    w_fit = sum(int(cmap[c]['len_B_words']) for c in ids if in_fit[c]); inc_share = sum(int(sheet[t]['words']) for t in groups['included']) / w_fit if w_fit else 0.0
     page = (head('Home') + mast('', 'index.html')
             + f'<h1>{E(a.title)}</h1><p class="lede">A topic map of early modern English drama, built from ~500-word chunks of every play in the corpus: what each stretch of a play is about, which of those concerns recur across works, and how they are distributed across genres. Every number on the site leads back to the chunks it was computed from.</p>'
             + f'<div class="facts"><div class="f"><b>{len(ids):,}</b><i>chunks</i></div>' + (f'<div class="f"><b>{n_fit:,}</b><i>in the model (one edition per work); {n_placed:,} placed from other editions</i></div>' if n_placed else '') + f'<div class="f"><b>{len(ed_chunks)}</b><i>editions</i></div><div class="f"><b>{n_works}</b><i>works</i></div><div class="f"><b>{len(topics)}</b><i>topics</i></div><div class="f"><b>{n_cmp}</b><i>in the genre comparison ({E(", ".join(use_cats))})</i></div><div class="f"><b>{n_inc} / {n_cand}</b><i>confirmed / candidate themes</i></div><div class="f"><b>{min(years)}–{max(years)}</b><i>publication years</i></div></div>'
             + '<div class="cards">'
             + ('<div class="card"><h3><a href="map.html">Interactive map</a></h3><div class="whence">Every chunk as a point, coloured by topic; filter by genre, publication decade, author, title, play type, company or theater (filters combine); click a point for its page.</div></div>' if not a.no_map else '')
             + '<div class="card"><h3><a href="plays.html">Plays</a></h3><div class="whence">Every edition with its chunks in order, topic composition, DEEP metadata and other editions of the same work; searchable.</div></div>'
-            + '<div class="card"><h3><a href="topics.html">Topics</a></h3><div class="whence">All clusters with keywords, works, typical chunks and full rosters — grouped into cross-work themes, single-work clusters and pending ones.</div></div>'
+            + '<div class="card"><h3><a href="topics.html">Topics</a></h3><div class="whence">All clusters with keywords, works, typical chunks and full rosters — grouped by the researcher\'s decision: in the genre comparison, context only, or pending.</div></div>'
             + ('<div class="card"><h3><a href="genre.html">Genre</a></h3><div class="whence">How the cross-work themes are distributed across comedy, tragedy, history, tragicomedy, moral, romance, pastoral and masque.</div></div>' if (out / 'genre.html').exists() else '')
             + '<div class="card"><h3><a href="methods.html">Methods</a></h3><div class="whence">Corpus, chunking, name masking, embedding model, representative editions, clustering and the choice of scheme, keywords, review, typicality and aggregation — with the parameters actually used.</div></div></div>'
             + '<h2>What a topic page shows</h2><p>The three keyword lists, the size of the cluster and how far it is concentrated in one work, its genre mix, the most typical chunk of each leading work, keyword-highlighted excerpts, and a sortable roster of every member chunk with its typicality.</p>'
             + '<h2>What a chunk page shows</h2><p>The play, author, publication year and Annals performance date, company and theater where DEEP records them, the topic with its typicality, then the full regularized text with the topic\'s distinguishing words marked and links to the previous and next chunk; the metadata table (edition, TCP and DEEP ids, node positions, topic in the other seeds) and the original spelling are folded below it.</p>'
-            + f'<h2>How to read the numbers</h2><p>{n_out:,} chunks ({100 * n_out / len(ids):.0f} %) are unassigned by HDBSCAN; they are counted in every denominator and never deleted. Roughly two thirds of the clusters gather the chunks of a single play or a single story; they are shown but kept out of the genre comparison, which uses only themes that recur across works.</p>' + foot())
+            + f'<h2>How to read the numbers</h2><p>Of the {len(topics)} clusters, {n_inc} are included in the genre comparison, {len(groups["pending"])} remain undecided after review, and {len(groups["contextual_only"])} are retained for context only. '
+              f'In the representative-edition sample, {n_out_fit:,} of {n_fit:,} chunks ({100 * n_out_fit / n_fit:.1f} %) are unassigned by HDBSCAN and remain in the denominator; the included topics account for {100 * inc_share:.1f} % of that sample\'s words. '
+              f'The other editions ({n_placed:,} chunks, {n_out - n_out_fit:,} of them unassigned) remain available for browsing but do not contribute to these statistics. No chunk is ever deleted.</p>' + foot())
     (out / 'index.html').write_text(page, encoding='utf-8')
     total = sum(f.stat().st_size for f in out.rglob('*') if f.is_file())
     print(f'site → {out}: {n_pages} chunk pages, {len(ed_chunks)} play pages, {len(topics)} topic pages; {total / 1e6:.0f} MB')

@@ -1,0 +1,22 @@
+{
+ "docs": 580,
+ "chunks": 17422,
+ "rule": "target 500 words, allowed 400-600, measured on B, cuts at node boundaries, DP-balanced",
+ "boundaries_from": "/Users/grace/Documents/Claude/Projects/topic modeling/renaissance_drama_corpus_v3/../sep6/new_pipeline/out_corpus/corpus-v3-2026-09-08/kept_nodes.csv",
+ "long_nodes_split": 23,
+ "long_nodes_unsplit": 0,
+ "short_docs": 2,
+ "chunks_under_min": 46,
+ "chunks_over_max": 0,
+ "words_min": 63,
+ "words_p10": 472,
+ "words_median": 495,
+ "words_p90": 518,
+ "words_max": 600,
+ "tokenizer": "Qwen/Qwen3-Embedding-0.6B",
+ "tokens_median": 658,
+ "tokens_p99": 774,
+ "tokens_max": 971,
+ "chunks_over_max_tokens": 0,
+ "max_tokens": 2048
+}

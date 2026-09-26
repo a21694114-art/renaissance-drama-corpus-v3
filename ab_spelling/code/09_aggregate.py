@@ -33,7 +33,7 @@ sensitivity_dominant_work.csv (selected topics in which one work holds >= --sens
 topic's words, recomputed without that work: highest genre / ratio / p with and without, verdict),
 heatmap_selected_topics.png (sqrt colour scale), heatmap_prevalence.png, aggregate_summary.md.
 """
-import argparse, csv, json, math
+import argparse, csv, json, math, sys
 from collections import Counter, defaultdict
 from pathlib import Path
 import numpy as np
@@ -82,6 +82,8 @@ def main():
     if a.deep and Path(a.deep).exists():
         dg = {r['edition_id']: (r.get('genre_annals_filter') or '').strip().lower() for r in csv.DictReader(open(a.deep, encoding='utf-8-sig'))}
         annals_of = {e: ('' if v in ('', 'n/a') or v.startswith('not in') or v.isdigit() else v) for e, v in dg.items()}
+    else:
+        print('WARNING: no DEEP export given or file missing (--deep) → the Annals fallback is skipped; works whose British Drama label is compound or missing stay in other/multi, so the genre groups differ from the published analysis (35 works placed by Annals there).', file=sys.stderr)
 
     # edition level
     ed_words = Counter(); ed_topic = defaultdict(Counter); ed_cat = defaultdict(Counter); ed_info = {}

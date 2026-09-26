@@ -22,6 +22,8 @@
 #                                       # runs_<model>_masked_<scheme>/ each with seeds 42 43 44, then one table: runs_<model>_masked/compare_schemes.md
 #   bash ab_spelling/run_b.sh compare   # only recompute that table from the existing scheme dirs (16_compare_schemes.py)
 #   B_RUNS_SUFFIX=masked_km50 bash ab_spelling/run_b.sh sample [5]   # reading sample: centre + edge chunks of N random clusters (17_sample_clusters.py)
+#   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh freeze   # copy the small result files that let a reader trace the published analysis
+#                                       # (doc_topics, run.json, topic_sheet.csv, aggregate tables, chunk map/meta, environment) into ab_spelling/results_<suffix>/
 #   B_RUNS_SUFFIX=masked bash ab_spelling/run_b.sh sheet|review|pack|aggregate|genrefig|figures|map|site   # run any later step on that second run
 #                                       # (its drafts / decisions live in ab_spelling/drafts_masked/)
 #                                       # B_SITE_OUT, B_REPO_URL, B_CREDIT override the output folder, the GitHub link and the footer credit
@@ -57,6 +59,18 @@ else
   CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG$RUNS_SUFFIX"; SEEDS="42 43 44"; LIMIT=""; MINDF=""
 fi
 SEED="${B_SEED:-42}"
+if [ "$MODE" = "freeze" ]; then
+  CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG$RUNS_SUFFIX"; D="$RUNS/topics_B_s$SEED"; RES="$REPO/ab_spelling/results$RUNS_SUFFIX"
+  mkdir -p "$RES/topics_B_s$SEED/aggregate" "$RES/chunks_w500"
+  for f in doc_topics.csv run.json topic_sheet.csv topic_sheet_coverage.csv top_words_uniform10.csv secondary_editions_placed.csv; do [ -f "$D/$f" ] && cp "$D/$f" "$RES/topics_B_s$SEED/"; done
+  for f in config.json genre_assignment.csv genre_coverage.csv genre_topic_mean.csv genre_topic_conditional.csv kruskal_by_topic.csv sensitivity_dominant_work.csv other_multi_works.csv work_topic_share.csv aggregate_summary.md; do [ -f "$D/aggregate/$f" ] && cp "$D/aggregate/$f" "$RES/topics_B_s$SEED/aggregate/"; done
+  for f in chunk_map.csv chunk_meta.csv chunk_map_summary.json name_mask_summary.json name_mask_report.csv; do [ -f "$CH/$f" ] && cp "$CH/$f" "$RES/chunks_w500/"; done
+  [ -f "$RUNS/embedding_B.json" ] && cp "$RUNS/embedding_B.json" "$RES/"
+  [ -f "$RUNS/compare_schemes.md" ] && cp "$RUNS/compare_schemes.md" "$RES/"; [ -f "$RUNS/compare_schemes.csv" ] && cp "$RUNS/compare_schemes.csv" "$RES/"
+  { echo "python $(python --version 2>&1)"; echo "platform $(uname -sm)"; echo "frozen $(date -u +%Y-%m-%dT%H:%MZ) from $RUNS seed $SEED"; echo; pip freeze; } > "$RES/environment.txt"
+  echo "== frozen result files → $RES  (not included: embeddings, chunk texts, cast lists, the DEEP export)"; exit 0
+fi
+
 if [ "$MODE" = "sheet" ]; then
   CH="$OUT_ROOT/chunks_w500"; RUNS="$OUT_ROOT/runs_$SLUG$RUNS_SUFFIX"
   python "$CODE/08_topic_sheet.py" --chunks "$CH" --runs "$RUNS" --seed "$SEED" --model "$MODEL" --drafts "$DRAFTS_DIR/topic_drafts_B_s$SEED.csv"

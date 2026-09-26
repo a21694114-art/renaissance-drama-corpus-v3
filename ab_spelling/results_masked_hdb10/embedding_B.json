@@ -1,0 +1,18 @@
+{
+ "variant": "B",
+ "model": "Qwen/Qwen3-Embedding-0.6B",
+ "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+ "device": "mps",
+ "batch_size": 8,
+ "max_seq_length": 2048,
+ "normalized": false,
+ "n_chunks": 17422,
+ "dim": 1024,
+ "elapsed_seconds": 6.4,
+ "ids_sha256": "721b7d8bd13500d7991e28bea986cc2ac550b8e65b763e02b5217ea469a64547",
+ "limit": 0,
+ "text_file": "chunks_B_masked.csv",
+ "text_sha256": "39483f305a7a063b0b07dcdc2a44b151d4b2a0229ed2677bcdb38328129c8ab2",
+ "reused_from": "/Users/grace/Documents/Claude/Projects/topic modeling/renaissance_drama_corpus_v3/../sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked",
+ "n_recomputed": 32
+}
