@@ -23,7 +23,19 @@ EEBO-TCP XML (469 files) + DEEP metadata
    ▼  5. spelling regularization — align to EarlyPrint, apply its `reg` (separate view)
    ▼
 texts_analysis_en/  ·  texts_analysis_en_reg/  ·  supplementary/  ·  manifests
+   │
+   ▼  6. chunking — ~500-word chunks cut at node / sentence ends (17,422)         ab_spelling/
+   ▼  7. name masking — character names → "someone", play by play, from cast lists
+   ▼  8. embedding — Qwen3-Embedding-0.6B on the masked text
+   ▼  9. clustering — UMAP + HDBSCAN on one representative edition per work; K-means kept as a comparison
+   ▼ 10. review — keywords, AI drafts, workbook; every cluster read and classified by hand
+   ▼ 11. genre comparison — chunk → edition → work → genre; dominant-work check
+   ▼
+docs/  —  evidence site: map · topics · genre · plays · chunks · methods
 ```
+
+Steps 1–5 are documented below; steps 6–11 in `ab_spelling/README.md`, and the parameters actually
+used on the site's Methods page.
 
 ### 1. Sources
 
