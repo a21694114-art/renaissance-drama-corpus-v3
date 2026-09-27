@@ -1,0 +1,17 @@
+genre,variant,profile,n_shakespeare,n_others,jsd_bits,boot_ci_low,boot_ci_high,permutation_p,permutation_null_median,size_matched_median,size_matched_iqr
+comedy,attributed,conditional on the compared topics,11,140,0.2129,0.2191,0.4024,0.3596,0.196,0.3325,0.2972–0.3668
+comedy,attributed,compared topics + the rest as one bin,11,140,0.0696,0.071,0.1327,0.4625,0.0682,0.1076,0.0942–0.1254
+comedy,sole,conditional on the compared topics,11,140,0.2129,0.2151,0.3991,0.3187,0.1927,0.3391,0.2989–0.3777
+comedy,sole,compared topics + the rest as one bin,11,140,0.0696,0.0706,0.1332,0.4605,0.0678,0.1122,0.0999–0.1277
+tragedy,attributed,conditional on the compared topics,12,99,0.2773,0.2603,0.4983,0.1698,0.226,0.3679,0.3139–0.4345
+tragedy,attributed,compared topics + the rest as one bin,12,99,0.1099,0.1026,0.2116,0.2947,0.0971,0.1557,0.1277–0.1831
+tragedy,sole,conditional on the compared topics,8,99,0.35,0.3132,0.581,0.1798,0.2831,0.4706,0.3930–0.5702
+tragedy,sole,compared topics + the rest as one bin,8,99,0.1458,0.1229,0.2758,0.2547,0.1238,0.2008,0.1695–0.2389
+history,attributed,conditional on the compared topics,11,23,0.2948,0.2243,0.5194,0.1618,0.2385,0.3367,0.2920–0.3887
+history,attributed,compared topics + the rest as one bin,11,23,0.1099,0.0838,0.2107,0.2118,0.092,0.1275,0.1127–0.1451
+history,sole,conditional on the compared topics,6,23,0.2661,0.2289,0.5076,0.7822,0.3237,0.3815,0.3066–0.4625
+history,sole,compared topics + the rest as one bin,6,23,0.0946,0.0803,0.2004,0.8492,0.1234,0.1384,0.1117–0.1617
+tragicomedy,attributed,conditional on the compared topics,3,26,0.3407,0.2721,0.6018,0.5784,0.3579,0.5275,0.4542–0.6016
+tragicomedy,attributed,compared topics + the rest as one bin,3,26,0.1741,0.1123,0.41,0.1219,0.1309,0.2487,0.2242–0.2778
+romance,attributed,conditional on the compared topics,3,15,0.5971,0.5288,0.8398,0.3217,0.563,0.7129,0.6144–0.8089
+romance,attributed,compared topics + the rest as one bin,3,15,0.1376,0.1052,0.2388,0.4486,0.1338,0.1639,0.1313–0.1953

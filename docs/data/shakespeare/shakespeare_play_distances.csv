@@ -1,0 +1,41 @@
+work_id,title,author,year_first,genre_main,shakespeare,compared_topics_share_of_words,nearest_genre,own_genre_tested,d_comedy,d_tragedy,d_history,d_tragicomedy,d_moral,d_romance,d_pastoral,d_masque,comedy_lean,comedy_lean_with_rest_bin,comedy_lean_percentile_in_genre
+170,A Midsummer Night's Dream,"Shakespeare, William",1600,comedy,yes,0.3674,pastoral,yes,0.7841,0.9154,0.9722,0.8967,0.9455,0.8019,0.4038,0.7709,,,
+394,As You Like It,"Shakespeare, William",1623,comedy,yes,0.5462,pastoral,yes,0.5711,0.7263,0.8561,0.6705,0.8617,0.5923,0.5049,0.6869,,,
+150,Love's Labor's Lost,"Shakespeare, William",1598,comedy,yes,0.2999,romance,yes,0.6661,0.5879,0.7246,0.6441,0.7482,0.576,0.6311,0.7943,,,
+168,Much Ado About Nothing,"Shakespeare, William",1600,comedy,yes,0.5003,tragicomedy,yes,0.4735,0.5285,0.6219,0.4319,0.8368,0.5331,0.5972,0.7977,,,
+393,The Comedy of Errors,"Shakespeare, William",1623,comedy,yes,0.3745,comedy,yes,0.562,0.767,0.7616,0.6227,0.7851,0.7593,0.9072,0.8807,,,
+172,The Merchant of Venice (The Jew of Venice),"Shakespeare, William",1600,comedy,yes,0.3839,tragicomedy,yes,0.5225,0.599,0.643,0.3704,0.7715,0.5788,0.7605,0.9238,,,
+187,The Merry Wives of Windsor,"Shakespeare, William",1623,comedy,yes,0.1873,comedy,yes,0.7225,0.8915,0.9465,0.8033,0.8606,0.8238,0.7468,0.9133,,,
+120.5,The Taming of the Shrew,"Shakespeare, William",1623,comedy,yes,0.149,comedy,yes,0.7482,0.9116,0.9559,0.8345,0.8192,0.8977,0.9395,0.9713,,,
+390,The Tempest,"Shakespeare, William",1623,comedy,yes,0.2411,masque,yes,0.7059,0.7438,0.8024,0.6527,0.9004,0.8054,0.7304,0.6097,,,
+391,The Two Gentlemen of Verona,"Shakespeare, William",1623,comedy,yes,0.1723,pastoral,yes,0.6388,0.7283,0.7839,0.5888,0.8749,0.5423,0.5196,0.7852,,,
+396,"Twelfth Night, or What You Will","Shakespeare, William",1623,comedy,yes,0.0775,comedy,yes,0.8247,0.9579,0.9722,0.9257,0.8778,0.969,1.0,0.889,,,
+145,1 Henry the Fourth,"Shakespeare, William",1598,history,yes,0.2075,history,yes,0.8569,0.835,0.5417,0.798,0.8229,0.7638,0.9099,1.0,0.3152,0.0698,57.6
+399,1 Henry the Sixth,"AnonymousMarlowe, ChristopherShakespeare, WilliamNashe, Thomas",1623,history,yes,0.5518,history,yes,0.997,0.9438,0.5829,1.0,1.0,0.8768,1.0,1.0,0.4141,0.1645,81.8
+167,2 Henry the Fourth,"Shakespeare, William",1600,history,yes,0.2137,romance,yes,0.7746,0.8651,0.6284,0.7121,0.9473,0.5702,0.8929,0.8872,0.1463,0.0264,27.3
+119,2 Henry the Sixth (The First Part of the Contention betwixt the Two Famous Houses of York and Lancaster),"AnonymousMarlowe, ChristopherShakespeare, William",1600,history,yes,0.3427,history,yes,0.8166,0.7099,0.2959,0.723,0.9206,0.673,0.9149,1.0,0.5208,0.1739,93.9
+138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),"AnonymousMarlowe, ChristopherShakespeare, William",1623,history,yes,0.3826,history,yes,0.7732,0.6993,0.5433,0.728,0.9195,0.7575,0.919,1.0,0.2299,0.0752,48.5
+400,Henry the Eighth (All Is True),"Shakespeare, WilliamFletcher, John",1623,history,yes,0.3107,history,yes,0.8876,0.8611,0.7045,0.8228,0.9304,0.8792,0.9897,1.0,0.1831,0.0492,30.3
+165,Henry the Fifth,"Shakespeare, William",1600,history,yes,0.4792,history,yes,0.8825,0.8268,0.4998,0.8844,0.8875,0.7601,1.0,0.9816,0.3826,0.1465,75.8
+398,King John,"Shakespeare, William",1623,history,yes,0.5556,history,yes,0.8939,0.7329,0.4234,0.7811,0.8876,0.7789,0.8864,0.9804,0.4705,0.1959,87.9
+141,Richard the Second,"Shakespeare, William",1597,history,yes,0.1678,tragicomedy,yes,0.694,0.6302,0.6789,0.5593,0.9021,0.7398,0.8959,0.9673,0.0151,-0.0108,21.2
+142,Richard the Third,"Shakespeare, William",1623,history,yes,0.3385,tragicomedy,yes,0.6123,0.5506,0.41,0.407,0.8581,0.5462,0.8781,0.9138,0.2023,0.0625,36.4
+140,The Reign of King Edward the Third,"AnonymousShakespeare, William",1596,history,yes,0.493,history,yes,0.8917,0.8199,0.6399,0.8586,0.9419,0.7364,0.8339,0.947,0.2518,0.0911,51.5
+406,"Cymbeline, King of Britain","Shakespeare, William",1623,romance,yes,0.3523,tragedy,yes,0.7608,0.5272,0.7626,0.6335,0.8736,0.7136,0.7542,0.8186,0.0472,0.0446,61.1
+284,"Pericles, Prince of Tyre","Shakespeare, WilliamWilkins, George",1609,romance,yes,0.0848,pastoral,yes,0.8278,0.7971,0.9181,0.7873,0.9487,0.8085,0.7836,0.8536,0.0193,0.0515,50.0
+397,The Winter's Tale,"Shakespeare, William",1623,romance,yes,0.1958,tragicomedy,yes,0.6916,0.7225,0.7004,0.614,0.71,0.6869,0.8048,0.7931,0.0047,0.0383,38.9
+405,Antony and Cleopatra,"Shakespeare, William",1623,tragedy,yes,0.2103,tragedy,yes,0.9025,0.6396,0.8496,0.7934,1.0,0.8027,0.9694,0.9842,0.2629,0.0405,78.4
+401,Coriolanus,"Shakespeare, William",1623,tragedy,yes,0.6851,tragedy,yes,0.9455,0.6759,0.9273,0.9267,0.9832,0.8624,0.9922,0.9761,0.2696,0.1118,81.1
+197,"Hamlet, Prince of Denmark","Shakespeare, William",1623,tragedy,yes,0.2542,tragicomedy,yes,0.733,0.6095,0.7833,0.5728,0.7867,0.7386,0.7629,0.8911,0.1235,0.0065,50.5
+403,Julius Caesar,"Shakespeare, William",1623,tragedy,yes,0.5855,tragedy,yes,0.9077,0.6074,0.8786,0.8616,0.9593,0.8323,0.9415,0.9782,0.3003,0.1194,86.5
+265,King Lear,"Shakespeare, William",1608,tragedy,yes,0.226,tragicomedy,yes,0.5754,0.582,0.7112,0.4239,0.8508,0.7453,0.8432,0.9714,-0.0065,-0.0346,18.0
+404,Macbeth,"Shakespeare, WilliamMiddleton, Thomas",1623,tragedy,yes,0.2118,history,yes,0.7767,0.7028,0.6239,0.6952,0.8527,0.6714,0.7412,0.8648,0.074,-0.0167,38.7
+107,Master Arden of Faversham in Kent,"AnonymousKyd, ThomasShakespeare, WilliamWatson, Thomas",1592,tragedy,yes,0.1757,pastoral,yes,0.7579,0.649,0.8402,0.5501,0.8732,0.6742,0.5366,0.8897,0.1089,-0.0082,46.8
+379,"Othello, the Moor of Venice","Shakespeare, William",1623,tragedy,yes,0.251,tragicomedy,yes,0.5565,0.5456,0.6758,0.3898,0.7124,0.6011,0.6717,0.8729,0.011,-0.0251,24.3
+143,Romeo and Juliet,"Shakespeare, William",1623,tragedy,yes,0.3491,pastoral,yes,0.7,0.8076,0.807,0.7167,0.9139,0.6833,0.5751,0.8581,-0.1076,-0.0684,5.4
+402,Timon of Athens,"Shakespeare, WilliamMiddleton, Thomas",1623,tragedy,yes,0.2294,moral,yes,0.8033,0.9581,0.9137,0.9249,0.7031,0.9109,0.9799,0.955,-0.1548,-0.0897,2.7
+117,Titus Andronicus,"Peele, GeorgeShakespeare, William",1594,tragedy,yes,0.3919,tragedy,yes,0.8735,0.503,0.8457,0.7392,0.9246,0.7696,0.8987,0.9688,0.3705,0.1196,98.2
+279,Troilus and Cressida,"Shakespeare, William",1623,tragedy,yes,0.7143,pastoral,yes,0.8589,0.8106,0.9521,0.9323,0.8851,0.8257,0.7849,0.8554,0.0483,0.009,30.6
+395,All's Well That Ends Well,"Shakespeare, WilliamMiddleton, Thomas",1623,tragicomedy,yes,0.4807,comedy,yes,0.5386,0.7041,0.7917,0.5707,0.9164,0.6577,0.8856,0.9203,-0.032,-0.0137,6.9
+392,Measure for Measure,"Shakespeare, WilliamMiddleton, Thomas",1623,tragicomedy,yes,0.7439,tragicomedy,yes,0.6139,0.6016,0.592,0.592,0.7164,0.7039,0.8709,0.9371,0.022,0.0252,13.8
+492,The Two Noble Kinsmen,"Shakespeare, WilliamFletcher, John",1634,tragicomedy,yes,0.4124,tragicomedy,yes,0.4126,0.4519,0.694,0.3369,0.7347,0.4782,0.5329,0.699,0.0757,0.0299,34.5

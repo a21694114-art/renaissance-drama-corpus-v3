@@ -1,0 +1,3 @@
+genre,author,work_id,title,author_field,deep_authors_display,role,effect
+tragedy,"Seneca, Lucius Annaeus",45,Octavia (Seneca's Ninth Tragedy),"Seneca, Lucius Annaeus / Nuce, Thomas / Pseudo-Seneca","Nuce, Thomas, trans.; Pseudo-Seneca",unresolved (name not in DEEP authors_display),"held out of Seneca, Lucius Annaeus's comparison in tragedy (A would be 10 with it; B unchanged)"
+tragedy,"Sidney Herbert, Mary",108,Antonius (Antony),"Herbert, Mary Sidney / Garnier, Robert / Sidney Herbert, Mary","Herbert, Mary Sidney, trans.; Garnier, Robert",unresolved (name not in DEEP authors_display),author not eligible anyway

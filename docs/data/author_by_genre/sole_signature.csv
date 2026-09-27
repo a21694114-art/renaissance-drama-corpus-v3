@@ -1,0 +1,11 @@
+genre,author,n_sole_works,n_B,mean_included_share_sole,mean_included_share_B,jsd_cond_bits,jsd_rest_bits,jsd_cond_bits_all_signatures,jsd_rest_bits_all_signatures
+comedy,"Chapman, George",6,144,0.3317,0.3441,0.2367,0.0797,0.2347,0.0765
+comedy,"Dekker, Thomas",5,141,0.3696,0.3456,0.3097,0.1118,0.2115,0.069
+comedy,"Jonson, Ben",14,136,0.3814,0.3397,0.2372,0.087,0.2348,0.0839
+comedy,"Lyly, John",7,144,0.3611,0.3416,0.5228,0.1843,0.5228,0.1843
+comedy,"Marston, John",5,145,0.2958,0.3452,0.371,0.1182,0.315,0.0987
+comedy,"Middleton, Thomas",8,141,0.3522,0.3432,0.3129,0.109,0.2687,0.0909
+comedy,"Shakespeare, William",11,140,0.2999,0.3459,0.2129,0.0696,0.2129,0.0696
+comedy,"Shirley, James",15,135,0.426,0.3335,0.2858,0.115,0.2598,0.1032
+tragedy,"Shakespeare, William",8,99,0.4094,0.4258,0.35,0.1458,0.2773,0.1099
+history,"Shakespeare, William",6,23,0.327,0.3787,0.2661,0.0946,0.2948,0.1099

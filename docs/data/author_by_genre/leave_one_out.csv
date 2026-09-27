@@ -1,0 +1,148 @@
+genre,author,dropped_work_id,dropped_title,n_A_after,jsd_cond_bits,delta_cond,jsd_rest_bits,delta_rest
+comedy,"Chapman, George",219,All Fools,6,0.2788,0.0441,0.0886,0.0121
+comedy,"Chapman, George",217,Eastward Ho,6,0.2367,0.002,0.0797,0.0032
+comedy,"Chapman, George",297,May Day,6,0.2258,-0.0089,0.0725,-0.004
+comedy,"Chapman, George",228,Sir Giles Goosecap,6,0.2379,0.0032,0.0804,0.0039
+comedy,"Chapman, George",146,The Blind Beggar of Alexandria (Irus),6,0.2553,0.0206,0.0833,0.0068
+comedy,"Chapman, George",226,The Gentleman Usher (Vincentio and Margaret),6,0.2754,0.0407,0.0866,0.0101
+comedy,"Chapman, George",301,The Widow's Tears,6,0.2739,0.0392,0.0915,0.015
+comedy,"Dekker, Thomas",204,1 The Honest Whore (1 The Converted Courtesan) (The Patient Man and the Honest Whore),9,0.2314,0.0198,0.0749,0.0059
+comedy,"Dekker, Thomas",435,2 The Honest Whore (2 The Converted Courtesan),9,0.2159,0.0043,0.0703,0.0013
+comedy,"Dekker, Thomas",305,"If It Be Not Good, the Devil Is in It (If This Be Not a Good Play, the Devil Is in It)",9,0.2062,-0.0054,0.0661,-0.0029
+comedy,"Dekker, Thomas",250,Northward Ho,9,0.223,0.0115,0.0728,0.0038
+comedy,"Dekker, Thomas",198,Patient Grissel,9,0.2366,0.0251,0.0787,0.0096
+comedy,"Dekker, Thomas",195,"Satiromastix, or The Untrussing of the Humorous Poet",9,0.2264,0.0149,0.0735,0.0045
+comedy,"Dekker, Thomas",298,"The Roaring Girl, or Moll Cutpurse",9,0.2184,0.0069,0.0722,0.0032
+comedy,"Dekker, Thomas",175,"The Shoemaker's Holiday, or The Gentle Craft",9,0.217,0.0055,0.0727,0.0037
+comedy,"Dekker, Thomas",508,The Wonder of A Kingdom,9,0.2492,0.0377,0.0797,0.0107
+comedy,"Dekker, Thomas",257,Westward Ho,9,0.2264,0.0149,0.0743,0.0053
+comedy,"Fletcher, John",558,Monsieur Thomas (Father's Own Son),5,0.2538,0.0833,0.0892,0.0306
+comedy,"Fletcher, John",598,Rule a Wife and Have a Wife,5,0.1532,-0.0173,0.0526,-0.006
+comedy,"Fletcher, John",515,The Elder Brother,5,0.1938,0.0233,0.0682,0.0096
+comedy,"Fletcher, John",574,"The Night Walker, or The Little Thief",5,0.2253,0.0547,0.0785,0.0199
+comedy,"Fletcher, John",334,The Scornful Lady,5,0.2297,0.0591,0.0777,0.0191
+comedy,"Fletcher, John",245,The Woman Hater (The Hungry Courtier),5,0.2344,0.0639,0.0778,0.0192
+comedy,"Jonson, Ben",617,A Tale of a Tub,14,0.2126,-0.0222,0.0729,-0.0111
+comedy,"Jonson, Ben",455,Bartholomew Fair,14,0.2409,0.0061,0.0872,0.0033
+comedy,"Jonson, Ben",181,"Cynthia's Revels, or The Fountain of Self-Love",14,0.2442,0.0094,0.0874,0.0035
+comedy,"Jonson, Ben",217,Eastward Ho,14,0.2372,0.0024,0.087,0.0031
+comedy,"Jonson, Ben",304,"Epicene, or The Silent Woman",14,0.2351,0.0003,0.0858,0.0018
+comedy,"Jonson, Ben",163,Every Man Out of His Humor,14,0.2399,0.0051,0.0866,0.0027
+comedy,"Jonson, Ben",176,Every Man in His Humor,14,0.2423,0.0075,0.0871,0.0031
+comedy,"Jonson, Ben",186,"Poetaster, or The Arraignment",14,0.2343,-0.0005,0.0803,-0.0037
+comedy,"Jonson, Ben",303,The Alchemist,14,0.2352,0.0004,0.0839,-0.0
+comedy,"Jonson, Ben",281,The Case Is Altered,14,0.2591,0.0243,0.0934,0.0095
+comedy,"Jonson, Ben",457,The Devil Is an Ass,14,0.2624,0.0276,0.0919,0.0079
+comedy,"Jonson, Ben",616,"The Magnetic Lady, or Humors Reconciled",14,0.2324,-0.0024,0.0811,-0.0029
+comedy,"Jonson, Ben",442,"The New Inn, or The Light Heart",14,0.2436,0.0088,0.09,0.0061
+comedy,"Jonson, Ben",456,The Staple of News,14,0.2467,0.0119,0.0896,0.0057
+comedy,"Jonson, Ben",259,"Volpone, or The Fox",14,0.2515,0.0167,0.0905,0.0066
+comedy,"Lyly, John",84,"Campaspe (Alexander, Campaspe, and Diogenes)",6,0.5214,-0.0013,0.1883,0.004
+comedy,"Lyly, John",99,"Endymion, the Man in the Moon",6,0.5242,0.0015,0.2014,0.0171
+comedy,"Lyly, John",105,Gallathea,6,0.4885,-0.0342,0.1667,-0.0176
+comedy,"Lyly, John",106,Midas,6,0.5516,0.0288,0.1893,0.005
+comedy,"Lyly, John",125,Mother Bombie,6,0.6339,0.1112,0.2201,0.0358
+comedy,"Lyly, John",82,Sappho and Phao,6,0.5528,0.03,0.1908,0.0065
+comedy,"Lyly, John",144,The Woman in the Moon,6,0.5111,-0.0117,0.1785,-0.0058
+comedy,"Marston, John",184,Antonio and Mellida,5,0.3045,-0.0105,0.094,-0.0046
+comedy,"Marston, John",217,Eastward Ho,5,0.371,0.056,0.1182,0.0196
+comedy,"Marston, John",177,Jack Drum's Entertainment (Katherine and Pasquil),5,0.3528,0.0378,0.1077,0.009
+comedy,"Marston, John",230,"Parasitaster, or The Fawn",5,0.3531,0.0381,0.1106,0.0119
+comedy,"Marston, John",214,The Dutch Courtesan (Cockle de Moye),5,0.3572,0.0422,0.1118,0.0132
+comedy,"Marston, John",252,What You Will,5,0.3146,-0.0004,0.0995,0.0009
+comedy,"Middleton, Thomas",204,1 The Honest Whore (1 The Converted Courtesan) (The Patient Man and the Honest Whore),9,0.3164,0.0477,0.1067,0.0158
+comedy,"Middleton, Thomas",433,A Chaste Maid in Cheapside,9,0.2871,0.0184,0.0993,0.0084
+comedy,"Middleton, Thomas",412,A Game at Chess,9,0.2855,0.0168,0.1005,0.0096
+comedy,"Middleton, Thomas",276,"A Mad World, My Masters",9,0.3263,0.0576,0.1083,0.0174
+comedy,"Middleton, Thomas",262,A Trick to Catch the Old One,9,0.2397,-0.029,0.0784,-0.0124
+comedy,"Middleton, Thomas",244,Michaelmas Term,9,0.2861,0.0174,0.1003,0.0095
+comedy,"Middleton, Thomas",243,The Phoenix,9,0.2774,0.0087,0.0907,-0.0002
+comedy,"Middleton, Thomas",251,"The Puritan, or The Widow of Watling Street (The Puritan Widow)",9,0.2442,-0.0244,0.0803,-0.0105
+comedy,"Middleton, Thomas",298,"The Roaring Girl, or Moll Cutpurse",9,0.2654,-0.0033,0.0924,0.0016
+comedy,"Middleton, Thomas",266,Your Five Gallants (The Five Witty Gallants),9,0.2588,-0.0099,0.088,-0.0028
+comedy,"Shakespeare, William",170,A Midsummer Night's Dream,10,0.2043,-0.0086,0.0663,-0.0034
+comedy,"Shakespeare, William",394,As You Like It,10,0.2295,0.0166,0.0736,0.0039
+comedy,"Shakespeare, William",150,Love's Labor's Lost,10,0.2141,0.0012,0.07,0.0004
+comedy,"Shakespeare, William",168,Much Ado About Nothing,10,0.2344,0.0216,0.0755,0.0059
+comedy,"Shakespeare, William",393,The Comedy of Errors,10,0.2247,0.0118,0.0731,0.0035
+comedy,"Shakespeare, William",172,The Merchant of Venice (The Jew of Venice),10,0.222,0.0091,0.0722,0.0026
+comedy,"Shakespeare, William",187,The Merry Wives of Windsor,10,0.2328,0.0199,0.0767,0.0071
+comedy,"Shakespeare, William",120.5,The Taming of the Shrew,10,0.2526,0.0397,0.0835,0.0139
+comedy,"Shakespeare, William",390,The Tempest,10,0.2206,0.0077,0.0725,0.0028
+comedy,"Shakespeare, William",391,The Two Gentlemen of Verona,10,0.2095,-0.0033,0.0693,-0.0003
+comedy,"Shakespeare, William",396,"Twelfth Night, or What You Will",10,0.2197,0.0068,0.0735,0.0038
+comedy,"Shirley, James",462,"Changes, or Love in a Maze",15,0.2691,0.0093,0.1094,0.0062
+comedy,"Shirley, James",517,Hyde Park,15,0.2651,0.0053,0.108,0.0048
+comedy,"Shirley, James",549,The Ball,15,0.262,0.0022,0.1067,0.0035
+comedy,"Shirley, James",479,The Bird in a Cage (The Beauties),15,0.2498,-0.01,0.0998,-0.0034
+comedy,"Shirley, James",592,The Constant Maid (Love Will Find Out the Way),15,0.2748,0.015,0.1123,0.0091
+comedy,"Shirley, James",521,The Example,15,0.2696,0.0098,0.1108,0.0076
+comedy,"Shirley, James",523,The Gamester,15,0.2698,0.01,0.1083,0.0051
+comedy,"Shirley, James",429,The Grateful Servant (The Faithful Servant),15,0.2485,-0.0113,0.0969,-0.0063
+comedy,"Shirley, James",577,The Humorous Courtier (The Duke),15,0.246,-0.0138,0.0932,-0.01
+comedy,"Shirley, James",518,The Lady of Pleasure,15,0.2815,0.0217,0.1114,0.0082
+comedy,"Shirley, James",574,"The Night Walker, or The Little Thief",15,0.2858,0.026,0.115,0.0119
+comedy,"Shirley, James",575,The Opportunity,15,0.2317,-0.0281,0.0857,-0.0175
+comedy,"Shirley, James",538,The Royal Master,15,0.2513,-0.0085,0.0952,-0.008
+comedy,"Shirley, James",441,The School of Compliment (Love Tricks),15,0.2772,0.0174,0.1114,0.0082
+comedy,"Shirley, James",425,The Wedding,15,0.2774,0.0176,0.1102,0.007
+comedy,"Shirley, James",477,The Witty Fair One,15,0.2764,0.0166,0.1104,0.0072
+tragedy,"Chapman, George",246,Bussy D'Ambois,4,0.2344,0.0212,0.0917,0.0073
+tragedy,"Chapman, George",444,Caesar and Pompey (The Wars of Caesar and Pompey),4,0.3066,0.0934,0.1171,0.0327
+tragedy,"Chapman, George",550,"Chabot, Admiral of France",4,0.2094,-0.0038,0.0834,-0.0009
+tragedy,"Chapman, George",307,The Revenge of Bussy D'Ambois,4,0.2486,0.0354,0.0969,0.0125
+tragedy,"Chapman, George",275,The Tragedy of Charles Duke of Byron,4,0.3164,0.1032,0.1193,0.0349
+tragedy,"Marlowe, Christopher",94,1 Tamburlaine the Great,5,0.4693,-0.0242,0.1925,-0.0271
+tragedy,"Marlowe, Christopher",95,2 Tamburlaine the Great,5,0.5022,0.0087,0.2232,0.0035
+tragedy,"Marlowe, Christopher",128,"Dido, Queen of Carthage",5,0.5889,0.0953,0.2525,0.0329
+tragedy,"Marlowe, Christopher",205,Doctor Faustus,5,0.5328,0.0393,0.2396,0.0199
+tragedy,"Marlowe, Christopher",475,The Jew of Malta,5,0.5445,0.051,0.2521,0.0325
+tragedy,"Marlowe, Christopher",133,The Massacre at Paris,5,0.4884,-0.0051,0.2352,0.0155
+tragedy,"Massinger, Philip",565,"The Bloody Brother (Rollo, Duke of Normandy)",5,0.4143,0.0101,0.1606,0.0015
+tragedy,"Massinger, Philip",386,The Duke of Milan,5,0.4416,0.0375,0.1656,0.0065
+tragedy,"Massinger, Philip",464,The Fatal Dowry,5,0.4266,0.0225,0.1715,0.0124
+tragedy,"Massinger, Philip",559,The Unnatural Combat,5,0.4069,0.0028,0.1661,0.007
+tragedy,"Massinger, Philip",380,The Virgin Martyr,5,0.4425,0.0384,0.1726,0.0136
+tragedy,"Massinger, Philip",368,Thierry and Theodoret,5,0.4038,-0.0004,0.1628,0.0037
+tragedy,"Middleton, Thomas",272,A Yorkshire Tragedy,4,0.5404,0.0304,0.2084,-0.0028
+tragedy,"Middleton, Thomas",404,Macbeth,4,0.562,0.0521,0.2498,0.0385
+tragedy,"Middleton, Thomas",567,The Bloody Banquet,4,0.554,0.0441,0.2424,0.0311
+tragedy,"Middleton, Thomas",253,The Revenger's Tragedy,4,0.6095,0.0996,0.2296,0.0183
+tragedy,"Middleton, Thomas",402,Timon of Athens,4,0.5037,-0.0062,0.2226,0.0114
+tragedy,"Seneca, Lucius Annaeus",42,Agamemnon (Seneca's Eighth Tragedy),8,0.6666,-0.0019,0.3423,0.0012
+tragedy,"Seneca, Lucius Annaeus",34,Hercules Furens (Mad Hercules) (Seneca's First Tragedy),8,0.6509,-0.0177,0.3218,-0.0193
+tragedy,"Seneca, Lucius Annaeus",81,Hercules Oetaeus (Hercules on Mount Oeta) (Seneca's Tenth Tragedy),8,0.6439,-0.0247,0.3135,-0.0276
+tragedy,"Seneca, Lucius Annaeus",80,Hippolytus (Seneca's Fourth Tragedy),8,0.6778,0.0092,0.3652,0.0241
+tragedy,"Seneca, Lucius Annaeus",44,Medea (Seneca's Seventh Tragedy),8,0.691,0.0224,0.3645,0.0234
+tragedy,"Seneca, Lucius Annaeus",36,Oedipus (Seneca's Fifth Tragedy),8,0.6867,0.0181,0.3562,0.0152
+tragedy,"Seneca, Lucius Annaeus",79,Thebais (Seneca's Third Tragedy),8,0.6827,0.0141,0.3553,0.0142
+tragedy,"Seneca, Lucius Annaeus",29,Thyestes (Seneca's Second Tragedy),8,0.6966,0.028,0.3616,0.0205
+tragedy,"Seneca, Lucius Annaeus",28,Troas (Seneca's Sixth Tragedy),8,0.6566,-0.0119,0.3116,-0.0295
+tragedy,"Shakespeare, William",405,Antony and Cleopatra,11,0.285,0.0078,0.114,0.0041
+tragedy,"Shakespeare, William",401,Coriolanus,11,0.266,-0.0113,0.1043,-0.0056
+tragedy,"Shakespeare, William",197,"Hamlet, Prince of Denmark",11,0.2985,0.0212,0.119,0.0091
+tragedy,"Shakespeare, William",403,Julius Caesar,11,0.2701,-0.0072,0.1061,-0.0038
+tragedy,"Shakespeare, William",265,King Lear,11,0.3025,0.0252,0.1208,0.0109
+tragedy,"Shakespeare, William",404,Macbeth,11,0.3059,0.0286,0.122,0.0122
+tragedy,"Shakespeare, William",107,Master Arden of Faversham in Kent,11,0.2865,0.0093,0.115,0.0051
+tragedy,"Shakespeare, William",379,"Othello, the Moor of Venice",11,0.3048,0.0276,0.1214,0.0115
+tragedy,"Shakespeare, William",143,Romeo and Juliet,11,0.2776,0.0003,0.11,0.0001
+tragedy,"Shakespeare, William",402,Timon of Athens,11,0.2727,-0.0045,0.109,-0.0009
+tragedy,"Shakespeare, William",117,Titus Andronicus,11,0.3102,0.0329,0.1221,0.0122
+tragedy,"Shakespeare, William",279,Troilus and Cressida,11,0.2941,0.0168,0.1143,0.0044
+history,"Heywood, Thomas",153,1 Edward the Fourth,4,0.3706,0.0562,0.1319,0.0184
+history,"Heywood, Thomas",215,"1 If You Know Not Me You Know Nobody, or The Troubles of Queen Elizabeth",4,0.2704,-0.044,0.0972,-0.0164
+history,"Heywood, Thomas",154,2 Edward the Fourth,4,0.4488,0.1344,0.1578,0.0443
+history,"Heywood, Thomas",224,2 If You Know Not Me You Know Nobody (The Second Part of Queen Elizabeth's Troubles),4,0.3101,-0.0043,0.1145,0.0009
+history,"Heywood, Thomas",256,The Famous History of Sir Thomas Wyatt,4,0.3603,0.0459,0.1322,0.0187
+history,"Shakespeare, William",145,1 Henry the Fourth,10,0.3148,0.02,0.1201,0.0102
+history,"Shakespeare, William",399,1 Henry the Sixth,10,0.2708,-0.024,0.0985,-0.0114
+history,"Shakespeare, William",167,2 Henry the Fourth,10,0.3176,0.0228,0.121,0.0112
+history,"Shakespeare, William",119,2 Henry the Sixth (The First Part of the Contention betwixt the Two Famous Houses of York and Lancaster),10,0.3101,0.0153,0.1159,0.0061
+history,"Shakespeare, William",138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),10,0.2875,-0.0073,0.1069,-0.0029
+history,"Shakespeare, William",400,Henry the Eighth (All Is True),10,0.3236,0.0288,0.1216,0.0117
+history,"Shakespeare, William",165,Henry the Fifth,10,0.2849,-0.0099,0.1046,-0.0053
+history,"Shakespeare, William",398,King John,10,0.2867,-0.0081,0.1043,-0.0056
+history,"Shakespeare, William",141,Richard the Second,10,0.3057,0.0109,0.1173,0.0075
+history,"Shakespeare, William",142,Richard the Third,10,0.3109,0.0161,0.1163,0.0065
+history,"Shakespeare, William",140,The Reign of King Edward the Third,10,0.273,-0.0218,0.1,-0.0098

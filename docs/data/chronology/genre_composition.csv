@@ -1,0 +1,17 @@
+decade,n_works,n_comedy,n_tragedy,n_other/multi,n_masque,n_history,n_tragicomedy,n_moral,n_romance,n_pastoral,n_interlude,composition_by_works,n_first_performance,n_composition,n_kind_unclear
+1490–1499,2,0,0,2,0,0,0,0,0,0,0,other/multi 2,2,0,0
+1500–1509,0,0,0,0,0,0,0,0,0,0,0,,0,0,0
+1510–1519,3,0,0,2,0,0,0,1,0,0,0,other/multi 2; moral 1,3,0,0
+1520–1529,7,1,0,6,0,0,0,0,0,0,0,other/multi 6; comedy 1,7,0,0
+1530–1539,4,1,0,2,0,0,0,1,0,0,0,other/multi 2; comedy 1; moral 1,4,0,0
+1540–1549,0,0,0,0,0,0,0,0,0,0,0,,0,0,0
+1550–1559,10,2,1,1,0,0,0,6,0,0,0,moral 6; comedy 2; other/multi 1; tragedy 1,9,1,0
+1560–1569,23,2,14,0,0,0,0,6,0,0,1,tragedy 14; moral 6; comedy 2; interlude 1,15,8,0
+1570–1579,11,2,1,3,1,0,0,4,0,0,0,moral 4; other/multi 3; comedy 2; masque 1; tragedy 1,8,1,2
+1580–1589,33,10,12,2,0,4,0,3,1,1,0,tragedy 12; comedy 10; history 4; moral 3; other/multi 2; pastoral 1; romance 1,31,2,0
+1590–1599,69,20,12,6,0,18,1,2,8,2,0,comedy 20; history 18; tragedy 12; romance 8; other/multi 6; moral 2; pastoral 2; tragicomedy 1,63,5,1
+1600–1609,113,45,29,10,7,6,6,3,4,3,0,comedy 45; tragedy 29; other/multi 10; masque 7; history 6; tragicomedy 6; romance 4; moral 3; pastoral 3,106,5,2
+1610–1619,81,20,19,20,11,3,3,0,3,2,0,comedy 20; other/multi 20; tragedy 19; masque 11; history 3; romance 3; tragicomedy 3; pastoral 2,79,2,0
+1620–1629,73,22,13,19,8,2,7,1,0,1,0,comedy 22; other/multi 19; tragedy 13; masque 8; tragicomedy 7; history 2; moral 1; pastoral 1,69,3,1
+1630–1639,84,26,9,17,10,1,12,1,2,6,0,comedy 26; other/multi 17; tragicomedy 12; masque 10; tragedy 9; pastoral 6; romance 2; history 1; moral 1,72,4,8
+1640–1649,2,0,1,0,1,0,0,0,0,0,0,masque 1; tragedy 1,1,0,1

@@ -29,6 +29,9 @@
 #                                       # tables only (no comparison, no merging of company names); needs the DEEP export (B_DEEP or the Dropbox default)
 #   B_A="Children of the Queen's Revels" B_B="Children of Paul's (second)" B_GENRE=comedy B_RELATED="A:Children of the Chapel (second)" \
 #     B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh company-pair   # work list + common period for one company pair within a genre (21) → aggregate/company/pair_*/
+#   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh authors   # author groups vs the rest of the genre (22; comedy/tragedy/history, JSD, random same-size reference,
+#                                       # leave-one-out, sole-signature, topic differences, figures) → aggregate/author_by_genre/; B_DRAWS, B_MINAUTHOR, B_GENRES override
+#   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh chronology   # topic shares by decade of the adopted date (23; British Drama first, Annals fallback; needs company/) → aggregate/chronology/
 #   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh freeze   # copy the small result files that let a reader trace the published analysis
 #                                       # (doc_topics, run.json, topic_sheet.csv, aggregate tables, chunk map/meta, environment) into ab_spelling/results_<suffix>/
 #   B_RUNS_SUFFIX=masked bash ab_spelling/run_b.sh sheet|review|pack|aggregate|genrefig|figures|map|site   # run any later step on that second run
@@ -80,6 +83,24 @@ if [ "$MODE" = "company" ]; then
   [ -f "$DEEP" ] || { echo "DEEP export not found ($DEEP); set B_DEEP=<path to DEEP_data.csv>"; exit 1; }
   python "$CODE/20_company_coverage.py" --agg "$D/aggregate" --chunk-meta "$CH/chunk_meta.csv" --deep "$DEEP"
   echo "== done: $D/aggregate/company/company_coverage_summary.md"; exit 0
+fi
+if [ "$MODE" = "authors" ]; then
+  D="$RUNS/topics_B_s$SEED"
+  [ -f "$D/aggregate/work_topic_share.csv" ] || { echo "run aggregate first ($D/aggregate/work_topic_share.csv missing)"; exit 1; }
+  DEEP="${B_DEEP:-$HOME/Library/CloudStorage/Dropbox/Clustering Character Archetypes/early-modern-drama-character-clustering/data/DEEP_data.csv}"
+  DEEPARGS=(); [ -f "$DEEP" ] && DEEPARGS=(--deep "$DEEP") || echo "WARNING: DEEP export not found ($DEEP) — author roles (translator / reviser) cannot be resolved; set B_DEEP"
+  python "$CODE/22_author_by_genre.py" --agg "$D/aggregate" --sheet "$D/topic_sheet.csv" --chunk-meta "$CH/chunk_meta.csv" ${DEEPARGS[@]+"${DEEPARGS[@]}"} \
+      --genres "${B_GENRES:-comedy,tragedy,history}" --min-author "${B_MINAUTHOR:-5}" --min-rest "${B_MINREST:-10}" --draws "${B_DRAWS:-1000}" --seed "$SEED" ${B_USE:+--use "$B_USE"}
+  echo "== done: $D/aggregate/author_by_genre/methods.md"; exit 0
+fi
+if [ "$MODE" = "chronology" ]; then
+  D="$RUNS/topics_B_s$SEED"
+  [ -f "$D/aggregate/company/company_fields_by_work.csv" ] || { echo "run company first (aggregate/company/company_fields_by_work.csv missing)"; exit 1; }
+  DEEP="${B_DEEP:-$HOME/Library/CloudStorage/Dropbox/Clustering Character Archetypes/early-modern-drama-character-clustering/data/DEEP_data.csv}"
+  DEEPARGS=(); [ -f "$DEEP" ] && DEEPARGS=(--deep "$DEEP") || echo "WARNING: DEEP export not found ($DEEP) — author roles cannot be resolved; set B_DEEP"
+  python "$CODE/23_chronology.py" --agg "$D/aggregate" --sheet "$D/topic_sheet.csv" --chunk-meta "$CH/chunk_meta.csv" ${DEEPARGS[@]+"${DEEPARGS[@]}"} \
+      --genres "${B_GENRES:-comedy,tragedy,history}" ${B_USE:+--use "$B_USE"}
+  echo "== done: $D/aggregate/chronology/methods.md"; exit 0
 fi
 if [ "$MODE" = "company-pair" ]; then
   D="$RUNS/topics_B_s$SEED"

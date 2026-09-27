@@ -1,0 +1,9 @@
+genre,n_works,compared_topics_share_of_words,words_in_topics_present_in_all_three_core_genres_of_compared,words_in_topics_ge1pct_in_all_three_of_compared,words_in_topics_exclusive_to_this_genre_among_core_of_compared,n_topics_in_all_three,n_topics_ge1pct_in_all_three
+comedy,151,0.3426,0.7417,0.1882,0.0,34,2
+tragedy,111,0.4184,0.7673,0.2647,0.0137,34,2
+history,34,0.3751,0.9182,0.1383,0.0818,34,2
+tragicomedy,29,0.3515,0.8489,0.4016,,34,2
+moral,28,0.4348,0.761,0.0477,,34,2
+romance,18,0.2452,0.7267,0.1116,,34,2
+pastoral,15,0.471,0.5766,0.0802,,34,2
+masque,38,0.4026,0.7301,0.0,,34,2

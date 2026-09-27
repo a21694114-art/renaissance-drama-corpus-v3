@@ -1,0 +1,31 @@
+{
+ "command": "22_author_by_genre.py --agg /mnt/user-data/uploads/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/aggregate --sheet /mnt/user-data/uploads/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/topic_sheet.csv --chunk-meta /mnt/user-data/uploads/topic modeling/sep6/ab_spelling_out/chunks_w500/chunk_meta.csv --deep /mnt/user-data/uploads/Clustering Character Archetypes/early-modern-drama-character-clustering/data/DEEP_data.csv --out abg53 --top-topics 53",
+ "python": "3.11.15",
+ "numpy": "2.4.4",
+ "matplotlib": "3.10.9",
+ "params": {
+  "genres": [
+   "comedy",
+   "tragedy",
+   "history"
+  ],
+  "min_author": 5,
+  "min_rest": 10,
+  "draws": 1000,
+  "seed": 42,
+  "use": [
+   "included"
+  ],
+  "n_topics": 53,
+  "top_topics": 53,
+  "top_works": 3
+ },
+ "inputs_sha256": {
+  "work_topic_share.csv": "58f3fb62671405594111a52b180a4ca4b030f65d34847732c84b80ef29925270",
+  "config.json": "72d339d258cdbb85730e11547e10a6d9b71490b65ab9445ad816f96bdb7a461a",
+  "topic_sheet.csv": "fc4239342dc826ec807140304dd4250ee9fb41d57cd324dde94e02c1ea08e663",
+  "chunk_meta.csv": "66d9f0c44b5a8e70cda76ea3844458754a717cea6a026baa71922f8e4aaf430f",
+  "DEEP_data.csv": "2222542869afce6a59c27211cf1d7efe5ebd7b46c144180c84a6c44dbadffbee"
+ },
+ "run": "topics_B_s42"
+}

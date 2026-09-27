@@ -1,0 +1,902 @@
+genre,author,topic,label,mean_share_A_pct,mean_share_B_pct,mean_diff_pp,abs_diff_pp,works_with_topic_A,works_with_topic_B,n_A,n_B
+comedy,"Chapman, George",0,"Court life: dukes, favour and honour",7.04,4.582,2.458,2.458,3,44,7,144
+comedy,"Chapman, George",1,"Death, grief and revenge",1.013,1.788,-0.776,0.776,1,44,7,144
+comedy,"Chapman, George",2,"Roman politics: senate, consuls and civil war",0.0,0.194,-0.194,0.194,0,7,7,144
+comedy,"Chapman, George",3,"Sickness, physic and doctors",1.746,2.488,-0.742,0.742,3,40,7,144
+comedy,"Chapman, George",4,Love-longing and the lover's complaint,2.08,1.81,0.27,0.27,3,43,7,144
+comedy,"Chapman, George",5,"Christian faith, sin and salvation",0.0,0.177,-0.177,0.177,0,8,7,144
+comedy,"Chapman, George",6,"Money, debt and credit",0.846,1.857,-1.012,1.012,2,44,7,144
+comedy,"Chapman, George",7,The Trojan war: conflict and its aftermath,0.0,0.246,-0.246,0.246,0,6,7,144
+comedy,"Chapman, George",8,"Captains, gallants and cheats",4.696,1.579,3.117,3.117,2,25,7,144
+comedy,"Chapman, George",9,"Theatre talk: prologues, poets and players",1.03,1.303,-0.273,0.273,2,40,7,144
+comedy,"Chapman, George",10,"England and France: war, embassy and peace",0.0,0.018,-0.018,0.018,0,1,7,144
+comedy,"Chapman, George",11,"Siblings, kin and confidants",1.707,1.187,0.521,0.521,3,37,7,144
+comedy,"Chapman, George",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.197,-0.197,0.197,0,4,7,144
+comedy,"Chapman, George",14,"Royal love, favour and dynastic relationships",0.348,0.275,0.072,0.072,1,11,7,144
+comedy,"Chapman, George",15,Friars and holy orders in plot,0.0,0.729,-0.729,0.729,0,9,7,144
+comedy,"Chapman, George",16,"Gallantry: ladies, lordships and compliment",2.274,1.331,0.943,0.943,4,36,7,144
+comedy,"Chapman, George",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.078,-0.078,0.078,0,3,7,144
+comedy,"Chapman, George",18,"Rebels, barons and the king's wars at home",0.0,0.028,-0.028,0.028,0,1,7,144
+comedy,"Chapman, George",20,"Hercules: labours, suffering and virtue",0.0,0.194,-0.194,0.194,0,5,7,144
+comedy,"Chapman, George",21,"Cupid, Venus and the nymphs",0.0,0.849,-0.849,0.849,0,18,7,144
+comedy,"Chapman, George",22,"Shepherds, flocks and Pan",0.0,0.478,-0.478,0.478,0,10,7,144
+comedy,"Chapman, George",23,"Husbands, wives and jealousy",2.286,0.888,1.397,1.397,1,27,7,144
+comedy,"Chapman, George",24,"Apollo, Phoebus and the Muses",0.0,1.008,-1.008,1.008,0,12,7,144
+comedy,"Chapman, George",25,"Kings, power and law: political sententiae",0.0,0.039,-0.039,0.039,0,2,7,144
+comedy,"Chapman, George",26,"Devils, hell and fiends",0.0,0.926,-0.926,0.926,0,22,7,144
+comedy,"Chapman, George",27,"Uncles, nephews and cousins: kinship and patronage",2.73,1.153,1.578,1.578,3,34,7,144
+comedy,"Chapman, George",28,"Marriage-making: weddings, brides and matches",0.0,1.114,-1.114,1.114,0,33,7,144
+comedy,"Chapman, George",30,"Constables, justices and the watch",0.0,0.9,-0.9,0.9,0,14,7,144
+comedy,"Chapman, George",31,"Popes, cardinals and the crown",0.0,0.014,-0.014,0.014,0,1,7,144
+comedy,"Chapman, George",32,Rings and jewels as tokens,0.0,0.595,-0.595,0.595,0,20,7,144
+comedy,"Chapman, George",33,"Fathers, daughters and marriage negotiations",1.124,0.913,0.211,0.211,1,28,7,144
+comedy,"Chapman, George",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.056,-0.056,0.056,0,1,7,144
+comedy,"Chapman, George",35,"Fools, wit and railing",0.625,0.704,-0.079,0.079,2,27,7,144
+comedy,"Chapman, George",36,"Hell, Furies and the language of punishment",0.0,0.015,-0.015,0.015,0,1,7,144
+comedy,"Chapman, George",37,"Riches, poverty and covetousness",0.0,0.114,-0.114,0.114,0,5,7,144
+comedy,"Chapman, George",38,"Death, parting and grief at court",0.0,0.02,-0.02,0.02,0,1,7,144
+comedy,"Chapman, George",39,"Profit, conscience and dishonest dealing",0.321,0.062,0.259,0.259,1,2,7,144
+comedy,"Chapman, George",40,"Sin, guilt and violent loss within families",0.333,0.237,0.096,0.096,1,9,7,144
+comedy,"Chapman, George",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,7,144
+comedy,"Chapman, George",44,"Drinking: wine, ale and taverns",0.0,0.636,-0.636,0.636,0,23,7,144
+comedy,"Chapman, George",45,"Widows, wooing and remarriage",0.0,0.839,-0.839,0.839,0,14,7,144
+comedy,"Chapman, George",46,"Swords, quarrels and valour",0.0,0.385,-0.385,0.385,0,17,7,144
+comedy,"Chapman, George",47,"Knaves, thieves and bawds",0.0,0.41,-0.41,0.41,0,14,7,144
+comedy,"Chapman, George",49,"Wooing a mistress: suitors, go-betweens and letters",0.896,0.545,0.351,0.351,2,21,7,144
+comedy,"Chapman, George",50,"Fleets, armies and generals: war by sea and land",0.0,0.093,-0.093,0.093,0,3,7,144
+comedy,"Chapman, George",51,"Parents and children: blessing, birthright and inheritance",0.0,0.259,-0.259,0.259,0,11,7,144
+comedy,"Chapman, George",52,"Prodigals, portions and poor kin",0.0,0.438,-0.438,0.438,0,13,7,144
+comedy,"Chapman, George",54,"Antony and Cleopatra: love, death and mourning",0.0,0.072,-0.072,0.072,0,3,7,144
+comedy,"Chapman, George",55,"Fairies, fairy queens and enchanted desire",0.0,0.132,-0.132,0.132,0,3,7,144
+comedy,"Chapman, George",56,"Magic, spells and conjuring",0.0,0.165,-0.165,0.165,0,6,7,144
+comedy,"Chapman, George",59,"Spanish courts: war, honour and courtship",0.0,0.038,-0.038,0.038,0,1,7,144
+comedy,"Chapman, George",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,7,144
+comedy,"Chapman, George",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.25,-0.25,0.25,0,8,7,144
+comedy,"Dekker, Thomas",0,"Court life: dukes, favour and honour",3.272,4.796,-1.524,1.524,6,41,10,141
+comedy,"Dekker, Thomas",1,"Death, grief and revenge",0.681,1.828,-1.147,1.147,3,42,10,141
+comedy,"Dekker, Thomas",2,"Roman politics: senate, consuls and civil war",0.0,0.198,-0.198,0.198,0,7,10,141
+comedy,"Dekker, Thomas",3,"Sickness, physic and doctors",3.067,2.411,0.657,0.657,2,41,10,141
+comedy,"Dekker, Thomas",4,Love-longing and the lover's complaint,0.943,1.885,-0.942,0.942,4,42,10,141
+comedy,"Dekker, Thomas",5,"Christian faith, sin and salvation",0.454,0.148,0.306,0.306,1,7,10,141
+comedy,"Dekker, Thomas",6,"Money, debt and credit",4.084,1.649,2.435,2.435,7,39,10,141
+comedy,"Dekker, Thomas",7,The Trojan war: conflict and its aftermath,0.0,0.252,-0.252,0.252,0,6,10,141
+comedy,"Dekker, Thomas",8,"Captains, gallants and cheats",3.629,1.588,2.041,2.041,3,24,10,141
+comedy,"Dekker, Thomas",9,"Theatre talk: prologues, poets and players",1.465,1.278,0.187,0.187,4,38,10,141
+comedy,"Dekker, Thomas",10,"England and France: war, embassy and peace",0.262,0.0,0.262,0.262,1,0,10,141
+comedy,"Dekker, Thomas",11,"Siblings, kin and confidants",1.095,1.219,-0.124,0.124,2,38,10,141
+comedy,"Dekker, Thomas",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.201,-0.201,0.201,0,4,10,141
+comedy,"Dekker, Thomas",14,"Royal love, favour and dynastic relationships",0.0,0.298,-0.298,0.298,0,12,10,141
+comedy,"Dekker, Thomas",15,Friars and holy orders in plot,2.54,0.564,1.975,1.975,3,6,10,141
+comedy,"Dekker, Thomas",16,"Gallantry: ladies, lordships and compliment",0.0,1.472,-1.472,1.472,0,40,10,141
+comedy,"Dekker, Thomas",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.079,-0.079,0.079,0,3,10,141
+comedy,"Dekker, Thomas",18,"Rebels, barons and the king's wars at home",0.0,0.028,-0.028,0.028,0,1,10,141
+comedy,"Dekker, Thomas",20,"Hercules: labours, suffering and virtue",0.0,0.198,-0.198,0.198,0,5,10,141
+comedy,"Dekker, Thomas",21,"Cupid, Venus and the nymphs",0.0,0.867,-0.867,0.867,0,18,10,141
+comedy,"Dekker, Thomas",22,"Shepherds, flocks and Pan",0.0,0.488,-0.488,0.488,0,10,10,141
+comedy,"Dekker, Thomas",23,"Husbands, wives and jealousy",1.379,0.923,0.456,0.456,2,26,10,141
+comedy,"Dekker, Thomas",24,"Apollo, Phoebus and the Muses",0.225,1.014,-0.789,0.789,1,11,10,141
+comedy,"Dekker, Thomas",25,"Kings, power and law: political sententiae",0.23,0.024,0.206,0.206,1,1,10,141
+comedy,"Dekker, Thomas",26,"Devils, hell and fiends",2.251,0.786,1.465,1.465,2,20,10,141
+comedy,"Dekker, Thomas",27,"Uncles, nephews and cousins: kinship and patronage",0.439,1.282,-0.842,0.842,2,35,10,141
+comedy,"Dekker, Thomas",28,"Marriage-making: weddings, brides and matches",0.437,1.106,-0.67,0.67,2,31,10,141
+comedy,"Dekker, Thomas",30,"Constables, justices and the watch",0.208,0.904,-0.696,0.696,1,13,10,141
+comedy,"Dekker, Thomas",31,"Popes, cardinals and the crown",0.0,0.014,-0.014,0.014,0,1,10,141
+comedy,"Dekker, Thomas",32,Rings and jewels as tokens,0.224,0.592,-0.368,0.368,1,19,10,141
+comedy,"Dekker, Thomas",33,"Fathers, daughters and marriage negotiations",0.497,0.953,-0.456,0.456,1,28,10,141
+comedy,"Dekker, Thomas",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.057,-0.057,0.057,0,1,10,141
+comedy,"Dekker, Thomas",35,"Fools, wit and railing",0.22,0.734,-0.515,0.515,1,28,10,141
+comedy,"Dekker, Thomas",36,"Hell, Furies and the language of punishment",0.0,0.016,-0.016,0.016,0,1,10,141
+comedy,"Dekker, Thomas",37,"Riches, poverty and covetousness",0.0,0.116,-0.116,0.116,0,5,10,141
+comedy,"Dekker, Thomas",38,"Death, parting and grief at court",0.0,0.021,-0.021,0.021,0,1,10,141
+comedy,"Dekker, Thomas",39,"Profit, conscience and dishonest dealing",0.0,0.079,-0.079,0.079,0,3,10,141
+comedy,"Dekker, Thomas",40,"Sin, guilt and violent loss within families",0.0,0.258,-0.258,0.258,0,10,10,141
+comedy,"Dekker, Thomas",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,10,141
+comedy,"Dekker, Thomas",44,"Drinking: wine, ale and taverns",0.23,0.634,-0.404,0.404,1,22,10,141
+comedy,"Dekker, Thomas",45,"Widows, wooing and remarriage",0.0,0.857,-0.857,0.857,0,14,10,141
+comedy,"Dekker, Thomas",46,"Swords, quarrels and valour",0.214,0.378,-0.164,0.164,1,16,10,141
+comedy,"Dekker, Thomas",47,"Knaves, thieves and bawds",1.486,0.313,1.173,1.173,1,13,10,141
+comedy,"Dekker, Thomas",49,"Wooing a mistress: suitors, go-betweens and letters",0.204,0.587,-0.383,0.383,1,22,10,141
+comedy,"Dekker, Thomas",50,"Fleets, armies and generals: war by sea and land",0.0,0.095,-0.095,0.095,0,3,10,141
+comedy,"Dekker, Thomas",51,"Parents and children: blessing, birthright and inheritance",0.245,0.248,-0.002,0.002,1,10,10,141
+comedy,"Dekker, Thomas",52,"Prodigals, portions and poor kin",0.0,0.447,-0.447,0.447,0,13,10,141
+comedy,"Dekker, Thomas",54,"Antony and Cleopatra: love, death and mourning",0.0,0.073,-0.073,0.073,0,3,10,141
+comedy,"Dekker, Thomas",55,"Fairies, fairy queens and enchanted desire",0.0,0.135,-0.135,0.135,0,3,10,141
+comedy,"Dekker, Thomas",56,"Magic, spells and conjuring",0.0,0.168,-0.168,0.168,0,6,10,141
+comedy,"Dekker, Thomas",59,"Spanish courts: war, honour and courtship",0.0,0.039,-0.039,0.039,0,1,10,141
+comedy,"Dekker, Thomas",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,10,141
+comedy,"Dekker, Thomas",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.255,-0.255,0.255,0,8,10,141
+comedy,"Fletcher, John",0,"Court life: dukes, favour and honour",6.783,4.609,2.174,2.174,2,45,6,145
+comedy,"Fletcher, John",1,"Death, grief and revenge",0.795,1.792,-0.997,0.997,2,43,6,145
+comedy,"Fletcher, John",2,"Roman politics: senate, consuls and civil war",0.0,0.193,-0.193,0.193,0,7,6,145
+comedy,"Fletcher, John",3,"Sickness, physic and doctors",1.97,2.474,-0.504,0.504,1,42,6,145
+comedy,"Fletcher, John",4,Love-longing and the lover's complaint,0.752,1.867,-1.115,1.115,1,45,6,145
+comedy,"Fletcher, John",5,"Christian faith, sin and salvation",0.429,0.158,0.271,0.271,1,7,6,145
+comedy,"Fletcher, John",6,"Money, debt and credit",0.386,1.869,-1.483,1.483,1,45,6,145
+comedy,"Fletcher, John",7,The Trojan war: conflict and its aftermath,0.362,0.23,0.132,0.132,1,5,6,145
+comedy,"Fletcher, John",8,"Captains, gallants and cheats",3.594,1.646,1.949,1.949,2,25,6,145
+comedy,"Fletcher, John",9,"Theatre talk: prologues, poets and players",0.351,1.329,-0.978,0.978,1,41,6,145
+comedy,"Fletcher, John",10,"England and France: war, embassy and peace",0.0,0.018,-0.018,0.018,0,1,6,145
+comedy,"Fletcher, John",11,"Siblings, kin and confidants",1.547,1.197,0.351,0.351,2,38,6,145
+comedy,"Fletcher, John",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.196,-0.196,0.196,0,4,6,145
+comedy,"Fletcher, John",14,"Royal love, favour and dynastic relationships",0.0,0.29,-0.29,0.29,0,12,6,145
+comedy,"Fletcher, John",15,Friars and holy orders in plot,0.386,0.708,-0.322,0.322,1,8,6,145
+comedy,"Fletcher, John",16,"Gallantry: ladies, lordships and compliment",1.438,1.372,0.066,0.066,1,39,6,145
+comedy,"Fletcher, John",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.077,-0.077,0.077,0,3,6,145
+comedy,"Fletcher, John",18,"Rebels, barons and the king's wars at home",0.0,0.028,-0.028,0.028,0,1,6,145
+comedy,"Fletcher, John",20,"Hercules: labours, suffering and virtue",0.0,0.193,-0.193,0.193,0,5,6,145
+comedy,"Fletcher, John",21,"Cupid, Venus and the nymphs",0.0,0.843,-0.843,0.843,0,18,6,145
+comedy,"Fletcher, John",22,"Shepherds, flocks and Pan",0.0,0.475,-0.475,0.475,0,10,6,145
+comedy,"Fletcher, John",23,"Husbands, wives and jealousy",2.173,0.903,1.271,1.271,2,26,6,145
+comedy,"Fletcher, John",24,"Apollo, Phoebus and the Muses",0.0,1.001,-1.001,1.001,0,12,6,145
+comedy,"Fletcher, John",25,"Kings, power and law: political sententiae",0.0,0.039,-0.039,0.039,0,2,6,145
+comedy,"Fletcher, John",26,"Devils, hell and fiends",1.244,0.868,0.376,0.376,1,21,6,145
+comedy,"Fletcher, John",27,"Uncles, nephews and cousins: kinship and patronage",0.424,1.259,-0.835,0.835,1,36,6,145
+comedy,"Fletcher, John",28,"Marriage-making: weddings, brides and matches",0.363,1.091,-0.728,0.728,1,32,6,145
+comedy,"Fletcher, John",30,"Constables, justices and the watch",1.289,0.84,0.449,0.449,1,13,6,145
+comedy,"Fletcher, John",31,"Popes, cardinals and the crown",0.0,0.014,-0.014,0.014,0,1,6,145
+comedy,"Fletcher, John",32,Rings and jewels as tokens,0.441,0.573,-0.132,0.132,1,19,6,145
+comedy,"Fletcher, John",33,"Fathers, daughters and marriage negotiations",0.743,0.93,-0.188,0.188,2,27,6,145
+comedy,"Fletcher, John",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.056,-0.056,0.056,0,1,6,145
+comedy,"Fletcher, John",35,"Fools, wit and railing",2.046,0.645,1.401,1.401,2,27,6,145
+comedy,"Fletcher, John",36,"Hell, Furies and the language of punishment",0.0,0.015,-0.015,0.015,0,1,6,145
+comedy,"Fletcher, John",37,"Riches, poverty and covetousness",0.0,0.113,-0.113,0.113,0,5,6,145
+comedy,"Fletcher, John",38,"Death, parting and grief at court",0.0,0.02,-0.02,0.02,0,1,6,145
+comedy,"Fletcher, John",39,"Profit, conscience and dishonest dealing",0.0,0.077,-0.077,0.077,0,3,6,145
+comedy,"Fletcher, John",40,"Sin, guilt and violent loss within families",0.0,0.251,-0.251,0.251,0,10,6,145
+comedy,"Fletcher, John",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,6,145
+comedy,"Fletcher, John",44,"Drinking: wine, ale and taverns",0.427,0.614,-0.187,0.187,1,22,6,145
+comedy,"Fletcher, John",45,"Widows, wooing and remarriage",0.354,0.818,-0.465,0.465,1,13,6,145
+comedy,"Fletcher, John",46,"Swords, quarrels and valour",0.877,0.346,0.531,0.531,1,16,6,145
+comedy,"Fletcher, John",47,"Knaves, thieves and bawds",1.278,0.354,0.924,0.924,1,13,6,145
+comedy,"Fletcher, John",49,"Wooing a mistress: suitors, go-betweens and letters",0.765,0.553,0.212,0.212,2,21,6,145
+comedy,"Fletcher, John",50,"Fleets, armies and generals: war by sea and land",0.0,0.093,-0.093,0.093,0,3,6,145
+comedy,"Fletcher, John",51,"Parents and children: blessing, birthright and inheritance",0.0,0.258,-0.258,0.258,0,11,6,145
+comedy,"Fletcher, John",52,"Prodigals, portions and poor kin",1.186,0.386,0.8,0.8,3,10,6,145
+comedy,"Fletcher, John",54,"Antony and Cleopatra: love, death and mourning",0.0,0.071,-0.071,0.071,0,3,6,145
+comedy,"Fletcher, John",55,"Fairies, fairy queens and enchanted desire",0.0,0.131,-0.131,0.131,0,3,6,145
+comedy,"Fletcher, John",56,"Magic, spells and conjuring",0.0,0.164,-0.164,0.164,0,6,6,145
+comedy,"Fletcher, John",59,"Spanish courts: war, honour and courtship",0.912,0.0,0.912,0.912,1,0,6,145
+comedy,"Fletcher, John",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,6,145
+comedy,"Fletcher, John",62,"The courtier as a type: fashion, affectation and foreign manners",1.127,0.202,0.925,0.925,2,6,6,145
+comedy,"Jonson, Ben",0,"Court life: dukes, favour and honour",0.676,5.139,-4.463,4.463,3,44,15,136
+comedy,"Jonson, Ben",1,"Death, grief and revenge",0.873,1.849,-0.976,0.976,2,43,15,136
+comedy,"Jonson, Ben",2,"Roman politics: senate, consuls and civil war",1.004,0.095,0.909,0.909,2,5,15,136
+comedy,"Jonson, Ben",3,"Sickness, physic and doctors",5.271,2.143,3.127,3.127,8,35,15,136
+comedy,"Jonson, Ben",4,Love-longing and the lover's complaint,0.837,1.931,-1.094,1.094,3,43,15,136
+comedy,"Jonson, Ben",5,"Christian faith, sin and salvation",0.086,0.177,-0.092,0.092,1,7,15,136
+comedy,"Jonson, Ben",6,"Money, debt and credit",1.958,1.794,0.163,0.163,8,38,15,136
+comedy,"Jonson, Ben",7,The Trojan war: conflict and its aftermath,0.14,0.246,-0.106,0.106,1,5,15,136
+comedy,"Jonson, Ben",8,"Captains, gallants and cheats",2.123,1.679,0.443,0.443,5,22,15,136
+comedy,"Jonson, Ben",9,"Theatre talk: prologues, poets and players",4.31,0.957,3.353,3.353,9,33,15,136
+comedy,"Jonson, Ben",10,"England and France: war, embassy and peace",0.0,0.019,-0.019,0.019,0,1,15,136
+comedy,"Jonson, Ben",11,"Siblings, kin and confidants",0.578,1.28,-0.702,0.702,3,37,15,136
+comedy,"Jonson, Ben",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.666,0.135,0.531,0.531,1,3,15,136
+comedy,"Jonson, Ben",14,"Royal love, favour and dynastic relationships",0.128,0.295,-0.167,0.167,1,11,15,136
+comedy,"Jonson, Ben",15,Friars and holy orders in plot,0.0,0.772,-0.772,0.772,0,9,15,136
+comedy,"Jonson, Ben",16,"Gallantry: ladies, lordships and compliment",2.383,1.264,1.12,1.12,8,32,15,136
+comedy,"Jonson, Ben",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.082,-0.082,0.082,0,3,15,136
+comedy,"Jonson, Ben",18,"Rebels, barons and the king's wars at home",0.0,0.029,-0.029,0.029,0,1,15,136
+comedy,"Jonson, Ben",20,"Hercules: labours, suffering and virtue",0.0,0.205,-0.205,0.205,0,5,15,136
+comedy,"Jonson, Ben",21,"Cupid, Venus and the nymphs",0.815,0.809,0.006,0.006,2,16,15,136
+comedy,"Jonson, Ben",22,"Shepherds, flocks and Pan",0.0,0.506,-0.506,0.506,0,10,15,136
+comedy,"Jonson, Ben",23,"Husbands, wives and jealousy",0.535,0.999,-0.464,0.464,3,25,15,136
+comedy,"Jonson, Ben",24,"Apollo, Phoebus and the Muses",0.122,1.054,-0.932,0.932,1,11,15,136
+comedy,"Jonson, Ben",25,"Kings, power and law: political sententiae",0.0,0.042,-0.042,0.042,0,2,15,136
+comedy,"Jonson, Ben",26,"Devils, hell and fiends",2.057,0.753,1.304,1.304,4,18,15,136
+comedy,"Jonson, Ben",27,"Uncles, nephews and cousins: kinship and patronage",1.16,1.233,-0.073,0.073,6,31,15,136
+comedy,"Jonson, Ben",28,"Marriage-making: weddings, brides and matches",0.425,1.132,-0.707,0.707,3,30,15,136
+comedy,"Jonson, Ben",30,"Constables, justices and the watch",4.486,0.458,4.028,4.028,2,12,15,136
+comedy,"Jonson, Ben",31,"Popes, cardinals and the crown",0.133,0.0,0.133,0.133,1,0,15,136
+comedy,"Jonson, Ben",32,Rings and jewels as tokens,0.284,0.599,-0.315,0.315,2,18,15,136
+comedy,"Jonson, Ben",33,"Fathers, daughters and marriage negotiations",0.0,1.025,-1.025,1.025,0,29,15,136
+comedy,"Jonson, Ben",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.059,-0.059,0.059,0,1,15,136
+comedy,"Jonson, Ben",35,"Fools, wit and railing",0.884,0.68,0.204,0.204,6,23,15,136
+comedy,"Jonson, Ben",36,"Hell, Furies and the language of punishment",0.0,0.016,-0.016,0.016,0,1,15,136
+comedy,"Jonson, Ben",37,"Riches, poverty and covetousness",0.365,0.08,0.286,0.286,3,2,15,136
+comedy,"Jonson, Ben",38,"Death, parting and grief at court",0.0,0.022,-0.022,0.022,0,1,15,136
+comedy,"Jonson, Ben",39,"Profit, conscience and dishonest dealing",0.0,0.082,-0.082,0.082,0,3,15,136
+comedy,"Jonson, Ben",40,"Sin, guilt and violent loss within families",0.264,0.239,0.026,0.026,1,9,15,136
+comedy,"Jonson, Ben",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,15,136
+comedy,"Jonson, Ben",44,"Drinking: wine, ale and taverns",1.186,0.543,0.643,0.643,3,20,15,136
+comedy,"Jonson, Ben",45,"Widows, wooing and remarriage",0.095,0.878,-0.783,0.783,1,13,15,136
+comedy,"Jonson, Ben",46,"Swords, quarrels and valour",1.088,0.287,0.8,0.8,4,13,15,136
+comedy,"Jonson, Ben",47,"Knaves, thieves and bawds",0.133,0.419,-0.287,0.287,1,13,15,136
+comedy,"Jonson, Ben",49,"Wooing a mistress: suitors, go-betweens and letters",0.494,0.569,-0.075,0.075,2,21,15,136
+comedy,"Jonson, Ben",50,"Fleets, armies and generals: war by sea and land",0.0,0.099,-0.099,0.099,0,3,15,136
+comedy,"Jonson, Ben",51,"Parents and children: blessing, birthright and inheritance",0.372,0.234,0.138,0.138,1,10,15,136
+comedy,"Jonson, Ben",52,"Prodigals, portions and poor kin",0.384,0.421,-0.037,0.037,2,11,15,136
+comedy,"Jonson, Ben",54,"Antony and Cleopatra: love, death and mourning",0.0,0.076,-0.076,0.076,0,3,15,136
+comedy,"Jonson, Ben",55,"Fairies, fairy queens and enchanted desire",0.0,0.14,-0.14,0.14,0,3,15,136
+comedy,"Jonson, Ben",56,"Magic, spells and conjuring",0.0,0.174,-0.174,0.174,0,6,15,136
+comedy,"Jonson, Ben",59,"Spanish courts: war, honour and courtship",0.0,0.04,-0.04,0.04,0,1,15,136
+comedy,"Jonson, Ben",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,15,136
+comedy,"Jonson, Ben",62,"The courtier as a type: fashion, affectation and foreign manners",0.525,0.207,0.318,0.318,1,7,15,136
+comedy,"Lyly, John",0,"Court life: dukes, favour and honour",0.471,4.901,-4.43,4.43,1,46,7,144
+comedy,"Lyly, John",1,"Death, grief and revenge",0.0,1.838,-1.838,1.838,0,45,7,144
+comedy,"Lyly, John",2,"Roman politics: senate, consuls and civil war",0.0,0.194,-0.194,0.194,0,7,7,144
+comedy,"Lyly, John",3,"Sickness, physic and doctors",2.042,2.474,-0.432,0.432,2,41,7,144
+comedy,"Lyly, John",4,Love-longing and the lover's complaint,4.136,1.71,2.426,2.426,5,41,7,144
+comedy,"Lyly, John",5,"Christian faith, sin and salvation",0.0,0.177,-0.177,0.177,0,8,7,144
+comedy,"Lyly, John",6,"Money, debt and credit",0.429,1.878,-1.449,1.449,1,45,7,144
+comedy,"Lyly, John",7,The Trojan war: conflict and its aftermath,0.557,0.219,0.337,0.337,1,5,7,144
+comedy,"Lyly, John",8,"Captains, gallants and cheats",0.0,1.807,-1.807,1.807,0,27,7,144
+comedy,"Lyly, John",9,"Theatre talk: prologues, poets and players",0.454,1.331,-0.877,0.877,1,41,7,144
+comedy,"Lyly, John",10,"England and France: war, embassy and peace",0.0,0.018,-0.018,0.018,0,1,7,144
+comedy,"Lyly, John",11,"Siblings, kin and confidants",0.425,1.249,-0.823,0.823,1,39,7,144
+comedy,"Lyly, John",12,"Olympian gods: Jupiter, Juno, Venus and Mars",2.213,0.09,2.124,2.124,2,2,7,144
+comedy,"Lyly, John",14,"Royal love, favour and dynastic relationships",0.0,0.292,-0.292,0.292,0,12,7,144
+comedy,"Lyly, John",15,Friars and holy orders in plot,0.0,0.729,-0.729,0.729,0,9,7,144
+comedy,"Lyly, John",16,"Gallantry: ladies, lordships and compliment",0.0,1.442,-1.442,1.442,0,40,7,144
+comedy,"Lyly, John",17,"Eastern conquest: Persians, Turks and soldans",0.535,0.052,0.483,0.483,1,2,7,144
+comedy,"Lyly, John",18,"Rebels, barons and the king's wars at home",0.0,0.028,-0.028,0.028,0,1,7,144
+comedy,"Lyly, John",20,"Hercules: labours, suffering and virtue",0.0,0.194,-0.194,0.194,0,5,7,144
+comedy,"Lyly, John",21,"Cupid, Venus and the nymphs",9.571,0.384,9.187,9.187,3,15,7,144
+comedy,"Lyly, John",22,"Shepherds, flocks and Pan",2.095,0.376,1.718,1.718,2,8,7,144
+comedy,"Lyly, John",23,"Husbands, wives and jealousy",0.0,1.0,-1.0,1.0,0,28,7,144
+comedy,"Lyly, John",24,"Apollo, Phoebus and the Muses",5.378,0.747,4.631,4.631,4,8,7,144
+comedy,"Lyly, John",25,"Kings, power and law: political sententiae",0.479,0.016,0.463,0.463,1,1,7,144
+comedy,"Lyly, John",26,"Devils, hell and fiends",0.0,0.926,-0.926,0.926,0,22,7,144
+comedy,"Lyly, John",27,"Uncles, nephews and cousins: kinship and patronage",0.0,1.285,-1.285,1.285,0,37,7,144
+comedy,"Lyly, John",28,"Marriage-making: weddings, brides and matches",2.518,0.991,1.527,1.527,1,32,7,144
+comedy,"Lyly, John",30,"Constables, justices and the watch",0.0,0.9,-0.9,0.9,0,14,7,144
+comedy,"Lyly, John",31,"Popes, cardinals and the crown",0.0,0.014,-0.014,0.014,0,1,7,144
+comedy,"Lyly, John",32,Rings and jewels as tokens,0.0,0.595,-0.595,0.595,0,20,7,144
+comedy,"Lyly, John",33,"Fathers, daughters and marriage negotiations",0.464,0.945,-0.481,0.481,1,28,7,144
+comedy,"Lyly, John",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",1.154,0.0,1.154,1.154,1,0,7,144
+comedy,"Lyly, John",35,"Fools, wit and railing",1.485,0.662,0.823,0.823,3,26,7,144
+comedy,"Lyly, John",36,"Hell, Furies and the language of punishment",0.0,0.015,-0.015,0.015,0,1,7,144
+comedy,"Lyly, John",37,"Riches, poverty and covetousness",0.0,0.114,-0.114,0.114,0,5,7,144
+comedy,"Lyly, John",38,"Death, parting and grief at court",0.0,0.02,-0.02,0.02,0,1,7,144
+comedy,"Lyly, John",39,"Profit, conscience and dishonest dealing",0.0,0.078,-0.078,0.078,0,3,7,144
+comedy,"Lyly, John",40,"Sin, guilt and violent loss within families",0.0,0.253,-0.253,0.253,0,10,7,144
+comedy,"Lyly, John",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,7,144
+comedy,"Lyly, John",44,"Drinking: wine, ale and taverns",0.857,0.595,0.262,0.262,1,22,7,144
+comedy,"Lyly, John",45,"Widows, wooing and remarriage",0.0,0.839,-0.839,0.839,0,14,7,144
+comedy,"Lyly, John",46,"Swords, quarrels and valour",0.0,0.385,-0.385,0.385,0,17,7,144
+comedy,"Lyly, John",47,"Knaves, thieves and bawds",0.0,0.41,-0.41,0.41,0,14,7,144
+comedy,"Lyly, John",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.589,-0.589,0.589,0,23,7,144
+comedy,"Lyly, John",50,"Fleets, armies and generals: war by sea and land",0.0,0.093,-0.093,0.093,0,3,7,144
+comedy,"Lyly, John",51,"Parents and children: blessing, birthright and inheritance",0.847,0.218,0.629,0.629,1,10,7,144
+comedy,"Lyly, John",52,"Prodigals, portions and poor kin",0.0,0.438,-0.438,0.438,0,13,7,144
+comedy,"Lyly, John",54,"Antony and Cleopatra: love, death and mourning",0.0,0.072,-0.072,0.072,0,3,7,144
+comedy,"Lyly, John",55,"Fairies, fairy queens and enchanted desire",0.0,0.132,-0.132,0.132,0,3,7,144
+comedy,"Lyly, John",56,"Magic, spells and conjuring",0.0,0.165,-0.165,0.165,0,6,7,144
+comedy,"Lyly, John",59,"Spanish courts: war, honour and courtship",0.0,0.038,-0.038,0.038,0,1,7,144
+comedy,"Lyly, John",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,7,144
+comedy,"Lyly, John",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.25,-0.25,0.25,0,8,7,144
+comedy,"Marston, John",0,"Court life: dukes, favour and honour",3.612,4.74,-1.128,1.128,3,44,6,145
+comedy,"Marston, John",1,"Death, grief and revenge",2.057,1.74,0.317,0.317,1,44,6,145
+comedy,"Marston, John",2,"Roman politics: senate, consuls and civil war",0.483,0.173,0.31,0.31,1,6,6,145
+comedy,"Marston, John",3,"Sickness, physic and doctors",0.0,2.556,-2.556,2.556,0,43,6,145
+comedy,"Marston, John",4,Love-longing and the lover's complaint,6.073,1.647,4.426,4.426,4,42,6,145
+comedy,"Marston, John",5,"Christian faith, sin and salvation",0.0,0.175,-0.175,0.175,0,8,6,145
+comedy,"Marston, John",6,"Money, debt and credit",0.36,1.87,-1.51,1.51,1,45,6,145
+comedy,"Marston, John",7,The Trojan war: conflict and its aftermath,0.0,0.245,-0.245,0.245,0,6,6,145
+comedy,"Marston, John",8,"Captains, gallants and cheats",1.422,1.736,-0.313,0.313,1,26,6,145
+comedy,"Marston, John",9,"Theatre talk: prologues, poets and players",2.939,1.222,1.717,1.717,3,39,6,145
+comedy,"Marston, John",10,"England and France: war, embassy and peace",0.0,0.018,-0.018,0.018,0,1,6,145
+comedy,"Marston, John",11,"Siblings, kin and confidants",0.0,1.261,-1.261,1.261,0,40,6,145
+comedy,"Marston, John",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.196,-0.196,0.196,0,4,6,145
+comedy,"Marston, John",14,"Royal love, favour and dynastic relationships",1.358,0.234,1.124,1.124,2,10,6,145
+comedy,"Marston, John",15,Friars and holy orders in plot,0.0,0.724,-0.724,0.724,0,9,6,145
+comedy,"Marston, John",16,"Gallantry: ladies, lordships and compliment",2.604,1.324,1.28,1.28,3,37,6,145
+comedy,"Marston, John",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.077,-0.077,0.077,0,3,6,145
+comedy,"Marston, John",18,"Rebels, barons and the king's wars at home",0.0,0.028,-0.028,0.028,0,1,6,145
+comedy,"Marston, John",20,"Hercules: labours, suffering and virtue",0.0,0.193,-0.193,0.193,0,5,6,145
+comedy,"Marston, John",21,"Cupid, Venus and the nymphs",0.742,0.812,-0.07,0.07,1,17,6,145
+comedy,"Marston, John",22,"Shepherds, flocks and Pan",0.0,0.475,-0.475,0.475,0,10,6,145
+comedy,"Marston, John",23,"Husbands, wives and jealousy",1.254,0.941,0.313,0.313,2,26,6,145
+comedy,"Marston, John",24,"Apollo, Phoebus and the Muses",0.0,1.001,-1.001,1.001,0,12,6,145
+comedy,"Marston, John",25,"Kings, power and law: political sententiae",0.0,0.039,-0.039,0.039,0,2,6,145
+comedy,"Marston, John",26,"Devils, hell and fiends",0.494,0.899,-0.405,0.405,1,21,6,145
+comedy,"Marston, John",27,"Uncles, nephews and cousins: kinship and patronage",0.0,1.277,-1.277,1.277,0,37,6,145
+comedy,"Marston, John",28,"Marriage-making: weddings, brides and matches",0.0,1.106,-1.106,1.106,0,33,6,145
+comedy,"Marston, John",30,"Constables, justices and the watch",0.48,0.873,-0.394,0.394,1,13,6,145
+comedy,"Marston, John",31,"Popes, cardinals and the crown",0.0,0.014,-0.014,0.014,0,1,6,145
+comedy,"Marston, John",32,Rings and jewels as tokens,0.464,0.572,-0.108,0.108,1,19,6,145
+comedy,"Marston, John",33,"Fathers, daughters and marriage negotiations",0.0,0.961,-0.961,0.961,0,29,6,145
+comedy,"Marston, John",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.056,-0.056,0.056,0,1,6,145
+comedy,"Marston, John",35,"Fools, wit and railing",1.804,0.655,1.15,1.15,4,25,6,145
+comedy,"Marston, John",36,"Hell, Furies and the language of punishment",0.0,0.015,-0.015,0.015,0,1,6,145
+comedy,"Marston, John",37,"Riches, poverty and covetousness",0.0,0.113,-0.113,0.113,0,5,6,145
+comedy,"Marston, John",38,"Death, parting and grief at court",0.0,0.02,-0.02,0.02,0,1,6,145
+comedy,"Marston, John",39,"Profit, conscience and dishonest dealing",0.0,0.077,-0.077,0.077,0,3,6,145
+comedy,"Marston, John",40,"Sin, guilt and violent loss within families",0.0,0.251,-0.251,0.251,0,10,6,145
+comedy,"Marston, John",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,6,145
+comedy,"Marston, John",44,"Drinking: wine, ale and taverns",0.51,0.611,-0.101,0.101,1,22,6,145
+comedy,"Marston, John",45,"Widows, wooing and remarriage",0.0,0.833,-0.833,0.833,0,14,6,145
+comedy,"Marston, John",46,"Swords, quarrels and valour",0.0,0.382,-0.382,0.382,0,17,6,145
+comedy,"Marston, John",47,"Knaves, thieves and bawds",0.5,0.386,0.114,0.114,1,13,6,145
+comedy,"Marston, John",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.584,-0.584,0.584,0,23,6,145
+comedy,"Marston, John",50,"Fleets, armies and generals: war by sea and land",0.603,0.068,0.535,0.535,1,2,6,145
+comedy,"Marston, John",51,"Parents and children: blessing, birthright and inheritance",0.0,0.258,-0.258,0.258,0,11,6,145
+comedy,"Marston, John",52,"Prodigals, portions and poor kin",0.0,0.435,-0.435,0.435,0,13,6,145
+comedy,"Marston, John",54,"Antony and Cleopatra: love, death and mourning",0.0,0.071,-0.071,0.071,0,3,6,145
+comedy,"Marston, John",55,"Fairies, fairy queens and enchanted desire",0.0,0.131,-0.131,0.131,0,3,6,145
+comedy,"Marston, John",56,"Magic, spells and conjuring",0.0,0.164,-0.164,0.164,0,6,6,145
+comedy,"Marston, John",59,"Spanish courts: war, honour and courtship",0.0,0.038,-0.038,0.038,0,1,6,145
+comedy,"Marston, John",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,6,145
+comedy,"Marston, John",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.248,-0.248,0.248,0,8,6,145
+comedy,"Middleton, Thomas",0,"Court life: dukes, favour and honour",1.829,4.899,-3.07,3.07,3,44,10,141
+comedy,"Middleton, Thomas",1,"Death, grief and revenge",0.758,1.823,-1.066,1.066,3,42,10,141
+comedy,"Middleton, Thomas",2,"Roman politics: senate, consuls and civil war",0.0,0.198,-0.198,0.198,0,7,10,141
+comedy,"Middleton, Thomas",3,"Sickness, physic and doctors",1.492,2.522,-1.03,1.03,2,41,10,141
+comedy,"Middleton, Thomas",4,Love-longing and the lover's complaint,0.0,1.952,-1.952,1.952,0,46,10,141
+comedy,"Middleton, Thomas",5,"Christian faith, sin and salvation",0.276,0.161,0.115,0.115,1,7,10,141
+comedy,"Middleton, Thomas",6,"Money, debt and credit",6.019,1.512,4.507,4.507,7,39,10,141
+comedy,"Middleton, Thomas",7,The Trojan war: conflict and its aftermath,0.0,0.252,-0.252,0.252,0,6,10,141
+comedy,"Middleton, Thomas",8,"Captains, gallants and cheats",5.97,1.422,4.548,4.548,4,23,10,141
+comedy,"Middleton, Thomas",9,"Theatre talk: prologues, poets and players",1.063,1.306,-0.243,0.243,3,39,10,141
+comedy,"Middleton, Thomas",10,"England and France: war, embassy and peace",0.0,0.019,-0.019,0.019,0,1,10,141
+comedy,"Middleton, Thomas",11,"Siblings, kin and confidants",0.723,1.245,-0.522,0.522,2,38,10,141
+comedy,"Middleton, Thomas",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.201,-0.201,0.201,0,4,10,141
+comedy,"Middleton, Thomas",14,"Royal love, favour and dynastic relationships",0.0,0.298,-0.298,0.298,0,12,10,141
+comedy,"Middleton, Thomas",15,Friars and holy orders in plot,0.822,0.686,0.136,0.136,1,8,10,141
+comedy,"Middleton, Thomas",16,"Gallantry: ladies, lordships and compliment",0.563,1.432,-0.869,0.869,1,39,10,141
+comedy,"Middleton, Thomas",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.079,-0.079,0.079,0,3,10,141
+comedy,"Middleton, Thomas",18,"Rebels, barons and the king's wars at home",0.0,0.028,-0.028,0.028,0,1,10,141
+comedy,"Middleton, Thomas",20,"Hercules: labours, suffering and virtue",0.0,0.198,-0.198,0.198,0,5,10,141
+comedy,"Middleton, Thomas",21,"Cupid, Venus and the nymphs",0.302,0.846,-0.544,0.544,1,17,10,141
+comedy,"Middleton, Thomas",22,"Shepherds, flocks and Pan",0.0,0.488,-0.488,0.488,0,10,10,141
+comedy,"Middleton, Thomas",23,"Husbands, wives and jealousy",0.251,1.003,-0.752,0.752,1,27,10,141
+comedy,"Middleton, Thomas",24,"Apollo, Phoebus and the Muses",0.0,1.03,-1.03,1.03,0,12,10,141
+comedy,"Middleton, Thomas",25,"Kings, power and law: political sententiae",0.0,0.04,-0.04,0.04,0,2,10,141
+comedy,"Middleton, Thomas",26,"Devils, hell and fiends",0.268,0.927,-0.659,0.659,1,21,10,141
+comedy,"Middleton, Thomas",27,"Uncles, nephews and cousins: kinship and patronage",3.405,1.071,2.333,2.333,4,33,10,141
+comedy,"Middleton, Thomas",28,"Marriage-making: weddings, brides and matches",0.764,1.083,-0.319,0.319,3,30,10,141
+comedy,"Middleton, Thomas",30,"Constables, justices and the watch",0.496,0.884,-0.388,0.388,2,12,10,141
+comedy,"Middleton, Thomas",31,"Popes, cardinals and the crown",0.0,0.014,-0.014,0.014,0,1,10,141
+comedy,"Middleton, Thomas",32,Rings and jewels as tokens,1.086,0.531,0.555,0.555,2,18,10,141
+comedy,"Middleton, Thomas",33,"Fathers, daughters and marriage negotiations",0.264,0.97,-0.706,0.706,1,28,10,141
+comedy,"Middleton, Thomas",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.057,-0.057,0.057,0,1,10,141
+comedy,"Middleton, Thomas",35,"Fools, wit and railing",0.0,0.75,-0.75,0.75,0,29,10,141
+comedy,"Middleton, Thomas",36,"Hell, Furies and the language of punishment",0.0,0.016,-0.016,0.016,0,1,10,141
+comedy,"Middleton, Thomas",37,"Riches, poverty and covetousness",0.0,0.116,-0.116,0.116,0,5,10,141
+comedy,"Middleton, Thomas",38,"Death, parting and grief at court",0.0,0.021,-0.021,0.021,0,1,10,141
+comedy,"Middleton, Thomas",39,"Profit, conscience and dishonest dealing",0.0,0.079,-0.079,0.079,0,3,10,141
+comedy,"Middleton, Thomas",40,"Sin, guilt and violent loss within families",0.524,0.221,0.303,0.303,2,8,10,141
+comedy,"Middleton, Thomas",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,10,141
+comedy,"Middleton, Thomas",44,"Drinking: wine, ale and taverns",0.508,0.614,-0.106,0.106,2,21,10,141
+comedy,"Middleton, Thomas",45,"Widows, wooing and remarriage",3.884,0.581,3.303,3.303,3,11,10,141
+comedy,"Middleton, Thomas",46,"Swords, quarrels and valour",0.0,0.393,-0.393,0.393,0,17,10,141
+comedy,"Middleton, Thomas",47,"Knaves, thieves and bawds",0.788,0.363,0.426,0.426,2,12,10,141
+comedy,"Middleton, Thomas",49,"Wooing a mistress: suitors, go-betweens and letters",1.041,0.527,0.514,0.514,3,20,10,141
+comedy,"Middleton, Thomas",50,"Fleets, armies and generals: war by sea and land",0.0,0.095,-0.095,0.095,0,3,10,141
+comedy,"Middleton, Thomas",51,"Parents and children: blessing, birthright and inheritance",0.0,0.265,-0.265,0.265,0,11,10,141
+comedy,"Middleton, Thomas",52,"Prodigals, portions and poor kin",0.273,0.428,-0.155,0.155,1,12,10,141
+comedy,"Middleton, Thomas",54,"Antony and Cleopatra: love, death and mourning",0.0,0.073,-0.073,0.073,0,3,10,141
+comedy,"Middleton, Thomas",55,"Fairies, fairy queens and enchanted desire",0.0,0.135,-0.135,0.135,0,3,10,141
+comedy,"Middleton, Thomas",56,"Magic, spells and conjuring",0.0,0.168,-0.168,0.168,0,6,10,141
+comedy,"Middleton, Thomas",59,"Spanish courts: war, honour and courtship",0.0,0.039,-0.039,0.039,0,1,10,141
+comedy,"Middleton, Thomas",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,10,141
+comedy,"Middleton, Thomas",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.255,-0.255,0.255,0,8,10,141
+comedy,"Shakespeare, William",0,"Court life: dukes, favour and honour",3.839,4.763,-0.924,0.924,6,41,11,140
+comedy,"Shakespeare, William",1,"Death, grief and revenge",1.39,1.781,-0.39,0.39,3,42,11,140
+comedy,"Shakespeare, William",2,"Roman politics: senate, consuls and civil war",0.247,0.18,0.066,0.066,1,6,11,140
+comedy,"Shakespeare, William",3,"Sickness, physic and doctors",1.394,2.537,-1.143,1.143,3,40,11,140
+comedy,"Shakespeare, William",4,Love-longing and the lover's complaint,4.358,1.623,2.735,2.735,5,41,11,140
+comedy,"Shakespeare, William",5,"Christian faith, sin and salvation",0.255,0.162,0.094,0.094,1,7,11,140
+comedy,"Shakespeare, William",6,"Money, debt and credit",2.539,1.753,0.786,0.786,2,44,11,140
+comedy,"Shakespeare, William",7,The Trojan war: conflict and its aftermath,0.467,0.217,0.25,0.25,2,4,11,140
+comedy,"Shakespeare, William",8,"Captains, gallants and cheats",0.0,1.859,-1.859,1.859,0,27,11,140
+comedy,"Shakespeare, William",9,"Theatre talk: prologues, poets and players",0.22,1.374,-1.155,1.155,1,41,11,140
+comedy,"Shakespeare, William",10,"England and France: war, embassy and peace",0.0,0.019,-0.019,0.019,0,1,11,140
+comedy,"Shakespeare, William",11,"Siblings, kin and confidants",0.222,1.288,-1.066,1.066,1,39,11,140
+comedy,"Shakespeare, William",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.263,0.182,0.081,0.081,1,3,11,140
+comedy,"Shakespeare, William",14,"Royal love, favour and dynastic relationships",0.678,0.247,0.43,0.43,3,9,11,140
+comedy,"Shakespeare, William",15,Friars and holy orders in plot,1.157,0.659,0.498,0.498,2,7,11,140
+comedy,"Shakespeare, William",16,"Gallantry: ladies, lordships and compliment",1.135,1.394,-0.259,0.259,3,37,11,140
+comedy,"Shakespeare, William",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.08,-0.08,0.08,0,3,11,140
+comedy,"Shakespeare, William",18,"Rebels, barons and the king's wars at home",0.0,0.029,-0.029,0.029,0,1,11,140
+comedy,"Shakespeare, William",20,"Hercules: labours, suffering and virtue",0.0,0.2,-0.2,0.2,0,5,11,140
+comedy,"Shakespeare, William",21,"Cupid, Venus and the nymphs",1.028,0.792,0.235,0.235,3,15,11,140
+comedy,"Shakespeare, William",22,"Shepherds, flocks and Pan",1.721,0.357,1.364,1.364,2,8,11,140
+comedy,"Shakespeare, William",23,"Husbands, wives and jealousy",0.2,1.012,-0.813,0.813,1,27,11,140
+comedy,"Shakespeare, William",24,"Apollo, Phoebus and the Muses",0.0,1.037,-1.037,1.037,0,12,11,140
+comedy,"Shakespeare, William",25,"Kings, power and law: political sententiae",0.0,0.04,-0.04,0.04,0,2,11,140
+comedy,"Shakespeare, William",26,"Devils, hell and fiends",0.544,0.91,-0.365,0.365,2,20,11,140
+comedy,"Shakespeare, William",27,"Uncles, nephews and cousins: kinship and patronage",0.0,1.322,-1.322,1.322,0,37,11,140
+comedy,"Shakespeare, William",28,"Marriage-making: weddings, brides and matches",0.868,1.077,-0.209,0.209,3,30,11,140
+comedy,"Shakespeare, William",30,"Constables, justices and the watch",0.418,0.892,-0.474,0.474,1,13,11,140
+comedy,"Shakespeare, William",31,"Popes, cardinals and the crown",0.0,0.014,-0.014,0.014,0,1,11,140
+comedy,"Shakespeare, William",32,Rings and jewels as tokens,1.565,0.489,1.076,1.076,3,17,11,140
+comedy,"Shakespeare, William",33,"Fathers, daughters and marriage negotiations",0.281,0.973,-0.692,0.692,1,28,11,140
+comedy,"Shakespeare, William",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.058,-0.058,0.058,0,1,11,140
+comedy,"Shakespeare, William",35,"Fools, wit and railing",0.908,0.684,0.224,0.224,2,27,11,140
+comedy,"Shakespeare, William",36,"Hell, Furies and the language of punishment",0.0,0.016,-0.016,0.016,0,1,11,140
+comedy,"Shakespeare, William",37,"Riches, poverty and covetousness",0.0,0.117,-0.117,0.117,0,5,11,140
+comedy,"Shakespeare, William",38,"Death, parting and grief at court",0.0,0.021,-0.021,0.021,0,1,11,140
+comedy,"Shakespeare, William",39,"Profit, conscience and dishonest dealing",0.0,0.08,-0.08,0.08,0,3,11,140
+comedy,"Shakespeare, William",40,"Sin, guilt and violent loss within families",0.205,0.244,-0.039,0.039,1,9,11,140
+comedy,"Shakespeare, William",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,11,140
+comedy,"Shakespeare, William",44,"Drinking: wine, ale and taverns",0.229,0.637,-0.407,0.407,1,22,11,140
+comedy,"Shakespeare, William",45,"Widows, wooing and remarriage",0.0,0.863,-0.863,0.863,0,14,11,140
+comedy,"Shakespeare, William",46,"Swords, quarrels and valour",0.0,0.396,-0.396,0.396,0,17,11,140
+comedy,"Shakespeare, William",47,"Knaves, thieves and bawds",0.234,0.403,-0.17,0.17,1,13,11,140
+comedy,"Shakespeare, William",49,"Wooing a mistress: suitors, go-betweens and letters",0.221,0.588,-0.367,0.367,1,22,11,140
+comedy,"Shakespeare, William",50,"Fleets, armies and generals: war by sea and land",0.568,0.051,0.516,0.516,1,2,11,140
+comedy,"Shakespeare, William",51,"Parents and children: blessing, birthright and inheritance",0.214,0.25,-0.036,0.036,1,10,11,140
+comedy,"Shakespeare, William",52,"Prodigals, portions and poor kin",0.606,0.403,0.203,0.203,1,12,11,140
+comedy,"Shakespeare, William",54,"Antony and Cleopatra: love, death and mourning",0.215,0.057,0.158,0.158,1,2,11,140
+comedy,"Shakespeare, William",55,"Fairies, fairy queens and enchanted desire",1.539,0.015,1.524,1.524,2,1,11,140
+comedy,"Shakespeare, William",56,"Magic, spells and conjuring",0.267,0.148,0.118,0.118,1,5,11,140
+comedy,"Shakespeare, William",59,"Spanish courts: war, honour and courtship",0.0,0.039,-0.039,0.039,0,1,11,140
+comedy,"Shakespeare, William",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,11,140
+comedy,"Shakespeare, William",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.257,-0.257,0.257,0,8,11,140
+comedy,"Shirley, James",0,"Court life: dukes, favour and honour",18.137,3.102,15.035,15.035,5,42,16,135
+comedy,"Shirley, James",1,"Death, grief and revenge",3.449,1.551,1.897,1.897,7,38,16,135
+comedy,"Shirley, James",2,"Roman politics: senate, consuls and civil war",0.0,0.207,-0.207,0.207,0,7,16,135
+comedy,"Shirley, James",3,"Sickness, physic and doctors",1.06,2.619,-1.559,1.559,5,38,16,135
+comedy,"Shirley, James",4,Love-longing and the lover's complaint,0.307,2.002,-1.695,1.695,1,45,16,135
+comedy,"Shirley, James",5,"Christian faith, sin and salvation",0.517,0.127,0.39,0.39,3,5,16,135
+comedy,"Shirley, James",6,"Money, debt and credit",0.145,2.008,-1.863,1.863,1,45,16,135
+comedy,"Shirley, James",7,The Trojan war: conflict and its aftermath,0.0,0.263,-0.263,0.263,0,6,16,135
+comedy,"Shirley, James",8,"Captains, gallants and cheats",0.509,1.867,-1.358,1.358,2,25,16,135
+comedy,"Shirley, James",9,"Theatre talk: prologues, poets and players",0.667,1.364,-0.697,0.697,4,38,16,135
+comedy,"Shirley, James",10,"England and France: war, embassy and peace",0.0,0.019,-0.019,0.019,0,1,16,135
+comedy,"Shirley, James",11,"Siblings, kin and confidants",0.809,1.258,-0.45,0.45,3,37,16,135
+comedy,"Shirley, James",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.21,-0.21,0.21,0,4,16,135
+comedy,"Shirley, James",14,"Royal love, favour and dynastic relationships",0.51,0.251,0.259,0.259,1,11,16,135
+comedy,"Shirley, James",15,Friars and holy orders in plot,0.0,0.778,-0.778,0.778,0,9,16,135
+comedy,"Shirley, James",16,"Gallantry: ladies, lordships and compliment",4.151,1.046,3.105,3.105,6,34,16,135
+comedy,"Shirley, James",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.083,-0.083,0.083,0,3,16,135
+comedy,"Shirley, James",18,"Rebels, barons and the king's wars at home",0.0,0.03,-0.03,0.03,0,1,16,135
+comedy,"Shirley, James",20,"Hercules: labours, suffering and virtue",0.0,0.207,-0.207,0.207,0,5,16,135
+comedy,"Shirley, James",21,"Cupid, Venus and the nymphs",0.634,0.83,-0.196,0.196,2,16,16,135
+comedy,"Shirley, James",22,"Shepherds, flocks and Pan",0.712,0.426,0.286,0.286,1,9,16,135
+comedy,"Shirley, James",23,"Husbands, wives and jealousy",0.474,1.01,-0.536,0.536,2,26,16,135
+comedy,"Shirley, James",24,"Apollo, Phoebus and the Muses",0.0,1.076,-1.076,1.076,0,12,16,135
+comedy,"Shirley, James",25,"Kings, power and law: political sententiae",0.0,0.042,-0.042,0.042,0,2,16,135
+comedy,"Shirley, James",26,"Devils, hell and fiends",0.951,0.875,0.076,0.076,3,19,16,135
+comedy,"Shirley, James",27,"Uncles, nephews and cousins: kinship and patronage",1.556,1.187,0.369,0.369,5,32,16,135
+comedy,"Shirley, James",28,"Marriage-making: weddings, brides and matches",0.907,1.08,-0.173,0.173,3,30,16,135
+comedy,"Shirley, James",30,"Constables, justices and the watch",0.484,0.902,-0.419,0.419,1,13,16,135
+comedy,"Shirley, James",31,"Popes, cardinals and the crown",0.0,0.015,-0.015,0.015,0,1,16,135
+comedy,"Shirley, James",32,Rings and jewels as tokens,0.359,0.592,-0.233,0.233,2,18,16,135
+comedy,"Shirley, James",33,"Fathers, daughters and marriage negotiations",1.167,0.894,0.273,0.273,5,24,16,135
+comedy,"Shirley, James",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.06,-0.06,0.06,0,1,16,135
+comedy,"Shirley, James",35,"Fools, wit and railing",0.172,0.763,-0.591,0.591,1,28,16,135
+comedy,"Shirley, James",36,"Hell, Furies and the language of punishment",0.0,0.016,-0.016,0.016,0,1,16,135
+comedy,"Shirley, James",37,"Riches, poverty and covetousness",0.0,0.121,-0.121,0.121,0,5,16,135
+comedy,"Shirley, James",38,"Death, parting and grief at court",0.0,0.022,-0.022,0.022,0,1,16,135
+comedy,"Shirley, James",39,"Profit, conscience and dishonest dealing",0.0,0.083,-0.083,0.083,0,3,16,135
+comedy,"Shirley, James",40,"Sin, guilt and violent loss within families",0.179,0.249,-0.07,0.07,1,9,16,135
+comedy,"Shirley, James",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,16,135
+comedy,"Shirley, James",44,"Drinking: wine, ale and taverns",0.188,0.657,-0.469,0.469,1,22,16,135
+comedy,"Shirley, James",45,"Widows, wooing and remarriage",0.4,0.847,-0.448,0.448,2,12,16,135
+comedy,"Shirley, James",46,"Swords, quarrels and valour",0.811,0.314,0.496,0.496,3,14,16,135
+comedy,"Shirley, James",47,"Knaves, thieves and bawds",0.479,0.38,0.099,0.099,1,13,16,135
+comedy,"Shirley, James",49,"Wooing a mistress: suitors, go-betweens and letters",1.543,0.445,1.098,1.098,4,19,16,135
+comedy,"Shirley, James",50,"Fleets, armies and generals: war by sea and land",0.0,0.1,-0.1,0.1,0,3,16,135
+comedy,"Shirley, James",51,"Parents and children: blessing, birthright and inheritance",0.0,0.277,-0.277,0.277,0,11,16,135
+comedy,"Shirley, James",52,"Prodigals, portions and poor kin",0.185,0.445,-0.26,0.26,1,12,16,135
+comedy,"Shirley, James",54,"Antony and Cleopatra: love, death and mourning",0.193,0.054,0.139,0.139,1,2,16,135
+comedy,"Shirley, James",55,"Fairies, fairy queens and enchanted desire",0.0,0.141,-0.141,0.141,0,3,16,135
+comedy,"Shirley, James",56,"Magic, spells and conjuring",0.0,0.176,-0.176,0.176,0,6,16,135
+comedy,"Shirley, James",59,"Spanish courts: war, honour and courtship",0.0,0.041,-0.041,0.041,0,1,16,135
+comedy,"Shirley, James",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,16,135
+comedy,"Shirley, James",62,"The courtier as a type: fashion, affectation and foreign manners",0.196,0.244,-0.048,0.048,1,7,16,135
+tragedy,"Chapman, George",0,"Court life: dukes, favour and honour",3.165,4.401,-1.236,1.236,1,20,5,106
+tragedy,"Chapman, George",1,"Death, grief and revenge",4.564,6.83,-2.266,2.266,3,77,5,106
+tragedy,"Chapman, George",2,"Roman politics: senate, consuls and civil war",6.404,6.393,0.011,0.011,2,25,5,106
+tragedy,"Chapman, George",3,"Sickness, physic and doctors",0.0,0.796,-0.796,0.796,0,19,5,106
+tragedy,"Chapman, George",4,Love-longing and the lover's complaint,0.516,0.89,-0.374,0.374,1,23,5,106
+tragedy,"Chapman, George",5,"Christian faith, sin and salvation",1.043,0.306,0.737,0.737,2,7,5,106
+tragedy,"Chapman, George",6,"Money, debt and credit",0.0,0.405,-0.405,0.405,0,9,5,106
+tragedy,"Chapman, George",7,The Trojan war: conflict and its aftermath,1.094,2.721,-1.627,1.627,2,12,5,106
+tragedy,"Chapman, George",8,"Captains, gallants and cheats",0.0,0.205,-0.205,0.205,0,6,5,106
+tragedy,"Chapman, George",9,"Theatre talk: prologues, poets and players",0.502,0.315,0.187,0.187,1,10,5,106
+tragedy,"Chapman, George",10,"England and France: war, embassy and peace",2.708,0.603,2.105,2.105,2,6,5,106
+tragedy,"Chapman, George",11,"Siblings, kin and confidants",0.523,0.769,-0.245,0.245,1,16,5,106
+tragedy,"Chapman, George",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.25,-0.25,0.25,0,6,5,106
+tragedy,"Chapman, George",14,"Royal love, favour and dynastic relationships",0.482,0.585,-0.103,0.103,1,14,5,106
+tragedy,"Chapman, George",15,Friars and holy orders in plot,0.954,0.426,0.528,0.528,1,7,5,106
+tragedy,"Chapman, George",16,"Gallantry: ladies, lordships and compliment",0.0,0.156,-0.156,0.156,0,4,5,106
+tragedy,"Chapman, George",17,"Eastern conquest: Persians, Turks and soldans",0.0,2.513,-2.513,2.513,0,12,5,106
+tragedy,"Chapman, George",18,"Rebels, barons and the king's wars at home",0.996,0.165,0.831,0.831,2,5,5,106
+tragedy,"Chapman, George",20,"Hercules: labours, suffering and virtue",0.0,1.357,-1.357,1.357,0,6,5,106
+tragedy,"Chapman, George",21,"Cupid, Venus and the nymphs",0.0,0.183,-0.183,0.183,0,6,5,106
+tragedy,"Chapman, George",22,"Shepherds, flocks and Pan",0.0,0.135,-0.135,0.135,0,5,5,106
+tragedy,"Chapman, George",23,"Husbands, wives and jealousy",1.055,0.468,0.587,0.587,2,12,5,106
+tragedy,"Chapman, George",24,"Apollo, Phoebus and the Muses",0.0,0.232,-0.232,0.232,0,6,5,106
+tragedy,"Chapman, George",25,"Kings, power and law: political sententiae",1.63,1.493,0.137,0.137,2,18,5,106
+tragedy,"Chapman, George",26,"Devils, hell and fiends",0.594,0.301,0.293,0.293,1,9,5,106
+tragedy,"Chapman, George",27,"Uncles, nephews and cousins: kinship and patronage",0.0,0.164,-0.164,0.164,0,4,5,106
+tragedy,"Chapman, George",28,"Marriage-making: weddings, brides and matches",0.0,0.207,-0.207,0.207,0,7,5,106
+tragedy,"Chapman, George",30,"Constables, justices and the watch",0.542,0.0,0.542,0.542,1,0,5,106
+tragedy,"Chapman, George",31,"Popes, cardinals and the crown",0.0,0.328,-0.328,0.328,0,4,5,106
+tragedy,"Chapman, George",32,Rings and jewels as tokens,0.0,0.124,-0.124,0.124,0,5,5,106
+tragedy,"Chapman, George",33,"Fathers, daughters and marriage negotiations",0.0,0.096,-0.096,0.096,0,4,5,106
+tragedy,"Chapman, George",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,1.388,-1.388,1.388,0,12,5,106
+tragedy,"Chapman, George",35,"Fools, wit and railing",0.0,0.186,-0.186,0.186,0,5,5,106
+tragedy,"Chapman, George",36,"Hell, Furies and the language of punishment",0.0,1.356,-1.356,1.356,0,21,5,106
+tragedy,"Chapman, George",37,"Riches, poverty and covetousness",0.0,0.08,-0.08,0.08,0,4,5,106
+tragedy,"Chapman, George",38,"Death, parting and grief at court",0.473,0.482,-0.008,0.008,1,13,5,106
+tragedy,"Chapman, George",39,"Profit, conscience and dishonest dealing",0.0,0.144,-0.144,0.144,0,2,5,106
+tragedy,"Chapman, George",40,"Sin, guilt and violent loss within families",1.049,0.689,0.36,0.36,1,17,5,106
+tragedy,"Chapman, George",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,5,106
+tragedy,"Chapman, George",44,"Drinking: wine, ale and taverns",0.0,0.117,-0.117,0.117,0,5,5,106
+tragedy,"Chapman, George",45,"Widows, wooing and remarriage",0.0,0.077,-0.077,0.077,0,3,5,106
+tragedy,"Chapman, George",46,"Swords, quarrels and valour",0.0,0.113,-0.113,0.113,0,5,5,106
+tragedy,"Chapman, George",47,"Knaves, thieves and bawds",0.0,0.108,-0.108,0.108,0,5,5,106
+tragedy,"Chapman, George",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.101,-0.101,0.101,0,3,5,106
+tragedy,"Chapman, George",50,"Fleets, armies and generals: war by sea and land",1.083,0.292,0.791,0.791,2,10,5,106
+tragedy,"Chapman, George",51,"Parents and children: blessing, birthright and inheritance",0.0,0.125,-0.125,0.125,0,5,5,106
+tragedy,"Chapman, George",52,"Prodigals, portions and poor kin",0.0,0.274,-0.274,0.274,0,5,5,106
+tragedy,"Chapman, George",54,"Antony and Cleopatra: love, death and mourning",0.562,0.933,-0.371,0.371,1,7,5,106
+tragedy,"Chapman, George",55,"Fairies, fairy queens and enchanted desire",0.0,0.019,-0.019,0.019,0,1,5,106
+tragedy,"Chapman, George",56,"Magic, spells and conjuring",0.0,0.31,-0.31,0.31,0,5,5,106
+tragedy,"Chapman, George",59,"Spanish courts: war, honour and courtship",0.508,1.131,-0.623,0.623,1,7,5,106
+tragedy,"Chapman, George",60,"Imperial Rome: rulers, favour and political exemplars",0.482,0.577,-0.095,0.095,1,9,5,106
+tragedy,"Chapman, George",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.035,-0.035,0.035,0,2,5,106
+tragedy,"Marlowe, Christopher",0,"Court life: dukes, favour and honour",0.0,4.594,-4.594,4.594,0,21,6,105
+tragedy,"Marlowe, Christopher",1,"Death, grief and revenge",2.455,6.972,-4.517,4.517,3,77,6,105
+tragedy,"Marlowe, Christopher",2,"Roman politics: senate, consuls and civil war",0.705,6.718,-6.013,6.013,1,26,6,105
+tragedy,"Marlowe, Christopher",3,"Sickness, physic and doctors",2.618,0.654,1.964,1.964,2,17,6,105
+tragedy,"Marlowe, Christopher",4,Love-longing and the lover's complaint,0.594,0.889,-0.295,0.295,1,23,6,105
+tragedy,"Marlowe, Christopher",5,"Christian faith, sin and salvation",0.0,0.359,-0.359,0.359,0,9,6,105
+tragedy,"Marlowe, Christopher",6,"Money, debt and credit",0.477,0.382,0.095,0.095,1,8,6,105
+tragedy,"Marlowe, Christopher",7,The Trojan war: conflict and its aftermath,6.837,2.408,4.429,4.429,1,13,6,105
+tragedy,"Marlowe, Christopher",8,"Captains, gallants and cheats",0.0,0.207,-0.207,0.207,0,6,6,105
+tragedy,"Marlowe, Christopher",9,"Theatre talk: prologues, poets and players",0.451,0.316,0.134,0.134,1,10,6,105
+tragedy,"Marlowe, Christopher",10,"England and France: war, embassy and peace",0.0,0.737,-0.737,0.737,0,8,6,105
+tragedy,"Marlowe, Christopher",11,"Siblings, kin and confidants",1.646,0.707,0.939,0.939,2,15,6,105
+tragedy,"Marlowe, Christopher",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.591,0.218,0.372,0.372,1,5,6,105
+tragedy,"Marlowe, Christopher",14,"Royal love, favour and dynastic relationships",0.0,0.614,-0.614,0.614,0,15,6,105
+tragedy,"Marlowe, Christopher",15,Friars and holy orders in plot,3.377,0.283,3.095,3.095,3,5,6,105
+tragedy,"Marlowe, Christopher",16,"Gallantry: ladies, lordships and compliment",0.0,0.157,-0.157,0.157,0,4,6,105
+tragedy,"Marlowe, Christopher",17,"Eastern conquest: Persians, Turks and soldans",17.675,1.527,16.148,16.148,2,10,6,105
+tragedy,"Marlowe, Christopher",18,"Rebels, barons and the king's wars at home",0.0,0.214,-0.214,0.214,0,7,6,105
+tragedy,"Marlowe, Christopher",20,"Hercules: labours, suffering and virtue",0.0,1.369,-1.369,1.369,0,6,6,105
+tragedy,"Marlowe, Christopher",21,"Cupid, Venus and the nymphs",0.0,0.185,-0.185,0.185,0,6,6,105
+tragedy,"Marlowe, Christopher",22,"Shepherds, flocks and Pan",0.511,0.107,0.403,0.403,1,4,6,105
+tragedy,"Marlowe, Christopher",23,"Husbands, wives and jealousy",0.0,0.523,-0.523,0.523,0,14,6,105
+tragedy,"Marlowe, Christopher",24,"Apollo, Phoebus and the Muses",0.0,0.234,-0.234,0.234,0,6,6,105
+tragedy,"Marlowe, Christopher",25,"Kings, power and law: political sententiae",0.0,1.585,-1.585,1.585,0,20,6,105
+tragedy,"Marlowe, Christopher",26,"Devils, hell and fiends",0.696,0.293,0.404,0.404,1,9,6,105
+tragedy,"Marlowe, Christopher",27,"Uncles, nephews and cousins: kinship and patronage",0.0,0.165,-0.165,0.165,0,4,6,105
+tragedy,"Marlowe, Christopher",28,"Marriage-making: weddings, brides and matches",0.0,0.209,-0.209,0.209,0,7,6,105
+tragedy,"Marlowe, Christopher",30,"Constables, justices and the watch",0.0,0.026,-0.026,0.026,0,1,6,105
+tragedy,"Marlowe, Christopher",31,"Popes, cardinals and the crown",2.595,0.183,2.412,2.412,1,3,6,105
+tragedy,"Marlowe, Christopher",32,Rings and jewels as tokens,0.0,0.125,-0.125,0.125,0,5,6,105
+tragedy,"Marlowe, Christopher",33,"Fathers, daughters and marriage negotiations",0.442,0.072,0.37,0.37,1,3,6,105
+tragedy,"Marlowe, Christopher",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.481,1.373,-0.893,0.893,1,11,6,105
+tragedy,"Marlowe, Christopher",35,"Fools, wit and railing",0.0,0.188,-0.188,0.188,0,5,6,105
+tragedy,"Marlowe, Christopher",36,"Hell, Furies and the language of punishment",0.464,1.343,-0.879,0.879,1,20,6,105
+tragedy,"Marlowe, Christopher",37,"Riches, poverty and covetousness",0.0,0.081,-0.081,0.081,0,4,6,105
+tragedy,"Marlowe, Christopher",38,"Death, parting and grief at court",0.0,0.509,-0.509,0.509,0,14,6,105
+tragedy,"Marlowe, Christopher",39,"Profit, conscience and dishonest dealing",0.0,0.145,-0.145,0.145,0,2,6,105
+tragedy,"Marlowe, Christopher",40,"Sin, guilt and violent loss within families",0.0,0.745,-0.745,0.745,0,18,6,105
+tragedy,"Marlowe, Christopher",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,6,105
+tragedy,"Marlowe, Christopher",44,"Drinking: wine, ale and taverns",0.0,0.118,-0.118,0.118,0,5,6,105
+tragedy,"Marlowe, Christopher",45,"Widows, wooing and remarriage",0.0,0.078,-0.078,0.078,0,3,6,105
+tragedy,"Marlowe, Christopher",46,"Swords, quarrels and valour",0.0,0.114,-0.114,0.114,0,5,6,105
+tragedy,"Marlowe, Christopher",47,"Knaves, thieves and bawds",0.0,0.109,-0.109,0.109,0,5,6,105
+tragedy,"Marlowe, Christopher",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.102,-0.102,0.102,0,3,6,105
+tragedy,"Marlowe, Christopher",50,"Fleets, armies and generals: war by sea and land",0.479,0.319,0.16,0.16,1,11,6,105
+tragedy,"Marlowe, Christopher",51,"Parents and children: blessing, birthright and inheritance",0.0,0.126,-0.126,0.126,0,5,6,105
+tragedy,"Marlowe, Christopher",52,"Prodigals, portions and poor kin",0.0,0.276,-0.276,0.276,0,5,6,105
+tragedy,"Marlowe, Christopher",54,"Antony and Cleopatra: love, death and mourning",0.0,0.969,-0.969,0.969,0,8,6,105
+tragedy,"Marlowe, Christopher",55,"Fairies, fairy queens and enchanted desire",0.0,0.02,-0.02,0.02,0,1,6,105
+tragedy,"Marlowe, Christopher",56,"Magic, spells and conjuring",2.95,0.144,2.806,2.806,1,4,6,105
+tragedy,"Marlowe, Christopher",59,"Spanish courts: war, honour and courtship",0.0,1.166,-1.166,1.166,0,8,6,105
+tragedy,"Marlowe, Christopher",60,"Imperial Rome: rulers, favour and political exemplars",0.455,0.58,-0.125,0.125,1,9,6,105
+tragedy,"Marlowe, Christopher",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.035,-0.035,0.035,0,2,6,105
+tragedy,"Massinger, Philip",0,"Court life: dukes, favour and honour",10.092,4.017,6.074,6.074,2,19,6,105
+tragedy,"Massinger, Philip",1,"Death, grief and revenge",9.366,6.577,2.789,2.789,6,74,6,105
+tragedy,"Massinger, Philip",2,"Roman politics: senate, consuls and civil war",0.363,6.738,-6.375,6.375,1,26,6,105
+tragedy,"Massinger, Philip",3,"Sickness, physic and doctors",1.355,0.727,0.628,0.628,3,16,6,105
+tragedy,"Massinger, Philip",4,Love-longing and the lover's complaint,0.0,0.923,-0.923,0.923,0,24,6,105
+tragedy,"Massinger, Philip",5,"Christian faith, sin and salvation",0.395,0.336,0.059,0.059,1,8,6,105
+tragedy,"Massinger, Philip",6,"Money, debt and credit",0.0,0.409,-0.409,0.409,0,9,6,105
+tragedy,"Massinger, Philip",7,The Trojan war: conflict and its aftermath,0.0,2.799,-2.799,2.799,0,14,6,105
+tragedy,"Massinger, Philip",8,"Captains, gallants and cheats",1.77,0.106,1.664,1.664,3,3,6,105
+tragedy,"Massinger, Philip",9,"Theatre talk: prologues, poets and players",0.0,0.342,-0.342,0.342,0,11,6,105
+tragedy,"Massinger, Philip",10,"England and France: war, embassy and peace",0.787,0.692,0.095,0.095,1,7,6,105
+tragedy,"Massinger, Philip",11,"Siblings, kin and confidants",0.0,0.801,-0.801,0.801,0,17,6,105
+tragedy,"Massinger, Philip",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.762,0.209,0.553,0.553,1,5,6,105
+tragedy,"Massinger, Philip",14,"Royal love, favour and dynastic relationships",1.217,0.544,0.673,0.673,2,13,6,105
+tragedy,"Massinger, Philip",15,Friars and holy orders in plot,0.424,0.452,-0.028,0.028,1,7,6,105
+tragedy,"Massinger, Philip",16,"Gallantry: ladies, lordships and compliment",0.915,0.105,0.81,0.81,1,3,6,105
+tragedy,"Massinger, Philip",17,"Eastern conquest: Persians, Turks and soldans",0.0,2.537,-2.537,2.537,0,12,6,105
+tragedy,"Massinger, Philip",18,"Rebels, barons and the king's wars at home",0.0,0.214,-0.214,0.214,0,7,6,105
+tragedy,"Massinger, Philip",20,"Hercules: labours, suffering and virtue",0.0,1.369,-1.369,1.369,0,6,6,105
+tragedy,"Massinger, Philip",21,"Cupid, Venus and the nymphs",0.0,0.185,-0.185,0.185,0,6,6,105
+tragedy,"Massinger, Philip",22,"Shepherds, flocks and Pan",0.46,0.11,0.35,0.35,1,4,6,105
+tragedy,"Massinger, Philip",23,"Husbands, wives and jealousy",0.415,0.499,-0.084,0.084,1,13,6,105
+tragedy,"Massinger, Philip",24,"Apollo, Phoebus and the Muses",0.0,0.234,-0.234,0.234,0,6,6,105
+tragedy,"Massinger, Philip",25,"Kings, power and law: political sententiae",0.0,1.585,-1.585,1.585,0,20,6,105
+tragedy,"Massinger, Philip",26,"Devils, hell and fiends",0.381,0.311,0.07,0.07,1,9,6,105
+tragedy,"Massinger, Philip",27,"Uncles, nephews and cousins: kinship and patronage",0.0,0.165,-0.165,0.165,0,4,6,105
+tragedy,"Massinger, Philip",28,"Marriage-making: weddings, brides and matches",0.41,0.185,0.225,0.225,1,6,6,105
+tragedy,"Massinger, Philip",30,"Constables, justices and the watch",0.0,0.026,-0.026,0.026,0,1,6,105
+tragedy,"Massinger, Philip",31,"Popes, cardinals and the crown",0.0,0.331,-0.331,0.331,0,4,6,105
+tragedy,"Massinger, Philip",32,Rings and jewels as tokens,0.0,0.125,-0.125,0.125,0,5,6,105
+tragedy,"Massinger, Philip",33,"Fathers, daughters and marriage negotiations",0.0,0.097,-0.097,0.097,0,4,6,105
+tragedy,"Massinger, Philip",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,1.401,-1.401,1.401,0,12,6,105
+tragedy,"Massinger, Philip",35,"Fools, wit and railing",0.0,0.188,-0.188,0.188,0,5,6,105
+tragedy,"Massinger, Philip",36,"Hell, Furies and the language of punishment",0.0,1.369,-1.369,1.369,0,21,6,105
+tragedy,"Massinger, Philip",37,"Riches, poverty and covetousness",0.0,0.081,-0.081,0.081,0,4,6,105
+tragedy,"Massinger, Philip",38,"Death, parting and grief at court",0.0,0.509,-0.509,0.509,0,14,6,105
+tragedy,"Massinger, Philip",39,"Profit, conscience and dishonest dealing",0.0,0.145,-0.145,0.145,0,2,6,105
+tragedy,"Massinger, Philip",40,"Sin, guilt and violent loss within families",0.394,0.723,-0.328,0.328,1,17,6,105
+tragedy,"Massinger, Philip",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,6,105
+tragedy,"Massinger, Philip",44,"Drinking: wine, ale and taverns",0.819,0.071,0.748,0.748,2,3,6,105
+tragedy,"Massinger, Philip",45,"Widows, wooing and remarriage",0.0,0.078,-0.078,0.078,0,3,6,105
+tragedy,"Massinger, Philip",46,"Swords, quarrels and valour",0.854,0.065,0.789,0.789,2,3,6,105
+tragedy,"Massinger, Philip",47,"Knaves, thieves and bawds",0.79,0.064,0.727,0.727,2,3,6,105
+tragedy,"Massinger, Philip",49,"Wooing a mistress: suitors, go-betweens and letters",0.415,0.078,0.337,0.337,1,2,6,105
+tragedy,"Massinger, Philip",50,"Fleets, armies and generals: war by sea and land",0.0,0.347,-0.347,0.347,0,12,6,105
+tragedy,"Massinger, Philip",51,"Parents and children: blessing, birthright and inheritance",0.914,0.074,0.84,0.84,2,3,6,105
+tragedy,"Massinger, Philip",52,"Prodigals, portions and poor kin",0.0,0.276,-0.276,0.276,0,5,6,105
+tragedy,"Massinger, Philip",54,"Antony and Cleopatra: love, death and mourning",0.0,0.969,-0.969,0.969,0,8,6,105
+tragedy,"Massinger, Philip",55,"Fairies, fairy queens and enchanted desire",0.0,0.02,-0.02,0.02,0,1,6,105
+tragedy,"Massinger, Philip",56,"Magic, spells and conjuring",0.424,0.288,0.136,0.136,1,4,6,105
+tragedy,"Massinger, Philip",59,"Spanish courts: war, honour and courtship",0.399,1.143,-0.744,0.744,1,7,6,105
+tragedy,"Massinger, Philip",60,"Imperial Rome: rulers, favour and political exemplars",2.743,0.449,2.294,2.294,2,8,6,105
+tragedy,"Massinger, Philip",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.035,-0.035,0.035,0,2,6,105
+tragedy,"Middleton, Thomas",0,"Court life: dukes, favour and honour",12.988,3.938,9.051,9.051,1,20,5,106
+tragedy,"Middleton, Thomas",1,"Death, grief and revenge",4.636,6.827,-2.191,2.191,3,77,5,106
+tragedy,"Middleton, Thomas",2,"Roman politics: senate, consuls and civil war",0.0,6.695,-6.695,6.695,0,27,5,106
+tragedy,"Middleton, Thomas",3,"Sickness, physic and doctors",0.592,0.768,-0.177,0.177,1,18,5,106
+tragedy,"Middleton, Thomas",4,Love-longing and the lover's complaint,0.0,0.915,-0.915,0.915,0,24,5,106
+tragedy,"Middleton, Thomas",5,"Christian faith, sin and salvation",0.0,0.356,-0.356,0.356,0,9,5,106
+tragedy,"Middleton, Thomas",6,"Money, debt and credit",3.342,0.248,3.094,3.094,2,7,5,106
+tragedy,"Middleton, Thomas",7,The Trojan war: conflict and its aftermath,0.0,2.773,-2.773,2.773,0,14,5,106
+tragedy,"Middleton, Thomas",8,"Captains, gallants and cheats",0.0,0.205,-0.205,0.205,0,6,5,106
+tragedy,"Middleton, Thomas",9,"Theatre talk: prologues, poets and players",0.0,0.339,-0.339,0.339,0,11,5,106
+tragedy,"Middleton, Thomas",10,"England and France: war, embassy and peace",0.0,0.73,-0.73,0.73,0,8,5,106
+tragedy,"Middleton, Thomas",11,"Siblings, kin and confidants",0.0,0.793,-0.793,0.793,0,17,5,106
+tragedy,"Middleton, Thomas",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.25,-0.25,0.25,0,6,5,106
+tragedy,"Middleton, Thomas",14,"Royal love, favour and dynastic relationships",0.692,0.575,0.117,0.117,1,14,5,106
+tragedy,"Middleton, Thomas",15,Friars and holy orders in plot,0.0,0.471,-0.471,0.471,0,8,5,106
+tragedy,"Middleton, Thomas",16,"Gallantry: ladies, lordships and compliment",1.426,0.088,1.338,1.338,1,3,5,106
+tragedy,"Middleton, Thomas",17,"Eastern conquest: Persians, Turks and soldans",0.0,2.513,-2.513,2.513,0,12,5,106
+tragedy,"Middleton, Thomas",18,"Rebels, barons and the king's wars at home",1.19,0.156,1.034,1.034,1,6,5,106
+tragedy,"Middleton, Thomas",20,"Hercules: labours, suffering and virtue",0.0,1.357,-1.357,1.357,0,6,5,106
+tragedy,"Middleton, Thomas",21,"Cupid, Venus and the nymphs",0.0,0.183,-0.183,0.183,0,6,5,106
+tragedy,"Middleton, Thomas",22,"Shepherds, flocks and Pan",0.0,0.135,-0.135,0.135,0,5,5,106
+tragedy,"Middleton, Thomas",23,"Husbands, wives and jealousy",1.779,0.434,1.345,1.345,1,13,5,106
+tragedy,"Middleton, Thomas",24,"Apollo, Phoebus and the Muses",0.0,0.232,-0.232,0.232,0,6,5,106
+tragedy,"Middleton, Thomas",25,"Kings, power and law: political sententiae",0.591,1.542,-0.952,0.952,1,19,5,106
+tragedy,"Middleton, Thomas",26,"Devils, hell and fiends",1.807,0.244,1.563,1.563,1,9,5,106
+tragedy,"Middleton, Thomas",27,"Uncles, nephews and cousins: kinship and patronage",1.973,0.071,1.903,1.903,1,3,5,106
+tragedy,"Middleton, Thomas",28,"Marriage-making: weddings, brides and matches",0.0,0.207,-0.207,0.207,0,7,5,106
+tragedy,"Middleton, Thomas",30,"Constables, justices and the watch",0.0,0.026,-0.026,0.026,0,1,5,106
+tragedy,"Middleton, Thomas",31,"Popes, cardinals and the crown",0.0,0.328,-0.328,0.328,0,4,5,106
+tragedy,"Middleton, Thomas",32,Rings and jewels as tokens,0.733,0.089,0.644,0.644,1,4,5,106
+tragedy,"Middleton, Thomas",33,"Fathers, daughters and marriage negotiations",0.48,0.073,0.407,0.407,1,3,5,106
+tragedy,"Middleton, Thomas",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,1.388,-1.388,1.388,0,12,5,106
+tragedy,"Middleton, Thomas",35,"Fools, wit and railing",1.128,0.133,0.995,0.995,1,4,5,106
+tragedy,"Middleton, Thomas",36,"Hell, Furies and the language of punishment",0.0,1.356,-1.356,1.356,0,21,5,106
+tragedy,"Middleton, Thomas",37,"Riches, poverty and covetousness",0.592,0.052,0.541,0.541,1,3,5,106
+tragedy,"Middleton, Thomas",38,"Death, parting and grief at court",0.0,0.504,-0.504,0.504,0,14,5,106
+tragedy,"Middleton, Thomas",39,"Profit, conscience and dishonest dealing",1.641,0.066,1.575,1.575,1,1,5,106
+tragedy,"Middleton, Thomas",40,"Sin, guilt and violent loss within families",2.336,0.628,1.709,1.709,2,16,5,106
+tragedy,"Middleton, Thomas",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,5,106
+tragedy,"Middleton, Thomas",44,"Drinking: wine, ale and taverns",0.0,0.117,-0.117,0.117,0,5,5,106
+tragedy,"Middleton, Thomas",45,"Widows, wooing and remarriage",0.0,0.077,-0.077,0.077,0,3,5,106
+tragedy,"Middleton, Thomas",46,"Swords, quarrels and valour",0.0,0.113,-0.113,0.113,0,5,5,106
+tragedy,"Middleton, Thomas",47,"Knaves, thieves and bawds",0.0,0.108,-0.108,0.108,0,5,5,106
+tragedy,"Middleton, Thomas",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.101,-0.101,0.101,0,3,5,106
+tragedy,"Middleton, Thomas",50,"Fleets, armies and generals: war by sea and land",0.0,0.343,-0.343,0.343,0,12,5,106
+tragedy,"Middleton, Thomas",51,"Parents and children: blessing, birthright and inheritance",0.643,0.095,0.548,0.548,1,4,5,106
+tragedy,"Middleton, Thomas",52,"Prodigals, portions and poor kin",1.917,0.183,1.733,1.733,1,4,5,106
+tragedy,"Middleton, Thomas",54,"Antony and Cleopatra: love, death and mourning",0.0,0.96,-0.96,0.96,0,8,5,106
+tragedy,"Middleton, Thomas",55,"Fairies, fairy queens and enchanted desire",0.0,0.019,-0.019,0.019,0,1,5,106
+tragedy,"Middleton, Thomas",56,"Magic, spells and conjuring",0.606,0.281,0.325,0.325,1,4,5,106
+tragedy,"Middleton, Thomas",59,"Spanish courts: war, honour and courtship",0.0,1.155,-1.155,1.155,0,8,5,106
+tragedy,"Middleton, Thomas",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.6,-0.6,0.6,0,10,5,106
+tragedy,"Middleton, Thomas",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.035,-0.035,0.035,0,2,5,106
+tragedy,"Seneca, Lucius Annaeus",0,"Court life: dukes, favour and honour",0.0,4.776,-4.776,4.776,0,21,9,101
+tragedy,"Seneca, Lucius Annaeus",1,"Death, grief and revenge",3.373,7.093,-3.72,3.72,5,75,9,101
+tragedy,"Seneca, Lucius Annaeus",2,"Roman politics: senate, consuls and civil war",0.0,6.941,-6.941,6.941,0,26,9,101
+tragedy,"Seneca, Lucius Annaeus",3,"Sickness, physic and doctors",0.0,0.836,-0.836,0.836,0,19,9,101
+tragedy,"Seneca, Lucius Annaeus",4,Love-longing and the lover's complaint,0.0,0.96,-0.96,0.96,0,24,9,101
+tragedy,"Seneca, Lucius Annaeus",5,"Christian faith, sin and salvation",0.0,0.373,-0.373,0.373,0,9,9,101
+tragedy,"Seneca, Lucius Annaeus",6,"Money, debt and credit",0.0,0.426,-0.426,0.426,0,9,9,101
+tragedy,"Seneca, Lucius Annaeus",7,The Trojan war: conflict and its aftermath,18.234,1.285,16.949,16.949,5,9,9,101
+tragedy,"Seneca, Lucius Annaeus",8,"Captains, gallants and cheats",0.0,0.216,-0.216,0.216,0,6,9,101
+tragedy,"Seneca, Lucius Annaeus",9,"Theatre talk: prologues, poets and players",0.0,0.356,-0.356,0.356,0,11,9,101
+tragedy,"Seneca, Lucius Annaeus",10,"England and France: war, embassy and peace",0.0,0.767,-0.767,0.767,0,8,9,101
+tragedy,"Seneca, Lucius Annaeus",11,"Siblings, kin and confidants",0.0,0.833,-0.833,0.833,0,17,9,101
+tragedy,"Seneca, Lucius Annaeus",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.218,-0.218,0.218,0,5,9,101
+tragedy,"Seneca, Lucius Annaeus",14,"Royal love, favour and dynastic relationships",0.0,0.638,-0.638,0.638,0,15,9,101
+tragedy,"Seneca, Lucius Annaeus",15,Friars and holy orders in plot,0.0,0.495,-0.495,0.495,0,8,9,101
+tragedy,"Seneca, Lucius Annaeus",16,"Gallantry: ladies, lordships and compliment",0.0,0.163,-0.163,0.163,0,4,9,101
+tragedy,"Seneca, Lucius Annaeus",17,"Eastern conquest: Persians, Turks and soldans",0.0,2.638,-2.638,2.638,0,12,9,101
+tragedy,"Seneca, Lucius Annaeus",18,"Rebels, barons and the king's wars at home",0.0,0.222,-0.222,0.222,0,7,9,101
+tragedy,"Seneca, Lucius Annaeus",20,"Hercules: labours, suffering and virtue",15.327,0.058,15.269,15.269,4,2,9,101
+tragedy,"Seneca, Lucius Annaeus",21,"Cupid, Venus and the nymphs",0.395,0.157,0.238,0.238,1,5,9,101
+tragedy,"Seneca, Lucius Annaeus",22,"Shepherds, flocks and Pan",0.418,0.105,0.313,0.313,1,4,9,101
+tragedy,"Seneca, Lucius Annaeus",23,"Husbands, wives and jealousy",0.0,0.544,-0.544,0.544,0,14,9,101
+tragedy,"Seneca, Lucius Annaeus",24,"Apollo, Phoebus and the Muses",1.962,0.069,1.894,1.894,3,3,9,101
+tragedy,"Seneca, Lucius Annaeus",25,"Kings, power and law: political sententiae",1.359,1.484,-0.124,0.124,2,17,9,101
+tragedy,"Seneca, Lucius Annaeus",26,"Devils, hell and fiends",0.0,0.346,-0.346,0.346,0,10,9,101
+tragedy,"Seneca, Lucius Annaeus",27,"Uncles, nephews and cousins: kinship and patronage",0.0,0.172,-0.172,0.172,0,4,9,101
+tragedy,"Seneca, Lucius Annaeus",28,"Marriage-making: weddings, brides and matches",0.0,0.217,-0.217,0.217,0,7,9,101
+tragedy,"Seneca, Lucius Annaeus",30,"Constables, justices and the watch",0.0,0.027,-0.027,0.027,0,1,9,101
+tragedy,"Seneca, Lucius Annaeus",31,"Popes, cardinals and the crown",0.0,0.344,-0.344,0.344,0,4,9,101
+tragedy,"Seneca, Lucius Annaeus",32,Rings and jewels as tokens,0.0,0.13,-0.13,0.13,0,5,9,101
+tragedy,"Seneca, Lucius Annaeus",33,"Fathers, daughters and marriage negotiations",0.0,0.101,-0.101,0.101,0,4,9,101
+tragedy,"Seneca, Lucius Annaeus",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",5.581,0.959,4.622,4.622,4,8,9,101
+tragedy,"Seneca, Lucius Annaeus",35,"Fools, wit and railing",0.0,0.195,-0.195,0.195,0,5,9,101
+tragedy,"Seneca, Lucius Annaeus",36,"Hell, Furies and the language of punishment",8.482,0.622,7.86,7.86,7,13,9,101
+tragedy,"Seneca, Lucius Annaeus",37,"Riches, poverty and covetousness",0.0,0.084,-0.084,0.084,0,4,9,101
+tragedy,"Seneca, Lucius Annaeus",38,"Death, parting and grief at court",0.411,0.492,-0.081,0.081,1,13,9,101
+tragedy,"Seneca, Lucius Annaeus",39,"Profit, conscience and dishonest dealing",0.0,0.151,-0.151,0.151,0,2,9,101
+tragedy,"Seneca, Lucius Annaeus",40,"Sin, guilt and violent loss within families",0.442,0.692,-0.25,0.25,1,16,9,101
+tragedy,"Seneca, Lucius Annaeus",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,9,101
+tragedy,"Seneca, Lucius Annaeus",44,"Drinking: wine, ale and taverns",0.0,0.122,-0.122,0.122,0,5,9,101
+tragedy,"Seneca, Lucius Annaeus",45,"Widows, wooing and remarriage",0.0,0.081,-0.081,0.081,0,3,9,101
+tragedy,"Seneca, Lucius Annaeus",46,"Swords, quarrels and valour",0.0,0.119,-0.119,0.119,0,5,9,101
+tragedy,"Seneca, Lucius Annaeus",47,"Knaves, thieves and bawds",0.0,0.113,-0.113,0.113,0,5,9,101
+tragedy,"Seneca, Lucius Annaeus",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.106,-0.106,0.106,0,3,9,101
+tragedy,"Seneca, Lucius Annaeus",50,"Fleets, armies and generals: war by sea and land",0.0,0.36,-0.36,0.36,0,12,9,101
+tragedy,"Seneca, Lucius Annaeus",51,"Parents and children: blessing, birthright and inheritance",0.0,0.131,-0.131,0.131,0,5,9,101
+tragedy,"Seneca, Lucius Annaeus",52,"Prodigals, portions and poor kin",0.0,0.287,-0.287,0.287,0,5,9,101
+tragedy,"Seneca, Lucius Annaeus",54,"Antony and Cleopatra: love, death and mourning",0.0,1.007,-1.007,1.007,0,8,9,101
+tragedy,"Seneca, Lucius Annaeus",55,"Fairies, fairy queens and enchanted desire",0.0,0.02,-0.02,0.02,0,1,9,101
+tragedy,"Seneca, Lucius Annaeus",56,"Magic, spells and conjuring",0.773,0.256,0.517,0.517,1,4,9,101
+tragedy,"Seneca, Lucius Annaeus",59,"Spanish courts: war, honour and courtship",0.0,1.212,-1.212,1.212,0,8,9,101
+tragedy,"Seneca, Lucius Annaeus",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.63,-0.63,0.63,0,10,9,101
+tragedy,"Seneca, Lucius Annaeus",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.037,-0.037,0.037,0,2,9,101
+tragedy,"Shakespeare, William",0,"Court life: dukes, favour and honour",1.166,4.731,-3.565,3.565,2,19,12,99
+tragedy,"Shakespeare, William",1,"Death, grief and revenge",3.978,7.061,-3.083,3.083,8,72,12,99
+tragedy,"Shakespeare, William",2,"Roman politics: senate, consuls and civil war",11.856,5.731,6.125,6.125,4,23,12,99
+tragedy,"Shakespeare, William",3,"Sickness, physic and doctors",0.247,0.823,-0.576,0.576,1,18,12,99
+tragedy,"Shakespeare, William",4,Love-longing and the lover's complaint,2.243,0.707,1.536,1.536,4,20,12,99
+tragedy,"Shakespeare, William",5,"Christian faith, sin and salvation",0.161,0.361,-0.2,0.2,1,8,12,99
+tragedy,"Shakespeare, William",6,"Money, debt and credit",1.195,0.289,0.905,0.905,1,8,12,99
+tragedy,"Shakespeare, William",7,The Trojan war: conflict and its aftermath,4.802,2.387,2.415,2.415,2,12,12,99
+tragedy,"Shakespeare, William",8,"Captains, gallants and cheats",0.0,0.22,-0.22,0.22,0,6,12,99
+tragedy,"Shakespeare, William",9,"Theatre talk: prologues, poets and players",0.626,0.287,0.339,0.339,1,10,12,99
+tragedy,"Shakespeare, William",10,"England and France: war, embassy and peace",0.0,0.782,-0.782,0.782,0,8,12,99
+tragedy,"Shakespeare, William",11,"Siblings, kin and confidants",0.691,0.766,-0.074,0.074,2,15,12,99
+tragedy,"Shakespeare, William",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.268,-0.268,0.268,0,6,12,99
+tragedy,"Shakespeare, William",14,"Royal love, favour and dynastic relationships",0.0,0.651,-0.651,0.651,0,15,12,99
+tragedy,"Shakespeare, William",15,Friars and holy orders in plot,1.198,0.359,0.839,0.839,1,7,12,99
+tragedy,"Shakespeare, William",16,"Gallantry: ladies, lordships and compliment",0.0,0.167,-0.167,0.167,0,4,12,99
+tragedy,"Shakespeare, William",17,"Eastern conquest: Persians, Turks and soldans",0.0,2.691,-2.691,2.691,0,12,12,99
+tragedy,"Shakespeare, William",18,"Rebels, barons and the king's wars at home",0.496,0.166,0.329,0.329,1,6,12,99
+tragedy,"Shakespeare, William",20,"Hercules: labours, suffering and virtue",0.0,1.452,-1.452,1.452,0,6,12,99
+tragedy,"Shakespeare, William",21,"Cupid, Venus and the nymphs",0.0,0.196,-0.196,0.196,0,6,12,99
+tragedy,"Shakespeare, William",22,"Shepherds, flocks and Pan",0.0,0.145,-0.145,0.145,0,5,12,99
+tragedy,"Shakespeare, William",23,"Husbands, wives and jealousy",0.467,0.498,-0.031,0.031,1,13,12,99
+tragedy,"Shakespeare, William",24,"Apollo, Phoebus and the Muses",0.0,0.248,-0.248,0.248,0,6,12,99
+tragedy,"Shakespeare, William",25,"Kings, power and law: political sententiae",0.246,1.651,-1.405,1.405,1,19,12,99
+tragedy,"Shakespeare, William",26,"Devils, hell and fiends",0.154,0.334,-0.18,0.18,1,9,12,99
+tragedy,"Shakespeare, William",27,"Uncles, nephews and cousins: kinship and patronage",0.0,0.175,-0.175,0.175,0,4,12,99
+tragedy,"Shakespeare, William",28,"Marriage-making: weddings, brides and matches",0.0,0.221,-0.221,0.221,0,7,12,99
+tragedy,"Shakespeare, William",30,"Constables, justices and the watch",0.0,0.027,-0.027,0.027,0,1,12,99
+tragedy,"Shakespeare, William",31,"Popes, cardinals and the crown",0.0,0.351,-0.351,0.351,0,4,12,99
+tragedy,"Shakespeare, William",32,Rings and jewels as tokens,0.0,0.133,-0.133,0.133,0,5,12,99
+tragedy,"Shakespeare, William",33,"Fathers, daughters and marriage negotiations",0.178,0.081,0.097,0.097,1,3,12,99
+tragedy,"Shakespeare, William",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.222,1.459,-1.237,1.237,1,11,12,99
+tragedy,"Shakespeare, William",35,"Fools, wit and railing",1.291,0.043,1.248,1.248,3,2,12,99
+tragedy,"Shakespeare, William",36,"Hell, Furies and the language of punishment",0.0,1.452,-1.452,1.452,0,21,12,99
+tragedy,"Shakespeare, William",37,"Riches, poverty and covetousness",0.42,0.035,0.385,0.385,2,2,12,99
+tragedy,"Shakespeare, William",38,"Death, parting and grief at court",0.325,0.5,-0.175,0.175,2,12,12,99
+tragedy,"Shakespeare, William",39,"Profit, conscience and dishonest dealing",0.0,0.154,-0.154,0.154,0,2,12,99
+tragedy,"Shakespeare, William",40,"Sin, guilt and violent loss within families",0.658,0.711,-0.053,0.053,1,17,12,99
+tragedy,"Shakespeare, William",43,York and Lancaster: dynastic claims and conflict,0.0,0.0,0.0,0.0,0,0,12,99
+tragedy,"Shakespeare, William",44,"Drinking: wine, ale and taverns",0.0,0.125,-0.125,0.125,0,5,12,99
+tragedy,"Shakespeare, William",45,"Widows, wooing and remarriage",0.0,0.083,-0.083,0.083,0,3,12,99
+tragedy,"Shakespeare, William",46,"Swords, quarrels and valour",0.0,0.121,-0.121,0.121,0,5,12,99
+tragedy,"Shakespeare, William",47,"Knaves, thieves and bawds",0.0,0.115,-0.115,0.115,0,5,12,99
+tragedy,"Shakespeare, William",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.108,-0.108,0.108,0,3,12,99
+tragedy,"Shakespeare, William",50,"Fleets, armies and generals: war by sea and land",0.843,0.266,0.577,0.577,3,9,12,99
+tragedy,"Shakespeare, William",51,"Parents and children: blessing, birthright and inheritance",0.444,0.08,0.364,0.364,2,3,12,99
+tragedy,"Shakespeare, William",52,"Prodigals, portions and poor kin",0.552,0.226,0.326,0.326,3,2,12,99
+tragedy,"Shakespeare, William",54,"Antony and Cleopatra: love, death and mourning",0.179,1.006,-0.826,0.826,1,7,12,99
+tragedy,"Shakespeare, William",55,"Fairies, fairy queens and enchanted desire",0.171,0.0,0.171,0.171,1,0,12,99
+tragedy,"Shakespeare, William",56,"Magic, spells and conjuring",0.253,0.301,-0.048,0.048,1,4,12,99
+tragedy,"Shakespeare, William",59,"Spanish courts: war, honour and courtship",0.0,1.236,-1.236,1.236,0,8,12,99
+tragedy,"Shakespeare, William",60,"Imperial Rome: rulers, favour and political exemplars",0.64,0.565,0.075,0.075,1,9,12,99
+tragedy,"Shakespeare, William",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.037,-0.037,0.037,0,2,12,99
+history,"Heywood, Thomas",0,"Court life: dukes, favour and honour",1.218,3.247,-2.029,2.029,1,8,5,29
+history,"Heywood, Thomas",1,"Death, grief and revenge",4.407,1.865,2.542,2.542,3,14,5,29
+history,"Heywood, Thomas",2,"Roman politics: senate, consuls and civil war",0.0,0.725,-0.725,0.725,0,2,5,29
+history,"Heywood, Thomas",3,"Sickness, physic and doctors",1.269,0.07,1.199,1.199,2,1,5,29
+history,"Heywood, Thomas",4,Love-longing and the lover's complaint,0.0,0.086,-0.086,0.086,0,1,5,29
+history,"Heywood, Thomas",5,"Christian faith, sin and salvation",0.0,2.495,-2.495,2.495,0,2,5,29
+history,"Heywood, Thomas",6,"Money, debt and credit",1.828,0.973,0.855,0.855,1,4,5,29
+history,"Heywood, Thomas",7,The Trojan war: conflict and its aftermath,0.407,0.405,0.002,0.002,1,1,5,29
+history,"Heywood, Thomas",8,"Captains, gallants and cheats",0.443,0.132,0.311,0.311,1,2,5,29
+history,"Heywood, Thomas",9,"Theatre talk: prologues, poets and players",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",10,"England and France: war, embassy and peace",4.498,6.858,-2.36,2.36,2,10,5,29
+history,"Heywood, Thomas",11,"Siblings, kin and confidants",0.0,0.23,-0.23,0.23,0,2,5,29
+history,"Heywood, Thomas",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.102,-0.102,0.102,0,1,5,29
+history,"Heywood, Thomas",14,"Royal love, favour and dynastic relationships",5.733,0.493,5.24,5.24,2,5,5,29
+history,"Heywood, Thomas",15,Friars and holy orders in plot,0.0,1.847,-1.847,1.847,0,4,5,29
+history,"Heywood, Thomas",16,"Gallantry: ladies, lordships and compliment",1.301,0.0,1.301,1.301,2,0,5,29
+history,"Heywood, Thomas",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",18,"Rebels, barons and the king's wars at home",7.614,7.129,0.486,0.486,2,12,5,29
+history,"Heywood, Thomas",20,"Hercules: labours, suffering and virtue",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",21,"Cupid, Venus and the nymphs",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",22,"Shepherds, flocks and Pan",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",23,"Husbands, wives and jealousy",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",24,"Apollo, Phoebus and the Muses",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",25,"Kings, power and law: political sententiae",0.0,0.11,-0.11,0.11,0,1,5,29
+history,"Heywood, Thomas",26,"Devils, hell and fiends",0.0,0.058,-0.058,0.058,0,1,5,29
+history,"Heywood, Thomas",27,"Uncles, nephews and cousins: kinship and patronage",0.45,0.0,0.45,0.45,1,0,5,29
+history,"Heywood, Thomas",28,"Marriage-making: weddings, brides and matches",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",30,"Constables, justices and the watch",0.0,0.445,-0.445,0.445,0,2,5,29
+history,"Heywood, Thomas",31,"Popes, cardinals and the crown",0.0,3.905,-3.905,3.905,0,7,5,29
+history,"Heywood, Thomas",32,Rings and jewels as tokens,1.355,0.066,1.289,1.289,2,1,5,29
+history,"Heywood, Thomas",33,"Fathers, daughters and marriage negotiations",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",35,"Fools, wit and railing",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",36,"Hell, Furies and the language of punishment",0.0,0.076,-0.076,0.076,0,1,5,29
+history,"Heywood, Thomas",37,"Riches, poverty and covetousness",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",38,"Death, parting and grief at court",1.755,1.505,0.25,0.25,3,9,5,29
+history,"Heywood, Thomas",39,"Profit, conscience and dishonest dealing",0.0,0.141,-0.141,0.141,0,1,5,29
+history,"Heywood, Thomas",40,"Sin, guilt and violent loss within families",0.0,0.245,-0.245,0.245,0,3,5,29
+history,"Heywood, Thomas",43,York and Lancaster: dynastic claims and conflict,0.915,3.441,-2.527,2.527,1,11,5,29
+history,"Heywood, Thomas",44,"Drinking: wine, ale and taverns",0.0,0.076,-0.076,0.076,0,1,5,29
+history,"Heywood, Thomas",45,"Widows, wooing and remarriage",0.0,0.146,-0.146,0.146,0,1,5,29
+history,"Heywood, Thomas",46,"Swords, quarrels and valour",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",47,"Knaves, thieves and bawds",0.448,0.21,0.237,0.237,1,1,5,29
+history,"Heywood, Thomas",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",50,"Fleets, armies and generals: war by sea and land",0.0,0.298,-0.298,0.298,0,4,5,29
+history,"Heywood, Thomas",51,"Parents and children: blessing, birthright and inheritance",0.0,0.156,-0.156,0.156,0,1,5,29
+history,"Heywood, Thomas",52,"Prodigals, portions and poor kin",0.0,0.192,-0.192,0.192,0,2,5,29
+history,"Heywood, Thomas",54,"Antony and Cleopatra: love, death and mourning",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",55,"Fairies, fairy queens and enchanted desire",0.0,0.22,-0.22,0.22,0,1,5,29
+history,"Heywood, Thomas",56,"Magic, spells and conjuring",0.0,0.224,-0.224,0.224,0,1,5,29
+history,"Heywood, Thomas",59,"Spanish courts: war, honour and courtship",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Heywood, Thomas",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.0,0.0,0.0,0,0,5,29
+history,"Shakespeare, William",0,"Court life: dukes, favour and honour",2.27,3.274,-1.004,1.004,6,3,11,23
+history,"Shakespeare, William",1,"Death, grief and revenge",2.497,2.115,0.382,0.382,7,10,11,23
+history,"Shakespeare, William",2,"Roman politics: senate, consuls and civil war",0.0,0.915,-0.915,0.915,0,2,11,23
+history,"Shakespeare, William",3,"Sickness, physic and doctors",0.184,0.276,-0.092,0.092,1,2,11,23
+history,"Shakespeare, William",4,Love-longing and the lover's complaint,0.226,0.0,0.226,0.226,1,0,11,23
+history,"Shakespeare, William",5,"Christian faith, sin and salvation",0.0,3.146,-3.146,3.146,0,2,11,23
+history,"Shakespeare, William",6,"Money, debt and credit",0.0,1.625,-1.625,1.625,0,5,11,23
+history,"Shakespeare, William",7,The Trojan war: conflict and its aftermath,0.0,0.599,-0.599,0.599,0,2,11,23
+history,"Shakespeare, William",8,"Captains, gallants and cheats",0.348,0.096,0.252,0.252,2,1,11,23
+history,"Shakespeare, William",9,"Theatre talk: prologues, poets and players",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",10,"England and France: war, embassy and peace",13.454,3.19,10.263,10.263,6,6,11,23
+history,"Shakespeare, William",11,"Siblings, kin and confidants",0.0,0.29,-0.29,0.29,0,2,11,23
+history,"Shakespeare, William",12,"Olympian gods: Jupiter, Juno, Venus and Mars",0.0,0.129,-0.129,0.129,0,1,11,23
+history,"Shakespeare, William",14,"Royal love, favour and dynastic relationships",0.901,1.437,-0.536,0.536,3,4,11,23
+history,"Shakespeare, William",15,Friars and holy orders in plot,0.0,2.329,-2.329,2.329,0,4,11,23
+history,"Shakespeare, William",16,"Gallantry: ladies, lordships and compliment",0.0,0.283,-0.283,0.283,0,2,11,23
+history,"Shakespeare, William",17,"Eastern conquest: Persians, Turks and soldans",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",18,"Rebels, barons and the king's wars at home",3.106,9.158,-6.052,6.052,5,9,11,23
+history,"Shakespeare, William",20,"Hercules: labours, suffering and virtue",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",21,"Cupid, Venus and the nymphs",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",22,"Shepherds, flocks and Pan",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",23,"Husbands, wives and jealousy",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",24,"Apollo, Phoebus and the Muses",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",25,"Kings, power and law: political sententiae",0.0,0.138,-0.138,0.138,0,1,11,23
+history,"Shakespeare, William",26,"Devils, hell and fiends",0.152,0.0,0.152,0.152,1,0,11,23
+history,"Shakespeare, William",27,"Uncles, nephews and cousins: kinship and patronage",0.0,0.098,-0.098,0.098,0,1,11,23
+history,"Shakespeare, William",28,"Marriage-making: weddings, brides and matches",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",30,"Constables, justices and the watch",0.0,0.562,-0.562,0.562,0,2,11,23
+history,"Shakespeare, William",31,"Popes, cardinals and the crown",3.342,3.326,0.016,0.016,2,5,11,23
+history,"Shakespeare, William",32,Rings and jewels as tokens,0.175,0.295,-0.12,0.12,1,2,11,23
+history,"Shakespeare, William",33,"Fathers, daughters and marriage negotiations",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",35,"Fools, wit and railing",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",36,"Hell, Furies and the language of punishment",0.2,0.0,0.2,0.2,1,0,11,23
+history,"Shakespeare, William",37,"Riches, poverty and covetousness",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",38,"Death, parting and grief at court",1.654,1.488,0.167,0.167,4,8,11,23
+history,"Shakespeare, William",39,"Profit, conscience and dishonest dealing",0.371,0.0,0.371,0.371,1,0,11,23
+history,"Shakespeare, William",40,"Sin, guilt and violent loss within families",0.378,0.128,0.249,0.249,2,1,11,23
+history,"Shakespeare, William",43,York and Lancaster: dynastic claims and conflict,5.772,1.778,3.994,3.994,6,6,11,23
+history,"Shakespeare, William",44,"Drinking: wine, ale and taverns",0.2,0.0,0.2,0.2,1,0,11,23
+history,"Shakespeare, William",45,"Widows, wooing and remarriage",0.386,0.0,0.386,0.386,1,0,11,23
+history,"Shakespeare, William",46,"Swords, quarrels and valour",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",47,"Knaves, thieves and bawds",0.555,0.097,0.458,0.458,1,1,11,23
+history,"Shakespeare, William",49,"Wooing a mistress: suitors, go-betweens and letters",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",50,"Fleets, armies and generals: war by sea and land",0.362,0.203,0.159,0.159,2,2,11,23
+history,"Shakespeare, William",51,"Parents and children: blessing, birthright and inheritance",0.0,0.197,-0.197,0.197,0,1,11,23
+history,"Shakespeare, William",52,"Prodigals, portions and poor kin",0.222,0.136,0.085,0.085,1,1,11,23
+history,"Shakespeare, William",54,"Antony and Cleopatra: love, death and mourning",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",55,"Fairies, fairy queens and enchanted desire",0.0,0.278,-0.278,0.278,0,1,11,23
+history,"Shakespeare, William",56,"Magic, spells and conjuring",0.0,0.283,-0.283,0.283,0,1,11,23
+history,"Shakespeare, William",59,"Spanish courts: war, honour and courtship",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",60,"Imperial Rome: rulers, favour and political exemplars",0.0,0.0,0.0,0.0,0,0,11,23
+history,"Shakespeare, William",62,"The courtier as a type: fashion, affectation and foreign manners",0.0,0.0,0.0,0.0,0,0,11,23

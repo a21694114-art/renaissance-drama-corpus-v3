@@ -1,0 +1,71 @@
+work_id,title,genre_main,topic,label,play_share,own_genre_mean_without_play,comedy_mean,excess_over_own_genre_pp
+145,1 Henry the Fourth,history,47,"Knaves, thieves and bawds",6.1,0.07,0.39,6.04
+145,1 Henry the Fourth,history,32,Rings and jewels as tokens,1.92,0.21,0.57,1.71
+167,2 Henry the Fourth,history,44,"Drinking: wine, ale and taverns",2.2,0.0,0.61,2.2
+167,2 Henry the Fourth,history,8,"Captains, gallants and cheats",2.17,0.12,1.72,2.05
+167,2 Henry the Fourth,history,3,"Sickness, physic and doctors",2.02,0.19,2.45,1.83
+119,2 Henry the Sixth (The First Part of the Contention betwixt the Two Famous Houses of York and Lancaster),history,0,"Court life: dukes, favour and honour",2.98,2.95,4.7,0.04
+138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),history,45,"Widows, wooing and remarriage",4.24,0.0,0.8,4.24
+138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),history,36,"Hell, Furies and the language of punishment",2.2,0.0,0.01,2.2
+138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),history,0,"Court life: dukes, favour and honour",4.14,2.91,4.7,1.23
+395,All's Well That Ends Well,tragicomedy,32,Rings and jewels as tokens,13.17,0.5,0.57,12.67
+395,All's Well That Ends Well,tragicomedy,3,"Sickness, physic and doctors",6.85,1.77,2.45,5.09
+395,All's Well That Ends Well,tragicomedy,8,"Captains, gallants and cheats",2.1,0.14,1.72,1.96
+395,All's Well That Ends Well,tragicomedy,23,"Husbands, wives and jealousy",2.13,0.37,0.95,1.77
+405,Antony and Cleopatra,tragedy,11,"Siblings, kin and confidants",2.13,0.75,1.21,1.39
+401,Coriolanus,tragedy,35,"Fools, wit and railing",1.95,0.16,0.7,1.79
+406,"Cymbeline, King of Britain",romance,32,Rings and jewels as tokens,7.37,0.0,0.57,7.37
+406,"Cymbeline, King of Britain",romance,3,"Sickness, physic and doctors",3.82,1.51,2.45,2.3
+406,"Cymbeline, King of Britain",romance,1,"Death, grief and revenge",3.74,1.66,1.75,2.08
+406,"Cymbeline, King of Britain",romance,25,"Kings, power and law: political sententiae",2.06,0.0,0.04,2.06
+197,"Hamlet, Prince of Denmark",tragedy,9,"Theatre talk: prologues, poets and players",7.51,0.26,1.29,7.25
+197,"Hamlet, Prince of Denmark",tragedy,26,"Devils, hell and fiends",1.85,0.3,0.88,1.55
+165,Henry the Fifth,history,39,"Profit, conscience and dishonest dealing",4.08,0.0,0.07,4.08
+165,Henry the Fifth,history,0,"Court life: dukes, favour and honour",3.89,2.92,4.7,0.97
+403,Julius Caesar,tragedy,52,"Prodigals, portions and poor kin",2.44,0.24,0.42,2.2
+398,King John,history,40,"Sin, guilt and violent loss within families",2.38,0.14,0.24,2.23
+265,King Lear,tragedy,11,"Siblings, kin and confidants",6.16,0.71,1.21,5.46
+265,King Lear,tragedy,0,"Court life: dukes, favour and honour",8.1,4.31,4.7,3.79
+265,King Lear,tragedy,51,"Parents and children: blessing, birthright and inheritance",2.11,0.1,0.25,2.01
+265,King Lear,tragedy,52,"Prodigals, portions and poor kin",2.09,0.24,0.42,1.84
+404,Macbeth,tragedy,51,"Parents and children: blessing, birthright and inheritance",3.21,0.09,0.25,3.12
+404,Macbeth,tragedy,3,"Sickness, physic and doctors",2.96,0.74,2.45,2.22
+107,Master Arden of Faversham in Kent,tragedy,4,Love-longing and the lover's complaint,5.12,0.83,1.82,4.28
+392,Measure for Measure,tragicomedy,15,Friars and holy orders in plot,29.9,0.0,0.7,29.9
+392,Measure for Measure,tragicomedy,40,"Sin, guilt and violent loss within families",11.81,0.08,0.24,11.73
+392,Measure for Measure,tragicomedy,47,"Knaves, thieves and bawds",2.37,0.0,0.39,2.37
+392,Measure for Measure,tragicomedy,30,"Constables, justices and the watch",2.32,0.0,0.86,2.32
+379,"Othello, the Moor of Venice",tragedy,23,"Husbands, wives and jealousy",5.6,0.45,0.95,5.15
+379,"Othello, the Moor of Venice",tragedy,4,Love-longing and the lover's complaint,3.95,0.85,1.82,3.1
+379,"Othello, the Moor of Venice",tragedy,0,"Court life: dukes, favour and honour",5.89,4.33,4.7,1.56
+284,"Pericles, Prince of Tyre",romance,3,"Sickness, physic and doctors",2.88,1.57,2.45,1.31
+141,Richard the Second,history,52,"Prodigals, portions and poor kin",2.44,0.1,0.42,2.34
+141,Richard the Second,history,0,"Court life: dukes, favour and honour",4.78,2.89,4.7,1.89
+142,Richard the Third,history,0,"Court life: dukes, favour and honour",7.16,2.82,4.7,4.34
+142,Richard the Third,history,26,"Devils, hell and fiends",1.67,0.0,0.88,1.67
+142,Richard the Third,history,40,"Sin, guilt and violent loss within families",1.78,0.16,0.24,1.62
+142,Richard the Third,history,8,"Captains, gallants and cheats",1.66,0.13,1.72,1.53
+143,Romeo and Juliet,tragedy,15,Friars and holy orders in plot,14.38,0.32,0.7,14.06
+143,Romeo and Juliet,tragedy,4,Love-longing and the lover's complaint,12.2,0.77,1.82,11.43
+143,Romeo and Juliet,tragedy,33,"Fathers, daughters and marriage negotiations",2.14,0.07,0.92,2.06
+143,Romeo and Juliet,tragedy,55,"Fairies, fairy queens and enchanted desire",2.05,0.0,0.13,2.05
+143,Romeo and Juliet,tragedy,52,"Prodigals, portions and poor kin",2.1,0.24,0.42,1.85
+140,The Reign of King Edward the Third,history,4,Love-longing and the lover's complaint,2.49,0.0,1.82,2.49
+492,The Two Noble Kinsmen,tragicomedy,34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",3.95,0.0,0.05,3.95
+492,The Two Noble Kinsmen,tragicomedy,4,Love-longing and the lover's complaint,3.98,1.06,1.82,2.92
+492,The Two Noble Kinsmen,tragicomedy,12,"Olympian gods: Jupiter, Juno, Venus and Mars",2.09,0.0,0.19,2.09
+492,The Two Noble Kinsmen,tragicomedy,7,The Trojan war: conflict and its aftermath,2.08,0.0,0.24,2.08
+492,The Two Noble Kinsmen,tragicomedy,44,"Drinking: wine, ale and taverns",2.11,0.13,0.61,1.98
+492,The Two Noble Kinsmen,tragicomedy,28,"Marriage-making: weddings, brides and matches",2.12,0.34,1.06,1.78
+492,The Two Noble Kinsmen,tragicomedy,9,"Theatre talk: prologues, poets and players",2.1,0.9,1.29,1.2
+492,The Two Noble Kinsmen,tragicomedy,3,"Sickness, physic and doctors",2.08,1.94,2.45,0.14
+397,The Winter's Tale,romance,33,"Fathers, daughters and marriage negotiations",2.07,0.08,0.92,1.99
+397,The Winter's Tale,romance,23,"Husbands, wives and jealousy",2.06,0.17,0.95,1.89
+397,The Winter's Tale,romance,47,"Knaves, thieves and bawds",1.88,0.03,0.39,1.85
+397,The Winter's Tale,romance,6,"Money, debt and credit",1.98,0.22,1.81,1.76
+402,Timon of Athens,tragedy,6,"Money, debt and credit",14.34,0.26,1.81,14.07
+402,Timon of Athens,tragedy,35,"Fools, wit and railing",5.64,0.13,0.7,5.51
+402,Timon of Athens,tragedy,37,"Riches, poverty and covetousness",2.96,0.05,0.11,2.91
+279,Troilus and Cressida,tragedy,35,"Fools, wit and railing",7.9,0.11,0.7,7.79
+279,Troilus and Cressida,tragedy,4,Love-longing and the lover's complaint,5.66,0.83,1.82,4.83
+279,Troilus and Cressida,tragedy,37,"Riches, poverty and covetousness",2.07,0.06,0.11,2.02

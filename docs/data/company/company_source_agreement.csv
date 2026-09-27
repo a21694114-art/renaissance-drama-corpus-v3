@@ -1,0 +1,517 @@
+work_id,title,genre_main,company_brit_raw,company_annals_raw,company_titlepage_raw,britdrama_status,annals_status,both_sources_named,britdrama_vs_annals,title_page_vs_first_performance
+73,1 Promos and Cassandra,comedy,Unacted,Unacted (?),None,unacted,unacted,,neither named,
+204,1 The Honest Whore (1 The Converted Courtesan) (The Patient Man and the Honest Whore),comedy,Prince Henry's Men,Prince Henry's Men,None,clear,clear,Y,identical,
+161,1 The Two Angry Women of Abingdon,comedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page = first-performance source
+74,2 Promos and Cassandra,comedy,Unacted,Unacted (?),None,unacted,unacted,,neither named,
+435,2 The Honest Whore (2 The Converted Courtesan),comedy,Prince Henry's Men,Prince Henry's Men,None,clear,clear,Y,identical,
+433,A Chaste Maid in Cheapside,comedy,Lady Elizabeth's Men,Lady Elizabeth's Men,Lady Elizabeth's Men,clear,clear,Y,identical,title page = first-performance source
+481,A Fine Companion,comedy,Prince Charles's Men (second),Prince Charles's Men (second),Prince Charles's Men (second),clear,clear,Y,identical,title page = first-performance source
+412,A Game at Chess,comedy,King's Men,King's Men,None,clear,clear,Y,identical,
+276,"A Mad World, My Masters",comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+493,A Maidenhead Well Lost,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+476,A Match at Midnight,comedy,Red Bull (Revels) Company (first) (?),Red Bull (Revels) Company (first) (?),Children of the Queen's Revels,uncertain,uncertain,Y,identical,title page differs
+170,A Midsummer Night's Dream,comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+561,A New Trick to Cheat the Devil,comedy,Queen Henrietta Maria's Men (?); Lady Elizabeth's Men (?),Queen Henrietta Maria's Men (?),None,multiple (;),uncertain,Y,differ,
+474,A New Way to Pay Old Debts,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+460,"A New Wonder, A Woman Never Vexed",comedy,Unknown,Unknown,None,unknown,unknown,,neither named,
+617,A Tale of a Tub,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,None,clear,clear,Y,identical,
+262,A Trick to Catch the Old One,comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+299,A Woman Is a Weathercock,comedy,Children of the Queens Revels (Children of the Whitefriars) (?),Children of the Queen's Revels,Children of the Queen's Revels,uncertain,clear,Y,differ,title page differs
+330,Albumazar,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+219,All Fools,comedy,Children of the Queen's Revels,Children of the Queen's Revels,None,clear,clear,Y,identical,
+356,Amends for Ladies,comedy,Children of the Queen's Revels,Children of the Queen's Revels (?),Lady Elizabeth's Men; Prince Charles's Men (first),clear,uncertain,Y,same base name,title page differs
+91,Andria (The Woman from Andros),comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+184,Antonio and Mellida,comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+414,Apollo Shroving,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+431,"Aristippus, or The Jovial Philosopher",comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+394,As You Like It,comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+455,Bartholomew Fair,comedy,Lady Elizabeth's Men,Lady Elizabeth's Men,Lady Elizabeth's Men,clear,clear,Y,identical,title page = first-performance source
+84,"Campaspe (Alexander, Campaspe, and Diogenes)",comedy,Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first); Children of Paul's (first),clear,clear,Y,identical,title page differs
+462,"Changes, or Love in a Maze",comedy,King's Revels Company (?); Prince Charles's Men (second) (?),King's Revels Company (?); Prince Charles's Men (second) (?),King's Revels Company,multiple (;),multiple (;),Y,identical,title page differs
+542,Covent Garden,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+247,Cupid's Whirligig,comedy,Children of the King's Revels,Children of the King's Revels,Children of the King's Revels,clear,clear,Y,identical,title page = first-performance source
+181,"Cynthia's Revels, or The Fountain of Self-Love",comedy,Children of the Chapel (second),Children of the Chapel (second),Children of the Chapel (second),clear,clear,Y,identical,title page = first-performance source
+58,Damon and Pithias,comedy,Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first),clear,clear,Y,identical,title page differs
+217,Eastward Ho,comedy,Children of the Queen's Revels,Children of the Queen's Revels,Children of the Queen's Revels,clear,clear,Y,identical,title page = first-performance source
+99,"Endymion, the Man in the Moon",comedy,Children of Paul's (first),Children of Paul's (first),Children of Paul's (first),clear,clear,Y,identical,title page = first-performance source
+336,"Englishmen for My Money, or A Woman Will Have Her Will",comedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,None,clear,clear,Y,identical,
+304,"Epicene, or The Silent Woman",comedy,Children of the Queen's Revels,Children of the Queen's Revels,Children of the Queen's Revels,clear,clear,Y,identical,title page = first-performance source
+163,Every Man Out of His Humor,comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+176,Every Man in His Humor,comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+283,Every Woman in Her Humor,comedy,Children of the King's Revels,Children of the King's Revels (?),None,clear,uncertain,Y,same base name,
+113,"Fair Em, the Miller's Daughter of Manchester",comedy,Derby's (Strange's) Men,Derby's (Strange's) Men,Derby's (Strange's) Men,clear,clear,Y,identical,title page = first-performance source
+86,Fedele and Fortunia (Two Italian Gentlemen),comedy,Children of the Chapel (first) (Oxford's Boys),Unknown,None,clear,unknown,,only britdrama named,
+121,Friar Bacon and Friar Bongay,comedy,Queen Elizabeth's Men,Derby’s (Strange’s) Men (by 1592),Queen Elizabeth's Men,clear,clear,Y,differ,title page = first-performance source
+105,Gallathea,comedy,Children of Paul's (first) (?),Children of Paul's (first),Children of Paul's (first),uncertain,clear,Y,same base name,title page = first-performance source
+67,Gammer Gurton's Needle,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+323,"Greene's Tu Quoque, or The City Gallant",comedy,Queen Anne's Men,Queen Anne's Men,Queen Anne's Men,clear,clear,Y,identical,title page = first-performance source
+354,Hans Beer-Pot (See Me and See Me Not),comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+461,Holland's Leaguer,comedy,Prince Charles's Men (second),Prince Charles's Men (second),Prince Charles's Men (second),clear,clear,Y,identical,title page = first-performance source
+191,How a Man May Choose a Good Wife from a Bad,comedy,Worcester's Men,Worcester's Men,Worcester's Men,clear,clear,Y,identical,title page = first-performance source
+268,Humor Out of Breath,comedy,Children of the King's Revels,Children of the King's Revels,Children of the King's Revels,clear,clear,Y,identical,title page = first-performance source
+517,Hyde Park,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+305,"If It Be Not Good, the Devil Is in It (If This Be Not a Good Play, the Devil Is in It)",comedy,Queen Anne's Men,Queen Anne's Men,Queen Anne's Men,clear,clear,Y,identical,title page = first-performance source
+177,Jack Drum's Entertainment (Katherine and Pasquil),comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+267,Law Tricks,comedy,Children of the Queen's Revels,Children of the King's Revels,Children of the Queen's Revels,clear,clear,Y,differ,title page = first-performance source
+174,Look About You,comedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page = first-performance source
+150,Love's Labor's Lost,comedy,Lord Chamberlain's (Hunsdon's) Men,Unknown,None,clear,unknown,,only britdrama named,
+297,May Day,comedy,Children of the Queen's Revels,Children of the Chapel (second),None,clear,clear,Y,differ,
+244,Michaelmas Term,comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+106,Midas,comedy,Children of Paul's (first),Children of Paul's (first),Children of Paul's (first),clear,clear,Y,identical,title page = first-performance source
+558,Monsieur Thomas (Father's Own Son),comedy,Unknown,Lady Elizabeth's Men (?),None,unknown,uncertain,,only annals named,
+125,Mother Bombie,comedy,Children of Paul's (first),Children of Paul's (first),Children of Paul's (first),clear,clear,Y,identical,title page = first-performance source
+168,Much Ado About Nothing,comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+250,Northward Ho,comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+230,"Parasitaster, or The Fawn",comedy,Children of the Queen's Revels,Children of the Queen's Revels,Children of the Queen's Revels; Children of Paul's (second),clear,clear,Y,identical,title page differs
+198,Patient Grissel,comedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page = first-performance source
+186,"Poetaster, or The Arraignment",comedy,Children of the Chapel (second),Children of the Chapel (second),Children of the Chapel (second),clear,clear,Y,identical,title page = first-performance source
+46,Ralph Roister Doister,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+292,"Ram Alley, or Merry Tricks",comedy,Children of the King's Revels,Children of the King's Revels,Children of the King's Revels,clear,clear,Y,identical,title page = first-performance source
+598,Rule a Wife and Have a Wife,comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+82,Sappho and Phao,comedy,Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first) (Oxford's Boys); Children of Paul's (first),Children of the Chapel (first); Children of Paul's (first),clear,multiple (;),Y,differ,title page differs
+195,"Satiromastix, or The Untrussing of the Humorous Poet",comedy,Lord Chamberlain's (Hunsdon's) Men and Children of Paul's (second),Lord Chamberlain's (Hunsdon's) Men and Children of Paul's (second),Children of Paul's (second); Lord Chamberlain's (Hunsdon's) Men,multiple (and),multiple (and),Y,identical,title page differs
+228,Sir Giles Goosecap,comedy,Children of the Chapel (second),Children of the Chapel (second) (?),Children of the Chapel (second),clear,uncertain,Y,same base name,title page = first-performance source
+173,Summer's Last Will and Testament,comedy,Unknown,Unknown,None,unknown,unknown,,neither named,
+60,Supposes,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+353,"Technogamia, or The Marriages of the Arts",comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+303,The Alchemist,comedy,King's Men,King's Men,None,clear,clear,Y,identical,
+586,The Antipodes,comedy,not in BritDrama,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,not in BritDrama,clear,,only annals named,title page = first-performance source
+549,The Ball,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+479,The Bird in a Cage (The Beauties),comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,None,clear,clear,Y,identical,
+146,The Blind Beggar of Alexandria (Irus),comedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page = first-performance source
+281,The Case Is Altered,comedy,Pembroke's Men,Unknown,Children of the Queen's Revels,clear,unknown,,only britdrama named,title page differs
+568,The City Match,comedy,King's Men,"Private, then King's Men",King's Men,clear,multiple (then),Y,differ,title page = first-performance source
+393,The Comedy of Errors,comedy,Pembroke's Men (?),Derby's (Strange's) Men (?),None,uncertain,uncertain,Y,differ,
+592,The Constant Maid (Love Will Find Out the Way),comedy,not in BritDrama,Ogilby's Men (?),None,not in BritDrama,uncertain,,only annals named,
+457,The Devil Is an Ass,comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+214,The Dutch Courtesan (Cockle de Moye),comedy,Children of the Queen's Revels,Children of the Queen's Revels,Children of the Queen's Revels,clear,clear,Y,identical,title page = first-performance source
+515,The Elder Brother,comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+521,The Example,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+242,The Fair Maid of the Exchange,comedy,Unknown,Unknown,None,unknown,unknown,,neither named,
+263,The Family of Love,comedy,Children of the King's Revels,Admiral's (Nottingham's) Men (?),Children of the King's Revels,clear,uncertain,Y,differ,title page = first-performance source
+532,The Fancies Chaste and Noble,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+255,The Fleer,comedy,Children of the Queen's Revels,Children of the Queen's Revels,Children of the Queen's Revels,clear,clear,Y,identical,title page = first-performance source
+523,The Gamester,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+226,The Gentleman Usher (Vincentio and Margaret),comedy,Unknown (boy company),Children of the Chapel (second) or Children of Paul’s (second),None,unknown,multiple (or),,only annals named,
+429,The Grateful Servant (The Faithful Servant),comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+505,The Great Duke of Florence,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+384,The Heir,comedy,Red Bull (Revels) Company (first),Red Bull (Revels) Company (first),Red Bull (Revels) Company (first),clear,clear,Y,identical,title page = first-performance source
+321,The Hog Hath Lost His Pearl,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+594,The Hollander (Love's Trial),comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Beeston's Boys,clear,clear,Y,identical,title page differs
+337,The Honest Lawyer,comedy,Queen Anne's Men,Queen Anne's Men,Queen Anne's Men,clear,clear,Y,identical,title page = first-performance source
+577,The Humorous Courtier (The Duke),comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,None,clear,clear,Y,identical,
+235,The Isle of Gulls,comedy,Children of the Queen's Revels,Children of the Queen's Revels,Children of the Queen's Revels,clear,clear,Y,identical,title page = first-performance source
+469,The Jealous Lovers,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+580,"The Knave in Grain, New Vamped",comedy,Unknown,Red Bull Company (second),None,unknown,clear,,only annals named,
+316,The Knight of the Burning Pestle,comedy,Children of the Queen's Revels,Children of the Queen's Revels (?),None,clear,uncertain,Y,same base name,
+518,The Lady of Pleasure,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+555,The Lady's Trial,comedy,not in BritDrama,Beeston's Boys,Beeston's Boys,not in BritDrama,clear,,only annals named,title page = first-performance source
+494,The Late Lancashire Witches,comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+222,The London Prodigal,comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+616,"The Magnetic Lady, or Humors Reconciled",comedy,King's Men,King's Men,None,clear,clear,Y,identical,
+164,The Maid's Metamorphosis,comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+172,The Merchant of Venice (The Jew of Venice),comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+264,The Merry Devil of Edmonton,comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,King's Men,clear,clear,Y,identical,title page differs
+187,The Merry Wives of Windsor,comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+442,"The New Inn, or The Light Heart",comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+574,"The Night Walker, or The Little Thief",comedy,Lady Elizabeth's Men,Lady Elizabeth's Men (?),Queen Henrietta Maria's Men,clear,uncertain,Y,same base name,title page differs
+463,The Northern Lass,comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+575,The Opportunity,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+243,The Phoenix,comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+15,The Play of the Weather,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+251,"The Puritan, or The Widow of Watling Street (The Puritan Widow)",comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+465,The Rival Friends,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+298,"The Roaring Girl, or Moll Cutpurse",comedy,Prince Henry's Men,Prince Henry's Men,Prince Henry's Men,clear,clear,Y,identical,title page = first-performance source
+538,The Royal Master,comedy,not in BritDrama,Ogilby's Men; Queen Henrietta Maria's Men,None,not in BritDrama,multiple (;),,only annals named,
+441,The School of Compliment (Love Tricks),comedy,Lady Elizabeth's Men,Lady Elizabeth's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page differs
+334,The Scornful Lady,comedy,Children of the Queen's Revels,Children of the Queen's Revels (?),Children of the Queen's Revels,clear,uncertain,Y,same base name,title page = first-performance source
+175,"The Shoemaker's Holiday, or The Gentle Craft",comedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page = first-performance source
+556,"The Sophister (Fallacy, or The Troubles of Great Hermenia)",comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+456,The Staple of News,comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+120,The Taming of a Shrew,comedy,Unknown,Queen Elizabeth's Men (?),Pembroke's Men,unknown,uncertain,,only annals named,title page differs
+120.5,The Taming of the Shrew,comedy,Pembroke's Men,Sussex's Men (?); Lord (Hunsdon's) Chamberlain's Men (?),None,clear,multiple (;),Y,differ,
+390,The Tempest,comedy,King's Men,King's Men,None,clear,clear,Y,identical,
+391,The Two Gentlemen of Verona,comedy,Lord Chamberlain's (Hunsdon's) Men (?),Unknown,None,uncertain,unknown,,only britdrama named,
+285,The Two Maids of More-Clacke,comedy,Children of the King's Revels,Children of the King's Revels,Children of the King's Revels,clear,clear,Y,identical,title page = first-performance source
+364,"The Two Merry Milkmaids, or The Best Words Wear the Garland",comedy,Red Bull (Revels) Company (first),Red Bull (Revels) Company (first),Red Bull (Revels) Company (first),clear,clear,Y,identical,title page = first-performance source
+425,The Wedding,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+301,The Widow's Tears,comedy,Children of the Queen's Revels,Children of the Queen's Revels (?),None,clear,uncertain,Y,same base name,
+535,The Wise Woman of Hogsdon,comedy,Unknown,Queen Anne's Men,None,unknown,clear,,only annals named,
+477,The Witty Fair One,comedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+245,The Woman Hater (The Hungry Courtier),comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+144,The Woman in the Moon,comedy,Children of Paul's (first),Unknown,None,clear,unknown,,only britdrama named,
+508,The Wonder of A Kingdom,comedy,Prince Charles's Men (first) (?),Queen Henrietta Maria's Men,None,uncertain,clear,Y,differ,
+37,Thersites,comedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+540,Tottenham Court,comedy,Prince Charles's Men (second),Prince Charles's Men (second) (?); King's Revels Company (?),None,clear,multiple (;),Y,differ,
+396,"Twelfth Night, or What You Will",comedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+259,"Volpone, or The Fox",comedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+257,Westward Ho,comedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+252,What You Will,comedy,Children of Paul's (second) (?),Children of Paul's (second) (?),None,uncertain,uncertain,Y,identical,
+234,Wily Beguiled,comedy,Unknown,Children of Paul's (second) (?),None,unknown,uncertain,,only annals named,
+591,Wit in a Constable,comedy,not in BritDrama,Beeston's Boys,Beeston's Boys,not in BritDrama,clear,,only annals named,title page = first-performance source
+266,Your Five Gallants (The Five Witty Gallants),comedy,Children of the Queen's Revels,Children of Paul's (second) (?),None,clear,uncertain,Y,differ,
+153,1 Edward the Fourth,history,Derby's (Strange's) Men,Derby's (Strange's) Men,None,clear,clear,Y,identical,
+145,1 Henry the Fourth,history,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+399,1 Henry the Sixth,history,Derby's (Strange's) Men,Derby's (Strange's) Men,None,clear,clear,Y,identical,
+215,"1 If You Know Not Me You Know Nobody, or The Troubles of Queen Elizabeth",history,Queen Anne's Men,Queen Anne's Men,None,clear,clear,Y,identical,
+166,1 Sir John Oldcastle,history,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page = first-performance source
+101,1 The Troublesome Reign of King John,history,Queen Elizabeth's Men,Queen Elizabeth's Men,None,clear,clear,Y,identical,
+154,2 Edward the Fourth,history,Derby's (Strange's) Men,Derby's (Strange's) Men,None,clear,clear,Y,identical,
+167,2 Henry the Fourth,history,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+119,2 Henry the Sixth (The First Part of the Contention betwixt the Two Famous Houses of York and Lancaster),history,Pembroke's Men (?),Pembroke's Men,None,uncertain,clear,Y,same base name,
+224,2 If You Know Not Me You Know Nobody (The Second Part of Queen Elizabeth's Troubles),history,Queen Anne's Men,Queen Anne's Men,None,clear,clear,Y,identical,
+102,2 The Troublesome Reign of King John,history,Queen Elizabeth's Men,Queen Elizabeth's Men,None,clear,clear,Y,identical,
+138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),history,Pembroke's Men,Pembroke's Men,None,clear,clear,Y,identical,
+192,"A Larum for London, or The Siege of Antwerp",history,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+112,Edward the First,history,Unknown,Queen Elizabeth's Men (?),None,unknown,uncertain,,only annals named,
+129,Edward the Second,history,Pembroke's Men,Pembroke's Men,Pembroke's Men,clear,clear,Y,identical,title page = first-performance source
+482,Fuimus Troes (The True Trojans),history,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+400,Henry the Eighth (All Is True),history,King's Men,King's Men,None,clear,clear,Y,identical,
+165,Henry the Fifth,history,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+114,Jack Straw,history,Unknown,Unknown,None,unknown,unknown,,neither named,
+398,King John,history,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+615,Mortimer His Fall,history,not in BritDrama,Unacted,None,not in BritDrama,unacted,,neither named,
+141,Richard the Second,history,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+142,Richard the Third,history,Derby's (Strange's) Men (?),Derby's (Strange's) Men (?); Pembroke's Men (?),None,uncertain,multiple (;),Y,differ,
+274,The Conspiracy of Charles Duke of Byron,history,Children of the Queen's Revels,Children of the Queen's Revels,None,clear,clear,Y,identical,
+451,The Duchess of Suffolk,history,Prince Palatine's (Palsgrave's) Men,Prince Palatine's (Palsgrave's) Men,None,clear,clear,Y,identical,
+256,The Famous History of Sir Thomas Wyatt,history,Worcester's Men,Queen Anne's Men,Queen Anne's Men,clear,clear,Y,differ,title page differs
+160,The Love of King David and Fair Bathsheba,history,Queen Elizabeth's Men (?),Unknown,None,uncertain,unknown,,only britdrama named,
+140,The Reign of King Edward the Third,history,Derby's (Strange's) Men (?),Admiral's (Nottingham's) Men (?),None,uncertain,uncertain,Y,differ,
+213,The True Chronicle of King Leir (King Lear and his Three Daughters),history,Queen Elizabeth's Men (?),Queen Elizabeth's Men (?),None,uncertain,uncertain,Y,identical,
+126,The True Tragedy of Richard the Third,history,Queen Elizabeth's Men,Queen Elizabeth's Men,Queen Elizabeth's Men,clear,clear,Y,identical,title page = first-performance source
+520,The Valiant Scot,history,Unknown,Unknown,None,unknown,unknown,,neither named,
+327,The Valiant Welshman (Caradoc the Great),history,Prince Henry's Men,Prince Henry's Men,Prince Henry's Men,clear,clear,Y,identical,title page = first-performance source
+189,Thomas Lord Cromwell,history,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,clear,clear,Y,identical,title page = first-performance source
+212,When You See Me You Know Me (Henry the Eighth),history,Prince Henry's Men,Prince Henry's Men,Prince Henry's Men,clear,clear,Y,identical,title page = first-performance source
+32,Robin Hood (Robin Hood and the Friar) (Robin Hood and the Potter),interlude,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+453,Albion's Triumph,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+526,Britannia Triumphans (Britain Triumphing),masque,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+452,Chloridia: Rites to Chloris and Her Nymphs,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+606,Christmas His Masque (Christmas His Show),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+496,Coelum Britannicum (The British Heaven),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+609,For the Honor of Wales,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+237,"Hymenaei, or the Solemnities of Masque and Barriers at a Marriage (Truth versus Opinion)",masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+437,Love's Triumph Through Callipolis,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+350,Lovers Made Men (The Masque at Lord Hay's),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+527,"Luminalia, or The Festival of Light",masque,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+348,Mercury Vindicated from the Alchemists at Court,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+514,Microcosmus,masque,King's Revels Company (?),Queen Henrietta Maria's Men,None,uncertain,clear,Y,differ,
+407,Neptune's Triumph for the Return of Albion,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+610,News from the New World Discovered in the Moon,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+611,"Pan's Anniversary, or The Shepherds' Holiday",masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+608,Pleasure Reconciled to Virtue,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+571,Salmacida Spolia,masque,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+454,Tempe Restored  (Tempe Restauratum),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+291,"Tethys' Festival, or The Queen's Wake (Tethyos Epinicia)",masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+411,The Fortunate Isles and Their Union,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+349,The Golden Age Restored,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+585,The Gypsies Metamorphosed,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+358,"The Inner-Temple Masque, or The Masque of Heroes",masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+319,The Lord's Masque (Wedding Masque of Stars and Statues Made Human),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+271,The Masque at Lord Haddington's Marriage (The Hue and Cry after the Fugitive Cupid),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+238,The Masque at Lord Hay's Marriage (Apollo's Knights),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+62,The Masque for Lord Montacute (The Montague Masque) (Wedding Masque of Venetians),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+381,The Masque of Augurs,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+270,The Masque of Beauty,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+269,The Masque of Blackness (The Twelfth Night's Revels),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+280,The Masque of Queens,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+309,The Masque of the Inner Temple and Gray's Inn (Wedding Masque of Olympian Knights),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+488,The Triumph of Peace,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+502,The Triumphs of the Prince d'Amour,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+607,The Vision of Delight,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+207,The Vision of the Twelve Goddesses (The Masque at Hampton Court),masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+365,The World Tossed at Tennis,masque,Prince Charles's Men (first),Prince Charles's Men (first),Prince Charles's Men (first),clear,clear,Y,identical,title page = first-performance source
+385,Time Vindicated to Himself and to His Honors,masque,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+115,A Knack to Know a Knave,moral,Derby's (Strange's) Men,Derby's (Strange's) Men,Derby's (Strange's) Men,clear,clear,Y,identical,title page = first-performance source
+118,A Looking Glass for London and England,moral,Derby's (Strange's) Men,Queen Elizabeth's Men (?),None,clear,uncertain,Y,differ,
+38,Albion Knight,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+72,All for Money,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+57,Enough Is as Good as a Feast,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+290,"Histriomastix, or The Player Whipped",moral,Unknown,Children of Paul's (second) (?),None,unknown,uncertain,,only annals named,
+30,Impatient Poverty,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+50,Like Will to Like (Quoth the Devil to the Collier),moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+239,"Lingua, or The Combat of the Tongue and the Five Senses for Superiority",moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+41,Lusty Juventus,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+31,Nice Wanton,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+124,The Cobbler's Prophecy,moral,Queen Elizabeth's Men (?),Unknown,None,uncertain,unknown,,only britdrama named,
+78,The Conflict of Conscience,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+190,The Contention between Liberality and Prodigality,moral,Children of the Chapel (second),Children of the Chapel (second),None,clear,clear,Y,identical,
+473,The Contention for Honor and Riches,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+54,The Disobedient Child,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+47,The Life and Repentance of Mary Magdalene,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+55,The Marriage of Wit and Science,moral,Children of Paul's (first)(?),n/a,n/a,uncertain,missing (n/a),,only britdrama named,
+76.5,The Most Virtuous and Godly Susanna,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+547,The Muses' Looking Glass,moral,King's Revels Company,King's Revels Company,None,clear,clear,Y,identical,
+134,The Pedlar's Prophecy,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+4,The Summoning of Everyman,moral,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+85,The Three Ladies of London,moral,Leicester's Men,Unknown,None,clear,unknown,,only britdrama named,
+24,"The Three Laws of Nature, Moses, and Christ, Corrupted by the Sodomites, Pharisees, and Papists",moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+93,The Three Lords and Three Ladies of London,moral,Queen Elizabeth's Men (?),Queen Elizabeth's Men (?),None,uncertain,uncertain,Y,identical,
+70,The Tide Tarrieth No Man,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+49,The Trial of Treasure,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+27,Wealth and Health,moral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+8,1 Gentleness and Nobility,other/multi,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+17,1 Nature,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+593,1 Saint Patrick for Ireland,other/multi,not in BritDrama,Ogilby's Men,None,not in BritDrama,clear,,only annals named,
+9,2 Gentleness and Nobility,other/multi,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+18,2 Nature,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+326,"A Merry Dialogue between Band, Cuff, and Ruff",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+16,A Play of Love,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+541,Aglaura,other/multi,not in BritDrama,King's Men,None,not in BritDrama,clear,,only annals named,
+564,Albertus Wallenstein,other/multi,not in BritDrama,King's Men,King's Men,not in BritDrama,clear,,only annals named,title page = first-performance source
+529,Apollo and Daphne,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+208,Arches of Triumph (The Royal Entry of King James I into London),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+419,Britannia's Honor,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+288,Chester's Triumph (St George's Day Entertainment),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+295,Chruso-Thriambos: The Triumphs of Gold,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+335,"Chrysanaleia: The Golden Fishing, or Honor of Fishmongers",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+338,"Civitatis Amor (Water Pageant for Prince Charles: London and Neptune, Hope and Peace)",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+524,Comus (The Masque at Ludlow Castle),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+100,Descensus Astraeae (The Descent of Astraea),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+322,Himatia-Poleos: The Triumphs of Old Drapery,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+51,Jacob and Esau,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+528,Jupiter and Io,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+466,"Londini Artium et Scientiarum Scaturigo, or London's Fountain of Arts and Sciences",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+483,Londini Emporia (London's Markets),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+522,"Londini Speculum, or London's Mirror",other/multi,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+566,"Londini Status Pacatus, or London's Peaceable Estate",other/multi,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+448,London's Ius Honorarium (London's Law of Honor),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+289,London's Love to Prince Henry (Water Pageant of Corinea and Amphion),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+421,"London's Tempe, or The Field of Happiness",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+332,Metropolis Coronata: The Triumphs of Ancient Drapery,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+409,Monuments of Honor,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+229,Nobody and Somebody,other/multi,Queen Anne's Men,Queen Anne's Men (?),Queen Anne's Men,clear,uncertain,Y,same base name,title page = first-performance source
+546,"Porta Pietatis, or The Port or Harbor of Piety",other/multi,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+342,Prince Henry's Barriers  (The Lady of the Lake) (Merlin and Meliadus),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+355,"Siderothriambos, or Steel and Iron Triumphing",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+366,"Tes Irenes Trophaea, or The Triumphs of Peace",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+10,The Beauty and Good Properties of Women (Calisto and Melebea) (Celestina),other/multi,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+313,The Brazen Age (The Age of Brass),other/multi,Queen Anne's Men,Queen Anne's Men (and King's Men [?]),None,clear,multiple (;),Y,differ,
+576,The Bride,other/multi,not in BritDrama,Beeston's Boys,Beeston's Boys,not in BritDrama,clear,,only annals named,title page = first-performance source
+22,The Chief Promises of God unto Man (God's Promises),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+432,The Conceited Pedlar (The University Pedlar),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+200,The Coronation Triumph (The Royal Entry of King James I into London),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+370,The Entertainment at Bunhill on the Shooting Day (The Archer),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+75,The Entertainment at Norwich (Royal Entry of Queen Elizabeth),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+374,The Entertainment at Sir Francis Jones's Welcome (Comus the Great Sir of Feasts) (The Servant of Comus),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+376,The Entertainment at Sir Francis Jones's at Easter (The Four Seasons),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+369,The Entertainment at Sir William Cokayne's in Easter Week (The Cock),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+371,The Entertainment at the Conduit Head (The Water Nymph),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+372,The Entertainment for the General Training (Pallas),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+76,The Entertainment in Suffolk and Norfolk (Royal Entry of Queen Elizabeth into Norwich),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+77,The Entertainment of the French Ambassadors (The Fortress of Perfect Beauty) (Tilt of the Foster-Children of Desire),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+377,The Entertainment of the Lords of the Council by Sheriff Allen (Flora's Welcome),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+378,The Entertainment of the Lords of the Council by Sheriff Ducie (Flora's Servants),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+21,The Four P's,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+294,"The Golden Age, or The Lives of Jupiter and Saturn",other/multi,Queen Anne's Men,Queen Anne's Men,Queen Anne's Men,clear,clear,Y,identical,title page = first-performance source
+329,"The Hector of Germany, or The Palsgrave, Prime Elector",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+20,The Interlude of Youth,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+202,The Magnificent Entertainment Given to King James (The Royal Entry of King James I into London),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+612,The Masque of Owls,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+6,The Nature of the Four Elements (Natura Naturata),other/multi,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+87,The Pageant before Woolstone Dixie,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+96,The Pageant for John Allot,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+14,"The Pardoner and the Friar, the Curate, and Neighbor Pratte",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+511,The Presentment of Bushell's Rock (Royal Entertainment at Enstone),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+88,The Queen's Entertainment at Woodstock,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+111.1,The Royal Entertainment at Bisham Abbey,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+318,The Royal Entertainment at Caversham,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+103,The Royal Entertainment at Cowdray,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+339,The Royal Entertainment at Highgate (The Penates),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+111.3,The Royal Entertainment at Rycote,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+111.2,The Royal Entertainment at Sudeley Castle,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+341,"The Royal Entertainment at Theobalds, 1607 (The Genius)",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+201,The Royal Entertainment of the Queen and Prince at Althorp (The Satyr),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+340,"The Royal Entertainment of the Two Kings of Great Britain and Denmark (The Entertainment at Theobalds, 1606) (The Hours)",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+487,The Royal Entry of King Charles I into Edinburgh (The Entertainment at Edinburgh),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+618,"The Sad Shepherd, or A Tale of Robin Hood",other/multi,not in BritDrama,Unacted,None,not in BritDrama,unacted,,neither named,
+367,The Sun in Aries,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+23,"The Temptation of Our Lord and Saviour, Jesus Christ, by Satan in the Desert",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+495,The Triumphs of Fame and Honor,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+413,The Triumphs of Health and Prosperity,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+351,The Triumphs of Honor and Industry,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+383,The Triumphs of Honor and Virtue,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+387,The Triumphs of Integrity,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+359,The Triumphs of Love and Antiquity,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+218,The Triumphs of Reunited Britannia,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+311,The Triumphs of Truth,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+581,The Unfortunate Mother,other/multi,not in BritDrama,Unacted,None,not in BritDrama,unacted,,neither named,
+241,The Whore of Babylon,other/multi,Prince Henry's Men,Prince Henry's Men,Prince Henry's Men,clear,clear,Y,identical,title page = first-performance source
+302,Troia Nova Triumphans (London Triumphing),other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+361,Two Wise Men and All the Rest Fools,other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+426,"Wine, Beer, and Ale Together by the Ears (Wine, Beer, Ale, and Tobacco Contending for Superiority)",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+331,"Work for Cutlers (Sword, Rapier, and Dagger)",other/multi,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+417,Aminta,pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+530,"Amphrisa, or The Forsaken Shepherdess (Polopaea and Alope)",pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+548,"Amyntas, or The Impossible Dowry",pastoral,King's Revels Company,King's Revels Company,None,clear,clear,Y,identical,
+325,Hymen's Triumph,pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+183,"Il Pastor Fido, or The Faithful Shepherd",pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+600,Love Crowns the End,pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+178,Love's Metamorphosis,pastoral,Children of Paul's (first),Children of Paul's (first),Children of the Chapel (second); Children of Paul's (first),clear,clear,Y,identical,title page differs
+539,Love's Riddle,pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+97,Phillis and Amyntas (Ivychurch) (Amyntas' Pastoral),pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+449,Rhodon and Iris,pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+443,Sicelides (The Sicilians),pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+83,The Arraignment of Paris,pastoral,Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first),clear,clear,Y,identical,title page differs
+287,The Faithful Shepherdess,pastoral,Children of the Queen's Revels,Children of the Queen's Revels,None,clear,clear,Y,identical,
+227,The Queen's Arcadia (Arcadia Reformed),pastoral,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+499,The Shepherds' Holiday,pastoral,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+531,A Shoemaker a Gentleman,romance,Prince Charles's Men (first),Queen Anne's Men,None,clear,clear,Y,differ,
+156,"Alphonsus, King of Aragon",romance,Queen Elizabeth's Men (?),Queen Elizabeth's Men (?),None,uncertain,uncertain,Y,identical,
+188,"Blurt, Master Constable, or The Spaniard's Night Walk",romance,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+406,"Cymbeline, King of Britain",romance,King's Men,King's Men,None,clear,clear,Y,identical,
+158,"George a Green, the Pinner of Wakefield",romance,Sussex's Men,Sussex's Men (by 1593),Sussex's Men,clear,clear,Y,same base name,title page = first-performance source
+151,Mucedorus (and Amadine),romance,Unknown,Unknown,None,unknown,unknown,,neither named,
+162,Old Fortunatus,romance,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page = first-performance source
+123,Orlando Furioso,romance,Queen Elizabeth's Men (on tour); Admiral's (Nottingham's) Men (in London),Queen Elizabeth's Men and Derby's (Strange's) Men,None,multiple (;),multiple (and),Y,differ,
+284,"Pericles, Prince of Tyre",romance,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+333,The Four Prentices of London,romance,Worcester's Men,Admiral's (Nottingham's) Men,Queen Anne's Men,clear,clear,Y,differ,title page differs
+137,The Old Wives Tale,romance,Queen Elizabeth's Men,Queen Elizabeth's Men,Queen Elizabeth's Men,clear,clear,Y,identical,title page = first-performance source
+516,The Royal King and the Loyal Subject,romance,Unknown,Worcester's Men (?),Queen Henrietta Maria's Men,unknown,uncertain,,only annals named,title page differs
+149,The Scottish History of James the Fourth,romance,Unknown,Queen Elizabeth's Men (?),None,unknown,uncertain,,only annals named,
+545,The Seven Champions of Christendom,romance,Red Bull Company (second),Prince Charles's Men (second) (?),None,clear,uncertain,Y,differ,
+439,The Spanish Bawd (Calisto and Meliboea) (Celestina),romance,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+584,The Strange Discovery,romance,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+210,The Trial of Chivalry (This Gallant Cavaliero Dick Bowyer),romance,Derby's (Strange's) Men,Derby's (Strange's) Men,Derby's (Strange's) Men,clear,clear,Y,identical,title page = first-performance source
+397,The Winter's Tale,romance,King's Men,King's Men,None,clear,clear,Y,identical,
+221,"1 Jeronimo, with the Wars of Portugal",tragedy,Unknown,King's Men (?); Unknown,None,unknown,multiple (;),,only annals named,
+94,1 Tamburlaine the Great,tragedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,None,clear,clear,Y,identical,
+95,2 Tamburlaine the Great,tragedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,None,clear,clear,Y,identical,
+300,A Christian Turned Turk (The Two Famous Pirates),tragedy,Unknown,King's Men (?); Children of the Queen's Revels (?),None,unknown,multiple (;),,only annals named,
+258,A Woman Killed with Kindness,tragedy,Worcester's Men,Worcester's Men,None,clear,clear,Y,identical,
+272,A Yorkshire Tragedy,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+71,Abraham's Sacrifice,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+42,Agamemnon (Seneca's Eighth Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+489,Alaham,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+422,"Albovine, King of the Lombards",tragedy,Unacted,Unacted,None,unacted,unacted,,neither named,
+471,All's Lost by Lust,tragedy,Prince Charles's Men (first),Prince Charles's Men (first),Lady Elizabeth's Men; Queen Henrietta Maria's Men,clear,clear,Y,identical,title page differs
+450,"Antigone, the Theban Princess",tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+185,Antonio's Revenge (2 Antonio and Mellida),tragedy,Children of Paul's (second),Children of Paul's (second),Children of Paul's (second),clear,clear,Y,identical,title page = first-performance source
+108,Antonius (Antony),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+405,Antony and Cleopatra,tragedy,King's Men,King's Men,None,clear,clear,Y,identical,
+65,Appius and Virginia,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+246,Bussy D'Ambois,tragedy,Children of Paul's (second),Children of Paul's (second),None,clear,clear,Y,identical,
+444,Caesar and Pompey (The Wars of Caesar and Pompey),tragedy,Unacted (?),Unacted (?),None,unacted,unacted,,neither named,
+56,"Cambises, King of Persia",tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+296,Catiline His Conspiracy,tragedy,King's Men,King's Men,None,clear,clear,Y,identical,
+550,"Chabot, Admiral of France",tragedy,Unknown,Lady Elizabeth's Men (?),Queen Henrietta Maria's Men,unknown,uncertain,,only annals named,title page differs
+132,Cleopatra,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+553,"Cleopatra, Queen of Egypt",tragedy,Unknown,Unknown,None,unknown,unknown,,neither named,
+401,Coriolanus,tragedy,King's Men,King's Men,None,clear,clear,Y,identical,
+116,Cornelia (Pompey the Great His Fair Cornelia's Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+209,Croesus,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+328,Cupid's Revenge,tragedy,Children of the Queen's Revels,Children of the Queen's Revels,Children of the Queen's Revels,clear,clear,Y,identical,title page = first-performance source
+314,"Cynthia's Revenge, or Maenander's Ecstasy",tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+196,Darius,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+128,"Dido, Queen of Carthage",tragedy,Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first),clear,clear,Y,identical,title page differs
+205,Doctor Faustus,tragedy,Unknown,Admiral's (Nottingham's) Men (by 1594),Admiral's (Nottingham's) Men,unknown,clear,,only annals named,title page differs
+39,Ferrex and Porrex (Gorboduc),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+197,"Hamlet, Prince of Denmark",tragedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+513,Hannibal and Scipio,tragedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+34,Hercules Furens (Mad Hercules) (Seneca's First Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+81,Hercules Oetaeus (Hercules on Mount Oeta) (Seneca's Tenth Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+382,Herod and Antipater,tragedy,Red Bull (Revels) Company (first),Red Bull (Revels) Company (first),Red Bull (Revels) Company (first),clear,clear,Y,identical,title page = first-performance source
+80,Hippolytus (Seneca's Fourth Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+438,"Hoffman, or A Revenge for a Father",tragedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,None,clear,clear,Y,identical,
+560,Imperiale,tragedy,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+61,Jocasta,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+261,Julius Caesar,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+403,Julius Caesar,tragedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+265,King Lear,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+136,"Locrine, the Eldest Son of King Brutus",tragedy,Unknown,Unknown,None,unknown,unknown,,neither named,
+418,"Lodovic Sforza, Duke of Milan",tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+573,Love's Cruelty,tragedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+478,Love's Sacrifice,tragedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+404,Macbeth,tragedy,King's Men,King's Men,None,clear,clear,Y,identical,
+107,Master Arden of Faversham in Kent,tragedy,Pembroke's Men (?),Unknown,None,uncertain,unknown,,only britdrama named,
+44,Medea (Seneca's Seventh Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+578,"Messalina, the Roman Empress",tragedy,King's Revels Company,King's Revels Company,King's Revels Company,clear,clear,Y,identical,title page = first-performance source
+278,Mustapha,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+410,Nero (Piso's Conspiracy),tragedy,Unknown,Unknown,None,unknown,unknown,,neither named,
+45,Octavia (Seneca's Ninth Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+36,Oedipus (Seneca's Fifth Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+485,Orestes,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+379,"Othello, the Moor of Venice",tragedy,King's Men,King's Men,None,clear,clear,Y,identical,
+143,Romeo and Juliet,tragedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men (?),None,clear,uncertain,Y,same base name,
+216,Sejanus His Fall,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+599,"Sicily and Naples, or The Fatal Union",tragedy,not in BritDrama,n/a,n/a,not in BritDrama,missing (n/a),,neither named,
+109,Soliman and Perseda (Zulziman),tragedy,Unknown,Unknown,None,unknown,unknown,,neither named,
+104,Tancred and Gismund (Gismond of Salerne),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+260,The Alexandraean Tragedy,tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+293,"The Atheist's Tragedy, or The Honest Man's Revenge",tragedy,Unknown,King's Men (?),None,unknown,uncertain,,only annals named,
+127,The Battle of Alcazar,tragedy,Unknown,Admiral's (Nottingham's) Men (by 1594),Admiral's (Nottingham's) Men,unknown,clear,,only annals named,title page differs
+567,The Bloody Banquet,tragedy,Queen Anne's Men (?),Beeston's Boys (?),None,uncertain,uncertain,Y,differ,
+565,"The Bloody Brother (Rollo, Duke of Normandy)",tragedy,King's Men,King's Men (?),None,clear,uncertain,Y,same base name,
+480,The Broken Heart,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+537,The Conspiracy (Pallantus and Eudora),tragedy,King's Men,"Private, then King's Men",None,clear,multiple (then),Y,differ,
+458,"The Courageous Turk, or Amurath the First",tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+427,The Cruel Brother,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+180,"The Death of Robert, Earl of Huntingdon (2 Robin Hood)",tragedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page = first-performance source
+254,"The Devil's Charter, or Pope Alexander the Sixth",tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+389,The Duchess of Malfi,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+386,The Duke of Milan,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+464,The Fatal Dowry,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+315,The Insatiate Countess,tragedy,Children of the Queen's Revels (?); Children of the King's Revels (?),Children of the Queen's Revels,None,multiple (;),clear,Y,differ,
+48,The Interlude of Vice (Orestes),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+475,The Jew of Malta,tragedy,Unknown,Derby's (Strange's) Men (by 1592),Queen Henrietta Maria's Men,unknown,clear,,only annals named,title page differs
+562,The Maid's Revenge,tragedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+357,The Maid's Tragedy,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+133,The Massacre at Paris,tragedy,Derby's (Strange's) Men,Derby's (Strange's) Men,Admiral's (Nottingham's) Men,clear,clear,Y,identical,title page differs
+249,The Miseries of Enforced Marriage,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+89,The Misfortunes of Arthur (Certain Devices and Shows Presented to Her Majesty),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+490,"The Noble Spanish Soldier (The Noble Soldier, or A Contract Broken Justly Revenged)",tragedy,Unknown,Admiral's (Nottingham's) Men (?),None,unknown,uncertain,,only annals named,
+569,The Phoenix in Her Flames,tragedy,not in BritDrama,Unacted (?),None,not in BritDrama,unacted,,neither named,
+447,"The Raging Turk, or Bajazet the Second",tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+273,The Rape of Lucrece,tragedy,Queen Anne's Men,Queen Anne's Men,Queen Anne's Men,clear,clear,Y,identical,title page = first-performance source
+582,The Rebellion,tragedy,King's Revels Company,King's Revels Company,King's Revels Company,clear,clear,Y,identical,title page = first-performance source
+307,The Revenge of Bussy D'Ambois,tragedy,Children of the Queen's Revels,Children of the Queen's Revels,None,clear,clear,Y,identical,
+253,The Revenger's Tragedy,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+110,The Spanish Tragedy (Hieronimo is Mad Again),tragedy,Unknown,Derby's (Strange's) Men,None,unknown,clear,,only annals named,
+275,The Tragedy of Charles Duke of Byron,tragedy,Children of the Queen's Revels,Children of the Queen's Revels,None,clear,clear,Y,identical,
+498,The Traitor,tragedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+286,The Turk (Muleasses the Turk),tragedy,Children of the King's Revels,Children of the King's Revels,Children of the King's Revels,clear,clear,Y,identical,title page = first-performance source
+559,The Unnatural Combat,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+380,The Virgin Martyr,tragedy,Red Bull (Revels) Company (first),Red Bull (Revels) Company (first),Red Bull (Revels) Company (first),clear,clear,Y,identical,title page = first-performance source
+510,"The Vow Breaker, or The Fair Maid of Clifton",tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+131,"The Wars of Cyrus, King of Persia",tragedy,Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first) (Oxford's Boys),Children of the Chapel (first),clear,clear,Y,identical,title page differs
+306,The White Devil (Vittoria Corombona),tragedy,Queen Anne's Men,Queen Anne's Men,Queen Anne's Men,clear,clear,Y,identical,title page = first-performance source
+231,"The Wonder of Women, or Sophonisba",tragedy,Children of the Queen's Revels,Children of the Queen's Revels,None,clear,clear,Y,identical,
+122,"The Wounds of Civil War, or Marius and Scilla",tragedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men (by 1594),Admiral's (Nottingham's) Men,clear,clear,Y,same base name,title page = first-performance source
+79,Thebais (Seneca's Third Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+368,Thierry and Theodoret,tragedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+29,Thyestes (Seneca's Second Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+402,Timon of Athens,tragedy,King's Men,Unacted (?),None,clear,unacted,,only britdrama named,
+117,Titus Andronicus,tragedy,Pembroke's Men (?),Pembroke's Men; Sussex's Men,Derby's (Strange's) Men; Pembroke's Men; Sussex's Men,uncertain,multiple (;),Y,differ,title page differs
+28,Troas (Seneca's Sixth Tragedy),tragedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+279,Troilus and Cressida,tragedy,Lord Chamberlain's (Hunsdon's) Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,identical,
+182,Two Lamentable Tragedies,tragedy,Unknown,Admiral's (Nottingham's) Men (?),None,unknown,uncertain,,only annals named,
+525,1 The Cid (The Valiant Cid),tragicomedy,not in BritDrama,Beeston's Boys,Beeston's Boys,not in BritDrama,clear,,only annals named,title page = first-performance source
+596,2 The Cid,tragicomedy,not in BritDrama,Unacted (?),None,not in BritDrama,unacted,,neither named,
+509,A Challenge for Beauty,tragicomedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+360,A King and No King,tragicomedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+139,A Knack to Know an Honest Man,tragicomedy,Admiral's (Nottingham's) Men,Admiral's (Nottingham's) Men,None,clear,clear,Y,identical,
+501,"Adrasta, or The Woman's Spleen and Love's Conquest",tragicomedy,n/a,n/a,n/a,missing (n/a),missing (n/a),,neither named,
+395,All's Well That Ends Well,tragicomedy,King's Men,Lord Chamberlain's (Hunsdon's) Men,None,clear,clear,Y,differ,
+440,Match Me in London,tragicomedy,Red Bull (Revels) Company (first),Queen Anne's Men (?),None,clear,uncertain,Y,differ,
+392,Measure for Measure,tragicomedy,King's Men,King's Men,None,clear,clear,Y,identical,
+363,"Philaster, or Love Lies a-Bleeding",tragicomedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+583,The Arcadia,tragicomedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+408,The Bondman (The Noble Bondman),tragicomedy,Lady Elizabeth's Men,Lady Elizabeth's Men,Lady Elizabeth's Men,clear,clear,Y,identical,title page = first-performance source
+572,The Coronation,tragicomedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source
+423,The Deserving Favorite,tragicomedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+388,The Devil's Law Case (When Women Go to Law the Devil Is Full of Business),tragicomedy,Queen Anne's Men,Queen Anne's Men,Queen Anne's Men,clear,clear,Y,identical,title page = first-performance source
+277,The Dumb Knight,tragicomedy,Children of the King's Revels,Children of the King's Revels,Children of the King's Revels,clear,clear,Y,identical,title page = first-performance source
+459,The Emperor of the East,tragicomedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+484,The English Traveller,tragicomedy,Lady Elizabeth's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,differ,title page differs
+211,The Fair Maid of Bristol,tragicomedy,King's Men,King's Men,None,clear,clear,Y,identical,
+428,The Just Italian,tragicomedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+590,The Ladies' Privilege (The Lady's Privilege),tragicomedy,not in BritDrama,Beeston's Boys,Beeston's Boys,not in BritDrama,clear,,only annals named,title page = first-performance source
+534,The Lost Lady,tragicomedy,not in BritDrama,King's Men,None,not in BritDrama,clear,,only annals named,
+420,The Lover's Melancholy,tragicomedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+470,The Maid of Honor,tragicomedy,Queen Henrietta Maria's Men,Red Bull (Revels) Company (first) (?),Queen Henrietta Maria's Men,clear,uncertain,Y,differ,title page = first-performance source
+203,The Malcontent,tragicomedy,Children of the Chapel (second),Children of the Queen's Revels,None,clear,clear,Y,differ,
+430,"The Renegado, or The Gentleman of Venice",tragicomedy,Lady Elizabeth's Men,Lady Elizabeth's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page differs
+570,The Royal Slave,tragicomedy,King's Men,"University, then King's Men",King's Men,clear,multiple (then),Y,differ,title page = first-performance source
+492,The Two Noble Kinsmen,tragicomedy,King's Men,King's Men,King's Men,clear,clear,Y,identical,title page = first-performance source
+519,The Young Admiral,tragicomedy,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,Queen Henrietta Maria's Men,clear,clear,Y,identical,title page = first-performance source

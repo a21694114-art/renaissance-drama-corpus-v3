@@ -1,0 +1,462 @@
+work_id,title,author,year_first,genre_main,shakespeare,compared_topics_share_of_words,nearest_genre,own_genre_tested,d_comedy,d_tragedy,d_history,d_tragicomedy,d_moral,d_romance,d_pastoral,d_masque,comedy_lean,comedy_lean_with_rest_bin,comedy_lean_percentile_in_genre
+73,1 Promos and Cassandra,"Whetstone, George",1578,comedy,,0.3805,pastoral,yes,0.7372,0.6896,0.8626,0.6211,0.8882,0.6998,0.5577,0.8476,,,
+204,1 The Honest Whore (1 The Converted Courtesan) (The Patient Man and the Honest Whore),"Dekker, ThomasMiddleton, Thomas",1604,comedy,,0.3511,comedy,yes,0.4138,0.6133,0.6155,0.432,0.8087,0.6265,0.7957,0.9181,,,
+161,1 The Two Angry Women of Abingdon,"Porter, Henry",1599,comedy,,0.1957,comedy,yes,0.7092,0.8869,0.9753,0.7921,0.915,0.8563,0.9402,0.9699,,,
+74,2 Promos and Cassandra,"Whetstone, George",1578,comedy,,0.3257,tragicomedy,yes,0.7019,0.5337,0.7206,0.4262,0.8557,0.7559,0.8166,0.9705,,,
+435,2 The Honest Whore (2 The Converted Courtesan),"Dekker, Thomas",1630,comedy,,0.2973,comedy,yes,0.6712,0.8093,0.8074,0.7251,0.7191,0.8513,1.0,0.9859,,,
+433,A Chaste Maid in Cheapside,"Middleton, Thomas",1630,comedy,,0.2054,comedy,yes,0.7199,0.9011,0.941,0.7886,0.8575,0.8955,0.7748,0.8996,,,
+481,A Fine Companion,"Marmion, Shackerley",1633,comedy,,0.4676,comedy,yes,0.4745,0.698,0.8423,0.5672,0.7917,0.5242,0.5865,0.7735,,,
+412,A Game at Chess,"Middleton, Thomas",1625,comedy,,0.1112,tragicomedy,yes,0.6359,0.6057,0.6557,0.481,0.5435,0.774,0.844,0.9626,,,
+276,"A Mad World, My Masters","Middleton, Thomas",1608,comedy,,0.443,comedy,yes,0.5439,0.8745,0.9195,0.7478,0.8341,0.7018,0.8269,0.7939,,,
+493,A Maidenhead Well Lost,"Heywood, Thomas",1634,comedy,,0.4828,tragicomedy,yes,0.6783,0.6741,0.7474,0.5382,0.9617,0.6908,0.9894,1.0,,,
+476,A Match at Midnight,"R., W.",1633,comedy,,0.4612,comedy,yes,0.6691,0.8926,0.8991,0.8777,0.7556,0.9192,0.8845,0.8803,,,
+170,A Midsummer Night's Dream,"Shakespeare, William",1600,comedy,yes,0.3674,pastoral,yes,0.7841,0.9154,0.9722,0.8967,0.9455,0.8019,0.4038,0.7709,,,
+561,A New Trick to Cheat the Devil,"Davenport, Robert",1639,comedy,,0.6499,comedy,yes,0.614,0.8376,0.8031,0.7514,0.7519,0.7727,0.8579,0.8055,,,
+474,A New Way to Pay Old Debts,"Massinger, Philip",1633,comedy,,0.1484,comedy,yes,0.6487,0.9355,0.8881,0.8975,0.8343,0.878,0.9781,0.9479,,,
+460,"A New Wonder, A Woman Never Vexed","Heywood, ThomasRowley, William",1632,comedy,,0.469,comedy,yes,0.6542,0.8334,0.8309,0.7786,0.8568,0.8512,0.938,0.9294,,,
+617,A Tale of a Tub,"Jonson, Ben",1640,comedy,,0.6988,comedy,yes,0.8825,0.9667,0.9254,0.954,0.9208,0.9075,1.0,0.9424,,,
+262,A Trick to Catch the Old One,"Middleton, Thomas",1608,comedy,,0.56,comedy,yes,0.7975,0.931,0.9266,0.9464,0.9333,0.9768,1.0,0.9694,,,
+299,A Woman Is a Weathercock,"Field, Nathan",1612,comedy,,0.3196,comedy,yes,0.6638,0.7918,0.8727,0.6823,0.8853,0.7651,0.8531,0.9739,,,
+330,Albumazar,"Tomkis, Thomas",1615,comedy,,0.2331,tragicomedy,yes,0.6161,0.7253,0.7898,0.6008,0.7582,0.779,0.8223,0.9613,,,
+219,All Fools,"Chapman, George",1605,comedy,,0.4201,comedy,yes,0.5269,0.769,0.8836,0.6613,0.8162,0.7502,0.8437,0.8885,,,
+356,Amends for Ladies,"Field, Nathan",1618,comedy,,0.2789,tragicomedy,yes,0.614,0.7352,0.8583,0.6128,0.8114,0.7599,0.7776,0.9446,,,
+91,Andria (The Woman from Andros),"Terence (Publius Terentius Afer)Kyffin, Maurice",1588,comedy,,0.5186,comedy,yes,0.8334,0.9434,0.9867,0.9052,0.9229,0.9476,0.9234,1.0,,,
+184,Antonio and Mellida,"Marston, John",1602,comedy,,0.3509,tragicomedy,yes,0.5418,0.7076,0.7818,0.4939,0.836,0.6061,0.7211,0.8154,,,
+414,Apollo Shroving,"Hawkins, William",1627,comedy,,0.7609,masque,yes,0.8329,0.9117,0.9855,0.8665,0.9213,0.914,0.8424,0.7245,,,
+431,"Aristippus, or The Jovial Philosopher","Randolph, Thomas",1630,comedy,,0.4405,comedy,yes,0.7615,0.9172,0.9681,0.854,0.8957,0.7855,0.8011,0.849,,,
+394,As You Like It,"Shakespeare, William",1623,comedy,yes,0.5462,pastoral,yes,0.5711,0.7263,0.8561,0.6705,0.8617,0.5923,0.5049,0.6869,,,
+455,Bartholomew Fair,"Jonson, Ben",1631,comedy,,0.277,comedy,yes,0.7242,0.9316,0.9673,0.8882,0.8911,0.8268,0.8742,0.8478,,,
+84,"Campaspe (Alexander, Campaspe, and Diogenes)","Lyly, John",1584,comedy,,0.275,masque,yes,0.8343,0.6722,0.9558,0.8959,0.8851,0.678,0.6707,0.6159,,,
+462,"Changes, or Love in a Maze","Shirley, James",1632,comedy,,0.2547,comedy,yes,0.6861,0.8951,0.9588,0.793,0.9107,0.9138,0.9312,0.9504,,,
+542,Covent Garden,"Nabbes, Thomas",1638,comedy,,0.2831,comedy,yes,0.7308,0.8887,0.9376,0.8029,0.8962,0.8599,0.9483,0.9638,,,
+247,Cupid's Whirligig,"Sharpham, Edward",1607,comedy,,0.3484,comedy,yes,0.5456,0.7706,0.9028,0.7489,0.8307,0.7144,0.6836,0.8173,,,
+181,"Cynthia's Revels, or The Fountain of Self-Love","Jonson, Ben",1616,comedy,,0.3535,pastoral,yes,0.7353,0.8614,0.9586,0.8116,0.855,0.8718,0.713,0.7908,,,
+58,Damon and Pithias,"Edwards, Richard",1571,comedy,,0.2156,tragicomedy,yes,0.7813,0.571,0.8262,0.539,0.8387,0.7348,0.803,0.9721,,,
+217,Eastward Ho,"Chapman, GeorgeJonson, BenMarston, John",1605,comedy,,0.1865,comedy,yes,0.6799,0.9304,0.9092,0.8888,0.8551,0.8249,0.9893,0.9059,,,
+99,"Endymion, the Man in the Moon","Lyly, John",1591,comedy,,0.0561,pastoral,yes,0.8503,0.9265,0.9898,0.8947,0.9758,0.7732,0.5343,0.8426,,,
+336,"Englishmen for My Money, or A Woman Will Have Her Will","Haughton, William",1616,comedy,,0.0229,comedy,yes,0.9112,0.9887,1.0,0.9872,0.9623,0.9666,0.9688,1.0,,,
+304,"Epicene, or The Silent Woman","Jonson, Ben",1616,comedy,,0.2247,comedy,yes,0.5047,0.8589,0.9408,0.7248,0.7979,0.7485,0.8009,0.8268,,,
+163,Every Man Out of His Humor,"Jonson, Ben",1600,comedy,,0.2946,moral,yes,0.5953,0.8552,0.8729,0.7548,0.59,0.841,0.949,0.8834,,,
+176,Every Man in His Humor,"Jonson, Ben",1601,comedy,,0.3283,comedy,yes,0.6053,0.8291,0.8786,0.6928,0.8747,0.8056,0.8413,0.8828,,,
+283,Every Woman in Her Humor,Anonymous,1609,comedy,,0.2577,comedy,yes,0.5817,0.7523,0.8239,0.6474,0.7536,0.6741,0.741,0.8159,,,
+113,"Fair Em, the Miller's Daughter of Manchester",Anonymous,1591,comedy,,0.1763,tragicomedy,yes,0.7027,0.7516,0.7969,0.6426,0.9589,0.8797,1.0,1.0,,,
+86,Fedele and Fortunia (Two Italian Gentlemen),"Pasqualigo, LuigiMunday, Anthony",1585,comedy,,0.2039,comedy,yes,0.7076,0.8862,0.9396,0.8555,0.9156,0.7854,0.8286,0.7538,,,
+121,Friar Bacon and Friar Bongay,"Greene, Robert",1594,comedy,,0.5294,tragicomedy,yes,0.7482,0.703,0.7425,0.6952,0.881,0.7986,0.8735,0.8417,,,
+105,Gallathea,"Lyly, John",1592,comedy,,0.4828,pastoral,yes,0.836,0.9304,0.9934,0.9148,0.9538,0.911,0.4674,0.6706,,,
+67,Gammer Gurton's Needle,"Stevenson, William",1575,comedy,,0.1373,comedy,yes,0.8104,0.932,0.9495,0.8596,0.8194,0.8303,0.8136,0.9062,,,
+323,"Greene's Tu Quoque, or The City Gallant","Cooke, John",1614,comedy,,0.446,comedy,yes,0.6339,0.8054,0.8581,0.6858,0.7935,0.8543,0.8747,0.99,,,
+354,Hans Beer-Pot (See Me and See Me Not),"Belchier, Dabridgcourt",1618,comedy,,0.2226,romance,yes,0.8553,0.8488,0.8919,0.8543,0.8719,0.7899,1.0,0.9688,,,
+461,Holland's Leaguer,"Marmion, Shackerley",1632,comedy,,0.344,comedy,yes,0.6007,0.8455,0.9326,0.764,0.8681,0.7271,0.7614,0.7878,,,
+191,How a Man May Choose a Good Wife from a Bad,Anonymous,1602,comedy,,0.2779,tragicomedy,yes,0.6113,0.6329,0.8386,0.5022,0.8051,0.6535,0.5743,0.8827,,,
+268,Humor Out of Breath,"Day, John",1608,comedy,,0.3546,comedy,yes,0.5251,0.7503,0.845,0.6448,0.8128,0.6212,0.5551,0.7853,,,
+517,Hyde Park,"Shirley, James",1637,comedy,,0.2499,moral,yes,0.7561,0.8945,0.868,0.8558,0.7259,0.9012,0.9798,0.9367,,,
+305,"If It Be Not Good, the Devil Is in It (If This Be Not a Good Play, the Devil Is in It)","Dekker, Thomas",1612,comedy,,0.5669,moral,yes,0.6535,0.77,0.7206,0.7004,0.6375,0.8222,0.9526,0.808,,,
+177,Jack Drum's Entertainment (Katherine and Pasquil),"Marston, John",1601,comedy,,0.3716,pastoral,yes,0.6639,0.6683,0.8643,0.6019,0.8301,0.6116,0.5169,0.8315,,,
+267,Law Tricks,"Day, John",1608,comedy,,0.3562,tragicomedy,yes,0.4963,0.5277,0.6278,0.2907,0.7782,0.5927,0.8206,0.9657,,,
+174,Look About You,Anonymous,1600,comedy,,0.0595,history,yes,0.9528,0.9676,0.646,0.9318,1.0,0.8404,1.0,1.0,,,
+150,Love's Labor's Lost,"Shakespeare, William",1598,comedy,yes,0.2999,romance,yes,0.6661,0.5879,0.7246,0.6441,0.7482,0.576,0.6311,0.7943,,,
+297,May Day,"Chapman, George",1611,comedy,,0.3778,comedy,yes,0.6879,0.9065,0.9438,0.8892,0.8734,0.7668,0.8318,0.8548,,,
+244,Michaelmas Term,"Middleton, Thomas",1607,comedy,,0.1328,comedy,yes,0.719,0.9262,0.9023,0.9079,0.8538,0.8794,0.9772,0.9207,,,
+106,Midas,"Lyly, John",1592,comedy,,0.4607,masque,yes,0.6926,0.7876,0.9009,0.7733,0.9053,0.7349,0.6928,0.6565,,,
+558,Monsieur Thomas (Father's Own Son),"Fletcher, John",1639,comedy,,0.2832,comedy,yes,0.6095,0.8283,0.8411,0.679,0.8779,0.7352,0.7668,0.8714,,,
+125,Mother Bombie,"Lyly, John",1594,comedy,,0.4177,comedy,yes,0.6805,0.8893,0.9235,0.824,0.762,0.8592,0.9182,0.9412,,,
+168,Much Ado About Nothing,"Shakespeare, William",1600,comedy,yes,0.5003,tragicomedy,yes,0.4735,0.5285,0.6219,0.4319,0.8368,0.5331,0.5972,0.7977,,,
+250,Northward Ho,"Dekker, ThomasWebster, John",1607,comedy,,0.2839,comedy,yes,0.6216,0.8207,0.8376,0.7435,0.8967,0.7513,1.0,0.9616,,,
+230,"Parasitaster, or The Fawn","Marston, John",1606,comedy,,0.2708,tragicomedy,yes,0.6125,0.719,0.7776,0.5802,0.9146,0.7435,0.7962,0.8735,,,
+198,Patient Grissel,"Dekker, ThomasChettle, HenryHaughton, William",1603,comedy,,0.1247,comedy,yes,0.6476,0.7863,0.8574,0.7068,0.8657,0.7494,0.7483,0.9041,,,
+186,"Poetaster, or The Arraignment","Jonson, Ben",1602,comedy,,0.6975,masque,yes,0.5928,0.6358,0.8816,0.7402,0.7845,0.6082,0.7117,0.5628,,,
+46,Ralph Roister Doister,"Udall, Nicholas",1566,comedy,,0.1283,tragicomedy,yes,0.7267,0.7697,0.8994,0.6417,0.799,0.856,0.8203,0.9688,,,
+292,"Ram Alley, or Merry Tricks","Barry, Lording",1611,comedy,,0.5004,comedy,yes,0.5734,0.8254,0.8366,0.7662,0.8051,0.7915,0.9169,0.9261,,,
+598,Rule a Wife and Have a Wife,"Fletcher, John",1640,comedy,,0.3498,comedy,yes,0.6574,0.7421,0.8558,0.7038,0.9535,0.7619,1.0,0.9738,,,
+82,Sappho and Phao,"Lyly, John",1584,comedy,,0.4398,pastoral,yes,0.6565,0.864,0.9713,0.7672,0.8794,0.7662,0.3526,0.5884,,,
+195,"Satiromastix, or The Untrussing of the Humorous Poet","Dekker, Thomas",1602,comedy,,0.339,comedy,yes,0.6684,0.8978,0.9737,0.8471,0.8723,0.7647,0.8231,0.8592,,,
+228,Sir Giles Goosecap,"Chapman, George",1606,comedy,,0.1746,pastoral,yes,0.7206,0.897,0.9642,0.8543,0.9431,0.7915,0.6938,0.8505,,,
+173,Summer's Last Will and Testament,"Nashe, Thomas",1600,comedy,,0.2828,moral,yes,0.8385,0.9183,0.93,0.8882,0.6775,0.827,0.9498,0.9144,,,
+60,Supposes,"Gascoigne, GeorgeAriosto, Ludovico",1573,comedy,,0.2253,tragicomedy,yes,0.4983,0.61,0.7181,0.423,0.7964,0.6397,0.6857,0.9005,,,
+353,"Technogamia, or The Marriages of the Arts","Holyday, Barten",1618,comedy,,0.3462,comedy,yes,0.4986,0.725,0.8617,0.6028,0.7825,0.5889,0.5565,0.613,,,
+303,The Alchemist,"Jonson, Ben",1612,comedy,,0.3788,comedy,yes,0.6121,0.8837,0.8733,0.7308,0.8402,0.7186,0.8024,0.8465,,,
+586,The Antipodes,"Brome, Richard",1640,comedy,,0.4786,comedy,yes,0.5424,0.8043,0.8567,0.5846,0.8052,0.6757,0.7867,0.8768,,,
+549,The Ball,"Shirley, James",1639,comedy,,0.2571,comedy,yes,0.7569,0.9472,0.979,0.8885,0.8948,0.9599,0.7707,0.8471,,,
+479,The Bird in a Cage (The Beauties),"Shirley, James",1633,comedy,,0.4033,tragicomedy,yes,0.665,0.7386,0.8006,0.6103,0.9204,0.859,0.9761,0.9772,,,
+146,The Blind Beggar of Alexandria (Irus),"Chapman, George",1598,comedy,,0.3069,comedy,yes,0.5502,0.7144,0.7721,0.5863,0.8715,0.7144,0.7447,0.883,,,
+281,The Case Is Altered,"Jonson, Ben",1609,comedy,,0.3036,tragicomedy,yes,0.5164,0.6203,0.7275,0.4565,0.6716,0.7302,0.8034,0.956,,,
+568,The City Match,"Mayne, Jasper",1639,comedy,,0.5602,comedy,yes,0.6093,0.8727,0.9342,0.8081,0.8752,0.8456,0.9359,0.9046,,,
+393,The Comedy of Errors,"Shakespeare, William",1623,comedy,yes,0.3745,comedy,yes,0.562,0.767,0.7616,0.6227,0.7851,0.7593,0.9072,0.8807,,,
+592,The Constant Maid (Love Will Find Out the Way),"Shirley, James",1640,comedy,,0.2204,comedy,yes,0.6146,0.7556,0.8573,0.707,0.865,0.768,0.7552,0.9052,,,
+457,The Devil Is an Ass,"Jonson, Ben",1631,comedy,,0.5208,comedy,yes,0.4822,0.7446,0.8196,0.6498,0.7379,0.7283,0.8033,0.7726,,,
+214,The Dutch Courtesan (Cockle de Moye),"Marston, John",1605,comedy,,0.2533,pastoral,yes,0.6664,0.8772,0.9232,0.7869,0.7926,0.7017,0.6382,0.7828,,,
+515,The Elder Brother,"Fletcher, JohnMassinger, Philip",1637,comedy,,0.2799,comedy,yes,0.7544,0.9256,0.9747,0.86,0.9078,0.9013,0.9861,0.9168,,,
+521,The Example,"Shirley, James",1637,comedy,,0.1941,comedy,yes,0.7606,0.9036,0.9677,0.8147,0.924,0.8875,0.9699,0.9206,,,
+242,The Fair Maid of the Exchange,Anonymous,1607,comedy,,0.4125,pastoral,yes,0.6055,0.834,0.934,0.7406,0.8469,0.734,0.5897,0.8474,,,
+263,The Family of Love,"Barry, Lording",1608,comedy,,0.7254,pastoral,yes,0.593,0.8168,0.8984,0.7217,0.8635,0.6562,0.5851,0.7321,,,
+532,The Fancies Chaste and Noble,"Ford, John",1638,comedy,,0.1927,comedy,yes,0.7171,0.8854,0.9733,0.8363,0.9329,0.9355,0.9384,1.0,,,
+255,The Fleer,"Sharpham, Edward",1607,comedy,,0.3093,comedy,yes,0.5547,0.7415,0.7989,0.5564,0.7667,0.7231,0.8138,0.8727,,,
+523,The Gamester,"Shirley, James",1637,comedy,,0.3326,tragicomedy,yes,0.6929,0.7214,0.8749,0.6524,0.858,0.8186,0.8401,1.0,,,
+226,The Gentleman Usher (Vincentio and Margaret),"Chapman, George",1606,comedy,,0.5007,tragicomedy,yes,0.4961,0.6632,0.7453,0.455,0.8814,0.6944,0.8253,0.9103,,,
+429,The Grateful Servant (The Faithful Servant),"Shirley, James",1630,comedy,,0.5535,tragicomedy,yes,0.5826,0.7006,0.7324,0.5619,0.78,0.836,0.9765,0.9046,,,
+505,The Great Duke of Florence,"Massinger, Philip",1636,comedy,,0.5951,tragicomedy,yes,0.669,0.6773,0.748,0.5604,0.9184,0.8248,0.9413,1.0,,,
+384,The Heir,"May, Thomas",1622,comedy,,0.1836,pastoral,yes,0.6429,0.6883,0.7828,0.5936,0.801,0.6237,0.559,0.8591,,,
+321,The Hog Hath Lost His Pearl,"Tailor, Robert",1614,comedy,,0.2347,moral,yes,0.6939,0.8775,0.7932,0.7682,0.5503,0.8732,0.94,0.924,,,
+594,The Hollander (Love's Trial),"Glapthorne, Henry",1640,comedy,,0.5469,comedy,yes,0.6018,0.8319,0.9373,0.7192,0.9345,0.6508,0.6945,0.8319,,,
+337,The Honest Lawyer,"S., S.",1616,comedy,,0.3313,comedy,yes,0.4868,0.6105,0.7062,0.5167,0.7174,0.6752,0.7825,0.8675,,,
+577,The Humorous Courtier (The Duke),"Shirley, James",1640,comedy,,0.7484,tragicomedy,yes,0.6202,0.7224,0.785,0.5783,0.9246,0.8168,0.9393,0.9615,,,
+235,The Isle of Gulls,"Day, John",1606,comedy,,0.381,comedy,yes,0.5719,0.7276,0.8278,0.6127,0.8706,0.7466,0.8526,0.9033,,,
+469,The Jealous Lovers,"Randolph, Thomas",1632,comedy,,0.3207,tragicomedy,yes,0.6137,0.6007,0.8166,0.4892,0.6881,0.6624,0.6022,0.856,,,
+580,"The Knave in Grain, New Vamped","D., J.",1640,comedy,,0.3919,tragicomedy,yes,0.5238,0.6225,0.7246,0.4954,0.7436,0.5501,0.555,0.8003,,,
+316,The Knight of the Burning Pestle,"Beaumont, Francis",1613,comedy,,0.1863,comedy,yes,0.5741,0.7101,0.8629,0.6154,0.8038,0.5902,0.6416,0.8381,,,
+518,The Lady of Pleasure,"Shirley, James",1637,comedy,,0.441,comedy,yes,0.6978,0.8842,0.9279,0.8215,0.83,0.8237,0.8357,0.8369,,,
+555,The Lady's Trial,"Ford, John",1639,comedy,,0.2032,comedy,yes,0.5361,0.7474,0.8683,0.6279,0.8572,0.8432,0.9087,0.9715,,,
+494,The Late Lancashire Witches,"Heywood, ThomasBrome, Richard",1634,comedy,,0.2106,comedy,yes,0.7534,0.9346,0.979,0.9299,0.8485,0.9377,0.9768,0.8994,,,
+222,The London Prodigal,Anonymous,1605,comedy,,0.2507,comedy,yes,0.8249,0.946,0.9738,0.9521,0.9501,0.986,0.9798,0.9559,,,
+616,"The Magnetic Lady, or Humors Reconciled","Jonson, Ben",1640,comedy,,0.5518,comedy,yes,0.6281,0.8606,0.9423,0.6941,0.8139,0.7633,0.754,0.8747,,,
+164,The Maid's Metamorphosis,Anonymous,1600,comedy,,0.6051,pastoral,yes,0.6853,0.8077,0.8962,0.7523,0.9331,0.6686,0.5307,0.6241,,,
+172,The Merchant of Venice (The Jew of Venice),"Shakespeare, William",1600,comedy,yes,0.3839,tragicomedy,yes,0.5225,0.599,0.643,0.3704,0.7715,0.5788,0.7605,0.9238,,,
+264,The Merry Devil of Edmonton,Anonymous,1608,comedy,,0.1743,history,yes,0.8783,0.9347,0.8757,0.893,0.9384,0.9233,1.0,0.9308,,,
+187,The Merry Wives of Windsor,"Shakespeare, William",1623,comedy,yes,0.1873,comedy,yes,0.7225,0.8915,0.9465,0.8033,0.8606,0.8238,0.7468,0.9133,,,
+442,"The New Inn, or The Light Heart","Jonson, Ben",1631,comedy,,0.135,pastoral,yes,0.7145,0.9001,0.9671,0.8521,0.8791,0.7309,0.6337,0.7889,,,
+574,"The Night Walker, or The Little Thief","Fletcher, JohnShirley, James",1640,comedy,,0.3067,moral,yes,0.7426,0.8201,0.7847,0.7584,0.6086,0.7983,0.9178,0.8903,,,
+463,The Northern Lass,"Brome, Richard",1632,comedy,,0.2614,comedy,yes,0.5423,0.8626,0.9184,0.7534,0.9048,0.7304,0.7863,0.8823,,,
+575,The Opportunity,"Shirley, James",1640,comedy,,0.9157,tragicomedy,yes,0.6592,0.7251,0.7791,0.5912,0.9378,0.8538,0.9805,0.9844,,,
+243,The Phoenix,"Middleton, Thomas",1607,comedy,,0.5518,comedy,yes,0.4919,0.752,0.776,0.687,0.7394,0.7542,0.9781,0.9197,,,
+15,The Play of the Weather,"Heywood, John",1544,comedy,,0.2382,masque,yes,0.7645,0.8461,0.9735,0.861,0.8497,0.8482,0.7211,0.7144,,,
+251,"The Puritan, or The Widow of Watling Street (The Puritan Widow)","Middleton, Thomas",1607,comedy,,0.515,comedy,yes,0.688,0.8575,0.8438,0.826,0.8574,0.7877,0.935,0.9555,,,
+465,The Rival Friends,"Hausted, Peter",1632,comedy,,0.234,pastoral,yes,0.5196,0.7121,0.8437,0.5821,0.801,0.5826,0.389,0.6977,,,
+298,"The Roaring Girl, or Moll Cutpurse","Dekker, ThomasMiddleton, Thomas",1611,comedy,,0.1681,comedy,yes,0.6354,0.9089,0.9132,0.8287,0.8146,0.8248,0.9512,0.9305,,,
+538,The Royal Master,"Shirley, James",1638,comedy,,0.7489,tragicomedy,yes,0.6427,0.6565,0.7054,0.4925,0.9048,0.7325,0.9277,0.9837,,,
+441,The School of Compliment (Love Tricks),"Shirley, James",1631,comedy,,0.319,pastoral,yes,0.6378,0.754,0.895,0.6615,0.82,0.6139,0.3679,0.6976,,,
+334,The Scornful Lady,"Beaumont, FrancisFletcher, John",1616,comedy,,0.391,comedy,yes,0.5093,0.723,0.8528,0.6962,0.8413,0.7209,0.8455,0.8946,,,
+175,"The Shoemaker's Holiday, or The Gentle Craft","Dekker, Thomas",1600,comedy,,0.0779,pastoral,yes,0.7811,0.6696,0.6347,0.6481,0.8924,0.6014,0.5597,0.885,,,
+556,"The Sophister (Fallacy, or The Troubles of Great Hermenia)","Zouche, Richard",1639,comedy,,0.1575,tragedy,yes,0.8042,0.7115,0.8824,0.8907,0.8082,0.8623,0.9614,0.8973,,,
+456,The Staple of News,"Jonson, Ben",1631,comedy,,0.257,comedy,yes,0.5024,0.7281,0.6764,0.603,0.6679,0.7056,0.8692,0.8301,,,
+120,The Taming of a Shrew,Anonymous,1594,comedy,,0.1556,comedy,yes,0.6413,0.8088,0.8621,0.7283,0.8577,0.8388,0.9523,0.9683,,,
+120.5,The Taming of the Shrew,"Shakespeare, William",1623,comedy,yes,0.149,comedy,yes,0.7482,0.9116,0.9559,0.8345,0.8192,0.8977,0.9395,0.9713,,,
+390,The Tempest,"Shakespeare, William",1623,comedy,yes,0.2411,masque,yes,0.7059,0.7438,0.8024,0.6527,0.9004,0.8054,0.7304,0.6097,,,
+391,The Two Gentlemen of Verona,"Shakespeare, William",1623,comedy,yes,0.1723,pastoral,yes,0.6388,0.7283,0.7839,0.5888,0.8749,0.5423,0.5196,0.7852,,,
+285,The Two Maids of More-Clacke,"Armin, Robert",1609,comedy,,0.2448,pastoral,yes,0.5949,0.6909,0.8432,0.5859,0.85,0.7299,0.5513,0.848,,,
+364,"The Two Merry Milkmaids, or The Best Words Wear the Garland","Cumber, John",1620,comedy,,0.5211,tragicomedy,yes,0.6037,0.7241,0.7747,0.5849,0.9071,0.7485,0.9119,0.8919,,,
+425,The Wedding,"Shirley, James",1629,comedy,,0.39,tragicomedy,yes,0.6308,0.6516,0.826,0.5382,0.811,0.6775,0.7046,0.9293,,,
+301,The Widow's Tears,"Chapman, George",1612,comedy,,0.21,tragicomedy,yes,0.6953,0.6671,0.8281,0.537,0.8676,0.8031,0.8106,0.9497,,,
+535,The Wise Woman of Hogsdon,"Heywood, Thomas",1638,comedy,,0.3346,comedy,yes,0.7049,0.9053,0.9797,0.8663,0.856,0.8971,0.7892,0.8784,,,
+477,The Witty Fair One,"Shirley, James",1633,comedy,,0.361,tragicomedy,yes,0.6114,0.7119,0.8571,0.601,0.8122,0.7258,0.724,0.9097,,,
+245,The Woman Hater (The Hungry Courtier),"Beaumont, FrancisFletcher, John",1607,comedy,,0.456,tragicomedy,yes,0.5773,0.7055,0.8081,0.5494,0.8814,0.7424,0.8169,0.8892,,,
+144,The Woman in the Moon,"Lyly, John",1597,comedy,,0.3958,masque,yes,0.7577,0.8844,0.9817,0.8786,0.8804,0.665,0.2517,0.2389,,,
+508,The Wonder of A Kingdom,"Dekker, Thomas",1636,comedy,,0.5671,comedy,yes,0.4848,0.6963,0.7421,0.4883,0.839,0.6686,0.7621,0.8751,,,
+37,Thersites,"Udall, Nicholas",1562,comedy,,0.3618,tragedy,yes,0.9762,0.7688,0.9607,0.9783,0.965,0.9451,0.908,0.8731,,,
+540,Tottenham Court,"Nabbes, Thomas",1638,comedy,,0.3341,comedy,yes,0.6942,0.8804,0.9536,0.8163,0.9175,0.8794,0.9599,0.954,,,
+396,"Twelfth Night, or What You Will","Shakespeare, William",1623,comedy,yes,0.0775,comedy,yes,0.8247,0.9579,0.9722,0.9257,0.8778,0.969,1.0,0.889,,,
+259,"Volpone, or The Fox","Jonson, Ben",1616,comedy,,0.3183,tragicomedy,yes,0.5688,0.66,0.851,0.5312,0.6903,0.6697,0.6455,0.7514,,,
+257,Westward Ho,"Dekker, ThomasWebster, John",1607,comedy,,0.2222,comedy,yes,0.5987,0.7618,0.8182,0.7131,0.7289,0.7312,0.7563,0.8333,,,
+252,What You Will,"Marston, John",1607,comedy,,0.2324,comedy,yes,0.6032,0.664,0.84,0.6519,0.8452,0.7097,0.7784,0.8516,,,
+234,Wily Beguiled,Anonymous,1606,comedy,,0.2248,moral,yes,0.6656,0.8616,0.9651,0.7998,0.664,0.8554,0.7437,0.7108,,,
+591,Wit in a Constable,"Glapthorne, Henry",1640,comedy,,0.4184,comedy,yes,0.7072,0.9429,0.9437,0.9176,0.8667,0.9049,0.9648,0.9343,,,
+266,Your Five Gallants (The Five Witty Gallants),"Middleton, Thomas",1608,comedy,,0.2983,comedy,yes,0.7352,0.9337,0.8812,0.867,0.8436,0.8765,1.0,0.9595,,,
+153,1 Edward the Fourth,"Heywood, Thomas",1600,history,,0.3984,history,yes,0.8733,0.8989,0.5139,0.8736,0.9411,0.6829,0.9902,0.983,0.3594,0.1254,69.7
+145,1 Henry the Fourth,"Shakespeare, William",1598,history,yes,0.2075,history,yes,0.8569,0.835,0.5417,0.798,0.8229,0.7638,0.9099,1.0,0.3152,0.0698,57.6
+399,1 Henry the Sixth,"AnonymousMarlowe, ChristopherShakespeare, WilliamNashe, Thomas",1623,history,yes,0.5518,history,yes,0.997,0.9438,0.5829,1.0,1.0,0.8768,1.0,1.0,0.4141,0.1645,81.8
+215,"1 If You Know Not Me You Know Nobody, or The Troubles of Queen Elizabeth","Heywood, Thomas",1605,history,,0.3502,tragicomedy,yes,0.8999,0.9098,0.8801,0.7406,0.964,0.7549,0.9835,0.9756,0.0197,-0.0072,24.2
+166,1 Sir John Oldcastle,"Wilson, RobertDrayton, MichaelMunday, AnthonyHathaway, Richard",1600,history,,0.19,history,yes,0.7638,0.7726,0.4017,0.7491,0.6277,0.7401,0.9004,0.9431,0.3621,0.0757,72.7
+101,1 The Troublesome Reign of King John,Anonymous,1591,history,,0.6199,history,yes,0.8993,0.8107,0.401,0.8434,0.9237,0.7826,0.9323,1.0,0.4983,0.2176,90.9
+154,2 Edward the Fourth,"Heywood, Thomas",1600,history,,0.4067,history,yes,0.6702,0.5537,0.4666,0.5597,0.8684,0.5741,0.7664,0.9179,0.2035,0.0695,39.4
+167,2 Henry the Fourth,"Shakespeare, William",1600,history,yes,0.2137,romance,yes,0.7746,0.8651,0.6284,0.7121,0.9473,0.5702,0.8929,0.8872,0.1463,0.0264,27.3
+119,2 Henry the Sixth (The First Part of the Contention betwixt the Two Famous Houses of York and Lancaster),"AnonymousMarlowe, ChristopherShakespeare, William",1600,history,yes,0.3427,history,yes,0.8166,0.7099,0.2959,0.723,0.9206,0.673,0.9149,1.0,0.5208,0.1739,93.9
+224,2 If You Know Not Me You Know Nobody (The Second Part of Queen Elizabeth's Troubles),"Heywood, Thomas",1606,history,,0.2533,comedy,yes,0.5827,0.7545,0.7698,0.6256,0.7698,0.7009,0.8222,0.9082,-0.1872,-0.0718,0.0
+102,2 The Troublesome Reign of King John,Anonymous,1611,history,,0.6862,history,yes,0.8782,0.7609,0.4669,0.7864,0.9057,0.7405,0.9189,1.0,0.4114,0.1879,78.8
+138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),"AnonymousMarlowe, ChristopherShakespeare, William",1623,history,yes,0.3826,history,yes,0.7732,0.6993,0.5433,0.728,0.9195,0.7575,0.919,1.0,0.2299,0.0752,48.5
+192,"A Larum for London, or The Siege of Antwerp",Anonymous,1602,history,,0.1236,comedy,yes,0.7797,0.9132,0.9183,0.8333,0.8722,0.9222,0.9578,0.9828,-0.1386,-0.0562,6.1
+112,Edward the First,"Peele, George",1593,history,,0.489,history,yes,0.9061,0.8777,0.611,0.7901,1.0,0.7221,0.9906,0.9896,0.2951,0.1142,54.5
+129,Edward the Second,"Marlowe, Christopher",1594,history,,0.4133,history,yes,0.9888,0.8916,0.3848,0.9762,0.9698,0.7708,1.0,1.0,0.604,0.2213,97.0
+482,Fuimus Troes (The True Trojans),"Fisher, Jasper",1633,history,,0.3565,tragedy,yes,0.8543,0.4558,0.8819,0.7558,0.8677,0.7319,0.7677,0.7856,-0.0276,-0.0235,15.2
+400,Henry the Eighth (All Is True),"Shakespeare, WilliamFletcher, John",1623,history,yes,0.3107,history,yes,0.8876,0.8611,0.7045,0.8228,0.9304,0.8792,0.9897,1.0,0.1831,0.0492,30.3
+165,Henry the Fifth,"Shakespeare, William",1600,history,yes,0.4792,history,yes,0.8825,0.8268,0.4998,0.8844,0.8875,0.7601,1.0,0.9816,0.3826,0.1465,75.8
+114,Jack Straw,Anonymous,1593,history,,0.5062,history,yes,0.9955,0.9779,0.6663,1.0,1.0,0.8774,1.0,1.0,0.3291,0.1228,63.6
+398,King John,"Shakespeare, William",1623,history,yes,0.5556,history,yes,0.8939,0.7329,0.4234,0.7811,0.8876,0.7789,0.8864,0.9804,0.4705,0.1959,87.9
+141,Richard the Second,"Shakespeare, William",1597,history,yes,0.1678,tragicomedy,yes,0.694,0.6302,0.6789,0.5593,0.9021,0.7398,0.8959,0.9673,0.0151,-0.0108,21.2
+142,Richard the Third,"Shakespeare, William",1623,history,yes,0.3385,tragicomedy,yes,0.6123,0.5506,0.41,0.407,0.8581,0.5462,0.8781,0.9138,0.2023,0.0625,36.4
+274,The Conspiracy of Charles Duke of Byron,"Chapman, George",1608,history,,0.2092,tragicomedy,yes,0.7087,0.6973,0.8294,0.6409,0.9601,0.8691,1.0,1.0,-0.1208,-0.0517,9.1
+451,The Duchess of Suffolk,"Drue, Thomas",1631,history,,0.5146,tragicomedy,yes,0.6981,0.7516,0.878,0.6426,0.9589,0.8797,1.0,1.0,-0.1799,-0.0793,3.0
+256,The Famous History of Sir Thomas Wyatt,"Heywood, ThomasDekker, ThomasChettle, HenryWebster, John",1607,history,,0.2734,history,yes,0.8734,0.7178,0.5197,0.6759,0.902,0.7514,0.8322,1.0,0.3537,0.0989,66.7
+160,The Love of King David and Fair Bathsheba,"Peele, George",1599,history,,0.7362,moral,yes,0.9283,0.8851,0.9365,0.8521,0.4039,0.9159,0.9389,0.9501,-0.0083,-0.0066,18.2
+140,The Reign of King Edward the Third,"AnonymousShakespeare, William",1596,history,yes,0.493,history,yes,0.8917,0.8199,0.6399,0.8586,0.9419,0.7364,0.8339,0.947,0.2518,0.0911,51.5
+213,The True Chronicle of King Leir (King Lear and his Three Daughters),Anonymous,1605,history,,0.1167,tragicomedy,yes,0.7994,0.7403,0.8717,0.5989,0.8593,0.7991,0.842,0.9854,-0.0723,-0.0408,12.1
+126,The True Tragedy of Richard the Third,Anonymous,1594,history,,0.2527,history,yes,0.9957,0.9797,0.5427,1.0,1.0,0.8922,1.0,1.0,0.453,0.1268,84.8
+520,The Valiant Scot,"W., J.",1637,history,,0.6862,history,yes,0.9177,0.879,0.5908,0.8744,0.9583,0.7925,0.94,1.0,0.327,0.1412,60.6
+327,The Valiant Welshman (Caradoc the Great),"A., R.",1615,history,,0.3726,history,yes,0.9042,0.7236,0.7029,0.907,0.9911,0.7835,0.9013,0.8711,0.2014,0.0616,33.3
+189,Thomas Lord Cromwell,"S., W.",1602,history,,0.2327,history,yes,0.8614,0.9243,0.6577,0.9365,0.8721,0.8724,1.0,0.9828,0.2037,0.0408,42.4
+212,When You See Me You Know Me (Henry the Eighth),"Rowley, Samuel",1605,history,,0.5215,history,yes,0.8806,0.9083,0.663,0.8917,0.901,0.8506,0.9911,0.9781,0.2177,0.0831,45.5
+32,Robin Hood (Robin Hood and the Friar) (Robin Hood and the Potter),Anonymous,1590,interlude,,0.653,history,,0.9282,0.957,0.873,0.9039,1.0,0.9239,1.0,1.0,,,
+453,Albion's Triumph,"Townshend, Aurelian",1631,masque,,0.2459,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3449,0.6305,0.1687,93.1
+526,Britannia Triumphans (Britain Triumphing),"Davenant, William",1637,masque,,0.5608,masque,yes,0.8948,0.9153,0.8664,0.9495,0.6005,0.8977,0.8376,0.567,0.3278,0.1427,51.7
+452,Chloridia: Rites to Chloris and Her Nymphs,"Jonson, Ben",1631,masque,,1.0,masque,yes,0.852,0.9367,0.9836,0.9621,0.8419,0.9454,0.6498,0.4396,0.4124,0.2607,55.2
+606,Christmas His Masque (Christmas His Show),"Jonson, Ben",1641,masque,,0.4984,pastoral,yes,0.9189,0.9805,1.0,0.9868,0.9836,0.9936,0.6105,0.8747,0.0442,-0.0016,37.9
+496,Coelum Britannicum (The British Heaven),"Carew, Thomas",1634,masque,,0.2048,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3437,0.6318,0.1495,96.6
+437,Love's Triumph Through Callipolis,"Jonson, Ben",1630,masque,,0.4994,pastoral,yes,0.848,0.9265,0.9898,0.8947,0.9758,0.7732,0.5343,0.9182,-0.0702,-0.0469,13.8
+350,Lovers Made Men (The Masque at Lord Hay's),"Jonson, Ben",1617,masque,,0.5012,masque,yes,0.9071,0.9762,1.0,0.9559,0.9731,1.0,0.9293,0.8486,0.0586,0.0053,41.4
+514,Microcosmus,"Nabbes, Thomas",1637,masque,,0.3322,comedy,yes,0.7448,0.9191,0.9444,0.8248,0.7972,0.835,0.8232,0.9129,-0.1681,-0.0855,0.0
+407,Neptune's Triumph for the Return of Albion,"Jonson, Ben",1624,masque,,0.7573,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.361,0.6144,0.3007,79.3
+611,"Pan's Anniversary, or The Shepherds' Holiday","Jonson, Ben",1641,masque,,1.0,pastoral,yes,0.9489,0.9849,1.0,1.0,1.0,0.7673,0.6592,1.0,-0.0511,-0.021,17.2
+608,Pleasure Reconciled to Virtue,"Jonson, Ben",1641,masque,,0.4284,tragedy,yes,0.9757,0.8997,1.0,0.9863,0.9778,1.0,0.9643,1.0,-0.0243,-0.0363,27.6
+454,Tempe Restored  (Tempe Restauratum),"Townshend, Aurelian",1631,masque,,0.4782,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.352,0.6234,0.2447,82.8
+291,"Tethys' Festival, or The Queen's Wake (Tethyos Epinicia)","Daniel, Samuel",1610,masque,,1.0,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3692,0.6062,0.3346,69.0
+411,The Fortunate Isles and Their Union,"Jonson, Ben",1625,masque,,0.5052,masque,yes,0.9523,0.9276,0.9684,0.9479,0.8986,0.9505,0.862,0.4497,0.5026,0.2027,62.1
+349,The Golden Age Restored,"Jonson, Ben",1616,masque,,1.0,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3692,0.6062,0.3346,69.0
+585,The Gypsies Metamorphosed,"Jonson, Ben",1641,masque,,0.2257,comedy,yes,0.7674,0.9519,0.9457,0.9509,0.9167,0.8555,1.0,0.9165,-0.1491,-0.0783,3.4
+358,"The Inner-Temple Masque, or The Masque of Heroes","Middleton, Thomas",1619,masque,,0.4035,comedy,yes,0.8027,0.9189,0.9566,0.8503,0.9599,0.8374,0.8131,0.9327,-0.13,-0.0726,6.9
+319,The Lord's Masque (Wedding Masque of Stars and Statues Made Human),"Campion, Thomas",1613,masque,,0.49,masque,yes,0.8988,0.9563,0.9894,0.9517,0.8929,0.9535,0.8122,0.3672,0.5316,0.2145,65.5
+271,The Masque at Lord Haddington's Marriage (The Hue and Cry after the Fugitive Cupid),"Jonson, Ben",1616,masque,,0.24,tragedy,yes,0.9704,0.8269,0.9569,0.9894,0.9825,0.9394,0.9312,1.0,-0.0296,-0.0465,20.7
+238,The Masque at Lord Hay's Marriage (Apollo's Knights),"Campion, Thomas",1607,masque,,0.2062,masque,yes,0.9071,0.9762,1.0,0.9559,0.9731,1.0,0.9293,0.8106,0.0965,-0.0034,48.3
+381,The Masque of Augurs,"Jonson, Ben",1641,masque,,0.4876,masque,yes,0.8646,0.9665,0.9922,0.9383,0.9397,0.9432,0.9349,0.842,0.0226,-0.0084,34.5
+270,The Masque of Beauty,"Jonson, Ben",1608,masque,,1.0,masque,yes,0.8633,0.9183,0.9802,0.9088,0.8909,0.7876,0.56,0.3767,0.4866,0.2877,58.6
+269,The Masque of Blackness (The Twelfth Night's Revels),"Jonson, Ben",1608,masque,,0.3331,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3475,0.6279,0.2022,86.2
+280,The Masque of Queens,"Jonson, Ben",1616,masque,,0.5062,pastoral,yes,0.9789,0.9696,0.9769,1.0,1.0,0.9724,0.9367,0.9615,0.0173,-0.0156,31.0
+309,The Masque of the Inner Temple and Gray's Inn (Wedding Masque of Olympian Knights),"Beaumont, Francis",1613,masque,,1.0,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3692,0.6062,0.3346,69.0
+488,The Triumph of Peace,"Shirley, James",1633,masque,,0.1957,pastoral,yes,0.8103,0.9342,0.9715,0.8436,0.9541,0.8196,0.7695,0.9212,-0.1109,-0.0674,10.3
+207,The Vision of the Twelve Goddesses (The Masque at Hampton Court),"Daniel, Samuel",1604,masque,,0.3244,masque,yes,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3473,0.6282,0.1992,89.7
+365,The World Tossed at Tennis,"Middleton, ThomasRowley, William",1620,masque,,0.3684,moral,yes,0.7771,0.882,0.7941,0.8204,0.5006,0.7953,0.9128,0.6894,0.0877,0.0103,44.8
+385,Time Vindicated to Himself and to His Honors,"Jonson, Ben",1623,masque,,0.5043,pastoral,yes,0.8377,0.955,1.0,0.9186,0.918,0.9591,0.6259,0.8649,-0.0271,-0.0279,24.1
+115,A Knack to Know a Knave,Anonymous,1594,moral,,0.2741,comedy,yes,0.6477,0.7619,0.8053,0.7052,0.7054,0.7452,0.7421,0.8544,-0.0578,-0.0578,18.5
+118,A Looking Glass for London and England,"Lodge, ThomasGreene, Robert",1594,moral,,0.5369,moral,yes,0.7513,0.8386,0.7711,0.845,0.4344,0.8508,0.9713,0.8425,0.317,0.1323,63.0
+72,All for Money,"Lupton, Thomas",1578,moral,,0.5616,moral,yes,0.8192,0.8447,0.8004,0.7875,0.3497,0.8612,0.9076,0.9532,0.4695,0.205,74.1
+57,Enough Is as Good as a Feast,"Wager, William",1570,moral,,0.5197,moral,yes,0.8325,0.8851,0.8815,0.8453,0.4841,0.8791,0.9112,0.8407,0.3484,0.1377,66.7
+290,"Histriomastix, or The Player Whipped","Marston, John",1610,moral,,0.5209,moral,yes,0.6999,0.9106,0.9352,0.833,0.6684,0.8401,0.9418,0.8825,0.0315,-0.0016,25.9
+30,Impatient Poverty,Anonymous,1561,moral,,0.4971,moral,yes,0.9307,0.9426,0.8429,0.9291,0.2127,0.9342,0.9918,0.9364,0.7179,0.2977,96.3
+50,Like Will to Like (Quoth the Devil to the Collier),"Fulwell, Ulpian",1587,moral,,0.3941,moral,yes,0.8969,0.964,0.9669,0.972,0.8414,0.9718,1.0,0.9329,0.0556,-0.0158,37.0
+239,"Lingua, or The Combat of the Tongue and the Five Senses for Superiority","Tomkis, Thomas",1607,moral,,0.1773,masque,yes,0.7033,0.7504,0.9554,0.8155,0.8747,0.8298,0.7441,0.686,-0.1714,-0.0998,0.0
+41,Lusty Juventus,"Wever, R.",1565,moral,,0.546,moral,yes,0.9776,0.9659,0.8405,0.9432,0.4651,0.974,1.0,0.9497,0.5125,0.2081,85.2
+31,Nice Wanton,Anonymous,1560,moral,,0.5072,tragicomedy,yes,0.8245,0.7352,0.8346,0.6706,0.7877,0.8183,0.8434,1.0,0.0368,-0.009,29.6
+124,The Cobbler's Prophecy,"Wilson, Robert",1594,moral,,0.666,masque,yes,0.7091,0.7566,0.8582,0.7124,0.8719,0.814,0.7318,0.4118,-0.1628,-0.0884,3.7
+78,The Conflict of Conscience,"Woodes, Nathaniel",1581,moral,,0.8149,moral,yes,0.9618,0.9397,0.7902,0.9341,0.3383,0.9564,0.9938,0.9378,0.6235,0.335,92.6
+190,The Contention between Liberality and Prodigality,Anonymous,1602,moral,,0.2025,tragicomedy,yes,0.695,0.7256,0.8359,0.6193,0.7669,0.6838,0.7179,0.892,-0.0718,-0.0687,14.8
+473,The Contention for Honor and Riches,"Shirley, James",1633,moral,,0.0963,comedy,yes,0.8774,0.983,0.9769,0.9387,0.9649,0.9725,1.0,0.9615,-0.0875,-0.0875,11.1
+54,The Disobedient Child,"Ingelend, Thomas",1570,moral,,0.28,comedy,yes,0.8897,0.9682,0.9845,0.9336,0.9272,0.982,0.9733,1.0,-0.0375,-0.0621,22.2
+47,The Life and Repentance of Mary Magdalene,"Wager, Lewis",1566,moral,,0.502,moral,yes,0.9776,0.9659,0.8405,0.9432,0.4625,0.974,1.0,0.9497,0.5151,0.1991,88.9
+55,The Marriage of Wit and Science,Anonymous,1570,moral,,0.1317,comedy,yes,0.8202,0.9616,1.0,0.8951,0.9332,0.973,0.9493,1.0,-0.113,-0.0911,7.4
+76.5,The Most Virtuous and Godly Susanna,"Garter, Thomas",1578,moral,,0.2759,tragicomedy,yes,0.6481,0.6373,0.7377,0.5214,0.5421,0.6363,0.5623,0.7641,0.1059,-0.0048,44.4
+547,The Muses' Looking Glass,"Randolph, Thomas",1638,moral,,0.1629,moral,yes,0.7113,0.8901,0.8933,0.799,0.6648,0.9026,0.9132,0.758,0.0465,-0.0524,33.3
+134,The Pedlar's Prophecy,Anonymous,1595,moral,,0.3747,moral,yes,0.8978,0.9351,0.8351,0.9122,0.4117,0.9121,0.9099,0.7653,0.4861,0.1571,77.8
+4,The Summoning of Everyman,Anonymous,1534,moral,,0.789,moral,yes,0.9776,0.9659,0.8405,0.9432,0.4798,0.974,1.0,0.9497,0.4978,0.2476,81.5
+85,The Three Ladies of London,"Wilson, Robert",1592,moral,,0.6555,moral,yes,0.8538,0.9514,0.9144,0.9576,0.7963,0.9444,1.0,0.9493,0.0575,0.0065,40.7
+24,"The Three Laws of Nature, Moses, and Christ, Corrupted by the Sodomites, Pharisees, and Papists","Bale, John",1548,moral,,0.9342,moral,yes,0.9129,0.9209,0.7354,0.9166,0.4559,0.9714,0.986,0.9187,0.457,0.2566,70.4
+93,The Three Lords and Three Ladies of London,"Wilson, Robert",1590,moral,,0.5359,moral,yes,0.911,0.9563,0.9358,0.9527,0.6991,0.9546,0.9942,0.9579,0.2119,0.0691,51.9
+70,The Tide Tarrieth No Man,"Wapull, George",1576,moral,,0.3651,moral,yes,0.6249,0.7809,0.7491,0.711,0.4393,0.7721,0.8766,0.9123,0.1855,0.0444,48.1
+49,The Trial of Treasure,"Wager, William",1567,moral,,0.0529,moral,yes,0.9846,0.9904,1.0,0.9819,0.6864,0.9659,0.99,1.0,0.2982,-0.0178,59.3
+27,Wealth and Health,Anonymous,1565,moral,,0.8008,moral,yes,0.9603,0.9826,0.9835,0.9746,0.7058,0.9521,0.9902,1.0,0.2544,0.1185,55.6
+17,1 Nature,"Medwall, Henry",1530,other/multi,,0.0476,moral,,0.9776,0.9659,0.8405,0.9432,0.4354,0.974,1.0,0.9497,,,
+593,1 Saint Patrick for Ireland,"Shirley, James",1640,other/multi,,0.1766,tragicomedy,,0.7391,0.6616,0.7335,0.5123,0.8033,0.67,0.8078,0.9099,,,
+18,2 Nature,"Medwall, Henry",1530,other/multi,,0.2362,moral,,0.7585,0.8991,0.8711,0.7683,0.6002,0.8642,0.8339,0.8865,,,
+16,A Play of Love,"Heywood, John",1534,other/multi,,0.3124,pastoral,,0.848,0.9265,0.9898,0.8947,0.9758,0.7732,0.5343,0.8426,,,
+541,Aglaura,"Suckling, John",1638,other/multi,,0.3964,tragicomedy,,0.7211,0.7016,0.7943,0.4699,0.8681,0.5428,0.5907,0.8583,,,
+564,Albertus Wallenstein,"Glapthorne, Henry",1639,other/multi,,0.2875,tragicomedy,,0.7258,0.6284,0.8345,0.5035,0.8953,0.6296,0.6081,0.8942,,,
+529,Apollo and Daphne,"Heywood, Thomas",1637,other/multi,,0.4139,pastoral,,0.7919,0.9129,0.9904,0.8688,0.9552,0.7989,0.5464,0.7068,,,
+208,Arches of Triumph (The Royal Entry of King James I into London),"Dekker, ThomasJonson, BenMiddleton, ThomasHarrison, StephenRuytinck, SimonCool, JacobThorius, Raphael",1604,other/multi,,0.1771,masque,,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3377,,,
+288,Chester's Triumph (St George's Day Entertainment),"Amory, RobertDavies, Richard",1610,other/multi,,0.2852,masque,,0.9566,0.7219,0.9367,0.9547,0.9164,0.8641,0.8724,0.515,,,
+524,Comus (The Masque at Ludlow Castle),"Milton, John",1637,other/multi,,0.6018,pastoral,,0.8092,0.8809,0.9565,0.8732,0.9841,0.7079,0.5533,0.7006,,,
+51,Jacob and Esau,"Udall, Nicholas",1568,other/multi,,0.4065,moral,,0.9376,0.9322,0.8824,0.9064,0.6942,0.9631,1.0,0.944,,,
+528,Jupiter and Io,"Heywood, Thomas",1637,other/multi,,0.6314,masque,,0.9374,0.9637,0.9887,0.9899,0.909,0.7954,0.6465,0.3065,,,
+522,"Londini Speculum, or London's Mirror","Heywood, Thomas",1637,other/multi,,0.3264,masque,,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3377,,,
+448,London's Ius Honorarium (London's Law of Honor),"Heywood, Thomas",1631,other/multi,,0.3368,tragedy,,0.9704,0.8269,0.9569,0.9894,0.9825,0.9394,0.9312,0.9416,,,
+421,"London's Tempe, or The Field of Happiness","Dekker, Thomas",1629,other/multi,,0.3195,masque,,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3377,,,
+332,Metropolis Coronata: The Triumphs of Ancient Drapery,"Munday, Anthony",1615,other/multi,,0.4656,history,,0.934,0.9427,0.5989,0.9182,1.0,0.8316,1.0,1.0,,,
+229,Nobody and Somebody,Anonymous,1606,other/multi,,0.0331,history,,0.9965,0.9546,0.8751,0.9662,1.0,0.9218,1.0,1.0,,,
+546,"Porta Pietatis, or The Port or Harbor of Piety","Heywood, Thomas",1638,other/multi,,0.3604,masque,,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3377,,,
+366,"Tes Irenes Trophaea, or The Triumphs of Peace","Squire, John",1620,other/multi,,0.4983,masque,,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3377,,,
+10,The Beauty and Good Properties of Women (Calisto and Melebea) (Celestina),"Rastell, John",1525,other/multi,,0.1068,pastoral,,0.7508,0.6743,0.8546,0.5886,0.8808,0.6591,0.4755,0.8685,,,
+313,The Brazen Age (The Age of Brass),"Heywood, Thomas",1613,other/multi,,0.6001,masque,,0.9041,0.8597,0.9796,0.9547,0.9073,0.953,0.8233,0.5628,,,
+576,The Bride,"Nabbes, Thomas",1640,other/multi,,0.3858,tragicomedy,,0.5375,0.6528,0.8376,0.4898,0.7784,0.6991,0.6754,0.9226,,,
+22,The Chief Promises of God unto Man (God's Promises),"Bale, John",1547,other/multi,,0.8772,moral,,0.9776,0.9659,0.8405,0.9432,0.4354,0.974,1.0,0.9497,,,
+200,The Coronation Triumph (The Royal Entry of King James I into London),"Jonson, Ben",1604,other/multi,,0.2662,masque,,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3377,,,
+75,The Entertainment at Norwich (Royal Entry of Queen Elizabeth),"Garter, BernardGoldingham, William",1578,other/multi,,0.1338,romance,,0.9669,0.9143,0.8043,0.7945,1.0,0.7732,0.9847,1.0,,,
+76,The Entertainment in Suffolk and Norfolk (Royal Entry of Queen Elizabeth into Norwich),"Churchyard, Thomas",1578,other/multi,,0.3802,pastoral,,0.9094,0.9789,0.9829,0.9872,0.9842,0.9938,0.5805,0.8202,,,
+21,The Four P's,"Heywood, John",1544,other/multi,,0.3914,moral,,0.8115,0.9026,0.8468,0.8492,0.5035,0.8776,0.8861,0.8139,,,
+294,"The Golden Age, or The Lives of Jupiter and Saturn","Heywood, Thomas",1611,other/multi,,0.7781,masque,,0.9549,0.9291,0.903,0.8968,0.9042,0.847,0.8407,0.3683,,,
+329,"The Hector of Germany, or The Palsgrave, Prime Elector","Smith, William",1615,other/multi,,0.2318,history,,0.9971,0.9013,0.7062,0.99,1.0,0.8245,1.0,1.0,,,
+20,The Interlude of Youth,Anonymous,1565,other/multi,,0.301,moral,,0.9776,0.9659,0.8405,0.9432,0.4354,0.974,1.0,0.9497,,,
+6,The Nature of the Four Elements (Natura Naturata),"Rastell, John",1520,other/multi,,0.1691,moral,,0.9501,0.9806,0.9772,0.9731,0.5968,0.9485,0.9905,1.0,,,
+14,"The Pardoner and the Friar, the Curate, and Neighbor Pratte","Heywood, John",1533,other/multi,,0.6036,moral,,0.9776,0.9659,0.8405,0.9432,0.4354,0.974,1.0,0.9497,,,
+511,The Presentment of Bushell's Rock (Royal Entertainment at Enstone),"Jordan, ThomasBushell, Thomas (mining entrepreneur)",1636,other/multi,,0.5043,moral,,0.9776,0.9659,0.8405,0.9432,0.4354,0.974,1.0,0.9497,,,
+88,The Queen's Entertainment at Woodstock,Anonymous,1585,other/multi,,0.1802,tragicomedy,,0.7206,0.7778,0.8,0.6891,0.9619,0.8909,0.931,1.0,,,
+111.1,The Royal Entertainment at Bisham Abbey,Anonymous,1592,other/multi,,1.0,pastoral,,0.8252,0.9514,1.0,0.9533,0.9641,0.8325,0.4646,0.5829,,,
+103,The Royal Entertainment at Cowdray,Anonymous,1591,other/multi,,0.2118,pastoral,,0.848,0.9265,0.9898,0.8947,0.9758,0.7732,0.5343,0.8426,,,
+339,The Royal Entertainment at Highgate (The Penates),"Jonson, Ben",1616,other/multi,,0.4742,pastoral,,0.9489,0.9849,1.0,1.0,1.0,0.7673,0.6592,0.8227,,,
+111.2,The Royal Entertainment at Sudeley Castle,Anonymous,1592,other/multi,,1.0,pastoral,,0.9489,0.9849,1.0,1.0,1.0,0.7673,0.6592,0.8227,,,
+201,The Royal Entertainment of the Queen and Prince at Althorp (The Satyr),"Jonson, Ben",1604,other/multi,,0.252,tragicomedy,,0.9659,0.9471,0.8929,0.7823,1.0,0.8038,0.9828,1.0,,,
+487,The Royal Entry of King Charles I into Edinburgh (The Entertainment at Edinburgh),"Drummond, WilliamAdamson, JohnCrawford, Thomas",1633,other/multi,,0.1887,tragicomedy,,0.9659,0.9471,0.8929,0.7823,1.0,0.8038,0.9828,1.0,,,
+618,"The Sad Shepherd, or A Tale of Robin Hood","Jonson, Ben",1641,other/multi,,0.365,pastoral,,0.6535,0.7415,0.8849,0.6533,0.8873,0.5288,0.3815,0.7305,,,
+23,"The Temptation of Our Lord and Saviour, Jesus Christ, by Satan in the Desert","Bale, John",1547,other/multi,,0.8701,moral,,0.9776,0.9659,0.8405,0.9432,0.4354,0.974,1.0,0.9497,,,
+581,The Unfortunate Mother,"Nabbes, Thomas",1640,other/multi,,0.6927,tragicomedy,,0.5327,0.5779,0.7083,0.4013,0.88,0.7165,0.8021,0.9564,,,
+241,The Whore of Babylon,"Dekker, Thomas",1607,other/multi,,0.5172,tragicomedy,,0.7768,0.8361,0.8916,0.774,0.8681,0.8388,0.7805,0.8904,,,
+302,Troia Nova Triumphans (London Triumphing),"Dekker, Thomas",1612,other/multi,,0.2036,masque,,0.9754,0.9746,0.9882,0.9894,0.9018,0.9464,0.8468,0.3377,,,
+361,Two Wise Men and All the Rest Fools,Anonymous,1619,other/multi,,0.356,moral,,0.7514,0.8551,0.8815,0.8339,0.7389,0.8442,0.9135,0.9048,,,
+331,"Work for Cutlers (Sword, Rapier, and Dagger)",Anonymous,1615,other/multi,,1.0,tragicomedy,,0.9572,0.987,1.0,0.9257,0.9825,1.0,1.0,1.0,,,
+417,Aminta,"Tasso, TorquatoReynolds, Henry",1628,pastoral,,0.39,pastoral,yes,0.6935,0.6805,0.8651,0.6218,0.8772,0.5762,0.2533,0.6897,0.4402,0.1452,93.3
+530,"Amphrisa, or The Forsaken Shepherdess (Polopaea and Alope)","Heywood, Thomas",1637,pastoral,,0.4081,comedy,yes,0.8103,0.9342,0.9715,0.8436,0.9541,0.8196,0.8824,0.8889,-0.0721,-0.0807,0.0
+548,"Amyntas, or The Impossible Dowry","Randolph, Thomas",1638,pastoral,,0.688,pastoral,yes,0.7318,0.8395,0.9195,0.8376,0.9189,0.7823,0.4046,0.6141,0.3271,0.1794,73.3
+325,Hymen's Triumph,"Daniel, Samuel",1615,pastoral,,0.1244,pastoral,yes,0.7606,0.7357,0.8822,0.6679,0.8975,0.6683,0.4615,0.8533,0.2991,-0.0181,60.0
+183,"Il Pastor Fido, or The Faithful Shepherd","Dymoke, TailboysGuarini, Giovanni Battista",1602,pastoral,,0.3104,pastoral,yes,0.6288,0.6515,0.8648,0.579,0.7887,0.6013,0.3319,0.7304,0.2969,0.0608,53.3
+600,Love Crowns the End,"Tatham, John",1640,pastoral,,0.3435,pastoral,yes,0.8226,0.92,0.9904,0.9045,0.9774,0.6344,0.3996,0.7294,0.423,0.1153,86.7
+178,Love's Metamorphosis,"Lyly, John",1601,pastoral,,0.7656,pastoral,yes,0.8298,0.8749,0.9705,0.9237,0.9579,0.8613,0.5352,0.7118,0.2946,0.1601,46.7
+539,Love's Riddle,"Cowley, Abraham",1638,pastoral,,0.444,pastoral,yes,0.5511,0.7093,0.9045,0.6611,0.822,0.5309,0.3706,0.6783,0.1804,0.0564,6.7
+97,Phillis and Amyntas (Ivychurch) (Amyntas' Pastoral),"Fraunce, AbrahamTasso, Torquato",1591,pastoral,,0.5716,pastoral,yes,0.7148,0.6923,0.8676,0.6207,0.8779,0.6681,0.3848,0.7759,0.33,0.1512,80.0
+449,Rhodon and Iris,"Knevet, Ralph",1631,pastoral,,0.5623,pastoral,yes,0.5771,0.7032,0.9149,0.7116,0.868,0.5835,0.3248,0.4846,0.2523,0.1219,26.7
+443,Sicelides (The Sicilians),"Fletcher, Phineas",1631,pastoral,,0.3604,pastoral,yes,0.7565,0.8572,0.9901,0.8436,0.9154,0.7603,0.4572,0.7178,0.2993,0.0729,66.7
+83,The Arraignment of Paris,"Peele, George",1584,pastoral,,0.7663,masque,yes,0.8001,0.85,0.9607,0.9049,0.8638,0.8437,0.5929,0.22,0.2072,0.1211,20.0
+287,The Faithful Shepherdess,"Fletcher, John",1610,pastoral,,0.7551,pastoral,yes,0.8507,0.9214,0.9708,0.9244,0.9701,0.6633,0.6549,0.7134,0.1958,0.0966,13.3
+227,The Queen's Arcadia (Arcadia Reformed),"Daniel, Samuel",1606,pastoral,,0.2672,pastoral,yes,0.6707,0.7636,0.8941,0.659,0.8859,0.5983,0.3926,0.7813,0.2781,0.0399,33.3
+499,The Shepherds' Holiday,"Rutter, Joseph",1635,pastoral,,0.3075,pastoral,yes,0.6469,0.7106,0.8459,0.5889,0.8454,0.465,0.3684,0.744,0.2785,0.0514,40.0
+531,A Shoemaker a Gentleman,"Rowley, William",1638,romance,,0.1753,tragedy,yes,0.8774,0.5162,0.5478,0.7284,0.7132,0.74,0.8948,0.9673,0.1374,0.0759,77.8
+156,"Alphonsus, King of Aragon","Greene, Robert",1599,romance,,0.2276,tragedy,yes,0.9844,0.789,1.0,0.9432,1.0,0.8541,1.0,1.0,0.1303,0.0816,72.2
+188,"Blurt, Master Constable, or The Spaniard's Night Walk",Anonymous,1602,romance,,0.5289,comedy,yes,0.5242,0.7331,0.777,0.5837,0.8929,0.8067,0.683,0.8473,-0.2825,-0.094,0.0
+406,"Cymbeline, King of Britain","Shakespeare, William",1623,romance,yes,0.3523,tragedy,yes,0.7608,0.5272,0.7626,0.6335,0.8736,0.7136,0.7542,0.8186,0.0472,0.0446,61.1
+158,"George a Green, the Pinner of Wakefield","Greene, Robert",1599,romance,,0.1239,history,yes,0.9955,0.9779,0.6205,1.0,1.0,0.9517,1.0,1.0,0.0437,0.062,55.6
+151,Mucedorus (and Amadine),Anonymous,1598,romance,,0.4603,pastoral,yes,0.8124,0.9316,0.9793,0.9299,0.9846,0.8037,0.5279,0.7393,0.0087,0.0321,44.4
+162,Old Fortunatus,"Dekker, Thomas",1600,romance,,0.1861,tragicomedy,yes,0.657,0.6936,0.8955,0.6481,0.6992,0.6594,0.681,0.8592,-0.0024,0.0341,27.8
+123,Orlando Furioso,"Greene, Robert",1594,romance,,0.4551,romance,yes,0.8382,0.7837,0.6755,0.7335,0.9711,0.6105,0.6147,0.8094,0.2277,0.1002,94.4
+284,"Pericles, Prince of Tyre","Shakespeare, WilliamWilkins, George",1609,romance,yes,0.0848,pastoral,yes,0.8278,0.7971,0.9181,0.7873,0.9487,0.8085,0.7836,0.8536,0.0193,0.0515,50.0
+333,The Four Prentices of London,"Heywood, Thomas",1615,romance,,0.2964,romance,yes,0.8536,0.7853,0.8185,0.9239,0.9594,0.7116,0.9753,0.9539,0.142,0.0768,83.3
+137,The Old Wives Tale,"Peele, George",1595,romance,,0.2029,tragicomedy,yes,0.7839,0.7267,0.7758,0.6301,0.8764,0.8322,0.8518,0.9665,-0.0483,0.0278,16.7
+516,The Royal King and the Loyal Subject,"Heywood, Thomas",1637,romance,,0.1788,romance,yes,0.842,0.8409,0.8843,0.7675,0.9714,0.6502,0.9842,0.9508,0.1918,0.086,88.9
+149,The Scottish History of James the Fourth,"Greene, Robert",1598,romance,,0.2039,history,yes,0.7944,0.8731,0.6137,0.7035,0.8959,0.6953,0.8777,0.9267,0.0991,0.0655,66.7
+545,The Seven Champions of Christendom,"Kirke, John",1638,romance,,0.0466,tragedy,yes,0.9549,0.8301,0.9416,0.9904,0.9843,0.9556,0.8859,0.8426,-0.0007,0.0509,33.3
+439,The Spanish Bawd (Calisto and Meliboea) (Celestina),"Mabbe, JamesRojas, Fernando de",1631,romance,,0.283,comedy,yes,0.4036,0.5741,0.7854,0.4528,0.5998,0.5955,0.4417,0.7069,-0.1919,-0.0335,5.6
+584,The Strange Discovery,"Gough, J.",1640,romance,,0.2308,pastoral,yes,0.6021,0.5631,0.8044,0.4926,0.8007,0.6135,0.4069,0.6208,-0.0114,0.0267,22.2
+210,The Trial of Chivalry (This Gallant Cavaliero Dick Bowyer),Anonymous,1605,romance,,0.1809,tragicomedy,yes,0.6101,0.6317,0.7544,0.5681,0.9014,0.7284,0.8951,0.9721,-0.1184,0.0098,11.1
+397,The Winter's Tale,"Shakespeare, William",1623,romance,yes,0.1958,tragicomedy,yes,0.6916,0.7225,0.7004,0.614,0.71,0.6869,0.8048,0.7931,0.0047,0.0383,38.9
+221,"1 Jeronimo, with the Wars of Portugal",Anonymous,1605,tragedy,,0.7808,tragicomedy,yes,0.994,0.9605,1.0,0.9428,1.0,0.9568,1.0,1.0,0.0335,0.0001,27.0
+94,1 Tamburlaine the Great,"Marlowe, Christopher",1590,tragedy,,0.7613,romance,yes,0.9626,0.832,1.0,0.9738,1.0,0.7134,0.9269,0.9494,0.1306,0.0493,53.2
+95,2 Tamburlaine the Great,"Marlowe, Christopher",1590,tragedy,,0.4726,romance,yes,0.8582,0.6821,0.9029,0.7604,0.9203,0.6084,0.8423,0.9432,0.1761,0.0499,64.0
+300,A Christian Turned Turk (The Two Famous Pirates),"Daborne, Robert",1612,tragedy,,0.2365,tragicomedy,yes,0.7017,0.68,0.8239,0.6046,0.8049,0.7107,0.8264,0.9754,0.0217,-0.0272,25.2
+258,A Woman Killed with Kindness,"Heywood, Thomas",1607,tragedy,,0.2423,comedy,yes,0.6837,0.8696,0.8909,0.8047,0.8363,0.9382,0.9438,0.9525,-0.1859,-0.0935,0.0
+272,A Yorkshire Tragedy,"Middleton, Thomas",1608,tragedy,,0.6375,comedy,yes,0.6874,0.7432,0.8572,0.7288,0.7409,0.8567,0.8956,0.8604,-0.0558,-0.0283,9.9
+71,Abraham's Sacrifice,"Golding, ArthurBeza, Theodore",1577,tragedy,,0.1168,moral,yes,0.9776,0.9749,0.8405,0.9432,0.4354,0.974,1.0,0.9497,0.0027,-0.0483,21.6
+42,Agamemnon (Seneca's Eighth Tragedy),"Seneca, Lucius AnnaeusStudley, John",1566,tragedy,,0.5349,tragedy,yes,0.8588,0.6992,0.8962,0.8468,0.9066,0.8734,0.8093,0.8286,0.1596,0.0512,58.6
+489,Alaham,"Greville, Fulke",1633,tragedy,,0.284,tragedy,yes,0.9079,0.739,0.893,0.7761,0.9294,0.8728,0.8871,1.0,0.1689,0.0211,62.2
+422,"Albovine, King of the Lombards","Davenant, William",1629,tragedy,,0.1524,tragicomedy,yes,0.7585,0.6364,0.7567,0.522,0.8632,0.6778,0.693,0.9321,0.1222,-0.007,49.5
+471,All's Lost by Lust,"Rowley, William",1633,tragedy,,0.3903,tragicomedy,yes,0.5749,0.639,0.8642,0.5482,0.8099,0.7274,0.709,0.9263,-0.0641,-0.0438,9.0
+450,"Antigone, the Theban Princess","May, Thomas",1631,tragedy,,0.6037,tragedy,yes,0.9287,0.7653,0.9269,0.8471,0.9369,0.8925,0.9059,1.0,0.1634,0.0566,60.4
+185,Antonio's Revenge (2 Antonio and Mellida),"Marston, John",1602,tragedy,,0.5157,tragicomedy,yes,0.6767,0.5218,0.7189,0.423,0.8627,0.7449,0.8154,1.0,0.1549,0.0567,55.9
+108,Antonius (Antony),"Herbert, Mary SidneyGarnier, RobertSidney Herbert, Mary",1595,tragedy,,0.6178,tragedy,yes,0.9065,0.6285,0.8988,0.8563,0.9348,0.8535,0.9049,0.9626,0.278,0.1201,83.8
+405,Antony and Cleopatra,"Shakespeare, William",1623,tragedy,yes,0.2103,tragedy,yes,0.9025,0.6396,0.8496,0.7934,1.0,0.8027,0.9694,0.9842,0.2629,0.0405,78.4
+65,Appius and Virginia,"B., R.",1575,tragedy,,0.1985,tragicomedy,yes,0.8586,0.7037,0.8393,0.64,0.7292,0.8306,0.818,0.9743,0.1549,0.0051,55.9
+246,Bussy D'Ambois,"Chapman, George",1607,tragedy,,0.2204,history,yes,0.6911,0.6019,0.5586,0.5855,0.6915,0.5847,0.6671,0.8576,0.0892,-0.009,39.6
+444,Caesar and Pompey (The Wars of Caesar and Pompey),"Chapman, George",1631,tragedy,,0.4113,tragedy,yes,0.9045,0.5754,0.8982,0.892,0.9486,0.8361,0.9651,0.9132,0.3291,0.1055,93.7
+56,"Cambises, King of Persia","Preston, Thomas",1570,tragedy,,0.2667,romance,yes,0.9118,0.7738,0.828,0.8178,0.9883,0.6997,0.8185,0.9001,0.138,0.0093,54.1
+296,Catiline His Conspiracy,"Jonson, Ben",1611,tragedy,,0.8792,tragedy,yes,0.9743,0.6754,0.935,0.951,0.9929,0.8805,0.9903,1.0,0.2989,0.1492,85.6
+550,"Chabot, Admiral of France","Chapman, GeorgeShirley, James",1639,tragedy,,0.0782,history,yes,0.9281,0.9179,0.6359,0.9632,0.9901,0.7817,1.0,0.9856,0.0102,-0.0464,23.4
+132,Cleopatra,"Daniel, Samuel",1594,tragedy,,0.5755,tragedy,yes,0.8651,0.6127,0.8205,0.6766,0.9244,0.7261,0.867,1.0,0.2524,0.1034,77.5
+553,"Cleopatra, Queen of Egypt","May, Thomas",1639,tragedy,,0.4906,tragedy,yes,0.9631,0.6255,0.9456,0.9503,1.0,0.9022,1.0,1.0,0.3376,0.1192,95.5
+401,Coriolanus,"Shakespeare, William",1623,tragedy,yes,0.6851,tragedy,yes,0.9455,0.6759,0.9273,0.9267,0.9832,0.8624,0.9922,0.9761,0.2696,0.1118,81.1
+116,Cornelia (Pompey the Great His Fair Cornelia's Tragedy),"Garnier, RobertKyd, Thomas",1594,tragedy,,0.6485,tragedy,yes,0.9741,0.6573,0.9343,0.9485,0.9907,0.8752,0.9869,1.0,0.3169,0.1301,91.0
+209,Croesus,"Alexander, William",1604,tragedy,,0.2381,tragedy,yes,0.8384,0.565,0.8565,0.6512,0.9043,0.6128,0.7197,0.9247,0.2734,0.0516,82.0
+328,Cupid's Revenge,"Beaumont, FrancisFletcher, John",1615,tragedy,,0.3641,tragicomedy,yes,0.5487,0.7002,0.6954,0.4909,0.897,0.7307,0.8532,0.9201,-0.1515,-0.0771,3.6
+314,"Cynthia's Revenge, or Maenander's Ecstasy","Stephens, John",1613,tragedy,,0.3016,tragedy,yes,0.7507,0.4342,0.7645,0.5789,0.7977,0.6379,0.7763,0.9353,0.3164,0.081,90.1
+196,Darius,"Alexander, William",1604,tragedy,,0.2042,tragedy,yes,0.8811,0.594,0.7867,0.6868,0.9169,0.682,0.8624,1.0,0.2871,0.0453,84.7
+128,"Dido, Queen of Carthage","Marlowe, ChristopherNashe, Thomas",1594,tragedy,,0.5915,pastoral,yes,0.7846,0.6789,0.8691,0.7576,0.8806,0.7518,0.6639,0.753,0.1057,0.0349,45.9
+205,Doctor Faustus,"AnonymousMarlowe, Christopher",1604,tragedy,,0.4322,comedy,yes,0.7509,0.7786,0.8564,0.802,0.919,0.7523,0.7926,0.7676,-0.0277,-0.0337,15.3
+39,Ferrex and Porrex (Gorboduc),"Norton, ThomasSackville, Thomas",1565,tragedy,,0.2395,tragicomedy,yes,0.8452,0.6432,0.6119,0.5983,0.8878,0.7212,0.8239,0.9713,0.202,0.029,69.4
+197,"Hamlet, Prince of Denmark","Shakespeare, William",1623,tragedy,yes,0.2542,tragicomedy,yes,0.733,0.6095,0.7833,0.5728,0.7867,0.7386,0.7629,0.8911,0.1235,0.0065,50.5
+513,Hannibal and Scipio,"Nabbes, Thomas",1637,tragedy,,0.2249,tragedy,yes,0.8065,0.503,0.8309,0.655,0.8637,0.7488,0.8304,0.971,0.3035,0.0577,89.2
+34,Hercules Furens (Mad Hercules) (Seneca's First Tragedy),"Heywood, JasperSeneca, Lucius Annaeus",1561,tragedy,,0.7506,tragedy,yes,0.9484,0.7332,0.9634,0.9544,0.9557,0.9292,0.9053,0.8766,0.2152,0.0957,71.2
+81,Hercules Oetaeus (Hercules on Mount Oeta) (Seneca's Tenth Tragedy),"Seneca, Lucius AnnaeusStudley, John",1581,tragedy,,0.8406,tragedy,yes,0.962,0.8652,0.9781,0.9697,0.9606,0.9581,0.9287,0.8888,0.0967,0.0448,42.3
+382,Herod and Antipater,"Markham, GervaseSampson, William",1622,tragedy,,0.4533,tragicomedy,yes,0.7378,0.5798,0.762,0.5425,0.8758,0.6656,0.729,0.923,0.158,0.047,57.7
+80,Hippolytus (Seneca's Fourth Tragedy),"Seneca, Lucius AnnaeusStudley, John",1581,tragedy,,0.2752,masque,yes,0.8744,0.873,0.9232,0.9149,0.952,0.9137,0.7637,0.7484,0.0013,-0.0359,20.7
+438,"Hoffman, or A Revenge for a Father","Chettle, Henry",1631,tragedy,,0.4595,tragicomedy,yes,0.5647,0.5302,0.6127,0.3322,0.8627,0.6141,0.7921,0.9557,0.0345,0.0037,27.9
+560,Imperiale,"Freeman, Ralph",1639,tragedy,,0.2858,tragicomedy,yes,0.7087,0.6434,0.8243,0.5432,0.875,0.6486,0.6356,0.8985,0.0653,-0.0057,35.1
+61,Jocasta,"Gascoigne, GeorgeKinwelmershe, FrancisYelverton, ChristopherEuripidesDolce, Lodovico",1573,tragedy,,0.3419,tragedy,yes,0.9388,0.8392,0.976,0.8936,0.985,0.9509,0.9667,0.9152,0.0996,0.0024,44.1
+261,Julius Caesar,"Alexander, William",1607,tragedy,,0.6554,tragedy,yes,0.9364,0.6332,0.8973,0.8908,0.9658,0.8494,0.9523,1.0,0.3032,0.1281,88.3
+403,Julius Caesar,"Shakespeare, William",1623,tragedy,yes,0.5855,tragedy,yes,0.9077,0.6074,0.8786,0.8616,0.9593,0.8323,0.9415,0.9782,0.3003,0.1194,86.5
+265,King Lear,"Shakespeare, William",1608,tragedy,yes,0.226,tragicomedy,yes,0.5754,0.582,0.7112,0.4239,0.8508,0.7453,0.8432,0.9714,-0.0065,-0.0346,18.0
+136,"Locrine, the Eldest Son of King Brutus","S., W.",1595,tragedy,,0.3791,tragedy,yes,0.7043,0.5212,0.863,0.6508,0.8336,0.6101,0.5499,0.8182,0.1831,0.0492,66.7
+418,"Lodovic Sforza, Duke of Milan","Gomersall, Robert",1628,tragedy,,0.5942,history,yes,0.7614,0.5822,0.5063,0.566,0.8851,0.6725,0.8486,1.0,0.1792,0.0723,64.9
+573,Love's Cruelty,"Shirley, James",1640,tragedy,,0.6948,tragicomedy,yes,0.5294,0.5721,0.7218,0.418,0.8665,0.6885,0.7934,0.9502,-0.0428,-0.0115,12.6
+478,Love's Sacrifice,"Ford, John",1633,tragedy,,0.7087,comedy,yes,0.5535,0.7264,0.7761,0.5812,0.8918,0.8233,1.0,0.9525,-0.173,-0.0852,1.8
+404,Macbeth,"Shakespeare, WilliamMiddleton, Thomas",1623,tragedy,yes,0.2118,history,yes,0.7767,0.7028,0.6239,0.6952,0.8527,0.6714,0.7412,0.8648,0.074,-0.0167,38.7
+107,Master Arden of Faversham in Kent,"AnonymousKyd, ThomasShakespeare, WilliamWatson, Thomas",1592,tragedy,yes,0.1757,pastoral,yes,0.7579,0.649,0.8402,0.5501,0.8732,0.6742,0.5366,0.8897,0.1089,-0.0082,46.8
+44,Medea (Seneca's Seventh Tragedy),"Seneca, Lucius AnnaeusStudley, John",1566,tragedy,,0.3766,tragedy,yes,0.8612,0.6391,0.8629,0.7255,0.8867,0.8198,0.7739,0.8541,0.2221,0.058,73.0
+578,"Messalina, the Roman Empress","Richards, Nathaniel",1640,tragedy,,0.4559,tragedy,yes,0.7502,0.5302,0.8621,0.6989,0.8631,0.6693,0.6437,0.8187,0.22,0.0737,72.1
+278,Mustapha,"Greville, Fulke",1633,tragedy,,0.6949,tragedy,yes,0.9231,0.795,0.9103,0.8222,0.941,0.8929,0.9092,1.0,0.1281,0.0497,52.3
+410,Nero (Piso's Conspiracy),Anonymous,1624,tragedy,,0.6042,tragedy,yes,0.8546,0.5114,0.7455,0.7308,0.9292,0.6851,0.8741,0.94,0.3433,0.1474,96.4
+45,Octavia (Seneca's Ninth Tragedy),"Seneca, Lucius AnnaeusNuce, ThomasPseudo-Seneca",1566,tragedy,,0.2643,tragedy,yes,0.9343,0.6007,0.9093,0.8879,0.9164,0.8397,0.8935,0.7053,0.3337,0.075,94.6
+36,Oedipus (Seneca's Fifth Tragedy),"Seneca, Lucius AnnaeusNeville, Alexander",1581,tragedy,,0.4636,tragedy,yes,0.8947,0.6877,0.9117,0.8178,0.9306,0.7759,0.783,0.9274,0.207,0.0618,70.3
+485,Orestes,"Goffe, Thomas",1633,tragedy,,0.4683,tragedy,yes,0.7758,0.5072,0.8016,0.5853,0.8548,0.6966,0.6734,0.8739,0.2686,0.0959,80.2
+379,"Othello, the Moor of Venice","Shakespeare, William",1623,tragedy,yes,0.251,tragicomedy,yes,0.5565,0.5456,0.6758,0.3898,0.7124,0.6011,0.6717,0.8729,0.011,-0.0251,24.3
+143,Romeo and Juliet,"Shakespeare, William",1623,tragedy,yes,0.3491,pastoral,yes,0.7,0.8076,0.807,0.7167,0.9139,0.6833,0.5751,0.8581,-0.1076,-0.0684,5.4
+216,Sejanus His Fall,"Jonson, Ben",1616,tragedy,,0.7492,tragedy,yes,0.898,0.6305,0.9169,0.8798,0.9751,0.8143,0.9151,0.9495,0.2675,0.1201,79.3
+599,"Sicily and Naples, or The Fatal Union","Harding, Samuel",1640,tragedy,,0.3423,tragicomedy,yes,0.6485,0.5572,0.7136,0.3886,0.8231,0.5864,0.6702,0.8325,0.0912,0.0115,41.4
+109,Soliman and Perseda (Zulziman),Anonymous,1592,tragedy,,0.2288,tragicomedy,yes,0.6485,0.5884,0.8004,0.5683,0.7839,0.5771,0.6757,0.9055,0.0601,-0.0146,33.3
+104,Tancred and Gismund (Gismond of Salerne),"Wilmot, RobertHatton, ChristopherNoel, HenryAl., G.Stafford, Roderick",1591,tragedy,,0.2434,history,yes,0.8252,0.6412,0.627,0.6502,0.8826,0.7013,0.6541,0.9001,0.1841,0.0234,67.6
+260,The Alexandraean Tragedy,"Alexander, William",1607,tragedy,,0.1657,tragedy,yes,0.8932,0.5759,0.8664,0.7672,0.7989,0.784,0.8807,1.0,0.3172,0.0386,91.9
+293,"The Atheist's Tragedy, or The Honest Man's Revenge","Tourneur, Cyril",1611,tragedy,,0.2915,tragicomedy,yes,0.7629,0.6221,0.8099,0.5074,0.8538,0.7427,0.7148,0.9226,0.1408,0.0203,55.0
+127,The Battle of Alcazar,"Peele, George",1594,tragedy,,0.1388,romance,yes,0.9843,0.7926,1.0,0.9382,1.0,0.7636,1.0,1.0,0.1917,0.0078,68.5
+567,The Bloody Banquet,"Dekker, ThomasMiddleton, Thomas",1639,tragedy,,0.254,tragicomedy,yes,0.7334,0.7014,0.7687,0.4857,0.8598,0.69,0.8269,0.97,0.0321,-0.0244,26.1
+565,"The Bloody Brother (Rollo, Duke of Normandy)","Fletcher, JohnField, NathanMassinger, Philip",1639,tragedy,,0.434,tragicomedy,yes,0.5066,0.5602,0.6351,0.4104,0.7663,0.6507,0.8852,0.9401,-0.0536,-0.0332,11.7
+480,The Broken Heart,"Ford, John",1633,tragedy,,0.2113,tragicomedy,yes,0.7718,0.7819,0.8143,0.6256,0.9837,0.6505,0.7681,0.9184,-0.0101,-0.0386,17.1
+537,The Conspiracy (Pallantus and Eudora),"Killigrew, Henry",1638,tragedy,,0.2236,tragicomedy,yes,0.6388,0.5663,0.7121,0.3547,0.7853,0.5814,0.7936,0.794,0.0725,-0.012,37.8
+458,"The Courageous Turk, or Amurath the First","Goffe, Thomas",1632,tragedy,,0.4787,masque,yes,0.801,0.6355,0.9419,0.8415,0.8189,0.6328,0.7109,0.5395,0.1655,0.0496,61.3
+427,The Cruel Brother,"Davenant, William",1630,tragedy,,0.5399,tragicomedy,yes,0.5319,0.5433,0.6307,0.4352,0.8624,0.6974,0.8656,0.961,-0.0114,-0.0079,16.2
+180,"The Death of Robert, Earl of Huntingdon (2 Robin Hood)","Munday, AnthonyChettle, Henry",1601,tragedy,,0.1109,history,yes,0.8027,0.7608,0.5851,0.6475,0.9245,0.7035,0.8775,1.0,0.0419,-0.0418,28.8
+254,"The Devil's Charter, or Pope Alexander the Sixth","Barnes, Barnabe",1607,tragedy,,0.4005,tragedy,yes,0.6415,0.4022,0.5528,0.4851,0.7131,0.6181,0.7668,0.8988,0.2393,0.077,76.6
+389,The Duchess of Malfi,"Webster, John",1623,tragedy,,0.6368,tragicomedy,yes,0.4581,0.5632,0.6038,0.3852,0.7167,0.6573,0.7872,0.9014,-0.105,-0.046,6.3
+386,The Duke of Milan,"Massinger, Philip",1623,tragedy,,0.611,tragicomedy,yes,0.5967,0.527,0.6039,0.4323,0.8745,0.6354,0.8343,0.9628,0.0697,0.0324,36.9
+464,The Fatal Dowry,"Field, NathanMassinger, Philip",1632,tragedy,,0.2825,tragicomedy,yes,0.7156,0.6612,0.8523,0.5302,0.8356,0.7954,0.7994,1.0,0.0544,-0.0109,32.4
+315,The Insatiate Countess,"Marston, JohnMachin, LewisBarkstead, William",1613,tragedy,,0.2966,tragicomedy,yes,0.6858,0.6438,0.8392,0.5588,0.8664,0.685,0.6184,0.91,0.042,-0.0129,29.7
+48,The Interlude of Vice (Orestes),"Pickering, John",1567,tragedy,,0.2936,tragicomedy,yes,0.8518,0.6268,0.8408,0.5869,0.8877,0.8116,0.8026,1.0,0.225,0.0472,73.9
+475,The Jew of Malta,"Marlowe, Christopher",1633,tragedy,,0.326,tragicomedy,yes,0.6288,0.6675,0.7338,0.5325,0.7915,0.6885,0.7958,0.9638,-0.0388,-0.0394,13.5
+562,The Maid's Revenge,"Shirley, James",1639,tragedy,,0.4604,tragicomedy,yes,0.6241,0.6788,0.8407,0.4983,0.8697,0.6427,0.5543,0.8599,-0.0548,-0.0372,10.8
+357,The Maid's Tragedy,"Beaumont, FrancisFletcher, John",1619,tragedy,,0.3614,tragicomedy,yes,0.7062,0.6093,0.8136,0.4909,0.8354,0.7062,0.6112,0.7771,0.0969,0.0137,43.2
+133,The Massacre at Paris,"Marlowe, Christopher",1596,tragedy,,0.2064,history,yes,0.9459,0.9517,0.709,0.9327,0.9532,0.9455,1.0,1.0,-0.0058,-0.045,18.9
+249,The Miseries of Enforced Marriage,"Wilkins, George",1607,tragedy,,0.3806,comedy,yes,0.5668,0.7413,0.8148,0.6451,0.7917,0.7719,0.8217,0.8544,-0.1746,-0.0891,0.9
+89,The Misfortunes of Arthur (Certain Devices and Shows Presented to Her Majesty),"Hughes, ThomasFulbecke, William",1587,tragedy,,0.2554,tragedy,yes,0.8663,0.5012,0.8235,0.6685,0.9117,0.7712,0.852,1.0,0.3651,0.0832,97.3
+490,"The Noble Spanish Soldier (The Noble Soldier, or A Contract Broken Justly Revenged)","Dekker, Thomas",1634,tragedy,,0.4437,tragicomedy,yes,0.7561,0.636,0.7469,0.5233,0.9068,0.7224,0.8888,0.9859,0.1201,0.0278,48.6
+569,The Phoenix in Her Flames,"Lower, William",1639,tragedy,,0.6041,romance,yes,0.8272,0.7784,0.8899,0.7194,0.9672,0.5535,0.907,0.9276,0.0488,0.0012,31.5
+447,"The Raging Turk, or Bajazet the Second","Goffe, Thomas",1631,tragedy,,0.2013,tragedy,yes,0.8695,0.4905,0.8376,0.6702,0.9249,0.5989,0.8784,0.9875,0.379,0.0687,99.1
+273,The Rape of Lucrece,"Heywood, Thomas",1608,tragedy,,0.446,tragedy,yes,0.829,0.5025,0.7663,0.6773,0.9258,0.6437,0.7886,0.9441,0.3265,0.1138,92.8
+582,The Rebellion,"Rawlins, Thomas",1640,tragedy,,0.16,pastoral,yes,0.7117,0.6471,0.6813,0.5776,0.8328,0.603,0.572,0.8688,0.0646,-0.0229,34.2
+307,The Revenge of Bussy D'Ambois,"Chapman, George",1613,tragedy,,0.3871,tragedy,yes,0.7093,0.4816,0.6465,0.513,0.7311,0.6331,0.8312,0.9119,0.2277,0.0679,74.8
+253,The Revenger's Tragedy,"Middleton, Thomas",1607,tragedy,,0.722,tragicomedy,yes,0.6233,0.7366,0.76,0.6025,0.8969,0.8483,0.9862,0.9729,-0.1133,-0.0562,4.5
+110,The Spanish Tragedy (Hieronimo is Mad Again),"Kyd, Thomas",1592,tragedy,,0.242,tragicomedy,yes,0.7468,0.5085,0.7606,0.4676,0.8619,0.7185,0.8072,1.0,0.2383,0.0444,75.7
+275,The Tragedy of Charles Duke of Byron,"Chapman, George",1608,tragedy,,0.4496,tragicomedy,yes,0.6656,0.4857,0.4922,0.4157,0.8874,0.5983,0.8607,1.0,0.1799,0.0604,65.8
+498,The Traitor,"Shirley, James",1635,tragedy,,0.6599,tragicomedy,yes,0.547,0.5493,0.6921,0.3896,0.8725,0.7101,0.7842,0.9347,-0.0024,0.0048,19.8
+286,The Turk (Muleasses the Turk),"Mason, John",1610,tragedy,,0.3255,tragicomedy,yes,0.5894,0.5232,0.7308,0.3662,0.8079,0.6439,0.6535,0.9072,0.0662,0.0026,36.0
+559,The Unnatural Combat,"Massinger, Philip",1639,tragedy,,0.2218,romance,yes,0.6015,0.6944,0.8231,0.5693,0.8362,0.5682,0.595,0.7993,-0.0929,-0.0623,7.2
+380,The Virgin Martyr,"Dekker, ThomasMassinger, Philip",1622,tragedy,,0.3948,romance,yes,0.7716,0.6479,0.7397,0.6406,0.6411,0.6227,0.8145,0.7036,0.1237,0.0239,51.4
+510,"The Vow Breaker, or The Fair Maid of Clifton","Sampson, William",1636,tragedy,,0.4717,history,yes,0.7149,0.705,0.5126,0.665,0.7893,0.5909,0.7319,0.8985,0.0099,-0.0149,22.5
+131,"The Wars of Cyrus, King of Persia",Anonymous,1594,tragedy,,0.8089,romance,yes,0.8684,0.7543,0.9391,0.8372,0.942,0.628,0.7864,0.9275,0.1141,0.0533,47.7
+306,The White Devil (Vittoria Corombona),"Webster, John",1612,tragedy,,0.6723,tragicomedy,yes,0.4557,0.5276,0.5883,0.3803,0.6512,0.6825,0.8188,0.8619,-0.0719,-0.0287,8.1
+231,"The Wonder of Women, or Sophonisba","Marston, John",1606,tragedy,,0.1952,pastoral,yes,0.8451,0.6834,0.8432,0.8319,0.7003,0.712,0.6618,0.8425,0.1617,0.0055,59.5
+122,"The Wounds of Civil War, or Marius and Scilla","Lodge, Thomas",1594,tragedy,,0.8367,tragedy,yes,0.9144,0.6365,0.894,0.882,0.9491,0.8262,0.9537,0.9831,0.2779,0.1393,82.9
+79,Thebais (Seneca's Third Tragedy),"Seneca, Lucius AnnaeusNewton, Thomas",1581,tragedy,,0.4435,tragedy,yes,0.9204,0.7455,0.9179,0.8251,0.9313,0.8841,0.8955,1.0,0.1749,0.044,63.1
+368,Thierry and Theodoret,"AnonymousFletcher, JohnMassinger, Philip",1621,tragedy,,0.2677,tragicomedy,yes,0.6396,0.6747,0.7693,0.4952,0.8318,0.5877,0.7139,0.8579,-0.0351,-0.0423,14.4
+29,Thyestes (Seneca's Second Tragedy),"Heywood, JasperSeneca, Lucius Annaeus",1560,tragedy,,0.4605,tragedy,yes,0.8138,0.5113,0.8414,0.6889,0.8759,0.7985,0.7811,0.8503,0.3025,0.108,87.4
+402,Timon of Athens,"Shakespeare, WilliamMiddleton, Thomas",1623,tragedy,yes,0.2294,moral,yes,0.8033,0.9581,0.9137,0.9249,0.7031,0.9109,0.9799,0.955,-0.1548,-0.0897,2.7
+117,Titus Andronicus,"Peele, GeorgeShakespeare, William",1594,tragedy,yes,0.3919,tragedy,yes,0.8735,0.503,0.8457,0.7392,0.9246,0.7696,0.8987,0.9688,0.3705,0.1196,98.2
+28,Troas (Seneca's Sixth Tragedy),"Heywood, JasperSeneca, Lucius Annaeus",1581,tragedy,,0.9627,tragedy,yes,0.9704,0.8697,0.9569,0.9894,0.9825,0.9394,0.9312,0.9416,0.1007,0.0498,45.0
+279,Troilus and Cressida,"Shakespeare, William",1623,tragedy,yes,0.7143,pastoral,yes,0.8589,0.8106,0.9521,0.9323,0.8851,0.8257,0.7849,0.8554,0.0483,0.009,30.6
+182,Two Lamentable Tragedies,"Yarington, Robert",1601,tragedy,,0.3777,moral,yes,0.7551,0.6652,0.7058,0.5854,0.5606,0.7243,0.7381,0.8532,0.0899,0.0102,40.5
+525,1 The Cid (The Valiant Cid),"Rutter, JosephCorneille, Pierre",1637,tragicomedy,,0.4826,tragicomedy,yes,0.7532,0.5807,0.7484,0.4723,0.868,0.7294,0.8083,0.9861,0.2809,0.1107,93.1
+596,2 The Cid,"Rutter, JosephDesfontaines, Nicolas-Marc",1640,tragicomedy,,0.0879,tragicomedy,yes,0.8727,0.6626,0.8642,0.6428,0.9027,0.8067,0.8336,1.0,0.23,0.028,82.8
+509,A Challenge for Beauty,"Heywood, Thomas",1636,tragicomedy,,0.3017,tragicomedy,yes,0.7297,0.7107,0.8868,0.649,0.8752,0.795,0.8383,0.9278,0.0806,0.0214,37.9
+360,A King and No King,"Beaumont, FrancisFletcher, John",1619,tragicomedy,,0.3063,tragicomedy,yes,0.721,0.7462,0.8019,0.5639,0.9208,0.6688,0.8502,0.9784,0.1571,0.0475,65.5
+139,A Knack to Know an Honest Man,Anonymous,1596,tragicomedy,,0.4603,moral,yes,0.8371,0.6647,0.7538,0.6241,0.5385,0.7853,0.804,0.9658,0.213,0.0817,79.3
+501,"Adrasta, or The Woman's Spleen and Love's Conquest","Jones, John",1635,tragicomedy,,0.5739,tragicomedy,yes,0.5243,0.4205,0.6958,0.374,0.7279,0.5863,0.6642,0.8628,0.1503,0.0641,62.1
+395,All's Well That Ends Well,"Shakespeare, WilliamMiddleton, Thomas",1623,tragicomedy,yes,0.4807,comedy,yes,0.5386,0.7041,0.7917,0.5707,0.9164,0.6577,0.8856,0.9203,-0.032,-0.0137,6.9
+440,Match Me in London,"Dekker, Thomas",1631,tragicomedy,,0.3065,tragicomedy,yes,0.7418,0.6507,0.7824,0.6116,0.8519,0.663,0.7557,0.8692,0.1302,0.0385,55.2
+392,Measure for Measure,"Shakespeare, WilliamMiddleton, Thomas",1623,tragicomedy,yes,0.7439,tragicomedy,yes,0.6139,0.6016,0.592,0.592,0.7164,0.7039,0.8709,0.9371,0.022,0.0252,13.8
+363,"Philaster, or Love Lies a-Bleeding","Beaumont, FrancisFletcher, John",1620,tragicomedy,,0.329,tragicomedy,yes,0.8841,0.7923,0.806,0.6537,0.9319,0.7105,0.8752,1.0,0.2304,0.0745,86.2
+583,The Arcadia,"Shirley, James",1640,tragicomedy,,0.25,pastoral,yes,0.6906,0.7288,0.877,0.7101,0.8267,0.7659,0.5119,0.6693,-0.0195,-0.015,10.3
+408,The Bondman (The Noble Bondman),"Massinger, Philip",1624,tragicomedy,,0.1015,tragedy,yes,0.8286,0.6996,0.9144,0.7766,0.9846,0.8183,0.9608,0.9847,0.0519,0.0013,27.6
+572,The Coronation,"Shirley, James",1640,tragicomedy,,0.1222,tragicomedy,yes,0.8567,0.9185,0.9096,0.7231,0.9244,0.8072,0.9497,0.9668,0.1336,0.0221,58.6
+423,The Deserving Favorite,"Carlell, Lodowick",1629,tragicomedy,,0.5545,tragicomedy,yes,0.5511,0.5708,0.6721,0.3831,0.8727,0.6757,0.847,0.9815,0.168,0.0766,72.4
+388,The Devil's Law Case (When Women Go to Law the Devil Is Full of Business),"Webster, John",1623,tragicomedy,,0.4229,tragicomedy,yes,0.6026,0.6793,0.7952,0.5739,0.7804,0.7915,0.8067,0.9625,0.0287,0.0115,20.7
+277,The Dumb Knight,"Markham, GervaseMachin, Lewis",1608,tragicomedy,,0.1904,tragicomedy,yes,0.5817,0.5761,0.7721,0.4948,0.8538,0.6153,0.5859,0.8901,0.0869,0.0118,41.4
+459,The Emperor of the East,"Massinger, Philip",1632,tragicomedy,,0.2284,tragicomedy,yes,0.7255,0.8617,0.8301,0.6569,0.6673,0.7022,0.7992,0.8592,0.0687,0.0142,31.0
+484,The English Traveller,"Heywood, Thomas",1633,tragicomedy,,0.1888,tragicomedy,yes,0.6433,0.6665,0.8089,0.5523,0.738,0.7739,0.7822,0.9596,0.091,0.0163,44.8
+211,The Fair Maid of Bristol,Anonymous,1605,tragicomedy,,0.334,tragicomedy,yes,0.5847,0.5894,0.7433,0.4571,0.8444,0.6423,0.6669,0.906,0.1276,0.041,51.7
+428,The Just Italian,"Davenant, William",1630,tragicomedy,,0.2928,tragicomedy,yes,0.4833,0.5466,0.696,0.3898,0.7655,0.6231,0.6482,0.8862,0.0934,0.0266,48.3
+590,The Ladies' Privilege (The Lady's Privilege),"Glapthorne, Henry",1640,tragicomedy,,0.4457,tragicomedy,yes,0.5134,0.5759,0.7497,0.3519,0.8232,0.6103,0.6498,0.8791,0.1616,0.0644,69.0
+534,The Lost Lady,"Berkeley, William",1638,tragicomedy,,0.2863,tragicomedy,yes,0.689,0.5164,0.6947,0.3971,0.852,0.6213,0.8129,0.9756,0.2919,0.0888,96.6
+420,The Lover's Melancholy,"Ford, John",1629,tragicomedy,,0.4703,tragicomedy,yes,0.6184,0.8206,0.8641,0.5868,0.8879,0.6542,0.7773,0.8529,0.0316,0.0111,24.1
+470,The Maid of Honor,"Massinger, Philip",1632,tragicomedy,,0.2984,tragicomedy,yes,0.5579,0.4439,0.6338,0.3233,0.817,0.6009,0.8346,0.9653,0.2345,0.0722,89.7
+203,The Malcontent,"Marston, John",1604,tragicomedy,,0.785,tragicomedy,yes,0.5501,0.6093,0.7082,0.523,0.8574,0.7352,0.8506,0.9419,0.0271,0.0191,17.2
+430,"The Renegado, or The Gentleman of Venice","Massinger, Philip",1630,tragicomedy,,0.1279,comedy,yes,0.7226,0.9426,0.9053,0.865,0.8071,0.8925,0.9771,0.9567,-0.1424,-0.0421,0.0
+570,The Royal Slave,"Cartwright, William",1639,tragicomedy,,0.2473,romance,yes,0.776,0.7449,0.9744,0.8785,0.9025,0.6426,0.6939,0.8342,-0.1025,-0.0371,3.4
+492,The Two Noble Kinsmen,"Shakespeare, WilliamFletcher, John",1634,tragicomedy,yes,0.4124,tragicomedy,yes,0.4126,0.4519,0.694,0.3369,0.7347,0.4782,0.5329,0.699,0.0757,0.0299,34.5
+519,The Young Admiral,"Shirley, James",1637,tragicomedy,,0.3605,romance,yes,0.9441,0.7981,0.8094,0.7673,1.0,0.7234,0.9859,0.9824,0.1768,0.0588,75.9

@@ -1,0 +1,9 @@
+genre,variant,n_shakespeare,n_others,topics_used_shakespeare,topics_used_others,topics_used_by_both,shakespeare_words_in_shared_topics_of_all,shakespeare_words_in_shared_topics_of_compared,others_words_in_shared_topics_of_all,others_words_in_shared_topics_of_compared,shakespeare_words_in_exclusive_topics_of_all,others_words_in_exclusive_topics_of_all,topics_ge1pct_shakespeare,topics_ge1pct_others,topics_ge1pct_both,shakespeare_words_in_both_ge1pct_of_compared,others_words_in_both_ge1pct_of_compared,compared_topics_share_shakespeare,compared_topics_share_others
+comedy,attributed,11,140,33,51,33,0.2999,1.0,0.2814,0.8137,0.0,0.0645,11,13,6,0.4886,0.4004,0.2999,0.3459
+comedy,sole,11,140,33,51,33,0.2999,1.0,0.2814,0.8137,0.0,0.0645,11,13,6,0.4886,0.4004,0.2999,0.3459
+tragedy,attributed,12,99,28,51,27,0.3553,0.9952,0.3142,0.738,0.0017,0.1116,8,11,4,0.6107,0.4676,0.357,0.4258
+tragedy,sole,8,99,20,51,19,0.4069,0.9937,0.2546,0.5979,0.0026,0.1712,9,11,4,0.6874,0.4676,0.4094,0.4258
+history,attributed,11,23,21,29,15,0.3522,0.9582,0.27,0.713,0.0154,0.1087,7,11,7,0.8732,0.6425,0.3675,0.3787
+history,sole,6,23,18,29,15,0.3138,0.9595,0.27,0.713,0.0133,0.1087,9,11,8,0.8349,0.6804,0.327,0.3787
+tragicomedy,attributed,3,26,23,34,16,0.3958,0.7254,0.2628,0.7987,0.1499,0.0662,11,7,6,0.4528,0.6562,0.5457,0.329
+romance,attributed,3,15,15,39,13,0.1795,0.8511,0.074,0.2936,0.0314,0.178,8,10,3,0.2566,0.2072,0.211,0.252

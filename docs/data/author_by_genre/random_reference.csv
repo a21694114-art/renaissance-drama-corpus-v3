@@ -1,0 +1,35 @@
+genre,author,measure,observed_bits,random_median,random_p2_5,random_p97_5,observed_percentile_in_random,n_draws,group_size,pool_size
+comedy,"Chapman, George",cond,0.2347,0.2636,0.1755,0.3958,28.8,1000,7,151
+comedy,"Chapman, George",rest,0.0765,0.0912,0.0598,0.1386,19.4,1000,7,151
+comedy,"Dekker, Thomas",cond,0.2115,0.2048,0.1328,0.3122,56.0,1000,10,151
+comedy,"Dekker, Thomas",rest,0.069,0.0712,0.0457,0.1142,43.7,1000,10,151
+comedy,"Fletcher, John",cond,0.1705,0.2899,0.1923,0.4121,0.9,1000,6,151
+comedy,"Fletcher, John",rest,0.0586,0.0999,0.0664,0.1535,1.0,1000,6,151
+comedy,"Jonson, Ben",cond,0.2348,0.158,0.1007,0.2364,97.2,1000,15,151
+comedy,"Jonson, Ben",rest,0.0839,0.0554,0.0352,0.0839,97.5,1000,15,151
+comedy,"Lyly, John",cond,0.5228,0.261,0.1701,0.3802,100.0,1000,7,151
+comedy,"Lyly, John",rest,0.1843,0.0906,0.058,0.1409,100.0,1000,7,151
+comedy,"Marston, John",cond,0.315,0.2872,0.1935,0.4292,66.3,1000,6,151
+comedy,"Marston, John",rest,0.0987,0.1004,0.0665,0.1572,45.6,1000,6,151
+comedy,"Middleton, Thomas",cond,0.2687,0.2118,0.1357,0.3166,88.1,1000,10,151
+comedy,"Middleton, Thomas",rest,0.0909,0.0737,0.0473,0.1139,81.3,1000,10,151
+comedy,"Shakespeare, William",cond,0.2129,0.1952,0.1231,0.2953,65.7,1000,11,151
+comedy,"Shakespeare, William",rest,0.0696,0.0682,0.0419,0.1056,54.6,1000,11,151
+comedy,"Shirley, James",cond,0.2598,0.1527,0.0967,0.2264,99.4,1000,16,151
+comedy,"Shirley, James",rest,0.1032,0.0531,0.0346,0.0793,99.7,1000,16,151
+tragedy,"Chapman, George",cond,0.2132,0.3698,0.2349,0.5458,0.7,1000,5,111
+tragedy,"Chapman, George",rest,0.0844,0.1549,0.0994,0.2646,0.4,1000,5,111
+tragedy,"Marlowe, Christopher",cond,0.4935,0.3377,0.2224,0.5018,96.9,1000,6,111
+tragedy,"Marlowe, Christopher",rest,0.2196,0.143,0.0958,0.2287,96.1,1000,6,111
+tragedy,"Massinger, Philip",cond,0.4041,0.3419,0.2186,0.5056,80.0,1000,6,111
+tragedy,"Massinger, Philip",rest,0.1591,0.1454,0.0928,0.2261,66.7,1000,6,111
+tragedy,"Middleton, Thomas",cond,0.5099,0.3761,0.2443,0.5387,95.5,1000,5,111
+tragedy,"Middleton, Thomas",rest,0.2113,0.1577,0.1017,0.2506,90.7,1000,5,111
+tragedy,"Seneca, Lucius Annaeus",cond,0.6686,0.2701,0.1793,0.4051,100.0,1000,9,110
+tragedy,"Seneca, Lucius Annaeus",rest,0.3411,0.1168,0.0743,0.1756,100.0,1000,9,110
+tragedy,"Shakespeare, William",cond,0.2773,0.2252,0.1412,0.3444,82.0,1000,12,111
+tragedy,"Shakespeare, William",rest,0.1099,0.0969,0.06,0.1515,71.4,1000,12,111
+history,"Heywood, Thomas",cond,0.3144,0.326,0.1834,0.5678,45.8,1000,5,34
+history,"Heywood, Thomas",rest,0.1135,0.1254,0.0697,0.2185,38.1,1000,5,34
+history,"Shakespeare, William",cond,0.2948,0.2387,0.161,0.3743,81.3,1000,11,34
+history,"Shakespeare, William",rest,0.1099,0.0923,0.0619,0.1426,77.1,1000,11,34

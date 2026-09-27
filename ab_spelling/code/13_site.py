@@ -17,6 +17,9 @@ Writes <out>/:
                            centroid), topic in the other seeds, highlighted excerpts, full regularized
                            text, original spelling (if chunks_A.csv is present), previous / next chunk
   methods.html             the pipeline with the parameters actually used (read from run files)
+  shakespeare.html         author groups vs the rest of the genre (13b_analysis_pages.py, from aggregate/shakespeare + author_by_genre)
+  chronology.html          topics by estimated first-performance / composition decade (13b, from aggregate/chronology)
+  data/<analysis>/         copies of the result files those pages read (downloads)
   site.css, site.js        shared stylesheet and the sortable-table script
 Everything is derived from files the pipeline already wrote; nothing is recomputed except the
 cosine typicality and (once, cached) the 2-D UMAP for the map.
@@ -102,6 +105,11 @@ def main():
                       'candidate': 'cross-work theme (candidate' + (', in the genre comparison)' if 'candidate' in use_cats else ' — not yet in the comparison)')})
     out = Path(a.out); (out / 'chunks').mkdir(parents=True, exist_ok=True); (out / 'plays').mkdir(exist_ok=True)
     code_dir = Path(__file__).resolve().parent
+    analysis_mod = None
+    if (code_dir / '13b_analysis_pages.py').exists():   # the analysis pages (Shakespeare & contemporaries, Chronology) and their snippets on other pages
+        import importlib.util
+        _spec = importlib.util.spec_from_file_location('analysis_pages', code_dir / '13b_analysis_pages.py'); analysis_mod = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(analysis_mod)
+    analysis = None
 
     # ---------------- data ----------------
     ids = [r['chunk_id'] for r in csv.DictReader(open(runs / f'embedding_ids_{a.variant}.csv', encoding='utf-8'))]
@@ -192,8 +200,11 @@ def main():
         return (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
                 f'<title>{E(title)} · {E(a.title)}</title><link rel="stylesheet" href="{root}site.css?v={ASSET_V}"><script defer src="{root}site.js?v={ASSET_V}"></script></head><body>')
     def mast(root='', active=''):
-        items = [('index.html', 'Home'), ('map.html', 'Map'), ('topics.html', 'Topics'), ('plays.html', 'Plays'), ('genre.html', 'Genre'), ('methods.html', 'Methods')]
-        nav = ''.join(f'<a href="{root}{h}"{" class=active" if active == h else ""}>{n}</a>' for h, n in items if h != 'genre.html' or agg.exists())
+        link = lambda h, n: f'<a href="{root}{h}"{" class=active" if active == h else ""}>{n}</a>'
+        nav = ''.join(link(h, n) for h, n in [('index.html', 'Home'), ('map.html', 'Map'), ('topics.html', 'Topics'), ('plays.html', 'Plays')])
+        ana = [(h, n) for h, n in (analysis.nav_items() if analysis else [('genre.html', 'Genre')]) if h != 'genre.html' or agg.exists()]
+        if ana: nav += '<span class="navgrp"><i>Analysis</i>' + ''.join(link(h, n) for h, n in ana) + '</span>'   # Genre · Shakespeare & contemporaries · Chronology
+        nav += link('methods.html', 'Methods')
         if a.repo_url: nav += f'<a href="{E(a.repo_url)}">GitHub</a>'
         return f'<div class="masthead"><div class="in"><a class="brand" href="{root}index.html">{E(a.title)} <span>· seed {a.seed}</span></a><nav>{nav}</nav></div></div><div class="wrap">'
     def foot():
@@ -267,6 +278,13 @@ img.addEventListener('click',()=>{sc=(sc>fitScale()+1e-6)?fitScale():1;apply();}
 lb.querySelector('.stage').addEventListener('click',e=>{if(e.target===e.currentTarget)hide();});
 document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')hide();else if(e.key==='+'||e.key==='=')lb.querySelector('[data-z="+"]').click();else if(e.key==='-')lb.querySelector('[data-z="-"]').click();});
 window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classList.contains('big')){sc=fitScale();apply();}});})();"""
+    if analysis_mod:
+        CSS += analysis_mod.EXTRA_CSS
+        rep_edition = {meta[seq[0]]['work_id']: e for e, seq in ed_chunks.items() if in_fit[seq[0]]}
+        analysis = analysis_mod.prepare({'out': out, 'agg': agg, 'runs_name': runs.name, 'seed': a.seed, 'topics': [t for t in topics if cat_of(t) in use_cats], 'n_topics': sum(1 for t in topics if cat_of(t) in use_cats),
+                                         'head': head, 'mast': mast, 'foot': foot, 'crumbs': crumbs, 'E': E, 'label_of': label_of, 'tpage': tpage, 'rep_edition': rep_edition,
+                                         'work_title': {meta[seq[0]]['work_id']: meta[seq[0]]['title'] for e, seq in ed_chunks.items() if in_fit[seq[0]]},
+                                         'work_author': {meta[seq[0]]['work_id']: authors(meta[seq[0]]['author']) for e, seq in ed_chunks.items() if in_fit[seq[0]]}})
     (out / 'site.css').write_text(CSS, encoding='utf-8'); (out / 'site.js').write_text(JS, encoding='utf-8')
     ASSET_V = hashlib.md5((CSS + JS).encode('utf-8')).hexdigest()[:8]   # cache-buster: browsers reload site.css / site.js whenever they change
     (out / '.nojekyll').write_text('', encoding='utf-8')   # GitHub Pages: serve files as they are (no Jekyll pass over 18k pages)
@@ -409,6 +427,7 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
                            + roster_rows(chrono(mem_other)) + '</tbody></table>')
         page = (head(f'T{t} {label_of(t)}') + mast('', 'topics.html') + crumbs('<a href="index.html">Home</a>', '<a href="topics.html">Topics</a>', f'T{t}')
                 + f'<h1>Topic {t} — {E(label_of(t))}</h1><p class="lede">Dominant work: <b>{E(r["dominant_work"])}</b> · genre mix of this topic (British Drama labels): {E(r["genre_mix_of_topic"])}</p>' + facts + other_note + note
+                + ((analysis.topic_links(t) if cat_of(t) in use_cats else '') if analysis else '')
                 + f'<h2>Keywords</h2><h3>Class-TF-IDF (uniform rule)</h3><div class="kw">{kwspan(r["ctfidf_top10"])}</div><h3>KeyBERT-style (cosine of word to topic centroid)</h3><div class="kw">{kwspan(r["keybert_top10"])}</div><h3>MMR (diversified)</h3><div class="kw">{kwspan(r["mmr_top10"])}</div><p class="lede" style="font-size:.85rem;margin-top:.6em">Amber = capitalised in ≥80 % of occurrences (probable name). Keywords are computed on the unmasked text.</p>'
                 + '<h2>Most typical chunk of each of the leading works</h2><div class="cards">' + cards + '</div>'
                 + '<h2>Genre mix (chunks of this topic, British Drama labels)</h2><div class="bars">' + gb + '</div><p class="lede" style="font-size:.85rem">This is the direction topic → genre, on the raw British Drama labels; the share of each genre group\'s text that falls in this topic is on the <a href="genre.html">Genre</a> page.</p>'
@@ -486,7 +505,7 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
             f'<td>{E(r["second"])} ({100 * float(r["mean " + r["second"]]):.2f} %)</td><td class="num">{r["ratio_high_second"]}</td><td class="num">{r["kruskal_p"]}</td><td class="num">{r.get("bh_q", "")}</td></tr>' for r in sorted(kw, key=qk)) + '</tbody></table>'
         page = (head('Genre') + mast('', 'genre.html').replace('<div class="wrap">', '<div class="wrap wide">') + crumbs('<a href="index.html">Home</a>', 'Genre')
                 + f'<h1>Topics across genres</h1><p class="lede">Shares are of a work\'s words: chunks are aggregated to editions, editions of one work are averaged, and works enter their genre with equal weight. Every chunk stays in the denominator, so the selected topics never describe a whole genre — the rest of each genre\'s words is shown alongside. The comparison uses the topics classified as <b>{E(", ".join(use_cats))}</b>; the stacked figure below rescales those topics to 100 % of the words they cover (the coverage is printed above each bar), so its percentages are shares of the covered text, not of the genre.</p>'
-                + '<h2>Coverage</h2>' + covt + gfig
+                + (analysis.genre_links() if analysis else '') + '<h2>Coverage</h2>' + covt + gfig
                 + '<h2>Mean share of a work\'s words (square-root colour scale)</h2><div class="fig"><a href="heatmap_selected_topics.png"><img class="heat" src="heatmap_selected_topics.png" alt="Mean share of a work\'s words, selected topics by genre"></a></div>'
                 + '<h2>Share of works in which the topic occurs</h2><div class="fig"><a href="heatmap_prevalence.png"><img class="heat" src="heatmap_prevalence.png" alt="Share of works in which each topic occurs, by genre"></a></div>'
                 + '<p class="lede" style="font-size:.85rem">Every figure is shown fitted to the screen; click one to enlarge it, then use + / − / 1:1, or click the image to switch between fit and full size (Esc closes).</p>'
@@ -567,6 +586,7 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
             + '<h2>Genre comparison</h2><p>Chunk → edition → work → genre, word-weighted, editions of a work averaged, works equal-weighted; only topics classified as cross-work themes enter the comparison, and the share of each genre\'s words that falls outside them is reported. Kruskal–Wallis across genres with ≥10 works, Benjamini–Hochberg over the selected topics; descriptive. '
               'Dominant-work check: a topic in which one work holds ≥ %s %% of the topic\'s words is aggregated again without that work, and the Genre page reports how the highest genre and the means move (the clustering itself stays fixed; the threshold is an operational rule and does not cover several works of one author or story).</p>' % (f"{100 * float(agg_cfg.get('sens_threshold', 0.33)):.0f}")
             + ('<p>Genre of a work: the British Drama label (Wiggins &amp; Richardson, via DEEP) when it is a single main genre; when it is compound or missing, the Annals of English Drama label (Harbage, Schoenbaum &amp; Wagonheim, via DEEP) when that is a single main genre; otherwise the work is described but not placed in a genre. Both labels and the source used are recorded for every work (see the Genre page and each play page).</p>' if agg_cfg.get('n_by_genre_source', {}).get('annals') else '')
+            + (analysis.methods_html() if analysis else '')
             + '<h2>Map</h2><p>The chunk map is a separate 2-D UMAP of the embeddings (same neighbourhood settings) for viewing only; colours are the seed-%d topics.</p>' % a.seed + foot())
     (out / 'methods.html').write_text(page, encoding='utf-8')
 
@@ -580,6 +600,9 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
         page = head('Map') + mast('', 'map.html').replace('<div class="wrap">', '<div class="wrap wide">') + frag + foot()
         (out / 'map.html').write_text(page, encoding='utf-8')
 
+    # ---------------- analysis pages ----------------
+    if analysis: analysis.build()
+
     # ---------------- landing ----------------
     n_out = sum(1 for c in ids if labels[c] == -1)
     n_cmp = sum(len(groups[c]) for c in use_cats); n_inc = len(groups['included']); n_cand = len(groups['candidate'])
@@ -588,10 +611,11 @@ window.addEventListener('resize',()=>{if(lb.classList.contains('on')&&!lb.classL
             + f'<h1>{E(a.title)}</h1><p class="lede">A topic map of early modern English drama, built from ~500-word chunks of every play in the corpus: what each stretch of a play is about, which of those concerns recur across works, and how they are distributed across genres. Every number on the site leads back to the chunks it was computed from.</p>'
             + f'<div class="facts"><div class="f"><b>{len(ids):,}</b><i>chunks</i></div>' + (f'<div class="f"><b>{n_fit:,}</b><i>in the model (one edition per work); {n_placed:,} placed from other editions</i></div>' if n_placed else '') + f'<div class="f"><b>{len(ed_chunks)}</b><i>editions</i></div><div class="f"><b>{n_works}</b><i>works</i></div><div class="f"><b>{len(topics)}</b><i>topics</i></div><div class="f"><b>{n_cmp}</b><i>in the genre comparison ({E(", ".join(use_cats))})</i></div><div class="f"><b>{n_inc} / {n_cand}</b><i>confirmed / candidate themes</i></div><div class="f"><b>{min(years)}–{max(years)}</b><i>publication years</i></div></div>'
             + '<div class="cards">'
-            + ('<div class="card"><h3><a href="map.html">Interactive map</a></h3><div class="whence">Every chunk as a point, coloured by topic; filter by genre, publication decade, author, title, play type, company or theater (filters combine); click a point for its page.</div></div>' if not a.no_map else '')
+            + ('<div class="card"><h3><a href="map.html">Interactive map</a></h3><div class="whence">Every chunk as a point, coloured by topic; filter by genre, publication decade, author, title, play type, company or theater (filters combine); click a point for its page.</div></div>' if (not a.no_map or (out / 'map.html').exists()) else '')
             + '<div class="card"><h3><a href="plays.html">Plays</a></h3><div class="whence">Every edition with its chunks in order, topic composition, DEEP metadata and other editions of the same work; searchable.</div></div>'
             + '<div class="card"><h3><a href="topics.html">Topics</a></h3><div class="whence">All clusters with keywords, works, typical chunks and full rosters — grouped by the researcher\'s decision: in the genre comparison, context only, or pending.</div></div>'
             + ('<div class="card"><h3><a href="genre.html">Genre</a></h3><div class="whence">How the cross-work themes are distributed across comedy, tragedy, history, tragicomedy, moral, romance, pastoral and masque.</div></div>' if (out / 'genre.html').exists() else '')
+            + (analysis.index_cards() if analysis else '')
             + '<div class="card"><h3><a href="methods.html">Methods</a></h3><div class="whence">Corpus, chunking, name masking, embedding model, representative editions, clustering and the choice of scheme, keywords, review, typicality and aggregation — with the parameters actually used.</div></div></div>'
             + '<h2>What a topic page shows</h2><p>The three keyword lists, the size of the cluster and how far it is concentrated in one work, its genre mix, the most typical chunk of each leading work, keyword-highlighted excerpts, and a sortable roster of every member chunk with its typicality.</p>'
             + '<h2>What a chunk page shows</h2><p>The play, author, publication year and Annals performance date, company and theater where DEEP records them, the topic with its typicality, then the full regularized text with the topic\'s distinguishing words marked and links to the previous and next chunk; the metadata table (edition, TCP and DEEP ids, node positions, topic in the other seeds) and the original spelling are folded below it.</p>'

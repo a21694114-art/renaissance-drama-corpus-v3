@@ -1,0 +1,156 @@
+genre,author,n_works_with_signature,n_sole_signature,n_collaborative,n_usable_as_author,n_translator_role,n_role_unresolved,roles,n_other_works,group_kind,eligible,reason_not_eligible
+comedy,"Shirley, James",16,15,1,16,0,0,author 15; reviser 1,135,author,Y,
+comedy,"Jonson, Ben",15,14,1,15,0,0,author 15,136,author,Y,
+comedy,"Shakespeare, William",11,11,0,11,0,0,author 11,140,author,Y,
+comedy,"Dekker, Thomas",10,5,5,10,0,0,author 10,141,author,Y,
+comedy,"Middleton, Thomas",10,8,2,10,0,0,author 10,141,author,Y,
+comedy,"Chapman, George",7,6,1,7,0,0,author 7,144,author,Y,
+comedy,"Lyly, John",7,7,0,7,0,0,author 7,144,author,Y,
+comedy,"Fletcher, John",6,2,4,6,0,0,author 6,145,author,Y,
+comedy,"Marston, John",6,5,1,6,0,0,author 6,145,author,Y,
+comedy,"Heywood, Thomas",4,2,2,4,0,0,author 3; author (?) 1,147,author,,fewer than 5 works with the signature
+comedy,"Beaumont, Francis",3,1,2,3,0,0,author 3,148,author,,fewer than 5 works with the signature
+comedy,"Brome, Richard",3,2,1,3,0,0,author 3,148,author,,fewer than 5 works with the signature
+comedy,"Day, John",3,3,0,3,0,0,author 3,148,author,,fewer than 5 works with the signature
+comedy,"Massinger, Philip",3,2,1,3,0,0,author 3,148,author,,fewer than 5 works with the signature
+comedy,"Barry, Lording",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Field, Nathan",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Ford, John",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Glapthorne, Henry",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Haughton, William",2,1,1,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Marmion, Shackerley",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Nabbes, Thomas",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Randolph, Thomas",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Sharpham, Edward",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Udall, Nicholas",2,2,0,2,0,0,author 1; author (?) 1,149,author,,fewer than 5 works with the signature
+comedy,"Webster, John",2,0,2,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Whetstone, George",2,2,0,2,0,0,author 2,149,author,,fewer than 5 works with the signature
+comedy,"Ariosto, Ludovico",1,0,1,1,0,0,original author (translated) 1,150,original author of translated works,,fewer than 5 works with the signature
+comedy,"Armin, Robert",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Belchier, Dabridgcourt",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Chettle, Henry",1,0,1,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Cooke, John",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Cumber, John",1,1,0,1,0,0,author (?) 1,150,author,,fewer than 5 works with the signature
+comedy,"D., J.",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Davenport, Robert",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Edwards, Richard",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Gascoigne, George",1,0,1,0,1,0,translator 1,150,,,fewer than 5 works with the signature
+comedy,"Greene, Robert",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Hausted, Peter",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Hawkins, William",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Heywood, John",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Holyday, Barten",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Kyffin, Maurice",1,0,1,0,1,0,translator 1,150,,,fewer than 5 works with the signature
+comedy,"May, Thomas",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Mayne, Jasper",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Munday, Anthony",1,0,1,0,0,0,translator (?) 1,150,,,fewer than 5 works with the signature
+comedy,"Nashe, Thomas",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Pasqualigo, Luigi",1,0,1,1,0,0,original author (translated) 1,150,original author of translated works,,fewer than 5 works with the signature
+comedy,"Porter, Henry",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"R., W.",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Rowley, William",1,0,1,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"S., S.",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Stevenson, William",1,1,0,1,0,0,author (?) 1,150,author,,fewer than 5 works with the signature
+comedy,"Tailor, Robert",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,Terence (Publius Terentius Afer),1,0,1,1,0,0,original author (translated) 1,150,original author of translated works,,fewer than 5 works with the signature
+comedy,"Tomkis, Thomas",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+comedy,"Zouche, Richard",1,1,0,1,0,0,author 1,150,author,,fewer than 5 works with the signature
+tragedy,"Shakespeare, William",12,8,4,12,0,0,author 11; author (?) 1,99,author,Y,
+tragedy,"Seneca, Lucius Annaeus",10,0,10,9,0,1,original author (translated) 9; unresolved (name not in DEEP authors_display) 1,101,original author of translated works,Y,
+tragedy,"Marlowe, Christopher",6,4,2,6,0,0,author 6,105,author,Y,
+tragedy,"Massinger, Philip",6,2,4,6,0,0,author 6,105,author,Y,
+tragedy,"Chapman, George",5,4,1,5,0,0,author 5,106,author,Y,
+tragedy,"Middleton, Thomas",5,2,3,5,0,0,author 4; reviser 1,106,author,Y,
+tragedy,"Alexander, William",4,4,0,4,0,0,author 4,107,author,,fewer than 5 works with the signature
+tragedy,"Fletcher, John",4,0,4,4,0,0,author 4,107,author,,fewer than 5 works with the signature
+tragedy,"Shirley, James",4,3,1,4,0,0,author 3; reviser 1,107,author,,fewer than 5 works with the signature
+tragedy,"Studley, John",4,0,4,0,4,0,translator 4,107,,,fewer than 5 works with the signature
+tragedy,"Dekker, Thomas",3,1,2,3,0,0,author 3,108,author,,fewer than 5 works with the signature
+tragedy,"Goffe, Thomas",3,3,0,3,0,0,author 3,108,author,,fewer than 5 works with the signature
+tragedy,"Heywood, Jasper",3,0,3,0,3,0,translator 3,108,,,fewer than 5 works with the signature
+tragedy,"Kyd, Thomas",3,1,2,2,1,0,translator 1; author (?) 1; author 1,108,author,,fewer than 5 works with the signature
+tragedy,"Marston, John",3,2,1,3,0,0,author 3,108,author,,fewer than 5 works with the signature
+tragedy,"Beaumont, Francis",2,0,2,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Chettle, Henry",2,1,1,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Davenant, William",2,2,0,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Field, Nathan",2,0,2,2,0,0,author (?) 1; author 1,109,author,,fewer than 5 works with the signature
+tragedy,"Ford, John",2,2,0,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Garnier, Robert",2,0,2,2,0,0,original author (translated) 2,109,original author of translated works,,fewer than 5 works with the signature
+tragedy,"Greville, Fulke",2,2,0,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Heywood, Thomas",2,2,0,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Jonson, Ben",2,2,0,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"May, Thomas",2,2,0,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Peele, George",2,1,1,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Sampson, William",2,1,1,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Webster, John",2,2,0,2,0,0,author 2,109,author,,fewer than 5 works with the signature
+tragedy,"Al., G.",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"B., R.",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Barkstead, William",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Barnes, Barnabe",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Beza, Theodore",1,0,1,1,0,0,original author (translated) 1,110,original author of translated works,,fewer than 5 works with the signature
+tragedy,"Daborne, Robert",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Daniel, Samuel",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Dolce, Lodovico",1,0,1,1,0,0,original author (translated) 1,110,original author of translated works,,fewer than 5 works with the signature
+tragedy,Euripides,1,0,1,1,0,0,original author (translated) 1,110,original author of translated works,,fewer than 5 works with the signature
+tragedy,"Freeman, Ralph",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Fulbecke, William",1,0,1,1,0,0,reviser 1,110,author,,fewer than 5 works with the signature
+tragedy,"Gascoigne, George",1,0,1,0,1,0,translator 1,110,,,fewer than 5 works with the signature
+tragedy,"Golding, Arthur",1,0,1,0,1,0,translator 1,110,,,fewer than 5 works with the signature
+tragedy,"Gomersall, Robert",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Harding, Samuel",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Hatton, Christopher",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Herbert, Mary Sidney",1,0,1,0,1,0,translator 1,110,,,fewer than 5 works with the signature
+tragedy,"Hughes, Thomas",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Killigrew, Henry",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Kinwelmershe, Francis",1,0,1,0,1,0,translator 1,110,,,fewer than 5 works with the signature
+tragedy,"Lodge, Thomas",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Lower, William",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Machin, Lewis",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Markham, Gervase",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Mason, John",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Munday, Anthony",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Nabbes, Thomas",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Nashe, Thomas",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Neville, Alexander",1,0,1,0,1,0,translator 1,110,,,fewer than 5 works with the signature
+tragedy,"Newton, Thomas",1,0,1,0,1,0,translator 1,110,,,fewer than 5 works with the signature
+tragedy,"Noel, Henry",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Norton, Thomas",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Nuce, Thomas",1,0,1,0,1,0,translator 1,110,,,fewer than 5 works with the signature
+tragedy,"Pickering, John",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Preston, Thomas",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,Pseudo-Seneca,1,0,1,1,0,0,original author (translated) 1,110,original author of translated works,,fewer than 5 works with the signature
+tragedy,"Rawlins, Thomas",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Richards, Nathaniel",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Rowley, William",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"S., W.",1,1,0,1,0,0,author (?) 1,110,author,,fewer than 5 works with the signature
+tragedy,"Sackville, Thomas",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Sidney Herbert, Mary",1,0,1,0,0,1,unresolved (name not in DEEP authors_display) 1,110,,,fewer than 5 works with the signature
+tragedy,"Stafford, Roderick",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Stephens, John",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Tourneur, Cyril",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Watson, Thomas",1,0,1,1,0,0,author (?) 1,110,author,,fewer than 5 works with the signature
+tragedy,"Wilkins, George",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Wilmot, Robert",1,0,1,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Yarington, Robert",1,1,0,1,0,0,author 1,110,author,,fewer than 5 works with the signature
+tragedy,"Yelverton, Christopher",1,0,1,0,1,0,translator 1,110,,,fewer than 5 works with the signature
+history,"Shakespeare, William",11,6,5,11,0,0,author 10; author (?) 1,23,author,Y,
+history,"Heywood, Thomas",5,4,1,5,0,0,author (?) 3; author 2,29,author,Y,
+history,"Marlowe, Christopher",4,1,3,4,0,0,author 4,30,author,,fewer than 5 works with the signature
+history,"Peele, George",2,2,0,2,0,0,author 2,32,author,,fewer than 5 works with the signature
+history,"A., R.",1,1,0,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Chapman, George",1,1,0,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Chettle, Henry",1,0,1,1,0,0,author (?) 1,33,author,,fewer than 5 works with the signature
+history,"Dekker, Thomas",1,0,1,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Drayton, Michael",1,0,1,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Drue, Thomas",1,1,0,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Fisher, Jasper",1,1,0,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Fletcher, John",1,0,1,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Hathaway, Richard",1,0,1,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Jonson, Ben",1,1,0,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Munday, Anthony",1,0,1,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Nashe, Thomas",1,0,1,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Rowley, Samuel",1,1,0,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"S., W.",1,1,0,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"W., J.",1,1,0,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Webster, John",1,0,1,1,0,0,author 1,33,author,,fewer than 5 works with the signature
+history,"Wilson, Robert",1,0,1,1,0,0,author 1,33,author,,fewer than 5 works with the signature

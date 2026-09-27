@@ -1,0 +1,35 @@
+{
+ "genre_counts": {
+  "comedy": 151,
+  "tragedy": 111,
+  "history": 34
+ },
+ "genre_counts_expected": {
+  "comedy": 151,
+  "tragedy": 111,
+  "history": 34
+ },
+ "n_works": 516,
+ "n_in_period_analysis": 515,
+ "n_not_usable": 1,
+ "each_included_work_in_exactly_one_decade": true,
+ "decade_counts_sum_to_included": true,
+ "sensitivity_counts_preserve_total": true,
+ "max_abs_dev_category_means_sum_minus_1": 0.0,
+ "inclusion_accounting": {
+  "n_works": 516,
+  "in_analysis": 515,
+  "pending": 1,
+  "excluded_other": 0,
+  "sums_to_n_works": true
+ },
+ "no_duplicates_in_any_grouping": true,
+ "n_adopted_years_taken_from_publication": 0,
+ "n_works_with_revision_ranges_ignored_for_limits": 1,
+ "n_range_only_works": 0,
+ "n_sources_differ_listed": 156,
+ "publication_year_used": false,
+ "sources_averaged": false,
+ "parse_differences_vs_20_company_coverage": [],
+ "n_selected_topics": 53
+}

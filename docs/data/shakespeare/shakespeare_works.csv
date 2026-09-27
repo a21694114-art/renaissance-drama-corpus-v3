@@ -1,0 +1,41 @@
+genre_main,work_id,title,author,year_first,side,attribution,words_mean
+comedy,170,A Midsummer Night's Dream,"Shakespeare, William",1600,Shakespeare,sole,16183
+comedy,394,As You Like It,"Shakespeare, William",1623,Shakespeare,sole,21347
+comedy,150,Love's Labor's Lost,"Shakespeare, William",1598,Shakespeare,sole,18245
+comedy,168,Much Ado About Nothing,"Shakespeare, William",1600,Shakespeare,sole,20857
+comedy,393,The Comedy of Errors,"Shakespeare, William",1623,Shakespeare,sole,14412
+comedy,172,The Merchant of Venice (The Jew of Venice),"Shakespeare, William",1600,Shakespeare,sole,19281
+comedy,187,The Merry Wives of Windsor,"Shakespeare, William",1623,Shakespeare,sole,20959
+comedy,120.5,The Taming of the Shrew,"Shakespeare, William",1623,Shakespeare,sole,20457
+comedy,390,The Tempest,"Shakespeare, William",1623,Shakespeare,sole,16056
+comedy,391,The Two Gentlemen of Verona,"Shakespeare, William",1623,Shakespeare,sole,16892
+comedy,396,"Twelfth Night, or What You Will","Shakespeare, William",1623,Shakespeare,sole,19442
+history,145,1 Henry the Fourth,"Shakespeare, William",1598,Shakespeare,sole,24115
+history,399,1 Henry the Sixth,"Anonymous / Marlowe, Christopher / Shakespeare, William / Nashe, Thomas",1623,Shakespeare,collaborative / adapted,20495
+history,167,2 Henry the Fourth,"Shakespeare, William",1600,Shakespeare,sole,23556
+history,119,2 Henry the Sixth (The First Part of the Contention betwixt the Two Famous Houses of York and Lancaster),"Anonymous / Marlowe, Christopher / Shakespeare, William",1600,Shakespeare,collaborative / adapted,16092
+history,138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),"Anonymous / Marlowe, Christopher / Shakespeare, William",1623,Shakespeare,collaborative / adapted,23306
+history,400,Henry the Eighth (All Is True),"Shakespeare, William / Fletcher, John",1623,Shakespeare,collaborative / adapted,23549
+history,165,Henry the Fifth,"Shakespeare, William",1600,Shakespeare,sole,12250
+history,398,King John,"Shakespeare, William",1623,Shakespeare,sole,20419
+history,141,Richard the Second,"Shakespeare, William",1597,Shakespeare,sole,20546
+history,142,Richard the Third,"Shakespeare, William",1623,Shakespeare,sole,28137
+history,140,The Reign of King Edward the Third,"Anonymous / Shakespeare, William",1596,Shakespeare,collaborative / adapted,19434
+romance,406,"Cymbeline, King of Britain","Shakespeare, William",1623,Shakespeare,sole,26792
+romance,284,"Pericles, Prince of Tyre","Shakespeare, William / Wilkins, George",1609,Shakespeare,collaborative / adapted,17720
+romance,397,The Winter's Tale,"Shakespeare, William",1623,Shakespeare,sole,24516
+tragedy,405,Antony and Cleopatra,"Shakespeare, William",1623,Shakespeare,sole,23786
+tragedy,401,Coriolanus,"Shakespeare, William",1623,Shakespeare,sole,26577
+tragedy,197,"Hamlet, Prince of Denmark","Shakespeare, William",1623,Shakespeare,sole,27817
+tragedy,403,Julius Caesar,"Shakespeare, William",1623,Shakespeare,sole,19158
+tragedy,265,King Lear,"Shakespeare, William",1608,Shakespeare,sole,24385
+tragedy,404,Macbeth,"Shakespeare, William / Middleton, Thomas",1623,Shakespeare,collaborative / adapted,16459
+tragedy,107,Master Arden of Faversham in Kent,"Anonymous / Kyd, Thomas / Shakespeare, William / Watson, Thomas",1592,Shakespeare,collaborative / adapted,19609
+tragedy,379,"Othello, the Moor of Venice","Shakespeare, William",1623,Shakespeare,sole,25772
+tragedy,143,Romeo and Juliet,"Shakespeare, William",1623,Shakespeare,sole,23837
+tragedy,402,Timon of Athens,"Shakespeare, William / Middleton, Thomas",1623,Shakespeare,collaborative / adapted,17621
+tragedy,117,Titus Andronicus,"Peele, George / Shakespeare, William",1594,Shakespeare,collaborative / adapted,19208
+tragedy,279,Troilus and Cressida,"Shakespeare, William",1623,Shakespeare,sole,25558
+tragicomedy,395,All's Well That Ends Well,"Shakespeare, William / Middleton, Thomas",1623,Shakespeare,collaborative / adapted,22560
+tragicomedy,392,Measure for Measure,"Shakespeare, William / Middleton, Thomas",1623,Shakespeare,collaborative / adapted,21307
+tragicomedy,492,The Two Noble Kinsmen,"Shakespeare, William / Fletcher, John",1634,Shakespeare,collaborative / adapted,23372

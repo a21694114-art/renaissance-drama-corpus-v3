@@ -1,0 +1,12 @@
+{
+ "n_works": 516,
+ "deep": "/mnt/user-data/uploads/Clustering Character Archetypes/early-modern-drama-character-clustering/data/DEEP_data.csv",
+ "agg": "/mnt/user-data/uploads/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/aggregate",
+ "sources": [
+  "britdrama",
+  "annals",
+  "title_page"
+ ],
+ "status_rule": "clear | uncertain (?) | multiple (; and or then) | unacted | unknown | not in BritDrama | missing (blank/n/a/None)",
+ "no_merging": true
+}
