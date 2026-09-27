@@ -38,8 +38,10 @@ source's convention; play_type_display is kept beside it so the reader can tell.
 Outputs (--out, default <agg>/company/):
   company_fields_by_work.csv     one row per work: raw fields, statuses, parsed dates
   company_coverage.csv           one row per (source, raw company value): n works, genre
-                                 composition, authors, date ranges of the corpus records,
-                                 missing / uncertain / multiple counts, mean included share
+                                 composition, authors (individuals vs signatures), date range
+                                 of the corpus records from the SAME source as the company
+                                 value (date_*; the other source as xdate_*), missing /
+                                 uncertain / multiple counts, mean included share
   company_name_notes.csv         raw spellings grouped by base_name (variants to check)
   company_lineage_notes.csv      reference notes on renamings / successions (not applied)
   company_source_agreement.csv   per work: do the three company sources agree?
@@ -270,35 +272,47 @@ def main():
         for raw, rs in groups.items():
             st = rs[0][col + '_status']; base = rs[0][col + '_base']
             gc = collections.Counter(r['genre_main'] for r in rs)
-            ac = collections.Counter(r['author'] for r in rs)
-            top_a, top_n = ac.most_common(1)[0]
-            ay = [r['date_annals_year'] for r in rs]; by = [r['date_brit_year'] for r in rs]
-            alow = [r['date_annals_low'] if r['date_annals_low'] != '' else r['date_annals_year'] for r in rs]
-            ahigh = [r['date_annals_high'] if r['date_annals_high'] != '' else r['date_annals_year'] for r in rs]
-            blow = [r['date_brit_low'] if r['date_brit_low'] != '' else r['date_brit_year'] for r in rs]
-            bhigh = [r['date_brit_high'] if r['date_brit_high'] != '' else r['date_brit_year'] for r in rs]
-            py = [int(r['date_publication_raw']) for r in rs if re.fullmatch(r'\d{4}', r['date_publication_raw'])]
+            sig = collections.Counter(r['author'] for r in rs)                       # author string as signed (a collaboration is one signature)
+            ind = collections.Counter(p for r in rs for p in r['author'].split(' / '))  # individual persons, counted once per work they appear in
+            top_sig, top_sig_n = sig.most_common(1)[0]; top_ind, top_ind_n = ind.most_common(1)[0]
+            n_collab = sum(1 for r in rs if ' / ' in r['author'])
+            # dates paired with the source of the company value: British Drama company ↔ British Drama date,
+            # Annals company ↔ Annals date, title-page company ↔ first publication of the edition; the other
+            # first-performance source is given as a cross-check (xdate_*), never mixed into the own-source range
+            own, other = {'britdrama': ('brit', 'annals'), 'annals': ('annals', 'brit'), 'title_page': ('pub', None)}[src]
+            def dstats(tag, pre):
+                if tag == 'pub':
+                    py = [int(r['date_publication_raw']) for r in rs if re.fullmatch(r'\d{4}', r['date_publication_raw'])]
+                    return {pre + 'source': 'date_first_publication (edition)', pre + 'year_min': min(py) if py else '', pre + 'year_max': max(py) if py else '',
+                            pre + 'limits_min': '', pre + 'limits_max': '', pre + 'year_median': statistics.median(py) if py else '',
+                            'n_' + pre + 'missing': len(rs) - len(py), 'n_' + pre + 'with_limits': '', 'n_' + pre + 'circa_or_queried': '', 'n_' + pre + 'licensed_or_revised': ''}
+                if tag is None:
+                    return {pre + 'source': '', pre + 'year_min': '', pre + 'year_max': '', pre + 'limits_min': '', pre + 'limits_max': '', pre + 'year_median': '',
+                            'n_' + pre + 'missing': '', 'n_' + pre + 'with_limits': '', 'n_' + pre + 'circa_or_queried': '', 'n_' + pre + 'licensed_or_revised': ''}
+                ys = [r[f'date_{tag}_year'] for r in rs]
+                lo = [r[f'date_{tag}_low'] if r[f'date_{tag}_low'] != '' else r[f'date_{tag}_year'] for r in rs]
+                hi = [r[f'date_{tag}_high'] if r[f'date_{tag}_high'] != '' else r[f'date_{tag}_year'] for r in rs]
+                yy = [v for v in ys if v != '']
+                return {pre + 'source': {'brit': 'date_first_performance_brit_display (British Drama)', 'annals': 'date_first_performance (Annals)'}[tag],
+                        pre + 'year_min': yr_stats(ys)[0], pre + 'year_max': yr_stats(ys)[1], pre + 'limits_min': yr_stats(lo)[0], pre + 'limits_max': yr_stats(hi)[1],
+                        pre + 'year_median': statistics.median(yy) if yy else '',
+                        'n_' + pre + 'missing': sum(1 for r in rs if r[f'date_{tag}_missing']),
+                        'n_' + pre + 'with_limits': sum(1 for r in rs if r[f'date_{tag}_low'] != ''),
+                        'n_' + pre + 'circa_or_queried': sum(1 for r in rs if re.search(r'circa|queried', r[f'date_{tag}_flags'])),
+                        'n_' + pre + 'licensed_or_revised': sum(1 for r in rs if re.search(r'licensed|revised', r[f'date_{tag}_flags']))}
             inc = [float(r['included_share']) for r in rs]
             d = {'source': src, 'company_raw': raw, 'status': st, 'base_name': base, 'n_works': len(rs)}
             for g in GENRES: d['n_' + g] = gc.get(g, 0)
-            d.update({'genre_composition': fmt_comp(gc), 'n_authors': len(ac), 'top_author': top_a, 'top_author_n_works': top_n,
-                      'top_author_share': round(top_n / len(rs), 3),
+            d.update({'genre_composition': fmt_comp(gc),
+                      'n_individual_authors': len(ind), 'n_author_signatures': len(sig), 'n_collaborative_works': n_collab,
+                      'top_individual_author': top_ind, 'top_individual_n_works': top_ind_n, 'top_individual_share': round(top_ind_n / len(rs), 3),
+                      'top_signature': top_sig, 'top_signature_n_works': top_sig_n,
                       'play_type_composition': fmt_comp(collections.Counter(r['play_type_raw'] for r in rs)),
-                      'n_closet_or_unacted_playtype': sum(1 for r in rs if r['closet_or_unacted_flag']),
-                      'annals_year_min': yr_stats(ay)[0], 'annals_year_max': yr_stats(ay)[1],
-                      'annals_limits_min': yr_stats(alow)[0], 'annals_limits_max': yr_stats(ahigh)[1],
-                      'annals_year_median': (statistics.median([v for v in ay if v != '']) if any(v != '' for v in ay) else ''),
-                      'n_annals_date_missing': sum(1 for r in rs if r['date_annals_missing']),
-                      'n_annals_with_limits': sum(1 for r in rs if r['date_annals_low'] != ''),
-                      'n_annals_circa_or_queried': sum(1 for r in rs if re.search(r'circa|queried', r['date_annals_flags'])),
-                      'n_annals_licensed_or_revised': sum(1 for r in rs if re.search(r'licensed|revised', r['date_annals_flags'])),
-                      'brit_year_min': yr_stats(by)[0], 'brit_year_max': yr_stats(by)[1],
-                      'brit_limits_min': yr_stats(blow)[0], 'brit_limits_max': yr_stats(bhigh)[1],
-                      'n_brit_date_missing': sum(1 for r in rs if r['date_brit_missing']),
-                      'n_brit_with_limits': sum(1 for r in rs if r['date_brit_low'] != ''),
-                      'n_brit_circa_or_queried': sum(1 for r in rs if re.search(r'circa|queried', r['date_brit_flags'])),
-                      'n_dates_annals_brit_differ': sum(1 for r in rs if r['date_annals_vs_brit'].startswith('differ')),
-                      'publication_year_min': min(py) if py else '', 'publication_year_max': max(py) if py else '',
+                      'n_closet_or_unacted_playtype': sum(1 for r in rs if r['closet_or_unacted_flag'])})
+            d.update(dstats(own, 'date_')); d.update(dstats(other, 'xdate_'))
+            d['n_dates_differ_between_sources'] = sum(1 for r in rs if r['date_annals_vs_brit'].startswith('differ')) if other else ''
+            py = [int(r['date_publication_raw']) for r in rs if re.fullmatch(r'\d{4}', r['date_publication_raw'])]
+            d.update({'publication_year_min': min(py) if py else '', 'publication_year_max': max(py) if py else '',
                       'mean_included_share': round(sum(inc) / len(inc), 4), 'min_included_share': round(min(inc), 4), 'max_included_share': round(max(inc), 4),
                       'n_works_mentioned_in_multiple_values': len(mentions[src].get(base, set())) if base and not st.startswith('multiple') else '',
                       'works': '; '.join(sorted(r['title'][:40] + ' (' + r['work_id'] + ')' for r in rs)) if len(rs) <= 12 else ''})
@@ -363,19 +377,20 @@ def main():
     for r in rows:
         b, an, t = r['company_brit_raw'], r['company_annals_raw'], r['company_titlepage_raw']
         sb, sa, st = r['company_brit_status'], r['company_annals_status'], r['company_titlepage_status']
-        def has(s): return not (s.startswith('missing') or s == 'not in BritDrama')
+        def has(s): return s in ('clear', 'uncertain') or s.startswith('multiple')   # a company is NAMED (unknown / unacted / n/a are not names)
         if has(sb) and has(sa):
             ba = 'identical' if norm_apos(b) == norm_apos(an) else ('same base name' if r['company_brit_base'] == r['company_annals_base'] and r['company_brit_base'] else 'differ')
         elif has(sb) or has(sa):
-            ba = 'only britdrama' if has(sb) else 'only annals'
+            ba = 'only britdrama named' if has(sb) else 'only annals named'
         else:
-            ba = 'neither'
+            ba = 'neither named'
         tp = ''
         if has(st):
             ref = r['company_brit_base'] or r['company_annals_base']
             tp = 'title page = first-performance source' if ref and r['company_titlepage_base'] == ref else ('title page differs' if ref else 'title page only')
         agree.append({'work_id': r['work_id'], 'title': r['title'], 'genre_main': r['genre_main'], 'company_brit_raw': b, 'company_annals_raw': an,
-                      'company_titlepage_raw': t, 'britdrama_vs_annals': ba, 'title_page_vs_first_performance': tp})
+                      'company_titlepage_raw': t, 'britdrama_status': sb, 'annals_status': sa,
+                      'both_sources_named': 'Y' if has(sb) and has(sa) else '', 'britdrama_vs_annals': ba, 'title_page_vs_first_performance': tp})
     with open(out / 'company_source_agreement.csv', 'w', newline='', encoding='utf-8') as f:
         wr = csv.DictWriter(f, fieldnames=list(agree[0].keys())); wr.writeheader(); wr.writerows(agree)
 
@@ -418,8 +433,14 @@ def main():
         for g, c in sorted(ct.items(), key=lambda kv: -sum(kv[1].values())):
             md.append(f'| {g} | {sum(c.values())} | ' + ' | '.join(str(c.get(k, 0)) for k in cats) + ' |')
         md.append('')
-    md += ['## British Drama vs Annals first-performance company', '', '| relation | works |', '|---|---:|']
+    md += ['## British Drama vs Annals first-performance company', '', 'All works:', '', '| relation | works |', '|---|---:|']
     md += [f'| {k} | {v} |' for k, v in collections.Counter(x['britdrama_vs_annals'] for x in agree).most_common()] + ['']
+    both = [x for x in agree if x['both_sources_named']]
+    md += [f'Works with a company NAMED in both sources (n = {len(both)}; unknown / unacted / n/a do not count as names); shares are of these {len(both)}:', '', '| relation | works | share |', '|---|---:|---:|']
+    md += [f'| {k} | {v} | {v / len(both):.1%} |' for k, v in collections.Counter(x['britdrama_vs_annals'] for x in both).most_common()] + ['']
+    nn = collections.Counter((x['britdrama_status'], x['annals_status']) for x in agree if x['britdrama_vs_annals'] != 'identical' and not x['both_sources_named'])
+    md += ['Works named in only one source or in neither, by the pair of statuses (British Drama, Annals):', '', '| British Drama | Annals | works |', '|---|---|---:|']
+    md += [f'| {k[0]} | {k[1]} | {v} |' for k, v in nn.most_common()] + ['']
     md += ['## Dates', '',
            f'Annals date_first_performance: {sum(1 for r in rows if r["date_annals_missing"])} missing; {sum(1 for r in rows if r["date_annals_low"] != "")} with limits in brackets; '
            f'{sum(1 for r in rows if re.search("circa|queried", r["date_annals_flags"]))} circa/queried; {sum(1 for r in rows if "licensed" in r["date_annals_flags"])} licensed; '
@@ -428,11 +449,13 @@ def main():
            f'Annals and British Drama years differ for {sum(1 for r in rows if r["date_annals_vs_brit"].startswith("differ"))} works (same year for {sum(1 for r in rows if r["date_annals_vs_brit"] == "same year")}).',
            'Publication year is kept in its own column and is never used as a performance date.', '']
     for src, col in sources[:2]:
+        dl = {'britdrama': 'British Drama', 'annals': 'Annals'}[src]
         md += [f'## Largest companies — {src} (clear values only; uncertain and multiple listed separately in company_coverage.csv)', '',
-               '| company (raw) | works (clear) | same name uncertain | named in multiple values | genres | authors (top) | Annals years (records in this corpus) | Annals limits | mean included share |', '|---|---:|---:|---:|---|---|---|---|---:|']
+               f'Dates are the {dl} first-performance dates, i.e. the same source as the company value; the other source is in company_coverage.csv (xdate_*).', '',
+               f'| company (raw) | works (clear) | same name uncertain | named in multiple values | genres | individual authors / signatures (top person) | {dl} years (records in this corpus) | {dl} limits | mean included share |', '|---|---:|---:|---:|---|---|---|---|---:|']
         for d in [d for d in cov if d['source'] == src and d['status'] == 'clear'][:15]:
             unc = sum(1 for r in rows if r[col + '_base'] == d['base_name'] and r[col + '_status'] == 'uncertain')
-            md.append(f'| {d["company_raw"]} | {d["n_works"]} | {unc} | {d["n_works_mentioned_in_multiple_values"]} | {d["genre_composition"]} | {d["n_authors"]} ({d["top_author"]} {d["top_author_n_works"]}) | {d["annals_year_min"]}–{d["annals_year_max"]} | {d["annals_limits_min"]}–{d["annals_limits_max"]} | {d["mean_included_share"]:.3f} |')
+            md.append(f'| {d["company_raw"]} | {d["n_works"]} | {unc} | {d["n_works_mentioned_in_multiple_values"]} | {d["genre_composition"]} | {d["n_individual_authors"]} / {d["n_author_signatures"]} ({d["top_individual_author"]} {d["top_individual_n_works"]}) | {d["date_year_min"]}–{d["date_year_max"]} | {d["date_limits_min"]}–{d["date_limits_max"]} | {d["mean_included_share"]:.3f} |')
         md.append('')
     md += ['Year ranges are those of the works in this corpus that carry the value, not the company\'s period of activity. '
            'Names are raw DEEP strings; renamings and successions are listed in company_lineage_notes.csv for reference and are not applied.', '']

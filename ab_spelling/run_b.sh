@@ -27,6 +27,8 @@
 #                                       # B_USE picks the compared topics (default: aggregate/config.json); B_BOOT / B_PERM set the resampling counts
 #   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh company   # coverage of the DEEP company / theatre / date fields for the run's works (20) → aggregate/company/
 #                                       # tables only (no comparison, no merging of company names); needs the DEEP export (B_DEEP or the Dropbox default)
+#   B_A="Children of the Queen's Revels" B_B="Children of Paul's (second)" B_GENRE=comedy B_RELATED="A:Children of the Chapel (second)" \
+#     B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh company-pair   # work list + common period for one company pair within a genre (21) → aggregate/company/pair_*/
 #   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh freeze   # copy the small result files that let a reader trace the published analysis
 #                                       # (doc_topics, run.json, topic_sheet.csv, aggregate tables, chunk map/meta, environment) into ab_spelling/results_<suffix>/
 #   B_RUNS_SUFFIX=masked bash ab_spelling/run_b.sh sheet|review|pack|aggregate|genrefig|figures|map|site   # run any later step on that second run
@@ -78,6 +80,14 @@ if [ "$MODE" = "company" ]; then
   [ -f "$DEEP" ] || { echo "DEEP export not found ($DEEP); set B_DEEP=<path to DEEP_data.csv>"; exit 1; }
   python "$CODE/20_company_coverage.py" --agg "$D/aggregate" --chunk-meta "$CH/chunk_meta.csv" --deep "$DEEP"
   echo "== done: $D/aggregate/company/company_coverage_summary.md"; exit 0
+fi
+if [ "$MODE" = "company-pair" ]; then
+  D="$RUNS/topics_B_s$SEED"
+  [ -f "$D/aggregate/company/company_fields_by_work.csv" ] || { echo "run company first"; exit 1; }
+  [ -n "$B_A" ] && [ -n "$B_B" ] && [ -n "$B_GENRE" ] || { echo "set B_A, B_B (company names as in company_coverage.csv) and B_GENRE"; exit 1; }
+  REL=(); for spec in ${B_RELATED:+"$B_RELATED"}; do REL+=(--related "$spec"); done
+  python "$CODE/21_company_pair_list.py" --company-dir "$D/aggregate/company" --a "$B_A" --b "$B_B" --genre "$B_GENRE" ${B_SOURCE:+--source "$B_SOURCE"} ${REL[@]+"${REL[@]}"}
+  exit 0
 fi
 
 if [ "$MODE" = "freeze" ]; then
