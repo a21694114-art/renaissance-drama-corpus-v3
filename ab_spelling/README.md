@@ -22,7 +22,7 @@ limited comparison. The evidence site built from this run is in `../docs/`.
    tails. 17,422 chunks; `chunks_A.csv` (original spelling) and `chunks_B.csv` (regularized)
    hold the same passages.
 2. **Name masking** (`01c_mask_names.py`) — character names replaced by `someone`, per play,
-   from the cast lists of Kim's character-clustering project (`cast_names_kim.csv`, matched on
+   from a per-edition cast list (`cast_names.csv`, matched on
    TCP id; `cast_map_overrides.csv` fixes wrong matches). Persons only: places, nations,
    deities, role words and personifications stay. Names that are also common words are masked
    only when capitalised; spelling variants (I/J, u/v, ≥ 0.85 similarity) within the edition
@@ -31,7 +31,7 @@ limited comparison. The evidence site built from this run is in `../docs/`.
    (no chunk is truncated). Per-chunk text hashes; a re-run re-encodes only changed chunks.
 4. **Clustering** (`03_topics.py`) — UMAP (5 comp., 15 neighbours, min_dist 0.05, cosine) →
    HDBSCAN (min_cluster_size 30, min_samples 10, eom), seeds 42 / 43 / 44. Fitted on one
-   representative edition per work (`edition_selection.csv`: Kim's policy — earliest dated
+   representative edition per work (`edition_selection.csv`: earliest dated
    edition, Folio for seven Shakespeare plays, Q1 for Lear); the other 64 editions
    (2,052 chunks) are placed afterwards and excluded from the main statistics (`in_fit`).
    `--cluster kmeans --k N` gives the comparison schemes.
@@ -129,7 +129,7 @@ aggregation reports what happens to a concentrated topic's genre result without 
 | `code/01_chunk_map_v2_tokens.py`, `01b_make_A2.py`, `04_compare.py`, `06_recluster_old.py`, `run_ab.sh` | the closed A/B spelling experiment (kept for the record) |
 | `edition_selection.csv` | representative edition per work with the policy and basis |
 | `cast_map_overrides.csv` | editions whose cast list must be taken from another TCP id |
-| `cast_names_kim.csv` | cast lists (from Kim's `corpus_master.xlsx`; not in the public repository) |
+| `cast_names.csv` | per-edition cast lists (TCP id, normalized name, speech-prefix forms) used for name masking |
 | `drafts/`, `drafts_masked_hdb10/` | AI drafts per run (`topic_drafts_B_s42.csv`; `.pre_review.csv` = the drafts before the review); the review writes the decisions back here |
 | `results_masked_hdb10/` | frozen result files of the published run (`run_b.sh freeze`): `doc_topics.csv` with `in_fit`, `run.json`, `topic_sheet.csv` with the decisions, the aggregate tables (`config.json`, `genre_assignment.csv`, `genre_coverage.csv`, `genre_topic_mean.csv`, `kruskal_by_topic.csv`, `sensitivity_dominant_work.csv`, …), chunk map and metadata, masking summary, `environment.txt` — enough to trace every published number without the embeddings |
 | `requirements.txt` | Python dependencies |
@@ -143,7 +143,7 @@ with `doc_topics.csv`, `run.json`, keyword tables, `topic_sheet.*`, `aggregate/`
 
 - Roughly 60 % of chunks are HDBSCAN outliers; they stay in every denominator and are reported
   as coverage per genre, never dropped from the corpus.
-- Cast lists cover characters as Kim's table names them; nicknames absent from it (e.g. Harry,
+- Cast lists cover characters as the cast table names them; nicknames absent from it (e.g. Harry,
   Jack) survive the masking and may still link passages — a possible influence on a few
   clusters, not a demonstrated cause.
 - EarlyPrint regularization reaches only part of each text; a few editions keep more of their
@@ -155,5 +155,5 @@ with `doc_topics.csv`, `run.json`, keyword tables, `topic_sheet.*`, `aggregate/`
 - DEEP fields on the site, and the Annals fallback of the genre rule, come from a full DEEP
   export that is not in the repository; without it `aggregate` warns and keeps the 35
   Annals-placed works in "other / multi", so its genre groups differ from the published ones.
-  `cast_names_kim.csv` is not in the repository either. The published analysis is therefore
-  traceable from `results_masked_hdb10/`, but not yet reproducible from a fresh clone alone.
+  The published analysis is therefore traceable from `results_masked_hdb10/`, and reproducible
+  from a fresh clone except for that fallback.

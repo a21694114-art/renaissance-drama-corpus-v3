@@ -2,7 +2,7 @@
 """01c_mask_names.py — a name-masked copy of the chunk texts, for a second embedding run.
 
     python 01c_mask_names.py --chunks <chunks_w500> --manifest <corpus_manifest.csv>
-                             [--cast <cast_names_kim.csv>] [--overrides <csv>] [--placeholder someone]
+                             [--cast <cast_names.csv>] [--overrides <csv>] [--placeholder someone]
 
 Follows the mechanism of Kim's character-clustering pipeline (early-modern-drama-character-clustering,
 code/02_build_character_documents.py, 2026-07): names are identified PER PLAY from that play's own cast
@@ -13,7 +13,7 @@ matter to be compared; repeated placeholders are not collapsed; nothing is avera
 
 Steps, per edition of Grace's corpus:
   1. cast list = Kim's character table (data/corpus_master.xlsx sheet `characters`, exported to
-     ab_spelling/cast_names_kim.csv: TCP, normalized name, speech-prefix forms) matched on the
+     ab_spelling/cast_names.csv: TCP, normalized name, speech-prefix forms) matched on the
      manifest's unit_ids (= Kim's TCP stem); an edition without a direct match falls back to the union
      of Kim's parts under the same base TCP ("base match"); the cast of every edition of the same work is
      pooled (same characters). Editions with no match at all are LISTED (name_mask_report.csv,
@@ -143,14 +143,14 @@ def ij_uv(t):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--chunks', required=True); ap.add_argument('--manifest', required=True)
-    ap.add_argument('--cast', default='', help='cast_names_kim.csv (default: ab_spelling/cast_names_kim.csv next to this code)')
+    ap.add_argument('--cast', default='', help='cast_names.csv (default: ab_spelling/cast_names.csv next to this code)')
     ap.add_argument('--overrides', default='', help='scope,token,decision csv (default: ab_spelling/name_mask_overrides.csv if present)')
     ap.add_argument('--cast-map', default='', help='edition_id,kim_tcp[,note] csv: force which of Kim\'s cast lists an edition uses (default: ab_spelling/cast_map_overrides.csv if present)')
     ap.add_argument('--placeholder', default='someone'); ap.add_argument('--common-min', type=int, default=20)
     ap.add_argument('--variant-sim', type=float, default=0.85)
     a = ap.parse_args()
     ch = Path(a.chunks); here = Path(__file__).resolve().parent.parent; csv.field_size_limit(10 ** 8)
-    cast_path = Path(a.cast) if a.cast else here / 'cast_names_kim.csv'
+    cast_path = Path(a.cast) if a.cast else here / 'cast_names.csv'
     ovr_path = Path(a.overrides) if a.overrides else here / 'name_mask_overrides.csv'
     map_path = Path(a.cast_map) if a.cast_map else here / 'cast_map_overrides.csv'
     cast_map = {}

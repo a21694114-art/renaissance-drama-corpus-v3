@@ -16,5 +16,4 @@ entertainment) remain in original spelling.
 Not yet in the repository: `texts/` (all-language view), `texts_no_prologue_epilogue/` and its
 regularized twin, `kept_nodes.csv` (678 MB) and `node_fates.csv`; a clean-directory rerun of the
 reproduction commands; schema fixtures for `test_build_corpus.py`; a regression test for
-`build_reg_view.py`. Also not in the repository: `ab_spelling/cast_names_kim.csv` (cast lists derived from
-Kim's `corpus_master.xlsx`).
+`build_reg_view.py`.

@@ -184,7 +184,7 @@ if [ "$MODE" = "map" ]; then
 fi
 if [ "$MODE" = "mask" ]; then
   CH="$OUT_ROOT/chunks_w500"; OVR=(); [ -f "$REPO/ab_spelling/name_mask_overrides.csv" ] && OVR=(--overrides "$REPO/ab_spelling/name_mask_overrides.csv")
-  python "$CODE/01c_mask_names.py" --chunks "$CH" --manifest "$MANIFEST" --cast "$REPO/ab_spelling/cast_names_kim.csv" ${OVR[@]+"${OVR[@]}"}
+  python "$CODE/01c_mask_names.py" --chunks "$CH" --manifest "$MANIFEST" --cast "$REPO/ab_spelling/cast_names.csv" ${OVR[@]+"${OVR[@]}"}
   echo "== review $CH/name_mask_report.csv (per edition) and name_mask_suggestions.csv (not masked); corrections go to ab_spelling/name_mask_overrides.csv (scope,token,decision), then re-run mask"
   echo "== then: caffeinate -i bash ab_spelling/run_b.sh masked"; exit 0
 fi
