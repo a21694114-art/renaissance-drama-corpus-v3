@@ -44,7 +44,7 @@ EXTRA_CSS = """
 .ov h3{font-size:1.02rem;font-weight:700;margin:1.8em 0 .3em;max-width:80ch}.ov .gtag{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-soft);border-radius:999px;padding:1px 10px;margin-left:8px;vertical-align:middle}
 .ov .ovsub{margin:0 0 .6em;max-width:80ch}.ov .ovsum{margin:.2em 0 .8em;max-width:80ch;font-size:.92rem}
 .legend{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.86rem;color:var(--muted);margin:.3em 0 .9em}.legend i{display:inline-block;width:14px;height:11px;border-radius:2px;vertical-align:-1px;margin-right:6px}
-.legend i.s{background:var(--s)}.legend i.o{background:var(--o)}.legend i.g{background:var(--g)}.legend i.band{background:var(--band);height:15px;vertical-align:-3px}.legend i.sen{background:repeating-linear-gradient(135deg,var(--g) 0 3px,#d9d8d2 3px 6px)}
+.legend i.s{background:var(--s)}.legend i.o{background:var(--o)}.legend i.g{background:var(--g)}.legend i.dot{width:12px;height:12px;border-radius:50%}.legend i.hollow{width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid var(--g)}.legend i.band{background:var(--band);height:15px;vertical-align:-3px}.legend i.sen{background:repeating-linear-gradient(135deg,var(--g) 0 3px,#d9d8d2 3px 6px)}
 .chart{margin:0 0 .4em}.tk{position:relative;height:100%;margin-right:56px}.tk .v{position:absolute;top:50%;transform:translateY(-50%);margin-left:6px;font-size:.84rem;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink);background:rgba(255,255,255,.82);padding:0 3px;border-radius:3px}
 .axis{position:relative;height:1.6em;font-size:.76rem;color:var(--faint)}.axis span{position:absolute;transform:translateX(-50%);top:.2em}.axis:before{content:"";position:absolute;left:0;right:0;top:0;border-top:1px solid var(--rule)}
 .axlab{font-size:.8rem;color:var(--muted);margin:.1em 0 0}
@@ -59,9 +59,9 @@ EXTRA_CSS = """
 .jbrow{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:4px 16px;align-items:center;padding:5px 4px;border-top:1px solid var(--rule);cursor:pointer;border-radius:6px}.jbrow:hover,.jbrow:focus-visible{background:var(--soft);outline:none}
 .jbrow.axisrow{cursor:default;border-top:0;padding-top:0}.jbrow.axisrow:hover{background:none}
 .jbl{font-size:.92rem;line-height:1.35}.jbrow.shakes .jbl{font-weight:650;color:var(--accent-ink)}
-.jbb{position:relative;height:24px}.jbb .band{position:absolute;top:0;height:24px;background:var(--band);border-radius:3px;display:block}.jbb .bar{position:absolute;left:0;top:6px;height:12px;background:var(--g);border-radius:0 3px 3px 0;display:block}.jbrow.shakes .jbb .bar{background:var(--s)}.jbrow.sen .jbb .bar{background:repeating-linear-gradient(135deg,var(--g) 0 3px,#d9d8d2 3px 6px)}
+.jbb{position:relative;height:24px}.jbb .band{position:absolute;top:7px;height:10px;background:var(--band);border-radius:2px;display:block}.jbb .dot{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);background:var(--g);box-shadow:0 0 0 2px #fff;display:block}.jbrow.shakes .jbb .dot{background:var(--s)}.jbrow.sen .jbb .dot{background:#fff;box-shadow:0 0 0 2px var(--g),0 0 0 4px #fff}.jbb .v{margin-left:12px}
 .jsep{font-size:.8rem;color:var(--muted);border-top:2px solid var(--rule);margin-top:6px;padding:8px 4px 2px;font-style:italic}
-.ov .chartnote{font-size:.84rem;color:var(--muted);max-width:80ch;margin:.5em 0 0}.fig0 .heat{max-height:none;max-width:min(100%,760px)}.ov details{margin:.6em 0 0;font-size:.9rem}
+.ov .chartnote{font-size:.84rem;color:var(--muted);max-width:80ch;margin:.5em 0 0}.ov details{margin:.6em 0 0;font-size:.9rem}
 @media(max-width:640px){.pbrow,.jbrow{grid-template-columns:minmax(0,1fr);gap:2px}.pbl{padding-bottom:2px}.tk{margin-right:48px}.pbar{grid-template-columns:minmax(0,1fr) 5.6em}.ov h3{font-size:.98rem}}
 """
 
@@ -216,14 +216,15 @@ class Analysis:
                 '<details><summary>Table: the ten topics with both groups\' values</summary><div class="tblx" id="ov1t"></div></details>'
                 # chart 2
                 '<h3 id="ov2h">How far is each playwright\'s topic profile from the rest of the genre? <span class="gtag" id="ov2g"></span></h3>'
-                '<p class="ovsub">Jensen–Shannon divergence between each playwright\'s plays and the other plays of the same genre, on the 53 selected topics. Longer bars indicate a more different distribution of the selected topics — not greater literary originality or quality.</p>'
+                '<p class="ovsub">Jensen–Shannon divergence between each playwright\'s plays and the other plays of the same genre, on the 53 selected topics. A dot further to the right means a more different distribution of the selected topics — not greater literary originality or quality.</p>'
                 '<div class="legend" id="ov2l"></div>'
                 '<div class="chart" id="ov2"></div>'
                 '<p class="axlab">Jensen–Shannon divergence (bits; the same axis for the three genres)</p>'
+                '<p class="ovsum" id="ov2read"></p>'
                 '<p class="chartnote" id="ov2n"></p>'
-                '<p class="chartnote">Each playwright is compared with the remaining plays in the same genre. Plays are weighted equally; only authors represented by at least five plays are shown, collaborative plays included. '
-                'The grey range shows results from randomly selected groups containing the same number of plays (1,000 draws, 2.5–97.5 %). It is a reference range, not a confidence interval, and it does not control for date, company or other factors; small groups can produce large divergences by chance, and the range helps to judge this. '
-                'Unlike the chart above, which uses all words of a play as the denominator, this divergence compares the relative distribution within the 53 selected topics only. Values are not a ranking across genres. Click a playwright to see which topics and which plays account for the difference (section C).</p>'
+                '<details><summary>About this comparison</summary><p class="chartnote">Each playwright is compared with the remaining plays in the same genre. Plays are weighted equally; only authors represented by at least five plays are shown, collaborative plays included. '
+                'The grey line shows results from randomly selected groups containing the same number of plays (1,000 draws, 2.5–97.5 %). It is a reference range, not a confidence interval, and it does not control for date, company or other factors; small groups can produce large divergences by chance, and the range helps to judge this. A dot inside the line does not mean the two groups are the same, and a dot outside it does not mean greater originality or value. '
+                'Unlike the chart above, which uses all words of a play as the denominator, this divergence compares the relative distribution within the 53 selected topics only. Values are not a ranking across genres. Click a playwright to see which topics and which plays account for the difference (section C).</p></details>'
                 '<details><summary>Table: divergence, group size, coverage and the random reference</summary><div class="tblx" id="ov2t"></div></details>'
                 '</div>')
         return html, O
@@ -292,30 +293,6 @@ class Analysis:
             (elig if r['eligible'] else nelig)[r['genre']].append(r)
         thr_txt = ', '.join(f'{g}: ' + ', '.join(f'{E(r["author"])} ({r["n_works_with_signature"]})' for r in sorted(elig[g], key=lambda r: -int(r['n_works_with_signature']))) for g in GENRES3 if elig[g])
         near = ', '.join(f'{E(r["author"])} ({r["genre"]}, {r["n_works_with_signature"]})' for g in GENRES3 for r in nelig[g] if int(r['n_works_with_signature']) >= 4 and int(r['n_usable_as_author']) > 0)
-        fig0 = ''
-        if (self.ab / 'fig0_author_jsd_overview.png').exists():
-            # one reading sentence derived from author_jsd.csv (never hard-coded): where Shakespeare sits, who lies beyond the range
-            def _pos(r):
-                j, lo, hi = _f(r['jsd_cond_bits']), _f(r['random_cond_p2_5']), _f(r['random_cond_p97_5'])
-                return 'above' if j > hi else ('below' if j < lo else 'inside')
-            sh = {r['genre']: _pos(r) for r in aj if r['author'] == 'Shakespeare, William' and r['genre'] in GENRES3}
-            PL = {'comedy': 'comedies', 'tragedy': 'tragedies', 'history': 'history plays'}
-            def _phr(r):
-                sur = r['author'].split(',')[0]
-                return f'the {sur} translations in {r["genre"]}' if r['group_kind'] == 'original author of translated works' else f'{sur}\'s {PL.get(r["genre"], r["genre"] + " plays")}'
-            def _join(items): return items[0] if len(items) == 1 else ', '.join(items[:-1]) + ' and ' + items[-1]
-            above = [_phr(r) for g in GENRES3 for r in aj if r['genre'] == g and r['author'] != 'Shakespeare, William' and _pos(r) == 'above']
-            below = [_phr(r) for g in GENRES3 for r in aj if r['genre'] == g and r['author'] != 'Shakespeare, William' and _pos(r) == 'below']
-            if sh and all(v == 'inside' for v in sh.values()):
-                s1 = 'In all three genres, Shakespeare\'s observed difference lies inside the reference range for random groups of the same size.'
-            else:
-                s1 = 'Shakespeare\'s observed difference lies ' + ', '.join(f'{v} the reference range in {g}' for g, v in sh.items()) + '.'
-            s2 = f' By contrast, {_join(above)} lie beyond the upper end of their ranges' if above else ''
-            s3 = (f', while {_join(below)} lie below the lower end.' if above else f' {_join(below)} lie below the lower end of their ranges.') if below else ('.' if above else '')
-            fig0 = (f'<p><b>{s1}</b>{E(s2)}{E(s3)} The dots and grey lines below show this author by author.</p>'
-                    '<div class="fig fig0"><a href="data/author_by_genre/fig0_author_jsd_overview.png"><img class="heat" src="data/author_by_genre/fig0_author_jsd_overview.png" alt="Authors and the rest of their genre: observed difference in topic distribution (dot) against the reference range of random same-size groups (grey line), three genres"></a>'
-                    '<p class="fighint">Click to enlarge · <a href="data/author_by_genre/fig0_author_jsd_overview.png" download>PNG</a> · <a href="data/author_by_genre/fig0_author_jsd_overview.svg" download>SVG</a> · <a href="data/author_by_genre/fig0_author_jsd_overview_data.csv" download>plotted values</a></p></div>'
-                    '<p class="note">Dot = the observed difference between the author\'s plays and the rest of the same genre, further right = larger; grey line = the middle 95 % of 1,000 random groups with the same number of plays, a reference for the group size rather than a confidence interval. A dot inside the line does not mean the two groups are the same, and a dot outside it does not mean greater originality or value. Sampling method, signature rule and measure: see the detailed view below.</p>')
         figB = ('<div class="fig"><a href="data/author_by_genre/fig1_author_jsd_random_reference.png"><img class="heat" src="data/author_by_genre/fig1_author_jsd_random_reference.png" alt="Author JSD against the rest of the genre with the random same-size reference"></a><p class="fighint">Dot = observed divergence (all signatures); tick = median of 1,000 random groups of the same size; grey bar = their 2.5–97.5 % range. Click to enlarge.</p></div>'
                 if (self.ab / 'fig1_author_jsd_random_reference.png').exists() else '')
         tabsH = '<div class="tabs" data-group="H">' + ''.join(f'<button data-tab="{g}"{" class=on" if i == 0 else ""}>{g.capitalize()}</button>' for i, g in enumerate(GENRES3) if (self.ab / f'fig2_topic_diff_heatmap_{g}.png').exists()) + '</div>'
@@ -327,14 +304,10 @@ class Analysis:
                          + ''.join(f'<tr><td>{E(r["genre"])}</td><td>{E(r["author"])}</td><td>{self.work_link(r["work_id"], r["title"])}</td><td class="small">{E(r["author_field"])}</td><td class="small">{E(r["deep_authors_display"])}</td><td class="small">{E(r["effect"])}</td></tr>' for r in pend) + '</tbody></table></div></details>')
         secB = ('<h2 id="authors">B. Authors within genre</h2>'
                 '<p>The same comparison for every author with at least five works carrying their signature in a genre (collaborations included; the rest of the genre must have at least ten works). JSD is the Jensen–Shannon divergence (log2, bits) between the author group\'s mean topic profile and the rest of the genre\'s; a larger value means the two profiles are further apart. It is a difference of topic distributions, not a ranking of originality or quality.</p>'
-                + fig0
-                + '<details' + (' open' if not fig0 else '') + '><summary>Detailed statistical view: method, full figure with the random median, all statistics, eligibility and held-out records</summary>'
-                '<p class="note"><b>Method.</b> Each author group is every work of the genre carrying the author\'s signature (collaborations included; translators never form a group; Seneca\'s group consists of English translations and is shown apart with the same values). The measure is the Jensen–Shannon divergence between the group\'s mean topic profile and the rest of the genre\'s, on the relative distribution within the 53 selected topics, works equal-weighted — not the share of all words. For the reference range, plays of the same genre were drawn at random in the same number 1,000 times and compared with the remaining plays; the range is the 2.5–97.5 % band of those comparisons. Rows compare each author with the rest of the genre, not authors with each other.</p>'
                 '<div class="caveat">The grey range is what the same divergence looks like for 1,000 random groups of the same number of works drawn from the same genre — a reference for the group size, <b>not a confidence interval</b>, and it does not control for period or company. Each genre has its own rest group and its own sizes, so values are not comparable across genres and each panel is sorted on its own. Translators are never an author group; Seneca\'s group consists of English translations and is labelled as the original author of translated works. Different authors\' groups can share collaborative works, so the rows are not independent.</div>'
                 + figB + tblB
                 + f'<p class="note">Eligible authors and works with their signature — {thr_txt}. Just below the threshold (4 works): {near or "none"}. Roles are taken from the DEEP author list (translator / reviser / doubtful); the author field of the corpus is the signature rule and was not changed.</p>'
-                + pend_html + '</details>'
-                + '<h3>Where the profiles differ most</h3>' + tabsH + panelsH)
+                + pend_html + '<h3>Where the profiles differ most</h3>' + tabsH + panelsH)
         # ---- section C: interactive ----------------------------------------------------------------------------------
         authors_by_genre = defaultdict(list)
         for r in rowsB: authors_by_genre[r['genre']].append(r['author'])
@@ -412,12 +385,17 @@ $('ov1').querySelectorAll('.pbrow[role=button]').forEach(row=>{const tog=()=>{co
 row.addEventListener('click',e=>{const j=e.target.closest('[data-jump]');if(j){e.preventDefault();jump(gg,O.shakes,j.dataset.jump);return;}if(e.target.closest('a'))return;tog();});
 row.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a')){e.preventDefault();tog();}});});};
 const renderAuthors=gg=>{const A=O.authors[gg]||[];const mx=O.jmax;$('ov2g').textContent=cap(gg);
-$('ov2l').innerHTML='<span><i class="s"></i>Shakespeare</span><span><i class="g"></i>other playwrights</span>'+(A.some(r=>r[2])?'<span><i class="sen"></i>original author of plays in English translation</span>':'')+'<span><i class="band"></i>range of 1,000 random groups of the same size (2.5–97.5 %)</span>';
+$('ov2l').innerHTML='<span><i class="dot s"></i>Shakespeare</span><span><i class="dot g"></i>other playwrights</span>'+(A.some(r=>r[2])?'<span><i class="hollow"></i>original author of plays in English translation</span>':'')+'<span><i class="band"></i>range of 1,000 random groups of the same size (2.5–97.5 %)</span>';
 let h='',sep=false;A.forEach(r=>{const [full,sur,apart,n,nB,j,lo,hi,med,pct,cA,cB,best]=r;if(apart&&!sep){sep=true;h+='<div class="jsep">Shown separately: original author of plays in English translation (not one of the playwrights)</div>';}
 const name=apart?sur+' (English translations, '+n+' plays)':sur+' ('+n+' plays)';const isS=full===O.shakes;
-h+='<div class="jbrow'+(isS?' shakes':'')+(apart?' sen':'')+'" role="button" tabindex="0" data-a="'+att(full)+'" data-t="'+best+'" title="'+att(full)+': JSD '+j.toFixed(4)+' bits; '+n+' plays vs '+nB+'; coverage '+Math.round(100*cA)+' % / '+Math.round(100*cB)+' %; '+ord(pct)+' percentile of the random groups ('+lo.toFixed(3)+'–'+hi.toFixed(3)+')"><div class="jbl">'+esc(name)+'</div><div class="jbb"><div class="tk"><b class="band" style="left:'+(100*lo/mx)+'%;width:'+(100*(hi-lo)/mx)+'%"></b><i class="bar" style="width:'+(100*j/mx)+'%"></i><span class="v" style="left:'+(100*j/mx)+'%">'+j.toFixed(2)+'</span></div></div></div>';});
+h+='<div class="jbrow'+(isS?' shakes':'')+(apart?' sen':'')+'" role="button" tabindex="0" data-a="'+att(full)+'" data-t="'+best+'" title="'+att(full)+': JSD '+j.toFixed(4)+' bits; '+n+' plays vs '+nB+'; coverage '+Math.round(100*cA)+' % / '+Math.round(100*cB)+' %; '+ord(pct)+' percentile of the random groups ('+lo.toFixed(3)+'–'+hi.toFixed(3)+')"><div class="jbl">'+esc(name)+'</div><div class="jbb"><div class="tk"><b class="band" style="left:'+(100*lo/mx)+'%;width:'+(100*(hi-lo)/mx)+'%"></b><i class="dot" style="left:'+(100*j/mx)+'%"></i><span class="v" style="left:'+(100*j/mx)+'%">'+j.toFixed(2)+'</span></div></div></div>';});
 h+='<div class="jbrow axisrow"><div class="jbl"></div><div class="jbb">'+axis(mx,0.1,1)+'</div></div>';$('ov2').innerHTML=h;
-const k=A.filter(r=>!r[2]).length;$('ov2n').textContent=(k<=2?'Only '+(k===1?'one playwright reaches':(k===2?'two':k)+' playwrights reach')+' the threshold of five '+O.nouns[gg][1]+'. ':'')+'Sorted by the observed divergence; the bar is the result, the grey range is what groups of this size get by chance.';
+const k=A.filter(r=>!r[2]).length;const pos=r=>r[5]>r[7]?'above':(r[5]<r[6]?'below':'inside');const nm=r=>r[2]?'the '+r[1]+' translations':r[1]+'’s '+O.nouns[gg][1];const jn=x=>x.length===1?x[0]:x.slice(0,-1).join(', ')+' and '+x[x.length-1];
+const shk=A.find(r=>r[0]===O.shakes);const ab=A.filter(r=>r[0]!==O.shakes&&pos(r)==='above').map(nm);const be=A.filter(r=>r[0]!==O.shakes&&pos(r)==='below').map(nm);
+let rd=shk?'<b>Shakespeare’s observed difference lies '+pos(shk)+' the reference range for random groups of the same size.</b>':'';
+const cap1=x=>x.charAt(0).toUpperCase()+x.slice(1);if(ab.length)rd+=' '+cap1(jn(ab))+' lie beyond the upper end of their ranges'+(be.length?', while '+jn(be)+' lie below the lower end.':'.');else if(be.length)rd+=' '+cap1(jn(be))+' lie below the lower end of their ranges.';
+$('ov2read').innerHTML=rd;
+$('ov2n').textContent=(k<=2?'Only '+(k===1?'one playwright reaches':(k===2?'two':k)+' playwrights reach')+' the threshold of five '+O.nouns[gg][1]+'. ':'')+'Dot = observed difference, further right = larger; grey line = the middle 95 % of random groups with the same number of plays, a reference for the group size, not a confidence interval. Sorted by the observed value.';
 $('ov2t').innerHTML='<table class="small"><thead><tr><th>author group</th><th class="num">plays</th><th class="num">rest of genre</th><th class="num">JSD, selected topics (bits)</th><th class="num">random groups: median (2.5–97.5 %)</th><th class="num">percentile</th><th class="num">coverage % group / rest</th></tr></thead><tbody>'+A.map(r=>'<tr><td>'+esc(r[0])+(r[2]?' <span class="sub">English translations</span>':'')+'</td><td class="num">'+r[3]+'</td><td class="num">'+r[4]+'</td><td class="num">'+r[5].toFixed(4)+'</td><td class="num">'+r[8].toFixed(3)+' ('+r[6].toFixed(3)+'–'+r[7].toFixed(3)+')</td><td class="num">'+r[9].toFixed(1)+'</td><td class="num">'+Math.round(100*r[10])+' / '+Math.round(100*r[11])+'</td></tr>').join('')+'</tbody></table>';
 $('ov2').querySelectorAll('.jbrow[role=button]').forEach(row=>{const go=()=>jump(gg,row.dataset.a,row.dataset.t);row.addEventListener('click',go);row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});};
 const renderOv=()=>{const gg=og.value;renderTopics(gg);renderAuthors(gg);if(g.value!==gg&&D.authors[gg]&&D.authors[gg].length){g.value=gg;fillA();fillT();show();}
