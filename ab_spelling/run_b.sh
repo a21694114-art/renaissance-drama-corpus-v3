@@ -32,6 +32,8 @@
 #   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh authors   # author groups vs the rest of the genre (22; comedy/tragedy/history, JSD, random same-size reference,
 #                                       # leave-one-out, sole-signature, topic differences, figures) → aggregate/author_by_genre/; B_DRAWS, B_MINAUTHOR, B_GENRES override
 #   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh chronology   # topic shares by decade of the adopted date (23; British Drama first, Annals fallback; needs company/) → aggregate/chronology/
+#   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh window      # 24: common time-window check (B_WINDOW=1590,1613) -> aggregate/window_check/
+#   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh authorfig   # 25: simplified author-divergence overview figure (dot + reference line) from author_jsd.csv -> author_by_genre/fig0_*
 #   B_RUNS_SUFFIX=masked_hdb10 bash ab_spelling/run_b.sh freeze   # copy the small result files that let a reader trace the published analysis
 #                                       # (doc_topics, run.json, topic_sheet.csv, aggregate tables, chunk map/meta, environment) into ab_spelling/results_<suffix>/
 #   B_RUNS_SUFFIX=masked bash ab_spelling/run_b.sh sheet|review|pack|aggregate|genrefig|figures|map|site   # run any later step on that second run
@@ -92,6 +94,19 @@ if [ "$MODE" = "authors" ]; then
   python "$CODE/22_author_by_genre.py" --agg "$D/aggregate" --sheet "$D/topic_sheet.csv" --chunk-meta "$CH/chunk_meta.csv" ${DEEPARGS[@]+"${DEEPARGS[@]}"} \
       --genres "${B_GENRES:-comedy,tragedy,history}" --min-author "${B_MINAUTHOR:-5}" --min-rest "${B_MINREST:-10}" --draws "${B_DRAWS:-1000}" --seed "$SEED" ${B_USE:+--use "$B_USE"}
   echo "== done: $D/aggregate/author_by_genre/methods.md"; exit 0
+fi
+if [ "$MODE" = "authorfig" ]; then
+  D="$RUNS/topics_B_s$SEED"
+  [ -f "$D/aggregate/author_by_genre/author_jsd.csv" ] || { echo "run authors first ($D/aggregate/author_by_genre/author_jsd.csv missing)"; exit 1; }
+  python "$CODE/25_author_overview_fig.py" --ab "$D/aggregate/author_by_genre" --genres "${B_GENRES:-comedy,tragedy,history}"
+  echo "== done: $D/aggregate/author_by_genre/fig0_author_jsd_overview.{png,svg}  (then: run_b.sh site)"; exit 0
+fi
+if [ "$MODE" = "window" ]; then
+  D="$RUNS/topics_B_s$SEED"
+  [ -f "$D/aggregate/chronology/dates_by_work.csv" ] || { echo "run chronology first ($D/aggregate/chronology/dates_by_work.csv missing)"; exit 1; }
+  python "$CODE/24_window_check.py" --agg "$D/aggregate" --sheet "$D/topic_sheet.csv" --window "${B_WINDOW:-1590,1613}" \
+      --genres "${B_GENRES:-comedy,tragedy,history}" ${B_USE:+--use "$B_USE"}
+  echo "== done: $D/aggregate/window_check/summary.md"; exit 0
 fi
 if [ "$MODE" = "chronology" ]; then
   D="$RUNS/topics_B_s$SEED"

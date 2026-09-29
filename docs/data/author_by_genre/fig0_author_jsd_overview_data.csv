@@ -1,0 +1,18 @@
+genre,row,author,label,n_plays,n_rest,jsd,lo,hi,shakespeare,apart,percentile
+comedy,1,"Lyly, John",Lyly · 7 plays,7,144,0.5228,0.1701,0.3802,False,False,100.0
+comedy,2,"Marston, John",Marston · 6 plays,6,145,0.315,0.1935,0.4292,False,False,66.3
+comedy,3,"Middleton, Thomas",Middleton · 10 plays,10,141,0.2687,0.1357,0.3166,False,False,88.1
+comedy,4,"Shirley, James",Shirley · 16 plays,16,135,0.2598,0.0967,0.2264,False,False,99.4
+comedy,5,"Jonson, Ben",Jonson · 15 plays,15,136,0.2348,0.1007,0.2364,False,False,97.2
+comedy,6,"Chapman, George",Chapman · 7 plays,7,144,0.2347,0.1755,0.3958,False,False,28.8
+comedy,7,"Shakespeare, William",Shakespeare · 11 plays,11,140,0.2129,0.1231,0.2953,True,False,65.7
+comedy,8,"Dekker, Thomas",Dekker · 10 plays,10,141,0.2115,0.1328,0.3122,False,False,56.0
+comedy,9,"Fletcher, John",Fletcher · 6 plays,6,145,0.1705,0.1923,0.4121,False,False,0.9
+tragedy,1,"Middleton, Thomas",Middleton · 5 plays,5,106,0.5099,0.2443,0.5387,False,False,95.5
+tragedy,2,"Marlowe, Christopher",Marlowe · 6 plays,6,105,0.4935,0.2224,0.5018,False,False,96.9
+tragedy,3,"Massinger, Philip",Massinger · 6 plays,6,105,0.4041,0.2186,0.5056,False,False,80.0
+tragedy,4,"Shakespeare, William",Shakespeare · 12 plays,12,99,0.2773,0.1412,0.3444,True,False,82.0
+tragedy,5,"Chapman, George",Chapman · 5 plays,5,106,0.2132,0.2349,0.5458,False,False,0.7
+tragedy,6,"Seneca, Lucius Annaeus",Seneca in English translation · 9 plays,9,101,0.6686,0.1793,0.4051,False,True,100.0
+history,1,"Heywood, Thomas",Heywood · 5 plays,5,29,0.3144,0.1834,0.5678,False,False,45.8
+history,2,"Shakespeare, William",Shakespeare · 11 plays,11,23,0.2948,0.161,0.3743,True,False,81.3

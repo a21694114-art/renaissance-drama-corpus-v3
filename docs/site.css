@@ -78,5 +78,5 @@ input.filterbox{width:100%;max-width:520px;font:inherit;font-size:.95rem;padding
 .jbl{font-size:.92rem;line-height:1.35}.jbrow.shakes .jbl{font-weight:650;color:var(--accent-ink)}
 .jbb{position:relative;height:24px}.jbb .band{position:absolute;top:0;height:24px;background:var(--band);border-radius:3px;display:block}.jbb .bar{position:absolute;left:0;top:6px;height:12px;background:var(--g);border-radius:0 3px 3px 0;display:block}.jbrow.shakes .jbb .bar{background:var(--s)}.jbrow.sen .jbb .bar{background:repeating-linear-gradient(135deg,var(--g) 0 3px,#d9d8d2 3px 6px)}
 .jsep{font-size:.8rem;color:var(--muted);border-top:2px solid var(--rule);margin-top:6px;padding:8px 4px 2px;font-style:italic}
-.ov .chartnote{font-size:.84rem;color:var(--muted);max-width:80ch;margin:.5em 0 0}.ov details{margin:.6em 0 0;font-size:.9rem}
+.ov .chartnote{font-size:.84rem;color:var(--muted);max-width:80ch;margin:.5em 0 0}.fig0 .heat{max-height:none;max-width:min(100%,760px)}.ov details{margin:.6em 0 0;font-size:.9rem}
 @media(max-width:640px){.pbrow,.jbrow{grid-template-columns:minmax(0,1fr);gap:2px}.pbl{padding-bottom:2px}.tk{margin-right:48px}.pbar{grid-template-columns:minmax(0,1fr) 5.6em}.ov h3{font-size:.98rem}}

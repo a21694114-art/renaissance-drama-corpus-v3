@@ -61,7 +61,7 @@ EXTRA_CSS = """
 .jbl{font-size:.92rem;line-height:1.35}.jbrow.shakes .jbl{font-weight:650;color:var(--accent-ink)}
 .jbb{position:relative;height:24px}.jbb .band{position:absolute;top:0;height:24px;background:var(--band);border-radius:3px;display:block}.jbb .bar{position:absolute;left:0;top:6px;height:12px;background:var(--g);border-radius:0 3px 3px 0;display:block}.jbrow.shakes .jbb .bar{background:var(--s)}.jbrow.sen .jbb .bar{background:repeating-linear-gradient(135deg,var(--g) 0 3px,#d9d8d2 3px 6px)}
 .jsep{font-size:.8rem;color:var(--muted);border-top:2px solid var(--rule);margin-top:6px;padding:8px 4px 2px;font-style:italic}
-.ov .chartnote{font-size:.84rem;color:var(--muted);max-width:80ch;margin:.5em 0 0}.ov details{margin:.6em 0 0;font-size:.9rem}
+.ov .chartnote{font-size:.84rem;color:var(--muted);max-width:80ch;margin:.5em 0 0}.fig0 .heat{max-height:none;max-width:min(100%,760px)}.ov details{margin:.6em 0 0;font-size:.9rem}
 @media(max-width:640px){.pbrow,.jbrow{grid-template-columns:minmax(0,1fr);gap:2px}.pbl{padding-bottom:2px}.tk{margin-right:48px}.pbar{grid-template-columns:minmax(0,1fr) 5.6em}.ov h3{font-size:.98rem}}
 """
 
@@ -292,6 +292,30 @@ class Analysis:
             (elig if r['eligible'] else nelig)[r['genre']].append(r)
         thr_txt = ', '.join(f'{g}: ' + ', '.join(f'{E(r["author"])} ({r["n_works_with_signature"]})' for r in sorted(elig[g], key=lambda r: -int(r['n_works_with_signature']))) for g in GENRES3 if elig[g])
         near = ', '.join(f'{E(r["author"])} ({r["genre"]}, {r["n_works_with_signature"]})' for g in GENRES3 for r in nelig[g] if int(r['n_works_with_signature']) >= 4 and int(r['n_usable_as_author']) > 0)
+        fig0 = ''
+        if (self.ab / 'fig0_author_jsd_overview.png').exists():
+            # one reading sentence derived from author_jsd.csv (never hard-coded): where Shakespeare sits, who lies beyond the range
+            def _pos(r):
+                j, lo, hi = _f(r['jsd_cond_bits']), _f(r['random_cond_p2_5']), _f(r['random_cond_p97_5'])
+                return 'above' if j > hi else ('below' if j < lo else 'inside')
+            sh = {r['genre']: _pos(r) for r in aj if r['author'] == 'Shakespeare, William' and r['genre'] in GENRES3}
+            PL = {'comedy': 'comedies', 'tragedy': 'tragedies', 'history': 'history plays'}
+            def _phr(r):
+                sur = r['author'].split(',')[0]
+                return f'the {sur} translations in {r["genre"]}' if r['group_kind'] == 'original author of translated works' else f'{sur}\'s {PL.get(r["genre"], r["genre"] + " plays")}'
+            def _join(items): return items[0] if len(items) == 1 else ', '.join(items[:-1]) + ' and ' + items[-1]
+            above = [_phr(r) for g in GENRES3 for r in aj if r['genre'] == g and r['author'] != 'Shakespeare, William' and _pos(r) == 'above']
+            below = [_phr(r) for g in GENRES3 for r in aj if r['genre'] == g and r['author'] != 'Shakespeare, William' and _pos(r) == 'below']
+            if sh and all(v == 'inside' for v in sh.values()):
+                s1 = 'In all three genres, Shakespeare\'s observed difference lies inside the reference range for random groups of the same size.'
+            else:
+                s1 = 'Shakespeare\'s observed difference lies ' + ', '.join(f'{v} the reference range in {g}' for g, v in sh.items()) + '.'
+            s2 = f' By contrast, {_join(above)} lie beyond the upper end of their ranges' if above else ''
+            s3 = (f', while {_join(below)} lie below the lower end.' if above else f' {_join(below)} lie below the lower end of their ranges.') if below else ('.' if above else '')
+            fig0 = (f'<p><b>{s1}</b>{E(s2)}{E(s3)} The dots and grey lines below show this author by author.</p>'
+                    '<div class="fig fig0"><a href="data/author_by_genre/fig0_author_jsd_overview.png"><img class="heat" src="data/author_by_genre/fig0_author_jsd_overview.png" alt="Authors and the rest of their genre: observed difference in topic distribution (dot) against the reference range of random same-size groups (grey line), three genres"></a>'
+                    '<p class="fighint">Click to enlarge · <a href="data/author_by_genre/fig0_author_jsd_overview.png" download>PNG</a> · <a href="data/author_by_genre/fig0_author_jsd_overview.svg" download>SVG</a> · <a href="data/author_by_genre/fig0_author_jsd_overview_data.csv" download>plotted values</a></p></div>'
+                    '<p class="note">Dot = the observed difference between the author\'s plays and the rest of the same genre, further right = larger; grey line = the middle 95 % of 1,000 random groups with the same number of plays, a reference for the group size rather than a confidence interval. A dot inside the line does not mean the two groups are the same, and a dot outside it does not mean greater originality or value. Sampling method, signature rule and measure: see the detailed view below.</p>')
         figB = ('<div class="fig"><a href="data/author_by_genre/fig1_author_jsd_random_reference.png"><img class="heat" src="data/author_by_genre/fig1_author_jsd_random_reference.png" alt="Author JSD against the rest of the genre with the random same-size reference"></a><p class="fighint">Dot = observed divergence (all signatures); tick = median of 1,000 random groups of the same size; grey bar = their 2.5–97.5 % range. Click to enlarge.</p></div>'
                 if (self.ab / 'fig1_author_jsd_random_reference.png').exists() else '')
         tabsH = '<div class="tabs" data-group="H">' + ''.join(f'<button data-tab="{g}"{" class=on" if i == 0 else ""}>{g.capitalize()}</button>' for i, g in enumerate(GENRES3) if (self.ab / f'fig2_topic_diff_heatmap_{g}.png').exists()) + '</div>'
@@ -303,10 +327,14 @@ class Analysis:
                          + ''.join(f'<tr><td>{E(r["genre"])}</td><td>{E(r["author"])}</td><td>{self.work_link(r["work_id"], r["title"])}</td><td class="small">{E(r["author_field"])}</td><td class="small">{E(r["deep_authors_display"])}</td><td class="small">{E(r["effect"])}</td></tr>' for r in pend) + '</tbody></table></div></details>')
         secB = ('<h2 id="authors">B. Authors within genre</h2>'
                 '<p>The same comparison for every author with at least five works carrying their signature in a genre (collaborations included; the rest of the genre must have at least ten works). JSD is the Jensen–Shannon divergence (log2, bits) between the author group\'s mean topic profile and the rest of the genre\'s; a larger value means the two profiles are further apart. It is a difference of topic distributions, not a ranking of originality or quality.</p>'
+                + fig0
+                + '<details' + (' open' if not fig0 else '') + '><summary>Detailed statistical view: method, full figure with the random median, all statistics, eligibility and held-out records</summary>'
+                '<p class="note"><b>Method.</b> Each author group is every work of the genre carrying the author\'s signature (collaborations included; translators never form a group; Seneca\'s group consists of English translations and is shown apart with the same values). The measure is the Jensen–Shannon divergence between the group\'s mean topic profile and the rest of the genre\'s, on the relative distribution within the 53 selected topics, works equal-weighted — not the share of all words. For the reference range, plays of the same genre were drawn at random in the same number 1,000 times and compared with the remaining plays; the range is the 2.5–97.5 % band of those comparisons. Rows compare each author with the rest of the genre, not authors with each other.</p>'
                 '<div class="caveat">The grey range is what the same divergence looks like for 1,000 random groups of the same number of works drawn from the same genre — a reference for the group size, <b>not a confidence interval</b>, and it does not control for period or company. Each genre has its own rest group and its own sizes, so values are not comparable across genres and each panel is sorted on its own. Translators are never an author group; Seneca\'s group consists of English translations and is labelled as the original author of translated works. Different authors\' groups can share collaborative works, so the rows are not independent.</div>'
                 + figB + tblB
                 + f'<p class="note">Eligible authors and works with their signature — {thr_txt}. Just below the threshold (4 works): {near or "none"}. Roles are taken from the DEEP author list (translator / reviser / doubtful); the author field of the corpus is the signature rule and was not changed.</p>'
-                + pend_html + '<h3>Where the profiles differ most</h3>' + tabsH + panelsH)
+                + pend_html + '</details>'
+                + '<h3>Where the profiles differ most</h3>' + tabsH + panelsH)
         # ---- section C: interactive ----------------------------------------------------------------------------------
         authors_by_genre = defaultdict(list)
         for r in rowsB: authors_by_genre[r['genre']].append(r['author'])
@@ -339,7 +367,7 @@ class Analysis:
                 + '<div class="tblx"><table class="small"><thead><tr><th>genre</th><th class="num">A: works vs rest</th><th class="num">B: works vs rest</th><th class="num">A: JSD cond.</th><th class="num">B: JSD cond.</th><th class="num">A: permutation median</th><th class="num">B: random median</th><th>check</th></tr></thead><tbody>' + xrows + '</tbody></table></div>'
                 + '<h3>Leave-one-out</h3><p class="note">Each work of an author group dropped in turn, the rest of the genre unchanged; Δ = divergence without the work minus the observed value, so a positive Δ means the work was pulling the group towards the rest of the genre and a negative Δ that it was pushing the divergence up.</p>' + loo_html
                 + '<h3>Sole-signature variant</h3><p class="note">Author group restricted to works whose author field carries the author alone (only where five or more exist); the rest of the genre still excludes every work with the author\'s signature. Smaller groups: not directly comparable with the all-signature value or with the random reference.</p>' + sole_html
-                + '<h3>Downloads</h3><p class="note">Author comparison (22_author_by_genre.py):</p>' + self.dl('author_by_genre', ['author_jsd.csv', 'random_reference.csv', 'topic_differences.csv', 'topic_contributions.csv', 'leave_one_out.csv', 'sole_signature.csv', 'comparison_works.csv', 'author_counts.csv', 'role_pending.csv', 'author_split_check.csv', 'methods.md', 'checks.json', 'provenance.json', 'fig1_author_jsd_random_reference.svg', 'fig2_topic_diff_heatmap_comedy.svg', 'fig2_topic_diff_heatmap_tragedy.svg', 'fig2_topic_diff_heatmap_history.svg'])
+                + '<h3>Downloads</h3><p class="note">Author comparison (22_author_by_genre.py):</p>' + self.dl('author_by_genre', ['author_jsd.csv', 'random_reference.csv', 'topic_differences.csv', 'topic_contributions.csv', 'leave_one_out.csv', 'sole_signature.csv', 'comparison_works.csv', 'author_counts.csv', 'role_pending.csv', 'author_split_check.csv', 'methods.md', 'checks.json', 'provenance.json', 'fig0_author_jsd_overview.png', 'fig0_author_jsd_overview.svg', 'fig0_author_jsd_overview_data.csv', 'fig1_author_jsd_random_reference.svg', 'fig2_topic_diff_heatmap_comedy.svg', 'fig2_topic_diff_heatmap_tragedy.svg', 'fig2_topic_diff_heatmap_history.svg'])
                 + '<p class="note">Shakespeare comparison (18_shakespeare.py):</p>' + self.dl('shakespeare', ['topic_by_genre.csv', 'jsd.csv', 'shared_inventory.csv', 'shakespeare_works.csv', 'genre_pairs_jsd.csv', 'genre_shared_inventory.csv', 'shakespeare_summary.md'])
                 + '<details><summary>Exploratory play-level comparisons (supplementary; downloads only)</summary><p class="note">Each play\'s topic profile measured against the mean profile of each genre group (Jensen–Shannon divergence on the included topics, the play left out of its own genre\'s mean). This measures how far a play\'s topic distribution sits from the genre averages; it does not reassign any play to another genre, and it is not shown as a result on this page.</p>' + self.dl('shakespeare', ['play_distances.csv', 'shakespeare_play_distances.csv', 'shakespeare_play_pull.csv', 'play_distances_summary.md', 'othello_panel.png']) + '</details>')
         JS = ('<script>const D=' + json.dumps(D, ensure_ascii=False) + ';const O=' + json.dumps(O, ensure_ascii=False) + ';'
