@@ -1,0 +1,23 @@
+{
+  "script": "24_window_check.py",
+  "date": "2026-09-28T06:08:28",
+  "python": "3.10.12",
+  "numpy": "2.2.6",
+  "args": {
+    "agg": "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/aggregate",
+    "sheet": "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/topic_sheet.csv",
+    "chronology": "",
+    "shakespeare": "",
+    "window": "1590,1613",
+    "genres": "comedy,tragedy,history",
+    "use": "included",
+    "top": 10,
+    "out": ""
+  },
+  "inputs": {
+    "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/aggregate/work_topic_share.csv": "58f3fb62671405594111a52b180a4ca4b030f65d34847732c84b80ef29925270",
+    "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/aggregate/chronology/dates_by_work.csv": "748c627a712e656c072957773e7801a5830bbc29423d2c81d8bfb440ca896724",
+    "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/topic_sheet.csv": "fc4239342dc826ec807140304dd4250ee9fb41d57cd324dde94e02c1ea08e663",
+    "/sessions/rcw-01k27acjfhnr3aihwe7bktsa/mnt/topic modeling/sep6/ab_spelling_out/runs_Qwen_Qwen3-Embedding-0.6B_masked_hdb10/topics_B_s42/aggregate/shakespeare/topic_by_genre.csv": "eee920683e1398c1a9c84a2e15842271316493dcaca1ea314d18b6350709e7f8"
+  }
+}

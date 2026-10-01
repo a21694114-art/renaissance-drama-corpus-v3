@@ -20,7 +20,8 @@ import csv, datetime, json, re, shutil
 from collections import Counter, defaultdict
 from pathlib import Path
 
-DATA_DIRS = ('shakespeare', 'author_by_genre', 'chronology', 'company')
+DATA_DIRS = ('shakespeare', 'author_by_genre', 'chronology', 'company', 'window_check')
+FOLDER_ATTR = {'shakespeare': 'sh', 'author_by_genre': 'ab', 'chronology': 'ch', 'company': 'co', 'window_check': 'wc'}
 SKIP_COPY = ('_superseded',)
 GENRES3 = ('comedy', 'tragedy', 'history')
 
@@ -54,6 +55,10 @@ EXTRA_CSS = """
 .pbl{font-size:.92rem;line-height:1.35;align-self:center}.pbl a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--faint)}.pbl a:hover{color:var(--accent)}
 .pbb{min-width:0}.pbar{display:grid;grid-template-columns:minmax(0,1fr) 6.2em;align-items:center;gap:6px;height:16px;margin:2px 0}.pbar .tk{height:16px}.pbar i{position:absolute;left:0;top:2px;height:12px;border-radius:0 3px 3px 0;display:block}.pbar i.s{background:var(--s)}.pbar i.o{background:var(--o)}
 .pbar .m{font-size:.78rem;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums}
+.pbar i,.pbar .v{transition:width .3s ease,left .3s ease}@media (prefers-reduced-motion:reduce){.pbar i,.pbar .v{transition:none}}
+.ptog{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:.2em 0 .6em;font-size:.85rem}.ptog .plab{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;margin-right:4px}
+.ptog button{font:inherit;font-size:.85rem;padding:5px 13px;border:1px solid var(--rule);background:var(--card);border-radius:999px;cursor:pointer;color:var(--muted)}.ptog button.on{background:var(--accent-soft);color:var(--accent-ink);border-color:#b9c9da;font-weight:600}
+.ptog .pbtns{display:inline-flex;gap:6px;flex-wrap:nowrap}.ptog .pscope{color:var(--faint);font-size:.78rem;margin-left:4px}@media (max-width:520px){.ptog .plab{flex-basis:100%;margin:0}.ptog .pscope{flex-basis:100%;margin:0}}.ov .ptag{background:var(--soft);color:var(--muted)}.ov .pernote{font-size:.86rem;color:var(--muted)}
 .pbnote{font-size:.78rem;color:var(--muted);margin:2px 0 0;line-height:1.35}.pbd{font-size:.86rem;color:var(--ink);background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;margin:6px 0 2px;max-width:70ch;line-height:1.5}.pbd b{font-weight:650}.pbd[hidden]{display:none}
 /* chart 2: author divergence bars with the reference band */
 .jbrow{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:4px 16px;align-items:center;padding:5px 4px;border-top:1px solid var(--rule);cursor:pointer;border-radius:6px}.jbrow:hover,.jbrow:focus-visible{background:var(--soft);outline:none}
@@ -83,9 +88,10 @@ def _pct(v, nd=1):
 class Analysis:
     def __init__(self, ctx):
         self.c = ctx; agg = ctx['agg']; self.agg = agg; self.out = ctx['out']; self.E = ctx['E']
-        self.sh = agg / 'shakespeare'; self.ab = agg / 'author_by_genre'; self.ch = agg / 'chronology'; self.co = agg / 'company'
+        self.sh = agg / 'shakespeare'; self.ab = agg / 'author_by_genre'; self.ch = agg / 'chronology'; self.co = agg / 'company'; self.wc = agg / 'window_check'
         self.have = {'shakespeare': (self.sh / 'jsd.csv').exists(), 'author_by_genre': (self.ab / 'author_jsd.csv').exists(),
-                     'chronology': (self.ch / 'coverage.csv').exists(), 'company': (self.co / 'company_coverage.csv').exists()}
+                     'chronology': (self.ch / 'coverage.csv').exists(), 'company': (self.co / 'company_coverage.csv').exists(),
+                     'window_check': (self.wc / 'window_topic_means.csv').exists() and (self.wc / 'window_works.csv').exists() and (self.wc / 'window_counts.csv').exists()}
         self.today = datetime.date.today().isoformat()
         # work → representative edition page, and titles/authors as the site shows them
         self.rep = ctx['rep_edition']; self.work_title = ctx['work_title']; self.work_author = ctx['work_author']
@@ -96,7 +102,7 @@ class Analysis:
     def stamp(self, *dirs):
         parts = []
         for d in dirs:
-            p = getattr(self, {'shakespeare': 'sh', 'author_by_genre': 'ab', 'chronology': 'ch', 'company': 'co'}[d])
+            p = getattr(self, FOLDER_ATTR[d])
             files = [x for x in p.glob('*') if x.is_file()]
             if files:
                 m = max(x.stat().st_mtime for x in files); parts.append(f'{d} ({datetime.date.fromtimestamp(m).isoformat()})')
@@ -113,7 +119,7 @@ class Analysis:
     def dl(self, folder, names, labels=None):
         items = []
         for i, n in enumerate(names):
-            if (getattr(self, {'shakespeare': 'sh', 'author_by_genre': 'ab', 'chronology': 'ch', 'company': 'co'}[folder]) / n).exists():
+            if (getattr(self, FOLDER_ATTR[folder]) / n).exists():
                 items.append(f'<a href="data/{folder}/{n}" download>{self.E(labels[i] if labels else n)}</a>')
         return '<p class="dl">' + ' '.join(items) + '</p>' if items else ''
 
@@ -121,7 +127,7 @@ class Analysis:
         root = self.out / 'data'; root.mkdir(exist_ok=True)
         n = 0
         for d in DATA_DIRS:
-            src = getattr(self, {'shakespeare': 'sh', 'author_by_genre': 'ab', 'chronology': 'ch', 'company': 'co'}[d])
+            src = getattr(self, FOLDER_ATTR[d])
             if not src.exists(): continue
             dst = root / d
             if dst.exists(): shutil.rmtree(dst)
@@ -169,6 +175,46 @@ class Analysis:
         E = self.E
         O = {'genres': [], 'nouns': self.NOUNS, 'topics': {}, 'authors': {}, 'tpage': {str(t): self.tpage(int(t)) for t in self.c['topics']}, 'shakes': 'Shakespeare, William'}
         checks = {}
+        # ---- common-window check (24_window_check.py): the same ten topics, both sides restricted to the window ------
+        # Means come from window_topic_means.csv; the works behind each side (top plays, contributions) are rebuilt from
+        # work_topic_share.csv + the side / in_window flags of window_works.csv, with the same equal-weight rule, and are
+        # cross-checked against the means and counts in the result files. Nothing is re-embedded or re-clustered.
+        win = None
+        if self.have['window_check']:
+            wtm = {(r['genre'], int(r['topic'])): r for r in _csv(self.wc / 'window_topic_means.csv')}
+            wcnt = {(r['genre'], r['variant']): r for r in _csv(self.wc / 'window_counts.csv')}
+            wworks = _csv(self.wc / 'window_works.csv')
+            wts = {r['work_id']: r for r in _csv(self.agg / 'work_topic_share.csv')}
+            wlo, whi = None, None
+            try:   # the window as the check was run with (checks.json "window": [lo, hi]; provenance args.window "lo,hi")
+                v = json.loads((self.wc / 'checks.json').read_text(encoding='utf-8')).get('window')
+                if isinstance(v, (list, tuple)) and len(v) == 2: wlo, whi = int(v[0]), int(v[1])
+            except Exception: pass
+            if wlo is None:
+                try:
+                    v = json.loads((self.wc / 'provenance.json').read_text(encoding='utf-8')).get('args', {}).get('window', '')
+                    wlo, whi = (int(x) for x in re.findall(r'\d{4}', str(v))[:2])
+                except Exception: pass
+            if wlo is None or whi is None:
+                self.warnings.append('window check: window years not found in checks.json / provenance.json — the period toggle is not shown')
+            else:
+                win = {'lo': wlo, 'hi': whi, 'label': f'{wlo}–{whi}', 'counts': {}}
+        def side_rows(g, period, t):
+            """works of one genre & side (period = 'full' | 'window'), the mean share of topic t (% of all words, works
+            equal-weighted), the number of works with the topic, and the works supplying most of the mean."""
+            res = {}
+            for side_key, side_val in (('S', 'Shakespeare'), ('O', 'other')):
+                ws = [w for w in wworks if w['genre'] == g and w['side'] == side_val and (period == 'full' or w['in_window'] == 'yes')]
+                n = len(ws); vals = []
+                for w in ws:
+                    row = wts.get(w['work_id'])
+                    if row is None: self.warnings.append(f'window check: work {w["work_id"]} ({w["title"][:30]}) missing in work_topic_share.csv'); continue
+                    vals.append((100 * _f(row.get(f't{t}'), 0), w))
+                tot = sum(v for v, _ in vals); mean = tot / n if n else 0.0
+                top = sorted(vals, key=lambda x: -x[0])
+                contrib = [[w['work_id'], w['title'], w['author_field'], round(v, 4), round(v / n, 4) if n else 0, round(v / tot, 4) if tot else 0, self.rep.get(w['work_id'], '')] for v, w in top[:3] if v > 0]
+                res[side_key] = {'n': n, 'mean': mean, 'with': sum(1 for v, _ in vals if v > 0), 'top': contrib}
+            return res
         for g in GENRES3:
             rows = [r for r in tbg if r['genre'] == g and r['variant'] == 'attributed']
             if not rows: continue
@@ -179,10 +225,33 @@ class Analysis:
             for r in rows:
                 out.append([int(r['topic']), self.label_of(int(r['topic'])), round(100 * _f(r['mean_shakespeare'], 0), 4), round(100 * _f(r['mean_others'], 0), 4),
                             int(r['works_with_topic_shakespeare'].split('/')[0]), int(r['works_with_topic_others'].split('/')[0]),
-                            r['shakespeare_top_play'], _f(r['shakespeare_top_play_share_of_side'], 0), r['others_top_play'], r['others_top_play_author'], _f(r['others_top_play_share_of_side'], 0)])
+                            r['shakespeare_top_play'], _f(r['shakespeare_top_play_share_of_side'], 0), r['others_top_play'], r['others_top_play_author'], _f(r['others_top_play_share_of_side'], 0), [], []])
             # sum of the ten equal-weighted means = mean over plays of the ten shares (works equal-weighted), per side
             O['topics'][g] = {'nS': int(nS), 'nO': int(nO), 'sumS': round(sum(x[2] for x in out), 2), 'sumO': round(sum(x[3] for x in out), 2), 'rows': out}
             checks[f'{g}_top10_topics'] = [x[0] for x in out]
+            if win is not None and (g, 'window') in wcnt and all((g, x[0]) in wtm for x in out):
+                # full-period works behind each side (same measure; cross-checked against topic_by_genre.csv)
+                for x in out:
+                    sr = side_rows(g, 'full', x[0])
+                    if abs(sr['S']['mean'] - x[2]) > 0.02 or abs(sr['O']['mean'] - x[3]) > 0.02 or sr['S']['with'] != x[4] or sr['O']['with'] != x[5]:
+                        self.warnings.append(f'window check: full-period recomputation differs for {g} T{x[0]}: {sr["S"]["mean"]:.3f}/{sr["O"]["mean"]:.3f} vs {x[2]}/{x[3]}')
+                    if x[6] and sr['S']['top'] and sr['S']['top'][0][1] != x[6]: self.warnings.append(f'window check: top Shakespeare play differs for {g} T{x[0]}: {sr["S"]["top"][0][1]} vs {x[6]}')
+                    if x[8] and sr['O']['top'] and sr['O']['top'][0][1] != x[8]: self.warnings.append(f'window check: top other play differs for {g} T{x[0]}: {sr["O"]["top"][0][1]} vs {x[8]}')
+                    x[11], x[12] = sr['S']['top'], sr['O']['top']
+                # the window: means and counts from the result files, works behind them recomputed from the same shares
+                cw = wcnt[(g, 'window')]; wrows = []
+                for x in out:
+                    m = wtm[(g, x[0])]; sr = side_rows(g, 'window', x[0])
+                    vS, vO = round(_f(m['mean_S_win_pct'], 0), 4), round(_f(m['mean_O_win_pct'], 0), 4)
+                    wS, wO = int(m['works_with_topic_S_win'].split('/')[0]), int(m['works_with_topic_O_win'].split('/')[0])
+                    if abs(sr['S']['mean'] - vS) > 0.02 or abs(sr['O']['mean'] - vO) > 0.02 or sr['S']['with'] != wS or sr['O']['with'] != wO or sr['S']['n'] != int(cw['n_shakespeare']) or sr['O']['n'] != int(cw['n_other']):
+                        self.warnings.append(f'window check: recomputation differs for {g} T{x[0]} in the window: {sr["S"]["mean"]:.3f}/{sr["O"]["mean"]:.3f} ({sr["S"]["with"]}/{sr["S"]["n"]}, {sr["O"]["with"]}/{sr["O"]["n"]}) vs {vS}/{vO} ({m["works_with_topic_S_win"]}, {m["works_with_topic_O_win"]})')
+                    tS = sr['S']['top'][0] if sr['S']['top'] else None; tO = sr['O']['top'][0] if sr['O']['top'] else None
+                    wrows.append([x[0], x[1], vS, vO, wS, wO, tS[1] if tS else '', tS[5] if tS else 0, tO[1] if tO else '', tO[2] if tO else '', tO[5] if tO else 0, sr['S']['top'], sr['O']['top']])
+                if int(cw['n_shakespeare']) != int(nS): self.warnings.append(f'window check: Shakespeare side changes inside the window in {g} ({cw["n_shakespeare"]} vs {nS}) — the page states that it does not')
+                O['topics'][g]['win'] = {'nS': int(cw['n_shakespeare']), 'nO': int(cw['n_other']), 'sumS': round(sum(x[2] for x in wrows), 2), 'sumO': round(sum(x[3] for x in wrows), 2), 'rows': wrows}
+                win['counts'][g] = {'full': [int(nS), int(nO)], 'window': [int(cw['n_shakespeare']), int(cw['n_other'])]}
+                checks[f'{g}_window_counts'] = win['counts'][g]
             # authors: sorted by the observed divergence; Seneca (original author of translated works) shown apart at the end
             arows = [r for r in aj if r['genre'] == g]
             main = sorted([r for r in arows if r['group_kind'] != 'original author of translated works'], key=lambda r: -_f(r['jsd_cond_bits'], 0))
@@ -195,6 +264,9 @@ class Analysis:
                 return [r['author'], surname, sep, int(r['n_A']), int(r['n_B']), _f(r['jsd_cond_bits']), _f(r['random_cond_p2_5']), _f(r['random_cond_p97_5']), _f(r['random_cond_median']),
                         _f(r['observed_cond_percentile']), _f(r['mean_included_share_A']), _f(r['mean_included_share_B']), best]
             O['authors'][g] = [arow(r, 0) for r in main] + [arow(r, 1) for r in apart]
+        if win is not None and win['counts']: O['win'] = win
+        O['dl'] = {'full': [('data/shakespeare/topic_by_genre.csv', 'topic_by_genre.csv')] if (self.sh / 'topic_by_genre.csv').exists() else [],
+                   'window': [(f'data/window_check/{n}', n) for n in ('window_topic_means.csv', 'window_counts.csv', 'window_works.csv', 'summary.md') if (self.wc / n).exists()]}
         allv = [v for g in O['authors'] for a in O['authors'][g] for v in (a[5], a[7]) if v is not None]
         import math
         O['jmax'] = math.ceil(max(allv) * 10 - 1e-9) / 10 if allv else 1.0   # one shared axis for the three genres
@@ -203,19 +275,23 @@ class Analysis:
         html = ('<h2 id="overview">Overview</h2>'
                 '<div class="ov">'
                 '<div class="pick"><label>genre<select id="og">' + ''.join(f'<option value="{g}">{g.capitalize()}</option>' for g in O['genres']) + '</select></label>'
-                '<span class="note" style="margin:0">The choice applies to both charts below and to section C.</span></div>'
+                '<span class="note" style="margin:0">The choice applies to both charts below and to section C.' + (' The period buttons in the first chart apply to that chart only; the author chart and sections A–C use the full corpus.' if 'win' in O else '') + '</span></div>'
                 # chart 1
-                '<h3 id="ov1h">Which topics are most prominent in Shakespeare\'s plays and other plays of the same genre? <span class="gtag" id="ov1g"></span></h3>'
+                '<h3 id="ov1h">Which topics are most prominent in Shakespeare\'s plays and other plays of the same genre? <span class="gtag" id="ov1g"></span><span class="gtag ptag" id="ov1pt" hidden></span></h3>'
                 '<p class="ovsub">Each pair of bars compares the average share of a topic in Shakespeare\'s plays and in other plays of the same genre.</p>'
-                '<div class="legend" id="ov1l"></div>'
+                + (('<div class="ptog" id="ov1p" role="group" aria-label="Comparison period — this chart only"><span class="plab">Comparison period</span>'
+                    '<span class="pbtns"><button type="button" data-p="full" class="on" aria-pressed="true">Full corpus</button><button type="button" data-p="window" aria-pressed="false">' + E(O['win']['label']) + '</button></span>'
+                    '<span class="pscope">applies to this chart and its details only</span></div>'
+                    '<p class="ovsum pernote" id="ov1per"></p>') if 'win' in O else '')
+                + '<div class="legend" id="ov1l"></div>'
                 '<div class="chart" id="ov1"></div>'
                 '<p class="axlab">Average share of a play\'s words (%)</p>'
                 '<p class="ovsum" id="ov1sum"></p>'
-                '<p class="chartnote">Representative editions; plays weighted equally. Percentages include all words in the denominator, including text outside the selected topics. Only the ten most prominent topics are shown: those with the highest simple average of the two groups\' mean shares, in that order on both sides; the axis is scaled to the genre shown. '
+                '<p class="chartnote">Representative editions; plays weighted equally. Percentages include all words in the denominator, including text outside the selected topics. Only the ten most prominent topics are shown: those with the highest simple average of the two groups\' full-corpus mean shares, in that order on both sides' + (' and in both period views; the axis is scaled to the genre shown and fits both views' if 'win' in O else '; the axis is scaled to the genre shown') + '. '
                 '<i>n/N plays</i> = plays of the group with at least one chunk assigned to the topic; a play without one is not thereby without the subject, and 0 means that no chunk of any play in the group was assigned to the topic. Where one play supplies more than half of a group\'s total for a topic, that play is named. Shakespeare\'s side includes collaborative plays carrying his signature. Click a row for the exact values and the works behind them; <a href="methods.html">Methods</a> has the measure.</p>'
-                '<details><summary>Table: the ten topics with both groups\' values</summary><div class="tblx" id="ov1t"></div></details>'
+                '<details><summary>Table: the ten topics with both groups\' values</summary><div class="tblx" id="ov1t"></div><p class="dl" id="ov1dl"></p></details>'
                 # chart 2
-                '<h3 id="ov2h">How far is each playwright\'s topic profile from the rest of the genre? <span class="gtag" id="ov2g"></span></h3>'
+                '<h3 id="ov2h">How far is each playwright\'s topic profile from the rest of the genre? <span class="gtag" id="ov2g"></span>' + ('<span class="gtag ptag">Full corpus</span>' if 'win' in O else '') + '</h3>'
                 '<p class="ovsub">Jensen–Shannon divergence between each playwright\'s plays and the other plays of the same genre, on the 53 selected topics. A dot further to the right means a more different distribution of the selected topics — not greater literary originality or quality.</p>'
                 '<div class="legend" id="ov2l"></div>'
                 '<div class="chart" id="ov2"></div>'
@@ -342,6 +418,7 @@ class Analysis:
                 + '<h3>Sole-signature variant</h3><p class="note">Author group restricted to works whose author field carries the author alone (only where five or more exist); the rest of the genre still excludes every work with the author\'s signature. Smaller groups: not directly comparable with the all-signature value or with the random reference.</p>' + sole_html
                 + '<h3>Downloads</h3><p class="note">Author comparison (22_author_by_genre.py):</p>' + self.dl('author_by_genre', ['author_jsd.csv', 'random_reference.csv', 'topic_differences.csv', 'topic_contributions.csv', 'leave_one_out.csv', 'sole_signature.csv', 'comparison_works.csv', 'author_counts.csv', 'role_pending.csv', 'author_split_check.csv', 'methods.md', 'checks.json', 'provenance.json', 'fig0_author_jsd_overview.png', 'fig0_author_jsd_overview.svg', 'fig0_author_jsd_overview_data.csv', 'fig1_author_jsd_random_reference.svg', 'fig2_topic_diff_heatmap_comedy.svg', 'fig2_topic_diff_heatmap_tragedy.svg', 'fig2_topic_diff_heatmap_history.svg'])
                 + '<p class="note">Shakespeare comparison (18_shakespeare.py):</p>' + self.dl('shakespeare', ['topic_by_genre.csv', 'jsd.csv', 'shared_inventory.csv', 'shakespeare_works.csv', 'genre_pairs_jsd.csv', 'genre_shared_inventory.csv', 'shakespeare_summary.md'])
+                + (('<p class="note">Common-window check (24_window_check.py; the ' + E(O['win']['label']) + ' view of the first overview chart): both sides restricted to works whose estimated first-performance / composition year falls in the window, the measure unchanged; works whose date limits cross a window edge are also placed by their lower and upper limits.</p>' + self.dl('window_check', ['window_topic_means.csv', 'window_counts.csv', 'window_works.csv', 'window_top10.csv', 'window_jsd.csv', 'excluded_by_decade.csv', 'summary.md', 'methods.md', 'checks.json', 'provenance.json'])) if 'win' in O else '')
                 + '<details><summary>Exploratory play-level comparisons (supplementary; downloads only)</summary><p class="note">Each play\'s topic profile measured against the mean profile of each genre group (Jensen–Shannon divergence on the included topics, the play left out of its own genre\'s mean). This measures how far a play\'s topic distribution sits from the genre averages; it does not reassign any play to another genre, and it is not shown as a result on this page.</p>' + self.dl('shakespeare', ['play_distances.csv', 'shakespeare_play_distances.csv', 'shakespeare_play_pull.csv', 'play_distances_summary.md', 'othello_panel.png']) + '</details>')
         JS = ('<script>const D=' + json.dumps(D, ensure_ascii=False) + ';const O=' + json.dumps(O, ensure_ascii=False) + ';'
               r"""
@@ -371,19 +448,38 @@ const nice=mx=>{for(const st of [0.5,1,2,5,10,20]){if(mx/st<=7)return [Math.ceil
 const axis=(mx,st,dec)=>{let h='<div class="tk"><div class="axis">';for(let v=0;v<=mx+1e-9;v+=st){h+='<span style="left:'+(100*v/mx)+'%">'+v.toFixed(dec)+'</span>';}return h+'</div></div>';};
 const jump=(gg,au,tt)=>{if(g.value!==gg){g.value=gg;fillA();}a.value=au;fillT();if(tt!==undefined&&tt!==''&&[...t.options].some(x=>x.value==tt))t.value=String(tt);show();$('which-works').scrollIntoView({behavior:'smooth'});};
 const pl=(k,n)=>k+' of '+n+' play'+(n===1?'':'s');
-const renderTopics=gg=>{const T=O.topics[gg];if(!T){$('ov1').innerHTML='';return;}const nn=O.nouns[gg];const mx=Math.max(...T.rows.flatMap(r=>[r[2],r[3]]));const [ax,st]=nice(mx);
-$('ov1g').textContent=cap(gg);$('ov1l').innerHTML='<span><i class="s"></i>Shakespeare’s plays (n = '+T.nS+')</span><span><i class="o"></i>Other plays in the genre (n = '+T.nO+')</span>';
-$('ov1sum').innerHTML='On average, these ten topics account for <b>'+T.sumS.toFixed(1)+'%</b> of the words in a Shakespeare '+nn[0]+' and <b>'+T.sumO.toFixed(1)+'%</b> of the words in one of the other '+nn[1]+'.';
-let h='';T.rows.forEach(r=>{const [tt,lab,vS,vO,wS,wO,tS,sS,tO,aO,sO]=r;const bar=(cls,v,w,n)=>'<div class="pbar"><div class="tk"><i class="'+cls+'" style="width:'+(100*v/ax)+'%"></i><span class="v" style="left:'+(100*v/ax)+'%">'+fmt(v)+'</span></div><span class="m">'+w+'/'+n+' plays</span></div>';
-let notes='';if(sS>0.5&&tS)notes+='<div class="pbnote">'+Math.round(100*sS)+'% of Shakespeare’s share comes from <i>'+esc(tS)+'</i></div>';if(sO>0.5&&tO)notes+='<div class="pbnote">'+Math.round(100*sO)+'% of the other plays’ share comes from <i>'+esc(tO)+'</i>'+(aO?' ('+esc(aO.split(',')[0])+')':'')+'</div>';
-const zero=v=>v===0?' No chunk of any play on this side was assigned to this topic; this does not mean the plays lack the subject.':'';
-const det='<div class="pbd" hidden><b>T'+tt+' '+esc(lab)+'</b><br>Shakespeare’s plays: '+vS.toFixed(2)+'% of a play’s words on average; '+pl(wS,T.nS)+' with at least one chunk in the topic'+(tS?'; '+esc(tS)+' supplies '+Math.round(100*sS)+'% of this side’s total':'')+'.'+zero(vS)+'<br>Other plays in the genre: '+vO.toFixed(2)+'% on average; '+pl(wO,T.nO)+(tO?'; '+esc(tO)+(aO?' ('+esc(aO)+')':'')+' supplies '+Math.round(100*sO)+'%':'')+'.'+zero(vO)+'<br><a href="'+O.tpage[tt]+'">Explore this topic</a> · <a href="#which-works" data-jump="'+tt+'">Works behind this topic (section C)</a></div>';
-h+='<div class="pbrow" role="button" tabindex="0" aria-expanded="false" data-t="'+tt+'" title="'+att(lab)+': Shakespeare '+vS.toFixed(2)+'%, others '+vO.toFixed(2)+'%"><div class="pbl"><a href="'+O.tpage[tt]+'">'+esc(lab)+'</a><span class="sub">T'+tt+'</span></div><div class="pbb">'+bar('s',vS,wS,T.nS)+bar('o',vO,wO,T.nO)+notes+det+'</div></div>';});
-h+='<div class="pbrow axisrow"><div class="pbl"></div><div class="pbb"><div class="pbar">'+axis(ax,st,st<1?1:0)+'<span class="m"></span></div></div></div>';$('ov1').innerHTML=h;
-$('ov1t').innerHTML='<table class="small"><thead><tr><th>topic</th><th class="num">Shakespeare mean %</th><th class="num">plays with topic</th><th class="num">others mean %</th><th class="num">plays with topic</th><th>top Shakespeare play (share of side)</th><th>top other play (share of side)</th></tr></thead><tbody>'+T.rows.map(r=>'<tr><td><a href="'+O.tpage[r[0]]+'">T'+r[0]+' '+esc(r[1])+'</a></td><td class="num">'+r[2].toFixed(2)+'</td><td class="num">'+r[4]+' / '+T.nS+'</td><td class="num">'+r[3].toFixed(2)+'</td><td class="num">'+r[5]+' / '+T.nO+'</td><td class="small">'+(r[6]?esc(r[6])+' ('+Math.round(100*r[7])+' %)':'—')+'</td><td class="small">'+(r[8]?esc(r[8])+(r[9]?' — '+esc(r[9]):'')+' ('+Math.round(100*r[10])+' %)':'—')+'</td></tr>').join('')+'</tbody></table>';
+let per='full';const hasW=!!O.win;const perLabel=()=>per==='window'?O.win.label:'Full corpus';
+const pdata=gg=>{const T=O.topics[gg];return (per==='window'&&T&&T.win)?T.win:T;};
+const worksTxt=(top,n)=>top&&top.length?top.map(w=>'<i>'+esc(w[1])+'</i>'+(w[2]&&!/Shakespeare/.test(w[2])?' ('+esc(w[2].split(',')[0])+')':'')+' — '+w[3].toFixed(1)+'% of its words, '+Math.round(100*w[5])+'% of this side’s total').join('; '):'';
+const renderTopics=gg=>{const T=O.topics[gg];if(!T){$('ov1').innerHTML='';return;}
+const both=T.rows.concat(T.win?T.win.rows:[]);const mx=Math.max(...both.flatMap(r=>[r[2],r[3]]));const [ax,st]=nice(mx);$('ov1g').textContent=cap(gg);
+let h='';T.rows.forEach(r=>{const [tt,lab]=r;const bar=cls=>'<div class="pbar"><div class="tk"><i class="'+cls+'" style="width:0%"></i><span class="v" style="left:0%"></span></div><span class="m"></span></div>';
+h+='<div class="pbrow" role="button" tabindex="0" aria-expanded="false" data-t="'+tt+'"><div class="pbl"><a href="'+O.tpage[tt]+'">'+esc(lab)+'</a><span class="sub">T'+tt+'</span></div><div class="pbb">'+bar('s')+bar('o')+'<div class="pbn"></div><div class="pbd" hidden></div></div></div>';});
+h+='<div class="pbrow axisrow"><div class="pbl"></div><div class="pbb"><div class="pbar">'+axis(ax,st,st<1?1:0)+'<span class="m"></span></div></div></div>';$('ov1').innerHTML=h;$('ov1').dataset.ax=ax;
 $('ov1').querySelectorAll('.pbrow[role=button]').forEach(row=>{const tog=()=>{const d=row.querySelector('.pbd');const open=d.hasAttribute('hidden');d.toggleAttribute('hidden',!open);row.setAttribute('aria-expanded',open?'true':'false');};
 row.addEventListener('click',e=>{const j=e.target.closest('[data-jump]');if(j){e.preventDefault();jump(gg,O.shakes,j.dataset.jump);return;}if(e.target.closest('a'))return;tog();});
-row.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a')){e.preventDefault();tog();}});});};
+row.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a')){e.preventDefault();tog();}});});
+updateTopics(gg);};
+const updateTopics=gg=>{const T=O.topics[gg];if(!T)return;const P=pdata(gg);const W=per==='window'&&P!==T;const ax=+$('ov1').dataset.ax;const nn=O.nouns[gg];
+$('ov1l').innerHTML='<span><i class="s"></i>Shakespeare’s plays (n = '+P.nS+')</span><span><i class="o"></i>Other plays in the genre (n = '+P.nO+(W?', of '+T.nO:'')+')</span>';
+const pt=$('ov1pt');if(pt){pt.textContent=perLabel();pt.hidden=!hasW;}
+const pn=$('ov1per');if(pn){pn.innerHTML=W?'<b>The same Shakespeare plays remain in both views. Switching the period changes the comparison group.</b> Here the other plays are the '+P.nO+' of the '+T.nO+' other '+nn[1]+' whose estimated first-performance / composition year falls in '+O.win.label+' (inclusive; British Drama date first, Annals fallback). Dates inside the window are not matched between the two groups.':
+'<b>Full corpus:</b> all '+T.nO+' other '+nn[1]+', whatever their date. The '+O.win.label+' view keeps the same Shakespeare plays and restricts the other plays to those with an estimated first-performance / composition year in that window.';}
+$('ov1sum').innerHTML='On average, these ten topics account for <b>'+P.sumS.toFixed(1)+'%</b> of the words in a Shakespeare '+nn[0]+' and <b>'+P.sumO.toFixed(1)+'%</b> of the words in one of the other '+nn[1]+(W?' of '+O.win.label:'')+'.';
+const rows=$('ov1').querySelectorAll('.pbrow[role=button]');
+P.rows.forEach((r,i)=>{const row=rows[i];if(!row)return;const [tt,lab,vS,vO,wS,wO,tS,sS,tO,aO,sO,cS,cO]=r;const bars=row.querySelectorAll('.pbar');
+[[bars[0],vS,wS,P.nS],[bars[1],vO,wO,P.nO]].forEach(([b,v,w,n])=>{b.querySelector('i').style.width=(100*v/ax)+'%';const vv=b.querySelector('.v');vv.style.left=(100*v/ax)+'%';vv.textContent=fmt(v);b.querySelector('.m').textContent=w+'/'+n+' plays';});
+let notes='';if(sS>0.5&&tS)notes+='<div class="pbnote">'+Math.round(100*sS)+'% of Shakespeare’s share comes from <i>'+esc(tS)+'</i></div>';if(sO>0.5&&tO)notes+='<div class="pbnote">'+Math.round(100*sO)+'% of the other plays’ share comes from <i>'+esc(tO)+'</i>'+(aO?' ('+esc(aO.split(',')[0])+')':'')+'</div>';
+row.querySelector('.pbn').innerHTML=notes;
+const zero=v=>v===0?' No chunk of any play on this side was assigned to this topic; this does not mean the plays lack the subject.':'';
+const wS_=worksTxt(cS,P.nS),wO_=worksTxt(cO,P.nO);
+row.querySelector('.pbd').innerHTML='<b>T'+tt+' '+esc(lab)+'</b>'+(hasW?' <span class="sub">'+esc(perLabel())+'</span>':'')+'<br>Shakespeare’s plays'+(W?' (all '+P.nS+' fall in '+O.win.label+')':'')+': '+vS.toFixed(2)+'% of a play’s words on average; '+pl(wS,P.nS)+' with at least one chunk in the topic'+(tS?'; '+esc(tS)+' supplies '+Math.round(100*sS)+'% of this side’s total':'')+'.'+zero(vS)+(wS_?'<br><span class="sub" style="margin:0">Works supplying most of this side’s mean (share ÷ '+P.nS+' plays):</span> '+wS_+'.':'')
++'<br>Other plays in the genre'+(W?' ('+P.nO+' of '+T.nO+', '+O.win.label+')':'')+': '+vO.toFixed(2)+'% on average; '+pl(wO,P.nO)+(tO?'; '+esc(tO)+(aO?' ('+esc(aO)+')':'')+' supplies '+Math.round(100*sO)+'%':'')+'.'+zero(vO)+(wO_?'<br><span class="sub" style="margin:0">Works supplying most of this side’s mean (share ÷ '+P.nO+' plays):</span> '+wO_+'.':'')
++'<br><a href="'+O.tpage[tt]+'">Explore this topic</a> · <a href="#which-works" data-jump="'+tt+'">Works behind this topic (section C'+(hasW?' — full corpus':'')+')</a>';
+row.title=lab+': Shakespeare '+vS.toFixed(2)+'%, others '+vO.toFixed(2)+'%'+(W?' ('+O.win.label+')':'');});
+$('ov1t').innerHTML='<table class="small"><caption class="sub" style="text-align:left;margin:0 0 4px">'+esc(perLabel())+(W?': other plays restricted to '+O.win.label:'')+'</caption><thead><tr><th>topic</th><th class="num">Shakespeare mean %</th><th class="num">plays with topic</th><th class="num">others mean %</th><th class="num">plays with topic</th><th>top Shakespeare play (share of side)</th><th>top other play (share of side)</th></tr></thead><tbody>'+P.rows.map(r=>'<tr><td><a href="'+O.tpage[r[0]]+'">T'+r[0]+' '+esc(r[1])+'</a></td><td class="num">'+r[2].toFixed(2)+'</td><td class="num">'+r[4]+' / '+P.nS+'</td><td class="num">'+r[3].toFixed(2)+'</td><td class="num">'+r[5]+' / '+P.nO+'</td><td class="small">'+(r[6]?esc(r[6])+' ('+Math.round(100*r[7])+' %)':'—')+'</td><td class="small">'+(r[8]?esc(r[8])+(r[9]?' — '+esc(r[9]):'')+' ('+Math.round(100*r[10])+' %)':'—')+'</td></tr>').join('')+'</tbody></table>';
+const dl=$('ov1dl');if(dl&&O.dl){const L=O.dl[W?'window':'full']||[];dl.innerHTML=L.length?'Data for this view: '+L.map(f=>'<a href="'+f[0]+'" download>'+esc(f[1])+'</a>').join(' '):'';}};
+const ptog=$('ov1p');if(ptog){ptog.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.p===per)return;per=b.dataset.p;ptog.querySelectorAll('button').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false');});updateTopics(og.value);}));}
 const renderAuthors=gg=>{const A=O.authors[gg]||[];const mx=O.jmax;$('ov2g').textContent=cap(gg);
 $('ov2l').innerHTML='<span><i class="dot s"></i>Shakespeare</span><span><i class="dot g"></i>other playwrights</span>'+(A.some(r=>r[2])?'<span><i class="hollow"></i>original author of plays in English translation</span>':'')+'<span><i class="band"></i>range of 1,000 random groups of the same size (2.5–97.5 %)</span>';
 let h='',sep=false;A.forEach(r=>{const [full,sur,apart,n,nB,j,lo,hi,med,pct,cA,cB,best]=r;if(apart&&!sep){sep=true;h+='<div class="jsep">Shown separately: original author of plays in English translation (not one of the playwrights)</div>';}
@@ -522,7 +618,8 @@ document.querySelectorAll('.tabs').forEach(tb=>tb.querySelectorAll('button').for
             h += ('<h2>Author comparison (Shakespeare and his contemporaries)</h2>'
                   '<p>Author groups: within one genre group, every work whose author field contains the name (collaborations included) against every other work of the genre; Anonymous is never a group; groups need at least five works and the rest at least ten. Roles are read from the DEEP author list: a translator is never an author group, a reviser counts as a signature, an original author of English translations (Seneca) is compared but labelled as such, and a work in which the author\'s role cannot be resolved is held out of that author\'s comparison. The corpus author field is split against DEEP\'s separated name list so that concatenated collaborators are never read as one person; the field itself was not changed and no attribution research was done.</p>'
                   '<p>Divergence: Jensen–Shannon divergence, log2, in bits (the divergence, not the square-rooted distance), between the two groups\' mean topic profiles (works equal-weighted): once on the included topics renormalised to 100 %, once with the remaining words as an extra bin (which checks the effect of coverage differences). Reference: 1,000 random groups of the same number of works drawn from the same genre, the rest as the other group — a reference range for the group size, not a confidence interval; period and company are not controlled. Leave-one-out drops each work of the author group in turn with the rest unchanged; a sole-signature variant is reported where at least five sole-signature works exist. Per topic the pages give the difference of mean shares in percentage points and the works supplying most of each side\'s mean (share ÷ number of works); the mean-share difference is not the topic\'s share of the divergence.</p>'
-                  '<p>Overview charts (top of the Authors page): the first chart shows, for the genre chosen, the ten included topics with the highest simple average of the two groups\' mean shares (Shakespeare\'s plays; all other plays of the genre), the same topics in the same order on both sides. The values are the equal-weighted mean shares of all words from the Shakespeare comparison table, not renormalised to the ten topics or to the included topics; the sum quoted is the mean over plays of the ten shares. "n/N plays" counts the plays of a group with at least one chunk assigned to the topic; a play without one is not thereby without the subject. Where one play supplies more than half of a group\'s total for a topic, the play is named. The second chart shows the divergence on the selected topics (the "conditional" value of the author table) for every author group of the genre, sorted by value, with the 2.5–97.5 % range of the 1,000 random same-size groups as a band and one axis for the three genres; Seneca\'s English translations are shown apart from the playwrights. The two charts use different denominators — shares of all words in the first, the relative distribution within the selected topics in the second — and neither is a ranking of originality or quality.</p>')
+                  '<p>Overview charts (top of the Authors page): the first chart shows, for the genre chosen, the ten included topics with the highest simple average of the two groups\' mean shares (Shakespeare\'s plays; all other plays of the genre), the same topics in the same order on both sides. The values are the equal-weighted mean shares of all words from the Shakespeare comparison table, not renormalised to the ten topics or to the included topics; the sum quoted is the mean over plays of the ten shares. "n/N plays" counts the plays of a group with at least one chunk assigned to the topic; a play without one is not thereby without the subject. Where one play supplies more than half of a group\'s total for a topic, the play is named. The second chart shows the divergence on the selected topics (the "conditional" value of the author table) for every author group of the genre, sorted by value, with the 2.5–97.5 % range of the 1,000 random same-size groups as a band and one axis for the three genres; Seneca\'s English translations are shown apart from the playwrights. The two charts use different denominators — shares of all words in the first, the relative distribution within the selected topics in the second — and neither is a ranking of originality or quality.</p>'
+                  + ('<p>Comparison period (first overview chart): a toggle restricts the comparison to the pre-set common window of the window check (24_window_check.py) — both sides limited to works whose estimated first-performance / composition year (British Drama first, Annals fallback) falls in the window, both ends inclusive; publication years and date limits are not used for membership. The ten topics and their order stay those of the full corpus, the axis is shared by the two views, and the measure is unchanged (works equal-weighted, shares of all words). Means and plays-with-topic counts come from window_topic_means.csv and window_counts.csv; the works behind each side are rebuilt from work_topic_share.csv with the window\'s work list and are cross-checked against those files at build time. All of Shakespeare\'s dated plays in the three genres fall inside the window, so only the other side changes. The author chart, its random reference and sections A–C use the full corpus; the window does not match dates within it and does not remove the effect of date.</p>' if self.have['window_check'] else ''))
         if self.have['chronology']:
             h += ('<h2>Chronology</h2>'
                   '<p>Date of a work: the British Drama first-performance date; Annals only when British Drama has no entry (reason recorded). The leading year is the adopted year, the bracketed limits of the same source are the limits; licence and revision notes are accompanying events; later revision ranges never widen the limits; publication years are never substituted and the two sources are never averaged. Date kind from the DEEP play type: estimated first performance, composition (closet / unacted), or unclear. Decades are fixed ten-year bins on the adopted year, one per work, none merged; cells with fewer than five works are blank in the figures, five to nine are marked sparse. Sensitivity: works whose limits cross a decade boundary regrouped by lower and by upper limit — boundary cases for the grouping, not alternative datings. '

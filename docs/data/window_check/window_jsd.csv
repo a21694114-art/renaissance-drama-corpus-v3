@@ -1,0 +1,13 @@
+genre,variant,n_shakespeare,n_other,jsd_cond_bits,jsd_rest_bits,note
+comedy,full,11,140,0.2129,0.0696,descriptive; the full-period random reference does not apply to the window groups
+comedy,window,11,64,0.2435,0.0751,descriptive; the full-period random reference does not apply to the window groups
+comedy,window_by_lower_limit,8,69,0.3014,0.0973,descriptive; the full-period random reference does not apply to the window groups
+comedy,window_by_upper_limit,11,68,0.2319,0.0725,descriptive; the full-period random reference does not apply to the window groups
+tragedy,full,12,99,0.2773,0.1099,descriptive; the full-period random reference does not apply to the window groups
+tragedy,window,12,40,0.2711,0.1074,descriptive; the full-period random reference does not apply to the window groups
+tragedy,window_by_lower_limit,10,42,0.2811,0.1112,descriptive; the full-period random reference does not apply to the window groups
+tragedy,window_by_upper_limit,12,41,0.2532,0.1021,descriptive; the full-period random reference does not apply to the window groups
+history,full,11,23,0.2948,0.1099,descriptive; the full-period random reference does not apply to the window groups
+history,window,11,15,0.3666,0.1343,descriptive; the full-period random reference does not apply to the window groups
+history,window_by_lower_limit,9,16,0.3493,0.1234,descriptive; the full-period random reference does not apply to the window groups
+history,window_by_upper_limit,11,19,0.2793,0.1037,descriptive; the full-period random reference does not apply to the window groups

@@ -1,0 +1,31 @@
+genre,rank_full,topic,label,mean_S_full_pct,mean_O_full_pct,diff_full_pp,mean_S_win_pct,mean_O_win_pct,diff_win_pp,change_in_diff_pp,works_with_topic_S_win,works_with_topic_O_win,in_window_top10,rank_in_window_top10
+comedy,1,0,"Court life: dukes, favour and honour",3.8388,4.7628,-0.9239,3.8388,3.1741,0.6647,1.5886,6/11,21/64,yes,1
+comedy,2,4,Love-longing and the lover's complaint,4.3578,1.6232,2.7346,4.3578,1.9957,2.3621,-0.3725,5/11,22/64,yes,2
+comedy,3,6,"Money, debt and credit",2.5389,1.7533,0.7857,2.5389,2.1997,0.3392,-0.4465,2/11,24/64,yes,3
+comedy,4,3,"Sickness, physic and doctors",1.3941,2.5373,-1.1432,1.3941,2.201,-0.8069,0.3363,3/11,15/64,yes,4
+comedy,5,1,"Death, grief and revenge",1.3905,1.7809,-0.3904,1.3905,1.4778,-0.0873,0.3031,3/11,19/64,yes,5
+comedy,6,16,"Gallantry: ladies, lordships and compliment",1.1346,1.3936,-0.259,1.1346,1.3208,-0.1862,0.0728,3/11,20/64,yes,7
+comedy,7,22,"Shepherds, flocks and Pan",1.721,0.3566,1.3644,1.721,0.3151,1.4059,0.0415,2/11,3/64,yes,8
+comedy,8,32,Rings and jewels as tokens,1.5646,0.4891,1.0755,1.5646,0.4057,1.1589,0.0834,3/11,8/64,yes,9
+comedy,9,28,"Marriage-making: weddings, brides and matches",0.8684,1.0772,-0.2088,0.8684,0.8772,-0.0088,0.2,3/11,14/64,no,
+comedy,10,8,"Captains, gallants and cheats",0.0,1.8587,-1.8587,0.0,2.7513,-2.7513,-0.8926,0/11,16/64,yes,6
+tragedy,1,2,"Roman politics: senate, consuls and civil war",11.8565,5.7312,6.1253,11.8565,9.2944,2.562,-3.5633,4/12,13/40,yes,1
+tragedy,2,1,"Death, grief and revenge",3.978,7.0612,-3.0832,3.978,7.3957,-3.4177,-0.3345,8/12,29/40,yes,2
+tragedy,3,7,The Trojan war: conflict and its aftermath,4.8018,2.3865,2.4152,4.8018,0.5672,4.2346,1.8194,2/12,4/40,yes,4
+tragedy,4,0,"Court life: dukes, favour and honour",1.1664,4.7309,-3.5645,1.1664,5.4068,-4.2404,-0.6759,2/12,9/40,yes,3
+tragedy,5,4,Love-longing and the lover's complaint,2.2432,0.7074,1.5359,2.2432,0.7082,1.5351,-0.0008,4/12,8/40,yes,6
+tragedy,6,17,"Eastern conquest: Persians, Turks and soldans",0.0,2.6909,-2.6909,0.0,0.3416,-0.3416,2.3493,0/12,3/40,no,
+tragedy,7,25,"Kings, power and law: political sententiae",0.2461,1.6514,-1.4053,0.2461,2.9821,-2.736,-1.3307,1/12,9/40,yes,5
+tragedy,8,34,"Thebes and royal catastrophe: siege, slaughter and funeral rites",0.2222,1.4588,-1.2366,0.2222,0.0,0.2222,1.4588,1/12,0/40,no,
+tragedy,9,15,Friars and holy orders in plot,1.1984,0.3594,0.8391,1.1984,0.3564,0.842,0.0029,1/12,3/40,no,
+tragedy,10,6,"Money, debt and credit",1.1946,0.2893,0.9053,1.1946,0.4946,0.7,-0.2053,1/12,6/40,yes,10
+history,1,10,"England and France: war, embassy and peace",13.4537,3.1904,10.2633,13.4537,2.0893,11.3645,1.1012,6/11,4/15,yes,1
+history,2,18,"Rebels, barons and the king's wars at home",3.106,9.158,-6.052,3.106,8.8857,-5.7797,0.2723,5/11,7/15,yes,2
+history,3,43,York and Lancaster: dynastic claims and conflict,5.7717,1.7777,3.9941,5.7717,0.8583,4.9135,0.9194,6/11,4/15,yes,3
+history,4,31,"Popes, cardinals and the crown",3.3419,3.3259,0.016,3.3419,2.8599,0.482,0.466,2/11,3/15,yes,4
+history,5,0,"Court life: dukes, favour and honour",2.2699,3.2736,-1.0037,2.2699,1.5885,0.6814,1.6851,6/11,2/15,yes,7
+history,6,1,"Death, grief and revenge",2.4974,2.1152,0.3822,2.4974,1.8647,0.6327,0.2505,7/11,5/15,yes,6
+history,7,5,"Christian faith, sin and salvation",0.0,3.1458,-3.1458,0.0,4.8235,-4.8235,-1.6777,0/11,2/15,yes,5
+history,8,38,"Death, parting and grief at court",1.6544,1.4876,0.1668,1.6544,1.9339,-0.2796,-0.4464,4/11,7/15,yes,8
+history,9,14,"Royal love, favour and dynastic relationships",0.9006,1.4371,-0.5365,0.9006,2.2036,-1.303,-0.7665,3/11,4/15,yes,9
+history,10,15,Friars and holy orders in plot,0.0,2.3287,-2.3287,0.0,1.8442,-1.8442,0.4845,0/11,1/15,no,

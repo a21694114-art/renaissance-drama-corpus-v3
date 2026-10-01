@@ -1,0 +1,127 @@
+{
+  "window": [
+    1590,
+    1613
+  ],
+  "topics": 53,
+  "genres": {
+    "comedy": {
+      "n_full": [
+        11,
+        140
+      ],
+      "n_window": [
+        11,
+        64
+      ],
+      "n_by_lower": [
+        8,
+        69
+      ],
+      "n_by_upper": [
+        11,
+        68
+      ],
+      "shakespeare_outside_window": [],
+      "undated": [],
+      "boundary_works": [
+        "A New Wonder, A Woman Never Vexed",
+        "Fair Em, the Miller's Daughter of Manchester",
+        "Friar Bacon and Friar Bongay",
+        "Midas",
+        "Monsieur Thomas (Father's Own Son)",
+        "Mother Bombie",
+        "The Comedy of Errors",
+        "The Honest Lawyer",
+        "The Night Walker, or The Little Thief",
+        "The Sophister (Fallacy, or The Troubles of Great Hermenia)",
+        "The Taming of the Shrew",
+        "The Two Gentlemen of Verona",
+        "The Wise Woman of Hogsdon",
+        "The Woman in the Moon"
+      ],
+      "full_period_means_match_topic_by_genre": true,
+      "mismatching_topics": [],
+      "full_period_counts_match_18": true,
+      "full_period_jsd_matches_18": true
+    },
+    "tragedy": {
+      "n_full": [
+        12,
+        99
+      ],
+      "n_window": [
+        12,
+        40
+      ],
+      "n_by_lower": [
+        10,
+        42
+      ],
+      "n_by_upper": [
+        12,
+        41
+      ],
+      "shakespeare_outside_window": [],
+      "undated": [],
+      "boundary_works": [
+        "1 Jeronimo, with the Wars of Portugal",
+        "Caesar and Pompey (The Wars of Caesar and Pompey)",
+        "Chabot, Admiral of France",
+        "Dido, Queen of Carthage",
+        "Master Arden of Faversham in Kent",
+        "Nero (Piso's Conspiracy)",
+        "Orestes",
+        "The Duchess of Malfi",
+        "The Jew of Malta",
+        "The Massacre at Paris",
+        "The Raging Turk, or Bajazet the Second",
+        "The Spanish Tragedy (Hieronimo is Mad Again)",
+        "The Wars of Cyrus, King of Persia",
+        "Thierry and Theodoret",
+        "Titus Andronicus"
+      ],
+      "full_period_means_match_topic_by_genre": true,
+      "mismatching_topics": [],
+      "full_period_counts_match_18": true,
+      "full_period_jsd_matches_18": true
+    },
+    "history": {
+      "n_full": [
+        11,
+        23
+      ],
+      "n_window": [
+        11,
+        15
+      ],
+      "n_by_lower": [
+        9,
+        16
+      ],
+      "n_by_upper": [
+        11,
+        19
+      ],
+      "shakespeare_outside_window": [],
+      "undated": [],
+      "boundary_works": [
+        "1 The Troublesome Reign of King John",
+        "2 Henry the Sixth (The First Part of the Contention betwixt the Two Famous Houses of York and Lancaster)",
+        "2 The Troublesome Reign of King John",
+        "3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth)",
+        "Fuimus Troes (The True Trojans)",
+        "Jack Straw",
+        "Mortimer His Fall",
+        "The Love of King David and Fair Bathsheba",
+        "The True Chronicle of King Leir (King Lear and his Three Daughters)",
+        "The True Tragedy of Richard the Third",
+        "The Valiant Scot"
+      ],
+      "full_period_means_match_topic_by_genre": true,
+      "mismatching_topics": [],
+      "full_period_counts_match_18": true,
+      "full_period_jsd_matches_18": true
+    }
+  }
+}

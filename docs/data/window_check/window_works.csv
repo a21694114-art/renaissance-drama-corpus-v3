@@ -1,0 +1,297 @@
+genre,side,work_id,title,author_field,adopted_year,lower_limit,upper_limit,date_kind,source_used,flags,in_window,in_window_by_lower_limit,in_window_by_upper_limit,boundary_work,undated,included_share
+comedy,Shakespeare,393,The Comedy of Errors,"Shakespeare, William",1592,1589,1593,first performance,British Drama,,yes,no,yes,yes,,0.3745
+comedy,Shakespeare,120.5,The Taming of the Shrew,"Shakespeare, William",1592,1589,1592,first performance,British Drama,,yes,no,yes,yes,,0.149
+comedy,Shakespeare,391,The Two Gentlemen of Verona,"Shakespeare, William",1594,1587,1598,first performance,British Drama,,yes,no,yes,yes,,0.1723
+comedy,Shakespeare,170,A Midsummer Night's Dream,"Shakespeare, William",1595,1594,1598,first performance,British Drama,,yes,yes,yes,,,0.3674
+comedy,Shakespeare,150,Love's Labor's Lost,"Shakespeare, William",1596,1594,1597,first performance,British Drama,,yes,yes,yes,,,0.2999
+comedy,Shakespeare,172,The Merchant of Venice (The Jew of Venice),"Shakespeare, William",1596,1596,1598,first performance,British Drama,,yes,yes,yes,,,0.3839
+comedy,Shakespeare,187,The Merry Wives of Windsor,"Shakespeare, William",1597,1597,1602,first performance,British Drama,revised (accompanying event),yes,yes,yes,,,0.1873
+comedy,Shakespeare,168,Much Ado About Nothing,"Shakespeare, William",1598,,,first performance,British Drama,,yes,yes,yes,,,0.5003
+comedy,Shakespeare,394,As You Like It,"Shakespeare, William",1600,1598,1600,first performance,British Drama,,yes,yes,yes,,,0.5463
+comedy,Shakespeare,396,"Twelfth Night, or What You Will","Shakespeare, William",1601,1600,1602,first performance,British Drama,,yes,yes,yes,,,0.0775
+comedy,Shakespeare,390,The Tempest,"Shakespeare, William",1611,1610,1611,first performance,British Drama,,yes,yes,yes,,,0.2411
+comedy,other,15,The Play of the Weather,"Heywood, John",1528,1519,1528,first performance,British Drama,,no,no,no,,,0.2383
+comedy,other,37,Thersites,"Udall, Nicholas",1537,1530,1537,first performance,British Drama,,no,no,no,,,0.3618
+comedy,other,46,Ralph Roister Doister,"Udall, Nicholas",1552,1550,1553,first performance,British Drama,,no,no,no,,,0.1283
+comedy,other,67,Gammer Gurton's Needle,"Stevenson, William",1553,1551,1554,first performance,British Drama,,no,no,no,,,0.1373
+comedy,other,58,Damon and Pithias,"Edwards, Richard",1564,1564,1565,first performance,British Drama,,no,no,no,,,0.2156
+comedy,other,60,Supposes,"Gascoigne, GeorgeAriosto, Ludovico",1566,,,first performance,British Drama,,no,no,no,,,0.2253
+comedy,other,73,1 Promos and Cassandra,"Whetstone, George",1577,1575,1578,kind unclear,British Drama,,no,no,no,,,0.3805
+comedy,other,74,2 Promos and Cassandra,"Whetstone, George",1577,1575,1578,kind unclear,British Drama,,no,no,no,,,0.3257
+comedy,other,84,"Campaspe (Alexander, Campaspe, and Diogenes)","Lyly, John",1583,,,first performance,British Drama,,no,no,no,,,0.275
+comedy,other,86,Fedele and Fortunia (Two Italian Gentlemen),"Pasqualigo, LuigiMunday, Anthony",1583,1579,1584,first performance,British Drama,,no,no,no,,,0.2039
+comedy,other,105,Gallathea,"Lyly, John",1584,1584,1585,first performance,British Drama,,no,no,no,,,0.4828
+comedy,other,82,Sappho and Phao,"Lyly, John",1584,,,first performance,British Drama,,no,no,no,,,0.4398
+comedy,other,91,Andria (The Woman from Andros),"Terence (Publius Terentius Afer)Kyffin, Maurice",1587,,,composition,British Drama,,no,no,no,,,0.5186
+comedy,other,99,"Endymion, the Man in the Moon","Lyly, John",1588,1585,1588,first performance,British Drama,,no,no,no,,,0.0561
+comedy,other,144,The Woman in the Moon,"Lyly, John",1588,1587,1590,first performance,British Drama,,no,no,yes,yes,,0.3957
+comedy,other,121,Friar Bacon and Friar Bongay,"Greene, Robert",1589,1588,1592,first performance,British Drama,,no,no,yes,yes,,0.5294
+comedy,other,106,Midas,"Lyly, John",1589,1589,1590,first performance,British Drama,,no,no,yes,yes,,0.4607
+comedy,other,125,Mother Bombie,"Lyly, John",1589,1587,1590,first performance,British Drama,,no,no,yes,yes,,0.4177
+comedy,other,113,"Fair Em, the Miller's Daughter of Manchester",Anonymous,1590,1589,1591,first performance,British Drama,,yes,no,yes,yes,,0.1763
+comedy,other,173,Summer's Last Will and Testament,"Nashe, Thomas",1592,,,first performance,British Drama,,yes,yes,yes,,,0.2828
+comedy,other,120,The Taming of a Shrew,Anonymous,1594,1592,1594,first performance,British Drama,,yes,yes,yes,,,0.1557
+comedy,other,146,The Blind Beggar of Alexandria (Irus),"Chapman, George",1596,,,first performance,British Drama,,yes,yes,yes,,,0.3069
+comedy,other,281,The Case Is Altered,"Jonson, Ben",1597,,,first performance,British Drama,revised (accompanying event),yes,yes,yes,,,0.3036
+comedy,other,161,1 The Two Angry Women of Abingdon,"Porter, Henry",1598,1598,1599,first performance,British Drama,,yes,yes,yes,,,0.1957
+comedy,other,336,"Englishmen for My Money, or A Woman Will Have Her Will","Haughton, William",1598,,,first performance,British Drama,,yes,yes,yes,,,0.0229
+comedy,other,176,Every Man in His Humor,"Jonson, Ben",1598,,,first performance,British Drama,,yes,yes,yes,,,0.3282
+comedy,other,184,Antonio and Mellida,"Marston, John",1599,1599,1601,first performance,British Drama,,yes,yes,yes,,,0.3509
+comedy,other,163,Every Man Out of His Humor,"Jonson, Ben",1599,,,first performance,British Drama,,yes,yes,yes,,,0.2946
+comedy,other,174,Look About You,Anonymous,1599,1598,1600,first performance,British Drama,,yes,yes,yes,,,0.0595
+comedy,other,175,"The Shoemaker's Holiday, or The Gentle Craft","Dekker, Thomas",1599,,,first performance,British Drama,,yes,yes,yes,,,0.0779
+comedy,other,181,"Cynthia's Revels, or The Fountain of Self-Love","Jonson, Ben",1600,1600,1601,first performance,British Drama,,yes,yes,yes,,,0.3535
+comedy,other,177,Jack Drum's Entertainment (Katherine and Pasquil),"Marston, John",1600,,,first performance,British Drama,,yes,yes,yes,,,0.3716
+comedy,other,198,Patient Grissel,"Dekker, ThomasChettle, HenryHaughton, William",1600,,,first performance,British Drama,,yes,yes,yes,,,0.1247
+comedy,other,164,The Maid's Metamorphosis,Anonymous,1600,,,first performance,British Drama,,yes,yes,yes,,,0.6051
+comedy,other,191,How a Man May Choose a Good Wife from a Bad,Anonymous,1601,1595,1602,first performance,British Drama,,yes,yes,yes,,,0.2779
+comedy,other,186,"Poetaster, or The Arraignment","Jonson, Ben",1601,,,first performance,British Drama,,yes,yes,yes,,,0.6975
+comedy,other,195,"Satiromastix, or The Untrussing of the Humorous Poet","Dekker, Thomas",1601,,,first performance,British Drama,,yes,yes,yes,,,0.339
+comedy,other,252,What You Will,"Marston, John",1601,,,first performance,British Drama,,yes,yes,yes,,,0.2324
+comedy,other,228,Sir Giles Goosecap,"Chapman, George",1602,1601,1603,first performance,British Drama,,yes,yes,yes,,,0.1746
+comedy,other,242,The Fair Maid of the Exchange,Anonymous,1602,1601,1607,first performance,British Drama,,yes,yes,yes,,,0.4125
+comedy,other,226,The Gentleman Usher (Vincentio and Margaret),"Chapman, George",1602,1602,1605,first performance,British Drama,,yes,yes,yes,,,0.5007
+comedy,other,234,Wily Beguiled,Anonymous,1602,1601,1606,first performance,British Drama,,yes,yes,yes,,,0.2248
+comedy,other,264,The Merry Devil of Edmonton,Anonymous,1603,1602,1604,first performance,British Drama,,yes,yes,yes,,,0.1743
+comedy,other,204,1 The Honest Whore (1 The Converted Courtesan) (The Patient Man and the Honest Whore),"Dekker, ThomasMiddleton, Thomas",1604,,,first performance,British Drama,,yes,yes,yes,,,0.3511
+comedy,other,219,All Fools,"Chapman, George",1604,,,first performance,British Drama,,yes,yes,yes,,,0.4201
+comedy,other,267,Law Tricks,"Day, John",1604,1604,1605,first performance,British Drama,,yes,yes,yes,,,0.3562
+comedy,other,297,May Day,"Chapman, George",1604,1601,1608,first performance,British Drama,,yes,yes,yes,,,0.3778
+comedy,other,244,Michaelmas Term,"Middleton, Thomas",1604,1604,1607,first performance,British Drama,,yes,yes,yes,,,0.1328
+comedy,other,214,The Dutch Courtesan (Cockle de Moye),"Marston, John",1604,1603,1605,first performance,British Drama,,yes,yes,yes,,,0.2533
+comedy,other,222,The London Prodigal,Anonymous,1604,1603,1605,first performance,British Drama,,yes,yes,yes,,,0.2507
+comedy,other,243,The Phoenix,"Middleton, Thomas",1604,1603,1604,first performance,British Drama,,yes,yes,yes,,,0.5518
+comedy,other,257,Westward Ho,"Dekker, ThomasWebster, John",1604,,,first performance,British Drama,,yes,yes,yes,,,0.2222
+comedy,other,435,2 The Honest Whore (2 The Converted Courtesan),"Dekker, Thomas",1605,1604,1608,first performance,British Drama,,yes,yes,yes,,,0.2973
+comedy,other,276,"A Mad World, My Masters","Middleton, Thomas",1605,1605,1606,first performance,British Drama,,yes,yes,yes,,,0.443
+comedy,other,262,A Trick to Catch the Old One,"Middleton, Thomas",1605,1604,1606,first performance,British Drama,,yes,yes,yes,,,0.56
+comedy,other,217,Eastward Ho,"Chapman, GeorgeJonson, BenMarston, John",1605,1604,1605,first performance,British Drama,,yes,yes,yes,,,0.1865
+comedy,other,250,Northward Ho,"Dekker, ThomasWebster, John",1605,,,first performance,British Drama,,yes,yes,yes,,,0.2839
+comedy,other,230,"Parasitaster, or The Fawn","Marston, John",1605,1603,1606,first performance,British Drama,,yes,yes,yes,,,0.2708
+comedy,other,301,The Widow's Tears,"Chapman, George",1605,1603,1605,first performance,British Drama,,yes,yes,yes,,,0.21
+comedy,other,255,The Fleer,"Sharpham, Edward",1606,,,first performance,British Drama,,yes,yes,yes,,,0.3092
+comedy,other,235,The Isle of Gulls,"Day, John",1606,,,first performance,British Drama,,yes,yes,yes,,,0.381
+comedy,other,251,"The Puritan, or The Widow of Watling Street (The Puritan Widow)","Middleton, Thomas",1606,1606,1607,first performance,British Drama,,yes,yes,yes,,,0.515
+comedy,other,245,The Woman Hater (The Hungry Courtier),"Beaumont, FrancisFletcher, John",1606,1604,1607,first performance,British Drama,,yes,yes,yes,,,0.456
+comedy,other,259,"Volpone, or The Fox","Jonson, Ben",1606,1605,1606,first performance,British Drama,,yes,yes,yes,,,0.3183
+comedy,other,247,Cupid's Whirligig,"Sharpham, Edward",1607,,,first performance,British Drama,,yes,yes,yes,,,0.3484
+comedy,other,283,Every Woman in Her Humor,Anonymous,1607,1606,1608,first performance,British Drama,,yes,yes,yes,,,0.2577
+comedy,other,268,Humor Out of Breath,"Day, John",1607,1606,1608,first performance,British Drama,,yes,yes,yes,,,0.3546
+comedy,other,263,The Family of Love,"Barry, Lording",1607,1606,1607,first performance,British Drama,,yes,yes,yes,,,0.7253
+comedy,other,316,The Knight of the Burning Pestle,"Beaumont, Francis",1607,,,first performance,British Drama,,yes,yes,yes,,,0.1863
+comedy,other,266,Your Five Gallants (The Five Witty Gallants),"Middleton, Thomas",1607,1605,1608,first performance,British Drama,,yes,yes,yes,,,0.2983
+comedy,other,292,"Ram Alley, or Merry Tricks","Barry, Lording",1608,1607,1608,first performance,British Drama,,yes,yes,yes,,,0.5004
+comedy,other,285,The Two Maids of More-Clacke,"Armin, Robert",1608,1607,1608,first performance,British Drama,,yes,yes,yes,,,0.2448
+comedy,other,299,A Woman Is a Weathercock,"Field, Nathan",1609,1609,1610,first performance,British Drama,,yes,yes,yes,,,0.3196
+comedy,other,356,Amends for Ladies,"Field, Nathan",1610,1610,1611,first performance,British Drama,,yes,yes,yes,,,0.2789
+comedy,other,304,"Epicene, or The Silent Woman","Jonson, Ben",1610,1609,1610,first performance,British Drama,,yes,yes,yes,,,0.2247
+comedy,other,303,The Alchemist,"Jonson, Ben",1610,,,first performance,British Drama,,yes,yes,yes,,,0.3789
+comedy,other,334,The Scornful Lady,"Beaumont, FrancisFletcher, John",1610,1609,1612,first performance,British Drama,,yes,yes,yes,,,0.391
+comedy,other,323,"Greene's Tu Quoque, or The City Gallant","Cooke, John",1611,,,first performance,British Drama,,yes,yes,yes,,,0.446
+comedy,other,305,"If It Be Not Good, the Devil Is in It (If This Be Not a Good Play, the Devil Is in It)","Dekker, Thomas",1611,1611,1612,first performance,British Drama,,yes,yes,yes,,,0.5669
+comedy,other,298,"The Roaring Girl, or Moll Cutpurse","Dekker, ThomasMiddleton, Thomas",1611,,,first performance,British Drama,,yes,yes,yes,,,0.1681
+comedy,other,433,A Chaste Maid in Cheapside,"Middleton, Thomas",1613,,,first performance,British Drama,,yes,yes,yes,,,0.2054
+comedy,other,321,The Hog Hath Lost His Pearl,"Tailor, Robert",1613,,,first performance,British Drama,,yes,yes,yes,,,0.2347
+comedy,other,455,Bartholomew Fair,"Jonson, Ben",1614,,,first performance,British Drama,,no,no,no,,,0.277
+comedy,other,337,The Honest Lawyer,"S., S.",1614,1612,1615,first performance,British Drama,,no,yes,no,yes,,0.3313
+comedy,other,330,Albumazar,"Tomkis, Thomas",1615,,,first performance,British Drama,,no,no,no,,,0.2331
+comedy,other,558,Monsieur Thomas (Father's Own Son),"Fletcher, John",1615,1613,1619,first performance,British Drama,,no,yes,no,yes,,0.2832
+comedy,other,574,"The Night Walker, or The Little Thief","Fletcher, JohnShirley, James",1615,1613,1616,first performance,British Drama,revised (accompanying event),no,yes,no,yes,,0.3067
+comedy,other,457,The Devil Is an Ass,"Jonson, Ben",1616,,,first performance,British Drama,,no,no,no,,,0.5208
+comedy,other,354,Hans Beer-Pot (See Me and See Me Not),"Belchier, Dabridgcourt",1617,,,composition,British Drama,,no,no,no,,,0.2226
+comedy,other,353,"Technogamia, or The Marriages of the Arts","Holyday, Barten",1618,,,first performance,British Drama,,no,no,no,,,0.3462
+comedy,other,515,The Elder Brother,"Fletcher, JohnMassinger, Philip",1618,1615,1625,first performance,British Drama,,no,no,no,,,0.2799
+comedy,other,364,"The Two Merry Milkmaids, or The Best Words Wear the Garland","Cumber, John",1619,,,first performance,British Drama,,no,no,no,,,0.5211
+comedy,other,384,The Heir,"May, Thomas",1620,,,first performance,British Drama,,no,no,no,,,0.1836
+comedy,other,556,"The Sophister (Fallacy, or The Troubles of Great Hermenia)","Zouche, Richard",1620,1610,1631,first performance,British Drama,,no,yes,no,yes,,0.1575
+comedy,other,476,A Match at Midnight,"R., W.",1622,1621,1623,first performance,British Drama,,no,no,no,,,0.4612
+comedy,other,508,The Wonder of A Kingdom,"Dekker, Thomas",1622,1619,1631,first performance,British Drama,,no,no,no,,,0.5671
+comedy,other,535,The Wise Woman of Hogsdon,"Heywood, Thomas",1623,1613,1638,first performance,British Drama,,no,yes,no,yes,,0.3346
+comedy,other,412,A Game at Chess,"Middleton, Thomas",1624,,,first performance,British Drama,,no,no,no,,,0.1112
+comedy,other,460,"A New Wonder, A Woman Never Vexed","Heywood, ThomasRowley, William",1624,1611,1626,first performance,British Drama,,no,yes,no,yes,,0.469
+comedy,other,598,Rule a Wife and Have a Wife,"Fletcher, John",1624,,,first performance,British Drama,,no,no,no,,,0.3498
+comedy,other,441,The School of Compliment (Love Tricks),"Shirley, James",1625,,,first performance,British Drama,,no,no,no,,,0.319
+comedy,other,561,A New Trick to Cheat the Devil,"Davenport, Robert",1626,1624,1634,first performance,British Drama,,no,no,no,,,0.6499
+comedy,other,474,A New Way to Pay Old Debts,"Massinger, Philip",1626,1626,1632,first performance,British Drama,,no,no,no,,,0.1484
+comedy,other,431,"Aristippus, or The Jovial Philosopher","Randolph, Thomas",1626,,,first performance,British Drama,queried detail,no,no,no,,,0.4405
+comedy,other,580,"The Knave in Grain, New Vamped","D., J.",1626,1625,1639,first performance,British Drama,,no,no,no,,,0.3919
+comedy,other,456,The Staple of News,"Jonson, Ben",1626,,,first performance,British Drama,,no,no,no,,,0.257
+comedy,other,425,The Wedding,"Shirley, James",1626,1626,1629,first performance,British Drama,,no,no,no,,,0.39
+comedy,other,414,Apollo Shroving,"Hawkins, William",1627,,,first performance,British Drama,,no,no,no,,,0.7609
+comedy,other,505,The Great Duke of Florence,"Massinger, Philip",1627,,,first performance,British Drama,,no,no,no,,,0.5951
+comedy,other,477,The Witty Fair One,"Shirley, James",1628,,,first performance,British Drama,,no,no,no,,,0.361
+comedy,other,493,A Maidenhead Well Lost,"Heywood, Thomas",1629,1625,1634,first performance,British Drama,,no,no,no,,,0.4828
+comedy,other,429,The Grateful Servant (The Faithful Servant),"Shirley, James",1629,,,first performance,British Drama,,no,no,no,,,0.5535
+comedy,other,442,"The New Inn, or The Light Heart","Jonson, Ben",1629,,,first performance,British Drama,,no,no,no,,,0.1349
+comedy,other,463,The Northern Lass,"Brome, Richard",1629,,,first performance,British Drama,,no,no,no,,,0.2613
+comedy,other,461,Holland's Leaguer,"Marmion, Shackerley",1631,,,first performance,British Drama,,no,no,no,,,0.344
+comedy,other,577,The Humorous Courtier (The Duke),"Shirley, James",1631,,,first performance,British Drama,,no,no,no,,,0.7484
+comedy,other,481,A Fine Companion,"Marmion, Shackerley",1632,1632,1633,first performance,British Drama,,no,no,no,,,0.4676
+comedy,other,462,"Changes, or Love in a Maze","Shirley, James",1632,,,first performance,British Drama,,no,no,no,,,0.2547
+comedy,other,517,Hyde Park,"Shirley, James",1632,,,first performance,British Drama,,no,no,no,,,0.2499
+comedy,other,549,The Ball,"Shirley, James",1632,,,first performance,British Drama,,no,no,no,,,0.2571
+comedy,other,469,The Jealous Lovers,"Randolph, Thomas",1632,,,first performance,British Drama,,no,no,no,,,0.3207
+comedy,other,616,"The Magnetic Lady, or Humors Reconciled","Jonson, Ben",1632,,,first performance,British Drama,,no,no,no,,,0.5518
+comedy,other,465,The Rival Friends,"Hausted, Peter",1632,,,first performance,British Drama,,no,no,no,,,0.234
+comedy,other,617,A Tale of a Tub,"Jonson, Ben",1633,,,first performance,British Drama,,no,no,no,,,0.6987
+comedy,other,479,The Bird in a Cage (The Beauties),"Shirley, James",1633,,,first performance,British Drama,,no,no,no,,,0.4033
+comedy,other,523,The Gamester,"Shirley, James",1633,,,first performance,British Drama,,no,no,no,,,0.3326
+comedy,other,540,Tottenham Court,"Nabbes, Thomas",1633,1633,1634,first performance,British Drama,,no,no,no,,,0.3341
+comedy,other,542,Covent Garden,"Nabbes, Thomas",1634,1633,1634,first performance,British Drama,,no,no,no,,,0.2831
+comedy,other,521,The Example,"Shirley, James",1634,,,first performance,British Drama,,no,no,no,,,0.1941
+comedy,other,494,The Late Lancashire Witches,"Heywood, ThomasBrome, Richard",1634,,,first performance,British Drama,,no,no,no,,,0.2107
+comedy,other,575,The Opportunity,"Shirley, James",1634,,,first performance,British Drama,,no,no,no,,,0.9157
+comedy,other,518,The Lady of Pleasure,"Shirley, James",1635,,,first performance,British Drama,,no,no,no,,,0.441
+comedy,other,568,The City Match,"Mayne, Jasper",1636,,,first performance,British Drama,,no,no,no,,,0.5602
+comedy,other,532,The Fancies Chaste and Noble,"Ford, John",1636,1635,1636,first performance,British Drama,,no,no,no,,,0.1927
+comedy,other,594,The Hollander (Love's Trial),"Glapthorne, Henry",1636,,,first performance,British Drama,,no,no,no,,,0.5469
+comedy,other,538,The Royal Master,"Shirley, James",1637,,,first performance,Annals,licensed (accompanying event),no,no,no,,,0.7489
+comedy,other,586,The Antipodes,"Brome, Richard",1638,1636,1638,first performance,Annals,,no,no,no,,,0.4786
+comedy,other,592,The Constant Maid (Love Will Find Out the Way),"Shirley, James",1638,1630,1640,first performance,Annals,queried limit,no,no,no,,,0.2205
+comedy,other,555,The Lady's Trial,"Ford, John",1638,,,first performance,Annals,licensed (accompanying event),no,no,no,,,0.2032
+comedy,other,591,Wit in a Constable,"Glapthorne, Henry",1638,1636,1638,first performance,Annals,revised (accompanying event),no,no,no,,,0.4184
+tragedy,Shakespeare,107,Master Arden of Faversham in Kent,"AnonymousKyd, ThomasShakespeare, WilliamWatson, Thomas",1590,1587,1592,first performance,British Drama,,yes,no,yes,yes,,0.1757
+tragedy,Shakespeare,117,Titus Andronicus,"Peele, GeorgeShakespeare, William",1592,1584,1594,first performance,British Drama,,yes,no,yes,yes,,0.3919
+tragedy,Shakespeare,143,Romeo and Juliet,"Shakespeare, William",1595,1593,1596,first performance,British Drama,,yes,yes,yes,,,0.3491
+tragedy,Shakespeare,403,Julius Caesar,"Shakespeare, William",1599,,,first performance,British Drama,,yes,yes,yes,,,0.5855
+tragedy,Shakespeare,197,"Hamlet, Prince of Denmark","Shakespeare, William",1600,1600,1602,first performance,British Drama,,yes,yes,yes,,,0.2542
+tragedy,Shakespeare,279,Troilus and Cressida,"Shakespeare, William",1602,1601,1603,first performance,British Drama,,yes,yes,yes,,,0.7143
+tragedy,Shakespeare,379,"Othello, the Moor of Venice","Shakespeare, William",1604,1601,1604,first performance,British Drama,,yes,yes,yes,,,0.251
+tragedy,Shakespeare,265,King Lear,"Shakespeare, William",1605,1605,1606,first performance,British Drama,revised (accompanying event),yes,yes,yes,,,0.226
+tragedy,Shakespeare,405,Antony and Cleopatra,"Shakespeare, William",1606,1606,1607,first performance,British Drama,,yes,yes,yes,,,0.2102
+tragedy,Shakespeare,404,Macbeth,"Shakespeare, WilliamMiddleton, Thomas",1606,1606,1611,first performance,British Drama,,yes,yes,yes,,,0.2118
+tragedy,Shakespeare,402,Timon of Athens,"Shakespeare, WilliamMiddleton, Thomas",1607,1605,1608,first performance,British Drama,,yes,yes,yes,,,0.2294
+tragedy,Shakespeare,401,Coriolanus,"Shakespeare, William",1608,1607,1609,first performance,British Drama,,yes,yes,yes,,,0.6851
+tragedy,other,28,Troas (Seneca's Sixth Tragedy),"Heywood, JasperSeneca, Lucius Annaeus",1558,,,composition,British Drama,,no,no,no,,,0.9627
+tragedy,other,36,Oedipus (Seneca's Fifth Tragedy),"Seneca, Lucius AnnaeusNeville, Alexander",1560,1560,1563,composition,British Drama,,no,no,no,,,0.4636
+tragedy,other,29,Thyestes (Seneca's Second Tragedy),"Heywood, JasperSeneca, Lucius Annaeus",1560,,,composition,British Drama,,no,no,no,,,0.4605
+tragedy,other,34,Hercules Furens (Mad Hercules) (Seneca's First Tragedy),"Heywood, JasperSeneca, Lucius Annaeus",1561,,,composition,British Drama,,no,no,no,,,0.7506
+tragedy,other,39,Ferrex and Porrex (Gorboduc),"Norton, ThomasSackville, Thomas",1562,,,first performance,British Drama,,no,no,no,,,0.2395
+tragedy,other,42,Agamemnon (Seneca's Eighth Tragedy),"Seneca, Lucius AnnaeusStudley, John",1566,,,composition,British Drama,,no,no,no,,,0.5349
+tragedy,other,65,Appius and Virginia,"B., R.",1566,1559,1567,first performance,British Drama,,no,no,no,,,0.1985
+tragedy,other,81,Hercules Oetaeus (Hercules on Mount Oeta) (Seneca's Tenth Tragedy),"Seneca, Lucius AnnaeusStudley, John",1566,,,composition,British Drama,,no,no,no,,,0.8406
+tragedy,other,61,Jocasta,"Gascoigne, GeorgeKinwelmershe, FrancisYelverton, ChristopherEuripidesDolce, Lodovico",1566,1566,1567,first performance,British Drama,,no,no,no,,,0.3419
+tragedy,other,44,Medea (Seneca's Seventh Tragedy),"Seneca, Lucius AnnaeusStudley, John",1566,,,composition,British Drama,,no,no,no,,,0.3766
+tragedy,other,45,Octavia (Seneca's Ninth Tragedy),"Seneca, Lucius AnnaeusNuce, ThomasPseudo-Seneca",1566,,,composition,British Drama,,no,no,no,,,0.2643
+tragedy,other,80,Hippolytus (Seneca's Fourth Tragedy),"Seneca, Lucius AnnaeusStudley, John",1567,,,composition,British Drama,,no,no,no,,,0.2753
+tragedy,other,48,The Interlude of Vice (Orestes),"Pickering, John",1567,1559,1567,first performance,British Drama,,no,no,no,,,0.2936
+tragedy,other,104,Tancred and Gismund (Gismond of Salerne),"Wilmot, RobertHatton, ChristopherNoel, HenryAl., G.Stafford, Roderick",1568,1568,1569,first performance,British Drama,alternative limits,no,no,no,,,0.2434
+tragedy,other,56,"Cambises, King of Persia","Preston, Thomas",1569,1559,1569,first performance,British Drama,,no,no,no,,,0.2667
+tragedy,other,71,Abraham's Sacrifice,"Golding, ArthurBeza, Theodore",1575,,,composition,British Drama,,no,no,no,,,0.1168
+tragedy,other,79,Thebais (Seneca's Third Tragedy),"Seneca, Lucius AnnaeusNewton, Thomas",1581,,,composition,British Drama,,no,no,no,,,0.4435
+tragedy,other,94,1 Tamburlaine the Great,"Marlowe, Christopher",1587,,,first performance,British Drama,,no,no,no,,,0.7613
+tragedy,other,95,2 Tamburlaine the Great,"Marlowe, Christopher",1587,,,first performance,British Drama,,no,no,no,,,0.4726
+tragedy,other,110,The Spanish Tragedy (Hieronimo is Mad Again),"Kyd, Thomas",1587,1585,1591,first performance,British Drama,,no,no,yes,yes,,0.242
+tragedy,other,128,"Dido, Queen of Carthage","Marlowe, ChristopherNashe, Thomas",1588,1587,1590,first performance,British Drama,,no,no,yes,yes,,0.5916
+tragedy,other,205,Doctor Faustus,"AnonymousMarlowe, Christopher",1588,1587,1589,first performance,British Drama,revised (accompanying event),no,no,no,,,0.4322
+tragedy,other,109,Soliman and Perseda (Zulziman),Anonymous,1588,1588,1589,first performance,British Drama,,no,no,no,,,0.2288
+tragedy,other,127,The Battle of Alcazar,"Peele, George",1588,1588,1589,first performance,British Drama,,no,no,no,,,0.1388
+tragedy,other,89,The Misfortunes of Arthur (Certain Devices and Shows Presented to Her Majesty),"Hughes, ThomasFulbecke, William",1588,,,first performance,British Drama,,no,no,no,,,0.2554
+tragedy,other,131,"The Wars of Cyrus, King of Persia",Anonymous,1588,1587,1590,first performance,British Drama,,no,no,yes,yes,,0.809
+tragedy,other,122,"The Wounds of Civil War, or Marius and Scilla","Lodge, Thomas",1588,1587,1588,first performance,British Drama,,no,no,no,,,0.8367
+tragedy,other,475,The Jew of Malta,"Marlowe, Christopher",1589,1589,1590,first performance,British Drama,,no,no,yes,yes,,0.326
+tragedy,other,108,Antonius (Antony),"Herbert, Mary SidneyGarnier, RobertSidney Herbert, Mary",1590,,,composition,British Drama,,yes,yes,yes,,,0.6178
+tragedy,other,136,"Locrine, the Eldest Son of King Brutus","S., W.",1591,1590,1594,first performance,British Drama,,yes,yes,yes,,,0.3791
+tragedy,other,132,Cleopatra,"Daniel, Samuel",1593,1590,1593,composition,British Drama,,yes,yes,yes,,,0.5755
+tragedy,other,133,The Massacre at Paris,"Marlowe, Christopher",1593,1589,1593,first performance,British Drama,,yes,no,yes,yes,,0.2064
+tragedy,other,116,Cornelia (Pompey the Great His Fair Cornelia's Tragedy),"Garnier, RobertKyd, Thomas",1594,,,kind unclear,British Drama,,yes,yes,yes,,,0.6485
+tragedy,other,182,Two Lamentable Tragedies,"Yarington, Robert",1595,1594,1598,first performance,British Drama,,yes,yes,yes,,,0.3777
+tragedy,other,278,Mustapha,"Greville, Fulke",1596,1594,1600,composition,British Drama,later revision dates ignored; revised (accompanying event),yes,yes,yes,,,0.6949
+tragedy,other,180,"The Death of Robert, Earl of Huntingdon (2 Robin Hood)","Munday, AnthonyChettle, Henry",1598,,,first performance,British Drama,,yes,yes,yes,,,0.1109
+tragedy,other,221,"1 Jeronimo, with the Wars of Portugal",Anonymous,1600,1587,1605,first performance,British Drama,,yes,no,yes,yes,,0.7808
+tragedy,other,489,Alaham,"Greville, Fulke",1600,1598,1600,composition,British Drama,,yes,yes,yes,,,0.2841
+tragedy,other,185,Antonio's Revenge (2 Antonio and Mellida),"Marston, John",1600,1600,1601,first performance,British Drama,,yes,yes,yes,,,0.5157
+tragedy,other,258,A Woman Killed with Kindness,"Heywood, Thomas",1603,,,first performance,British Drama,,yes,yes,yes,,,0.2423
+tragedy,other,196,Darius,"Alexander, William",1603,1602,1603,composition,British Drama,,yes,yes,yes,,,0.2042
+tragedy,other,438,"Hoffman, or A Revenge for a Father","Chettle, Henry",1603,,,first performance,British Drama,,yes,yes,yes,,,0.4595
+tragedy,other,216,Sejanus His Fall,"Jonson, Ben",1603,,,first performance,British Drama,,yes,yes,yes,,,0.7492
+tragedy,other,246,Bussy D'Ambois,"Chapman, George",1604,,,first performance,British Drama,,yes,yes,yes,,,0.2204
+tragedy,other,209,Croesus,"Alexander, William",1604,,,composition,British Drama,,yes,yes,yes,,,0.2381
+tragedy,other,272,A Yorkshire Tragedy,"Middleton, Thomas",1605,1605,1608,first performance,British Drama,,yes,yes,yes,,,0.6375
+tragedy,other,231,"The Wonder of Women, or Sophonisba","Marston, John",1605,1605,1606,first performance,British Drama,,yes,yes,yes,,,0.1952
+tragedy,other,444,Caesar and Pompey (The Wars of Caesar and Pompey),"Chapman, George",1606,1599,1631,kind unclear,British Drama,,yes,yes,no,yes,,0.4113
+tragedy,other,254,"The Devil's Charter, or Pope Alexander the Sixth","Barnes, Barnabe",1606,1599,1607,first performance,British Drama,,yes,yes,yes,,,0.4005
+tragedy,other,249,The Miseries of Enforced Marriage,"Wilkins, George",1606,1605,1607,first performance,British Drama,,yes,yes,yes,,,0.3805
+tragedy,other,253,The Revenger's Tragedy,"Middleton, Thomas",1606,1604,1607,first performance,British Drama,,yes,yes,yes,,,0.722
+tragedy,other,328,Cupid's Revenge,"Beaumont, FrancisFletcher, John",1607,1606,1611,first performance,British Drama,,yes,yes,yes,,,0.3641
+tragedy,other,261,Julius Caesar,"Alexander, William",1607,,,composition,British Drama,,yes,yes,yes,,,0.6554
+tragedy,other,260,The Alexandraean Tragedy,"Alexander, William",1607,,,composition,British Drama,,yes,yes,yes,,,0.1657
+tragedy,other,273,The Rape of Lucrece,"Heywood, Thomas",1607,1607,1608,first performance,British Drama,,yes,yes,yes,,,0.446
+tragedy,other,286,The Turk (Muleasses the Turk),"Mason, John",1607,1607,1608,first performance,British Drama,,yes,yes,yes,,,0.3255
+tragedy,other,275,The Tragedy of Charles Duke of Byron,"Chapman, George",1608,1607,1608,first performance,British Drama,,yes,yes,yes,,,0.4496
+tragedy,other,293,"The Atheist's Tragedy, or The Honest Man's Revenge","Tourneur, Cyril",1610,1610,1611,first performance,British Drama,,yes,yes,yes,,,0.2915
+tragedy,other,567,The Bloody Banquet,"Dekker, ThomasMiddleton, Thomas",1610,1605,1613,first performance,British Drama,queried limit,yes,yes,yes,,,0.254
+tragedy,other,315,The Insatiate Countess,"Marston, JohnMachin, LewisBarkstead, William",1610,1608,1613,first performance,British Drama,,yes,yes,yes,,,0.2966
+tragedy,other,307,The Revenge of Bussy D'Ambois,"Chapman, George",1610,1609,1612,first performance,British Drama,,yes,yes,yes,,,0.3871
+tragedy,other,300,A Christian Turned Turk (The Two Famous Pirates),"Daborne, Robert",1611,1610,1612,first performance,British Drama,,yes,yes,yes,,,0.2365
+tragedy,other,296,Catiline His Conspiracy,"Jonson, Ben",1611,,,first performance,British Drama,,yes,yes,yes,,,0.8792
+tragedy,other,357,The Maid's Tragedy,"Beaumont, FrancisFletcher, John",1611,1610,1611,first performance,British Drama,,yes,yes,yes,,,0.3614
+tragedy,other,550,"Chabot, Admiral of France","Chapman, GeorgeShirley, James",1612,1611,1634,first performance,British Drama,revised (accompanying event),yes,yes,no,yes,,0.0782
+tragedy,other,306,The White Devil (Vittoria Corombona),"Webster, John",1612,1611,1612,first performance,British Drama,,yes,yes,yes,,,0.6723
+tragedy,other,314,"Cynthia's Revenge, or Maenander's Ecstasy","Stephens, John",1613,,,composition,British Drama,,yes,yes,yes,,,0.3016
+tragedy,other,389,The Duchess of Malfi,"Webster, John",1613,1612,1614,first performance,British Drama,,yes,yes,no,yes,,0.6368
+tragedy,other,565,"The Bloody Brother (Rollo, Duke of Normandy)","Fletcher, JohnField, NathanMassinger, Philip",1617,1617,1620,first performance,British Drama,,no,no,no,,,0.434
+tragedy,other,447,"The Raging Turk, or Bajazet the Second","Goffe, Thomas",1617,1613,1618,first performance,British Drama,queried limit,no,yes,no,yes,,0.2013
+tragedy,other,368,Thierry and Theodoret,"AnonymousFletcher, JohnMassinger, Philip",1617,1613,1621,first performance,British Drama,,no,yes,no,yes,,0.2677
+tragedy,other,471,All's Lost by Lust,"Rowley, William",1619,1619,1620,first performance,British Drama,queried limit,no,no,no,,,0.3903
+tragedy,other,382,Herod and Antipater,"Markham, GervaseSampson, William",1619,1619,1620,first performance,British Drama,,no,no,no,,,0.4533
+tragedy,other,410,Nero (Piso's Conspiracy),Anonymous,1619,1605,1623,first performance,British Drama,,no,yes,no,yes,,0.6042
+tragedy,other,458,"The Courageous Turk, or Amurath the First","Goffe, Thomas",1619,,,first performance,British Drama,,no,no,no,,,0.4787
+tragedy,other,464,The Fatal Dowry,"Field, NathanMassinger, Philip",1619,1616,1620,first performance,British Drama,,no,no,no,,,0.2825
+tragedy,other,485,Orestes,"Goffe, Thomas",1620,1609,1623,first performance,British Drama,,no,yes,no,yes,,0.4683
+tragedy,other,380,The Virgin Martyr,"Dekker, ThomasMassinger, Philip",1620,,,first performance,British Drama,,no,no,no,,,0.3948
+tragedy,other,386,The Duke of Milan,"Massinger, Philip",1621,1621,1622,first performance,British Drama,,no,no,no,,,0.611
+tragedy,other,490,"The Noble Spanish Soldier (The Noble Soldier, or A Contract Broken Justly Revenged)","Dekker, Thomas",1622,1621,1631,first performance,British Drama,,no,no,no,,,0.4437
+tragedy,other,422,"Albovine, King of the Lombards","Davenant, William",1626,1626,1629,kind unclear,British Drama,,no,no,no,,,0.1524
+tragedy,other,553,"Cleopatra, Queen of Egypt","May, Thomas",1626,,,first performance,British Drama,,no,no,no,,,0.4906
+tragedy,other,562,The Maid's Revenge,"Shirley, James",1626,,,first performance,British Drama,,no,no,no,,,0.4604
+tragedy,other,559,The Unnatural Combat,"Massinger, Philip",1626,1623,1639,first performance,British Drama,,no,no,no,,,0.2218
+tragedy,other,450,"Antigone, the Theban Princess","May, Thomas",1627,1627,1631,composition,British Drama,,no,no,no,,,0.6037
+tragedy,other,427,The Cruel Brother,"Davenant, William",1627,,,first performance,British Drama,,no,no,no,,,0.5399
+tragedy,other,418,"Lodovic Sforza, Duke of Milan","Gomersall, Robert",1628,1622,1628,composition,British Drama,,no,no,no,,,0.5942
+tragedy,other,510,"The Vow Breaker, or The Fair Maid of Clifton","Sampson, William",1628,1628,1636,first performance,British Drama,circa limit,no,no,no,,,0.4717
+tragedy,other,480,The Broken Heart,"Ford, John",1629,1625,1633,first performance,British Drama,,no,no,no,,,0.2113
+tragedy,other,573,Love's Cruelty,"Shirley, James",1631,,,first performance,British Drama,,no,no,no,,,0.6948
+tragedy,other,498,The Traitor,"Shirley, James",1631,,,first performance,British Drama,,no,no,no,,,0.6599
+tragedy,other,478,Love's Sacrifice,"Ford, John",1632,1626,1633,first performance,British Drama,,no,no,no,,,0.7087
+tragedy,other,582,The Rebellion,"Rawlins, Thomas",1633,1629,1636,first performance,British Drama,,no,no,no,,,0.16
+tragedy,other,513,Hannibal and Scipio,"Nabbes, Thomas",1635,,,first performance,British Drama,,no,no,no,,,0.2249
+tragedy,other,578,"Messalina, the Roman Empress","Richards, Nathaniel",1635,1634,1636,first performance,British Drama,,no,no,no,,,0.4559
+tragedy,other,537,The Conspiracy (Pallantus and Eudora),"Killigrew, Henry",1635,,,first performance,British Drama,,no,no,no,,,0.2236
+tragedy,other,560,Imperiale,"Freeman, Ralph",1639,,,kind unclear,Annals,,no,no,no,,,0.2858
+tragedy,other,569,The Phoenix in Her Flames,"Lower, William",1639,1622,1639,kind unclear,Annals,circa limit,no,no,no,,,0.6041
+tragedy,other,599,"Sicily and Naples, or The Fatal Union","Harding, Samuel",1640,,,kind unclear,Annals,,no,no,no,,,0.3423
+history,Shakespeare,119,2 Henry the Sixth (The First Part of the Contention betwixt the Two Famous Houses of York and Lancaster),"AnonymousMarlowe, ChristopherShakespeare, William",1591,1587,1592,first performance,British Drama,,yes,no,yes,yes,,0.3427
+history,Shakespeare,138,3 Henry the Sixth (The True Tragedy of Richard Duke of York and the Good King Henry the Sixth),"AnonymousMarlowe, ChristopherShakespeare, William",1591,1587,1592,first performance,British Drama,,yes,no,yes,yes,,0.3826
+history,Shakespeare,399,1 Henry the Sixth,"AnonymousMarlowe, ChristopherShakespeare, WilliamNashe, Thomas",1592,,,first performance,British Drama,,yes,yes,yes,,,0.5517
+history,Shakespeare,142,Richard the Third,"Shakespeare, William",1593,1591,1597,first performance,British Drama,,yes,yes,yes,,,0.3385
+history,Shakespeare,140,The Reign of King Edward the Third,"AnonymousShakespeare, William",1593,1590,1594,first performance,British Drama,,yes,yes,yes,,,0.493
+history,Shakespeare,141,Richard the Second,"Shakespeare, William",1595,1595,1597,first performance,British Drama,,yes,yes,yes,,,0.1678
+history,Shakespeare,398,King John,"Shakespeare, William",1596,1594,1598,first performance,British Drama,,yes,yes,yes,,,0.5556
+history,Shakespeare,145,1 Henry the Fourth,"Shakespeare, William",1597,1596,1597,first performance,British Drama,,yes,yes,yes,,,0.2075
+history,Shakespeare,167,2 Henry the Fourth,"Shakespeare, William",1597,1596,1600,first performance,British Drama,,yes,yes,yes,,,0.2137
+history,Shakespeare,165,Henry the Fifth,"Shakespeare, William",1599,,,first performance,British Drama,,yes,yes,yes,,,0.4792
+history,Shakespeare,400,Henry the Eighth (All Is True),"Shakespeare, WilliamFletcher, John",1612,1611,1613,first performance,British Drama,,yes,yes,yes,,,0.3107
+history,other,101,1 The Troublesome Reign of King John,Anonymous,1589,1587,1591,first performance,British Drama,,no,no,yes,yes,,0.6199
+history,other,102,2 The Troublesome Reign of King John,Anonymous,1589,1587,1591,first performance,British Drama,,no,no,yes,yes,,0.6862
+history,other,213,The True Chronicle of King Leir (King Lear and his Three Daughters),Anonymous,1589,1586,1594,first performance,British Drama,,no,no,yes,yes,,0.1167
+history,other,126,The True Tragedy of Richard the Third,Anonymous,1589,1588,1591,first performance,British Drama,,no,no,yes,yes,,0.2527
+history,other,114,Jack Straw,Anonymous,1590,1580,1593,first performance,British Drama,,yes,no,yes,yes,,0.5062
+history,other,160,The Love of King David and Fair Bathsheba,"Peele, George",1590,1584,1594,first performance,British Drama,,yes,no,yes,yes,,0.7362
+history,other,112,Edward the First,"Peele, George",1591,1590,1593,first performance,British Drama,,yes,yes,yes,,,0.489
+history,other,129,Edward the Second,"Marlowe, Christopher",1592,1591,1593,first performance,British Drama,,yes,yes,yes,,,0.4133
+history,other,153,1 Edward the Fourth,"Heywood, Thomas",1599,,,first performance,British Drama,,yes,yes,yes,,,0.3984
+history,other,166,1 Sir John Oldcastle,"Wilson, RobertDrayton, MichaelMunday, AnthonyHathaway, Richard",1599,,,first performance,British Drama,,yes,yes,yes,,,0.19
+history,other,154,2 Edward the Fourth,"Heywood, Thomas",1599,,,first performance,British Drama,,yes,yes,yes,,,0.4068
+history,other,192,"A Larum for London, or The Siege of Antwerp",Anonymous,1599,1594,1600,first performance,British Drama,,yes,yes,yes,,,0.1236
+history,other,256,The Famous History of Sir Thomas Wyatt,"Heywood, ThomasDekker, ThomasChettle, HenryWebster, John",1601,,,first performance,British Drama,,yes,yes,yes,,,0.2734
+history,other,189,Thomas Lord Cromwell,"S., W.",1601,1599,1602,first performance,British Drama,,yes,yes,yes,,,0.2327
+history,other,215,"1 If You Know Not Me You Know Nobody, or The Troubles of Queen Elizabeth","Heywood, Thomas",1604,1603,1605,first performance,British Drama,,yes,yes,yes,,,0.3502
+history,other,224,2 If You Know Not Me You Know Nobody (The Second Part of Queen Elizabeth's Troubles),"Heywood, Thomas",1604,1603,1605,first performance,British Drama,,yes,yes,yes,,,0.2533
+history,other,212,When You See Me You Know Me (Henry the Eighth),"Rowley, Samuel",1604,1604,1605,first performance,British Drama,,yes,yes,yes,,,0.5215
+history,other,274,The Conspiracy of Charles Duke of Byron,"Chapman, George",1608,1607,1608,first performance,British Drama,,yes,yes,yes,,,0.2092
+history,other,327,The Valiant Welshman (Caradoc the Great),"A., R.",1611,1610,1612,first performance,British Drama,,yes,yes,yes,,,0.3727
+history,other,482,Fuimus Troes (The True Trojans),"Fisher, Jasper",1619,1607,1624,first performance,British Drama,,no,yes,no,yes,,0.3565
+history,other,451,The Duchess of Suffolk,"Drue, Thomas",1624,,,first performance,British Drama,,no,no,no,,,0.5146
+history,other,520,The Valiant Scot,"W., J.",1626,1607,1637,first performance,British Drama,,no,yes,no,yes,,0.6862
+history,other,615,Mortimer His Fall,"Jonson, Ben",1637,1595,1637,kind unclear,Annals,,no,yes,no,yes,,0.0
